@@ -8,6 +8,8 @@ def main():
     for acts_name in acts_configs.keys():
         for version in acts_configs[acts_name].keys():
             version = int(version)
+            print('acts_name: ', acts_name)
+            print('version: ', version)
             ac.utils.assert_consistent_x(acts_name, version)
 
 if __name__ == '__main__':
