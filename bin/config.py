@@ -3,7 +3,7 @@
         "model_names": ["identity"],
         "layers": [None],
         "metrics": [
-            ["decode", 0],
+           # ["decode", 0],
             #["dimensionality", 0],
             #["fact", 0],
             #["generalize", 0],
@@ -20,10 +20,10 @@
             "barlow_control",
             "barlow_v2"
         ],
-        "epochs": [19],
+        "epochs": [10],
         "layers": [None], # All layers
         "metrics": [
-            ["decode", 0],
+            #["decode", 0],
             #["dimensionality", 0],
             #["fact", 0],
             #["generalize", 0],
