@@ -7,8 +7,8 @@ with open(path, 'rb') as f:
     
 print(data)
 
-path = '/mnt/smb/locker/issa-locker/users/Eugénie/data/hk2_cam_color_no_pca/00/barlow_v2/0014/layer4.1/y.pkl' 
-with open(path, 'rb') as f:
-    data = pickle.load(f)
+path_ = '/mnt/smb/locker/issa-locker/users/Eugénie/data/hk2_cam_color_no_pca/00/barlow_v2/0014/layer4.1/y.pkl' 
+with open(path_, 'rb') as fp:
+    datap = pickle.load(fp)
     
-print(data)
+print(datap)
