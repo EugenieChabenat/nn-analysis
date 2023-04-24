@@ -77,5 +77,7 @@ def assert_consistent_x(acts_name, version):
                 xs.append(utils.load_data(os.path.join(cur_path, filename)))
     if len(xs) > 0:
         for x in xs[1:]:
+            print('type x: ', x.type)
+            print('type xs: ', xs[0].type)
             assert np.allclose(x, xs[0])
     print(f"All x.pkl files under {acts_name} v{version} are consistent: checked {len(xs)} files.")
