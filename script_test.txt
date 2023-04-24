@@ -5,4 +5,4 @@
 #SBATCH --mem=128gb                  # memory
 #SBATCH --gres=gpu:gtx2080:8 
 
-python /home/ec3731/nn-analysis/bin/py_scripts/main_save_and_analyze.py /home/ec3731/nn-analysis/bin/config.py
+python /home/ec3731/issa_analysis/nn-analysis/bin/py_scripts/main_save_and_analyze.py /home/ec3731/issa_analysis/nn-analysis/bin/config.py
