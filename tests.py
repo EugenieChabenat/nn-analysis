@@ -1,7 +1,7 @@
 import pickle
 
 
-path = '/mnt/smb/locker/issa-locker/users/hc3190/data/results/curve/OO/barlow_CD/0049/layer4.1.pkl' 
+path = '/mnt/smb/locker/issa-locker/users/hc3190/data/results/curve/01/barlow_CD/0049/layer4.1.pkl' 
 with open(path, 'rb') as f:
     data = pickle.load(f)
     
