@@ -79,10 +79,5 @@ def assert_consistent_x(acts_name, version):
                 xs.append(utils.load_data(os.path.join(cur_path, filename)))
     if len(xs) > 0:
         for x in xs[1:]:
-            with open('/mnt/smb/locker/issa-locker/users/Eugénie/models/data.json', 'w') as f:
-                json.dump(x.type, f)
-                json.dump(xs[0].type, f)
-
-            
-            assert np.allclose(x, xs[0])
+            assert np.allclose(x.astype(np.float), xs[0].astype(np.float))
     print(f"All x.pkl files under {acts_name} v{version} are consistent: checked {len(xs)} files.")
