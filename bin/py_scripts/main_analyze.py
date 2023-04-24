@@ -17,6 +17,10 @@ def main(model_name, layers, metric_name, version, epoch=None, overwrite=False, 
     metric = me.custom_metrics.metrics_dict[metric_config['class']](**metric_config['kwargs'])
     layer_names = arch_configs[model_configs[model_name]['arch']]['layer_names']
     
+    print('metric_config: ', metric_config)
+    print('metric: ', metric)
+    print('layer names: ', layer_names)
+    
     for layer in layers:
         layer_name = layer_names[layer]
         
@@ -30,6 +34,8 @@ def main(model_name, layers, metric_name, version, epoch=None, overwrite=False, 
         
         if not debug:
             me.utils.save_data(model_name, epoch, layer_name, metric_name, version, result, overwrite=overwrite)
+            print('saving data for metric')
+               
             
     print("Done")
 
