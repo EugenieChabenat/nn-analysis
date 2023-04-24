@@ -79,7 +79,7 @@ def assert_consistent_x(acts_name, version):
                 xs.append(utils.load_data(os.path.join(cur_path, filename)))
     if len(xs) > 0:
         for x in xs[1:]:
-            with open('data.json', 'w') as f:
+            with open('/mnt/smb/locker/issa-locker/users/Eugénie/models/data.json', 'w') as f:
                 json.dump(x.type, f)
                 json.dump(xs[0].type, f)
 
