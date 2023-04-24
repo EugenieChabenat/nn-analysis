@@ -15,6 +15,10 @@ def main(model_name, layers, acts_name, version, epoch=None, overwrite=False, de
     layer_names = [arch_configs[arch]['layer_names'][layer] for layer in layers]
     acts_config = acts_configs[acts_name][f"{version:02d}"]
     
+    print('arch: ', arch)
+    print('layer_names: ', layer_names)
+    print('acts_config: ', acts_config)
+    
     filtered_layers, filtered_layer_names = [], []
     for layer, layer_name in zip(layers, layer_names):
         if not ac.utils.data_exists(model_name, epoch, acts_name, version, layer_name=layer_name, data_type='y'):
