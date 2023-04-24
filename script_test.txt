@@ -1,0 +1,8 @@
+#!/bin/bash
+#SBATCH --job-name=bash        
+#SBATCH --mail-type=ALL        
+#SBATCH --mail-user={ec3731@columbia.edu} # your email
+#SBATCH --mem=128gb                  # memory
+#SBATCH --gres=gpu:gtx2080:8 
+
+python /home/ec3731/nn-analysis/bin/py_scripts/main_save_and_analyze.py /home/ec3731/nn-analysis/bin/config.py
