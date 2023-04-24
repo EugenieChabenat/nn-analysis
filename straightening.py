@@ -43,7 +43,7 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('plot1.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/plot1.png')
 
 
 epoch = 82
@@ -71,7 +71,7 @@ fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
 
-plt.savefig('plot2.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/plot2.png')
 
 epoch = 54
 layers = slice(None)
@@ -97,7 +97,7 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('plot3.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/plot3.png')
 
 epoch = 49
 layer = 15
@@ -132,5 +132,5 @@ fig.supxlabel('PC 1')
 fig.supylabel('PC 2')
 fig.tight_layout()
 
-plt.savefig(f'figures/PCs_layer_{layer}.pdf')
+plt.savefig(f'/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/figures/PCs_layer_{layer}.pdf')
 plt.show()
