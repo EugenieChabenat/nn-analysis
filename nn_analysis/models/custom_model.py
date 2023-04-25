@@ -327,10 +327,10 @@ def _get_custom_model(arch, path=None, extract_method=None, model_kwargs={}, dev
         
     print(path+"/checkpoint.pth")
     with open(path+"/checkpoint.pth", 'rb') as f:
-        state_dict = torch.load(f, map_location="cpu")[state_dict_key]
+        #state_dict = torch.load(f, map_location="cpu")[state_dict_key]
         # --
         ckpt = torch.load(f, map_location="cpu")
-        model.load_state_dict(ckpt["model"])
+        state_dict = model.load_state_dict(ckpt["model"])
         # -- 
         
     if extract_method is None:
