@@ -17,8 +17,8 @@
     },
     {
         "model_names": [
+            "barlow_v2", 
             
-            "barlow_faces"
         ],
         "epochs": [5],
         "layers": [None], # All layers
