@@ -13,6 +13,9 @@ model_configs = utils.load_config(MODEL_CONFIGS_PATH)
 arch_configs = utils.load_config(ARCH_CONFIGS_PATH)
 env_config = utils.load_config(ENV_CONFIG_PATH)
 
+def exclude_bias_and_norm(p):
+    return p.ndim == 1
+
 def transform_data(data_list, transform):
     if transform == 'identity':
         assert len(data_list) == 1
