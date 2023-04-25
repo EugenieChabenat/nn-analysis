@@ -331,7 +331,7 @@ def _get_custom_model(arch, path=None, extract_method=None, model_kwargs={}, dev
         # --
         #model = torch.nn.DataParallel(model).cuda()
         ckpt = torch.load(f, map_location="cpu")
-        model = model.module
+        ckpt = ckpt.module
         state_dict = model.load_state_dict(ckpt["model"])
         #model = model.module
         # -- 
