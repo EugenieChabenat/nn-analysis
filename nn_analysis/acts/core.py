@@ -73,6 +73,7 @@ def save_dataset(filename, path, model, layer_names, dataset, device='cpu', batc
     if postprocessor is None:
         postprocess = lambda y, *args, **kwargs: y
     else:
+        print('CONG-FIGURATION')
         sizes = postprocessor.configure(sizes)
         postprocess = postprocessor.process
     meta_dicts = postprocessor.meta_dicts if postprocessor is not None else None
