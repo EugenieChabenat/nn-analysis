@@ -47,7 +47,7 @@ def main(model_name, layers, acts_name, version, epoch=None, overwrite=False, de
     
     # --
     args, other_argv = parser.parse_known_args()
-    args.name = "equivariant_all_bn"
+    args.name = "equivariant_all_bn_v2"
     other_args = importlib.import_module('.' + args.name, 'models').get_parser().parse_args(other_argv)
     args = argparse.Namespace(**vars(args), **vars(other_args))
     
