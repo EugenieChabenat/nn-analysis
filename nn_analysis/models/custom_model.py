@@ -4,6 +4,7 @@ from nn_analysis.models import archs
 from nn_analysis import utils
 from nn_analysis import exceptions
 from nn_analysis.constants import ENV_CONFIG_PATH
+import disentangle.barlowtwins.models
 
 env_config = utils.load_config(ENV_CONFIG_PATH)
 
