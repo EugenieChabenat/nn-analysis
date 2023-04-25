@@ -43,6 +43,11 @@ parser.add_argument('--no-flip', action='store_true',
 env_config = utils.load_config(ENV_CONFIG_PATH)
 
 # -- 
+
+import torch
+import torch.nn as  nn
+import torch.nn.functional as F
+import torchvision.models
 def off_diagonal(x):
     # return a flattened view of the off-diagonal elements of a square matrix
     n, m = x.shape
