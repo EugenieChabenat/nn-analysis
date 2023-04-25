@@ -36,7 +36,7 @@ sbatch -p burst<<EOT
 #SBATCH --time=$((20*$MAX_N_PARAMS_PER_JOB)):00
 #SBATCH --array=0-$(($N_JOBS-1))
 #SBATCH --requeue
-#SBATCH -o $slurm_outputs/output.%A_%a.out
+#SBATCH -o $(dirname $0)/slurm_outputs/output.%A_%a.out
 
 sig_handler() {
     echo "BATCH interrupted"
