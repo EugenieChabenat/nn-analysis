@@ -20,7 +20,7 @@
             "barlow_v2", 
             
         ],
-        "epochs": [5],
+        "epochs": [19],
         "layers": [None], # All layers
         "metrics": [
             ["decode", 0],
