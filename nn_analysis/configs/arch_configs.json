@@ -16,7 +16,6 @@
             "custom_resnet.layer3.0",
             "custom_resnet.layer3.1",
             "custom_resnet.layer3.2",
-            "custom_resnet.layer3.3",
             "custom_resnet.layer4.0"
 
         ]
