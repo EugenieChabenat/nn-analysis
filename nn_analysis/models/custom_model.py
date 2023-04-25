@@ -333,7 +333,7 @@ def _get_custom_model(arch, path=None, extract_method=None, model_kwargs={}, dev
         ckpt = torch.load(f, map_location="cpu")
         
         state_dict = model.load_state_dict(ckpt["model"], strict=False)
-        state_dict = state_dict.module
+        print(state_dict)# = state_dict.module
         # -- 
         
     if extract_method is None:
