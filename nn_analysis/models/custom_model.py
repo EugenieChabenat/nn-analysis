@@ -5,7 +5,7 @@ from nn_analysis import utils
 from nn_analysis import exceptions
 from nn_analysis.constants import ENV_CONFIG_PATH
 import disentangle.barlowtwins.models
-from nn_analysis.models.equivariant_all_bn import BarlowTwins,Bottleneck, Block, ResNet, Model
+#from nn_analysis.models.equivariant_all_bn import BarlowTwins,Bottleneck, Block, ResNet, Model
 
 import importlib
 import argparse
