@@ -36,9 +36,11 @@ def compute_sizes(model, layer_names, dataset, device='cpu'):
     
     try:
         handles = attach_hooks(model, layer_names, get_hook)
+        model = model.module
         model.eval()
         with torch.no_grad():
             #model(images)
+            
             model.custom_resnet(images)
     finally:
         remove_hooks(handles)
