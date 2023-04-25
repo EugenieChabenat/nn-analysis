@@ -305,7 +305,7 @@ class Model(BarlowTwins):
 def _get_custom_model(arch, path=None, extract_method=None, model_kwargs={}, device='cpu', state_dict_key='state_dict'):
     archs_dict = {k: v for k, v in archs.__dict__.items() if not k.startswith("__") and callable(v) and k.islower()}
     
-    print(archs_dict)
+    #print(archs_dict)
     
     model = archs_dict[arch](**model_kwargs)
     
@@ -333,8 +333,8 @@ def _get_custom_model(arch, path=None, extract_method=None, model_kwargs={}, dev
     with open(path+"/checkpoint.pth", 'rb') as f:
         #state_dict = torch.load(f, map_location="cpu")[state_dict_key]
         # --
-        model = torch.nn.DataParallel(model).cuda()
-        ckpt = torch.load(f)#, map_location="cpu")
+        #model = torch.nn.DataParallel(model).cuda()
+        ckpt = torch.load(f), map_location="cpu")
         
         state_dict = model.load_state_dict(ckpt["model"])
         print(state_dict)# = state_dict.module
