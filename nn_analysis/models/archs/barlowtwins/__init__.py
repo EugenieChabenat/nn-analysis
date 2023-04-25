@@ -1,4 +1,4 @@
-__all__ = ['barlowtwins', 'equivariant_all_bn']
+__all__ = ['barlowtwins', 'equivariant_all_bn', 'equivariant_all_bn_v2']
 
 from .base import barlowtwins
 from .equivariant_all_bn import equivariant_all_bn
