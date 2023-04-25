@@ -255,6 +255,7 @@ class Sampler(Processor):
                 output_sizes[layer_name] = self.n_samples
         self.configured = True
         output_sizes.update({'target': sizes['target'], 'dataset': sizes['dataset']})
+        print('output_sizes: ', output_sizes)
         return output_sizes
         
     def process(self, tensor, layer_name, **kwargs):
@@ -265,7 +266,8 @@ class Sampler(Processor):
         assert tensor.ndim == 2
         
         print('indicies: ', self.indices)
-        layer_indices = self.indices[layer_name]
+        #layer_indices = self.indices[layer_name]
+        layer_indices = 0
         if tensor.is_cuda:
             layer_indices.to(tensor.get_device())
         return tensor[:,layer_indices]
