@@ -233,6 +233,8 @@ class Sampler(Processor):
     def configure(self, sizes):
         layer_sizes = {k: v for k, v in sizes.items() if k not in ['target', 'dataset']}
         output_sizes = {}
+        print('in configure:' )
+        print('layer size:', layer_sizes)
         for layer_name, size in layer_sizes.items():
             if self.n_samples > size:
                 self.indices[layer_name] = torch.arange(size)
