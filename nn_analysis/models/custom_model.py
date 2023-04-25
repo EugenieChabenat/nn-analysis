@@ -304,6 +304,9 @@ class Model(BarlowTwins):
 
 def _get_custom_model(arch, path=None, extract_method=None, model_kwargs={}, device='cpu', state_dict_key='state_dict'):
     archs_dict = {k: v for k, v in archs.__dict__.items() if not k.startswith("__") and callable(v) and k.islower()}
+    
+    print(archs_dict)
+    
     model = archs_dict[arch](**model_kwargs)
     
     # --
