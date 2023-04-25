@@ -229,13 +229,3 @@ class Model(BarlowTwins):
 def equivariant_all_bn_v2(projector='8192-8192-8192', batch_size=256, scale_loss=0.024, lambd=0.0051, pos_weight=0.3, scale_weight=200.0, color_weight=150.0, **kwargs):
     args = Namespace(projector=projector, batch_size=batch_size, scale_loss=scale_loss, lambd=lambd, pos_weight=pos_weight, scale_weight=scale_weight, color_weight=color_weight, **kwargs)
     return Model(args)
-
-"""def get_parser():
-   parser = argparse.ArgumentParser(description='Model-specific parameters')
-   parser.add_argument('--pos-weight', default=0.03, type=float,
-                        help='cam pos targets will be multiplied by this number')
-   parser.add_argument('--scale-weight', default=20.0, type=float,
-                        help='scale pos targets will be multiplied by this number')
-   parser.add_argument('--color-weight', default=15.0, type=float,
-                        help='scale pos targets will be multiplied by this number')
-   return parser"""
