@@ -55,7 +55,7 @@ def off_diagonal(x):
     assert n == m
     return x.flatten()[:-1].view(n - 1, n + 1)[:, 1:].flatten()
 
-class BarlowTwins(nn.Module):
+"""class BarlowTwins(nn.Module):
     def __init__(self, args):
         super().__init__()
         self.args = args
@@ -299,7 +299,7 @@ class Model(BarlowTwins):
         return loss, loss_components
     
     def get_encoder(self):
-        return self.backbone
+        return self.backbone"""
 # -- 
 
 def _get_custom_model(arch, path=None, extract_method=None, model_kwargs={}, device='cpu', state_dict_key='state_dict'):
@@ -335,7 +335,7 @@ def _get_custom_model(arch, path=None, extract_method=None, model_kwargs={}, dev
         # --
         model = torch.nn.DataParallel(model).cuda()
         ckpt = torch.load(f, map_location="cpu")
-        
+        print('cktp: ', ckpt)
         state_dict = model.load_state_dict(ckpt["model"])
         new_state_dict = {}
         
