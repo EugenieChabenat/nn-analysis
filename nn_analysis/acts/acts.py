@@ -6,7 +6,7 @@ from nn_analysis import models as md
 from nn_analysis import acts as ac
 from nn_analysis.constants import ENV_CONFIG_PATH, MODEL_CONFIGS_PATH, ARCH_CONFIGS_PATH
 
-from nn_analysis.models.equivariant_all_bn import BarlowTwins,Bottleneck, Block, ResNet, Model
+#from nn_analysis.models.equivariant_all_bn import BarlowTwins,Bottleneck, Block, ResNet, Model
 
 
 model_configs = utils.load_config(MODEL_CONFIGS_PATH)
