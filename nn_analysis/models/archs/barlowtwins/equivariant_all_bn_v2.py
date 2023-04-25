@@ -116,7 +116,7 @@ class ResNet(nn.Module):
         #self.fc = nn.Linear(512*ResBlock.expansion, num_classes) # original line of code 
         self.fc = nn.Linear(512, 32)
         
-    def forward(self, x, delta_vec):
+    def forward(self, x): #, delta_vec):
         x = self.relu(self.batch_norm1(self.conv1(x)))
         x = self.max_pool(x)
 
@@ -202,7 +202,7 @@ class Model(BarlowTwins):
         
                 
         # -- replace computations of z1 with the custom resnet class   
-        z1 = self.bn(self.projector(self.custom_resnet(y1, delta_vec)))
+        z1 = self.bn(self.projector(self.custom_resnet(y1)))#, delta_vec)))
         #print('z1: ', z1.shape)
         # -- 
         
@@ -212,7 +212,7 @@ class Model(BarlowTwins):
         # --
         # z2 should also stop after the first layer 
         #z2 = self.bn(self.projector(self.backbone(y2)))
-        z2 = self.bn(self.projector(self.custom_resnet(y2, delta_vec)))
+        z2 = self.bn(self.projector(self.custom_resnet(y2)))#, delta_vec)))
         
         # -- the rest is not supposed to change --
         # empirical cross-correlation matrix
