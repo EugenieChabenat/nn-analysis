@@ -12,7 +12,6 @@
             "custom_resnet.layer2.0",
             "custom_resnet.layer2.1",
             "custom_resnet.layer2.2",
-            "custom_resnet.layer2.3",
             "custom_resnet.layer4.0"
 
         ]
