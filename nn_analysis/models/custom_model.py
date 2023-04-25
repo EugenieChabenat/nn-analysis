@@ -60,16 +60,7 @@ def _get_custom_model(arch, path=None, extract_method=None, model_kwargs={}, dev
     archs_dict = {k: v for k, v in archs.__dict__.items() if not k.startswith("__") and callable(v) and k.islower()}
         
     model = archs_dict[arch](**model_kwargs)
-    
-    # --
-    """args, other_argv = parser.parse_known_args()
-    args.name = "equivariant_all_bn_v2"
-    other_args = importlib.import_module('.' + args.name, 'models').get_parser().parse_args(other_argv)
-    args = argparse.Namespace(**vars(args), **vars(other_args))
-    
-    Model = importlib.import_module('.' + args.name, 'models').Model
-    model = Model(args)"""
-    # --- 
+     
     
     if arch == 'identity':
         model.to(device)
