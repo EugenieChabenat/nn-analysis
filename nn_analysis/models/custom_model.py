@@ -331,9 +331,9 @@ def _get_custom_model(arch, path=None, extract_method=None, model_kwargs={}, dev
         # --
         #model = torch.nn.DataParallel(model).cuda()
         ckpt = torch.load(f, map_location="cpu")
-        ckpt = ckpt.module
-        state_dict = model.load_state_dict(ckpt["model"])
-        #model = model.module
+        
+        state_dict = model.load_state_dict(ckpt["model"], strict=False)
+        model = model.module
         # -- 
         
     if extract_method is None:
