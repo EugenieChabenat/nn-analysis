@@ -255,6 +255,8 @@ class Sampler(Processor):
         """
         assert self.configured
         assert tensor.ndim == 2
+        
+        print('indicies: ', self.indices)
         layer_indices = self.indices[layer_name]
         if tensor.is_cuda:
             layer_indices.to(tensor.get_device())
