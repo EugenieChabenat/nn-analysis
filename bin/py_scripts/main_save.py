@@ -10,6 +10,8 @@ arch_configs = utils.load_config(ARCH_CONFIGS_PATH)
 acts_configs = utils.load_config(ACTS_CONFIGS_PATH)
 env_config = utils.load_config(ENV_CONFIG_PATH)
 #---
+
+
 import importlib
 parser = argparse.ArgumentParser(description='Barlow Twins Training')
 parser.add_argument('--name', type=str, metavar='NAME',
@@ -43,6 +45,9 @@ parser.add_argument('--tensorboard', action='store_true',
 parser.add_argument('--no-flip', action='store_true',
                     help='no random horizontal flips')
 #---
+
+def exclude_bias_and_norm(p):
+    return p.ndim == 1
 def main(model_name, layers, acts_name, version, epoch=None, overwrite=False, debug=False, verbose=False):
     
     # --
