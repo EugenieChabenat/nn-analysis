@@ -27,6 +27,17 @@
             "bn"
         ]
     },
+    "factorize_avgpool_equivariant_all_bn_inj_v1": {
+        "layer_names": [
+            "backbone.layer1.0",
+            "backbone.layer1.1",
+            "backbone.layer1.2",
+            
+            "backbone.avgpool",
+            "projector",
+            "bn"
+        ]
+    },
     "barlowtwins": {
         "layer_names": [
             "backbone.layer1.0",
