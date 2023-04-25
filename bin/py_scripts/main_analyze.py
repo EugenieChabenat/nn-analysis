@@ -51,7 +51,7 @@ if __name__ == '__main__':
     parser.add_argument('--version', default = 0, type=int,
                         help='Version number. Error will be raised if the result for the specified version' \
                              'already exists and --overwrite flag is not provided.')
-    parser.add_argument('--epoch', type=int,
+    parser.add_argument('--epoch', default = 10, type=int,
                         help='specify the epoch of the model (default: None)')
     parser.add_argument('--overwrite', action='store_true',
                         help='Allows overwriting specified version.')
