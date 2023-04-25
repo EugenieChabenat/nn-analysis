@@ -113,7 +113,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Save activations')
     parser.add_argument('--model_name', default = "barlow_v2", type=str,
                         help='Specify the model of which activations are saved')
-    parser.add_argument('--layers',default= 10, type=int, nargs='+',
+    parser.add_argument('--layers',default= 9, type=int, nargs='+',
                         help='Specify the layers of which activations are saved')
     parser.add_argument('--acts_name', default = "mkturk_test", type=str,
                         help='Specify what activations are saved')
