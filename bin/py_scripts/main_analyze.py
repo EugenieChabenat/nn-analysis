@@ -20,7 +20,7 @@ def main(model_name, layers, metric_name, version, epoch=None, overwrite=False, 
     print('metric_config: ', metric_config)
     print('metric: ', metric)
     print('layer names: ', layer_names)
-    
+    layers = [layers]
     for layer in layers:
         layer_name = layer_names[layer]
         
