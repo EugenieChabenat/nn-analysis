@@ -237,7 +237,7 @@ class Model(BarlowTwins):
     def get_encoder(self):
         return self.backbone
     
-def equivariant_all_bn_v2(projector='8192-8192-8192', batch_size=256, scale_loss=0.024, lambd=0.0051, pos_weight=0.3, scale_weight=200.0, color_weight=150.0, **kwargs):): 
+def equivariant_all_bn_v2(projector='8192-8192-8192', batch_size=256, scale_loss=0.024, lambd=0.0051, pos_weight=0.3, scale_weight=200.0, color_weight=150.0, **kwargs):
     args = Namespace(projector=projector, batch_size=batch_size, scale_loss=scale_loss, lambd=lambd, pos_weight=pos_weight, scale_weight=scale_weight, color_weight=color_weight, **kwargs)
     return Model(args)
 
