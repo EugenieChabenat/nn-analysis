@@ -233,7 +233,8 @@ class Model(BarlowTwins):
         # original size 
         sizes = {'bn': torch.Size([self.projector_sizes[-1]])}
                 
-        self.custom_resnet = ResNet(Bottleneck, [3,4,6,3], num_classes=2048, num_channels=3)
+        #self.custom_resnet = ResNet(Bottleneck, [3,4,6,3], num_classes=2048, num_channels=3)
+        self.backbone = ResNet(Bottleneck, [3,4,6,3], num_classes=2048, num_channels=3)
         
         #sizes_ = {'bn': torch.Size([self.custom_resnet.layer1])}
         
