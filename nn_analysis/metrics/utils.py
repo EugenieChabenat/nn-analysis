@@ -23,8 +23,10 @@ def data_exists(*args, **kwargs):
 def save_data(model_name, epoch, layer_name, metric_name, version, data_dict, overwrite=False):
     if epoch is not None:
         path = f"{env_config['save_results_path']}/{metric_name}/{version:02d}/{model_name}/{epoch:04d}/{layer_name}.pkl"
+        print('saving at: ', path)
     else:
         path = f"{env_config['save_results_path']}/{metric_name}/{version:02d}/{model_name}/{layer_name}.pkl"
+        print('saving at: ', path)
     utils.save_data(path, data_dict, overwrite=overwrite)
     
 def load_data(*args, **kwargs):
