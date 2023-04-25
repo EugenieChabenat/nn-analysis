@@ -40,7 +40,7 @@ def compute_sizes(model, layer_names, dataset, device='cpu'):
         model.eval()
         with torch.no_grad():
             #model(images)
-            
+            model = model.module
             model.custom_resnet(images)
     finally:
         remove_hooks(handles)
