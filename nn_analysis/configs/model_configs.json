@@ -58,6 +58,10 @@
         "arch": "equivariant_all_bn",
         "path": "checkpoints/barlowtwins/equivariant_all_bn_v1_v2"
     }, 
+    "barlow_faces": {
+        "arch": "equivariant_all_bn",
+        "path": "checkpoints/barlowtwins/factorize_avgpool_equivariant_all_bn_v5"
+    }
     "barlow_v2": {
         "arch": "equivariant_all_bn_v2",
         "path": "checkpoints/barlowtwins/equivariant_all_bn_v2_v2"
