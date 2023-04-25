@@ -9,7 +9,7 @@ import disentangle.barlowtwins.models
 import importlib
 import argparse
 parser = argparse.ArgumentParser(description='Barlow Twins Training')
-parser.add_argument('name', type=str, metavar='NAME',
+parser.add_argument('--name', type=str, metavar='NAME',
                     help='name of experiment')
 parser.add_argument('--version', default=1, type=int, metavar='N',
                     help='version of model')
