@@ -44,7 +44,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Analyze activations')
     parser.add_argument('--model_name', default= "barlow_v2",  type=str,
                         help='specify the model of which activations are saved')
-    parser.add_argument('--layers', default = 4, type=int, nargs='+',
+    parser.add_argument('--layers', default = 10, type=int, nargs='+',
                         help='specify the layers of which activations are saved')
     parser.add_argument('--metric_name', default = "neural_fits", type=str,
                         help='specify what activations are saved')
