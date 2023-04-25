@@ -120,7 +120,8 @@ def save_dataset(filename, path, model, layer_names, dataset, device='cpu', batc
                     for j, index in enumerate(zip(*indices)):
                         f[path]['x'][index] = targets[j]
             with torch.no_grad():
-                model(images)
+                #model(images)
+                model.custom_resnet(images)
     finally:
         remove_hooks(handles)
             
