@@ -70,6 +70,8 @@ def create_group_datasets(grp, model, layer_names, sizes, meta_dicts=None, dtype
 
 def save_dataset(filename, path, model, layer_names, dataset, device='cpu', batch_size=128, postprocessor=None, dtype='float32', log=False):
     sizes = compute_sizes(model, layer_names, dataset, device=device)
+    print('layer_names:' , layer_names)
+    print('size: ', sizes)
     if postprocessor is None:
         postprocess = lambda y, *args, **kwargs: y
     else:
