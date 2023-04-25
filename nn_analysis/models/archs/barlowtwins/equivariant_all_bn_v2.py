@@ -6,17 +6,6 @@ import torchvision.models
 from argparse import Namespace
 from .base import BarlowTwins
 
-"""def get_parser():
-    parser = argparse.ArgumentParser(description='Model-specific parameters')
-    parser.add_argument('--pos-weight', default=0.03, type=float,
-                        help='cam pos targets will be multiplied by this number')
-    parser.add_argument('--scale-weight', default=20.0, type=float,
-                        help='scale pos targets will be multiplied by this number')
-    parser.add_argument('--color-weight', default=15.0, type=float,
-                        help='scale pos targets will be multiplied by this number')
-    return parser"""
-        
-        
 
     
 ### Utilities ###
