@@ -311,6 +311,7 @@ def _get_custom_model(arch, path=None, extract_method=None, model_kwargs={}, dev
     args = argparse.Namespace(**vars(args), **vars(other_args))
     
     Model = importlib.import_module('.' + args.name, 'models').Model
+    model = Model(args)
     # --- 
     
     if arch == 'identity':
