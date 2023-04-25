@@ -330,9 +330,9 @@ def _get_custom_model(arch, path=None, extract_method=None, model_kwargs={}, dev
         #state_dict = torch.load(f, map_location="cpu")[state_dict_key]
         # --
         #model = torch.nn.DataParallel(model).cuda()
-        ckpt = torch.load(f, map_location="cpu")
+        ckpt = torch.load(f)#, map_location="cpu")
         
-        state_dict = model.load_state_dict(ckpt["model"], strict=False)
+        state_dict = model.load_state_dict(ckpt["model"])
         print(state_dict)# = state_dict.module
         # -- 
         
