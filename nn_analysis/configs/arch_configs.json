@@ -22,7 +22,7 @@
             "custom_resnet.layer4.0",
             "custom_resnet.layer4.1",
             "custom_resnet.layer4.2",
-            "custom_resnet.avgpool",
+            "backbone.avgpool",
             "projector",
             "bn"
         ]
