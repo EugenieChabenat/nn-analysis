@@ -80,7 +80,10 @@ def save_dataset(filename, path, model, layer_names, dataset, device='cpu', batc
     with h5py.File(filename, 'a') as f:
         grp = f[path]
         create_group_datasets(grp, model, layer_names, sizes, meta_dicts=meta_dicts, dtype=dtype)
-        
+    
+    #  --
+    model = model.module
+    #--
     model.eval()
     
     def get_hook(layer_name):
@@ -121,10 +124,7 @@ def save_dataset(filename, path, model, layer_names, dataset, device='cpu', batc
                         f[path]['x'][index] = targets[j]
             with torch.no_grad():
                 #model(images)
-                #--
-                model = model.module
-                model.eval()
-                #--
+      
                 model.custom_resnet(images)
     finally:
         remove_hooks(handles)
