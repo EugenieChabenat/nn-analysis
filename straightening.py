@@ -12,7 +12,7 @@ def load_data(metric, model_name, epoch, layers):
     else:
         return me.utils.load_data(model_name, epoch, layer_names, metric[0], metric[1])
       
-epoch = 49
+"""epoch = 49
 layers = np.arange(17)
 metric = ["curve", 1]
 metric_types = ["x_cam_trans", "y_cam_trans", "x_cam_rot", "y_cam_rot"]
@@ -97,23 +97,17 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/plot3.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/plot3.png')"""
 
-epoch = 49
+epoch = 14
 layer = 15
 metric = ["trajectory", 0]
 metric_types = ["x_pan", "y_pan", "x_focus_pan_0", "y_focus_pan"]
 model_names = [
     "identity",
-    "moco_control",
-    "moco_CD",
-    "moco_CF",
-    "moco_CDF",
+    
     "barlow_control",
-    "barlow_CD",
-    "barlow_CDF",
-    "barlow_P",
-    "barlow_PF",
+    "barlow_v2"
 ]
 
 fig, axes = pt.core.subplots(len(model_names), len(metric_types), size=(5,4))
