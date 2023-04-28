@@ -135,10 +135,10 @@ class Model(BarlowTwins):
         
         # criterions
         self.criterions = {
-            'factorize': MSELoss(target_weights=[2.0]).cuda(self.args.gpu),
-            'pos': MSELoss(target_weights=[2.0,2.0]).cuda(self.args.gpu),
-            'scale': MSELoss().cuda(self.args.gpu),
-            'color': MSELoss().cuda(self.args.gpu),
+            'factorize': MSELoss(target_weights=[2.0]).cuda(),
+            'pos': MSELoss(target_weights=[2.0,2.0]).cuda(),
+            'scale': MSELoss().cuda(),
+            'color': MSELoss().cuda(),
         }
         
     def forward(self, y1, y2, **kwargs):
