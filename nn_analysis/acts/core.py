@@ -41,9 +41,9 @@ def compute_sizes(model, layer_names, dataset, device='cpu'):
         with torch.no_grad():
             
             #model = model.module
-            model(images)
+            #model(images)
             #model.custom_resnet(images)
-            #model.backbone(images)
+            model.backbone(images)
     finally:
         remove_hooks(handles)
         
@@ -87,7 +87,7 @@ def save_dataset(filename, path, model, layer_names, dataset, device='cpu', batc
         create_group_datasets(grp, model, layer_names, sizes, meta_dicts=meta_dicts, dtype=dtype)
     
     #  --
-    model = model.module
+    #model = model.module
     #--
     model.eval()
     
