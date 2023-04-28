@@ -99,15 +99,15 @@ fig.tight_layout()
 plt.show()
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/plot3.png')"""
 
-epoch = 14
-layer = 15
+epoch = 16
+layer = 0
 metric = ["trajectory", 0]
 metric_types = ["x_pan", "y_pan", "x_focus_pan_0", "y_focus_pan"]
 model_names = [
     "identity",
-    
-    "barlow_control",
-    "barlow_v2"
+    "barlow_v1_inj"
+    #"barlow_control",
+    #"barlow_v2"
 ]
 
 fig, axes = pt.core.subplots(len(model_names), len(metric_types), size=(5,4))
