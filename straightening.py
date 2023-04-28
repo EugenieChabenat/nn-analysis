@@ -12,22 +12,13 @@ def load_data(metric, model_name, epoch, layers):
     else:
         return me.utils.load_data(model_name, epoch, layer_names, metric[0], metric[1])
       
-"""epoch = 49
+epoch = 29
 layers = np.arange(17)
 metric = ["curve", 1]
 metric_types = ["x_cam_trans", "y_cam_trans", "x_cam_rot", "y_cam_rot"]
 # metric_types = ["x_cam_rot", "x_focus_pan", "x_cam_pan"]
 model_names = [
-    "moco_control",
-    "moco_CD",
-    "moco_CF",
-    "moco_CDF",
-    "barlow_control",
-    "barlow_CD",
-    "barlow_CF",
-    "barlow_CDF",
-    "barlow_P",
-    "barlow_PF",
+    "barlow_v1_inj",
 ]
 
 fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
@@ -46,7 +37,7 @@ plt.show()
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/plot1.png')
 
 
-epoch = 82
+"""epoch = 82
 layers = slice(None)
 metric = ["curve",1]
 metric_types = ["x_cam_trans", "y_cam_trans", "x_cam_rot", "y_cam_rot"]
@@ -110,7 +101,7 @@ model_names = [
     #"barlow_v2"
 ]
 
-fig, axes = pt.core.subplots(len(model_names), len(metric_types), size=(5,4))
+"""fig, axes = pt.core.subplots(len(model_names), len(metric_types), size=(5,4))
 for i, model_name in enumerate(model_names):
     for j, metric_type in enumerate(metric_types):
         if model_name == 'identity':
@@ -127,4 +118,4 @@ fig.supylabel('PC 2')
 fig.tight_layout()
 
 plt.savefig(f'/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/figures/{epoch}_PCs_layer_{layer}.pdf')
-plt.show()
+plt.show()"""
