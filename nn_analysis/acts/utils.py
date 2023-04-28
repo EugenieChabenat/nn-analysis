@@ -15,11 +15,12 @@ DEFAULT_SAVE_LOC = 'save_acts_path' # If you change this, make sure to also move
 
 def _get_data_path(model_name, epoch, acts_name, version, layer_name=None, data_type='y'):
     # print(acts_configs[acts_name])
+    use_epoch = False 
     if "save_loc" in acts_configs[acts_name][f"{version:02d}"]["kwargs"]:
         load_loc = acts_configs[acts_name][f"{version:02d}"]["kwargs"]["save_loc"]
     else:
         load_loc = DEFAULT_SAVE_LOC
-    if epoch is not None:
+    if epoch is not None and use_epoch:
         path = f"{env_config[load_loc]}/{acts_name}/{version:02d}/{model_name}/{epoch:04d}"
     else:
         path = f"{env_config[load_loc]}/{acts_name}/{version:02d}/{model_name}"
