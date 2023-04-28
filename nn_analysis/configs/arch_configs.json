@@ -56,7 +56,7 @@
             "backbone.layer4.0",
             "backbone.layer4.1",
             "backbone.layer4.2",
-            "avgpool",
+            "backbone.avgpool",
             "projector",
             "batch_norm"
         ]
