@@ -69,7 +69,7 @@
     
     "barlow_v1_inj": {
         "arch": "resnet50",
-        "path": "checkpoints/barlowtwins/factorize_avgpool_equivariant_all_bn_inj_v1"
+        "path": "checkpoints/barlowtwins/factorize_avgpool_equivariant_all_bn_injection_v1"
     }
     
 }
