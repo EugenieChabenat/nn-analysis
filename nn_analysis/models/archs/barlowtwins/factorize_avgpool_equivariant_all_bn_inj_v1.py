@@ -321,5 +321,5 @@ class MSELoss(nn.Module):
             return out.matmul(sample_weights)/batch_size
         
 def factorize_avgpool_equivariant_all_bn_inj_v1(projector='8192-8192-8192', batch_size=1024, scale_loss=0.024, lambd=0.0051, pos_weight=0.3, scale_weight=200.0, color_weight=150.0, **kwargs):
-  args = Namespace(projector=projector, batch_size=batch_size, scale_loss=scale_loss, lambd=lambd, pos_weight=pos_weight, scale_weight=scale_weight, color_weight=color_weight, injection_site="V1", equivariant_weight = 1.0, factorization_weight= 0.2, queue_size=8192, threshold=0.9,  **kwargs)
+  args = Namespace(projector=projector, batch_size=batch_size, scale_loss=scale_loss, lambd=lambd, pos_weight=pos_weight, scale_weight=scale_weight, color_weight=color_weight, injection_site="V2", equivariant_weight = 1.0, factorization_weight= 0.2, queue_size=8192, threshold=0.9,  **kwargs)
   return Model(args)
