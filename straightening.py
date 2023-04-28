@@ -100,7 +100,7 @@ plt.show()
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/plot3.png')"""
 
 epoch = 29
-layer = 2
+layer = 0
 metric = ["trajectory", 0]
 metric_types = ["x_pan", "y_pan", "x_focus_pan_0", "y_focus_pan"]
 model_names = [
