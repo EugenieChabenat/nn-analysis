@@ -58,7 +58,7 @@
             "backbone.layer4.2",
             "backbone.avgpool",
             "projector",
-            "bn"
+            "batch_norm"
         ]
     },
     "equivariant_all_bn": {
