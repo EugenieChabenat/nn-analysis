@@ -126,5 +126,5 @@ fig.supxlabel('PC 1')
 fig.supylabel('PC 2')
 fig.tight_layout()
 
-plt.savefig(f'/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/figures/PCs_layer_{layer}.pdf')
+plt.savefig(f'/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/figures/{epoch}_PCs_layer_{layer}.pdf')
 plt.show()
