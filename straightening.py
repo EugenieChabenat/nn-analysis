@@ -19,6 +19,8 @@ metric_types = ["x_cam_trans", "y_cam_trans", "x_cam_rot", "y_cam_rot"]
 # metric_types = ["x_cam_rot", "x_focus_pan", "x_cam_pan"]
 model_names = [
     "barlow_v1_inj",
+    "identity", 
+    "barlow_v2_inj"
 ]
 
 fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
@@ -34,7 +36,7 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/plot1.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/curvature_1.png')
 
 
 """epoch = 82
@@ -91,17 +93,17 @@ plt.show()
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/plot3.png')"""
 
 epoch = 29
-layer = 1
+layer = 16
 metric = ["trajectory", 0]
 metric_types = ["x_pan", "y_pan", "x_focus_pan_0", "y_focus_pan"]
 model_names = [
-    #"identity",
-    "barlow_v1_inj"
+    "identity",
+    "barlow_v1_inj", 
+    "barlow_v2_inj"
     #"barlow_control",
     #"barlow_v2"
 ]
-
-"""fig, axes = pt.core.subplots(len(model_names), len(metric_types), size=(5,4))
+fig, axes = pt.core.subplots(len(model_names), len(metric_types), size=(5,4))
 for i, model_name in enumerate(model_names):
     for j, metric_type in enumerate(metric_types):
         if model_name == 'identity':
@@ -117,5 +119,5 @@ fig.supxlabel('PC 1')
 fig.supylabel('PC 2')
 fig.tight_layout()
 
-plt.savefig(f'/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/figures/{epoch}_PCs_layer_{layer}.pdf')
-plt.show()"""
+plt.savefig(f'/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/figures/{epoch}_PCs_layer_{layer}_1.pdf')
+plt.show()
