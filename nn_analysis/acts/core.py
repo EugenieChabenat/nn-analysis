@@ -40,10 +40,10 @@ def compute_sizes(model, layer_names, dataset, device='cpu'):
         model.eval()
         with torch.no_grad():
             
-            model = model.module
-            #model(images)
+            #model = model.module
+            model(images)
             #model.custom_resnet(images)
-            model.backbone(images)
+            #model.backbone(images)
     finally:
         remove_hooks(handles)
         
