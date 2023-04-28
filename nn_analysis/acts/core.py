@@ -42,8 +42,8 @@ def compute_sizes(model, layer_names, dataset, device='cpu'):
             
             model = model.module
             #model(images)
-            model.custom_resnet(images)
-            #model.backbone(images)
+            #model.custom_resnet(images)
+            model.backbone(images)
     finally:
         remove_hooks(handles)
         
