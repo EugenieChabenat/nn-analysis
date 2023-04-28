@@ -58,7 +58,7 @@ def main(model_name, layers, acts_name, version, epoch=None, overwrite=False, de
     
     Model = importlib.import_module('.' + args.name, 'models').Model
     # --- 
-    layers = [15]
+    layers = [0, 1, 2, 3, 16]
     arch = model_configs[model_name]['arch']
     layer_names = [arch_configs[arch]['layer_names'][layer] for layer in layers]
     acts_config = acts_configs[acts_name][f"{version:02d}"]
