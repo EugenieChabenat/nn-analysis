@@ -42,7 +42,7 @@ def main(model_name, layers, metric_name, version, epoch=None, overwrite=False, 
 if __name__ == '__main__':
     print("Started main_analyze.py...")
     parser = argparse.ArgumentParser(description='Analyze activations')
-    parser.add_argument('--model_name', default= "barlow_v2",  type=str,
+    parser.add_argument('--model_name', default= "barlow_v1_inj",  type=str,
                         help='specify the model of which activations are saved')
     parser.add_argument('--layers', default = 0, type=int, nargs='+',
                         help='specify the layers of which activations are saved')
@@ -51,7 +51,7 @@ if __name__ == '__main__':
     parser.add_argument('--version', default = 0, type=int,
                         help='Version number. Error will be raised if the result for the specified version' \
                              'already exists and --overwrite flag is not provided.')
-    parser.add_argument('--epoch', default = 14, type=int,
+    parser.add_argument('--epoch', default = 16, type=int,
                         help='specify the epoch of the model (default: None)')
     parser.add_argument('--overwrite', action='store_true',
                         help='Allows overwriting specified version.')
