@@ -58,8 +58,10 @@ def off_diagonal(x):
 
 def _get_custom_model(arch, path=None, extract_method=None, model_kwargs={}, device='cpu', state_dict_key='state_dict'):
     archs_dict = {k: v for k, v in archs.__dict__.items() if not k.startswith("__") and callable(v) and k.islower()}
-        
+    arch = 'factorize_avgpool_equivariant_all_bn_inj_v1'
     model = archs_dict[arch](**model_kwargs)
+    
+    print('arch: ', arch)
      
     
     if arch == 'identity':
@@ -76,23 +78,18 @@ def _get_custom_model(arch, path=None, extract_method=None, model_kwargs={}, dev
     with open(path+"/checkpoint.pth", 'rb') as f:
         #state_dict = torch.load(f, map_location="cpu")[state_dict_key]
         # --
-        model = torch.nn.DataParallel(model).cuda()
+        """model = torch.nn.DataParallel(model).cuda()
         ckpt = torch.load(f, map_location="cpu")
         print('cktp: ', ckpt.keys())
         #state_dict = model.load_state_dict(ckpt["model"])
         state_dict = ckpt["model"]
-        new_state_dict = {}
+        new_state_dict = {}"""
         
-        """prefix = 'module'
-        for k, v in state_dict.items():
-            assert k.startswith(prefix)
-            new_state_dict[k[len(prefix)+1:]] = v
-
-        state_dict = new_state_dict"""
+        
         
         #state_dict = model.load_state_dict(ckpt["model"])
         #state_dict = model.load_state_dict(state_d)
-        print(state_dict)# = state_dict.module
+        print(state_dict)
         # -- 
         
     if extract_method is None:
