@@ -104,7 +104,7 @@ layer = 0
 metric = ["trajectory", 0]
 metric_types = ["x_pan", "y_pan", "x_focus_pan_0", "y_focus_pan"]
 model_names = [
-    "identity",
+    #"identity",
     "barlow_v1_inj"
     #"barlow_control",
     #"barlow_v2"
