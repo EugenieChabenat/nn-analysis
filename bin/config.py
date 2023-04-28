@@ -17,7 +17,7 @@
     },
     {
         "model_names": [
-            "barlow_v1_inj", 
+            "barlow_v2_inj", 
             
         ],
         "epochs": [19],
