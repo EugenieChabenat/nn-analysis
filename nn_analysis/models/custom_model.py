@@ -84,7 +84,7 @@ def _get_custom_model(arch, path=None, extract_method=None, model_kwargs={}, dev
         #state_dict = model.load_state_dict(ckpt["model"])
         state_dict = ckpt["model"]
         #new_state_dict = {}
-        model = model.module
+        #model = model.module
         
         
         
