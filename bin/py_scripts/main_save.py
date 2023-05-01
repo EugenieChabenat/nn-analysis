@@ -58,9 +58,9 @@ def main(model_name, layers, acts_name, version, epoch=None, overwrite=False, de
     
     Model = importlib.import_module('.' + args.name, 'models').Model
     # --- 
-    layers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+    #layers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
     #layers = [0, 1, 2, 3, 4, 5, 6, 16]
-    #layers = [0, 1, 2, 16]
+    layers = [0, 1, 2, 16]
     #layers = [0]
     arch = model_configs[model_name]['arch']
     layer_names = [arch_configs[arch]['layer_names'][layer] for layer in layers]
@@ -114,7 +114,7 @@ def main(model_name, layers, acts_name, version, epoch=None, overwrite=False, de
 if __name__ == '__main__':
     print("Started main_save.py...")
     parser = argparse.ArgumentParser(description='Save activations')
-    parser.add_argument('--model_name', default = "barlow_control", type=str,
+    parser.add_argument('--model_name', default = "barlow_v1_equi", type=str,
                         help='Specify the model of which activations are saved')
     parser.add_argument('--layers',default= 2, type=int, nargs='+',
                         help='Specify the layers of which activations are saved')
