@@ -22,10 +22,7 @@
         "path": "checkpoints/moco/moco_v1_factorize_cam_color_decode2_v2",
         "extract_method": "moco"
     },
-    "barlow_control": {
-        "arch": "resnet50",
-        "path": "checkpoints/barlowtwins/original_v2"
-    },
+
     "barlow_CD": {
         "arch": "resnet50",
         "path": "checkpoints/barlowtwins/decode_avgpool_v1"
@@ -74,6 +71,10 @@
     "barlow_v2_inj": {
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/factorize_avgpool_equivariant_all_bn_injection_v2"
+    }, 
+        "barlow_control": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/original_v2"
     }
     
     
