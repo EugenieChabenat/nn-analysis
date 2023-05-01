@@ -76,15 +76,15 @@ def _get_custom_model(arch, path=None, extract_method=None, model_kwargs={}, dev
         
     print(path+"/checkpoint.pth")
     with open(path+"/checkpoint.pth", 'rb') as f:
-        #state_dict = torch.load(f, map_location="cpu")[state_dict_key]
+        state_dict = torch.load(f, map_location="cpu")[state_dict_key]
         # --
-        model = torch.nn.DataParallel(model).cuda()
+        """model = torch.nn.DataParallel(model).cuda()
         ckpt = torch.load(f, map_location="cpu")
         print('cktp: ', ckpt.keys())
         #state_dict = model.load_state_dict(ckpt["model"])
         state_dict = ckpt["model"]
         #new_state_dict = {}
-        model = model.module
+        model = model.module"""
         
         
         
