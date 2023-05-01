@@ -75,6 +75,10 @@
         "barlow_control": {
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/original_v2"
+    }, 
+        "barlow_v1_equi": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/backbone/equivariant_all_bn_v1_v2"
     }
     
     
