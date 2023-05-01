@@ -86,7 +86,14 @@ def _get_custom_model(arch, path=None, extract_method=None, model_kwargs={}, dev
         #new_state_dict = {}
         #model = model.module
         
+        new_state_dict = {}
         
+        prefix = 'module'
+        for k, v in state_dict.items():
+            assert k.startswith(prefix)
+            new_state_dict[k[len(prefix)+1:]] = v
+
+        state_dict = new_state_dict
         
         #state_dict = model.load_state_dict(ckpt["model"])
         #state_dict = model.load_state_dict(state_d)
