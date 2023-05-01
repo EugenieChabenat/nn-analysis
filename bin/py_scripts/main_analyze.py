@@ -21,7 +21,8 @@ def main(model_name, layers, metric_name, version, epoch=None, overwrite=False, 
     print('metric: ', metric)
     print('layer names: ', layer_names)
     #layers = [0, 1, 2, 3, 4, 5, 6, 16]
-    layers = [0, 1, 2, 16]
+    #layers = [0, 1, 2, 16]
+    layers = [0]
     for layer in layers:
         layer_name = layer_names[layer]
         
@@ -43,11 +44,11 @@ def main(model_name, layers, metric_name, version, epoch=None, overwrite=False, 
 if __name__ == '__main__':
     print("Started main_analyze.py...")
     parser = argparse.ArgumentParser(description='Analyze activations')
-    parser.add_argument('--model_name', default= "barlow_v1_inj",  type=str,
+    parser.add_argument('--model_name', default= "identity",  type=str,
                         help='specify the model of which activations are saved')
     parser.add_argument('--layers', default = 0, type=int, nargs='+',
                         help='specify the layers of which activations are saved')
-    parser.add_argument('--metric_name', default = "sparsity", type=str,
+    parser.add_argument('--metric_name', default = "curve", type=str,
                         help='specify what activations are saved')
     parser.add_argument('--version', default = 0, type=int,
                         help='Version number. Error will be raised if the result for the specified version' \
