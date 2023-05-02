@@ -32,9 +32,9 @@ for i, metric_type in enumerate(metric_types):
         print('model: ', model_name)
         print('layer: ', layers)
         
-        print('keys: ', load_data(metric, model_name, epoch, one_layer).keys())
+        #print('keys: ', load_data(metric, model_name, epoch, one_layer).keys())
         
-        scores = [load_data(metric, model_name, epoch, layer) for layer in layers]
+        scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
         axes[0,i].plot(layers, scores, label=model_name)
     #scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
     #axes[0,i].plot(layers, scores, label='identity')
@@ -69,7 +69,7 @@ for i, metric_type in enumerate(metric_types):
         
         #print('keys: ', load_data(metric, model_name, epoch, one_layer).keys())
         
-        scores = [load_data(metric, model_name, epoch, layer) for layer in layers]
+        scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
         axes[0,i].plot(layers, scores, label=model_name)
     #scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
     #axes[0,i].plot(layers, scores, label='identity')
