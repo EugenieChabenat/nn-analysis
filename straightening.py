@@ -20,10 +20,10 @@ metric_types = ["x_cam_trans", "y_cam_trans", "x_cam_rot", "y_cam_rot"]
 model_names = [
     #"barlow_v1_inj",
     #"identity", 
-    #"barlow_v2_inj", 
+    "barlow_v2_inj", 
     
     "barlow_control", 
-    "barlow_v1_equi", 
+    #"barlow_v1_equi", 
     "barlow_v3_equi"
 ]
 
