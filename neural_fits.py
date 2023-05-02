@@ -39,7 +39,7 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/new_curvature_1.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/neural_fits/plot1.png')
 
 
 """epoch = 82
@@ -95,7 +95,7 @@ fig.tight_layout()
 plt.show()
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/plot3.png')"""
 
-epoch = 29
+"""epoch = 29
 layer = 16
 metric = ["neural_fits", 0]
 metric_types = ["hvm", "rust"]
@@ -123,4 +123,4 @@ fig.supylabel('PC 2')
 fig.tight_layout()
 
 plt.savefig(f'/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/figures/{epoch}_PCs_layer_{layer}_1.pdf')
-plt.show()
+plt.show()"""
