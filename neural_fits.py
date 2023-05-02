@@ -14,6 +14,7 @@ def load_data(metric, model_name, epoch, layers):
       
 epoch = 29
 layers = np.arange(2)
+one_layer = 1 
 metric = ["neural_fits", 0]
 metric_types = ["hvm", "rust"]
 # metric_types = ["x_cam_rot", "x_focus_pan", "x_cam_pan"]
@@ -29,6 +30,9 @@ for i, metric_type in enumerate(metric_types):
     for model_name in model_names:
         print('model: ', model_name)
         print('layer: ', layers)
+        
+        print('keys: ', load_data(metric, model_name, epoch, one_layer).keys())
+        
         scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
         axes[0,i].plot(layers, scores, label=model_name)
     scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
