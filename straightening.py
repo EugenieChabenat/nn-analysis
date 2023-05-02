@@ -14,7 +14,7 @@ def load_data(metric, model_name, epoch, layers):
       
 epoch = 29
 #layers = np.arange(16)
-layers = 16 
+layers = [16]
 metric = ["curve", 1]
 metric_types = ["x_cam_trans", "y_cam_trans", "x_cam_rot", "y_cam_rot"]
 # metric_types = ["x_cam_rot", "x_focus_pan", "x_cam_pan"]
