@@ -14,7 +14,7 @@ def load_data(metric, model_name, epoch, layers):
       
 epoch = 29
 layers = np.arange(2)
-one_layer = 1 
+layers =[16]
 metric = ["neural_fits", 0]
 metric_types = ['hvm-V4', 'hvm-IT', 'rust-V4', 'rust-IT']
 # metric_types = ["x_cam_rot", "x_focus_pan", "x_cam_pan"]
