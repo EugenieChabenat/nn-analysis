@@ -58,7 +58,7 @@ def off_diagonal(x):
 
 def _get_custom_model(arch, path=None, extract_method=None, model_kwargs={}, device='cpu', state_dict_key='state_dict'):
     archs_dict = {k: v for k, v in archs.__dict__.items() if not k.startswith("__") and callable(v) and k.islower()}
-    #arch = 'factorize_avgpool_equivariant_all_bn_inj_v1'
+    arch = 'factorize_avgpool_equivariant_all_bn_inj_v1'
     model = archs_dict[arch](**model_kwargs)
     
     print('arch: ', arch)
