@@ -22,12 +22,16 @@ metric_types = ['ccg_r2-cam_pos_x', 'parallelism-cam_pos_x', 'ccg_r2-cam_pos_y',
                 'ccg_r2-contrast', 'parallelism-contrast', 'ccg_r2-saturation', 'parallelism-saturation', 'ccg_r2-hue', 
                 'parallelism-hue', 'ccg_r2-cam_pos',
                 'parallelism-cam_pos', 'ccg_r2-color', 'parallelism-color', 'ccg_r2-lighting', 'parallelism-lighting']
+
 model_names = [
     #"barlow_v1_inj",
     #"identity", 
     "barlow_v2_inj", 
     "barlow_control"
 ]
+metric_types = ['ccg_r2-cam_pos_x', 'parallelism-cam_pos_x', 
+                'ccg_r2-cam_pos_y', 'parallelism-cam_pos_y', 
+                'ccg_r2-cam_scale', 'parallelism-cam_scale'] 
 
 fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
 for i, metric_type in enumerate(metric_types):
@@ -47,9 +51,62 @@ fig.supxlabel('layers')
 fig.supylabel('generalize')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/generalize/plot1.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/generalize/1 - cam pos and scale .png')
 
-# -- 
+metric_types = ['ccg_r2-brightness', 'parallelism-brightness', 
+                'ccg_r2-contrast', 'parallelism-contrast', 
+                'ccg_r2-saturation', 'parallelism-saturation'] 
+
+
+fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
+for i, metric_type in enumerate(metric_types):
+    for model_name in model_names:
+        print('model: ', model_name)
+        print('layer: ', layers)
+        
+        #print('keys: ', load_data(metric, model_name, epoch, one_layer).keys())
+        
+        scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
+        axes[0,i].plot(layers, scores, label=model_name)
+    #scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
+    #axes[0,i].plot(layers, scores, label='identity')
+    axes[0,i].set_title(metric_type)
+    axes[0,i].legend()
+fig.supxlabel('layers')
+fig.supylabel('generalize')
+fig.tight_layout()
+plt.show()
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/generalize/1 - brightness contrast and saturation .png')
+                
+metric_types = ['ccg_r2-hue', 'parallelism-hue', 
+                'ccg_r2-cam_pos','parallelism-cam_pos', 
+                'ccg_r2-color', 'parallelism-color', 
+                'ccg_r2-lighting', 'parallelism-lighting']
+
+
+fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
+for i, metric_type in enumerate(metric_types):
+    for model_name in model_names:
+        print('model: ', model_name)
+        print('layer: ', layers)
+        
+        #print('keys: ', load_data(metric, model_name, epoch, one_layer).keys())
+        
+        scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
+        axes[0,i].plot(layers, scores, label=model_name)
+    #scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
+    #axes[0,i].plot(layers, scores, label='identity')
+    axes[0,i].set_title(metric_type)
+    axes[0,i].legend()
+fig.supxlabel('layers')
+fig.supylabel('generalize')
+fig.tight_layout()
+plt.show()
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/generalize/1 - hue, cam pos color and lighting.png')
+
+
+
+# -- ---------
 epoch = 29
 layers = np.arange(2)
 layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 16]
@@ -65,6 +122,9 @@ model_names = [
     "barlow_v3_equi", 
     "barlow_control"
 ]
+metric_types = ['ccg_r2-cam_pos_x', 'parallelism-cam_pos_x', 
+                'ccg_r2-cam_pos_y', 'parallelism-cam_pos_y', 
+                'ccg_r2-cam_scale', 'parallelism-cam_scale'] 
 
 fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
 for i, metric_type in enumerate(metric_types):
@@ -84,4 +144,56 @@ fig.supxlabel('layers')
 fig.supylabel('generalize')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/generalize/plot2.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/generalize/2 - cam pos and scale .png')
+
+metric_types = ['ccg_r2-brightness', 'parallelism-brightness', 
+                'ccg_r2-contrast', 'parallelism-contrast', 
+                'ccg_r2-saturation', 'parallelism-saturation'] 
+
+
+fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
+for i, metric_type in enumerate(metric_types):
+    for model_name in model_names:
+        print('model: ', model_name)
+        print('layer: ', layers)
+        
+        #print('keys: ', load_data(metric, model_name, epoch, one_layer).keys())
+        
+        scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
+        axes[0,i].plot(layers, scores, label=model_name)
+    #scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
+    #axes[0,i].plot(layers, scores, label='identity')
+    axes[0,i].set_title(metric_type)
+    axes[0,i].legend()
+fig.supxlabel('layers')
+fig.supylabel('generalize')
+fig.tight_layout()
+plt.show()
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/generalize/2 - brightness contrast and saturation .png')
+
+metric_types = ['ccg_r2-hue', 'parallelism-hue', 
+                'ccg_r2-cam_pos','parallelism-cam_pos', 
+                'ccg_r2-color', 'parallelism-color', 
+                'ccg_r2-lighting', 'parallelism-lighting']
+
+
+fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
+for i, metric_type in enumerate(metric_types):
+    for model_name in model_names:
+        print('model: ', model_name)
+        print('layer: ', layers)
+        
+        #print('keys: ', load_data(metric, model_name, epoch, one_layer).keys())
+        
+        scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
+        axes[0,i].plot(layers, scores, label=model_name)
+    #scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
+    #axes[0,i].plot(layers, scores, label='identity')
+    axes[0,i].set_title(metric_type)
+    axes[0,i].legend()
+fig.supxlabel('layers')
+fig.supylabel('generalize')
+fig.tight_layout()
+plt.show()
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/generalize/2 - hue, cam pos color and lighting.png')
+
