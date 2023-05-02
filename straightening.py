@@ -101,8 +101,8 @@ metric = ["trajectory", 0]
 metric_types = ["x_pan", "y_pan", "x_focus_pan_0", "y_focus_pan"]
 model_names = [
     #"identity",
-    "barlow_v1_inj", 
-    #"barlow_v2_inj", 
+    #"barlow_v1_inj", 
+    "barlow_v2_inj", 
     "barlow_control"
     #"barlow_v2"
 ]
@@ -122,5 +122,5 @@ fig.supxlabel('PC 1')
 fig.supylabel('PC 2')
 fig.tight_layout()
 
-plt.savefig(f'/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/figures/{epoch}_PCs_layer_{layer}_1.pdf')
+plt.savefig(f'/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/figures/--{epoch}_PCs_layer_{layer}_1.pdf')
 plt.show()
