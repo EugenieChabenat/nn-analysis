@@ -17,7 +17,9 @@ layers = np.arange(2)
 layers =[0, 1, 2, 3, 4, 5, 16]
 one_layer = 0
 metric = ["decode", 0]
-metric_types = ['hvm-V4', 'hvm-IT', 'rust-V4', 'rust-IT']
+metric_types = ['obj_class', 'cam_pos_x', 'cam_pos_y', 'cam_scale', 'brightness', 'contrast', 'saturation', 'hue', 
+                'obj_pos_x', 'obj_pos_y', 'obj_scale', 
+                'obj_pose_x', 'obj_pose_y', 'obj_pose_z', 'cam_pos', 'obj_pos', 'color', 'lighting', 'obj_pose']
 # metric_types = ["x_cam_rot", "x_focus_pan", "x_cam_pan"]
 model_names = [
     #"barlow_v1_inj",
@@ -32,12 +34,12 @@ for i, metric_type in enumerate(metric_types):
         print('model: ', model_name)
         print('layer: ', layers)
         
-        print('keys: ', load_data(metric, model_name, epoch, one_layer).keys())
+        #print('keys: ', load_data(metric, model_name, epoch, one_layer).keys())
         
         scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
         axes[0,i].plot(layers, scores, label=model_name)
-    #scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
-    #axes[0,i].plot(layers, scores, label='identity')
+    scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
+    axes[0,i].plot(layers, scores, label='identity')
     axes[0,i].set_title(metric_type)
     axes[0,i].legend()
 fig.supxlabel('layers')
