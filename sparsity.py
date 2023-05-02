@@ -17,7 +17,7 @@ layers = np.arange(2)
 layers =[0, 1, 2, 3, 4, 5]
 one_layer = 0
 metric = ["sparsity", 0]
-metric_types = ['hvm-V4', 'hvm-IT', 'rust-V4', 'rust-IT']
+metric_types = ['population', 'trial']
 
 model_names = [
     #"barlow_v1_inj",
@@ -55,7 +55,7 @@ layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 16]
 #layers =[0, 1, 2, 3,  16]
 
 metric = ["sparsity", 0]
-metric_types = ['hvm-V4', 'hvm-IT', 'rust-V4', 'rust-IT']
+metric_types = ['population', 'trial']
 model_names = [
     #"barlow_v1_inj",
     #"identity", 
