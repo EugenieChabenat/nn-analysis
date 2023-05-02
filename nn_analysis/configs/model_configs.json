@@ -63,7 +63,6 @@
         "arch": "equivariant_all_bn_v2",
         "path": "checkpoints/barlowtwins/equivariant_all_bn_v2_v2"
     },
-    
     "barlow_v1_inj": {
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/factorize_avgpool_equivariant_all_bn_injection_v1"
@@ -83,6 +82,10 @@
         "barlow_v3_equi": {
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/backbone/equivariant_all_bn_v3_v2"
+    },
+    "barlow_v1_inj_b": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/backbone/factorize_avgpool_equivariant_all_bn_injection_v1"
     }
     
     
