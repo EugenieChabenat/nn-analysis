@@ -136,7 +136,8 @@ results_file_config = {
     'factorization': ['data'],
     'dimensionality': ['data'],
     'sparsity': ['data'],
-    'neural_fits': ['data'],
+#'neural_fits': ['data'],
+    'neural_fits': [''],
     'rdm_neural_fits': ['data'],
     'rdm_neural_fits_2': ['data'],
 }
