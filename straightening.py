@@ -22,7 +22,9 @@ model_names = [
     "identity", 
     "barlow_v2_inj", 
     
-    "barlow_control"
+    "barlow_control", 
+    "barlow_v1_equi", 
+    "barlow_v3_equi"
 ]
 
 fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
@@ -40,7 +42,7 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/new_curvature_1.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/_new_curvature_1.png')
 
 
 """epoch = 82
