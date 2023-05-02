@@ -102,7 +102,7 @@ metric_types = ["x_pan", "y_pan", "x_focus_pan_0", "y_focus_pan"]
 model_names = [
     #"identity",
     "barlow_v1_inj", 
-    "barlow_v2_inj", 
+    #"barlow_v2_inj", 
     "barlow_control"
     #"barlow_v2"
 ]
