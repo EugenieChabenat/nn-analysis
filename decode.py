@@ -15,6 +15,7 @@ def load_data(metric, model_name, epoch, layers):
 epoch = 29
 layers = np.arange(2)
 layers =[0, 1, 2, 3, 4, 5, 16]
+one_layer = 0
 metric = ["decode", 0]
 metric_types = ['hvm-V4', 'hvm-IT', 'rust-V4', 'rust-IT']
 # metric_types = ["x_cam_rot", "x_focus_pan", "x_cam_pan"]
