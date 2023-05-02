@@ -27,6 +27,8 @@ model_names = [
 fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
 for i, metric_type in enumerate(metric_types):
     for model_name in model_names:
+        print('model: ', model_name)
+        print('layer: ', layer)
         scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
         axes[0,i].plot(layers, scores, label=model_name)
     scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
