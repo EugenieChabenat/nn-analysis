@@ -14,8 +14,8 @@ def load_data(metric, model_name, epoch, layers):
       
 epoch = 29
 layers = np.arange(12)
-#layers = [0, 1, 16]
-metric = ["curve", 1]
+layers = [0, 1, 3]
+#metric = ["curve", 1]
 metric_types = ["x_cam_trans", "y_cam_trans", "x_cam_rot", "y_cam_rot"]
 # metric_types = ["x_cam_rot", "x_focus_pan", "x_cam_pan"]
 model_names = [
@@ -24,8 +24,8 @@ model_names = [
     #"barlow_v2_inj", 
     
     "barlow_control", 
-    #"barlow_v1_equi", 
-    "barlow_v3_equi"
+    "barlow_v1_equi", 
+    #"barlow_v3_equi"
 ]
 
 fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
