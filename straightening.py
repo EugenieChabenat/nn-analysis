@@ -13,7 +13,7 @@ def load_data(metric, model_name, epoch, layers):
         return me.utils.load_data(model_name, epoch, layer_names, metric[0], metric[1])
       
 epoch = 29
-layers = np.arange(16)
+layers = np.arange(12)
 #layers = [0, 1, 16]
 metric = ["curve", 1]
 metric_types = ["x_cam_trans", "y_cam_trans", "x_cam_rot", "y_cam_rot"]
