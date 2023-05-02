@@ -10,6 +10,7 @@ import config
 __all__ = ['query_results', 'save_results', 'load_results']
 
 def _query_results(filename, where, keys, table='data', order=None, suppress=False, atol=2.5e-3, **kwargs):
+    table = None
     """
     For python version >= 3.6, if order = None then the dimensions of the results array will follow the order
     of the keyword arguments
