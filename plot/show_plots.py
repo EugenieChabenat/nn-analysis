@@ -7,6 +7,7 @@ import constants
 
 config.results_file = constants.RESULTS_PATH
 
+print('config.results_file: ', config.results_file)
 
 def save_results(model_names, metrics, layers, epochs, filename):
     results = {}
