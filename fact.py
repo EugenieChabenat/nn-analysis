@@ -17,7 +17,8 @@ layers = np.arange(2)
 layers =[0, 1, 2, 3, 4, 5]
 one_layer = 0
 metric = ["fact", 0]
-metric_types = ['']
+metric_types = ['ss_inv-obj_motion', 'fact-obj_motion', 'inv-obj_motion', 'ss_inv-background', 
+                'fact-background', 'inv-background', 'ss_inv-crop', 'fact-crop', 'inv-crop', 'ss_inv-color', 'fact-color', 'inv-color']
 model_names = [
     #"barlow_v1_inj",
     #"identity", 
@@ -49,8 +50,10 @@ plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/plot1.p
 epoch = 29
 layers = np.arange(2)
 layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 16]
-metric = ["dimensionality", 0]
-metric_types = ['']
+metric = ["fact", 0]
+metric_types = ['ss_inv-obj_motion', 'fact-obj_motion', 'inv-obj_motion', 'ss_inv-background', 
+                'fact-background', 'inv-background', 'ss_inv-crop', 'fact-crop', 'inv-crop', 'ss_inv-color', 'fact-color', 'inv-color']
+
 model_names = [
     #"barlow_v1_inj",
     #"identity", 
