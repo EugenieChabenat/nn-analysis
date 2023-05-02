@@ -17,10 +17,9 @@ layers = np.arange(2)
 layers =[0, 1, 2, 3, 4, 5]
 one_layer = 0
 metric = ["decode", 0]
-metric_types = ['obj_class', 'cam_pos_x', 'cam_pos_y', 'cam_scale', 'brightness', 'contrast', 'saturation', 'hue', 
-                'obj_pos_x', 'obj_pos_y', 'obj_scale', 
-                'obj_pose_x', 'obj_pose_y', 'obj_pose_z', 'cam_pos', 'obj_pos', 'color', 'lighting', 'obj_pose']
-# metric_types = ["x_cam_rot", "x_focus_pan", "x_cam_pan"]
+metric_types = ['obj_class', 'cam_pos_x', 'cam_pos_y', 'cam_scale', #'brightness', 'contrast', 'saturation', 'hue', 
+                'obj_pos_x', 'obj_pos_y', 'obj_scale']#, 
+                #'obj_pose_x', 'obj_pose_y', 'obj_pose_z', 'cam_pos', 'obj_pos', 'color', 'lighting', 'obj_pose']
 model_names = [
     #"barlow_v1_inj",
     #"identity", 
@@ -52,9 +51,10 @@ plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/plot1
 epoch = 29
 layers = np.arange(2)
 layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 16]
-metric = ["neural_fits", 0]
-metric_types = ['hvm-V4', 'hvm-IT', 'rust-V4', 'rust-IT']
-# metric_types = ["x_cam_rot", "x_focus_pan", "x_cam_pan"]
+metric = ["decode", 0]
+metric_types = ['obj_class', 'cam_pos_x', 'cam_pos_y', 'cam_scale', #'brightness', 'contrast', 'saturation', 'hue', 
+                'obj_pos_x', 'obj_pos_y', 'obj_scale']#, 
+                #'obj_pose_x', 'obj_pose_y', 'obj_pose_z', 'cam_pos', 'obj_pos', 'color', 'lighting', 'obj_pose']# metric_types = ["x_cam_rot", "x_focus_pan", "x_cam_pan"]
 model_names = [
     #"barlow_v1_inj",
     #"identity", 
