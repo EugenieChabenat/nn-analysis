@@ -14,7 +14,7 @@ def load_data(metric, model_name, epoch, layers):
       
 epoch = 29
 layers = np.arange(2)
-layers =[0, 1, 2, 3, 4, 5, 16]
+layers =[0, 1, 2, 3, 4, 5]
 one_layer = 0
 metric = ["decode", 0]
 metric_types = ['obj_class', 'cam_pos_x', 'cam_pos_y', 'cam_scale', 'brightness', 'contrast', 'saturation', 'hue', 
@@ -46,7 +46,7 @@ fig.supxlabel('layers')
 fig.supylabel('neural fits')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/neural_fits/plot1.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/plot1.png')
 
 # -- 
 epoch = 29
@@ -80,5 +80,5 @@ fig.supxlabel('layers')
 fig.supylabel('neural fits')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/neural_fits/plot2.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/plot2.png')
 
