@@ -23,7 +23,7 @@ def _query_results(filename, where, keys, table='data', order=None, suppress=Fal
     list_kwargs = OrderedDict(list_kwargs)
     
     results = {}
-    
+    filename = '/mnt/smb/locker/issa-locker/users/Eugénie/data/results/'
     with tables.open_file(filename, mode='r') as f:
         try:
             table = f.get_node(where, name=table)
