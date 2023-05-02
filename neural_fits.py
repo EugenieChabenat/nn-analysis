@@ -14,12 +14,12 @@ def load_data(metric, model_name, epoch, layers):
       
 epoch = 29
 layers = np.arange(2)
-layers =[16]
+layers =[0, 1, 2, 3, 4, 5, 16]
 metric = ["neural_fits", 0]
 metric_types = ['hvm-V4', 'hvm-IT', 'rust-V4', 'rust-IT']
 # metric_types = ["x_cam_rot", "x_focus_pan", "x_cam_pan"]
 model_names = [
-    "barlow_v1_inj",
+    #"barlow_v1_inj",
     #"identity", 
     "barlow_v2_inj", 
     "barlow_control"
