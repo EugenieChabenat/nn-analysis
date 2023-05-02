@@ -111,3 +111,12 @@ def grouped_bar_2(ax, x, ys, labels, group_width=1.0, ys_err=None):
     ax.set_xticks(np.arange(len(ys[0]))+(len(ys)/2-0.5)*width)
     ax.set_xticklabels(x, rotation=45, ha='right')
     ax.legend()
+
+    results = plots.filter_nans(plots.load_results('epoch-wise_results.pkl'))
+print(*results.keys(), sep='\n')
+print('----')
+results = plots.filter_nans(plots.load_results('epoch_20_layer-wise_results.pkl'))
+print(*results.keys(), sep='\n')
+print('----')
+results = plots.filter_nans(plots.load_results('50eps_epoch-wise_results.pkl'))
+print(*results.keys(), sep='\n')
