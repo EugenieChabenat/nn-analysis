@@ -17,9 +17,7 @@ layers = np.arange(2)
 layers =[0, 1, 2, 3, 4, 5]
 one_layer = 0
 metric = ["dimensionality", 0]
-metric_types = ['obj_class',  #'brightness', 'contrast', 'saturation', 'hue', 
-                'obj_pos_x']#, 
-                #'obj_pose_x', 'obj_pose_y', 'obj_pose_z', 'cam_pos', 'obj_pos', 'color', 'lighting', 'obj_pose']
+metric_types = ['']
 model_names = [
     #"barlow_v1_inj",
     #"identity", 
@@ -52,9 +50,7 @@ epoch = 29
 layers = np.arange(2)
 layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 16]
 metric = ["dimensionality", 0]
-metric_types = ['obj_class',  #'brightness', 'contrast', 'saturation', 'hue', 
-                'obj_pos_x']#, 
-                #'obj_pose_x', 'obj_pose_y', 'obj_pose_z', 'cam_pos', 'obj_pos', 'color', 'lighting', 'obj_pose']# metric_types = ["x_cam_rot", "x_focus_pan", "x_cam_pan"]
+metric_types = ['']
 model_names = [
     #"barlow_v1_inj",
     #"identity", 
@@ -70,7 +66,7 @@ for i, metric_type in enumerate(metric_types):
         
         #print('keys: ', load_data(metric, model_name, epoch, one_layer).keys())
         
-        scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
+        scores = [load_data(metric, model_name, epoch, layer) for layer in layers]
         axes[0,i].plot(layers, scores, label=model_name)
     #scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
     #axes[0,i].plot(layers, scores, label='identity')
