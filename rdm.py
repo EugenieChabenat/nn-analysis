@@ -17,11 +17,7 @@ layers = np.arange(2)
 layers =[0, 1, 2, 3, 4, 5]
 one_layer = 0
 metric = ["rdm", 0]
-metric_types = ['ccg_r2-cam_pos_x', 'parallelism-cam_pos_x', 'ccg_r2-cam_pos_y', 'parallelism-cam_pos_y', 
-                'ccg_r2-cam_scale', 'parallelism-cam_scale', 'ccg_r2-brightness', 'parallelism-brightness', 
-                'ccg_r2-contrast', 'parallelism-contrast', 'ccg_r2-saturation', 'parallelism-saturation', 'ccg_r2-hue', 
-                'parallelism-hue', 'ccg_r2-cam_pos',
-                'parallelism-cam_pos', 'ccg_r2-color', 'parallelism-color', 'ccg_r2-lighting', 'parallelism-lighting']
+metric_types = ['hvm-V4', 'hvm-IT', 'rust-V4', 'rust-IT']
 
 model_names = [
     #"barlow_v1_inj",
@@ -57,11 +53,7 @@ epoch = 29
 layers = np.arange(2)
 layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 16]
 metric = ["rdm", 0]
-metric_types = ['ccg_r2-cam_pos_x', 'parallelism-cam_pos_x', 'ccg_r2-cam_pos_y', 'parallelism-cam_pos_y', 
-                'ccg_r2-cam_scale', 'parallelism-cam_scale', 'ccg_r2-brightness', 'parallelism-brightness', 
-                'ccg_r2-contrast', 'parallelism-contrast', 'ccg_r2-saturation', 'parallelism-saturation', 'ccg_r2-hue', 
-                'parallelism-hue', 'ccg_r2-cam_pos',
-                'parallelism-cam_pos', 'ccg_r2-color', 'parallelism-color', 'ccg_r2-lighting', 'parallelism-lighting']
+metric_types = ['hvm-V4', 'hvm-IT', 'rust-V4', 'rust-IT']
 model_names = [
     #"barlow_v1_inj",
     #"identity", 
