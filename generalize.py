@@ -17,9 +17,11 @@ layers = np.arange(2)
 layers =[0, 1, 2, 3, 4, 5]
 one_layer = 0
 metric = ["generalize", 0]
-metric_types = ['obj_class', 'cam_pos_x', 'cam_pos_y', 'cam_scale', #'brightness', 'contrast', 'saturation', 'hue', 
-                'obj_pos_x', 'obj_pos_y', 'obj_scale']#, 
-                #'obj_pose_x', 'obj_pose_y', 'obj_pose_z', 'cam_pos', 'obj_pos', 'color', 'lighting', 'obj_pose']
+metric_types = ['ccg_r2-cam_pos_x', 'parallelism-cam_pos_x', 'ccg_r2-cam_pos_y', 'parallelism-cam_pos_y', 
+                'ccg_r2-cam_scale', 'parallelism-cam_scale', 'ccg_r2-brightness', 'parallelism-brightness', 
+                'ccg_r2-contrast', 'parallelism-contrast', 'ccg_r2-saturation', 'parallelism-saturation', 'ccg_r2-hue', 
+                'parallelism-hue', 'ccg_r2-cam_pos',
+                'parallelism-cam_pos', 'ccg_r2-color', 'parallelism-color', 'ccg_r2-lighting', 'parallelism-lighting']
 model_names = [
     #"barlow_v1_inj",
     #"identity", 
@@ -33,7 +35,7 @@ for i, metric_type in enumerate(metric_types):
         print('model: ', model_name)
         print('layer: ', layers)
         
-        print('keys: ', load_data(metric, model_name, epoch, one_layer).keys())
+        #print('keys: ', load_data(metric, model_name, epoch, one_layer).keys())
         
         scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
         axes[0,i].plot(layers, scores, label=model_name)
@@ -52,9 +54,11 @@ epoch = 29
 layers = np.arange(2)
 layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 16]
 metric = ["generalize", 0]
-metric_types = ['obj_class', 'cam_pos_x', 'cam_pos_y', 'cam_scale', #'brightness', 'contrast', 'saturation', 'hue', 
-                'obj_pos_x', 'obj_pos_y', 'obj_scale']#, 
-                #'obj_pose_x', 'obj_pose_y', 'obj_pose_z', 'cam_pos', 'obj_pos', 'color', 'lighting', 'obj_pose']# metric_types = ["x_cam_rot", "x_focus_pan", "x_cam_pan"]
+metric_types = ['ccg_r2-cam_pos_x', 'parallelism-cam_pos_x', 'ccg_r2-cam_pos_y', 'parallelism-cam_pos_y', 
+                'ccg_r2-cam_scale', 'parallelism-cam_scale', 'ccg_r2-brightness', 'parallelism-brightness', 
+                'ccg_r2-contrast', 'parallelism-contrast', 'ccg_r2-saturation', 'parallelism-saturation', 'ccg_r2-hue', 
+                'parallelism-hue', 'ccg_r2-cam_pos',
+                'parallelism-cam_pos', 'ccg_r2-color', 'parallelism-color', 'ccg_r2-lighting', 'parallelism-lighting']
 model_names = [
     #"barlow_v1_inj",
     #"identity", 
