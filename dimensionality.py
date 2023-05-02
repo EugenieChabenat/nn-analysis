@@ -17,8 +17,8 @@ layers = np.arange(2)
 layers =[0, 1, 2, 3, 4, 5]
 one_layer = 0
 metric = ["dimensionality", 0]
-metric_types = ['obj_class', 'cam_pos_x', 'cam_pos_y', 'cam_scale', #'brightness', 'contrast', 'saturation', 'hue', 
-                'obj_pos_x', 'obj_pos_y', 'obj_scale']#, 
+metric_types = ['obj_class',  #'brightness', 'contrast', 'saturation', 'hue', 
+                'obj_pos_x']#, 
                 #'obj_pose_x', 'obj_pose_y', 'obj_pose_z', 'cam_pos', 'obj_pos', 'color', 'lighting', 'obj_pose']
 model_names = [
     #"barlow_v1_inj",
@@ -45,15 +45,15 @@ fig.supxlabel('layers')
 fig.supylabel('neural fits')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/plot1.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/dimensionality/plot1.png')
 
 # -- 
 epoch = 29
 layers = np.arange(2)
 layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 16]
 metric = ["dimensionality", 0]
-metric_types = ['obj_class', 'cam_pos_x', 'cam_pos_y', 'cam_scale', #'brightness', 'contrast', 'saturation', 'hue', 
-                'obj_pos_x', 'obj_pos_y', 'obj_scale']#, 
+metric_types = ['obj_class',  #'brightness', 'contrast', 'saturation', 'hue', 
+                'obj_pos_x']#, 
                 #'obj_pose_x', 'obj_pose_y', 'obj_pose_z', 'cam_pos', 'obj_pos', 'color', 'lighting', 'obj_pose']# metric_types = ["x_cam_rot", "x_focus_pan", "x_cam_pan"]
 model_names = [
     #"barlow_v1_inj",
@@ -80,4 +80,4 @@ fig.supxlabel('layers')
 fig.supylabel('neural fits')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/plot2.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/dimensionality/plot2.png')
