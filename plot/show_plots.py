@@ -30,10 +30,10 @@ model_names = [
 ]
 metrics = config.metrics
 
-layers = np.arange(17)
-epochs = [epoch-1]
-save_results(model_names, metrics, layers, epochs, f'{epoch}eps_layer-wise_results.pkl')
+#layers = np.arange(17)
+#epochs = [epoch-1]
+#save_results(model_names, metrics, layers, epochs, f'{epoch}eps_layer-wise_results.pkl')
 
-layers = [15,16]
+layers = [16]
 epochs = np.arange(epoch)
 save_results(model_names, metrics, layers, epochs, f'{epoch}eps_epoch-wise_results.pkl')
