@@ -14,8 +14,8 @@ def load_data(metric, model_name, epoch, layers):
       
 epoch = 29
 layers = np.arange(2)
-metric = ["curve", 1]
-metric_types = ["x_cam_trans", "y_cam_trans", "x_cam_rot", "y_cam_rot"]
+metric = ["neural_fits", 1]
+metric_types = ["hvm", "rust"]
 # metric_types = ["x_cam_rot", "x_focus_pan", "x_cam_pan"]
 model_names = [
     "barlow_v1_inj",
