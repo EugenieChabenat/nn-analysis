@@ -35,8 +35,8 @@ for i, metric_type in enumerate(metric_types):
         
         scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
         axes[0,i].plot(layers, scores, label=model_name)
-    scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
-    axes[0,i].plot(layers, scores, label='identity')
+    #scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
+    #axes[0,i].plot(layers, scores, label='identity')
     axes[0,i].set_title(metric_type)
     axes[0,i].legend()
 fig.supxlabel('layers')
