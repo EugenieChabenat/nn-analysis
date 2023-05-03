@@ -52,7 +52,7 @@ def main(model_name, layers, acts_name, version, epoch=None, overwrite=False, de
     
     # --
     args, other_argv = parser.parse_known_args()
-    args.name = "equivariant_all_bn_v2"
+    args.name = "barlowtwins"
     other_args = importlib.import_module('.' + args.name, 'models').get_parser().parse_args(other_argv)
     args = argparse.Namespace(**vars(args), **vars(other_args))
     
@@ -124,7 +124,7 @@ def main(model_name, layers, acts_name, version, epoch=None, overwrite=False, de
 if __name__ == '__main__':
     print("Started main_save.py...")
     parser = argparse.ArgumentParser(description='Save activations')
-    parser.add_argument('--model_name', default = "barlow_v1_inj_b", type=str,
+    parser.add_argument('--model_name', default = "barlow_v1_inj", type=str,
                         help='Specify the model of which activations are saved')
     parser.add_argument('--layers',default= 2, type=int, nargs='+',
                         help='Specify the layers of which activations are saved')
