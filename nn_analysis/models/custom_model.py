@@ -80,7 +80,7 @@ def _get_custom_model(arch, path=None, extract_method=None, model_kwargs={}, dev
         # --
         #model = torch.nn.DataParallel(model).cuda()
         ckpt = torch.load(f, map_location="cpu")
-        print('cktp: ', ckpt.keys())
+        #print('cktp: ', ckpt.keys())
         #state_dict = model.load_state_dict(ckpt["model"])
         state_dict = ckpt["model"]
         #new_state_dict = {}
@@ -97,7 +97,8 @@ def _get_custom_model(arch, path=None, extract_method=None, model_kwargs={}, dev
         
         #state_dict = model.load_state_dict(ckpt["model"])
         #state_dict = model.load_state_dict(state_d)
-        print(state_dict)
+        #print(state_dict)
+        print(model)
         # -- 
         
     if extract_method is None:
