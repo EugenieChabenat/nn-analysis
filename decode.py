@@ -52,7 +52,7 @@ for i, metric_type in enumerate(metric_types):
     axes[0,i].set_title(metric_type)
     axes[0,i].legend()
 fig.supxlabel('layers')
-fig.supylabel('neural fits')
+fig.supylabel('decode')
 fig.tight_layout()
 plt.show()
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/FINAL_inj_vs_control_objclass.png')
