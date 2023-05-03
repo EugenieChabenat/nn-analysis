@@ -89,7 +89,7 @@
     },
     "barlow_faces_texture": {
         "arch": "barlowtwins",
-        "path": "checkpoints/barlowtwins/faces/factorize_avgpool_equivariant_all_bn_injection_v5"
+        "path": "checkpoints/barlowtwins/faces/factorize_avgpool_equivariant_all_bn_v5"
     }
     
     
