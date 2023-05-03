@@ -31,10 +31,10 @@ metric = ["curve", 1]
 #                'x_focus_pan_2', 'x_focus_pan_3-detailed', 'x_focus_pan_3', 'x_focus_pan_4-detailed', 'x_focus_pan_4', 'x_focus_pan_5-detailed', 
 #                'x_focus_pan_5', 'x_focus_pan_6-detailed', 'x_focus_pan_6', 'x_focus_pan_7-detailed', 'x_focus_pan_7']
                 
-metric_types = ['x_camel_rotate-detailed', 'x_camel_rotate',
-                'y_camel_rotate-detailed', 'y_camel_rotate']
+#metric_types = ['x_camel_rotate-detailed', 'x_camel_rotate',
+#                'y_camel_rotate-detailed', 'y_camel_rotate']
                 
-#metric_types = ['x_obj_rot', 'y_obj_rot', 'z_cam_trans']
+metric_types = ['x_obj_rot', 'y_obj_rot', 'z_cam_trans']
 
 """metric_types = ['x_pan-detailed', 'x_pan', 'y_pan-detailed', 'y_pan', 'z_pan-detailed', 'z_pan', 'x_focus_pan-detailed', 'x_focus_pan', 
                 'y_focus_pan-detailed', 'y_focus_pan', 'z_focus_pan-detailed', 'z_focus_pan', 'x_cam_pan-detailed', 'x_cam_pan', 'yz_cam_pan-detailed',
