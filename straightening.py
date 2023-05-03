@@ -14,26 +14,26 @@ def load_data(metric, model_name, epoch, layers):
       
 epoch = 29
 #layers = np.arange(12)
-layers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 16]
+layers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
 #layers = [0, 1, 2, 3,  16]
 metric = ["curve", 1]
 metric_types = ["x_cam_trans", "y_cam_trans", "x_cam_rot", "y_cam_rot"]
 
 
-metric_types = ['x_pan-detailed', 'x_pan', 'y_pan-detailed', 'y_pan', 'z_pan-detailed', 'z_pan', 'x_focus_pan-detailed', 'x_focus_pan', 
+"""metric_types = ['x_pan-detailed', 'x_pan', 'y_pan-detailed', 'y_pan', 'z_pan-detailed', 'z_pan', 'x_focus_pan-detailed', 'x_focus_pan', 
                 'y_focus_pan-detailed', 'y_focus_pan', 'z_focus_pan-detailed', 'z_focus_pan', 'x_cam_pan-detailed', 'x_cam_pan', 'yz_cam_pan-detailed',
                 'yz_cam_pan', 'x_focus_pan_0-detailed', 'x_focus_pan_0', 'x_focus_pan_1-detailed', 'x_focus_pan_1', 'x_focus_pan_2-detailed', 
                 'x_focus_pan_2', 'x_focus_pan_3-detailed', 'x_focus_pan_3', 'x_focus_pan_4-detailed', 'x_focus_pan_4', 'x_focus_pan_5-detailed', 
                 'x_focus_pan_5', 'x_focus_pan_6-detailed', 'x_focus_pan_6', 'x_focus_pan_7-detailed', 'x_focus_pan_7', 'x_camel_rotate-detailed', 
                 'x_camel_rotate', 'y_camel_rotate-detailed', 'y_camel_rotate', 'x_cam_rot', 'y_cam_rot', 'x_cam_trans', 'y_cam_trans', 'z_cam_trans', 
-                'x_obj_rot', 'y_obj_rot']
+                'x_obj_rot', 'y_obj_rot']"""
 
 
 model_names = [
-    #"barlow_v1_inj",
+    "barlow_v1_inj",
     #"identity", 
     "barlow_v2_inj", 
-    
+    "barlow_v1_inj_b",
     "barlow_control", 
     #"barlow_v1_equi", 
     #"barlow_v3_equi"
@@ -45,7 +45,10 @@ for i, metric_type in enumerate(metric_types):
         print('model: ', model_name)
         print('layer: ', layers)
         scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
-        axes[0,i].plot(layers, scores, label=model_name)
+        if model_name == "barlow_v1_inj_b"= 
+            axes[0,i].plot(layers, scores, label="barlow_v3_inj")
+        else: 
+            axes[0,i].plot(layers, scores, label=model_name)
     scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
     axes[0,i].plot(layers, scores, label='identity')
     axes[0,i].set_title(metric_type)
@@ -54,7 +57,7 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/FINAL_injV2_vs_control_.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/FINAL_inj_vs_control_.png')
 
 
 """epoch = 82
