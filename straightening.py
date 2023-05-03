@@ -19,6 +19,7 @@ layers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 16]
 metric = ["curve", 1]
 metric_types = ["x_cam_trans", "y_cam_trans", "x_cam_rot", "y_cam_rot"]
 # metric_types = ["x_cam_rot", "x_focus_pan", "x_cam_pan"]
+one_layer = 0 
 model_names = [
     #"barlow_v1_inj",
     #"identity", 
@@ -28,7 +29,9 @@ model_names = [
     #"barlow_v1_equi", 
     #"barlow_v3_equi"
 ]
-
+for i, metric_type in enumerate(metric_types):
+    print(load_data(metric, model_name, epoch, one_layer).keys()) 
+    
 fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
 for i, metric_type in enumerate(metric_types):
     for model_name in model_names:
