@@ -54,6 +54,14 @@ model_names = [
     #"barlow_v1_equi", 
     #"barlow_v3_equi"
 ]
+
+model_names = [
+    "barlow_faces_texture",
+    #"identity", 
+    "barlow_faces_notexture",
+    "barlow_control"
+    
+]
     
 fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
 for i, metric_type in enumerate(metric_types):
@@ -73,7 +81,7 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/FINAL_inj_vs_control_objrot.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/FACES_vs_control_objrot.png')
 
 
 """epoch = 82
