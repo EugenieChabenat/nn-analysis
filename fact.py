@@ -13,16 +13,21 @@ def load_data(metric, model_name, epoch, layers):
         return me.utils.load_data(model_name, epoch, layer_names, metric[0], metric[1])
       
 epoch = 29
-layers = np.arange(2)
-layers =[0, 1, 2, 3, 4, 5]
+layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
 one_layer = 0
 metric = ["fact", 0]
-metric_types = ['ss_inv-obj_motion', 'fact-obj_motion', 'inv-obj_motion', 'ss_inv-background', 
-                'fact-background', 'inv-background', 'ss_inv-crop', 'fact-crop', 'inv-crop', 'ss_inv-color', 'fact-color', 'inv-color']
+
+metric_types = ['ss_inv-background', 'ss_inv-obj_motion', 'ss_inv-crop','ss_inv-color']
+                
+#metric_types = ['inv-background', 'inv-obj_motion', 'inv-crop', 'inv-color']
+                
+#metric_types = ['fact-background', 'fact-obj_motion', 'fact-crop', 'fact-color']
+
 model_names = [
-    #"barlow_v1_inj",
+    "barlow_v1_inj",
     #"identity", 
     "barlow_v2_inj", 
+    "barlow_v1_inj_b",
     "barlow_control"
 ]
 
@@ -35,7 +40,11 @@ for i, metric_type in enumerate(metric_types):
         #print('keys: ', load_data(metric, model_name, epoch, one_layer).keys())
         
         scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
-        axes[0,i].plot(layers, scores, label=model_name)
+        #axes[0,i].plot(layers, scores, label=model_name)
+        if model_name == "barlow_v1_inj_b": 
+            axes[0,i].plot(layers, scores, label="barlow_v3_inj")
+        else: 
+            axes[0,i].plot(layers, scores, label=model_name)
     #scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
     #axes[0,i].plot(layers, scores, label='identity')
     axes[0,i].set_title(metric_type)
@@ -44,10 +53,10 @@ fig.supxlabel('layers')
 fig.supylabel('fact')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/plot1.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/FINAL_inj_vs_control_ss_inv.png')
 
 # -- 
-epoch = 29
+"""epoch = 29
 layers = np.arange(2)
 layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 16]
 metric = ["fact", 0]
@@ -79,4 +88,4 @@ fig.supxlabel('layers')
 fig.supylabel('fact')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/plot2.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/plot2.png')"""
