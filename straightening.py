@@ -14,12 +14,13 @@ def load_data(metric, model_name, epoch, layers):
       
 epoch = 29
 #layers = np.arange(12)
-layers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 16]
+#layers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 16]
+layers = [0, 1, 2, 3,  16]
 metric = ["curve", 1]
 metric_types = ["x_cam_trans", "y_cam_trans", "x_cam_rot", "y_cam_rot"]
 # metric_types = ["x_cam_rot", "x_focus_pan", "x_cam_pan"]
 model_names = [
-    "barlow_v1_inj_b",
+    "barlow_v1_inj",
     #"identity", 
     #"barlow_v2_inj", 
     
@@ -43,7 +44,7 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/FINAL_injV3_vs_control_.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/FINAL_injV1_vs_control_.png')
 
 
 """epoch = 82
