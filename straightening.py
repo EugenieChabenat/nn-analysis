@@ -45,7 +45,7 @@ for i, metric_type in enumerate(metric_types):
         print('model: ', model_name)
         print('layer: ', layers)
         scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
-        if model_name == "barlow_v1_inj_b"= 
+        if model_name == "barlow_v1_inj_b": 
             axes[0,i].plot(layers, scores, label="barlow_v3_inj")
         else: 
             axes[0,i].plot(layers, scores, label=model_name)
