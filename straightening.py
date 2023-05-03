@@ -18,8 +18,17 @@ layers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 16]
 #layers = [0, 1, 2, 3,  16]
 metric = ["curve", 1]
 metric_types = ["x_cam_trans", "y_cam_trans", "x_cam_rot", "y_cam_rot"]
-# metric_types = ["x_cam_rot", "x_focus_pan", "x_cam_pan"]
-one_layer = 0 
+
+
+metric_types = ['x_pan-detailed', 'x_pan', 'y_pan-detailed', 'y_pan', 'z_pan-detailed', 'z_pan', 'x_focus_pan-detailed', 'x_focus_pan', 
+                'y_focus_pan-detailed', 'y_focus_pan', 'z_focus_pan-detailed', 'z_focus_pan', 'x_cam_pan-detailed', 'x_cam_pan', 'yz_cam_pan-detailed',
+                'yz_cam_pan', 'x_focus_pan_0-detailed', 'x_focus_pan_0', 'x_focus_pan_1-detailed', 'x_focus_pan_1', 'x_focus_pan_2-detailed', 
+                'x_focus_pan_2', 'x_focus_pan_3-detailed', 'x_focus_pan_3', 'x_focus_pan_4-detailed', 'x_focus_pan_4', 'x_focus_pan_5-detailed', 
+                'x_focus_pan_5', 'x_focus_pan_6-detailed', 'x_focus_pan_6', 'x_focus_pan_7-detailed', 'x_focus_pan_7', 'x_camel_rotate-detailed', 
+                'x_camel_rotate', 'y_camel_rotate-detailed', 'y_camel_rotate', 'x_cam_rot', 'y_cam_rot', 'x_cam_trans', 'y_cam_trans', 'z_cam_trans', 
+                'x_obj_rot', 'y_obj_rot']
+
+
 model_names = [
     #"barlow_v1_inj",
     #"identity", 
@@ -29,9 +38,6 @@ model_names = [
     #"barlow_v1_equi", 
     #"barlow_v3_equi"
 ]
-model_name = "barlow_v2_inj"
-for i, metric_type in enumerate(metric_types):
-    print(load_data(metric, model_name, epoch, one_layer).keys()) 
     
 fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
 for i, metric_type in enumerate(metric_types):
