@@ -32,7 +32,7 @@ model_names = [
     "barlow_v1_inj",
     #"identity", 
     "barlow_v2_inj",
-    "barlow_v1_inj_b"
+    "barlow_v1_inj_b", 
     "barlow_control"
 ]
 
