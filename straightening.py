@@ -14,17 +14,17 @@ def load_data(metric, model_name, epoch, layers):
       
 epoch = 29
 #layers = np.arange(12)
-layers = [0, 1, 16]
+layers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 16]
 metric = ["curve", 1]
 metric_types = ["x_cam_trans", "y_cam_trans", "x_cam_rot", "y_cam_rot"]
 # metric_types = ["x_cam_rot", "x_focus_pan", "x_cam_pan"]
 model_names = [
-    "barlow_v1_inj",
+    "barlow_v1_inj_b",
     #"identity", 
     #"barlow_v2_inj", 
     
     "barlow_control", 
-    "barlow_v1_equi", 
+    #"barlow_v1_equi", 
     #"barlow_v3_equi"
 ]
 
@@ -43,7 +43,7 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/_new_curvature_1.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/FINAL_injV3_vs_control_.png')
 
 
 """epoch = 82
@@ -99,7 +99,7 @@ fig.tight_layout()
 plt.show()
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/plot3.png')"""
 
-epoch = 29
+"""epoch = 29
 layer = 0
 metric = ["trajectory", 0]
 metric_types = ["x_pan", "y_pan", "x_focus_pan_0", "y_focus_pan"]
@@ -127,4 +127,4 @@ fig.supylabel('PC 2')
 fig.tight_layout()
 
 plt.savefig(f'/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/figures/--{epoch}_PCs_layer_{layer}_1.pdf')
-plt.show()
+plt.show()"""
