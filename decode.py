@@ -22,9 +22,9 @@ metric = ["decode", 0]
                 
 #metric_types = ['cam_pos_x', 'cam_pos_y', 'cam_scale', 'cam_pos']
                 
-metric_types = ['brightness', 'contrast', 'saturation', 'hue', 'color', 'lighting']
+#metric_types = ['brightness', 'contrast', 'saturation', 'hue', 'color', 'lighting']
                 
-#metric_types = ['obj_pos_x', 'obj_pos_y', 'obj_scale', 'obj_pos'] 
+metric_types = ['obj_pos_x', 'obj_pos_y', 'obj_scale', 'obj_pos'] 
 
 #metric_types = ['obj_pose_x', 'obj_pose_y', 'obj_pose_z', 'obj_pose']
     
@@ -55,7 +55,7 @@ fig.supxlabel('layers')
 fig.supylabel('decode')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/FINAL_inj_vs_control_color&light.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/FINAL_inj_vs_control_obj_pos&scale.png')
 
 # -- 
 """epoch = 29
