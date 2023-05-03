@@ -90,6 +90,10 @@
     "barlow_faces_texture": {
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/faces/factorize_avgpool_equivariant_all_bn_v5"
+    },
+    "barlow_faces_notexture": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/faces_notexture/factorize_avgpool_equivariant_all_bn_v5"
     }
     
     
