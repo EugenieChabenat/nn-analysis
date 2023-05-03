@@ -86,6 +86,10 @@
     "barlow_v1_inj_b": {
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/backbone/factorize_avgpool_equivariant_all_bn_injection_v1"
+    },
+    "barlow_faces_texture": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/faces/factorize_avgpool_equivariant_all_bn_injection_v5"
     }
     
     
