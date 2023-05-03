@@ -27,12 +27,12 @@ metric = ["curve", 1]
 #metric_types = ['x_cam_pan-detailed', 'x_cam_pan', 
 #                'yz_cam_pan-detailed','yz_cam_pan']
                 
-#metric_types = ['yz_cam_pan', 'x_focus_pan_0-detailed', 'x_focus_pan_0', 'x_focus_pan_1-detailed', 'x_focus_pan_1', 'x_focus_pan_2-detailed', 
-#                'x_focus_pan_2', 'x_focus_pan_3-detailed', 'x_focus_pan_3', 'x_focus_pan_4-detailed', 'x_focus_pan_4', 'x_focus_pan_5-detailed', 
-#                'x_focus_pan_5', 'x_focus_pan_6-detailed', 'x_focus_pan_6', 'x_focus_pan_7-detailed', 'x_focus_pan_7']
+metric_types = ['x_focus_pan_0-detailed', 'x_focus_pan_0', 'x_focus_pan_1-detailed', 'x_focus_pan_1', 'x_focus_pan_2-detailed', 
+               'x_focus_pan_2', 'x_focus_pan_3-detailed', 'x_focus_pan_3', 'x_focus_pan_4-detailed', 'x_focus_pan_4', 'x_focus_pan_5-detailed', 
+               'x_focus_pan_5', 'x_focus_pan_6-detailed', 'x_focus_pan_6', 'x_focus_pan_7-detailed', 'x_focus_pan_7']
                 
-metric_types = ['x_camel_rotate-detailed', 'x_camel_rotate',
-                'y_camel_rotate-detailed', 'y_camel_rotate']
+#metric_types = ['x_camel_rotate-detailed', 'x_camel_rotate',
+#                'y_camel_rotate-detailed', 'y_camel_rotate']
                 
 #metric_types = ['x_obj_rot', 'y_obj_rot', 'z_cam_trans']
 
@@ -81,7 +81,7 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/FACES_vs_control_camel_rotate.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/FACES_vs_control_focus_pan.png')
 
 
 """epoch = 82
