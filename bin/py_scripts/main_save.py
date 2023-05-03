@@ -51,12 +51,12 @@ def exclude_bias_and_norm(p):
 def main(model_name, layers, acts_name, version, epoch=None, overwrite=False, debug=False, verbose=False):
     
     # --
-    args, other_argv = parser.parse_known_args()
+    """args, other_argv = parser.parse_known_args()
     args.name = "barlowtwins"
     other_args = importlib.import_module('.' + args.name, 'models').get_parser().parse_args(other_argv)
     args = argparse.Namespace(**vars(args), **vars(other_args))
     
-    Model = importlib.import_module('.' + args.name, 'models').Model
+    Model = importlib.import_module('.' + args.name, 'models').Model"""
     # --- 
     # complete 
     layers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
