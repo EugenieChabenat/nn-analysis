@@ -30,9 +30,9 @@ metric_types = ["x_cam_trans", "y_cam_trans", "x_cam_rot", "y_cam_rot"]
 
 
 model_names = [
-    "barlow_v1_inj",
+    #"barlow_v1_inj",
     #"identity", 
-    #"barlow_v2_inj", 
+    "barlow_v2_inj", 
     #"barlow_v1_inj_b",
     "barlow_control", 
     #"barlow_v1_equi", 
@@ -57,7 +57,7 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/FINAL_injv1_vs_control_.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/FINAL_injv2_vs_control_.png')
 
 
 """epoch = 82
