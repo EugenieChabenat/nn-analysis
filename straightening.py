@@ -29,6 +29,7 @@ model_names = [
     #"barlow_v1_equi", 
     #"barlow_v3_equi"
 ]
+model_name = "barlow_v2_inj"
 for i, metric_type in enumerate(metric_types):
     print(load_data(metric, model_name, epoch, one_layer).keys()) 
     
