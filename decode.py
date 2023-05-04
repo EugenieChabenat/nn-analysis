@@ -11,7 +11,37 @@ def load_data(metric, model_name, epoch, layers):
         return [me.utils.load_data(model_name, epoch, layer_name, metric[0], metric[1]) for layer_name in layer_names]
     else:
         return me.utils.load_data(model_name, epoch, layer_names, metric[0], metric[1])
-      
+# --
+def r_plot(ax, x, y, color=None, label=None, **kwargs):
+    N = len(x)
+    if N == 0:
+        angles, values = [], []
+    else:
+        angles = [n / float(N) * 2 * np.pi for n in range(N)]
+        angles = angles + angles[:1]
+        values = list(y)
+        values = values + values[:1]
+    ax.set_rlabel_position(2.0)
+    line1, = ax.plot(angles, values, linewidth=1, linestyle='solid', color=color, label=label, **kwargs)
+#     line2, = ax.fill(angles, values, alpha=0.1, color=color, **kwargs)
+    return line1,
+
+def r_xticks(ax, x, x_offset=0.15, y_offset=0.1, size=11, color="grey", **kwargs):
+    N = len(x)
+    angles = [n / float(N) * 360 for n in range(N)]
+    _, labels = ax.set_thetagrids(angles, x, color=color, size=size)
+    for i, label in enumerate(labels):
+        x, y = label.get_position()
+        label.set_position((x,y-x_offset*np.cos(angles[i]*np.pi/180)**2-y_offset*(np.exp(-np.abs(angles[i]*np.pi/180-3*np.pi/2))+np.exp(-np.abs(angles[i]*np.pi/180-np.pi/2)))**5))
+
+def r_yticks(ax, min=0.0, max=1.0, steps=4):
+    ax.set_rgrids(np.linspace(min, max, steps+1)[1:], color="grey", size=9)
+    ax.set_ylim((min, max))
+def r_legend(ax, loc=(1.0, 0.6), **kwargs):
+    ax.legend(loc=loc, **kwargs)
+
+
+# --- 
 epoch = 29
 layers = np.arange(2)
 layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
@@ -89,12 +119,12 @@ x = metric_types
 for i, model_name in enumerate(model_names):
     #y = np.array([results[model_name][metric][-1,0] for metric in metrics])
     y = load_data(metric, model_name, epoch, one_layer)[metric_type]
-    vi.r_plot(ax, x, y, label=model_names[i])
-vi.r_xticks(ax, x, x_offset=0.3, y_offset=0.3, size=11, color="grey")
-vi.r_yticks(ax, min=0.0, max=1.0, steps=4)
-vi.r_legend(ax, loc=(1.0, 1.0))
+    r_plot(ax, x, y, label=model_names[i])
+r_xticks(ax, x, x_offset=0.3, y_offset=0.3, size=11, color="grey")
+r_yticks(ax, min=0.0, max=1.0, steps=4)
+r_legend(ax, loc=(1.0, 1.0))
 fig.tight_layout()
-savefig(fig, 'figures/polygon_plot_layer_15.pdf')
+savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/rond.png')
 fig.show()
 # -- 
 
