@@ -115,6 +115,6 @@ pt.round_plot.r_xticks(ax, x, x_offset=0.3, y_offset=0.3, size=11, color="grey")
 pt.round_plot.r_yticks(ax, min=0.0, max=1.0, steps=4)
 pt.round_plot.r_legend(ax, loc=(1.0, 1.0))
 fig.tight_layout()
-pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/FINAL_rond_layer3.png')
+pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/FINAL_rond_layer12.png')
 fig.show()
 # ---
