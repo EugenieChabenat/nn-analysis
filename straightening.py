@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import torch
 from nn_analysis import metrics as me
 from nn_analysis import utils
-from nn_analysis import plot as pt
+from nn_analysis.plot import round_plot as pt
 
 def load_data(metric, model_name, epoch, layers):
     layer_names = utils.get_layer_names(model_name, layers)
