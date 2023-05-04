@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import torch
 from nn_analysis import metrics as me
 from nn_analysis import utils
-from nn_analysis.plot import round_plot as pt
+from nn_analysis import plot as pt
 
 def load_data(metric, model_name, epoch, layers):
     layer_names = utils.get_layer_names(model_name, layers)
@@ -101,18 +101,18 @@ model_names = [
     "barlow_v1_inj_b", 
     "barlow_control"
 ]
-fig, axes = pt.subplots(1, 1, height_per_plot=7.5, width_per_plot=7.5, polar=True)
+fig, axes = pt.round_plot.subplots(1, 1, height_per_plot=7.5, width_per_plot=7.5, polar=True)
 ax = axes[0,0]
 
 x = metric_types
 for i, model_name in enumerate(model_names):
     #y = np.array([results[model_name][metric][-1,0] for metric in metrics])
     y = np.array([load_data(metric, model_name, epoch, one_layer)[metric_type] for metric_type in metric_types])
-    pt.r_plot(ax, x, y, label=model_names[i])
-pt.r_xticks(ax, x, x_offset=0.3, y_offset=0.3, size=11, color="grey")
-pt.r_yticks(ax, min=0.0, max=1.0, steps=4)
-pt.r_legend(ax, loc=(1.0, 1.0))
+    pt.round_plot.r_plot(ax, x, y, label=model_names[i])
+pt.round_plot.r_xticks(ax, x, x_offset=0.3, y_offset=0.3, size=11, color="grey")
+pt.round_plot.r_yticks(ax, min=0.0, max=1.0, steps=4)
+pt.round_plot.r_legend(ax, loc=(1.0, 1.0))
 fig.tight_layout()
-pt.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/rond.png')
+pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/rond.png')
 fig.show()
 # ---
