@@ -81,7 +81,10 @@ x = metric_types
 for i, model_name in enumerate(model_names):
     #y = np.array([results[model_name][metric][-1,0] for metric in metrics])
     y = np.array([load_data(metric, model_name, epoch, one_layer)[metric_type] for metric_type in metric_types])
-    pt.round_plot.r_plot(ax, x, y, label=model_names[i])
+    if model_name == "barlow_v1_inj_b": 
+        pt.round_plot.r_plot(ax, x, y, label="barlow_v3_inj")
+    else: 
+        pt.round_plot.r_plot(ax, x, y, label=model_names[i])
 pt.round_plot.r_xticks(ax, x, x_offset=0.3, y_offset=0.3, size=11, color="grey")
 pt.round_plot.r_yticks(ax, min=0.0, max=1.0, steps=4)
 pt.round_plot.r_legend(ax, loc=(1.0, 1.0))
