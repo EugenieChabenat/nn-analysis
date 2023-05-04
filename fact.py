@@ -31,6 +31,12 @@ model_names = [
     "barlow_control"
 ]
 
+model_names = [
+    "barlow_faces_texture",
+    "barlow_faces_notexture", 
+    "barlow_control"
+]
+
 fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
 for i, metric_type in enumerate(metric_types):
     for model_name in model_names:
@@ -53,7 +59,7 @@ fig.supxlabel('layers')
 fig.supylabel('fact')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/FINAL_inj_vs_control_fact.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/FACES_inj_vs_control_fact.png')
 
 # -- 
 """epoch = 29
