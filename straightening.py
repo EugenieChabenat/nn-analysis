@@ -101,18 +101,18 @@ model_names = [
     "barlow_v1_inj_b", 
     "barlow_control"
 ]
-fig, axes = subplots(1, 1, height_per_plot=7.5, width_per_plot=7.5, polar=True)
+fig, axes = pt.subplots(1, 1, height_per_plot=7.5, width_per_plot=7.5, polar=True)
 ax = axes[0,0]
 
 x = metric_types
 for i, model_name in enumerate(model_names):
     #y = np.array([results[model_name][metric][-1,0] for metric in metrics])
     y = np.array([load_data(metric, model_name, epoch, one_layer)[metric_type] for metric_type in metric_types])
-    r_plot(ax, x, y, label=model_names[i])
-r_xticks(ax, x, x_offset=0.3, y_offset=0.3, size=11, color="grey")
-r_yticks(ax, min=0.0, max=1.0, steps=4)
-r_legend(ax, loc=(1.0, 1.0))
+    pt.r_plot(ax, x, y, label=model_names[i])
+pt.r_xticks(ax, x, x_offset=0.3, y_offset=0.3, size=11, color="grey")
+pt.r_yticks(ax, min=0.0, max=1.0, steps=4)
+pt.r_legend(ax, loc=(1.0, 1.0))
 fig.tight_layout()
-savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/rond.png')
+pt.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/rond.png')
 fig.show()
 # ---
