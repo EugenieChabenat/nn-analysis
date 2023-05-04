@@ -73,7 +73,7 @@ plt.show()
 
 # ---
 
-one_layer = 6
+one_layer = 3
 metric = ["decode", 0]
 
 metric_types = ['obj_class', 'cam_pos_x', 'cam_pos_y', 'cam_scale', 'cam_pos', 'brightness', 'contrast', 'saturation', 'hue', 'color', 'lighting', 
