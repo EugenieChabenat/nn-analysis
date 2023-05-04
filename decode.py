@@ -43,7 +43,7 @@ model_names = [
     "barlow_control"
 ]
 
-fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
+"""fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
 for i, metric_type in enumerate(metric_types):
     for model_name in model_names:
         print('model: ', model_name)
@@ -62,9 +62,44 @@ fig.supxlabel('layers')
 fig.supylabel('decode')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/FACES_inj_vs_control_obj_class.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/FACES_inj_vs_control_obj_class.png')"""
 
+
+
+# ---
+from plots import visualize  as vi
+
+one_layer = 16
+metric = ["decode", 0]
+
+metric_types = ['obj_class', 'cam_pos_x', 'cam_pos_y', 'cam_scale', 'cam_pos', 'brightness', 'contrast', 'saturation', 'hue', 'color', 'lighting', 
+                'obj_pos_x', 'obj_pos_y', 'obj_scale', 'obj_pos', 'obj_pose_x', 'obj_pose_y', 'obj_pose_z', 'obj_pose']
+    
+model_names = [
+    "barlow_v1_inj",
+    #"identity", 
+    "barlow_v2_inj",
+    "barlow_v1_inj_b", 
+    "barlow_control"
+]
+fig, axes = subplots(1, 1, height_per_plot=7.5, width_per_plot=7.5, polar=True)
+ax = axes[0,0]
+
+x = metric_types
+for i, model_name in enumerate(model_names):
+    #y = np.array([results[model_name][metric][-1,0] for metric in metrics])
+    y = load_data(metric, model_name, epoch, one_layer)[metric_type]
+    vi.r_plot(ax, x, y, label=model_names[i])
+vi.r_xticks(ax, x, x_offset=0.3, y_offset=0.3, size=11, color="grey")
+vi.r_yticks(ax, min=0.0, max=1.0, steps=4)
+vi.r_legend(ax, loc=(1.0, 1.0))
+fig.tight_layout()
+savefig(fig, 'figures/polygon_plot_layer_15.pdf')
+fig.show()
 # -- 
+
+
+
 """epoch = 29
 layers = np.arange(2)
 layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 16]
