@@ -5,6 +5,8 @@ from nn_analysis import metrics as me
 from nn_analysis import utils
 from nn_analysis import plot as pt
 
+import os
+
 def load_data(metric, model_name, epoch, layers):
     layer_names = utils.get_layer_names(model_name, layers)
     if isinstance(layer_names, list):
