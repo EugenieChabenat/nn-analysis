@@ -83,7 +83,7 @@ plt.show()
 
 
 # --- round plot 
-one_layer = 3
+one_layer = 12
 fig, axes = pt.round_plot.subplots(1, 1, height_per_plot=7.5, width_per_plot=7.5, polar=True)
 ax = axes[0,0]
 
