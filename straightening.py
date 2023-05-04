@@ -113,6 +113,6 @@ pt.r_xticks(ax, x, x_offset=0.3, y_offset=0.3, size=11, color="grey")
 pt.r_yticks(ax, min=0.0, max=1.0, steps=4)
 pt.r_legend(ax, loc=(1.0, 1.0))
 fig.tight_layout()
-pt.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/rond.png')
+pt.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/rond.png')
 fig.show()
 # ---
