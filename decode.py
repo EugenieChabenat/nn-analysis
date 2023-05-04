@@ -12,6 +12,12 @@ def load_data(metric, model_name, epoch, layers):
     else:
         return me.utils.load_data(model_name, epoch, layer_names, metric[0], metric[1])
 # --
+def savefig(fig, filename):
+    folder = os.path.split(filename)[0]
+    if not os.path.exists(folder):
+        os.makedirs(folder)
+    fig.savefig(filename)
+    
 def subplots(n_rows, n_cols, height_per_plot=4, width_per_plot=5, polar=False, **kwargs):
     fig, axes = plt.subplots(n_rows, n_cols, figsize=(n_cols*width_per_plot, n_rows*height_per_plot), subplot_kw={'polar': polar}, facecolor='white', **kwargs)
     if n_rows == 1 and n_cols == 1:
