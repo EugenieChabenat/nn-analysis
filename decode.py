@@ -12,6 +12,18 @@ def load_data(metric, model_name, epoch, layers):
     else:
         return me.utils.load_data(model_name, epoch, layer_names, metric[0], metric[1])
 # --
+def subplots(n_rows, n_cols, height_per_plot=4, width_per_plot=5, polar=False, **kwargs):
+    fig, axes = plt.subplots(n_rows, n_cols, figsize=(n_cols*width_per_plot, n_rows*height_per_plot), subplot_kw={'polar': polar}, facecolor='white', **kwargs)
+    if n_rows == 1 and n_cols == 1:
+        axes = np.array([[axes]])
+    elif n_rows == 1:
+        axes = axes.reshape((1,-1))
+    elif n_cols == 1:
+        axes = axes.reshape((-1,1))
+    else:
+        pass
+    return fig, axes
+
 def r_plot(ax, x, y, color=None, label=None, **kwargs):
     N = len(x)
     if N == 0:
