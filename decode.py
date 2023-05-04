@@ -78,7 +78,12 @@ metric = ["decode", 0]
 
 metric_types = ['obj_class', 'cam_pos_x', 'cam_pos_y', 'cam_scale', 'cam_pos', 'brightness', 'contrast', 'saturation', 'hue', 'color', 'lighting', 
                 'obj_pos_x', 'obj_pos_y', 'obj_scale', 'obj_pos', 'obj_pose_x', 'obj_pose_y', 'obj_pose_z', 'obj_pose']
-    
+model_names = [
+    "barlow_faces_texture",
+    #"identity", 
+    "barlow_faces_notexture", 
+    "barlow_control"
+]   
 model_names = [
     "barlow_v1_inj",
     #"identity", 
@@ -86,12 +91,7 @@ model_names = [
     "barlow_v1_inj_b", 
     "barlow_control"
 ]
-model_names = [
-    "barlow_faces_texture",
-    #"identity", 
-    "barlow_faces_notexture", 
-    "barlow_control"
-]
+
 fig, axes = pt.round_plot.subplots(1, 1, height_per_plot=7.5, width_per_plot=7.5, polar=True)
 ax = axes[0,0]
 
