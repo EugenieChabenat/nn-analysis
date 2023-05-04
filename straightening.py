@@ -93,11 +93,11 @@ model_names = [
     "barlow_v1_inj_b",
     "barlow_control"
 ]
-model_names = [
+"""model_names = [
     "barlow_faces_texture",
     "barlow_faces_notexture",
     "barlow_control"
-]
+]"""
 metric_types = ['x_pan-detailed', 'x_pan', 'y_pan-detailed', 'y_pan', 'z_pan-detailed', 'z_pan', 'x_focus_pan-detailed', 'x_focus_pan', 
                 'y_focus_pan-detailed', 'y_focus_pan', 'z_focus_pan-detailed', 'z_focus_pan', 'x_cam_pan-detailed', 'x_cam_pan', 'yz_cam_pan-detailed',
                 'yz_cam_pan', 'x_cam_rot', 'y_cam_rot', 'x_cam_trans', 'y_cam_trans', 'z_cam_trans', 
@@ -115,6 +115,6 @@ pt.round_plot.r_xticks(ax, x, x_offset=0.3, y_offset=0.3, size=11, color="grey")
 pt.round_plot.r_yticks(ax, min=0.0, max=1.0, steps=4)
 pt.round_plot.r_legend(ax, loc=(1.0, 1.0))
 fig.tight_layout()
-pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/FACES_rond_layer7.png')
+pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/FINAL_rond_layer7.png')
 fig.show()
 # ---
