@@ -81,88 +81,38 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/FACES_vs_control_straightening.png')
+#plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/FACES_vs_control_straightening.png')
 
 
-"""epoch = 82
-layers = slice(None)
-metric = ["curve",1]
-metric_types = ["x_cam_trans", "y_cam_trans", "x_cam_rot", "y_cam_rot"]
-# metric_types = ["x_focus_pan", "x_cam_pan"]
+# --- round plot 
+one_layer = 16
+
+metric_types = ['x_pan-detailed', 'x_pan', 'y_pan-detailed', 'y_pan', 'z_pan-detailed', 'z_pan', 'x_focus_pan-detailed', 'x_focus_pan', 
+                'y_focus_pan-detailed', 'y_focus_pan', 'z_focus_pan-detailed', 'z_focus_pan', 'x_cam_pan-detailed', 'x_cam_pan', 'yz_cam_pan-detailed',
+                'yz_cam_pan', 'x_focus_pan_0-detailed', 'x_focus_pan_0', 'x_focus_pan_1-detailed', 'x_focus_pan_1', 'x_focus_pan_2-detailed', 
+                'x_focus_pan_2', 'x_focus_pan_3-detailed', 'x_focus_pan_3', 'x_focus_pan_4-detailed', 'x_focus_pan_4', 'x_focus_pan_5-detailed', 
+                'x_focus_pan_5', 'x_focus_pan_6-detailed', 'x_focus_pan_6', 'x_focus_pan_7-detailed', 'x_focus_pan_7', 'x_camel_rotate-detailed', 
+                'x_camel_rotate', 'y_camel_rotate-detailed', 'y_camel_rotate', 'x_cam_rot', 'y_cam_rot', 'x_cam_trans', 'y_cam_trans', 'z_cam_trans', 
+                'x_obj_rot', 'y_obj_rot']    
 model_names = [
-    "barlow_P",
-    "barlow_P_projector",
-]
-
-fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
-for i, metric_type in enumerate(metric_types):
-    for model_name in model_names:
-        data = load_data(metric, model_name, epoch, layers)
-        scores = [datum[metric_type] for datum in data]
-        axes[0,i].plot(np.arange(len(scores)), scores, label=model_name)
-    # scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
-    # axes[0,i].plot(layers, scores, label='identity')
-    axes[0,i].set_title(metric_type)
-    axes[0,i].legend()
-fig.supxlabel('layers')
-fig.supylabel('curvature')
-fig.tight_layout()
-plt.show()
-
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/plot2.png')
-
-epoch = 54
-layers = slice(None)
-metric = ["curve",1]
-metric_types = ["x_cam_trans", "y_cam_trans", "x_cam_rot", "y_cam_rot"]
-# metric_types = ["x_focus_pan", "x_cam_pan"]
-model_names = [
-    "barlow_control",
-    "barlow_control_projector",
-]
-
-fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
-for i, metric_type in enumerate(metric_types):
-    for model_name in model_names:
-        data = load_data(metric, model_name, epoch, layers)
-        scores = [datum[metric_type] for datum in data]
-        axes[0,i].plot(np.arange(len(scores)), scores, label=model_name)
-    # scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
-    # axes[0,i].plot(layers, scores, label='identity')
-    axes[0,i].set_title(metric_type)
-    axes[0,i].legend()
-fig.supxlabel('layers')
-fig.supylabel('curvature')
-fig.tight_layout()
-plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/plot3.png')"""
-
-"""epoch = 29
-layer = 0
-metric = ["trajectory", 0]
-metric_types = ["x_pan", "y_pan", "x_focus_pan_0", "y_focus_pan"]
-model_names = [
-    #"identity",
-    #"barlow_v1_inj", 
-    "barlow_v2_inj", 
+    "barlow_v1_inj",
+    #"identity", 
+    "barlow_v2_inj",
+    "barlow_v1_inj_b", 
     "barlow_control"
-    #"barlow_v2"
 ]
-fig, axes = pt.core.subplots(len(model_names), len(metric_types), size=(5,4))
-for i, model_name in enumerate(model_names):
-    for j, metric_type in enumerate(metric_types):
-        if model_name == 'identity':
-            scores = load_data(metric, model_name, None, 0)[metric_type]
-            evr = load_data(metric, model_name, None, 0)[f'{metric_type}-evr']
-        else:
-            scores = load_data(metric, model_name, epoch, layer)[metric_type]
-            evr = load_data(metric, model_name, epoch, layer)[f'{metric_type}-evr']
-        axes[i,j].plot(scores[:,0], scores[:,1])
-        axes[i,j].scatter(scores[:,0], scores[:,1])
-        axes[i,j].set_title(f'{model_name} - {metric_type}: {evr[:2]}')
-fig.supxlabel('PC 1')
-fig.supylabel('PC 2')
-fig.tight_layout()
+fig, axes = subplots(1, 1, height_per_plot=7.5, width_per_plot=7.5, polar=True)
+ax = axes[0,0]
 
-plt.savefig(f'/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/figures/--{epoch}_PCs_layer_{layer}_1.pdf')
-plt.show()"""
+x = metric_types
+for i, model_name in enumerate(model_names):
+    #y = np.array([results[model_name][metric][-1,0] for metric in metrics])
+    y = np.array([load_data(metric, model_name, epoch, one_layer)[metric_type] for metric_type in metric_types])
+    r_plot(ax, x, y, label=model_names[i])
+r_xticks(ax, x, x_offset=0.3, y_offset=0.3, size=11, color="grey")
+r_yticks(ax, min=0.0, max=1.0, steps=4)
+r_legend(ax, loc=(1.0, 1.0))
+fig.tight_layout()
+savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/rond.png')
+fig.show()
+# ---
