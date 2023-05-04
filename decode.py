@@ -86,6 +86,12 @@ model_names = [
     "barlow_v1_inj_b", 
     "barlow_control"
 ]
+model_names = [
+    "barlow_faces_texture",
+    #"identity", 
+    "barlow_faces_notexture", 
+    "barlow_control"
+]
 fig, axes = pt.round_plot.subplots(1, 1, height_per_plot=7.5, width_per_plot=7.5, polar=True)
 ax = axes[0,0]
 
