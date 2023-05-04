@@ -62,9 +62,13 @@ plt.show()
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/FACES_inj_vs_control_ss_inv.png')
 
 # -- 
+
 one_layer = 16 
 fig, axes = pt.round_plot.subplots(1, 1, height_per_plot=7.5, width_per_plot=7.5, polar=True)
 ax = axes[0,0]
+
+metric_types = ['ss_inv-background', 'ss_inv-obj_motion', 'ss_inv-crop','ss_inv-color','inv-background', 'inv-obj_motion', 'inv-crop', 'inv-color',
+                'fact-background', 'fact-obj_motion', 'fact-crop', 'fact-color']
 
 x = metric_types
 for i, model_name in enumerate(model_names):
@@ -75,7 +79,7 @@ pt.round_plot.r_xticks(ax, x, x_offset=0.3, y_offset=0.3, size=11, color="grey")
 pt.round_plot.r_yticks(ax, min=0.0, max=1.0, steps=4)
 pt.round_plot.r_legend(ax, loc=(1.0, 1.0))
 fig.tight_layout()
-pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/rond.png')
+pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/rond.png')
 fig.show()
 
 """epoch = 29
