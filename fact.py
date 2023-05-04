@@ -59,9 +59,25 @@ fig.supxlabel('layers')
 fig.supylabel('fact')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/FACES_inj_vs_control_ss_inv.png')
+#plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/FACES_inj_vs_control_ss_inv.png')
 
 # -- 
+one_layer = 16 
+fig, axes = pt.round_plot.subplots(1, 1, height_per_plot=7.5, width_per_plot=7.5, polar=True)
+ax = axes[0,0]
+
+x = metric_types
+for i, model_name in enumerate(model_names):
+    #y = np.array([results[model_name][metric][-1,0] for metric in metrics])
+    y = np.array([load_data(metric, model_name, epoch, one_layer)[metric_type] for metric_type in metric_types])
+    pt.round_plot.r_plot(ax, x, y, label=model_names[i])
+pt.round_plot.r_xticks(ax, x, x_offset=0.3, y_offset=0.3, size=11, color="grey")
+pt.round_plot.r_yticks(ax, min=0.0, max=1.0, steps=4)
+pt.round_plot.r_legend(ax, loc=(1.0, 1.0))
+fig.tight_layout()
+pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/rond.png')
+fig.show()
+
 """epoch = 29
 layers = np.arange(2)
 layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 16]
