@@ -73,7 +73,7 @@ plt.show()
 
 # ---
 
-one_layer = 7
+one_layer = 6
 metric = ["decode", 0]
 
 metric_types = ['obj_class', 'cam_pos_x', 'cam_pos_y', 'cam_scale', 'cam_pos', 'brightness', 'contrast', 'saturation', 'hue', 'color', 'lighting', 
@@ -107,7 +107,7 @@ pt.round_plot.r_xticks(ax, x, x_offset=0.3, y_offset=0.3, size=11, color="grey")
 pt.round_plot.r_yticks(ax, min=0.0, max=1.0, steps=4)
 pt.round_plot.r_legend(ax, loc=(1.0, 1.0))
 fig.tight_layout()
-pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/FINAL_rond_layer7.png')
+pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/FINAL_rond_layer6.png')
 fig.show()
 # -- 
 
