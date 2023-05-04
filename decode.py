@@ -67,7 +67,7 @@ plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/FACES
 
 
 # ---
-from plots import visualize  as vi
+from plot.plots import visualize  as vi
 
 one_layer = 16
 metric = ["decode", 0]
