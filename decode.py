@@ -68,7 +68,7 @@ fig.supxlabel('layers')
 fig.supylabel('decode')
 fig.tight_layout()
 plt.show()
-#plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/2FACES_inj_vs_control_obj_class.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/2FACES_inj_vs_control_obj_class.png')
 
 
 
