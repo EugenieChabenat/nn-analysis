@@ -33,18 +33,19 @@ metric_types = ['obj_class']
 
 #metric_types = ['obj_pose_x', 'obj_pose_y', 'obj_pose_z', 'obj_pose']
     
-model_names = [
+"""model_names = [
     "barlow_v1_inj",
     #"identity", 
     "barlow_v2_inj",
     "barlow_v1_inj_b", 
     "barlow_control"
-]
+]"""
 
 model_names = [
     "barlow_faces_texture",
     #"identity", 
     "barlow_faces_notexture", 
+    "barlow_faces_control", 
     "barlow_control"
 ]
 
@@ -67,13 +68,13 @@ fig.supxlabel('layers')
 fig.supylabel('decode')
 fig.tight_layout()
 plt.show()
-#plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/FACES_inj_vs_control_obj_class.png')
+#plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/2FACES_inj_vs_control_obj_class.png')
 
 
 
 # ---
 
-one_layer = 3
+"""one_layer = 3
 metric = ["decode", 0]
 
 metric_types = ['obj_class', 'cam_pos_x', 'cam_pos_y', 'cam_scale', 'cam_pos', 'brightness', 'contrast', 'saturation', 'hue', 'color', 'lighting', 
@@ -108,7 +109,7 @@ pt.round_plot.r_yticks(ax, min=0.0, max=1.0, steps=4)
 pt.round_plot.r_legend(ax, loc=(1.0, 1.0))
 fig.tight_layout()
 pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/FINAL_rond_layer6.png')
-fig.show()
+fig.show()"""
 # -- 
 
 
