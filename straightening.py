@@ -15,7 +15,6 @@ def load_data(metric, model_name, epoch, layers):
 epoch = 29
 #layers = np.arange(12)
 layers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
-#layers = [0, 1, 2, 3,  16]
 metric = ["curve", 1]
 metric_types = ["x_cam_trans", "y_cam_trans", "x_cam_rot", "y_cam_rot"]
 #metric_types = ['x_pan-detailed', 'x_pan', 'y_pan-detailed', 'y_pan', 'z_pan-detailed', 'z_pan']
@@ -45,7 +44,7 @@ metric_types = ["x_cam_trans", "y_cam_trans", "x_cam_rot", "y_cam_rot"]
                 'x_obj_rot', 'y_obj_rot']"""
 
 
-model_names = [
+"""model_names = [
     "barlow_v1_inj",
     #"identity", 
     "barlow_v2_inj", 
@@ -53,7 +52,7 @@ model_names = [
     "barlow_control", 
     #"barlow_v1_equi", 
     #"barlow_v3_equi"
-]
+]"""
 
 model_names = [
     "barlow_faces_texture",
@@ -79,7 +78,7 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-#plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/FACES_vs_control_straightening.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/2FACES_vs_control_straightening.png')
 
 
 # --- round plot 
