@@ -23,17 +23,18 @@ metric_types = ['ss_inv-background', 'ss_inv-obj_motion', 'ss_inv-crop','ss_inv-
                 
 #metric_types = ['fact-background', 'fact-obj_motion', 'fact-crop', 'fact-color']
 
-model_names = [
+"""model_names = [
     "barlow_v1_inj",
     #"identity", 
     "barlow_v2_inj", 
     "barlow_v1_inj_b",
     "barlow_control"
-]
+]"""
 
 model_names = [
     "barlow_faces_texture",
     "barlow_faces_notexture", 
+    "barlow_faces_control",
     "barlow_control"
 ]
 
@@ -59,11 +60,11 @@ fig.supxlabel('layers')
 fig.supylabel('fact')
 fig.tight_layout()
 plt.show()
-#plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/FACES_inj_vs_control_ss_inv.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/2FACES_inj_vs_control_ss_inv.png')
 
 # -- 
 
-one_layer = 16 
+"""one_layer = 16 
 fig, axes = pt.round_plot.subplots(1, 1, height_per_plot=7.5, width_per_plot=7.5, polar=True)
 ax = axes[0,0]
 
@@ -90,6 +91,6 @@ pt.round_plot.r_yticks(ax, min=0.0, max=1.0, steps=4)
 pt.round_plot.r_legend(ax, loc=(1.0, 1.0))
 fig.tight_layout()
 pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/FINAL_rond.png')
-fig.show()
+fig.show()"""
 
 
