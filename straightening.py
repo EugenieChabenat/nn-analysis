@@ -17,11 +17,11 @@ epoch = 29
 layers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
 metric = ["curve", 1]
 #metric_types = ["x_cam_trans", "y_cam_trans", "x_cam_rot", "y_cam_rot"]
-metric_types = ['x_pan-detailed', 'x_pan', 'y_pan-detailed', 'y_pan', 'z_pan-detailed', 'z_pan']
+#metric_types = ['x_pan-detailed', 'x_pan', 'y_pan-detailed', 'y_pan', 'z_pan-detailed', 'z_pan']
 
-#metric_types = ['x_focus_pan-detailed', 'x_focus_pan', 
-#                'y_focus_pan-detailed', 'y_focus_pan', 
- #               'z_focus_pan-detailed', 'z_focus_pan']
+metric_types = ['x_focus_pan-detailed', 'x_focus_pan', 
+                'y_focus_pan-detailed', 'y_focus_pan', 
+               'z_focus_pan-detailed', 'z_focus_pan']
 
 #metric_types = ['x_cam_pan-detailed', 'x_cam_pan', 
 #                'yz_cam_pan-detailed','yz_cam_pan']
@@ -79,7 +79,7 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/2FACES_vs_control_straight2.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/2FACES_vs_control_straight3.png')
 
 
 # --- round plot 
