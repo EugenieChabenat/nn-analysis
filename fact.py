@@ -38,8 +38,10 @@ model_names = [
     "faces_pretrained_notexture"
     #"barlow_control"
 ]
-
-fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
+# ------------------------------------------------------------------------------------
+# LAYERS PLOT 
+# ------------------------------------------------------------------------------------
+"""fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
 for i, metric_type in enumerate(metric_types):
     for model_name in model_names:
         print('model: ', model_name)
@@ -61,9 +63,12 @@ fig.supxlabel('layers')
 fig.supylabel('fact')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/3FACES_inj_vs_control_fact.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/3FACES_inj_vs_control_fact.png')"""
 
-# -- 
+
+# ------------------------------------------------------------------------------------
+# ROUND PLOT 
+# ------------------------------------------------------------------------------------
 
 """one_layer = 16 
 fig, axes = pt.round_plot.subplots(1, 1, height_per_plot=7.5, width_per_plot=7.5, polar=True)
@@ -93,5 +98,54 @@ pt.round_plot.r_legend(ax, loc=(1.0, 1.0))
 fig.tight_layout()
 pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/FINAL_rond.png')
 fig.show()"""
+
+
+# ------------------------------------------------------------------------------------
+# HISTOGRAM PLOT
+# ------------------------------------------------------------------------------------
+
+def grouped_bar(ax, xs, ys, width=0.2, sep=0.3):
+    assert len(xs) == len(ys)
+    total = 0.0
+    all_xticks = []
+    all_xlabels = []
+    for i, y in enumerate(ys):
+        xticks = np.linspace(0.0,len(y)*width,num=len(y))+total
+        ax.bar(xticks, y, width=width)
+        total += (len(y)+1.5)*width + sep
+        all_xticks += list(xticks)
+        all_xlabels += xs[i]
+    ax.set_xticks(all_xticks)
+    ax.set_xticklabels(all_xlabels, rotation=45, ha='right')
+    
+metricss = [
+            ['ss_inv-background', 'ss_inv-obj_motion', 'ss_inv-crop','ss_inv-color'],
+            ['inv-background', 'inv-obj_motion', 'inv-crop', 'inv-color'],
+            ['fact-background', 'fact-obj_motion', 'fact-crop', 'fact-color']]
+
+baseline_model = "barlow_control"
+model_names = [
+    "barlow_v1_inj",
+    "barlow_v2_inj",
+    "barlow_v1_inj_b", 
+]
+fig, axes = pt.round_plot.subplots(1,3,height_per_plot=6,width_per_plot=6)
+for i, model_name in enumerate(model_names):
+    #ys = [[results[model_name][metric][-1,0]-results[baseline_model_name][metric][-1,0] for metric in metrics] for metrics in metricss]
+    ys = [[load_data(metric, model_name, epoch, one_layer)[metric_type] - load_data(metric, baseline_model, epoch, one_layer)[metric_type] for metric_type in metric_types] for metric_types in metricss]
+    xs = metricss
+    grouped_bar(axes[0,i], xs, ys)
+    axes[0,i].set_title(model_name)
+    axes[0,i].set_ylabel('Score (relative to baseline)')
+#     axes[0,i].set_ylim(-0.25,0.27)
+y_lim_min = min([axes[0,i].get_ylim()[0] for i in range(len(model_names))])
+y_lim_max = max([axes[0,i].get_ylim()[1] for i in range(len(model_names))])
+for i in range(len(model_names)):
+    axes[0,i].set_ylim(y_lim_min, y_lim_max)
+fig.tight_layout()
+pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/FINAL_hist.png')
+fig.show()
+
+
 
 
