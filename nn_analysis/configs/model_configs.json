@@ -98,6 +98,10 @@
     "barlow_faces_control": {
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/faces_notexture/original_v5"
+    }, 
+    "faces_pretrained_notexture": {
+        "arch": "resnet50",
+        "path": "checkpoints/pretrained"
     }
     
     
