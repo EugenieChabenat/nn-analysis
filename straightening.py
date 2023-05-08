@@ -150,9 +150,8 @@ def grouped_bar(ax, xs, ys, width=0.2, sep=0.3):
     
 metricss = [
             ['x_pan',  'y_pan' 'z_pan', 'x_focus_pan', 'y_focus_pan', 'z_focus_pan'], 
-          'x_cam_pan', 'yz_cam_pan', 
-              'x_cam_rot', 'y_cam_rot', 'x_cam_trans', 'y_cam_trans', 'z_cam_trans', 
-                'x_obj_rot', 'y_obj_rot'
+            ['x_cam_pan', 'yz_cam_pan', 'x_cam_rot', 'y_cam_rot', 'x_cam_trans', 'y_cam_trans', 'z_cam_trans'], 
+            ['x_obj_rot', 'y_obj_rot']]
 
 baseline_model = "barlow_control"
 model_names = [
