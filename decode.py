@@ -46,7 +46,7 @@ model_names = [
     #"identity", 
     "barlow_faces_notexture", 
     "barlow_faces_control", 
-    "barlow_control"
+    #"barlow_control"
 ]
 
 fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
@@ -68,7 +68,7 @@ fig.supxlabel('layers')
 fig.supylabel('decode')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/2FACES_inj_vs_control_obj_pose.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/-2FACES_inj_vs_control_obj_pose.png')
 
 
 
