@@ -11,7 +11,22 @@ def load_data(metric, model_name, epoch, layers):
         return [me.utils.load_data(model_name, epoch, layer_name, metric[0], metric[1]) for layer_name in layer_names]
     else:
         return me.utils.load_data(model_name, epoch, layer_names, metric[0], metric[1])
-      
+    
+
+metric_dict = {'ss_inv-background': 'SS Invariance - Background', 
+               'ss_inv-obj_motion': 'SS Invariance - Object Motion', 
+               'ss_inv-crop': 'SS Invariance - Crop',
+               'ss_inv-color': 'SS Invariance - Color',
+               'inv-background': 'Invariance - Background', 
+               'inv-obj_motion': 'Invariance - Object Motion', 
+               'inv-crop': 'Invariance - Crop',
+               'inv-color': 'Invariance - Color',
+               'fact-background': 'Factorization - Background', 
+               'fact-obj_motion': 'Factorization - Object Motion', 
+               'fact-crop': 'Factorization - Crop', 
+               'fact-color': 'Factorization - Color'
+              }
+   
 epoch = 29
 layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
 one_layer = 0
@@ -133,7 +148,8 @@ fig, axes = pt.round_plot.subplots(1,3,height_per_plot=6,width_per_plot=6)
 for i, model_name in enumerate(model_names):
     #ys = [[results[model_name][metric][-1,0]-results[baseline_model_name][metric][-1,0] for metric in metrics] for metrics in metricss]
     ys = [[load_data(metric, model_name, epoch, one_layer)[metric_type] - load_data(metric, baseline_model, epoch, one_layer)[metric_type] for metric_type in metric_types] for metric_types in metricss]
-    xs = metricss
+    #xs = metricss
+    xs = [[metric_dict[metric_type] for metric_type in metrics] for metrics in metricss]
     grouped_bar(axes[0,i], xs, ys)
     if model_name == "barlow_v1_inj_b": 
         axes[0, i].set_title("barlow_v3_inj")
