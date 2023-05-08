@@ -5,13 +5,36 @@ from nn_analysis import metrics as me
 from nn_analysis import utils
 from nn_analysis import plot as pt
 
+
 def load_data(metric, model_name, epoch, layers):
     layer_names = utils.get_layer_names(model_name, layers)
     if isinstance(layer_names, list):
         return [me.utils.load_data(model_name, epoch, layer_name, metric[0], metric[1]) for layer_name in layer_names]
     else:
         return me.utils.load_data(model_name, epoch, layer_names, metric[0], metric[1])
-      
+
+    
+    
+metric_dict = {
+            'x_pan': 'Pan - x',
+            'y_pan': 'Pan - y ', 
+            'z_pan': 'Pan - z', 
+            'x_focus_pan': 'Focus Pan - x', 
+            'y_focus_pan': 'Focus Pan - y', 
+            'z_focus_pan': 'Focus Pan - z', 
+            'x_cam_pan': 'Camera Pan - x', 
+            'yz_cam_pan': 'Camera Pan - yz', 
+            'x_cam_rot': 'Camera Rotation - x', 
+            'y_cam_rot': 'Camera Rotation - y', 
+            'x_cam_trans': 'Camera Translation - x', 
+            'y_cam_trans': 'Camera Translation - y', 
+            'z_cam_trans': 'Camera Translation - z', 
+            'x_obj_rot': 'Object Rotation - x', 
+            'y_obj_rot': 'Object Rotation - y'
+             }
+
+
+
 epoch = 29
 #layers = np.arange(12)
 layers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
@@ -164,7 +187,8 @@ fig, axes = pt.round_plot.subplots(1,3,height_per_plot=6,width_per_plot=6)
 for i, model_name in enumerate(model_names):
     #ys = [[results[model_name][metric][-1,0]-results[baseline_model_name][metric][-1,0] for metric in metrics] for metrics in metricss]
     ys = [[load_data(metric, model_name, epoch, one_layer)[metric_type] - load_data(metric, baseline_model, epoch, one_layer)[metric_type] for metric_type in metric_types] for metric_types in metricss]
-    xs = metricss
+    #xs = metricss
+    xs = [[metric_dict[metric_type] for metric_type in metrics] for metrics in metricss]
     grouped_bar(axes[0,i], xs, ys)
     if model_name == "barlow_v1_inj_b": 
         axes[0, i].set_title("barlow_v3_inj")
