@@ -168,7 +168,7 @@ fig, axes = pt.round_plot.subplots(1,3,height_per_plot=6,width_per_plot=6)
 for i, model_name in enumerate(model_names):
     #ys = [[results[model_name][metric][-1,0]-results[baseline_model_name][metric][-1,0] for metric in metrics] for metrics in metricss]
     ys = [[load_data(metric, model_name, epoch, one_layer)[metric_type] - load_data(metric, baseline_model, epoch, one_layer)[metric_type] for metric_type in metric_types] for metric_types in metricss]
-    xs = #metricss
+    #xs = metricss
     xs = [[metric_dict[metric_type] for metric_type in metrics] for metrics in metricss]
     grouped_bar(axes[0,i], xs, ys)
     if model_name == "barlow_v1_inj_b": 
