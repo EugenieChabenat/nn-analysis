@@ -57,7 +57,8 @@ metric_types = ["x_cam_trans", "y_cam_trans", "x_cam_rot", "y_cam_rot"]
 model_names = [
     "barlow_faces_texture",
     "barlow_faces_notexture",
-    "barlow_faces_control"
+    "barlow_faces_control", 
+    "faces_pretrained_notexture"
     #"barlow_control"
 ]
     
@@ -79,7 +80,7 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/-2FACES_vs_control_straightening.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/3FACES_vs_control_straightening.png')
 
 
 # --- round plot 
