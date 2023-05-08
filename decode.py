@@ -50,7 +50,7 @@ model_names = [
     #"barlow_control"
 ]
 
-fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
+"""fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
 for i, metric_type in enumerate(metric_types):
     for model_name in model_names:
         #print('model: ', model_name)
@@ -69,11 +69,13 @@ fig.supxlabel('layers')
 fig.supylabel('decode')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/3FACES_inj_vs_control_obj_pose.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/3FACES_inj_vs_control_obj_pose.png')"""
 
 
 
-# ---
+# ------------------------------------------------------------------------------------
+# ROUND PLOT 
+# ------------------------------------------------------------------------------------
 
 """one_layer = 3
 metric = ["decode", 0]
@@ -111,8 +113,53 @@ pt.round_plot.r_legend(ax, loc=(1.0, 1.0))
 fig.tight_layout()
 pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/FINAL_rond_layer6.png')
 fig.show()"""
-# -- 
 
+# ------------------------------------------------------------------------------------
+# HISTOGRAM PLOT 
+# ------------------------------------------------------------------------------------
+def grouped_bar(ax, xs, ys, width=0.2, sep=0.3):
+    assert len(xs) == len(ys)
+    total = 0.0
+    all_xticks = []
+    all_xlabels = []
+    for i, y in enumerate(ys):
+        xticks = np.linspace(0.0,len(y)*width,num=len(y))+total
+        ax.bar(xticks, y, width=width)
+        total += (len(y)+1.5)*width + sep
+        all_xticks += list(xticks)
+        all_xlabels += xs[i]
+    ax.set_xticks(all_xticks)
+    ax.set_xticklabels(all_xlabels, rotation=45, ha='right')
+    
+    
+metricss = [
+            ['obj_class', 'cam_pos_x', 'cam_pos_y', 'cam_scale', 'cam_pos'], 
+            ['brightness', 'contrast', 'saturation', 'hue', 'color', 'lighting'], 
+            ['obj_pos_x', 'obj_pos_y', 'obj_scale', 'obj_pos', 'obj_pose_x', 'obj_pose_y', 'obj_pose_z', 'obj_pose']]
+
+baseline_model = "barlow_control"
+model_names = [
+    "barlow_v1_inj",
+    "barlow_v2_inj",
+    "barlow_v1_inj_b", 
+]
+
+fig, axes = pt.round_plot.subplots(1,3,height_per_plot=6,width_per_plot=6)
+for i, model_name in enumerate(model_names):
+    #ys = [[results[model_name][metric][-1,0]-results[baseline_model_name][metric][-1,0] for metric in metrics] for metrics in metricss]
+    ys = [[load_data(metric, model_name, epoch, one_layer)[metric_type] - load_data(metric, baseline_model, epoch, one_layer)[metric_type] for metric_type in metric_types] for metric_types in metricss]
+    xs = [[config.metrics_dict[metric] for metric in metrics] for metrics in metricss]
+    grouped_bar(axes[0,i], xs, ys)
+    axes[0,i].set_title(model_name)
+    axes[0,i].set_ylabel('Score (relative to baseline)')
+#     axes[0,i].set_ylim(-0.25,0.27)
+y_lim_min = min([axes[0,i].get_ylim()[0] for i in range(len(model_names))])
+y_lim_max = max([axes[0,i].get_ylim()[1] for i in range(len(model_names))])
+for i in range(len(model_names)):
+    axes[0,i].set_ylim(y_lim_min, y_lim_max)
+fig.tight_layout()
+pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/FINAL_hist.png')
+fig.show()
 
 
 
