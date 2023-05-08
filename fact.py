@@ -135,7 +135,10 @@ for i, model_name in enumerate(model_names):
     ys = [[load_data(metric, model_name, epoch, one_layer)[metric_type] - load_data(metric, baseline_model, epoch, one_layer)[metric_type] for metric_type in metric_types] for metric_types in metricss]
     xs = metricss
     grouped_bar(axes[0,i], xs, ys)
-    axes[0,i].set_title(model_name)
+    if model_name == "barlow_v1_inj_b": 
+        axes[0, i].set_title("barlow_v3_inj")
+    else: 
+        axes[0,i].set_title(model_name)
     axes[0,i].set_ylabel('Score (relative to baseline)')
 #     axes[0,i].set_ylim(-0.25,0.27)
 y_lim_min = min([axes[0,i].get_ylim()[0] for i in range(len(model_names))])
