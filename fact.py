@@ -17,9 +17,9 @@ layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
 one_layer = 0
 metric = ["fact", 0]
 
-#metric_types = ['ss_inv-background', 'ss_inv-obj_motion', 'ss_inv-crop','ss_inv-color']
+metric_types = ['ss_inv-background', 'ss_inv-obj_motion', 'ss_inv-crop','ss_inv-color']
                 
-metric_types = ['inv-background', 'inv-obj_motion', 'inv-crop', 'inv-color']
+#metric_types = ['inv-background', 'inv-obj_motion', 'inv-crop', 'inv-color']
                 
 #metric_types = ['fact-background', 'fact-obj_motion', 'fact-crop', 'fact-color']
 
@@ -60,7 +60,7 @@ fig.supxlabel('layers')
 fig.supylabel('fact')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/-2FACES_inj_vs_control_inv.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/-2FACES_inj_vs_control_ss_inv.png')
 
 # -- 
 
