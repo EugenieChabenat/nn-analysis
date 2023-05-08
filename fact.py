@@ -35,6 +35,7 @@ model_names = [
     "barlow_faces_texture",
     "barlow_faces_notexture", 
     "barlow_faces_control",
+    "faces_pretrained_notexture"
     #"barlow_control"
 ]
 
@@ -60,7 +61,7 @@ fig.supxlabel('layers')
 fig.supylabel('fact')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/-2FACES_inj_vs_control_ss_inv.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/3FACES_inj_vs_control_ss_inv.png')
 
 # -- 
 
