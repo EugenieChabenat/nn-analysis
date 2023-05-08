@@ -57,8 +57,8 @@ metric_types = ['x_obj_rot', 'y_obj_rot', 'z_cam_trans']
 model_names = [
     "barlow_faces_texture",
     "barlow_faces_notexture",
-    "barlow_faces_control", 
-    "barlow_control"
+    "barlow_faces_control"
+    #"barlow_control"
 ]
     
 fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
@@ -115,6 +115,6 @@ pt.round_plot.r_xticks(ax, x, x_offset=0.3, y_offset=0.3, size=11, color="grey")
 pt.round_plot.r_yticks(ax, min=0.0, max=1.0, steps=4)
 pt.round_plot.r_legend(ax, loc=(1.0, 1.0))
 fig.tight_layout()
-pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/FINAL_rond_layer16.png')
+#pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/FINAL_rond_layer16.png')
 fig.show()
 # ---
