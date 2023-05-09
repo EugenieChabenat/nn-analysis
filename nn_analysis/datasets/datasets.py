@@ -67,6 +67,11 @@ def get_dataset(dataset_name, split='train', **kwargs):
         targets = torch.stack(torch.meshgrid(*[torch.arange(i) for i in images.size()[:-3]],indexing='ij'),dim=-1)
         dataset = TensorDataset(images,targets,**kwargs)
         
+    elif dataset_name == 'natural_movies':
+        images = torch.from_numpy(np.load(os.path.join(env_config['stim_matrix_path'], 'stim_matrix.npy')))
+        targets = torch.stack(torch.meshgrid(*[torch.arange(i) for i in images.size()[:-3]],indexing='ij'),dim=-1)
+        dataset = TensorDataset(images,targets,**kwargs)
+        
     else:
         raise NotImplementedError(f"dataset_name {dataset_name} not implemented. Try 'imagenet', 'pseudo_hvm', 'hvm', 'hk2', or 'rust'.")
     
