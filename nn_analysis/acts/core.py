@@ -133,8 +133,8 @@ def save_dataset(filename, path, model, layer_names, dataset, device='cpu', batc
       
                 #model.custom_resnet(images)
                 #model.backbone(images)
-                print('pred: \n', model.backbone(images))
-                print('size: ', model.backbone(images).shape)
+                #print('pred: \n', model.backbone(images))
+                #print('size: ', model.backbone(images).shape)
             
             
     finally:
