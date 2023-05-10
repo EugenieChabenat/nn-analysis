@@ -31,6 +31,9 @@ metric_types = ["artificial_movie_labels", "natural_movie_labels"]
 
 model_names = [
     "barlow_control", 
+    "barlow_v1_inj", 
+    "barlow_v2_inj", 
+    "barlow_v1_inj", 
 ]
 
 
