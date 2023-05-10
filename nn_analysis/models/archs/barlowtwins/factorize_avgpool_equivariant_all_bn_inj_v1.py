@@ -115,8 +115,8 @@ class Model(BarlowTwins):
     def __init__(self, args):
         super().__init__(args)
         
-        #sizes = {'bn': torch.Size([self.projector_sizes[-1]]), 'avgpool': torch.Size((2048,))}
-        sizes = {'bn': torch.Size([self.projector_sizes[-1]]), 'avgpool': torch.Size((32,))}
+        sizes = {'bn': torch.Size([self.projector_sizes[-1]]), 'avgpool': torch.Size((2048,))}
+        #sizes = {'bn': torch.Size([self.projector_sizes[-1]]), 'avgpool': torch.Size((32,))}
         
         # -- added 
         self.injection_site = args.injection_site 
