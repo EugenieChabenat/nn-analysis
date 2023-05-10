@@ -133,6 +133,9 @@ def save_dataset(filename, path, model, layer_names, dataset, device='cpu', batc
       
                 #model.custom_resnet(images)
                 model.backbone(images)
+                print('pred: \n', model.backbone(images))
+            
+            
     finally:
         remove_hooks(handles)
             
