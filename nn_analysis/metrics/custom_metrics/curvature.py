@@ -21,8 +21,19 @@ class Curvature(Metric):
     def _evaluate_single(self, model_name, epoch, layer_name, variable, acts, **kwargs):
         result = {}
         
+        
+        print('model name: ', model_name)
+        print('epoch: ', epoch)
+        print('layer name: ', layer_name)
+        print('variable: ', variable)
+        
         acts_config = utils.load_config(ACTS_CONFIGS_PATH)[acts['name']][f"{acts['version']:02d}"]
+        print('acts config: ', acts_config)
+        print(acts_config['target_names'])
         X = ac.utils.load_data(model_name, epoch, acts['name'], acts['version'], layer_name=layer_name) # (n_target_names, n_frames, n_pcs)
+        print('X shape: ', X.shape)
+        print(X)
+            
         X = X[acts_config['target_names'].index(variable)] # (n_frames, n_pcs)
         
         scores = me.core.compute_curvature(X, **kwargs)
