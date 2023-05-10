@@ -9,13 +9,7 @@
                 },
                 "n_frames": 3
             },
-            "contrast_movie_labels": {
-                "acts": {
-                    "name": "natural_movies",
-                    "version": 0
-                },
-                "n_frames": 3
-            },
+            
             "natural_movie_labels": {
                 "acts": {
                     "name": "natural_movies",
