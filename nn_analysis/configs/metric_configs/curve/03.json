@@ -1,127 +1,22 @@
 {
     "class": "Curvature",
     "kwargs": {
-        "variable_configs": {
-            "x_pan": {
+        "variable_configs": {   
+            "artificial_movie_labels": {
                 "acts": {
                     "name": "natural_movies",
                     "version": 0
                 },
                 "n_frames": 3
             },
-            "y_pan": {
+            "contrast_movie_labels": {
                 "acts": {
                     "name": "natural_movies",
                     "version": 0
                 },
                 "n_frames": 3
             },
-            "z_pan": {
-                "acts": {
-                    "name": "natural_movies",
-                    "version": 0
-                },
-                "n_frames": 3
-            },
-            "x_focus_pan": {
-                "acts": {
-                    "name": "natural_movies",
-                    "version": 0
-                },
-                "n_frames": 3
-            },
-            "y_focus_pan": {
-                "acts": {
-                    "name": "natural_movies",
-                    "version": 0
-                },
-                "n_frames": 3
-            },
-            "z_focus_pan": {
-                "acts": {
-                    "name": "natural_movies",
-                    "version": 0
-                },
-                "n_frames": 3
-            },
-            "x_cam_pan": {
-                "acts": {
-                    "name": "natural_movies",
-                    "version": 0
-                },
-                "n_frames": 3
-            },
-            "yz_cam_pan": {
-                "acts": {
-                    "name": "natural_movies",
-                    "version": 0
-                },
-                "n_frames": 3
-            },
-            "x_focus_pan_0": {
-                "acts": {
-                    "name": "natural_movies",
-                    "version": 0
-                },
-                "n_frames": 3
-            },
-            "x_focus_pan_1": {
-                "acts": {
-                    "name": "natural_movies",
-                    "version": 0
-                },
-                "n_frames": 3
-            },
-            "x_focus_pan_2": {
-                "acts": {
-                    "name": "natural_movies",
-                    "version": 0
-                },
-                "n_frames": 3
-            },
-            "x_focus_pan_3": {
-                "acts": {
-                    "name": "natural_movies",
-                    "version": 0
-                },
-                "n_frames": 3
-            },
-            "x_focus_pan_4": {
-                "acts": {
-                    "name": "natural_movies",
-                    "version": 0
-                },
-                "n_frames": 3
-            },
-            "x_focus_pan_5": {
-                "acts": {
-                    "name": "natural_movies",
-                    "version": 0
-                },
-                "n_frames": 3
-            },
-            "x_focus_pan_6": {
-                "acts": {
-                    "name": "natural_movies",
-                    "version": 0
-                },
-                "n_frames": 3
-            },
-            "x_focus_pan_7": {
-                "acts": {
-                    "name": "natural_movies",
-                    "version": 0
-                },
-                "n_frames": 3
-            },
-            "x_camel_rotate": {
-                "acts": {
-                    "name": "natural_movies",
-                    "version": 0
-                },
-                "n_frames": 3
-            },
-            "y_camel_rotate": {
+            "natural_movie_labels": {
                 "acts": {
                     "name": "natural_movies",
                     "version": 0
