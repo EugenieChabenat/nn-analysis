@@ -244,8 +244,6 @@ class Sampler(Processor):
     def configure(self, sizes):
         layer_sizes = {k: v for k, v in sizes.items() if k not in ['target', 'dataset']}
         output_sizes = {}
-        print('in configure:' )
-        print('layer size:', layer_sizes)
         for layer_name, size in layer_sizes.items():
             if self.n_samples > size:
                 self.indices[layer_name] = torch.arange(size)
@@ -261,7 +259,6 @@ class Sampler(Processor):
                 output_sizes[layer_name] = self.n_samples
         self.configured = True
         output_sizes.update({'target': sizes['target'], 'dataset': sizes['dataset']})
-        print('output_sizes: ', output_sizes)
         return output_sizes
         
     def process(self, tensor, layer_name, **kwargs):
@@ -271,7 +268,6 @@ class Sampler(Processor):
         assert self.configured
         assert tensor.ndim == 2
         
-        print('indices: ', self.indices)
         layer_indices = self.indices[layer_name]
         
         if tensor.is_cuda:
