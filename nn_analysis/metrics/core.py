@@ -349,6 +349,10 @@ def compute_curvature(X, n_frames=-1):
     Returns:
     scores - (num_frames - 2,) if n_frames=-1, otherwise (n_frames - 2,)
     """
+    print('computing curvature scores...')
+    print('shape of X: ', X.shape)
+    print('number of frames: ', n_frames)
+          
     if n_frames == -1:
         assert X.shape[0] >= 3
     else:
