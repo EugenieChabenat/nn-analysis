@@ -71,7 +71,7 @@ def get_dataset(dataset_name, split='train', **kwargs):
         
     elif dataset_name == 'natural_movies':
         images = torch.from_numpy(np.load(os.path.join(env_config['stim_matrix_path'], 'stim_matrix.npy')))
-        images = images.resize_((2, 11, 3, 256, 256))
+        #images = images.resize_((2, 11, 3, 256, 256))
         print('images: ', images.shape)
         targets = torch.stack(torch.meshgrid(*[torch.arange(i) for i in images.size()[:-3]],indexing='ij'),dim=-1)
         print('target: ', targets.shape)
