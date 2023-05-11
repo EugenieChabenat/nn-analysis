@@ -130,6 +130,7 @@ def save_dataset(filename, path, model, layer_names, dataset, device='cpu', batc
                         f[path]['x'][index] = targets[j]
             with torch.no_grad():
                 #model(images)
+                print('image shape: ', images.shape)
       
                 #model.custom_resnet(images)
                 model.backbone(images)
