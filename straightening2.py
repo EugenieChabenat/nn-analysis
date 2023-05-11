@@ -59,7 +59,7 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/control_straight6.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/control_straight_reverse.png')
 
 
 
