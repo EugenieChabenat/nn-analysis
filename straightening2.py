@@ -30,7 +30,7 @@ metric_types = ["artificial_movie_labels", "natural_movie_labels"]
 
 
 model_names = [
-    "barlow_control", 
+    #"barlow_control", 
     "barlow_v1_inj", 
     "barlow_v2_inj", 
     "barlow_v1_inj", 
@@ -59,7 +59,7 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/control_straight_naturalmovies.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/natural_movies/1control_straight.png')
 
 
 
