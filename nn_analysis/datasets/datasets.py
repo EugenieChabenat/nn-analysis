@@ -58,8 +58,9 @@ def get_dataset(dataset_name, split='train', **kwargs):
         
     elif dataset_name == 'rust':
         images = torch.from_numpy(np.load(os.path.join(env_config['rust_path'], 'Rust_images.npy')))
-        images = [T.ToPILImage()(images[i]).convert("RGB") for i in range(images.shape[0])]
         print('image rust shape: ', images.shape)
+        images = [T.ToPILImage()(images[i]).convert("RGB") for i in range(images.shape[0])]
+        print('image rust shape: ', len(images))
         targets = np.arange(len(images))
         dataset = ListDataset(images,targets,**kwargs)
 
