@@ -53,24 +53,25 @@ metric = ["decode", 0]
 
 metric_types = ['obj_pose_x', 'obj_pose_y', 'obj_pose_z', 'obj_pose']
     
-"""model_names = [
+model_names = [
     "barlow_v1_inj",
-    #"identity", 
     "barlow_v2_inj",
     "barlow_v1_inj_b", 
+    "barlow_before_projector", 
     "barlow_control"
-]"""
+    
+]
 
-model_names = [
+"""model_names = [
     "barlow_faces_texture",
     #"identity", 
     "barlow_faces_notexture", 
     "barlow_faces_control", 
     "faces_pretrained_notexture"
     #"barlow_control"
-]
+]"""
 
-"""fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
+fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
 for i, metric_type in enumerate(metric_types):
     for model_name in model_names:
         #print('model: ', model_name)
@@ -89,7 +90,7 @@ fig.supxlabel('layers')
 fig.supylabel('decode')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/3FACES_inj_vs_control_obj_pose.png')"""
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/control_projector/plot1.png')
 
 
 
@@ -166,7 +167,7 @@ model_names = [
 
 one_layer = 13
 
-fig, axes = pt.round_plot.subplots(1,3,height_per_plot=6,width_per_plot=6)
+"""fig, axes = pt.round_plot.subplots(1,3,height_per_plot=6,width_per_plot=6)
 for i, model_name in enumerate(model_names):
     #ys = [[results[model_name][metric][-1,0]-results[baseline_model_name][metric][-1,0] for metric in metrics] for metrics in metricss]
     ys = [[load_data(metric, model_name, epoch, one_layer)[metric_type] - load_data(metric, baseline_model, epoch, one_layer)[metric_type] for metric_type in metric_types] for metric_types in metricss]
@@ -185,7 +186,7 @@ for i in range(len(model_names)):
     axes[0,i].set_ylim(y_lim_min, y_lim_max)
 fig.tight_layout()
 pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/FINAL_hist_layer13.png')
-fig.show()
+fig.show()"""
 
 
 
