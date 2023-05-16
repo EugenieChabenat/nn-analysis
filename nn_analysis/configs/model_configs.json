@@ -102,6 +102,10 @@
     "faces_pretrained_notexture": {
         "arch": "resnet50",
         "path": "checkpoints/pretrained"
+    }, 
+    "barlow_before_projector": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/before_projector/fact_equi_conv_injection_v1"
     }
     
     
