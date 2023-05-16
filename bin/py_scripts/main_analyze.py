@@ -57,7 +57,7 @@ if __name__ == '__main__':
                         help='specify the model of which activations are saved')
     parser.add_argument('--layers', default = 0, type=int, nargs='+',
                         help='specify the layers of which activations are saved')
-    parser.add_argument('--metric_name', default = "decode", type=str,
+    parser.add_argument('--metric_name', default = "factorization", type=str,
                         help='specify what activations are saved')
     parser.add_argument('--version', default = 0, type=int,
                         help='Version number. Error will be raised if the result for the specified version' \
