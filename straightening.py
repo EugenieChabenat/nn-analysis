@@ -54,7 +54,7 @@ metric_types = ['x_cam_pan-detailed', 'x_cam_pan',
 #               'x_focus_pan_5', 'x_focus_pan_6-detailed', 'x_focus_pan_6', 'x_focus_pan_7-detailed', 'x_focus_pan_7']
                 
 #metric_types = ['x_camel_rotate-detailed', 'x_camel_rotate',
-               'y_camel_rotate-detailed', 'y_camel_rotate']
+#               'y_camel_rotate-detailed', 'y_camel_rotate']
                 
 #metric_types = ['x_obj_rot', 'y_obj_rot', 'z_cam_trans']
 
