@@ -62,14 +62,14 @@ model_names = [
     
 ]
 
-"""model_names = [
+model_names = [
     "barlow_faces_texture",
     #"identity", 
     "barlow_faces_notexture", 
     "barlow_faces_control", 
     "faces_pretrained_notexture"
     #"barlow_control"
-]"""
+]
 
 fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
 for i, metric_type in enumerate(metric_types):
@@ -90,7 +90,7 @@ fig.supxlabel('layers')
 fig.supylabel('decode')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/control_projector/plot5.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/faces_with_pretrained/plot1.png')
 
 
 
