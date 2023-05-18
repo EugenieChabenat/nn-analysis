@@ -47,13 +47,13 @@ model_names = [
     "barlow_control"
 ]
 
-"""model_names = [
+model_names = [
     "barlow_faces_texture",
     "barlow_faces_notexture", 
     "barlow_faces_control",
     "faces_pretrained_notexture"
     #"barlow_control"
-]"""
+]
 # ------------------------------------------------------------------------------------
 # LAYERS PLOT 
 # ------------------------------------------------------------------------------------
@@ -79,7 +79,7 @@ fig.supxlabel('layers')
 fig.supylabel('fact')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/control_projector/plot3.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/faces_with_pretrained/plot1.png')
 
 
 # ------------------------------------------------------------------------------------
