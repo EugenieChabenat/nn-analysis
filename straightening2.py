@@ -59,7 +59,7 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/natural_movies/three_metrics_plot1.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/natural_movies/512three_metrics_plot1.png')
 
 
 
