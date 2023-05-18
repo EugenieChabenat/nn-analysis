@@ -41,9 +41,9 @@ def compute_sizes(model, layer_names, dataset, device='cpu'):
         with torch.no_grad():
             
             #model = model.module
-            #model(images)
+            model(images)
             #model.custom_resnet(images)
-            model.backbone(images)
+            #model.backbone(images)
             
     finally:
         remove_hooks(handles)
@@ -128,11 +128,11 @@ def save_dataset(filename, path, model, layer_names, dataset, device='cpu', batc
                     for j, index in enumerate(zip(*indices)):
                         f[path]['x'][index] = targets[j]
             with torch.no_grad():
-                #model(images)
+                model(images)
                 #print('image shape: ', images.shape)
       
                 #model.custom_resnet(images)
-                model.backbone(images)
+                #model.backbone(images)
                 #print('pred: \n', model.backbone(images))
                 #print('size: ', model.backbone(images).shape)"""
             
