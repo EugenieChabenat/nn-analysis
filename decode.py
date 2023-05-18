@@ -49,9 +49,9 @@ metric = ["decode", 0]
                 
 #metric_types = ['brightness', 'contrast', 'saturation', 'hue', 'color', 'lighting']
                 
-metric_types = ['obj_pos_x', 'obj_pos_y', 'obj_scale', 'obj_pos'] 
+#metric_types = ['obj_pos_x', 'obj_pos_y', 'obj_scale', 'obj_pos'] 
 
-#metric_types = ['obj_pose_x', 'obj_pose_y', 'obj_pose_z', 'obj_pose']
+metric_types = ['obj_pose_x', 'obj_pose_y', 'obj_pose_z', 'obj_pose']
     
 model_names = [
     "barlow_v1_inj",
@@ -90,7 +90,7 @@ fig.supxlabel('layers')
 fig.supylabel('decode')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/faces_with_pretrained/plot4.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/faces_with_pretrained/plot5.png')
 
 
 
