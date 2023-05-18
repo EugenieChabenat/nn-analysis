@@ -101,7 +101,7 @@
     }, 
     "faces_pretrained_notexture": {
         "arch": "resnet50",
-        "path": "checkpoints/pretrained"
+        "path": "checkpoints/pretrained/factorize_avgpool_equivariant_all_bn_v5"
     }, 
     "barlow_before_projector": {
         "arch": "barlowtwins",
