@@ -12,6 +12,6 @@
         "save_loc": "tmp_shared_path"
     },
     "target_names": [
-        "artificial_movie_labels", "natural_movie_labels"
+        "artificial_movie_labels", "contrast_movie_labels", "natural_movie_labels"
     ]
 }
