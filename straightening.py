@@ -74,14 +74,13 @@ model_names = [
     "barlow_control", 
     "barlow_before_projector", 
 ]
-
-"""model_names = [
+model_names = [
     "barlow_faces_texture",
     "barlow_faces_notexture",
     "barlow_faces_control", 
     "faces_pretrained_notexture"
     #"barlow_control"
-]"""
+]
 
 
 
@@ -106,7 +105,7 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/control_projector/plot6.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/faces_with_pretrained/plot1.png')
 
 
 
