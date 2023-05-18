@@ -31,7 +31,7 @@ def main(model_name, layers, metric_name, version, epoch=None, overwrite=False, 
     #layers = [0, 1, 2, 16]
     
     # identity 
-    layers = [0]
+    #layers = [0]
     for layer in layers:
         layer_name = layer_names[layer]
         
