@@ -41,7 +41,7 @@ def compute_sizes(model, layer_names, dataset, device='cpu'):
         with torch.no_grad():
             
             #model = model.module
-            @model(images)
+            #model(images)
             #model.custom_resnet(images)
             model.backbone(images)
             
