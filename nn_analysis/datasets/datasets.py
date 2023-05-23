@@ -78,12 +78,14 @@ def get_dataset(dataset_name, split='train', **kwargs):
         
     elif dataset_name == 'natural_movies':
         # tensor dataset 
-        """images = torch.from_numpy(np.load(os.path.join(env_config['stim_matrix_path'], 'stim_matrix9.npy')))
+        #images = torch.from_numpy(np.load(os.path.join(env_config['stim_matrix_path'], 'stim_matrix9.npy')))
+        images = torch.from_numpy(np.load(os.path.join(env_config['stim_matrix_path'], 'art_nat_matrix.npy')))
         #images = images.resize_((3, 11, 2, 512, 512))
+        images = images.resize_((2, 11, 10, 512, 512))
         print('images: ', images.shape)
         targets = torch.stack(torch.meshgrid(*[torch.arange(i) for i in images.size()[:-3]],indexing='ij'),dim=-1)
         print('target: ', targets.shape)
-        dataset = TensorDataset(images,targets,**kwargs)"""
+        dataset = TensorDataset(images,targets,**kwargs)
         # list dataset 
         """images = torch.from_numpy(np.load('/mnt/smb/locker/issa-locker/users/Eugénie/datasets/artificial_matrix.npy'))
         print('shape: ', images.shape)
@@ -91,7 +93,8 @@ def get_dataset(dataset_name, split='train', **kwargs):
         #images = [T.ToPILImage()(images[i]).convert("RGB") for i in range(images.shape[0])]
         targets = np.arange(len(images))
         dataset = ListDataset(images,targets,**kwargs)"""
-        images = torch.from_numpy(np.load('/mnt/smb/locker/issa-locker/users/Eugénie/datasets/artificial_matrix.npy'))
+        
+        """images = torch.from_numpy(np.load('/mnt/smb/locker/issa-locker/users/Eugénie/datasets/artificial_matrix.npy'))
         print('shape: ', images.shape)
         images = images.reshape((2, 110, 512, 512))
         images = images[0, :, :, :]
@@ -99,7 +102,7 @@ def get_dataset(dataset_name, split='train', **kwargs):
         images = [T.ToPILImage()(images[i]).convert("RGB") for i in range(images.shape[0])]
         print('image rust shape: ', len(images))
         targets = np.arange(len(images))
-        dataset = ListDataset(images,targets,**kwargs)
+        dataset = ListDataset(images,targets,**kwargs)"""
         
     else:
         raise NotImplementedError(f"dataset_name {dataset_name} not implemented. Try 'imagenet', 'pseudo_hvm', 'hvm', 'hk2', or 'rust'.")
