@@ -57,11 +57,10 @@ def get_dataset(dataset_name, split='train', **kwargs):
         dataset.class_to_idx = class_to_idx
         
     elif dataset_name == 'rust':
-        images = torch.from_numpy(np.load('/mnt/smb/locker/issa-locker/users/Eugénie/datasets/artificial_matrix.npy'))
-        print('shape: ', images.shape)
-        
-        images = images.reshape((2, 110, 512, 512))
-        images = images[0, :, :, :]
+        #images = torch.from_numpy(np.load('/mnt/smb/locker/issa-locker/users/Eugénie/datasets/artificial_matrix.npy'))
+        #print('shape: ', images.shape)
+        #images = images.reshape((2, 110, 512, 512))
+        #images = images[0, :, :, :]
         
         #images = torch.from_numpy(np.load(os.path.join(env_config['rust_path'], 'Rust_images.npy')))
         print('image rust shape: ', images.shape)
@@ -86,10 +85,19 @@ def get_dataset(dataset_name, split='train', **kwargs):
         print('target: ', targets.shape)
         dataset = TensorDataset(images,targets,**kwargs)"""
         # list dataset 
-        images = torch.from_numpy(np.load('/mnt/smb/locker/issa-locker/users/Eugénie/datasets/artificial_matrix.npy'))
+        """images = torch.from_numpy(np.load('/mnt/smb/locker/issa-locker/users/Eugénie/datasets/artificial_matrix.npy'))
         print('shape: ', images.shape)
         images = images.reshape((2, 110, 512, 512))
         #images = [T.ToPILImage()(images[i]).convert("RGB") for i in range(images.shape[0])]
+        targets = np.arange(len(images))
+        dataset = ListDataset(images,targets,**kwargs)"""
+        images = torch.from_numpy(np.load('/mnt/smb/locker/issa-locker/users/Eugénie/datasets/artificial_matrix.npy'))
+        print('shape: ', images.shape)
+        images = images.reshape((2, 110, 512, 512))
+        images = images[0, :, :, :]
+        print('image rust shape: ', images.shape)
+        images = [T.ToPILImage()(images[i]).convert("RGB") for i in range(images.shape[0])]
+        print('image rust shape: ', len(images))
         targets = np.arange(len(images))
         dataset = ListDataset(images,targets,**kwargs)
         
