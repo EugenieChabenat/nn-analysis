@@ -81,6 +81,7 @@ def get_dataset(dataset_name, split='train', **kwargs):
         dataset = TensorDataset(images,targets,**kwargs)"""
         # list dataset 
         images = torch.from_numpy(np.load('/mnt/smb/locker/issa-locker/users/Eugénie/datasets/artificial_matrix.npy'))
+        print('shape: ', images.shape)
         images = images.reshape((110, 512, 512))
         images = [T.ToPILImage()(images[i]).convert("RGB") for i in range(images.shape[0])]
         targets = np.arange(len(images))
