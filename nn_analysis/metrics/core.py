@@ -360,7 +360,9 @@ def compute_curvature(X, n_frames=-1):
         delta_frames = (X.shape[0]-1) // (n_frames-1)
         X = X[::delta_frames][:n_frames]
     
+    print('X[1:] : ' X[1:].shape)
     vecs = X[1:] - X[:-1] # displacement vectors
+    
     vecs = vecs/np.linalg.norm(vecs, axis=-1, keepdims=True) # normalize the displacement vectors
     dots = np.einsum('ni,ni->n',vecs[1:],vecs[:-1]) # dot product between successive normalized displacement vectors
     angles = np.arccos(dots) # angles in radians
