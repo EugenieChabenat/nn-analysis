@@ -80,6 +80,8 @@ class Acts:
             _y = ac.core.load(tmp_acts_file, self.model_name, self.epoch, dataset_name, layer_name) # (images, neurons)
             _ys.append(_y)
         y = transform_data(_ys, transform)
+        
+        print('\n\nprincipal components are NOTTT computed')
 
         # Compute PCs
         if n_pcs is not None:
