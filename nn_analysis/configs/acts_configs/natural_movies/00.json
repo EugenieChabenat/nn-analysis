@@ -8,7 +8,7 @@
         }
     },
     "kwargs": {
-        "n_pcs": null,
+        "n_pcs": -1,
         "save_loc": "tmp_shared_path"
     },
     "target_names": [
