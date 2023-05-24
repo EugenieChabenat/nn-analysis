@@ -83,6 +83,8 @@ class Acts:
 
         # Compute PCs
         if n_pcs is not None:
+            print('principal components are computed')
+            print('n_pcs: ', n_pcs)
             y, evr = utils.get_pcs(y, n_pcs, svd_solver=svd_solver)
             return {'y': y, 'evr': evr}
         return {'y': y}
