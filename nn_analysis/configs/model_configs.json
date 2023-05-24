@@ -106,7 +106,15 @@
     "barlow_before_projector": {
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/before_projector/fact_equi_conv_injection_v1"
-    }
+    }, 
+    "barlow_twins_50epochs": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/vanilla_barlowtwinw"
+    }, 
+    "resnet50_untrained": {
+        "arch": "resnet50",
+        "path": "checkpoints/pretrained/resnet50_untrained"
+    },
     
     
 }
