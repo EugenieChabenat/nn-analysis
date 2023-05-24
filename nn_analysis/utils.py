@@ -235,6 +235,7 @@ def get_pcs(X, n_pcs, **kwargs):
     X = X.reshape((-1,shape[-1]))
     max_n_pcs = min(X.shape) # min(n_data_points, n_features)
     print('max pcs: ', max_n_pcs)
+    print('X shape: ', X.shape)
     if n_pcs == -1:
         n_pcs = max_n_pcs
     assert n_pcs <= max_n_pcs # Can't have more than max_n_pcs
