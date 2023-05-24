@@ -109,7 +109,7 @@
     }, 
     "barlow_twins_50epochs": {
         "arch": "barlowtwins",
-        "path": "checkpoints/barlowtwins/vanilla_barlowtwinw"
+        "path": "checkpoints/barlowtwins/vanilla_barlowtwins"
     }, 
     "resnet50_untrained": {
         "arch": "resnet50",
