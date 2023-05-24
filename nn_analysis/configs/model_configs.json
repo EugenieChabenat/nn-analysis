@@ -114,7 +114,7 @@
     "resnet50_untrained": {
         "arch": "resnet50",
         "path": "checkpoints/pretrained/resnet50_untrained"
-    },
+    }
     
     
 }
