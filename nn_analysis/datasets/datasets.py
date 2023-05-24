@@ -78,10 +78,10 @@ def get_dataset(dataset_name, split='train', **kwargs):
         
     elif dataset_name == 'natural_movies':
         # tensor dataset 
-        #images = torch.from_numpy(np.load(os.path.join(env_config['stim_matrix_path'], 'stim_matrix9.npy')))
-        images = torch.from_numpy(np.load(os.path.join(env_config['stim_matrix_path'], 'art_nat_matrix.npy')))
-        #images = images.resize_((3, 11, 2, 512, 512))
-        images = images.resize_((2, 11, 10, 512, 512))
+        images = torch.from_numpy(np.load(os.path.join(env_config['stim_matrix_path'], 'stim_matrix9.npy')))
+        #images = torch.from_numpy(np.load(os.path.join(env_config['stim_matrix_path'], 'art_nat_matrix.npy')))
+        images = images.resize_((3, 11, 2, 512, 512))
+        #images = images.resize_((2, 11, 10, 512, 512))
         print('images: ', images.shape)
         targets = torch.stack(torch.meshgrid(*[torch.arange(i) for i in images.size()[:-3]],indexing='ij'),dim=-1)
         print('target: ', targets.shape)
