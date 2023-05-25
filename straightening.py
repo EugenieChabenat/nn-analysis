@@ -43,7 +43,7 @@ metric = ["curve", 1]
 #metric_types = ['x_pan-detailed', 'x_pan', 'y_pan-detailed', 'y_pan', 'z_pan-detailed', 'z_pan']
 
 #metric_types = ['x_focus_pan-detailed', 'x_focus_pan', 
-metric_types = ['y_focus_pan-detailed', 'y_focus_pan', 
+metric_types = ['y_focus_pan-detailed', 'y_focus_pan'] 
 #metric_types = ['z_focus_pan-detailed', 'z_focus_pan']
 
 #metric_types = ['x_cam_pan-detailed', 'x_cam_pan', 
