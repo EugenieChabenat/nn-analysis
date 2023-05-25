@@ -44,10 +44,10 @@ metric = ["curve", 1]
 
 #metric_types = ['x_focus_pan-detailed', 'x_focus_pan'] 
 #metric_types = ['y_focus_pan-detailed', 'y_focus_pan'] 
-metric_types = ['z_focus_pan-detailed', 'z_focus_pan']
+#metric_types = ['z_focus_pan-detailed', 'z_focus_pan']
 
-#metric_types = ['x_cam_pan-detailed', 'x_cam_pan', 
-#                  'yz_cam_pan-detailed','yz_cam_pan']
+metric_types = ['x_cam_pan-detailed', 'x_cam_pan', 
+                 'yz_cam_pan-detailed','yz_cam_pan']
                 
 #metric_types = ['x_focus_pan_0-detailed', 'x_focus_pan_0', 'x_focus_pan_1-detailed', 'x_focus_pan_1', 'x_focus_pan_2-detailed', 
 #               'x_focus_pan_2', 'x_focus_pan_3-detailed', 'x_focus_pan_3', 'x_focus_pan_4-detailed', 'x_focus_pan_4', 'x_focus_pan_5-detailed', 
@@ -108,7 +108,7 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/with_IT/plot3.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/with_IT/plot4.png')
 
 
 
