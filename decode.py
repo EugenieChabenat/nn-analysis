@@ -57,10 +57,11 @@ model_names = [
     "barlow_v1_inj",
     "barlow_v2_inj",
     "barlow_v1_inj_b", 
+    "barlow_IT_inj", 
     #"barlow_before_projector", 
     "barlow_control", 
-    "resnet50_untrained", 
-    "barlow_twins_50epochs"
+    #"resnet50_untrained", 
+    #"barlow_twins_50epochs"
     
 ]
 
@@ -92,7 +93,7 @@ fig.supxlabel('layers')
 fig.supylabel('decode')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/sanity_control/plot1.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/with_IT/plot1.png')
 
 
 
