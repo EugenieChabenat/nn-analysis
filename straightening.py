@@ -72,15 +72,17 @@ model_names = [
     "barlow_v2_inj", 
     "barlow_v1_inj_b",
     "barlow_control", 
-    "barlow_before_projector", 
+    "resnet50_untrained", 
+    "barlow_twins_50epochs"
+    #"barlow_before_projector", 
 ]
-model_names = [
+"""model_names = [
     "barlow_faces_texture",
     "barlow_faces_notexture",
     "barlow_faces_control", 
     "faces_pretrained_notexture"
     #"barlow_control"
-]
+]"""
 
 
 
@@ -105,7 +107,7 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/faces_with_pretrained/plot5.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/sanity_control/plot5.png')
 
 
 
