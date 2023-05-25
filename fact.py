@@ -43,10 +43,11 @@ model_names = [
     #"identity", 
     "barlow_v2_inj", 
     "barlow_v1_inj_b",
+    "barlow_IT_inj", 
     #"barlow_before_projector", 
     "barlow_control", 
-    "resnet50_untrained", 
-    "barlow_twins_50epochs"
+    #"resnet50_untrained", 
+    #"barlow_twins_50epochs"
 ]
 
 """model_names = [
@@ -81,7 +82,7 @@ fig.supxlabel('layers')
 fig.supylabel('fact')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/sanity_control/plot3.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/with_IT/plot3.png')
 
 
 # ------------------------------------------------------------------------------------
