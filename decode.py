@@ -61,7 +61,7 @@ model_names = [
     #"barlow_before_projector", 
     "barlow_control", 
     #"resnet50_untrained", 
-    #"barlow_twins_50epochs"
+    "barlow_twins_50epochs"
     
 ]
 
