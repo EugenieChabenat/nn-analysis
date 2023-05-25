@@ -71,9 +71,10 @@ model_names = [
     "barlow_v1_inj",
     "barlow_v2_inj", 
     "barlow_v1_inj_b",
+    "barlow_IT_inj", 
     "barlow_control", 
-    "resnet50_untrained", 
-    "barlow_twins_50epochs"
+    #"resnet50_untrained", 
+    #"barlow_twins_50epochs"
     #"barlow_before_projector", 
 ]
 """model_names = [
@@ -107,7 +108,7 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/sanity_control/plot6.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/with_IT/plot6.png')
 
 
 
