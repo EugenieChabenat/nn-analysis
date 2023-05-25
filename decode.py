@@ -43,7 +43,7 @@ layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
 one_layer = 0
 metric = ["decode", 0]
 
-#metric_types = ['obj_class']
+metric_types = ['obj_class']
                 
 #metric_types = ['cam_pos_x', 'cam_pos_y', 'cam_scale', 'cam_pos']
                 
@@ -51,7 +51,7 @@ metric = ["decode", 0]
                 
 #metric_types = ['obj_pos_x', 'obj_pos_y', 'obj_scale', 'obj_pos'] 
 
-metric_types = ['obj_pose_x', 'obj_pose_y', 'obj_pose_z', 'obj_pose']
+#metric_types = ['obj_pose_x', 'obj_pose_y', 'obj_pose_z', 'obj_pose']
     
 model_names = [
     "barlow_v1_inj",
@@ -93,7 +93,7 @@ fig.supxlabel('layers')
 fig.supylabel('decode')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/with_IT/plot5.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/with_IT/plot1bis.png')
 
 
 
