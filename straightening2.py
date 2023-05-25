@@ -34,6 +34,8 @@ model_names = [
     "barlow_v1_inj", 
     "barlow_v2_inj", 
     "barlow_v1_inj_b", 
+    "resnet50_untrained", 
+    "barlow_twins_50epochs"
 ]
 
 
@@ -59,7 +61,7 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/natural_movies/10frames_metrics_plot9.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/natural_movies/sanity_control/10frames_metrics_plot9.png')
 
 
 
