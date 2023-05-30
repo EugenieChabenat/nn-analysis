@@ -45,20 +45,26 @@ metric = ["decode", 0]
 
 metric_types = ['obj_class']
                 
-#metric_types = ['cam_pos_x', 'cam_pos_y', 'cam_scale', 'cam_pos']
+metric_types = ['cam_pos_x', 'cam_pos_y', 'cam_scale', 'cam_pos']
                 
 #metric_types = ['brightness', 'contrast', 'saturation', 'hue', 'color', 'lighting']
                 
 #metric_types = ['obj_pos_x', 'obj_pos_y', 'obj_scale', 'obj_pos'] 
 
 #metric_types = ['obj_pose_x', 'obj_pose_y', 'obj_pose_z', 'obj_pose']
-    
+
+list_metrics = {
+    "Object Class" : ['obj_class'], 
+    "Camera Pos & Scale" : ['cam_pos_x', 'cam_pos_y', 'cam_scale', 'cam_pos'], 
+    "Color & Lightning": ['brightness', 'contrast', 'saturation', 'hue', 'color', 'lighting'],
+    "Object Pos & Scale" : ['obj_pos_x', 'obj_pos_y', 'obj_scale', 'obj_pos'], 
+    "Object Pose": ['obj_pose_x', 'obj_pose_y', 'obj_pose_z', 'obj_pose']
+}
 model_names = [
     "injection_v1",
     "injection_v4",
     "resnet50_untrained", 
     "barlow_twins_50epochs"
-    
 ]
 
 """model_names = [
@@ -70,26 +76,26 @@ model_names = [
     #"barlow_control"
 ]"""
 
-fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
-for i, metric_type in enumerate(metric_types):
-    for model_name in model_names:
-        #print('model: ', model_name)
-        #print('layer: ', layers)
-                
-        scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
-        if model_name == "barlow_v1_inj_b": 
-            axes[0,i].plot(layers, scores, label="barlow_v3_inj")
-        else: 
-            axes[0,i].plot(layers, scores, label=model_name)
-    #scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
-    #axes[0,i].plot(layers, scores, label='identity')
-    axes[0,i].set_title(metric_type)
-    axes[0,i].legend()
-fig.supxlabel('layers')
-fig.supylabel('decode')
-fig.tight_layout()
-plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/obj_class.png')
+
+for key, metric_types in list_metrics.items(): 
+    
+    fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
+    for i, metric_type in enumerate(metric_types):
+        for model_name in model_names:
+            scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
+            if model_name == "barlow_v1_inj_b": 
+                axes[0,i].plot(layers, scores, label="barlow_v3_inj")
+            else: 
+                axes[0,i].plot(layers, scores, label=model_name)
+        #scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
+        #axes[0,i].plot(layers, scores, label='identity')
+        axes[0,i].set_title(key)
+        axes[0,i].legend()
+    fig.supxlabel('layers')
+    fig.supylabel('decode')
+    fig.tight_layout()
+    plt.show()
+    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/{}.png'.format(key))
 
 
 
