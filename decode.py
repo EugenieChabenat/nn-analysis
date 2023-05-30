@@ -56,7 +56,6 @@ metric_types = ['obj_class']
 model_names = [
     "injection_v1",
     "injection_v4",
-    "barlow_control", 
     "resnet50_untrained", 
     "barlow_twins_50epochs"
     
