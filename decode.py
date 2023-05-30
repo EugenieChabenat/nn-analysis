@@ -55,9 +55,10 @@ metric_types = ['obj_class']
     
 model_names = [
     "barlow_v1_inj",
-    "barlow_v2_inj",
-    "barlow_v1_inj_b", 
-    "barlow_IT_inj", 
+    "injection_v1"
+    #"barlow_v2_inj",
+    #"barlow_v1_inj_b", 
+    #"barlow_IT_inj", 
     #"barlow_before_projector", 
     "barlow_control", 
     #"resnet50_untrained", 
@@ -93,7 +94,7 @@ fig.supxlabel('layers')
 fig.supylabel('decode')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/with_IT/plot1bis.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/V1_compare.png')
 
 
 
