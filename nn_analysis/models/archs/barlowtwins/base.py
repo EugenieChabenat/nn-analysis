@@ -19,7 +19,7 @@ class BarlowTwins(nn.Module):
 
         # projector
         sizes = [2048] + list(map(int, args.projector.split('-')))
-        #sizes = [32] + list(map(int, args.projector.split('-')))
+        sizes = [256] + list(map(int, args.projector.split('-')))
         layers = []
         for i in range(len(sizes) - 2):
             layers.append(nn.Linear(sizes[i], sizes[i + 1], bias=False))
