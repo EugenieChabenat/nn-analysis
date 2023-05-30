@@ -73,7 +73,7 @@ list_metrics = {
     "y-focus Pan" : ['y_focus_pan-detailed', 'y_focus_pan'], 
     "z-focus Pan" : ['z_focus_pan-detailed', 'z_focus_pan'], 
     "Camera Pan" : ['x_cam_pan-detailed', 'x_cam_pan', 'yz_cam_pan-detailed','yz_cam_pan'], 
-    "Object Rotation" : ['x_obj_rot', 'y_obj_rot', 'z_cam_trans'], 
+    "Object Rotation" : ['x_obj_rot', 'y_obj_rot'], 
 }
 
 model_names = [
