@@ -38,16 +38,18 @@ metric_types = ['ss_inv-background', 'ss_inv-obj_motion', 'ss_inv-crop','ss_inv-
                 
 #metric_types = ['fact-background', 'fact-obj_motion', 'fact-crop', 'fact-color']
 
+list_metrics = {
+    "Subspace Invariance": ['ss_inv-background', 'ss_inv-obj_motion', 'ss_inv-crop','ss_inv-color'], 
+    "Invariance": ['inv-background', 'inv-obj_motion', 'inv-crop', 'inv-color'], 
+    "Factorization": ['fact-background', 'fact-obj_motion', 'fact-crop', 'fact-color']
+}
+
+
 model_names = [
-    "barlow_v1_inj",
-    #"identity", 
-    "barlow_v2_inj", 
-    "barlow_v1_inj_b",
-    "barlow_IT_inj", 
-    #"barlow_before_projector", 
-    "barlow_control", 
-    #"resnet50_untrained", 
-    #"barlow_twins_50epochs"
+    "injection_v1",
+    "injection_v4", 
+    "resnet50_untrained", 
+    "barlow_twins_50epochs"
 ]
 
 """model_names = [
@@ -60,29 +62,30 @@ model_names = [
 # ------------------------------------------------------------------------------------
 # LAYERS PLOT 
 # ------------------------------------------------------------------------------------
-fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
-for i, metric_type in enumerate(metric_types):
-    for model_name in model_names:
-        print('model: ', model_name)
-        print('layer: ', layers)
-        
-        #print('keys: ', load_data(metric, model_name, epoch, one_layer).keys())
-        
-        scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
-        #axes[0,i].plot(layers, scores, label=model_name)
-        if model_name == "barlow_v1_inj_b": 
-            axes[0,i].plot(layers, scores, label="barlow_v3_inj")
-        else: 
-            axes[0,i].plot(layers, scores, label=model_name)
-    #scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
-    #axes[0,i].plot(layers, scores, label='identity')
-    axes[0,i].set_title(metric_type)
-    axes[0,i].legend()
-fig.supxlabel('layers')
-fig.supylabel('fact')
-fig.tight_layout()
-plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/with_IT/plot1.png')
+for key, metric_types in list_metrics.items(): 
+    fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
+    for i, metric_type in enumerate(metric_types):
+        for model_name in model_names:
+            print('model: ', model_name)
+            print('layer: ', layers)
+
+            #print('keys: ', load_data(metric, model_name, epoch, one_layer).keys())
+
+            scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
+            #axes[0,i].plot(layers, scores, label=model_name)
+            if model_name == "barlow_v1_inj_b": 
+                axes[0,i].plot(layers, scores, label="barlow_v3_inj")
+            else: 
+                axes[0,i].plot(layers, scores, label=model_name)
+        #scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
+        #axes[0,i].plot(layers, scores, label='identity')
+        axes[0,i].set_title(metric_type)
+        axes[0,i].legend()
+    fig.supxlabel('layers')
+    fig.supylabel('fact')
+    fig.tight_layout()
+    plt.show()
+    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/{}.png'.format(key))
 
 
 # ------------------------------------------------------------------------------------
