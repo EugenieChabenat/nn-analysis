@@ -56,7 +56,7 @@ metric = ["curve", 1]
 #metric_types = ['x_camel_rotate-detailed', 'x_camel_rotate',
 #               'y_camel_rotate-detailed', 'y_camel_rotate']
                 
-metric_types = ['x_obj_rot', 'y_obj_rot', 'z_cam_trans']
+#metric_types = ['x_obj_rot', 'y_obj_rot', 'z_cam_trans']
 
 """metric_types = ['x_pan-detailed', 'x_pan', 'y_pan-detailed', 'y_pan', 'z_pan-detailed', 'z_pan', 'x_focus_pan-detailed', 'x_focus_pan', 
                 'y_focus_pan-detailed', 'y_focus_pan', 'z_focus_pan-detailed', 'z_focus_pan', 'x_cam_pan-detailed', 'x_cam_pan', 'yz_cam_pan-detailed',
@@ -66,17 +66,23 @@ metric_types = ['x_obj_rot', 'y_obj_rot', 'z_cam_trans']
                 'x_camel_rotate', 'y_camel_rotate-detailed', 'y_camel_rotate', 'x_cam_rot', 'y_cam_rot', 'x_cam_trans', 'y_cam_trans', 'z_cam_trans', 
                 'x_obj_rot', 'y_obj_rot']"""
 
+list_metrics = {
+    "Camera Translation & Rotation" : ["x_cam_trans", "y_cam_trans", "z_cam_trans", "x_cam_rot", "y_cam_rot"], 
+    "x, y & z Pan" : ['x_pan-detailed', 'x_pan', 'y_pan-detailed', 'y_pan', 'z_pan-detailed', 'z_pan'], 
+    "x-focus Pan" : ['x_focus_pan-detailed', 'x_focus_pan'], 
+    "y-focus Pan" : ['y_focus_pan-detailed', 'y_focus_pan'], 
+    "z-focus Pan" : ['z_focus_pan-detailed', 'z_focus_pan'], 
+    "Camera Pan" : ['x_cam_pan-detailed', 'x_cam_pan', 'yz_cam_pan-detailed','yz_cam_pan'], 
+    "Object Rotation" : ['x_obj_rot', 'y_obj_rot', 'z_cam_trans'], 
+}
 
 model_names = [
-    "barlow_v1_inj",
-    "barlow_v2_inj", 
-    "barlow_v1_inj_b",
-    "barlow_IT_inj", 
-    "barlow_control", 
-    #"resnet50_untrained", 
-    #"barlow_twins_50epochs"
-    #"barlow_before_projector", 
+    "injection_v1",
+    "injection_v4",
+    "resnet50_untrained", 
+    "barlow_twins_50epochs"
 ]
+
 """model_names = [
     "barlow_faces_texture",
     "barlow_faces_notexture",
@@ -90,25 +96,27 @@ model_names = [
 # ------------------------------------------------------------------------------------
 # LAYERS PLOT 
 # ------------------------------------------------------------------------------------
-fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
-for i, metric_type in enumerate(metric_types):
-    for model_name in model_names:
-        print('model: ', model_name)
-        print('layer: ', layers)
-        scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
-        if model_name == "barlow_v1_inj_b": 
-            axes[0,i].plot(layers, scores, label="barlow_v3_inj")
-        else: 
-            axes[0,i].plot(layers, scores, label=model_name)
-    scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
-    axes[0,i].plot(layers, scores, label='identity')
-    axes[0,i].set_title(metric_type)
-    axes[0,i].legend()
-fig.supxlabel('layers')
-fig.supylabel('curvature')
-fig.tight_layout()
-plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/with_IT/plot5.png')
+for key, metric_types in list_metrics.items(): 
+
+    fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
+    for i, metric_type in enumerate(metric_types):
+        for model_name in model_names:
+            print('model: ', model_name)
+            print('layer: ', layers)
+            scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
+            if model_name == "barlow_v1_inj_b": 
+                axes[0,i].plot(layers, scores, label="barlow_v3_inj")
+            else: 
+                axes[0,i].plot(layers, scores, label=model_name)
+        scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
+        axes[0,i].plot(layers, scores, label='identity')
+        axes[0,i].set_title(metric_type)
+        axes[0,i].legend()
+    fig.supxlabel('layers')
+    fig.supylabel('curvature')
+    fig.tight_layout()
+    plt.show()
+    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/{}.png'.format(key))
 
 
 
