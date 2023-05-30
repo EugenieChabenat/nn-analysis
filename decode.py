@@ -89,7 +89,7 @@ for key, metric_types in list_metrics.items():
                 axes[0,i].plot(layers, scores, label=model_name)
         #scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
         #axes[0,i].plot(layers, scores, label='identity')
-        axes[0,i].set_title(key)
+        axes[0,i].set_title(metric_type)
         axes[0,i].legend()
     fig.supxlabel('layers')
     fig.supylabel('decode')
