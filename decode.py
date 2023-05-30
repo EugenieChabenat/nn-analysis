@@ -55,7 +55,7 @@ metric_types = ['obj_class']
     
 model_names = [
     "barlow_v1_inj",
-    "injection_v1"
+    "injection_v1",
     #"barlow_v2_inj",
     #"barlow_v1_inj_b", 
     #"barlow_IT_inj", 
