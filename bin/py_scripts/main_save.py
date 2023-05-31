@@ -59,7 +59,7 @@ def main(model_name, layers, acts_name, version, epoch=None, overwrite=False, de
     Model = importlib.import_module('.' + args.name, 'models').Model"""
     # --- 
     # complete 
-    layers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+    layers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
     
     # v3 
     #layers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 16]
