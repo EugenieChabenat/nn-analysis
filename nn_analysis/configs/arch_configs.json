@@ -88,6 +88,10 @@
     },
     "resnet50": {
         "layer_names": [
+            "conv1",
+            "bn1",
+            "relu",
+            "maxpool", 
             "layer1.0",
             "layer1.1",
             "layer1.2",
