@@ -17,7 +17,7 @@ class BarlowTwins(nn.Module):
 
         # projector
         sizes = [2048] + list(map(int, args.projector.split('-')))
-        #sizes = [32] + list(map(int, args.projector.split('-')))
+        sizes = [512] + list(map(int, args.projector.split('-')))
         layers = []
         for i in range(len(sizes) - 2):
             layers.append(nn.Linear(sizes[i], sizes[i + 1], bias=False))
@@ -49,7 +49,7 @@ class BarlowTwins(nn.Module):
         return loss
 # ----
 
-class Bottleneck(nn.Module):
+"""class Bottleneck(nn.Module):
     expansion = 4
     def __init__(self, in_channels, out_channels, i_downsample=None, stride=1):
         super(Bottleneck, self).__init__()
@@ -111,6 +111,6 @@ class Block(nn.Module):
 
       x += identity
       x = self.relu(x)
-      return x
+      return x"""
 
 # -- -- -- -- 
