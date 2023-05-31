@@ -49,7 +49,7 @@ class BarlowTwins(nn.Module):
         return loss
 # ----
 
-"""class Bottleneck(nn.Module):
+class Bottleneck(nn.Module):
     expansion = 4
     def __init__(self, in_channels, out_channels, i_downsample=None, stride=1):
         super(Bottleneck, self).__init__()
@@ -111,6 +111,6 @@ class Block(nn.Module):
 
       x += identity
       x = self.relu(x)
-      return x"""
+      return x
 
 # -- -- -- -- 
