@@ -9,7 +9,7 @@
             "backbone.conv1",
             "backbone.bn1",
             "backbone.relu",
-            "maxpool", 
+            "backbone.maxpool", 
             "backbone.layer1.0",
             "backbone.layer1.1",
             "backbone.layer1.2",
