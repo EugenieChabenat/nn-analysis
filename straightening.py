@@ -78,6 +78,7 @@ list_metrics = {
 
 model_names = [
     "injection_v1",
+    "injection_v2", 
     "injection_v4",
     "resnet50_untrained", 
     "barlow_twins_50epochs"
