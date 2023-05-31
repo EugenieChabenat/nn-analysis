@@ -6,7 +6,7 @@
     },
     "barlowtwins": {
         "layer_names": [
-            "conv1",
+            "backbone.conv1",
             "backbone.layer1.0",
             "backbone.layer1.1",
             "backbone.layer1.2",
