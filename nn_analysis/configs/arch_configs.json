@@ -4,40 +4,6 @@
             "pixels"
         ]
     },
-    "equivariant_all_bn_v2": {
-        "layer_names": [
-           "custom_resnet.layer1.0",
-            "custom_resnet.layer1.1",
-            "custom_resnet.layer1.2",
-            "custom_resnet.layer2.0",
-            "custom_resnet.layer2.1",
-            "custom_resnet.layer2.2",
-            "custom_resnet.layer2.3",
-            "custom_resnet.layer3.0",
-            "custom_resnet.layer3.1",
-            "custom_resnet.layer3.2",
-            "custom_resnet.layer3.3",
-            "custom_resnet.layer3.4",
-            "custom_resnet.layer3.5",
-            "custom_resnet.layer4.0",
-            "custom_resnet.layer4.1",
-            "custom_resnet.layer4.2",
-            "custom_resnet.avgpool",
-            "projector",
-            "bn"
-        ]
-    },
-    "factorize_avgpool_equivariant_all_bn_inj_v1": {
-        "layer_names": [
-            "backbone.layer1.0",
-            "backbone.layer1.1",
-            "backbone.layer1.2",
-            
-            "backbone.avgpool",
-            "projector",
-            "bn"
-        ]
-    },
     "barlowtwins": {
         "layer_names": [
             "backbone.layer1.0",
@@ -58,7 +24,7 @@
             "backbone.layer4.2",
             "backbone.avgpool",
             "projector",
-            "batch_norm"
+            "bn"
         ]
     },
     "equivariant_all_bn": {
