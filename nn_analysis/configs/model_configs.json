@@ -133,23 +133,45 @@
     }
     
     , 
-    "barlow_twins_50epochs1": {
+    "barlow_twins_50epochs_rc": {
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/vanilla_barlowtwins"
     }, 
-    "resnet50_untrained1": {
+    "resnet50_untrained_rc": {
         "arch": "resnet50",
         "path": "checkpoints/pretrained/resnet50_untrained"
     },
-    "injection_v1 ": {
+    "injection_v1_rc": {
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/random_injection/new_injection_v1"
     },
-    "injection_v2 ": {
+    "injection_v2_rc": {
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/random_injection/new_injection_v2_v1"
     },
-    "injection_v4 ": {
+    "injection_v4_rc": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/random_injection/new_injection_v4_v1"
+    }
+    
+    , 
+    "barlow_twins_50epochs_pc": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/vanilla_barlowtwins"
+    }, 
+    "resnet50_untrained_pc": {
+        "arch": "resnet50",
+        "path": "checkpoints/pretrained/resnet50_untrained"
+    },
+    "injection_v1_pc": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/random_injection/new_injection_v1"
+    },
+    "injection_v2_pc": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/random_injection/new_injection_v2_v1"
+    },
+    "injection_v4_pc": {
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/random_injection/new_injection_v4_v1"
     }
