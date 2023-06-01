@@ -126,7 +126,7 @@ for key, metric_types in list_metrics.items():
     fig.tight_layout()
     plt.show()
     plt.savefig('/home/ec3731/issa_analysis/nn-analysis/bis_{}.png'.format(key))
-    #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/bis_{}.png'.format(key))
+    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/bis_{}.png'.format(key))
 
 
 
