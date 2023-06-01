@@ -262,7 +262,7 @@ def get_random_components(X, n_rcs=500, **kwargs):
     X = pca.fit_transform(X)
     X = X.reshape((*shape[:-1],n_pcs))
     
-    print('X shape':, X.shape)
+    print('X shape:' , X.shape)
     random.seed(42)
     np.random.shuffle(X)
     final = X[n_rcs, :]
