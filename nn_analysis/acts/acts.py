@@ -89,6 +89,6 @@ class Acts:
             """y, evr = utils.get_pcs(y, n_pcs, svd_solver=svd_solver)
             return {'y': y, 'evr': evr}"""
             # if we return random components 
-            y = utils.get_random_components(X, n_rcs=500)
+            y = utils.get_random_components(y, n_rcs=500)
             return {'y': y}
         return {'y': y}
