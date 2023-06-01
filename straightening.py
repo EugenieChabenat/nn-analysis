@@ -33,7 +33,14 @@ metric_dict = {
             'y_obj_rot': 'Object Rotation - y'
              }
 
-
+dict_color = {
+    "injection_v1" : "pink",
+    "injection_v2": "purple", 
+    "injection_v4": "orange",
+    "injection_IT": "green",
+    "resnet50_untrained": "blue", 
+    "barlow_twins_50epochs": "grey"
+}
 
 epoch = 29
 #layers = np.arange(12)
@@ -106,20 +113,23 @@ for key, metric_types in list_metrics.items():
             print('layer: ', layers)
             scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
             if model_name == "barlow_v1_inj_b": 
-                axes[0,i].plot(layers, scores, label="barlow_v3_inj")
+                axes[0,i].plot(layers, scores, label="barlow_v3_inj", color = dict_color[model_name])
             else: 
-                axes[0,i].plot(layers, scores, label=model_name)
+                axes[0,i].plot(layers, scores, label=model_name, color = dict_color[model_name])
         scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
-        axes[0,i].plot(layers, scores, label='identity')
+        axes[0,i].plot(layers, scores, label='identity', color = 'black')
+        
         axes[0,i].axvline(x = 3, color = 'grey', alpha = 0.5, ls = 'dotted')
         axes[0,i].axvline(x = 6, color = 'grey', alpha = 0.5, ls = 'dotted')
         axes[0,i].axvline(x = 10, color = 'grey', alpha = 0.5, ls = 'dotted')
         axes[0,i].axvline(x = 16, color = 'grey', alpha = 0.5, ls = 'dotted')
         axes[0,i].axvline(x = 19, color = 'grey', alpha = 0.5, ls = 'dotted')
         axes[0,i].axvline(x = 20, color = 'grey', alpha = 0.5, ls = 'dotted')
+        
         axes[0,i].set_title(metric_type)
         axes[0,i].set_xticks([0, 3, 6, 10, 16, 19, 20])
         axes[0,i].set_xticklabels(['', '', 'inj v1', 'inj v2', 'inj v4', 'inj IT', 20], rotation=45, ha='right')
+        
         axes[0,i].text(3, 4, "Block 1", ha="center", va="center", size=12)
         axes[0,i].text(7, 4, "Block 1", ha="center", va="center", size=12)
         axes[0,i].text(12, 4, "Block 1", ha="center", va="center", size=12)
