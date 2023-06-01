@@ -120,6 +120,7 @@ for key, metric_types in list_metrics.items():
         axes[0,i].set_title(metric_type)
         axes[0,i].set_xticks([0, 3, 6, 10, 16, 19, 20])
         axes[0,i].set_xticklabels(['', '', 'inj v1', 'inj v2', 'inj v4', 'inj IT', 20], rotation=45, ha='right')
+        axes[0,i].text(0.2, 0.1, "Block 1", ha="center", va="center", size=15)
         axes[0,i].legend()
     fig.supxlabel('layers')
     fig.supylabel('curvature')
