@@ -124,7 +124,7 @@ for key, metric_types in list_metrics.items():
         axes[0,i].text(7, 4, "Block 1", ha="center", va="center", size=12)
         axes[0,i].text(12, 4, "Block 1", ha="center", va="center", size=12)
         axes[0,i].text(17, 4, "Block 1", ha="center", va="center", size=12)
-        axes[0,i].set_ylim(0.0, 1.0)
+        axes[0,i].set_ylim(0.0, 0.8)
         axes[0,i].legend(loc='lower left')
     fig.supxlabel('layers')
     fig.supylabel('curvature')
