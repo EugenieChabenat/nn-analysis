@@ -90,7 +90,15 @@ for key, metric_types in list_metrics.items():
                 axes[0,i].plot(layers, scores, label=model_name)
         #scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
         #axes[0,i].plot(layers, scores, label='identity')
+        axes[0,i].axvline(x = 3, color = 'grey', alpha = 0.5)
+        axes[0,i].axvline(x = 6, color = 'grey', alpha = 0.5)
+        axes[0,i].axvline(x = 10, color = 'grey', alpha = 0.5)
+        axes[0,i].axvline(x = 16, color = 'grey', alpha = 0.5)
+        axes[0,i].axvline(x = 19, color = 'grey', alpha = 0.5)
+        axes[0,i].axvline(x = 20, color = 'grey', alpha = 0.5)
         axes[0,i].set_title(metric_type)
+        axes[0,i].set_xticks([0, 3, 6, 16, 19, 20])
+
         axes[0,i].legend()
     fig.supxlabel('layers')
     fig.supylabel('decode')
