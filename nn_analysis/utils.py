@@ -241,8 +241,9 @@ def get_pcs(X, n_pcs, **kwargs):
     assert n_pcs <= max_n_pcs # Can't have more than max_n_pcs
     pca = PCA(n_components=n_pcs, **kwargs)
     X = pca.fit_transform(X)
+    print('X shape after pca: ', X.shape)
     X = X.reshape((*shape[:-1],n_pcs))
-
+    print('X shape after reshape: ', X.shape)
     return X, np.cumsum(pca.explained_variance_ratio_) # Return PCA'd X and a list of summed explained variance ratios
 
 def get_random_components(X, n_rcs=300, **kwargs):
