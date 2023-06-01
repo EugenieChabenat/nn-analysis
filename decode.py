@@ -46,7 +46,7 @@ dict_color = {
 # --- 
 epoch = 29
 layers = np.arange(2)
-layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 one_layer = 0
 metric = ["decode", 0]
 
@@ -87,7 +87,7 @@ model_names = [
 
 for key, metric_types in list_metrics.items(): 
     
-    fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
+    fig, axes = pt.core.subplots(1, len(metric_types), size=(10,8), sharex=True)
     for i, metric_type in enumerate(metric_types):
         for model_name in model_names:
             scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
