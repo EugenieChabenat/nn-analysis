@@ -257,7 +257,7 @@ def get_random_components(X, n_rcs=500, **kwargs):
     print('X shape: ', X.shape)
 
     n_pcs = max_n_rcs
-    assert n_pcs <= max_n_pcs # Can't have more than max_n_pcs
+    #assert n_pcs <= max_n_rcs # Can't have more than max_n_pcs
     pca = PCA(n_components=n_pcs, **kwargs)
     X = pca.fit_transform(X)
     X = X.reshape((*shape[:-1],n_pcs))
