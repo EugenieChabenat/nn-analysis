@@ -118,7 +118,7 @@ for key, metric_types in list_metrics.items():
         plt.axvline(x = 19, color = 'b', label = 'IT')
         plt.axvline(x = 20, color = 'b', label = '')
         axes[0,i].set_title(metric_type)
-        axes[0,i].xticks()
+        axes[0,i].set_xticks()
         axes[0,i].legend()
     fig.supxlabel('layers')
     fig.supylabel('curvature')
