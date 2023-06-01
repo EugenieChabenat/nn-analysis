@@ -245,6 +245,25 @@ def get_pcs(X, n_pcs, **kwargs):
 
     return X, np.cumsum(pca.explained_variance_ratio_) # Return PCA'd X and a list of summed explained variance ratios
 
+def get_random_components(X, n_rcs, **kwargs):
+    """
+    Assumes X has shape (...,n_features)
+    """
+    shape = X.shape
+    X = X.reshape((-1,shape[-1]))
+    max_n_pcs = min(X.shape) # min(n_data_points, n_features)
+    print('max pcs: ', max_n_pcs)
+    print('X shape: ', X.shape)
+    if n_pcs == -1:
+        n_pcs = max_n_pcs
+    assert n_pcs <= max_n_pcs # Can't have more than max_n_pcs
+    pca = PCA(n_components=n_pcs, **kwargs)
+    X = pca.fit_transform(X)
+    X = X.reshape((*shape[:-1],n_pcs))
+
+    return X, np.cumsum(pca.explained_variance_ratio_) # Return PCA'd X and a list of summed explained variance ratios
+
+
 ### config utils ###
 
 def get_layer_names(model_name, layers):
