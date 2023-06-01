@@ -245,7 +245,7 @@ def get_pcs(X, n_pcs, **kwargs):
 
     return X, np.cumsum(pca.explained_variance_ratio_) # Return PCA'd X and a list of summed explained variance ratios
 
-def get_random_components(X, n_rcs=500, **kwargs):
+def get_random_components(X, n_rcs=300, **kwargs):
     """
     Assumes X has shape (...,n_features)
     """
