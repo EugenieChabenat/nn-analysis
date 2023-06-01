@@ -111,13 +111,21 @@ for key, metric_types in list_metrics.items():
                 axes[0,i].plot(layers, scores, label=model_name)
         scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
         axes[0,i].plot(layers, scores, label='identity')
+        plt.axvline(x = 3, color = 'b', label = 'block 0')
+        plt.axvline(x = 6, color = 'b', label = 'V1')
+        plt.axvline(x = 10, color = 'b', label = 'v2')
+        plt.axvline(x = 16, color = 'b', label = 'v4')
+        plt.axvline(x = 19, color = 'b', label = 'IT')
+        plt.axvline(x = 20, color = 'b', label = '')
         axes[0,i].set_title(metric_type)
+        axes[0,i].xticks()
         axes[0,i].legend()
     fig.supxlabel('layers')
     fig.supylabel('curvature')
     fig.tight_layout()
     plt.show()
-    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/bis_{}.png'.format(key))
+    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/bis_{}.png'.format(key))
+    #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/bis_{}.png'.format(key))
 
 
 
