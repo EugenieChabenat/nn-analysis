@@ -26,9 +26,17 @@ metric_dict = {'ss_inv-background': 'SS Invariance - Background',
                'fact-crop': 'Factorization - Crop', 
                'fact-color': 'Factorization - Color'
               }
-   
+dict_color = {
+    "injection_v1" : "blue",
+    "injection_v2": "red", 
+    "injection_v4": "orange",
+    "injection_IT": "green",
+    "resnet50_untrained": "pink", 
+    "barlow_twins_50epochs": "grey"
+}
+  
 epoch = 29
-layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 one_layer = 0
 metric = ["fact", 0]
 
@@ -64,7 +72,7 @@ model_names = [
 # LAYERS PLOT 
 # ------------------------------------------------------------------------------------
 for key, metric_types in list_metrics.items(): 
-    fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
+    fig, axes = pt.core.subplots(1, len(metric_types), size=(10, 4), sharex=True)
     for i, metric_type in enumerate(metric_types):
         for model_name in model_names:
             print('model: ', model_name)
@@ -75,28 +83,35 @@ for key, metric_types in list_metrics.items():
             scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
             #axes[0,i].plot(layers, scores, label=model_name)
             if model_name == "barlow_v1_inj_b": 
-                axes[0,i].plot(layers, scores, label="barlow_v3_inj")
+                axes[0,i].plot(layers, scores, label="barlow_v3_inj", color = dict_color[model_name])
             else: 
-                axes[0,i].plot(layers, scores, label=model_name)
+                axes[0,i].plot(layers, scores, label=model_name, color = dict_color[model_name])
         #scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
         #axes[0,i].plot(layers, scores, label='identity')
         
-        axes[0,i].axvline(x = 3, color = 'grey', alpha = 0.5)
-        axes[0,i].axvline(x = 6, color = 'grey', alpha = 0.5)
-        axes[0,i].axvline(x = 10, color = 'grey', alpha = 0.5)
-        axes[0,i].axvline(x = 16, color = 'grey', alpha = 0.5)
-        axes[0,i].axvline(x = 19, color = 'grey', alpha = 0.5)
-        axes[0,i].axvline(x = 20, color = 'grey', alpha = 0.5)
+        axes[0,i].axvline(x = 3, color = 'grey', alpha = 0.5, ls = 'dotted')
+        axes[0,i].axvline(x = 6, color = 'grey', alpha = 0.5, ls = 'dotted')
+        axes[0,i].axvline(x = 10, color = 'grey', alpha = 0.5, ls = 'dotted')
+        axes[0,i].axvline(x = 16, color = 'grey', alpha = 0.5, ls = 'dotted')
+        axes[0,i].axvline(x = 19, color = 'grey', alpha = 0.5, ls = 'dotted')
+        axes[0,i].axvline(x = 20, color = 'grey', alpha = 0.5, ls = 'dotted')
         axes[0,i].set_xticks([0, 3, 6, 10, 16, 19, 20])
         axes[0,i].set_xticklabels(['', '', 'inj v1', 'inj v2', 'inj v4', 'inj IT', 20], rotation=45, ha='right')
         
         axes[0,i].set_title(metric_type)
         
-        axes[0,i].legend()
+        axes[0,i].text(4.5, 0.2, "Block V1", ha="center", va="center", size=12)
+        axes[0,i].text(8, 0.2, "Block V2", ha="center", va="center", size=12)
+        axes[0,i].text(13, 0.2, "Block V4", ha="center", va="center", size=12)
+        axes[0,i].text(17.5, 0.2, "Block IT", ha="center", va="center", size=12)
+        axes[0,i].set_ylim(0.0, 1.0)
+        
+        axes[0,i].legend('lower left')
     fig.supxlabel('layers')
     fig.supylabel('fact')
     fig.tight_layout()
     plt.show()
+    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/bis_{}.png'.format(key))
     plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/{}.png'.format(key))
 
 
