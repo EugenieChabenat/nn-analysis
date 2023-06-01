@@ -260,12 +260,15 @@ def get_random_components(X, n_rcs=300, **kwargs):
     #assert n_pcs <= max_n_rcs # Can't have more than max_n_pcs
     pca = PCA(n_components=n_pcs, **kwargs)
     X = pca.fit_transform(X)
-    X = X.reshape((*shape[:-1],n_pcs))
     
     print('X shape:' , X.shape)
     random.seed(42)
     np.random.shuffle(X)
     final = X[n_rcs, :]
+    
+    X = X.reshape((*shape[:-1],n_pcs))
+    
+    
     return final
 
 
