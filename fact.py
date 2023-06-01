@@ -106,7 +106,7 @@ for key, metric_types in list_metrics.items():
         axes[0,i].text(17.5, 0.2, "Block IT", ha="center", va="center", size=12)
         axes[0,i].set_ylim(0.0, 1.0)
         
-        axes[0,i].legend('lower left')
+        axes[0,i].legend(loc='lower left')
     fig.supxlabel('layers')
     fig.supylabel('fact')
     fig.tight_layout()
