@@ -163,6 +163,10 @@
         "arch": "resnet50",
         "path": "checkpoints/pretrained/resnet50_untrained"
     },
+    "resnet50_untrained_pc1": {
+        "arch": "resnet50",
+        "path": "checkpoints/pretrained/resnet50_untrained"
+    },
     "injection_v1_pc": {
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/random_injection/new_injection_v1"
