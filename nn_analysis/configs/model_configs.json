@@ -175,7 +175,7 @@
         "arch": "resnet50",
         "path": "checkpoints/pretrained/resnet50_untrained"
     },
-    "resnet50_untrained_pc4": {
+    "resnet50_untrained_pc5": {
         "arch": "resnet50",
         "path": "checkpoints/pretrained/resnet50_untrained"
     },
