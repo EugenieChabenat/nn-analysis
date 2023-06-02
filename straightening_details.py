@@ -51,32 +51,32 @@ list_metrics = {
 }
 
 list_labels = {
-    "resnet50_untrained_pc1": "max PCs",
-    "resnet50_untrained_pc2": "300 PCs", 
-    "resnet50_untrained_pc3": "300 RCs",
-    "resnet50_untrained_pc5": "500 RCs", 
-    "resnet50_untrained_pc6": "1000 RCs", 
-    "resnet50_untrained_pc7": "2048 RCs"
+    "barlow_twins_50epochs_pc1": "max PCs",
+    "barlow_twins_50epochs_pc2": "300 PCs", 
+    "barlow_twins_50epochs_pc3": "300 RCs",
+    "barlow_twins_50epochs_pc4": "500 RCs", 
+    "barlow_twins_50epochs_pc5": "1000 RCs", 
+    "barlow_twins_50epochs_pc6": "2048 RCs"
 }
 
 dict_color = {
-    "resnet50_untrained_pc1" : "red",
-    "resnet50_untrained_pc2": "green", 
-    "resnet50_untrained_pc3": "violet",
-    "resnet50_untrained_pc5": "purple", 
-    "resnet50_untrained_pc6": "indigo", 
-    "resnet50_untrained_pc7": "plum"
+    "barlow_twins_50epochs_pc1" : "red",
+    "barlow_twins_50epochs_pc2": "green", 
+    "barlow_twins_50epochs_pc3": "violet",
+    "barlow_twins_50epochs_pc4": "purple", 
+    "barlow_twins_50epochs_pc5": "indigo", 
+    "barlow_twins_50epochs_pc6": "plum"
 }
 
 
 model_names = [
-    "resnet50_untrained_pc1",
-    "resnet50_untrained_pc2", 
-    "resnet50_untrained_pc3",
-    #"resnet50_untrained_pc4", 
-    "resnet50_untrained_pc5", 
-    "resnet50_untrained_pc6", 
-    "resnet50_untrained_pc7"
+    "barlow_twins_50epochs_pc1",
+    "barlow_twins_50epochs_pc2", 
+    "barlow_twins_50epochs_pc3",
+    "barlow_twins_50epochs_pc4", 
+    "barlow_twins_50epochs_pc5", 
+    "barlow_twins_50epochs_pc6", 
+    #"barlow_twins_50epochs_pc7"
 ]
 
 
@@ -124,8 +124,8 @@ for key, metric_types in list_metrics.items():
     fig.supylabel('curvature')
     fig.tight_layout()
     plt.show()
-    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/pcs_injection_rn50_{}.png'.format(key))
-    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/PCs_vs_RCs_injection_rn50_{}.png'.format(key))
+    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/pcs_injection_bt50_{}.png'.format(key))
+    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/PCs_vs_RCs_injection_bt50_{}.png'.format(key))
     #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/PCs_vs_RCs/injection_v1.png')
 
 
