@@ -56,7 +56,7 @@ list_labels = {
     "resnet50_untrained_pc3": "300 RCs",
     "resnet50_untrained_pc5": "500 RCs", 
     "resnet50_untrained_pc6": "1000 RCs", 
-    "resnet50_untrained_pc6": "2048 RCs"
+    "resnet50_untrained_pc7": "2048 RCs"
 }
 
 dict_color = {
