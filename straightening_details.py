@@ -51,28 +51,28 @@ list_metrics = {
 }
 
 list_labels = {
-    "injection_v4_pc1": "max PCs",
-    "injection_v4_pc2": "300 PCs", 
-    "injection_v4_pc3": "300 RCs",
-    "injection_v4_pc4": "500 RCs", 
-    "injection_v4_pc5": "1000 RCs"
+    "barlow_twins_50epochs_pc1": "max PCs",
+    "barlow_twins_50epochs_pc2": "300 PCs", 
+    "barlow_twins_50epochs_pc3": "300 RCs",
+    "barlow_twins_50epochs_pc4": "500 RCs", 
+    "barlow_twins_50epochs_pc5": "1000 RCs"
 }
 
 dict_color = {
-    "injection_v4_pc1" : "red",
-    "injection_v4_pc2": "green", 
-    "injection_v4_pc3": "violet",
-    "injection_v4_pc4": "purple", 
-    "injection_v4_pc5": "indigo"
+    "barlow_twins_50epochs_pc1" : "red",
+    "barlow_twins_50epochs_pc2": "green", 
+    "barlow_twins_50epochs_pc3": "violet",
+    "barlow_twins_50epochs_pc4": "purple", 
+    "barlow_twins_50epochs_pc5": "indigo"
 }
 
 
 model_names = [
-    "injection_v4_pc1",
-    "injection_v4_pc2", 
-    "injection_v4_pc3",
-    "injection_v4_pc4", 
-    "injection_v4_pc5"
+    "barlow_twins_50epochs_pc1",
+    "barlow_twins_50epochs_pc2", 
+    "barlow_twins_50epochs_pc3",
+    "barlow_twins_50epochs_pc4", 
+    "barlow_twins_50epochs_pc5"
 ]
 
 
@@ -120,8 +120,8 @@ for key, metric_types in list_metrics.items():
     fig.supylabel('curvature')
     fig.tight_layout()
     plt.show()
-    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/pcs_injection_v4_{}.png'.format(key))
-    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/PCs_vs_RCs_injection_v4_{}.png'.format(key))
+    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/pcs_injection_bt50_{}.png'.format(key))
+    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/PCs_vs_RCs_injection_bt50_{}.png'.format(key))
     #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/PCs_vs_RCs/injection_v1.png')
 
 
