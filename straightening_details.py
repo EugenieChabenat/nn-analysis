@@ -92,7 +92,7 @@ for key, metric_types in list_metrics.items():
             print('model: ', model_name)
             print('layer: ', layers)
             scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
-            if model_name == 'injection_v1_pc1": 
+            if model_name[-1] == "1": 
                 axes[0,i].plot(layers, scores, label=list_labels[model_name], color = dict_color[model_name], ls = '--')
             else: 
                 axes[0,i].plot(layers, scores, label=list_labels[model_name], color = dict_color[model_name])
