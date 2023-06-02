@@ -254,8 +254,6 @@ def get_random_components(X, n_rcs=300, **kwargs):
     shape = X.shape
     print('shape: ', shape)
     X = X.reshape((-1,shape[-1]))
-    
-    print('max pcs: ', max_n_rcs)
     print('X shape: ', X.shape)
     
     random.seed(42)
