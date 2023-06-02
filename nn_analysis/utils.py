@@ -232,6 +232,7 @@ def get_pcs(X, n_pcs, **kwargs):
     Assumes X has shape (...,n_features)
     """
     shape = X.shape
+    print('X shape before reshape: ', X.shape)
     X = X.reshape((-1,shape[-1]))
     max_n_pcs = min(X.shape) # min(n_data_points, n_features)
     print('max pcs: ', max_n_pcs)
