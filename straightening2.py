@@ -58,7 +58,7 @@ dict_color = {
 # ------------------------------------------------------------------------------------
 # LAYERS PLOT 
 # ------------------------------------------------------------------------------------
-fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
+fig, axes = pt.core.subplots(1, len(metric_types), size=(10,8), sharex=True)
 for i, metric_type in enumerate(metric_types):
     for model_name in model_names:
         print('model: ', model_name)
