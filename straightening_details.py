@@ -59,11 +59,11 @@ list_labels = {
 }
 
 dict_color = {
-    "injection_v1_pc1" : "blue",
-    "injection_v1_pc2": "red", 
-    "injection_v1_pc3": "green",
-    "injection_v1_pc4": "pink", 
-    "injection_v1_pc5": "grey"
+    "injection_v1_pc1" : "thistle",
+    "injection_v1_pc2": "plum", 
+    "injection_v1_pc3": "violet",
+    "injection_v1_pc4": "purple", 
+    "injection_v1_pc5": "indigo"
 }
 
 
