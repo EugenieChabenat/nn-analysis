@@ -51,31 +51,31 @@ list_metrics = {
 }
 
 list_labels = {
-    "injection_v1_pc1": "max PCs",
-    "injection_v1_pc2": "300 PCs", 
-    "injection_v1_pc3": "300 RCs",
-    "injection_v1_pc4": "500 RCs", 
-    "injection_v1_pc5": "1000 RCs", 
-    "injection_v1_pc6": "2048 RCs"
+    "injection_v2_pc1": "max PCs",
+    "injection_v2_pc2": "300 PCs", 
+    "injection_v2_pc3": "300 RCs",
+    "injection_v2_pc4": "500 RCs", 
+    "injection_v2_pc5": "1000 RCs", 
+    "injection_v2_pc6": "2048 RCs"
 }
 
 dict_color = {
-    "injection_v1_pc1" : "red",
-    "injection_v1_pc2": "green", 
-    "injection_v1_pc3": "violet",
-    "injection_v1_pc4": "purple", 
-    "injection_v1_pc5": "indigo", 
-    "injection_v1_pc6": "plum"
+    "injection_v2_pc1" : "red",
+    "injection_v2_pc2": "green", 
+    "injection_v2_pc3": "violet",
+    "injection_v2_pc4": "purple", 
+    "injection_v2_pc5": "indigo", 
+    "injection_v2_pc6": "plum"
 }
 
 
 model_names = [
-    "injection_v1_pc1",
-    "injection_v1_pc2", 
-    "injection_v1_pc3",
-    "injection_v1_pc4", 
-    "injection_v1_pc5", 
-    "injection_v1_pc6", 
+    "injection_v2_pc1",
+    "injection_v2_pc2", 
+    "injection_v2_pc3",
+    "injection_v2_pc4", 
+    "injection_v2_pc5", 
+    "injection_v2_pc6", 
     #"barlow_twins_50epochs_pc7"
 ]
 
@@ -124,8 +124,8 @@ for key, metric_types in list_metrics.items():
     fig.supylabel('curvature')
     fig.tight_layout()
     plt.show()
-    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/pcs_injection_v1_{}.png'.format(key))
-    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/PCs_vs_RCs_injection_v1_{}.png'.format(key))
+    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/pcs_injection_v2_{}.png'.format(key))
+    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/PCs_vs_RCs_injection_v2_{}.png'.format(key))
     #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/PCs_vs_RCs/injection_v1.png')
 
 
