@@ -225,10 +225,27 @@
     
     
     
-    "injection_v2_pc": {
+    "injection_v2_pc1": {
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/random_injection/new_injection_v2_v1"
     },
+    "injection_v2_pc2": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/random_injection/new_injection_v2_v1"
+    },
+    "injection_v2_pc3": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/random_injection/new_injection_v2_v1"
+    },
+    "injection_v2_pc4": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/random_injection/new_injection_v2_v1"
+    },
+    "injection_v2_pc5": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/random_injection/new_injection_v2_v1"
+    },
+    
     "injection_v4_pc": {
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/random_injection/new_injection_v4_v1"
