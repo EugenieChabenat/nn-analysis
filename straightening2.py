@@ -39,20 +39,20 @@ model_names = [
 ]
 
 model_names = [
-    "barlow_twins_50epochs_nm6", 
-    "resnet50_untrained_nm6", 
-    "injection_v1_nm6", 
-    "injection_v2_nm6", 
-    "injection_v4_nm6"
+    "barlow_twins_50epochs_nm3", 
+    "resnet50_untrained_nm3", 
+    "injection_v1_nm3", 
+    "injection_v2_nm3", 
+    "injection_v4_nm3"
 ]
 
 dict_color = {
-    "injection_v1_nm6" : "blue",
-    "injection_v2_nm6": "red", 
-    "injection_v4_nm6": "orange",
-    "injection_IT_nm6": "green",
-    "resnet50_untrained_nm6": "pink", 
-    "barlow_twins_50epochs_nm6": "grey"
+    "injection_v1_nm3" : "blue",
+    "injection_v2_nm3": "red", 
+    "injection_v4_nm3": "orange",
+    "injection_IT_nm3": "green",
+    "resnet50_untrained_nm3": "pink", 
+    "barlow_twins_50epochs_nm3": "grey"
 }
 
 # ------------------------------------------------------------------------------------
@@ -93,8 +93,8 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/nm_plot6.png')
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/natural_movies/plot6_nm.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/nm_plot3.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/natural_movies/plot3_nm.png')
 
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/natural_movies/sanity_control/10frames_metrics_plot9.png')
 
