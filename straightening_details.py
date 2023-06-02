@@ -59,11 +59,11 @@ list_labels = {
 }
 
 dict_color = {
-    "injection_v1_pc1" : "green",
+    "injection_v1_pc1" : "red",
     "injection_v1_pc2": "blue", 
-    "injection_v1_pc3": "red",
-    "injection_v1_pc4": "orange", 
-    "injection_v1_pc5": "yellow"
+    "injection_v1_pc3": "violet",
+    "injection_v1_pc4": "purple", 
+    "injection_v1_pc5": "indigo"
 }
 
 
@@ -92,9 +92,10 @@ for key, metric_types in list_metrics.items():
             print('model: ', model_name)
             print('layer: ', layers)
             scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
-            
-            axes[0,i].plot(layers, scores, label=list_labels[model_name], color = dict_color[model_name])
-            
+            if model_name == 'injection_v1_pc1": 
+                axes[0,i].plot(layers, scores, label=list_labels[model_name], color = dict_color[model_name], ls = '--')
+            else: 
+                axes[0,i].plot(layers, scores, label=list_labels[model_name], color = dict_color[model_name])
         scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
         axes[0,i].plot(layers, scores, label='identity', color = 'black')
         
