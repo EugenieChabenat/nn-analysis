@@ -201,10 +201,30 @@
         "arch": "resnet50",
         "path": "checkpoints/pretrained/resnet50_untrained"
     },
-    "injection_v1_pc": {
+    
+    "injection_v1_pc1": {
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/random_injection/new_injection_v1"
     },
+    "injection_v1_pc2": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/random_injection/new_injection_v1"
+    },
+    "injection_v1_pc3": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/random_injection/new_injection_v1"
+    },
+    "injection_v1_pc4": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/random_injection/new_injection_v1"
+    },
+    "injection_v1_pc5": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/random_injection/new_injection_v1"
+    },
+    
+    
+    
     "injection_v2_pc": {
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/random_injection/new_injection_v2_v1"
