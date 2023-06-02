@@ -55,7 +55,8 @@ list_labels = {
     "resnet50_untrained_pc2": "300 PCs", 
     "resnet50_untrained_pc3": "300 RCs",
     "resnet50_untrained_pc5": "500 RCs", 
-    "resnet50_untrained_pc6": "1000 RCs"
+    "resnet50_untrained_pc6": "1000 RCs", 
+    "resnet50_untrained_pc6": "2048 RCs"
 }
 
 dict_color = {
@@ -63,7 +64,8 @@ dict_color = {
     "resnet50_untrained_pc2": "green", 
     "resnet50_untrained_pc3": "violet",
     "resnet50_untrained_pc5": "purple", 
-    "resnet50_untrained_pc6": "indigo"
+    "resnet50_untrained_pc6": "indigo", 
+    "resnet50_untrained_pc7": "plum"
 }
 
 
@@ -73,7 +75,8 @@ model_names = [
     "resnet50_untrained_pc3",
     #"resnet50_untrained_pc4", 
     "resnet50_untrained_pc5", 
-    "resnet50_untrained_pc6"
+    "resnet50_untrained_pc6", 
+    "resnet50_untrained_pc7"
 ]
 
 
