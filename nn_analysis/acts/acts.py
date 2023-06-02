@@ -84,12 +84,12 @@ class Acts:
         # Compute PCs
         if n_pcs is not None:
             print('principal components are computed')
-            n_pcs = 300
+            n_pcs = -1
             print('n_pcs: ', n_pcs)
             # if we compute pcs 
             y, evr = utils.get_pcs(y, n_pcs, svd_solver=svd_solver)
             return {'y': y, 'evr': evr}
             # if we return random components 
-            y = utils.get_random_components(y, n_rcs=500)
-            return {'y': y}
+            #y = utils.get_random_components(y, n_rcs=500)
+            #return {'y': y}
         return {'y': y}
