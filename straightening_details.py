@@ -33,14 +33,6 @@ metric_dict = {
             'y_obj_rot': 'Object Rotation - y'
              }
 
-dict_color = {
-    "injection_v1" : "blue",
-    "injection_v2": "red", 
-    "injection_v4": "orange",
-    "injection_IT": "green",
-    "resnet50_untrained": "pink", 
-    "barlow_twins_50epochs": "grey"
-}
 
 epoch = 29
 #layers = np.arange(12)
@@ -65,6 +57,15 @@ list_labels = {
     "injection_v1_pc4": "500 RCs", 
     "injection_v1_pc5": "1000 RCs"
 }
+
+dict_color = {
+    "injection_v1_pc1" : "blue",
+    "injection_v1_pc2": "red", 
+    "injection_v1_pc3": "green",
+    "injection_v1_pc4": "pink", 
+    "injection_v1_pc5": "grey"
+}
+
 
 model_names = [
     "injection_v1_pc1",
