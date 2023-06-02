@@ -113,14 +113,14 @@ for key, metric_types in list_metrics.items():
         axes[0,i].text(8, 0.2, "Block V2", ha="center", va="center", size=12)
         axes[0,i].text(13, 0.2, "Block V4", ha="center", va="center", size=12)
         axes[0,i].text(17.5, 0.2, "Block IT", ha="center", va="center", size=12)
-        axes[0,i].set_ylim(0.0, 0.8)
+        axes[0,i].set_ylim(0.0, 1.)
         axes[0,i].legend(loc='lower left')
     fig.supxlabel('layers')
     fig.supylabel('curvature')
     fig.tight_layout()
     plt.show()
-    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/pcs_injection_v1.png')
-    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/PCs_vs_RCs_injection_v1.png')
+    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/pcs_injection_v1_{}.png'.format(key))
+    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/PCs_vs_RCs_injection_v1_{}.png'.format(key))
     #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/PCs_vs_RCs/injection_v1.png')
 
 
