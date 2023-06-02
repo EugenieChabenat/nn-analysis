@@ -60,7 +60,7 @@ list_labels = {
 
 dict_color = {
     "injection_v1_pc1" : "red",
-    "injection_v1_pc2": "blue", 
+    "injection_v1_pc2": "green", 
     "injection_v1_pc3": "violet",
     "injection_v1_pc4": "purple", 
     "injection_v1_pc5": "indigo"
@@ -92,7 +92,7 @@ for key, metric_types in list_metrics.items():
             print('model: ', model_name)
             print('layer: ', layers)
             scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
-            if model_name[-1] == "1": 
+            if model_name[-1] == "1" or model_name[-1] == "2": 
                 axes[0,i].plot(layers, scores, label=list_labels[model_name], color = dict_color[model_name], ls = '--')
             else: 
                 axes[0,i].plot(layers, scores, label=list_labels[model_name], color = dict_color[model_name])
