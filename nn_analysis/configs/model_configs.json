@@ -160,7 +160,6 @@
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/vanilla_barlowtwins"
     }, 
-    
     "resnet50_untrained_nm6": {
         "arch": "resnet50",
         "path": "checkpoints/pretrained/resnet50_untrained"
@@ -174,6 +173,28 @@
         "path": "checkpoints/barlowtwins/random_injection/new_injection_v2_v1"
     },
     "injection_v4_nm6": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/random_injection/new_injection_v4_v1"
+    }, 
+    
+    
+    "barlow_twins_50epochs_nm3": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/vanilla_barlowtwins"
+    }, 
+    "resnet50_untrained_nm3": {
+        "arch": "resnet50",
+        "path": "checkpoints/pretrained/resnet50_untrained"
+    },
+    "injection_v1_nm3": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/random_injection/new_injection_v1"
+    },
+    "injection_v2_nm3": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/random_injection/new_injection_v2_v1"
+    },
+    "injection_v4_nm3": {
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/random_injection/new_injection_v4_v1"
     }, 
