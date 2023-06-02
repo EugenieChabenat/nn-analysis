@@ -259,7 +259,7 @@ def get_random_components(X, n_rcs=300, **kwargs):
     random.seed(42)
     np.random.shuffle(X)
     X = X[:, :n_rcs]
-    
+    print('X shape: ', X.shape)
     X = X.reshape((*shape[:-1],n_rcs))
     return X
 
