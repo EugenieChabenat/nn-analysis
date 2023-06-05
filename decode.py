@@ -61,7 +61,7 @@ metric_types = ['cam_pos_x', 'cam_pos_y', 'cam_scale', 'cam_pos']
 #metric_types = ['obj_pose_x', 'obj_pose_y', 'obj_pose_z', 'obj_pose']
 
 list_metrics = {
-    "Object Class" : ['obj_class'], 
+    #"Object Class" : ['obj_class'], 
     "Camera Pos & Scale" : ['cam_pos_x', 'cam_pos_y', 'cam_scale', 'cam_pos'], 
     "Color & Lightning": ['brightness', 'contrast', 'saturation', 'hue', 'color', 'lighting'],
     "Object Pos & Scale" : ['obj_pos_x', 'obj_pos_y', 'obj_scale', 'obj_pos'], 
@@ -111,11 +111,11 @@ for key, metric_types in list_metrics.items():
         axes[0,i].set_xticks([0, 3, 6, 10, 16, 19, 20])
         axes[0,i].set_xticklabels(['0', '1st conv layer', 'inj v1', 'inj v2', 'inj v4', 'inj IT', 20], rotation=45, ha='right')
         
-        axes[0,i].text(4.5, 0.6, "Block V1", ha="center", va="center", size=12)
-        axes[0,i].text(8, 0.6, "Block V2", ha="center", va="center", size=12)
-        axes[0,i].text(13, 0.6, "Block V4", ha="center", va="center", size=12)
-        axes[0,i].text(17.5, 0.6, "Block IT", ha="center", va="center", size=12)
-        axes[0,i].set_ylim(0.0, 0.8)
+        axes[0,i].text(4.5, 0.8, "Block V1", ha="center", va="center", size=12)
+        axes[0,i].text(8, 0.8, "Block V2", ha="center", va="center", size=12)
+        axes[0,i].text(13, 0.8, "Block V4", ha="center", va="center", size=12)
+        axes[0,i].text(17.5, 0.8, "Block IT", ha="center", va="center", size=12)
+        axes[0,i].set_ylim(0.0, 1.0)
         axes[0,i].legend(loc='center left')
     fig.supxlabel('layers')
     fig.supylabel('decode')
