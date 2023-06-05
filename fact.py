@@ -47,9 +47,12 @@ metric_types = ['ss_inv-background', 'ss_inv-obj_motion', 'ss_inv-crop','ss_inv-
 #metric_types = ['fact-background', 'fact-obj_motion', 'fact-crop', 'fact-color']
 
 list_metrics = {
-    "Subspace Invariance": ['ss_inv-background', 'ss_inv-obj_motion', 'ss_inv-crop','ss_inv-color'], 
-    "Invariance": ['inv-background', 'inv-obj_motion', 'inv-crop', 'inv-color'], 
-    "Factorization": ['fact-background', 'fact-obj_motion', 'fact-crop', 'fact-color']
+    "Subspace Invariance": ['ss_inv-background', 'ss_inv-obj_motion'], 
+    "Subspace Invariance 2": ['ss_inv-crop','ss_inv-color'], 
+    "Invariance": ['inv-background', 'inv-obj_motion'], 
+    "Invariance 2": ['inv-crop', 'inv-color'], 
+    "Factorization": ['fact-background', 'fact-obj_motion'],
+    "Factorization 2": [ 'fact-crop', 'fact-color']
 }
 
 
@@ -57,6 +60,7 @@ model_names = [
     "injection_v1",
     "injection_v2", 
     "injection_v4", 
+    "injection_IT", 
     "resnet50_untrained", 
     "barlow_twins_50epochs"
 ]
@@ -111,7 +115,7 @@ for key, metric_types in list_metrics.items():
     fig.supylabel('fact')
     fig.tight_layout()
     plt.show()
-    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/bis_{}.png'.format(key))
+    #plt.savefig('/home/ec3731/issa_analysis/nn-analysis/bis_{}.png'.format(key))
     plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/{}.png'.format(key))
 
 
