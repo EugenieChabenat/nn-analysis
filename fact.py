@@ -33,7 +33,8 @@ dict_color = {
     "injection_IT": "green",
     "injection_conv_v1": "red", 
     "resnet50_untrained": "pink", 
-    "barlow_twins_50epochs": "grey"
+    "barlow_twins_50epochs": "grey", 
+    "barlow_fact_no_injection": "black"
 }
   
 epoch = 29
@@ -59,12 +60,13 @@ list_metrics = {
 
 model_names = [
     "injection_v1",
-    #"injection_v2", 
-    #"injection_v4", 
-    #"injection_IT", 
+    "injection_v2", 
+    "injection_v4", 
+    "injection_IT", 
     "injection_conv_v1", 
     "resnet50_untrained", 
-    "barlow_twins_50epochs"
+    "barlow_twins_50epochs", 
+    "barlow_fact_no_injection"
 ]
 
 """model_names = [
