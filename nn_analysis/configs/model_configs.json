@@ -137,6 +137,11 @@
         "path": "checkpoints/barlowtwins/random_injection/new_injection_IT_v1"
     }, 
     
+    "barlow_fact_no_injection": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/factorize_new_injection"
+    }, 
+    
      
     "barlow_twins_50epochs_nm": {
         "arch": "barlowtwins",
