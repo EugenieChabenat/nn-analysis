@@ -109,14 +109,14 @@ for key, metric_types in list_metrics.items():
         
         axes[0,i].set_title(metric_type)
         axes[0,i].set_xticks([0, 3, 6, 10, 16, 19, 20])
-        axes[0,i].set_xticklabels(['', '', 'inj v1', 'inj v2', 'inj v4', 'inj IT', 20], rotation=45, ha='right')
+        axes[0,i].set_xticklabels(['0', '1st conv layer', 'inj v1', 'inj v2', 'inj v4', 'inj IT', 20], rotation=45, ha='right')
         
         axes[0,i].text(4.5, 0.8, "Block V1", ha="center", va="center", size=12)
         axes[0,i].text(8, 0.8, "Block V2", ha="center", va="center", size=12)
         axes[0,i].text(13, 0.8, "Block V4", ha="center", va="center", size=12)
         axes[0,i].text(17.5, 0.8, "Block IT", ha="center", va="center", size=12)
         axes[0,i].set_ylim(0.0, 1.0)
-        axes[0,i].legend(loc='upper left')
+        axes[0,i].legend(loc='center left')
     fig.supxlabel('layers')
     fig.supylabel('decode')
     fig.tight_layout()
