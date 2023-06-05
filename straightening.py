@@ -75,23 +75,24 @@ metric = ["curve", 1]
                 'x_obj_rot', 'y_obj_rot']"""
 
 list_metrics = {
-    #"Camera Translation & Rotation" : ["x_cam_trans", "y_cam_trans", "z_cam_trans"], 
-    #"Camera Rotation" : ["x_cam_rot", "y_cam_rot"], 
-    #"x Pan" : ['x_pan-detailed', 'x_pan'], 
-    #"y Pan" : ['y_pan-detailed', 'y_pan'], 
-    #"z Pan" : ['z_pan-detailed', 'z_pan'], 
-    #"x-focus Pan" : ['x_focus_pan-detailed', 'x_focus_pan'], 
-    #"y-focus Pan" : ['y_focus_pan-detailed', 'y_focus_pan'], 
-    #"z-focus Pan" : ['z_focus_pan-detailed', 'z_focus_pan'], 
-    #"Camera Pan" : ['x_cam_pan-detailed', 'x_cam_pan', 'yz_cam_pan-detailed','yz_cam_pan'], 
+    "Camera Translation & Rotation" : ["x_cam_trans", "y_cam_trans", "z_cam_trans"], 
+    "Camera Rotation" : ["x_cam_rot", "y_cam_rot"], 
+    "x Pan" : ['x_pan-detailed', 'x_pan'], 
+    "y Pan" : ['y_pan-detailed', 'y_pan'], 
+    "z Pan" : ['z_pan-detailed', 'z_pan'], 
+    "x-focus Pan" : ['x_focus_pan-detailed', 'x_focus_pan'], 
+    "y-focus Pan" : ['y_focus_pan-detailed', 'y_focus_pan'], 
+    "z-focus Pan" : ['z_focus_pan-detailed', 'z_focus_pan'], 
+    "Camera Pan" : ['x_cam_pan-detailed', 'x_cam_pan', 'yz_cam_pan-detailed','yz_cam_pan'], 
     "Object Rotation" : ['x_obj_rot', 'y_obj_rot'], 
 }
 
 model_names = [
     "injection_v1",
-    "injection_v2", 
-    "injection_v4",
-    "injection_IT", 
+    #"injection_v2", 
+    #"injection_v4",
+    #"injection_IT",
+    "injection_conv_v1", 
     "resnet50_untrained", 
     "barlow_twins_50epochs"
 ]
