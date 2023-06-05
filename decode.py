@@ -40,6 +40,7 @@ dict_color = {
     "injection_v2": "red", 
     "injection_v4": "orange",
     "injection_IT": "green",
+    "v4_no_injection": "purple", 
     "resnet50_untrained": "pink", 
     "barlow_twins_50epochs": "grey"
 }
@@ -61,12 +62,12 @@ metric_types = ['cam_pos_x', 'cam_pos_y', 'cam_scale', 'cam_pos']
 #metric_types = ['obj_pose_x', 'obj_pose_y', 'obj_pose_z', 'obj_pose']
 
 list_metrics = {
-    #"Object Class" : ['obj_class'], 
-    #"Camera Pos" : ['cam_pos_x', 'cam_pos_y'], 
-    #"Camera Scale" : ['cam_scale', 'cam_pos'], 
-    #"Lightning": ['brightness', 'lighting'],
-    #"Contrast": ['contrast', 'saturation'],
-    #"Color": ['hue', 'color'],
+    "Object Class" : ['obj_class'], 
+    "Camera Pos" : ['cam_pos_x', 'cam_pos_y'], 
+    "Camera Scale" : ['cam_scale', 'cam_pos'], 
+    "Lightning": ['brightness', 'lighting'],
+    "Contrast": ['contrast', 'saturation'],
+    "Color": ['hue', 'color'],
     "Object Pos" : ['obj_pos_x', 'obj_pos_y'], 
     "Object Scale" : ['obj_scale', 'obj_pos'], 
     "Object Pose": ['obj_pose_x', 'obj_pose_y'], 
@@ -77,7 +78,8 @@ model_names = [
     "injection_v2", 
     "injection_v4",
     "injection_IT",
-    "resnet50_untrained", 
+    "v4_no_injection"
+    #"resnet50_untrained", 
     "barlow_twins_50epochs"
 ]
 
