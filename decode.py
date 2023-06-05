@@ -63,7 +63,7 @@ metric_types = ['cam_pos_x', 'cam_pos_y', 'cam_scale', 'cam_pos']
 #metric_types = ['obj_pose_x', 'obj_pose_y', 'obj_pose_z', 'obj_pose']
 
 list_metrics = {
-    #"Object Class" : ['obj_class'], 
+    "Object Class" : ['obj_class'], 
     "Camera Pos" : ['cam_pos_x', 'cam_pos_y'], 
     "Camera Scale" : ['cam_scale', 'cam_pos'], 
     "Lightning": ['brightness', 'lighting'],
