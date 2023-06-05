@@ -78,7 +78,7 @@ model_names = [
     "injection_v2", 
     "injection_v4",
     "injection_IT",
-    "v4_no_injection"
+    "v4_no_injection", 
     #"resnet50_untrained", 
     "barlow_twins_50epochs"
 ]
