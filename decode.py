@@ -63,15 +63,15 @@ metric_types = ['cam_pos_x', 'cam_pos_y', 'cam_scale', 'cam_pos']
 
 list_metrics = {
     "Object Class" : ['obj_class'], 
-    "Camera Pos" : ['cam_pos_x', 'cam_pos_y'], 
-    "Camera Scale" : ['cam_scale', 'cam_pos'], 
-    "Lightning": ['brightness', 'lighting'],
-    "Contrast": ['contrast', 'saturation'],
-    "Color": ['hue', 'color'],
-    "Object Pos" : ['obj_pos_x', 'obj_pos_y'], 
-    "Object Scale" : ['obj_scale', 'obj_pos'], 
-    "Object Pose": ['obj_pose_x', 'obj_pose_y'], 
-    "Object Pose 2": ['obj_pose_z', 'obj_pose']
+    #"Camera Pos" : ['cam_pos_x', 'cam_pos_y'], 
+    #"Camera Scale" : ['cam_scale', 'cam_pos'], 
+    #"Lightning": ['brightness', 'lighting'],
+    #"Contrast": ['contrast', 'saturation'],
+    #"Color": ['hue', 'color'],
+    #"Object Pos" : ['obj_pos_x', 'obj_pos_y'], 
+    #"Object Scale" : ['obj_scale', 'obj_pos'], 
+    #"Object Pose": ['obj_pose_x', 'obj_pose_y'], 
+    #"Object Pose 2": ['obj_pose_z', 'obj_pose']
 }
 model_names = [
     "injection_v1",
