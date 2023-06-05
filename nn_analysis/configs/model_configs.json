@@ -139,7 +139,7 @@
     
     "barlow_fact_no_injection": {
         "arch": "barlowtwins",
-        "path": "checkpoints/barlowtwins/factorize_new_injection"
+        "path": "checkpoints/barlowtwins/factorize_no_injection_v1"
     }, 
     
      
