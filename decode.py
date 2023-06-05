@@ -64,13 +64,13 @@ list_metrics = {
     #"Object Class" : ['obj_class'], 
     "Camera Pos" : ['cam_pos_x', 'cam_pos_y'], 
     "Camera Scale" : ['cam_scale', 'cam_pos'], 
-    "Lightning": ['brightness', 'lighting'],
-    "Contrast": ['contrast', 'saturation'],
-    "Color": ['hue', 'color'],
-    "Object Pos" : ['obj_pos_x', 'obj_pos_y'], 
-    "Object Scale" : ['obj_scale', 'obj_pos'], 
-    "Object Pose": ['obj_pose_x', 'obj_pose_y'], 
-    "Object Pose 2": ['obj_pose_z', 'obj_pose']
+    #"Lightning": ['brightness', 'lighting'],
+    #"Contrast": ['contrast', 'saturation'],
+    #"Color": ['hue', 'color'],
+    #"Object Pos" : ['obj_pos_x', 'obj_pos_y'], 
+    #"Object Scale" : ['obj_scale', 'obj_pos'], 
+    #"Object Pose": ['obj_pose_x', 'obj_pose_y'], 
+    #"Object Pose 2": ['obj_pose_z', 'obj_pose']
 }
 model_names = [
     "injection_v1",
@@ -121,7 +121,7 @@ for key, metric_types in list_metrics.items():
         axes[0,i].text(13, 0.9, "Block V4", ha="center", va="center", size=12)
         axes[0,i].text(17.5, 0.9, "Block IT", ha="center", va="center", size=12)
         axes[0,i].set_ylim(0.0, 1.0)
-        axes[0,i].legend(loc='lower left')
+        axes[0,i].legend(loc='center left')
     fig.supxlabel('layers')
     fig.supylabel('decode')
     fig.tight_layout()
