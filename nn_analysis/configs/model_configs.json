@@ -144,6 +144,10 @@
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/v4_no_injection_v1"
     }, 
+    "injection_conv_v1": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/convolution_injection/new_injection_conv_v1"
+    }, 
     
      
     "barlow_twins_50epochs_nm": {
