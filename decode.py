@@ -37,13 +37,14 @@ metric_dict = {'obj_class': 'Object Class',
 
 dict_color = {
     "injection_v1" : "blue",
-    #"injection_v2": "red", 
-    #"injection_v4": "orange",
-    #"injection_IT": "green",
+    "injection_v2": "red", 
+    "injection_v4": "orange",
+    "injection_IT": "green",
     "injection_conv_v1": "red", 
-    #"v4_no_injection": "purple", 
+    "v4_no_injection": "purple", 
     "resnet50_untrained": "pink", 
-    "barlow_twins_50epochs": "grey"
+    "barlow_twins_50epochs": "grey", 
+    "barlow_fact_no_injection": "black"
 }
 # --- 
 epoch = 29
@@ -76,13 +77,14 @@ list_metrics = {
 }
 model_names = [
     "injection_v1",
-    #"injection_v2", 
-    #"injection_v4",
-    #"injection_IT",
+    "injection_v2", 
+    "injection_v4",
+    "injection_IT",
     "injection_conv_v1", 
-    #"v4_no_injection", 
-    #"resnet50_untrained", 
-    "barlow_twins_50epochs"
+    "v4_no_injection", 
+    "resnet50_untrained", 
+    "barlow_twins_50epochs", 
+    "barlow_fact_no_injection"
 ]
 
 """model_names = [
