@@ -2,7 +2,7 @@
     "dataset_configs": {
         "pseudo_hvm_factorize_obj_motion_0": {
             "base_dataset_name": "faces_test",
-            "subset_indices": [[null], [null], 0],
+            "subset_indices": 0,
             "seed": 0
         }
     },
