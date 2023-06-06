@@ -11,7 +11,7 @@
     
     "mkturk_path": "/mnt/smb/locker/issa-locker/users/hc3190/datasets/imagesets/mkturk",
     "stim_matrix_path": "/mnt/smb/locker/issa-locker/users/Eugénie/datasets/",
-    "faces_path": "/mnt/smb/locker/issa-locker/users/Eugénie/datasets/",
+    "faces_test": "/mnt/smb/locker/issa-locker/users/Eugénie/datasets/",
     "model_base_path": "/mnt/smb/locker/issa-locker/users/Eugénie/models",
     
     
