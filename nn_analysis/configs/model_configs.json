@@ -148,7 +148,10 @@
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/convolution_injection/new_injection_conv_v1"
     }, 
-    
+    "faces_notexture": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/faces/faces_notexture/factorize_avgpool_equivariant_all_bn_v5"
+    }, 
      
     "barlow_twins_50epochs_nm": {
         "arch": "barlowtwins",
