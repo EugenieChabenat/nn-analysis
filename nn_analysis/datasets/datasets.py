@@ -71,6 +71,13 @@ def get_dataset(dataset_name, split='train', **kwargs):
         print('images: ', images.shape)
         print('target: ', targets.shape)
         
+    elif dataset_name == 'faces_test':
+        images = torch.from_numpy(np.load(os.path.join(env_config['faces_test'], 'faces_test.npy')))
+        targets = torch.stack(torch.meshgrid(*[torch.arange(i) for i in images.size()[:-3]],indexing='ij'),dim=-1)
+        dataset = TensorDataset(images,targets,**kwargs)
+        print('images: ', images.shape)
+        print('target: ', targets.shape)
+            
     elif dataset_name == 'natural_movies':
         # tensor dataset 
         images = torch.from_numpy(np.load(os.path.join(env_config['stim_matrix_path'], 'stim_matrix1.npy')))
