@@ -72,7 +72,10 @@ def get_dataset(dataset_name, split='train', **kwargs):
         print('target: ', targets.shape)
         
     elif dataset_name == 'faces_test':
-        images = torch.from_numpy(np.load(os.path.join(env_config['faces_test'], 'faces_test.npy')))
+        #images = torch.from_numpy(np.load(os.path.join(env_config['faces_test'], 'faces_test.npy')))
+        data_path = os.path.join(env_config['faces_test'], 'faces_test.npy'))
+        images = torchvision.ImageFolder(root=data_path,transform=torchvision.transforms.ToTensor()
+)
         targets = torch.stack(torch.meshgrid(*[torch.arange(i) for i in images.size()[:-3]],indexing='ij'),dim=-1)
         dataset = TensorDataset(images,targets,**kwargs)
         print('images: ', images.shape)
