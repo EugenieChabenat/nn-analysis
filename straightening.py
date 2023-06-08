@@ -36,7 +36,7 @@ metric_dict = {
 dict_color = {
     "injection_v1" : ["blue", '--'],
     "injection_v2": ["red", '--'], 
-    "injection_v4": ["orange", '--'],
+    "injection_v4": ["orange", '-'],
     "injection_IT": ["green", '--'],
     "injection_conv_v1": ["red", '-'], 
     "injection_conv_v4": ["red", '-'], 
