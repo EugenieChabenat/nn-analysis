@@ -37,7 +37,7 @@ metric_dict = {'obj_class': 'Object Class',
 
 dict_color = {
     "injection_v1" : ["blue", '--'],
-    "injection_v2": ["red", '-'], 
+    "injection_v2": ["orange", '-'], 
     "injection_v4": ["orange", '-'],
     "injection_IT": ["green", '--'],
     "injection_conv_v1": ["red", '-'], 
