@@ -102,7 +102,7 @@ model_names = [
     #"v4_no_injection", 
     "resnet50_untrained", 
     "barlow_twins_50epochs", 
-    #"barlow_fact_no_injection"
+    "barlow_fact_no_injection"
 ]
 
 """model_names = [
