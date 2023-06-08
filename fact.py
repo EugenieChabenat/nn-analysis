@@ -27,14 +27,16 @@ metric_dict = {'ss_inv-background': 'SS Invariance - Background',
                'fact-color': 'Factorization - Color'
               }
 dict_color = {
-    "injection_v1" : "blue",
-    "injection_v2": "red", 
-    "injection_v4": "orange",
-    "injection_IT": "green",
-    "injection_conv_v1": "red", 
-    "resnet50_untrained": "pink", 
-    "barlow_twins_50epochs": "grey", 
-    "barlow_fact_no_injection": "black"
+    "injection_v1" : ["blue", '--'],
+    "injection_v2": ["red", '--'], 
+    "injection_v4": ["orange", '--'],
+    "injection_IT": ["green", '--'],
+    "injection_conv_v1": ["red", '-'], 
+    "injection_conv_v4": ["red", '-'], 
+    "v4_no_injection": ["purple", '--'], 
+    "resnet50_untrained": ["pink", '--'], 
+    "barlow_twins_50epochs": ["grey", '--'], 
+    "barlow_fact_no_injection": ["black", '--']
 }
   
 epoch = 29
@@ -59,11 +61,13 @@ list_metrics = {
 
 
 model_names = [
-    "injection_v1",
-    "injection_v2", 
-    "injection_v4", 
-    "injection_IT", 
-    "injection_conv_v1", 
+    #"injection_v1",
+    #"injection_v2", 
+    "injection_v4",
+    #"injection_IT",
+    #"injection_conv_v1", 
+    "injection_conv_v4", 
+    #"v4_no_injection", 
     "resnet50_untrained", 
     "barlow_twins_50epochs", 
     "barlow_fact_no_injection"
@@ -91,9 +95,9 @@ for key, metric_types in list_metrics.items():
             scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
             #axes[0,i].plot(layers, scores, label=model_name)
             if model_name == "barlow_v1_inj_b": 
-                axes[0,i].plot(layers, scores, label="barlow_v3_inj", color = dict_color[model_name])
+                axes[0,i].plot(layers, scores, label="barlow_v3_inj", color = dict_color[model_name][0], ls = dict_color[model_name][1])
             else: 
-                axes[0,i].plot(layers, scores, label=model_name, color = dict_color[model_name])
+                axes[0,i].plot(layers, scores, label=model_name, color = dict_color[model_name][0], ls = dict_color[model_name][1])
         #scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
         #axes[0,i].plot(layers, scores, label='identity')
         
