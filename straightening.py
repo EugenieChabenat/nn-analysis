@@ -34,16 +34,17 @@ metric_dict = {
              }
 
 dict_color = {
-    "injection_v1" : "blue",
-    "injection_v2": "red", 
-    "injection_v4": "orange",
-    "injection_IT": "green",
-    "injection_conv_v1": "red", 
-    "resnet50_untrained": "pink", 
-    "barlow_twins_50epochs": "grey", 
-    "barlow_fact_no_injection": "black"
+    "injection_v1" : ["blue", '--'],
+    "injection_v2": ["red", '--'], 
+    "injection_v4": ["orange", '--'],
+    "injection_IT": ["green", '--'],
+    "injection_conv_v1": ["red", '-'], 
+    "injection_conv_v4": ["red", '-'], 
+    "v4_no_injection": ["purple", '--'], 
+    "resnet50_untrained": ["pink", '--'], 
+    "barlow_twins_50epochs": ["grey", '--'], 
+    "barlow_fact_no_injection": ["black", '--']
 }
-
 epoch = 29
 #layers = np.arange(12)
 layers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
@@ -90,11 +91,13 @@ list_metrics = {
 }
 
 model_names = [
-    "injection_v1",
-    "injection_v2", 
+    #"injection_v1",
+    #"injection_v2", 
     "injection_v4",
-    "injection_IT",
-    "injection_conv_v1", 
+    #"injection_IT",
+    #"injection_conv_v1", 
+    "injection_conv_v4", 
+    #"v4_no_injection", 
     "resnet50_untrained", 
     "barlow_twins_50epochs", 
     "barlow_fact_no_injection"
@@ -122,9 +125,9 @@ for key, metric_types in list_metrics.items():
             print('layer: ', layers)
             scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
             if model_name == "barlow_v1_inj_b": 
-                axes[0,i].plot(layers, scores, label="barlow_v3_inj", color = dict_color[model_name])
+                axes[0,i].plot(layers, scores, label="barlow_v3_inj", color = dict_color[model_name][0], ls = dict_color[model_name][1])
             else: 
-                axes[0,i].plot(layers, scores, label=model_name, color = dict_color[model_name])
+                axes[0,i].plot(layers, scores, label=model_name, color = dict_color[model_name][0], ls = dict_color[model_name][1])
         scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
         axes[0,i].plot(layers, scores, label='identity', color = 'black')
         
@@ -149,7 +152,7 @@ for key, metric_types in list_metrics.items():
     fig.supylabel('curvature')
     fig.tight_layout()
     plt.show()
-    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/bis_{}.png'.format(key))
+    #plt.savefig('/home/ec3731/issa_analysis/nn-analysis/bis_{}.png'.format(key))
     plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/bis_{}.png'.format(key))
 
 
