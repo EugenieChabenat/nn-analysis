@@ -1,7 +1,7 @@
 {
     "dataset_configs": {
         "mkturk_test": {
-            "base_dataset_name": "faces_test",
+            "base_dataset_name": "mkturk_test",
             "transform_names": [],
             "subset_indices": null,
             "seed": 0
