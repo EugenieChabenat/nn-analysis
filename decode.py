@@ -36,7 +36,7 @@ metric_dict = {'obj_class': 'Object Class',
                }
 
 dict_color = {
-    "injection_v1" : ["blue", '--'],
+    "injection_v1" : ["orange", '-'],
     "injection_v2": ["orange", '-'], 
     "injection_v4": ["orange", '-'],
     "injection_IT": ["green", '--'],
@@ -78,12 +78,12 @@ list_metrics = {
     "Object Pose 2": ['obj_pose_z', 'obj_pose']
 }
 model_names = [
-    #"injection_v1",
-    "injection_v2", 
+    "injection_v1",
+    #"injection_v2", 
     #"injection_v4",
     #"injection_IT",
-    #"injection_conv_v1", 
-    "injection_conv_v2", 
+    "injection_conv_v1", 
+    #"injection_conv_v2", 
     #"injection_conv_v4", 
     #"v4_no_injection", 
     "resnet50_untrained", 
@@ -137,7 +137,7 @@ for key, metric_types in list_metrics.items():
     fig.tight_layout()
     plt.show()
     #plt.savefig('/home/ec3731/issa_analysis/nn-analysis/bis_{}.png'.format(key))
-    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/{}.png'.format(key))
+    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/bis_{}.png'.format(key))
 
 
 
