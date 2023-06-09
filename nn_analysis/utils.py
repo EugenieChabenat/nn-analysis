@@ -263,6 +263,23 @@ def get_random_components(X, n_rcs=300, **kwargs):
     X = X.reshape((*shape[:-1],n_rcs))
     return X
 
+def get_random_components_bootstrap(X, n_rcs=300, **kwargs):
+    """
+    Assumes X has shape (...,n_features)
+    """
+    shape = X.shape
+    print('shape: ', shape)
+    X = X.reshape((-1,shape[-1]))
+    print('X shape: ', X.shape)
+    
+    #n_bootstrap = 3
+    
+    #for i in range 
+    np.random.shuffle(X)
+    X = X[:, :n_rcs]
+    print('X shape: ', X.shape)
+    X = X.reshape((*shape[:-1],n_rcs))
+    return X
 
 ### config utils ###
 
