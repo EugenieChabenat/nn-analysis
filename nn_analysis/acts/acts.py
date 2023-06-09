@@ -95,7 +95,7 @@ class Acts:
             #y = utils.get_random_components(y, n_rcs=2048)
             
             # if we bootstrap on random components 
-            n_bootstrap = 5
+            n_bootstrap = 10
             #list_y = []
             for i in range(n_bootstrap): 
                 if i ==0: 
