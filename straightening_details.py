@@ -84,6 +84,8 @@ model_names = [
     "resnet50_untrained_pc6", 
     "resnet50_untrained_bootstrap2", 
     "resnet50_untrained_bootstrap3", 
+    "resnet50_untrained_bootstrap4", 
+    "resnet50_untrained_bootstrap5", 
 ]
 
 
