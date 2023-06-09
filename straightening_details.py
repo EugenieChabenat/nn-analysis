@@ -51,42 +51,38 @@ list_metrics = {
 }
 
 list_labels = {
-    "resnet50_untrained_pc1": "max PCs",
-    "resnet50_untrained_pc2": "300 PCs", 
-    #"resnet50_untrained_pc3": "300 RFs",
-    #"resnet50_untrained_pc5": "500 RFs", 
-    "resnet50_untrained_pc6": "1000 RFs", 
-    "resnet50_untrained_bootstrap2": "500 RFs - 3 bootstraps", 
-    "resnet50_untrained_bootstrap3": "500 RFs - 5 bootstraps", 
-    "resnet50_untrained_bootstrap4": "500 RFs - 10 bootstraps", 
-    "resnet50_untrained_bootstrap5": "500 RFs - 10 bootstraps", 
+    "barlow_twins_50epochs_pc1": "max PCs",
+    "barlow_twins_50epochs_pc2": "300 PCs", 
+    "barlow_twins_50epochs_pc3": "300 RFs",
+    "barlow_twins_50epochs_pc4": "500 RFs", 
+    "barlow_twins_50epochs_pc5": "1000 RFs", 
+    "bt_bootstrap": "1000 RFs - 10 bootstraps", 
+    "bt_allfeatures": "all features" 
+    
 
 }
 
 dict_color = {
-    "resnet50_untrained_pc1": "red",
-    "resnet50_untrained_pc2": "green", 
-    "resnet50_untrained_pc3": "violet",
-    "resnet50_untrained_pc5": "purple", 
-    "resnet50_untrained_pc6": "indigo", 
-    "resnet50_untrained_bootstrap2": "blue", 
-    "resnet50_untrained_bootstrap3": "orange" , 
-    "resnet50_untrained_bootstrap4": "pink", 
-    "resnet50_untrained_bootstrap5": "black", 
+    "barlow_twins_50epochs_pc1": "red",
+    "barlow_twins_50epochs_pc2": "blue", 
+    "barlow_twins_50epochs_pc3": "indigo",
+    "barlow_twins_50epochs_pc4": "blue", 
+    "barlow_twins_50epochs_pc5": "orange", 
+    "bt_bootstrap": "green", 
+    "bt_allfeatures": "black"
 }
 
-
 model_names = [
-    "resnet50_untrained_pc1",
-    "resnet50_untrained_pc2", 
-    #"resnet50_untrained_pc3",
-    #"resnet50_untrained_pc5", 
-    "resnet50_untrained_pc6", 
-    "resnet50_untrained_bootstrap2", 
-    "resnet50_untrained_bootstrap3", 
-    "resnet50_untrained_bootstrap4", 
-    "resnet50_untrained_bootstrap5", 
+    "barlow_twins_50epochs_pc1",
+    "barlow_twins_50epochs_pc2", 
+    "barlow_twins_50epochs_pc3",
+    "barlow_twins_50epochs_pc4", 
+    "barlow_twins_50epochs_pc5", 
+    "bt_bootstrap", 
+    "bt_allfeatures"
+   
 ]
+
 
 
 
@@ -132,8 +128,8 @@ for key, metric_types in list_metrics.items():
     fig.supylabel('curvature')
     fig.tight_layout()
     plt.show()
-    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/bootstrap_untrained_{}.png'.format(key))
-    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/bootstrap_untrained_{}.png'.format(key))
+    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/bt_boostrapvsall_{}.png'.format(key))
+    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/bt_boostrapvsall_{}.png'.format(key))
     #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/PCs_vs_RCs/injection_v1.png')
 
 
@@ -172,6 +168,18 @@ model_names = [
     "injection_v4_pc4", 
     "injection_v4_pc5"
 ]
+
+model_names = [
+    "resnet50_untrained_pc1",
+    "resnet50_untrained_pc2", 
+    #"resnet50_untrained_pc3",
+    #"resnet50_untrained_pc5", 
+    "resnet50_untrained_pc6", 
+    "resnet50_untrained_bootstrap2", 
+    "resnet50_untrained_bootstrap3", 
+    "resnet50_untrained_bootstrap4", 
+    "resnet50_untrained_bootstrap5", 
+]
 # ------------------------------------------------------------------------------------
 # HISTOGRAM PLOT 
 # ------------------------------------------------------------------------------------
@@ -193,3 +201,29 @@ dict_color = {
     "injection_v4_pc5": "indigo", 
     "injection_v4_pc6": "plum"
 }
+
+list_labels = {
+    "resnet50_untrained_pc1": "max PCs",
+    "resnet50_untrained_pc2": "300 PCs", 
+    #"resnet50_untrained_pc3": "300 RFs",
+    #"resnet50_untrained_pc5": "500 RFs", 
+    "resnet50_untrained_pc6": "1000 RFs", 
+    "resnet50_untrained_bootstrap2": "500 RFs - 3 bootstraps", 
+    "resnet50_untrained_bootstrap3": "500 RFs - 5 bootstraps", 
+    "resnet50_untrained_bootstrap4": "500 RFs - 10 bootstraps", 
+    "resnet50_untrained_bootstrap5": "500 RFs - 10 bootstraps", 
+
+}
+
+dict_color = {
+    "resnet50_untrained_pc1": "red",
+    "resnet50_untrained_pc2": "green", 
+    "resnet50_untrained_pc3": "violet",
+    "resnet50_untrained_pc5": "purple", 
+    "resnet50_untrained_pc6": "indigo", 
+    "resnet50_untrained_bootstrap2": "blue", 
+    "resnet50_untrained_bootstrap3": "orange" , 
+    "resnet50_untrained_bootstrap4": "pink", 
+    "resnet50_untrained_bootstrap5": "black", 
+}
+
