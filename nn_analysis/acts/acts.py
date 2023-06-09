@@ -94,6 +94,9 @@ class Acts:
             # if we return random components 
             y = utils.get_random_components(y, n_rcs=2048)
             
+            # if we get all components 
+            y = utils.get_all_components(y)
+            
             # if we bootstrap on random components 
             """n_bootstrap = 10
             #list_y = []
