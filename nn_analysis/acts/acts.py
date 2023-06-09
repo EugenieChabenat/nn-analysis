@@ -96,11 +96,14 @@ class Acts:
             
             # if we bootstrap on random components 
             n_bootstrap = 3 
-            list_y = []
+            #list_y = []
             for i in range(n_bootstrap): 
-                y = utils.get_random_components(y, n_rcs=500)
+                if i ==0: 
+                    y = utils.get_random_components(y, n_rcs=500)
+                else: 
+                    y += utils.get_random_components(y, n_rcs=500)
                 print('y shape: ', y.shape)
-                list_y.append(y)
-            y = np.mean(list_y)
+                #list_y.append(y)
+            y = y/3
             return {'y': y}
         return {'y': y}
