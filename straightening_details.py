@@ -68,7 +68,7 @@ dict_color = {
     "resnet50_untrained_pc5": "purple", 
     "resnet50_untrained_pc6": "indigo", 
     "resnet_untrained_bootstrap2": "blue", 
-    "resnet_untrained_bootstrap3": "orange, 
+    "resnet_untrained_bootstrap3": "orange" 
 }
 
 
