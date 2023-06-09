@@ -51,38 +51,45 @@ list_metrics = {
 }
 
 list_labels = {
-    "barlow_twins_50epochs_pc1": "max PCs",
-    "barlow_twins_50epochs_pc2": "300 PCs", 
-    "barlow_twins_50epochs_pc3": "300 RFs",
-    "barlow_twins_50epochs_pc4": "500 RFs", 
-    "barlow_twins_50epochs_pc5": "1000 RFs", 
-    "bt_bootstrap": "1000 RFs - 10 bootstraps", 
-    "bt_allfeatures": "all features" 
-    
+    "resnet50_untrained_pc1": "max PCs",
+    "resnet50_untrained_pc2": "300 PCs", 
+    #"resnet50_untrained_pc3": "300 RFs",
+    #"resnet50_untrained_pc5": "500 RFs", 
+    "resnet50_untrained_pc6": "1000 RFs", 
+    "resnet50_untrained_bootstrap2": "500 RFs - 3 bootstraps", 
+    "resnet50_untrained_bootstrap3": "500 RFs - 5 bootstraps", 
+    "resnet50_untrained_bootstrap4": "500 RFs - 10 bootstraps", 
+    "resnet50_untrained_bootstrap5": "1000 RFs - 10 bootstraps", 
+    "resnet50_allfeatures": "all features"
 
 }
 
 dict_color = {
-    "barlow_twins_50epochs_pc1": "red",
-    "barlow_twins_50epochs_pc2": "blue", 
-    "barlow_twins_50epochs_pc3": "indigo",
-    "barlow_twins_50epochs_pc4": "blue", 
-    "barlow_twins_50epochs_pc5": "orange", 
-    "bt_bootstrap": "green", 
-    "bt_allfeatures": "black"
+    "resnet50_untrained_pc1": "red",
+    "resnet50_untrained_pc2": "green", 
+    "resnet50_untrained_pc3": "violet",
+    "resnet50_untrained_pc5": "purple", 
+    "resnet50_untrained_pc6": "indigo", 
+    "resnet50_untrained_bootstrap2": "blue", 
+    "resnet50_untrained_bootstrap3": "orange" , 
+    "resnet50_untrained_bootstrap4": "pink", 
+    "resnet50_untrained_bootstrap5": "black",
+    "resnet50_allfeatures": "yellow"
 }
 
-model_names = [
-    "barlow_twins_50epochs_pc1",
-    "barlow_twins_50epochs_pc2", 
-    "barlow_twins_50epochs_pc3",
-    "barlow_twins_50epochs_pc4", 
-    "barlow_twins_50epochs_pc5", 
-    "bt_bootstrap", 
-    "bt_allfeatures"
-   
-]
 
+model_names = [
+    "resnet50_untrained_pc1",
+    "resnet50_untrained_pc2", 
+    #"resnet50_untrained_pc3",
+    #"resnet50_untrained_pc5", 
+    "resnet50_untrained_pc6", 
+    "resnet50_untrained_bootstrap2", 
+    "resnet50_untrained_bootstrap3", 
+    "resnet50_untrained_bootstrap4", 
+    "resnet50_untrained_bootstrap5", 
+    "resnet50_allfeatures", 
+]
 
 
 
@@ -129,7 +136,7 @@ for key, metric_types in list_metrics.items():
     fig.tight_layout()
     plt.show()
     plt.savefig('/home/ec3731/issa_analysis/nn-analysis/bt_boostrapvsall_{}.png'.format(key))
-    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/bt_boostrapvsall_{}.png'.format(key))
+    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/rn_untrained_boostrapvsall_{}.png'.format(key))
     #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/PCs_vs_RCs/injection_v1.png')
 
 
@@ -226,4 +233,37 @@ dict_color = {
     "resnet50_untrained_bootstrap4": "pink", 
     "resnet50_untrained_bootstrap5": "black", 
 }
+
+list_labels = {
+    "barlow_twins_50epochs_pc1": "max PCs",
+    "barlow_twins_50epochs_pc2": "300 PCs", 
+    "barlow_twins_50epochs_pc3": "300 RFs",
+    "barlow_twins_50epochs_pc4": "500 RFs", 
+    "barlow_twins_50epochs_pc5": "1000 RFs", 
+    "bt_bootstrap": "1000 RFs - 10 bootstraps", 
+    "bt_allfeatures": "all features" 
+    
+
+}
+
+dict_color = {
+    "barlow_twins_50epochs_pc1": "red",
+    "barlow_twins_50epochs_pc2": "blue", 
+    "barlow_twins_50epochs_pc3": "indigo",
+    "barlow_twins_50epochs_pc4": "blue", 
+    "barlow_twins_50epochs_pc5": "orange", 
+    "bt_bootstrap": "green", 
+    "bt_allfeatures": "black"
+}
+
+model_names = [
+    "barlow_twins_50epochs_pc1",
+    "barlow_twins_50epochs_pc2", 
+    "barlow_twins_50epochs_pc3",
+    "barlow_twins_50epochs_pc4", 
+    "barlow_twins_50epochs_pc5", 
+    "bt_bootstrap", 
+    "bt_allfeatures"
+   
+]
 
