@@ -252,7 +252,7 @@ for i in range(len(model_names)):
 fig.suptitle('Comparison in decoding performance between Random and Convolution injection models')
 fig.tight_layout()
 pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/essai1.png')
-#pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/esai1.png')
+pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/compare_random_conv.png')
 fig.show()
 
 
