@@ -124,7 +124,7 @@ def main(model_name, layers, acts_name, version, epoch=None, overwrite=False, de
 if __name__ == '__main__':
     print("Started main_save.py...")
     parser = argparse.ArgumentParser(description='Save activations')
-    parser.add_argument('--model_name', default = "injection_conv_v2", type=str,
+    parser.add_argument('--model_name', default = "resnet50_untrained_bootstrap", type=str,
                         help='Specify the model of which activations are saved')
     parser.add_argument('--layers',default= 2, type=int, nargs='+',
                         help='Specify the layers of which activations are saved')
