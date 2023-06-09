@@ -3,7 +3,7 @@
         "arch": "identity"
     },
     
-    "resnet50_untrained_bootstrap2": {
+    "resnet50_untrained_bootstrap3": {
         "arch": "resnet50",
         "path": "checkpoints/pretrained/resnet50_untrained"
     },
