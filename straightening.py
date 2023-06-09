@@ -265,7 +265,7 @@ fig.suptitle('Comparison in straightening performance between Random and Convolu
 fig.tight_layout()
 
 pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/essai2.png')
-#pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/FINAL_hist.png')
+pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/compare_random_conv.png')
 fig.show()
 
 
