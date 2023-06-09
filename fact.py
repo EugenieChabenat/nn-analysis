@@ -228,7 +228,7 @@ for i in range(len(model_names)):
 fig.suptitle('Comparison in factorization performance between Random and Convolution injection models at injection site')
 fig.tight_layout()
 pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/essai3.png')
-#pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/FINAL_hist_layer13.png')
+pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/compare_random_conv.png')
 fig.show()
 
 
