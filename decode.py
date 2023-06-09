@@ -78,13 +78,13 @@ list_metrics = {
     "Object Pose 2": ['obj_pose_z', 'obj_pose']
 }
 model_names = [
-    "injection_v1",
+    #"injection_v1",
     #"injection_v2", 
     #"injection_v4",
     #"injection_IT",
     "injection_conv_v1", 
-    #"injection_conv_v2", 
-    #"injection_conv_v4", 
+    "injection_conv_v2", 
+    "injection_conv_v4", 
     #"v4_no_injection", 
     "resnet50_untrained", 
     "barlow_twins_50epochs", 
@@ -215,9 +215,9 @@ one_layer = {"injection_conv_v1": 6,
 
 
 model_names = [
-    "injection_v1",
-    "injection_v2", 
-    "injection_v4",
+    #"injection_v1",
+    #"injection_v2", 
+    #"injection_v4",
     #"injection_IT",
     "injection_conv_v1", 
     "injection_conv_v2", 
