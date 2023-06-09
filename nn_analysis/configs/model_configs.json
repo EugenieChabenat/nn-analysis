@@ -10,6 +10,15 @@
         "arch": "resnet50",
         "path": "checkpoints/pretrained/resnet50_untrained"
     },
+    "resnet50_untrained_bootstrap4": {
+        "arch": "resnet50",
+        "path": "checkpoints/pretrained/resnet50_untrained"
+    },
+    "resnet50_untrained_bootstrap5": {
+        "arch": "resnet50",
+        "path": "checkpoints/pretrained/resnet50_untrained"
+    },
+    
     
     "moco_control": {
         "arch": "resnet50",
