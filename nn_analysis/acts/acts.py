@@ -95,7 +95,7 @@ class Acts:
             #y = utils.get_random_components(y, n_rcs=2048)
             
             # if we bootstrap on random components 
-            n_bootstrap = 3 
+            n_bootstrap = 5
             #list_y = []
             for i in range(n_bootstrap): 
                 if i ==0: 
@@ -104,6 +104,6 @@ class Acts:
                     y += utils.get_random_components(y, n_rcs=500)
                 print('y shape: ', y.shape)
                 #list_y.append(y)
-            y = y/3
+            y = y/n_bootstrap
             return {'y': y}
         return {'y': y}
