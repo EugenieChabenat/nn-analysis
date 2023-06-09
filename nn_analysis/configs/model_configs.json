@@ -2,6 +2,12 @@
     "identity": {
         "arch": "identity"
     },
+    
+    "resnet50_untrained_bootstrap2": {
+        "arch": "resnet50",
+        "path": "checkpoints/pretrained/resnet50_untrained"
+    },
+    
     "moco_control": {
         "arch": "resnet50",
         "path": "checkpoints/moco/moco_v1_noflip",
@@ -161,10 +167,7 @@
         "path": "checkpoints/barlowtwins/faces/faces_notexture/factorize_avgpool_equivariant_all_bn_v5"
     }, 
     
-    "resnet50_untrained_bootstrap1": {
-        "arch": "resnet50",
-        "path": "checkpoints/pretrained/resnet50_untrained"
-    },
+    
     
     "barlow_twins_50epochs_nm": {
         "arch": "barlowtwins",
