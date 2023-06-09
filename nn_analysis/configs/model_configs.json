@@ -22,6 +22,10 @@
         "arch": "resnet50",
         "path": "checkpoints/barlowtwins/vanilla_barlowtwins"
     },
+    "bt_allfeatures": {
+        "arch": "resnet50",
+        "path": "checkpoints/barlowtwins/vanilla_barlowtwins"
+    },
     
     
     "moco_control": {
