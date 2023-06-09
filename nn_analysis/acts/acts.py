@@ -92,7 +92,7 @@ class Acts:
             #return {'y': y, 'evr': evr}
         
             # if we return random components 
-            y = utils.get_random_components(y, n_rcs=2048)
+            #y = utils.get_random_components(y, n_rcs=2048)
             
             # if we get all components 
             y = utils.get_all_components(y)
