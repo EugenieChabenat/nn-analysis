@@ -161,7 +161,7 @@
         "path": "checkpoints/barlowtwins/faces/faces_notexture/factorize_avgpool_equivariant_all_bn_v5"
     }, 
     
-    "resnet50_untrained_bootstrap": {
+    "resnet50_untrained_bootstrap1": {
         "arch": "resnet50",
         "path": "checkpoints/pretrained/resnet50_untrained"
     },
