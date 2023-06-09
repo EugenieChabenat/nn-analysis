@@ -86,10 +86,20 @@ class Acts:
             print('principal components are computed')
             n_pcs = -1
             print('n_pcs: ', n_pcs)
+            
             # if we compute pcs 
-            y, evr = utils.get_pcs(y, n_pcs, svd_solver=svd_solver)
-            return {'y': y, 'evr': evr}
+            #y, evr = utils.get_pcs(y, n_pcs, svd_solver=svd_solver)
+            #return {'y': y, 'evr': evr}
+        
             # if we return random components 
-            y = utils.get_random_components(y, n_rcs=2048)
+            #y = utils.get_random_components(y, n_rcs=2048)
+            
+            # if we bootstrap on random components 
+            n_bootstrap = 3 
+            list_y = []
+            for i in range(n_bootstrap): 
+                y = utils.get_random_components(y, n_rcs=500)
+                list_y.append(y)
+            y = np.mean(list_y)
             return {'y': y}
         return {'y': y}
