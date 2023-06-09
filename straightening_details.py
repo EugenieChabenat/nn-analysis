@@ -51,34 +51,36 @@ list_metrics = {
 }
 
 list_labels = {
-    "injection_v4_pc1": "max PCs",
-    "injection_v4_pc2": "300 PCs", 
-    "injection_v4_pc3": "300 RCs",
-    "injection_v4_pc4": "500 RCs", 
-    "injection_v4_pc5": "1000 RCs", 
-    "injection_v4_pc6": "2048 RCs"
+    "resnet50_untrained_pc1": "max PCs",
+    "resnet50_untrained_pc2": "300 PCs", 
+    "resnet50_untrained_pc3": "300 RFs",
+    "resnet50_untrained_pc5": "500 RFs", 
+    "resnet50_untrained_pc6": "1000 RFs", 
+    "resnet_untrained_bootstrap2": "500 RFs - 3 bootstraps", 
+    "resnet_untrained_bootstrap3": "500 RFs - 3 bootstraps", 
+]
 }
 
 dict_color = {
-    "injection_v4_pc1" : "red",
-    "injection_v4_pc2": "green", 
-    "injection_v4_pc3": "violet",
-    "injection_v4_pc4": "purple", 
-    "injection_v4_pc5": "indigo", 
-    "injection_v4_pc6": "plum"
+    "resnet50_untrained_pc1": "red",
+    "resnet50_untrained_pc2": "green", 
+    "resnet50_untrained_pc3": "violet",
+    "resnet50_untrained_pc5": "purple", 
+    "resnet50_untrained_pc6": "indigo", 
+    "resnet_untrained_bootstrap2": "blue", 
+    "resnet_untrained_bootstrap3": "orange, 
 }
 
 
 model_names = [
-    "injection_v4_pc1",
-    "injection_v4_pc2", 
-    "injection_v4_pc3",
-    "injection_v4_pc4", 
-    "injection_v4_pc5", 
-    "injection_v4_pc6", 
-    #"barlow_twins_50epochs_pc7"
+    "resnet50_untrained_pc1",
+    "resnet50_untrained_pc2", 
+    "resnet50_untrained_pc3",
+    "resnet50_untrained_pc5", 
+    "resnet50_untrained_pc6", 
+    "resnet_untrained_bootstrap2", 
+    "resnet_untrained_bootstrap3", 
 ]
-
 
 
 
@@ -124,8 +126,8 @@ for key, metric_types in list_metrics.items():
     fig.supylabel('curvature')
     fig.tight_layout()
     plt.show()
-    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/pcs_injection_v4_{}.png'.format(key))
-    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/PCs_vs_RCs_injection_v4_{}.png'.format(key))
+    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/bootstrap_untrained_{}.png'.format(key))
+    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/bootstrap_untrained_{}.png'.format(key))
     #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/PCs_vs_RCs/injection_v1.png')
 
 
@@ -168,4 +170,20 @@ model_names = [
 # HISTOGRAM PLOT 
 # ------------------------------------------------------------------------------------
 
+list_labels = {
+    "injection_v4_pc1": "max PCs",
+    "injection_v4_pc2": "300 PCs", 
+    "injection_v4_pc3": "300 RCs",
+    "injection_v4_pc4": "500 RCs", 
+    "injection_v4_pc5": "1000 RCs", 
+    "injection_v4_pc6": "2048 RCs"
+}
 
+dict_color = {
+    "injection_v4_pc1" : "red",
+    "injection_v4_pc2": "green", 
+    "injection_v4_pc3": "violet",
+    "injection_v4_pc4": "purple", 
+    "injection_v4_pc5": "indigo", 
+    "injection_v4_pc6": "plum"
+}
