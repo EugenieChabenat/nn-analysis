@@ -249,6 +249,7 @@ y_lim_max = max([axes[0,i].get_ylim()[1] for i in range(len(model_names))])
 for i in range(len(model_names)):
     axes[0,i].set_ylim(y_lim_min, y_lim_max)
 fig.tight_layout()
+fig.suptitle('Comparison in decoding performance between Random and Convolution injection models')
 pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/essai1.png')
 #pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/esai1.png')
 fig.show()
