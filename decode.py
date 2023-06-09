@@ -212,7 +212,9 @@ baseline_model = {"injection_conv_v1": "injection_v1",
 one_layer = {"injection_conv_v1": 6,
                   "injection_conv_v2": 10,
                   "injection_conv_v4": 16 }
-
+one_layer = {"injection_conv_v1": 20,
+                  "injection_conv_v2": 20,
+                  "injection_conv_v4": 20 }
 
 model_names = [
     #"injection_v1",
@@ -252,7 +254,7 @@ for i in range(len(model_names)):
 fig.suptitle('Comparison in decoding performance between Random and Convolution injection models at injection site')
 fig.tight_layout()
 pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/essai1.png')
-pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/compare_random_conv.png')
+pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/compare_random_conv_last_layer.png')
 fig.show()
 
 
