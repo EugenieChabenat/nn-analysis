@@ -58,7 +58,7 @@ list_labels = {
     "resnet50_untrained_pc6": "1000 RFs", 
     "resnet_untrained_bootstrap2": "500 RFs - 3 bootstraps", 
     "resnet_untrained_bootstrap3": "500 RFs - 3 bootstraps", 
-]
+
 }
 
 dict_color = {
