@@ -101,7 +101,7 @@ model_names = [
 ]"""
 
 
-for key, metric_types in list_metrics.items(): 
+"""for key, metric_types in list_metrics.items(): 
     
     fig, axes = pt.core.subplots(1, len(metric_types), size=(10,8), sharex=True)
     for i, metric_type in enumerate(metric_types):
@@ -137,7 +137,7 @@ for key, metric_types in list_metrics.items():
     fig.tight_layout()
     plt.show()
     #plt.savefig('/home/ec3731/issa_analysis/nn-analysis/bis_{}.png'.format(key))
-    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/bis_{}.png'.format(key))
+    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/bis_{}.png'.format(key))"""
 
 
 
@@ -205,19 +205,36 @@ metricss = [
             ['brightness', 'contrast', 'saturation', 'hue', 'color', 'lighting'], 
             ['obj_pos_x', 'obj_pos_y', 'obj_scale', 'obj_pos', 'obj_pose_x', 'obj_pose_y', 'obj_pose_z', 'obj_pose']]
 
-baseline_model = "barlow_control"
+baseline_model = {"injection_conv_v1": "injection_v1",
+                  "injection_conv_v2": "injection_v2",
+                  "injection_conv_v4": "injection_v4" }
+
+one_layer = {"injection_conv_v1": 6,
+                  "injection_conv_v2": 10,
+                  "injection_conv_v4": 16 }
+
+
 model_names = [
-    "barlow_v1_inj",
-    "barlow_v2_inj",
-    "barlow_v1_inj_b", 
+    "injection_v1",
+    "injection_v2", 
+    "injection_v4",
+    #"injection_IT",
+    "injection_conv_v1", 
+    "injection_conv_v2", 
+    "injection_conv_v4", 
+    #"v4_no_injection", 
+    #"resnet50_untrained", 
+    #"barlow_twins_50epochs", 
+    #"barlow_fact_no_injection"
 ]
 
-one_layer = 13
 
-"""fig, axes = pt.round_plot.subplots(1,3,height_per_plot=6,width_per_plot=6)
+
+
+fig, axes = pt.round_plot.subplots(1,3,height_per_plot=6,width_per_plot=6)
 for i, model_name in enumerate(model_names):
     #ys = [[results[model_name][metric][-1,0]-results[baseline_model_name][metric][-1,0] for metric in metrics] for metrics in metricss]
-    ys = [[load_data(metric, model_name, epoch, one_layer)[metric_type] - load_data(metric, baseline_model, epoch, one_layer)[metric_type] for metric_type in metric_types] for metric_types in metricss]
+    ys = [[load_data(metric, model_name, epoch, one_layer[model_name])[metric_type] - load_data(metric, baseline_model[model_name], epoch, one_layer[model_name])[metric_type] for metric_type in metric_types] for metric_types in metricss]
     #xs = metricss
     xs = [[metric_dict[metric_type] for metric_type in metrics] for metrics in metricss]
     grouped_bar(axes[0,i], xs, ys)
@@ -232,8 +249,8 @@ y_lim_max = max([axes[0,i].get_ylim()[1] for i in range(len(model_names))])
 for i in range(len(model_names)):
     axes[0,i].set_ylim(y_lim_min, y_lim_max)
 fig.tight_layout()
-pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/FINAL_hist_layer13.png')
-fig.show()"""
+pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/esai1.png')
+fig.show()
 
 
 
