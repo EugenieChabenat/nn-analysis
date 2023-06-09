@@ -1,5 +1,5 @@
 import torch
-
+import numpy as np
 from nn_analysis import utils
 from nn_analysis import datasets as ds
 from nn_analysis import models as md
