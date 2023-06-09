@@ -56,8 +56,8 @@ list_labels = {
     "resnet50_untrained_pc3": "300 RFs",
     "resnet50_untrained_pc5": "500 RFs", 
     "resnet50_untrained_pc6": "1000 RFs", 
-    "resnet_untrained_bootstrap2": "500 RFs - 3 bootstraps", 
-    "resnet_untrained_bootstrap3": "500 RFs - 3 bootstraps", 
+    "resnet50_untrained_bootstrap2": "500 RFs - 3 bootstraps", 
+    "resnet50_untrained_bootstrap3": "500 RFs - 3 bootstraps", 
 
 }
 
@@ -67,8 +67,8 @@ dict_color = {
     "resnet50_untrained_pc3": "violet",
     "resnet50_untrained_pc5": "purple", 
     "resnet50_untrained_pc6": "indigo", 
-    "resnet_untrained_bootstrap2": "blue", 
-    "resnet_untrained_bootstrap3": "orange" 
+    "resnet50_untrained_bootstrap2": "blue", 
+    "resnet50_untrained_bootstrap3": "orange" 
 }
 
 
@@ -78,8 +78,8 @@ model_names = [
     "resnet50_untrained_pc3",
     "resnet50_untrained_pc5", 
     "resnet50_untrained_pc6", 
-    #"resnet_untrained_bootstrap2", 
-    "resnet_untrained_bootstrap3", 
+    "resnet50_untrained_bootstrap2", 
+    "resnet50_untrained_bootstrap3", 
 ]
 
 
