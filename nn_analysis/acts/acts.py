@@ -84,7 +84,7 @@ class Acts:
         # Compute PCs
         if n_pcs is not None:
             print('principal components are computed')
-            n_pcs = 500
+            n_pcs = 1000
             print('n_pcs: ', n_pcs)
             
             # if we compute pcs 
@@ -99,9 +99,9 @@ class Acts:
             #list_y = []
             for i in range(n_bootstrap): 
                 if i ==0: 
-                    y = utils.get_random_components(y, n_rcs=500)
+                    y = utils.get_random_components(y, n_rcs=1000)
                 else: 
-                    y += utils.get_random_components(y, n_rcs=500)
+                    y += utils.get_random_components(y, n_rcs=1000)
                 print('y shape: ', y.shape)
                 #list_y.append(y)
             y = y/n_bootstrap
