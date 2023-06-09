@@ -18,6 +18,10 @@
         "arch": "resnet50",
         "path": "checkpoints/pretrained/resnet50_untrained"
     },
+    "bt_bootstrap": {
+        "arch": "resnet50",
+        "path": "checkpoints/barlowtwins/vanilla_barlowtwins"
+    },
     
     
     "moco_control": {
