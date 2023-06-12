@@ -1,0 +1,24 @@
+{
+    "class": "Curvature",
+    "kwargs": {
+        "variable_configs": {   
+            "artificial_movie_labels": {
+                "acts": {
+                    "name": "natural_movies_3",
+                    "version": 0
+                },
+                "n_frames": 10
+            },
+            "natural_movie_labels": {
+                "acts": {
+                    "name": "natural_movies_3",
+                    "version": 0
+                },
+                "n_frames": 10
+            }
+        },
+        "averages": {
+            
+        }
+    }
+}
