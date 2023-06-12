@@ -203,9 +203,9 @@ def grouped_bar(ax, xs, ys, width=0.2, sep=0.3):
     
     
 metricss = [
-            ['obj_class', 'cam_pos_x', 'cam_pos_y', 'cam_scale', 'cam_pos'], 
+            ['cam_pos_x', 'cam_pos_y', 'cam_scale', 'cam_pos'], 
             ['brightness', 'contrast', 'saturation', 'hue', 'color', 'lighting'], 
-            ['obj_pos_x', 'obj_pos_y', 'obj_scale', 'obj_pos', 'obj_pose_x', 'obj_pose_y', 'obj_pose_z', 'obj_pose']]
+            ['obj_class', 'obj_pos_x', 'obj_pos_y', 'obj_scale', 'obj_pos', 'obj_pose_x', 'obj_pose_y', 'obj_pose_z', 'obj_pose']]
 
 baseline_model = {"injection_conv_v1": "injection_v1",
                   "injection_conv_v2": "injection_v2",
