@@ -62,13 +62,14 @@ list_metrics = {
 
 
 model_names = [
-    "injection_v1",
+    #"injection_v1",
     #"injection_v2", 
     #"injection_v4",
-    #"injection_IT",
-    "injection_conv_v1", 
+    "injection_IT",
+    #"injection_conv_v1", 
     #"injection_conv_v2", 
     #"injection_conv_v4", 
+    "injection_conv_IT", 
     #"v4_no_injection", 
     "resnet50_untrained", 
     "barlow_twins_50epochs", 
@@ -85,7 +86,7 @@ model_names = [
 # ------------------------------------------------------------------------------------
 # LAYERS PLOT 
 # ------------------------------------------------------------------------------------
-"""for key, metric_types in list_metrics.items(): 
+for key, metric_types in list_metrics.items(): 
     fig, axes = pt.core.subplots(1, len(metric_types), size=(10, 8), sharex=True)
     for i, metric_type in enumerate(metric_types):
         for model_name in model_names:
@@ -126,7 +127,7 @@ model_names = [
     fig.tight_layout()
     plt.show()
     #plt.savefig('/home/ec3731/issa_analysis/nn-analysis/bis_{}.png'.format(key))
-    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/bis_{}.png'.format(key))"""
+    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/IT_{}.png'.format(key))
 
 
 # ------------------------------------------------------------------------------------
@@ -181,7 +182,7 @@ def grouped_bar(ax, xs, ys, width=0.2, sep=0.3):
     ax.set_xticks(all_xticks)
     ax.set_xticklabels(all_xlabels, rotation=45, ha='right')
     
-metricss = [
+"""metricss = [
             ['ss_inv-background', 'ss_inv-obj_motion', 'ss_inv-crop','ss_inv-color'],
             ['inv-background', 'inv-obj_motion', 'inv-crop', 'inv-color'],
             ['fact-background', 'fact-obj_motion', 'fact-crop', 'fact-color']]
@@ -231,7 +232,7 @@ fig.suptitle('Comparison in factorization performance between Random and Convolu
 fig.tight_layout()
 pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/essai3.png')
 pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/compare_random_conv_last_layer.png')
-fig.show()
+fig.show()"""
 
 
 
