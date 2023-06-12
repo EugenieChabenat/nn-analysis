@@ -36,14 +36,25 @@ metric_dict = {'obj_class': 'Object Class',
                }
 
 dict_color = {
+    # random injection 
     "injection_v1" : ["orange", '-'],
     "injection_v2": ["orange", '-'], 
     "injection_v4": ["orange", '-'],
     "injection_IT": ["orange", '-'],
+    
+    # convolution injection
     "injection_conv_v1": ["red", '-'], 
     "injection_conv_v2": ["red", '-'], 
     "injection_conv_v4": ["red", '-'], 
     "injection_conv_IT": ["red", '-'], 
+    
+    # unfreeze convolution injection 
+    "unfreeze_injection_v1": ["green", '-'], 
+    "unfreeze_injection_v2": ["green", '-'], 
+    "unfreeze_injection_v4": ["green", '-'], 
+    "unfreeze_injection_IT": ["green", '-'], 
+    
+    # control models 
     "v4_no_injection": ["purple", '--'], 
     "resnet50_untrained": ["pink", '--'], 
     "barlow_twins_50epochs": ["grey", '--'], 
@@ -79,14 +90,24 @@ list_metrics = {
     "Object Pose 2": ['obj_pose_z', 'obj_pose']
 }
 model_names = [
-    #"injection_v1",
+    # random injection models  
+    "injection_v1",
     #"injection_v2", 
     #"injection_v4",
-    "injection_IT",
-    #"injection_conv_v1", 
+    #"injection_IT",
+    
+    # convolution injection models 
+    "injection_conv_v1", 
     #"injection_conv_v2", 
     #"injection_conv_v4", 
-    "injection_conv_IT", 
+    #"injection_conv_IT", 
+    
+    # unfreeze convolution injection models 
+    "unfreeze_injection_v1", 
+    #"unfreeze_injection_v2", 
+    #"unfreeze_injection_v4", 
+    #"unfreeze_injection_IT", 
+    
     #"v4_no_injection", 
     "resnet50_untrained", 
     "barlow_twins_50epochs", 
@@ -103,7 +124,7 @@ model_names = [
 ]"""
 
 
-"""for key, metric_types in list_metrics.items(): 
+for key, metric_types in list_metrics.items(): 
     
     fig, axes = pt.core.subplots(1, len(metric_types), size=(10,8), sharex=True)
     for i, metric_type in enumerate(metric_types):
@@ -139,7 +160,7 @@ model_names = [
     fig.tight_layout()
     plt.show()
     #plt.savefig('/home/ec3731/issa_analysis/nn-analysis/bis_{}.png'.format(key))
-    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/IT_{}.png'.format(key))"""
+    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/unfreeze_{}.png'.format(key))
 
 
 
@@ -241,7 +262,7 @@ model_names = [
 
 
 
-fig, axes = pt.round_plot.subplots(1,4,height_per_plot=6,width_per_plot=6)
+"""fig, axes = pt.round_plot.subplots(1,4,height_per_plot=6,width_per_plot=6)
 for i, model_name in enumerate(model_names):
     #ys = [[results[model_name][metric][-1,0]-results[baseline_model_name][metric][-1,0] for metric in metrics] for metrics in metricss]
     ys = [[load_data(metric, model_name, epoch, one_layer[model_name])[metric_type] - load_data(metric, baseline_model[model_name], epoch, one_layer[model_name])[metric_type] for metric_type in metric_types] for metric_types in metricss]
@@ -263,7 +284,7 @@ fig.suptitle('Comparison in decoding performance between Random and Convolution 
 fig.tight_layout()
 #pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/essai1.png')
 pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/compare_random_conv_injection_site_2.png')
-fig.show()
+fig.show()"""
 
 
 
