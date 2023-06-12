@@ -103,7 +103,7 @@ model_names = [
 ]"""
 
 
-for key, metric_types in list_metrics.items(): 
+"""for key, metric_types in list_metrics.items(): 
     
     fig, axes = pt.core.subplots(1, len(metric_types), size=(10,8), sharex=True)
     for i, metric_type in enumerate(metric_types):
@@ -139,7 +139,7 @@ for key, metric_types in list_metrics.items():
     fig.tight_layout()
     plt.show()
     #plt.savefig('/home/ec3731/issa_analysis/nn-analysis/bis_{}.png'.format(key))
-    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/IT_{}.png'.format(key))
+    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/IT_{}.png'.format(key))"""
 
 
 
@@ -187,7 +187,7 @@ fig.show()"""
 # ------------------------------------------------------------------------------------
 # HISTOGRAM PLOT 
 # ------------------------------------------------------------------------------------
-"""def grouped_bar(ax, xs, ys, width=0.2, sep=0.3):
+def grouped_bar(ax, xs, ys, width=0.2, sep=0.3):
     assert len(xs) == len(ys)
     total = 0.0
     all_xticks = []
@@ -209,14 +209,19 @@ metricss = [
 
 baseline_model = {"injection_conv_v1": "injection_v1",
                   "injection_conv_v2": "injection_v2",
-                  "injection_conv_v4": "injection_v4" }
+                  "injection_conv_v4": "injection_v4", 
+                  "injection_conv_IT": "injection_IT" }
 
+# if plotting at injection site 
 one_layer = {"injection_conv_v1": 6,
                   "injection_conv_v2": 10,
-                  "injection_conv_v4": 16 }
-one_layer = {"injection_conv_v1": 20,
+                  "injection_conv_v4": 16, 
+                  "injection_conv_IT": 19}
+# if plotting at last layer
+"""one_layer = {"injection_conv_v1": 20,
                   "injection_conv_v2": 20,
-                  "injection_conv_v4": 20 }
+                  "injection_conv_v4": 20, 
+                   "injection_conv_IT": 20 }"""
 
 model_names = [
     #"injection_v1",
@@ -225,7 +230,8 @@ model_names = [
     #"injection_IT",
     "injection_conv_v1", 
     "injection_conv_v2", 
-    "injection_conv_v4", 
+    "injection_conv_v4",
+    "injection_conv_IT", 
     #"v4_no_injection", 
     #"resnet50_untrained", 
     #"barlow_twins_50epochs", 
@@ -255,9 +261,9 @@ for i in range(len(model_names)):
 
 fig.suptitle('Comparison in decoding performance between Random and Convolution injection models at injection site')
 fig.tight_layout()
-pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/essai1.png')
-pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/compare_random_conv_last_layer.png')
-fig.show()"""
+#pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/essai1.png')
+pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/compare_random_conv_injection_site.png')
+fig.show()
 
 
 
