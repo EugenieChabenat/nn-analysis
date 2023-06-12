@@ -197,7 +197,7 @@
     }, 
     "injection_conv_IT": {
         "arch": "barlowtwins",
-        "path": "checkpoints/barlowtwins/convolution_injection/new_injection_conv_v4_v1"
+        "path": "checkpoints/barlowtwins/convolution_injection/new_injection_conv_IT_v1"
     }, 
     "faces_notexture": {
         "arch": "barlowtwins",
