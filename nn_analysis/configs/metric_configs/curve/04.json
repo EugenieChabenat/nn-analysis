@@ -4,15 +4,15 @@
         "variable_configs": {   
             "artificial_movie_labels": {
                 "acts": {
-                    "name": "natural_movies_3",
-                    "version": 0
+                    "name": "natural_movies",
+                    "version": 1
                 },
                 "n_frames": 10
             },
             "natural_movie_labels": {
                 "acts": {
-                    "name": "natural_movies_3",
-                    "version": 0
+                    "name": "natural_movies",
+                    "version": 1
                 },
                 "n_frames": 10
             }
