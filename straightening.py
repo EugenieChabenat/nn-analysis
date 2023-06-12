@@ -37,10 +37,11 @@ dict_color = {
     "injection_v1" : ["orange", '-'],
     "injection_v2": ["orange", '-'], 
     "injection_v4": ["orange", '-'],
-    "injection_IT": ["green", '--'],
+    "injection_IT": ["orange", '-'],
     "injection_conv_v1": ["red", '-'], 
     "injection_conv_v2": ["red", '-'], 
     "injection_conv_v4": ["red", '-'],
+    "injection_conv_IT": ["red", '-'],
     "v4_no_injection": ["purple", '--'], 
     "resnet50_untrained": ["pink", '--'], 
     "barlow_twins_50epochs": ["grey", '--'], 
@@ -92,13 +93,14 @@ list_metrics = {
 }
 
 model_names = [
-    "injection_v1",
+    #"injection_v1",
     #"injection_v2", 
     #"injection_v4",
-    #"injection_IT",
-    "injection_conv_v1", 
+    "injection_IT",
+    #"injection_conv_v1", 
     #"injection_conv_v2", 
     #"injection_conv_v4", 
+    "injection_conv_IT", 
     #"v4_no_injection", 
     "resnet50_untrained", 
     "barlow_twins_50epochs", 
@@ -118,7 +120,7 @@ model_names = [
 # ------------------------------------------------------------------------------------
 # LAYERS PLOT 
 # ------------------------------------------------------------------------------------
-"""for key, metric_types in list_metrics.items(): 
+for key, metric_types in list_metrics.items(): 
 
     fig, axes = pt.core.subplots(1, len(metric_types), size=(10,8), sharex=True)
     for i, metric_type in enumerate(metric_types):
@@ -155,7 +157,7 @@ model_names = [
     fig.tight_layout()
     plt.show()
     #plt.savefig('/home/ec3731/issa_analysis/nn-analysis/bis_{}.png'.format(key))
-    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/2_{}.png'.format(key))"""
+    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/IT_{}.png'.format(key))
 
 
 
@@ -218,7 +220,7 @@ def grouped_bar(ax, xs, ys, width=0.2, sep=0.3):
     ax.set_xticklabels(all_xlabels, rotation=45, ha='right')
     
     
-metricss = [
+"""metricss = [
             ['x_pan',  'y_pan', 'z_pan', 'x_focus_pan', 'y_focus_pan', 'z_focus_pan'], 
             ['x_cam_pan', 'yz_cam_pan', 'x_cam_rot', 'y_cam_rot', 'x_cam_trans', 'y_cam_trans', 'z_cam_trans'], 
             ['x_obj_rot', 'y_obj_rot']]
@@ -270,7 +272,7 @@ fig.tight_layout()
 
 pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/essai2.png')
 pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/compare_random_conv_last_layer.png')
-fig.show()
+fig.show()"""
 
 
 
