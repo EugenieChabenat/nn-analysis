@@ -184,7 +184,7 @@ def grouped_bar(ax, xs, ys, width=0.2, sep=0.3):
     ax.set_xticklabels(all_xlabels, rotation=45, ha='right')
     
 metricss = [
-            ['ss_inv-background', 'ss_inv-obj_motion', 'ss_inv-crop','ss_inv-color'],
+           # ['ss_inv-background', 'ss_inv-obj_motion', 'ss_inv-crop','ss_inv-color'],
             ['inv-background', 'inv-obj_motion', 'inv-crop', 'inv-color'],
             ['fact-background', 'fact-obj_motion', 'fact-crop', 'fact-color']]
 
