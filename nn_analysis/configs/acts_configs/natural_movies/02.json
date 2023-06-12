@@ -1,0 +1,17 @@
+{
+    "dataset_configs": {
+        "natural_movies": {
+            "base_dataset_name": "natural_movies_6",
+            "transform_names": [],
+            "subset_indices": null,
+            "seed": 0
+        }
+    },
+    "kwargs": {
+        "n_pcs": -1,
+        "save_loc": "tmp_shared_path"
+    },
+    "target_names": [
+        "artificial_movie_labels", "natural_movie_labels"
+    ]
+}
