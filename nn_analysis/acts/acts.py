@@ -84,21 +84,21 @@ class Acts:
         # Compute PCs
         if n_pcs is not None:
             print('principal components are computed')
-            n_pcs = 1000
+            #n_pcs = 1000
             print('n_pcs: ', n_pcs)
             
             # if we compute pcs 
-            #y, evr = utils.get_pcs(y, n_pcs, svd_solver=svd_solver)
-            #return {'y': y, 'evr': evr}
+            y, evr = utils.get_pcs(y, n_pcs, svd_solver=svd_solver)
+            return {'y': y, 'evr': evr}
         
-            # if we return random components 
-            #y = utils.get_random_components(y, n_rcs=2048)
+            """# if we return random components 
+            y = utils.get_random_components(y, n_rcs=2048)
             
             # if we get all components 
             y = utils.get_all_components(y)
             
             # if we bootstrap on random components 
-            """n_bootstrap = 10
+            n_bootstrap = 10
             #list_y = []
             for i in range(n_bootstrap): 
                 if i ==0: 
@@ -107,6 +107,6 @@ class Acts:
                     y += utils.get_random_components(y, n_rcs=1000)
                 print('y shape: ', y.shape)
                 #list_y.append(y)
-            y = y/n_bootstrap"""
-            return {'y': y}
+            y = y/n_bootstrap
+            return {'y': y}"""
         return {'y': y}
