@@ -47,11 +47,16 @@ dict_color = {
     "injection_conv_v2": ["red", '-'], 
     "injection_conv_v4": ["red", '-'], 
     "injection_conv_IT": ["red", '-'], 
-    
+        
     # unfreeze convolution injection 
-    "unfreeze_injection_v1": ["green", '-'], 
-    "unfreeze_injection_v2": ["green", '-'], 
-    "unfreeze_injection_v4": ["green", '-'], 
+    #"unfreeze_injection_v1": ["green", '-'], 
+    #"unfreeze_injection_v2": ["green", '-'], 
+    #"unfreeze_injection_v4": ["green", '-'], 
+    #"unfreeze_injection_IT": ["green", '-'], 
+    
+    "unfreeze_injection_v1": ["red", '-'], 
+    "unfreeze_injection_v2": ["blue", '-'], 
+    "unfreeze_injection_v4": ["orange", '-'], 
     "unfreeze_injection_IT": ["green", '-'], 
     
     # control models 
