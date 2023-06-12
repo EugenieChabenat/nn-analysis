@@ -53,7 +53,7 @@ def main(model_name, layers, metric_name, version, epoch=None, overwrite=False, 
 if __name__ == '__main__':
     print("Started main_analyze.py...")
     parser = argparse.ArgumentParser(description='Analyze activations')
-    parser.add_argument('--model_name', default= "resnet50_allfeatures",  type=str,
+    parser.add_argument('--model_name', default= "injection_conv_IT",  type=str,
                         help='specify the model of which activations are saved')
     parser.add_argument('--layers', default = 0, type=int, nargs='+',
                         help='specify the layers of which activations are saved')
