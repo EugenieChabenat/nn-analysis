@@ -91,21 +91,21 @@ list_metrics = {
 }
 model_names = [
     # random injection models  
-    "injection_v1",
+    #"injection_v1",
     #"injection_v2", 
-    #"injection_v4",
+    "injection_v4",
     #"injection_IT",
     
     # convolution injection models 
-    "injection_conv_v1", 
+    #"injection_conv_v1", 
     #"injection_conv_v2", 
-    #"injection_conv_v4", 
+    "injection_conv_v4", 
     #"injection_conv_IT", 
     
     # unfreeze convolution injection models 
-    "unfreeze_injection_v1", 
+    #"unfreeze_injection_v1", 
     #"unfreeze_injection_v2", 
-    #"unfreeze_injection_v4", 
+    "unfreeze_injection_v4", 
     #"unfreeze_injection_IT", 
     
     #"v4_no_injection", 
