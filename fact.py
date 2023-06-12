@@ -197,9 +197,11 @@ one_layer = {"injection_conv_v1": 6,
                   "injection_conv_v2": 10,
                   "injection_conv_v4": 16, 
                   "injection_conv_IT": 19 }
-"""one_layer = {"injection_conv_v1": 20,
+one_layer = {"injection_conv_v1": 20,
                   "injection_conv_v2": 20,
-                  "injection_conv_v4": 20}"""
+                  "injection_conv_v4": 20, 
+            "injection_conv_IT": 20
+            }
 
 model_names = [
     #"injection_v1",
@@ -232,10 +234,10 @@ y_lim_min = min([axes[0,i].get_ylim()[0] for i in range(len(model_names))])
 y_lim_max = max([axes[0,i].get_ylim()[1] for i in range(len(model_names))])
 for i in range(len(model_names)):
     axes[0,i].set_ylim(y_lim_min, y_lim_max)
-fig.suptitle('Comparison in factorization performance between Random and Convolution injection models at injection site')
+fig.suptitle('Comparison in factorization performance between Random and Convolution injection models at the last layer')
 fig.tight_layout()
 #pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/essai3.png')
-pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/compare_random_conv_injection_site.png')
+pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/compare_random_conv_last_layer.png')
 fig.show()
 
 
