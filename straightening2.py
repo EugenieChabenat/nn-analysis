@@ -71,7 +71,7 @@ dict_color = {
     "barlow_twins_50epochs": ["grey", '--'], 
     "barlow_fact_no_injection": ["black", '--'], 
 
-    "resnet50_untrained_boostrap5": ["black", '--'], 
+    "resnet50_untrained_bootstrap5": ["black", '--'], 
     "resnet50_allfeatures": ["blue", '--'], 
     "bt_bootstrap": ["red", '--'],
     "bt_allfeatures": ["green", '--']
@@ -101,7 +101,7 @@ model_names = [
     #"barlow_twins_50epochs", 
     #"barlow_fact_no_injection"
 
-    "resnet50_untrained_boostrap5", 
+    "resnet50_untrained_bootstrap5", 
     "resnet50_allfeatures", 
     "bt_bootstrap",
     "bt_allfeatures"
