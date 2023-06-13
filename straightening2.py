@@ -26,7 +26,7 @@ layers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 
 metric = ["curve", 3]
 metric = ["curve", 4]
 metric = ["curve", 5]
-metric = ["curve", 6]
+#metric = ["curve", 6]
 
                 
 metric_types = ["artificial_movie_labels", "natural_movie_labels"]
@@ -148,8 +148,8 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/unfreeze_conv_nm9.png')
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/natural_movies/unfreeze_conv_nm9.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/unfreeze_conv_nm6.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/natural_movies/unfreeze_conv_nm6.png')
 
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/natural_movies/sanity_control/10frames_metrics_plot9.png')
 
