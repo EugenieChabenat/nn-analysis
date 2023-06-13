@@ -88,10 +88,10 @@ model_names = [
     #"injection_IT",
     
     # convolution injection models 
-    #"injection_conv_v1", 
-    #"injection_conv_v2", 
-    #"injection_conv_v4", 
-    #"injection_conv_IT", 
+    "injection_conv_v1", 
+    "injection_conv_v2", 
+    "injection_conv_v4", 
+    "injection_conv_IT", 
     
     # unfreeze convolution injection models 
     #"unfreeze_injection_v1", 
@@ -104,10 +104,10 @@ model_names = [
     #"barlow_twins_50epochs", 
     #"barlow_fact_no_injection"
 
-    "resnet50_untrained_bootstrap5", 
-    "resnet50_allfeatures", 
-    "bt_bootstrap",
-    "bt_allfeatures"
+    #"resnet50_untrained_bootstrap5", 
+    #"resnet50_allfeatures", 
+    #"bt_bootstrap",
+    #"bt_allfeatures"
 ]
 
 # ------------------------------------------------------------------------------------
@@ -148,8 +148,8 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/controls_nm1.png')
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/natural_movies/controls_nm1.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/conv_nm1.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/natural_movies/conv_nm1.png')
 
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/natural_movies/sanity_control/10frames_metrics_plot9.png')
 
