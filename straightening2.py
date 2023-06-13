@@ -29,7 +29,7 @@ metric = ["curve", 3]
 metric_types = ["artificial_movie_labels", "natural_movie_labels"]
 
 
-model_names = [
+"""model_names = [
     "barlow_control", 
     "barlow_v1_inj", 
     "barlow_v2_inj", 
@@ -44,16 +44,68 @@ model_names = [
     "injection_v1_nm1", 
     "injection_v2_nm1", 
     "injection_v4_nm1"
-]
+]""""
 
 dict_color = {
-    "injection_v1_nm1" : "blue",
-    "injection_v2_nm1": "red", 
-    "injection_v4_nm1": "orange",
-    "injection_IT_nm1": "green",
-    "resnet50_untrained_nm1": "pink", 
-    "barlow_twins_50epochs_nm1": "grey"
+    # random injection 
+    "injection_v1" : ["orange", '-'],
+    "injection_v2": ["orange", '-'], 
+    "injection_v4": ["orange", '-'],
+    "injection_IT": ["orange", '-'],
+    
+    # convolution injection
+    "injection_conv_v1": ["red", '-'], 
+    "injection_conv_v2": ["blue", '-'], 
+    "injection_conv_v4": ["orange", '-'], 
+    "injection_conv_IT": ["green", '-'], 
+    
+    # unfreeze convolution injection 
+    "unfreeze_injection_v1": ["red", '-'], 
+    "unfreeze_injection_v2": ["blue", '-'], 
+    "unfreeze_injection_v4": ["orange", '-'], 
+    "unfreeze_injection_IT": ["green", '-'], 
+    
+    # control models 
+    "v4_no_injection": ["purple", '--'], 
+    "resnet50_untrained": ["pink", '--'], 
+    "barlow_twins_50epochs": ["grey", '--'], 
+    "barlow_fact_no_injection": ["black", '--'], 
+
+    "resnet50_untrained_boostrap5": ["black", '--'], 
+    "resnet50_allfeatures": ["blue", '--'], 
+    "bt_bootstrap": ["red", '--'],
+    "bt_allfeatures": ["green", '--']
 }
+
+model_names = [
+    # random injection models  
+    #"injection_v1",
+    #"injection_v2", 
+    #"injection_v4",
+    #"injection_IT",
+    
+    # convolution injection models 
+    #"injection_conv_v1", 
+    #"injection_conv_v2", 
+    #"injection_conv_v4", 
+    #"injection_conv_IT", 
+    
+    # unfreeze convolution injection models 
+    #"unfreeze_injection_v1", 
+    #"unfreeze_injection_v2", 
+    #"unfreeze_injection_v4", 
+    #"unfreeze_injection_IT", 
+    
+    #"v4_no_injection", 
+    #"resnet50_untrained", 
+    #"barlow_twins_50epochs", 
+    #"barlow_fact_no_injection"
+
+    "resnet50_untrained_boostrap5", 
+    "resnet50_allfeatures", 
+    "bt_bootstrap",
+    "bt_allfeatures"
+]
 
 # ------------------------------------------------------------------------------------
 # LAYERS PLOT 
@@ -93,8 +145,8 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/nm_plot1.png')
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/natural_movies/plot1_nm.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/controls_nm.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/natural_movies/controls_nm.png')
 
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/natural_movies/sanity_control/10frames_metrics_plot9.png')
 
