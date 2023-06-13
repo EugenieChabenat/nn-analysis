@@ -44,7 +44,7 @@ model_names = [
     "injection_v1_nm1", 
     "injection_v2_nm1", 
     "injection_v4_nm1"
-]""""
+]"""
 
 dict_color = {
     # random injection 
