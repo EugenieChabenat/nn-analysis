@@ -130,7 +130,7 @@ if __name__ == '__main__':
                         help='Specify the layers of which activations are saved')
     parser.add_argument('--acts_name', default = "natural_movies", type=str,
                         help='Specify what activations are saved')
-    parser.add_argument('--version', default = 3,  type=int,
+    parser.add_argument('--version', default = 4,  type=int,
                         help='Version number. Error will be raised if the activations for the specified version' \
                              'already exists and --overwrite flag is not provided.')
     parser.add_argument('--epoch', type=int,
