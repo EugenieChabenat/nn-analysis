@@ -34,26 +34,26 @@ dict_color = {
     "injection_IT": ["orange", '-'],
     
     # convolution injection
-    #"injection_conv_v1": ["red", '-'], 
-    #"injection_conv_v2": ["red", '-'], 
-    #"injection_conv_v4": ["red", '-'], 
-    #"injection_conv_IT": ["red", '-'], 
-    
     "injection_conv_v1": ["red", '-'], 
-    "injection_conv_v2": ["blue", '-'], 
-    "injection_conv_v4": ["orange", '-'], 
-    "injection_conv_IT": ["green", '-'], 
+    "injection_conv_v2": ["red", '-'], 
+    "injection_conv_v4": ["red", '-'], 
+    "injection_conv_IT": ["red", '-'], 
+    
+    #"injection_conv_v1": ["red", '-'], 
+    #"injection_conv_v2": ["blue", '-'], 
+    #"injection_conv_v4": ["orange", '-'], 
+    #"injection_conv_IT": ["green", '-'], 
         
     # unfreeze convolution injection 
-    #"unfreeze_injection_v1": ["green", '-'], 
-    #"unfreeze_injection_v2": ["green", '-'], 
-    #"unfreeze_injection_v4": ["green", '-'], 
-    #"unfreeze_injection_IT": ["green", '-'], 
-    
-    "unfreeze_injection_v1": ["red", '-'], 
-    "unfreeze_injection_v2": ["blue", '-'], 
-    "unfreeze_injection_v4": ["orange", '-'], 
+    "unfreeze_injection_v1": ["green", '-'], 
+    "unfreeze_injection_v2": ["green", '-'], 
+    "unfreeze_injection_v4": ["green", '-'], 
     "unfreeze_injection_IT": ["green", '-'], 
+    
+    #"unfreeze_injection_v1": ["red", '-'], 
+    #"unfreeze_injection_v2": ["blue", '-'], 
+    #"unfreeze_injection_v4": ["orange", '-'], 
+    #"unfreeze_injection_IT": ["green", '-'], 
     
     # control models 
     "v4_no_injection": ["purple", '--'], 
@@ -86,21 +86,21 @@ list_metrics = {
 model_names = [
     # random injection models  
     #"injection_v1",
-    #"injection_v2", 
+    "injection_v2", 
     #"injection_v4",
     #"injection_IT",
     
     # convolution injection models 
     #"injection_conv_v1", 
-    #"injection_conv_v2", 
+    "injection_conv_v2", 
     #"injection_conv_v4", 
     #"injection_conv_IT", 
     
     # unfreeze convolution injection models 
-    "unfreeze_injection_v1", 
+    #"unfreeze_injection_v1", 
     "unfreeze_injection_v2", 
-    "unfreeze_injection_v4", 
-    "unfreeze_injection_IT", 
+    #"unfreeze_injection_v4", 
+    #"unfreeze_injection_IT", 
     
     "v4_no_injection", 
     "resnet50_untrained", 
@@ -159,7 +159,7 @@ for key, metric_types in list_metrics.items():
     fig.tight_layout()
     plt.show()
     #plt.savefig('/home/ec3731/issa_analysis/nn-analysis/bis_{}.png'.format(key))
-    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/complete_convolution_unfreeze_{}.png'.format(key))
+    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/v2_convolution_unfreeze_{}.png'.format(key))
 
 
 # ------------------------------------------------------------------------------------
