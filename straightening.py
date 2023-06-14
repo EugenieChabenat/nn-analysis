@@ -117,15 +117,15 @@ list_metrics = {
 model_names = [
     # random injection models  
     #"injection_v1",
-    #"injection_v2", 
+    "injection_v2", 
     #"injection_v4",
-    "injection_IT",
+    #"injection_IT",
     
     # convolution injection models 
     #"injection_conv_v1", 
-    #"injection_conv_v2", 
+    "injection_conv_v2", 
     #"injection_conv_v4", 
-    "injection_conv_IT", 
+    #"injection_conv_IT", 
     
     # unfreeze convolution injection models 
     #"unfreeze_injection_v1", 
@@ -189,7 +189,7 @@ for key, metric_types in list_metrics.items():
     fig.tight_layout()
     plt.show()
     #plt.savefig('/home/ec3731/issa_analysis/nn-analysis/bis_{}.png'.format(key))
-    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/IT_convolution_unfreeze_{}.png'.format(key))
+    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/v2_convolution_unfreeze_{}.png'.format(key))
 
 
 
