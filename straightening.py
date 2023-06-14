@@ -133,7 +133,7 @@ model_names = [
     "unfreeze_injection_v4", 
     "unfreeze_injection_IT", 
     
-    "#v4_no_injection", 
+    #"v4_no_injection", 
     "resnet50_untrained", 
     "barlow_twins_50epochs", 
     #"barlow_fact_no_injection"
