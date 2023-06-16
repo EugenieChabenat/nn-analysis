@@ -116,26 +116,26 @@ list_metrics = {
 
 model_names = [
     # random injection models  
-    #"injection_v1",
-    "injection_v2", 
+    "injection_v1",
+    #"injection_v2", 
     #"injection_v4",
     #"injection_IT",
     
     # convolution injection models 
-    #"injection_conv_v1", 
-    "injection_conv_v2", 
+    "injection_conv_v1", 
+    #"injection_conv_v2", 
     #"injection_conv_v4", 
     #"injection_conv_IT", 
     
     # unfreeze convolution injection models 
-    #"unfreeze_injection_v1", 
-    "unfreeze_injection_v2", 
+    "unfreeze_injection_v1", 
+    #"unfreeze_injection_v2", 
     #"unfreeze_injection_v4", 
     #"unfreeze_injection_IT", 
     
     #"v4_no_injection", 
-    "resnet50_untrained", 
-    "barlow_twins_50epochs", 
+    "resnet50_allfeatures", 
+    "bt_allfeatures", 
     #"barlow_fact_no_injection"
 ]
 
@@ -188,8 +188,8 @@ for key, metric_types in list_metrics.items():
     fig.supylabel('curvature')
     fig.tight_layout()
     plt.show()
-    #plt.savefig('/home/ec3731/issa_analysis/nn-analysis/bis_{}.png'.format(key))
-    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/v2_convolution_unfreeze_{}.png'.format(key))
+    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/all_features_v1_{}.png'.format(key))
+    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/all_features_v1_{}.png'.format(key))
 
 
 
