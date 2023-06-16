@@ -59,7 +59,7 @@ if __name__ == '__main__':
                         help='specify the layers of which activations are saved')
     parser.add_argument('--metric_name', default = "curve", type=str,
                         help='specify what activations are saved')
-    parser.add_argument('--version', default = 6, type=int,
+    parser.add_argument('--version', default = 1, type=int,
                         help='Version number. Error will be raised if the result for the specified version' \
                              'already exists and --overwrite flag is not provided.')
     parser.add_argument('--epoch', default = 29, type=int,
