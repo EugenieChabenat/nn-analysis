@@ -19,6 +19,23 @@
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/unfreeze_injection_conv_IT_v1"
     },
+    
+    "unfreeze_injection_v1_af": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/unfreeze_conv_injection/unfreeze_injection_conv_v1"
+    },
+    "unfreeze_injection_v2_af": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/unfreeze_injection_conv_v2_v1"
+    },
+    "unfreeze_injection_v4_af": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/unfreeze_conv_injection/unfreeze_injection_conv_v4_v1"
+    },
+    "unfreeze_injection_IT_af": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/unfreeze_injection_conv_IT_v1"
+    },
     "resnet50_untrained_bootstrap2": {
         "arch": "resnet50",
         "path": "checkpoints/pretrained/resnet50_untrained"
@@ -183,6 +200,23 @@
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/random_injection/new_injection_IT_v1"
     }, 
+    
+    "injection_v1_af": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/random_injection/new_injection_v1"
+    },
+    "injection_v2_af": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/random_injection/new_injection_v2_v1"
+    },
+    "injection_v4_af": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/random_injection/new_injection_v4_v1"
+    }, 
+    "injection_IT_af": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/random_injection/new_injection_IT_v1"
+    }, 
     "barlow_fact_no_injection": {
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/factorize_no_injection_v1"
@@ -204,6 +238,23 @@
         "path": "checkpoints/barlowtwins/convolution_injection/new_injection_conv_v4_v1"
     }, 
     "injection_conv_IT": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/convolution_injection/new_injection_conv_IT_v1"
+    }, 
+    
+    "injection_conv_v1_af": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/convolution_injection/new_injection_conv_v1"
+    }, 
+    "injection_conv_v2_af": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/convolution_injection/new_injection_conv_v2_v1"
+    }, 
+    "injection_conv_v4_af": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/convolution_injection/new_injection_conv_v4_v1"
+    }, 
+    "injection_conv_IT_af": {
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/convolution_injection/new_injection_conv_IT_v1"
     }, 
