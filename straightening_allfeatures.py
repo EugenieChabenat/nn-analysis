@@ -63,10 +63,10 @@ dict_color = {
     #"unfreeze_injection_IT_af": ["green", '-'], 
     
     # control models 
-    "v4_no_injection": ["purple", '--'], 
+    #"v4_no_injection": ["purple", '--'], 
     "resnet50_allfeatures": ["pink", '--'], 
-    "barlow_twins_50epochs": ["grey", '--'], 
-    "barlow_fact_no_injection": ["black", '--']
+    "bt_allfeatures": ["grey", '--'], 
+    #"barlow_fact_no_injection": ["black", '--']
 }
 
 epoch = 29
