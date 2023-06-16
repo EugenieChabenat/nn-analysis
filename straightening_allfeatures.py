@@ -64,7 +64,7 @@ dict_color = {
     
     # control models 
     "v4_no_injection": ["purple", '--'], 
-    "resnet50_untrained": ["pink", '--'], 
+    "resnet50_allfeatures": ["pink", '--'], 
     "barlow_twins_50epochs": ["grey", '--'], 
     "barlow_fact_no_injection": ["black", '--']
 }
