@@ -124,11 +124,11 @@ def main(model_name, layers, acts_name, version, epoch=None, overwrite=False, de
 if __name__ == '__main__':
     print("Started main_save.py...")
     parser = argparse.ArgumentParser(description='Save activations')
-    parser.add_argument('--model_name', default = "unfreeze_injection_v4", type=str,
+    parser.add_argument('--model_name', default = "unfreeze_injection_v4_af", type=str,
                         help='Specify the model of which activations are saved')
     parser.add_argument('--layers',default= 2, type=int, nargs='+',
                         help='Specify the layers of which activations are saved')
-    parser.add_argument('--acts_name', default = "natural_movies", type=str,
+    parser.add_argument('--acts_name', default = "mkturk_test", type=str,
                         help='Specify what activations are saved')
     parser.add_argument('--version', default = 3,  type=int,
                         help='Version number. Error will be raised if the activations for the specified version' \
