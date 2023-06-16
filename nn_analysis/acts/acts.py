@@ -88,8 +88,11 @@ class Acts:
             print('n_pcs: ', n_pcs)
             
             # if we compute pcs 
-            y, evr = utils.get_pcs(y, n_pcs, svd_solver=svd_solver)
-            return {'y': y, 'evr': evr}
+            #y, evr = utils.get_pcs(y, n_pcs, svd_solver=svd_solver)
+            #return {'y': y, 'evr': evr}
+            print('gets all features')
+            y = utils.get_all_components(y)
+            return {'y': y}
         
             """# if we return random components 
             y = utils.get_random_components(y, n_rcs=2048)
