@@ -65,9 +65,9 @@ dict_color = {
 
     # subset injection 
     "subset_injection_v1": ["blue", '-'], 
-    "subset_injection_v2": ["green", '-'], 
-    #"subset_injection_v4": ["green", '-'], 
-    #"subset_injection_IT": ["green", '-'], 
+    "subset_injection_v2": ["blue", '-'], 
+    #"subset_injection_v4": ["blue", '-'], 
+    #"subset_injection_IT": ["blue", '-'], 
     
     # control models 
     #"v4_no_injection": ["purple", '--'], 
