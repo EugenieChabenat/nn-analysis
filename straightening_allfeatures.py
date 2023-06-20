@@ -36,15 +36,15 @@ metric_dict = {
 dict_color = {
     # random injection 
     "injection_v1_af" : ["orange", '-'],
-    "injection_v2_af": ["orange", '-'], 
-    "injection_v4_af": ["orange", '-'],
-    "injection_IT_af": ["orange", '-'],
+    #"injection_v2_af": ["orange", '-'], 
+    #"injection_v4_af": ["orange", '-'],
+    #"injection_IT_af": ["orange", '-'],
     
     # convolution injection
     "injection_conv_v1_af": ["red", '-'], 
-    "injection_conv_v2_af": ["red", '-'], 
-    "injection_conv_v4_af": ["red", '-'], 
-    "injection_conv_IT_af": ["red", '-'], 
+    #"injection_conv_v2_af": ["red", '-'], 
+    #"injection_conv_v4_af": ["red", '-'], 
+    #"injection_conv_IT_af": ["red", '-'], 
     
     #"injection_conv_v1_af": ["red", '-'], 
     #"injection_conv_v2_af": ["blue", '-'], 
@@ -53,14 +53,21 @@ dict_color = {
         
     # unfreeze convolution injection 
     "unfreeze_injection_v1_af": ["green", '-'], 
-    "unfreeze_injection_v2_af": ["green", '-'], 
-    "unfreeze_injection_v4_af": ["green", '-'], 
-    "unfreeze_injection_IT_af": ["green", '-'], 
+    #"unfreeze_injection_v2_af": ["green", '-'], 
+    #"unfreeze_injection_v4_af": ["green", '-'], 
+    #"unfreeze_injection_IT_af": ["green", '-'], 
     
     #"unfreeze_injection_v1_af": ["red", '-'], 
     #"unfreeze_injection_v2_af": ["blue", '-'], 
     #"unfreeze_injection_v4_af": ["orange", '-'], 
     #"unfreeze_injection_IT_af": ["green", '-'], 
+
+
+    # subset injection 
+    "subset_injection_v1": ["green", '-'], 
+    #"subset_injection_v2": ["green", '-'], 
+    #"subset_injection_v4": ["green", '-'], 
+    #"subset_injection_IT": ["green", '-'], 
     
     # control models 
     #"v4_no_injection": ["purple", '--'], 
@@ -116,22 +123,28 @@ list_metrics = {
 
 model_names = [
     # random injection models  
-    #"injection_v1_af",
+    "injection_v1_af",
     #"injection_v2_af", 
     #"injection_v4_af",
-    "injection_IT_af",
+    #"injection_IT_af",
     
     # convolution injection models 
-    #"injection_conv_v1_af", 
+    "injection_conv_v1_af", 
     #"injection_conv_v2_af", 
     #"injection_conv_v4_af", 
-    "injection_conv_IT_af", 
+    #"injection_conv_IT_af", 
     
     # unfreeze convolution injection models 
-    #"unfreeze_injection_v1_af", 
+    "unfreeze_injection_v1_af", 
     #"unfreeze_injection_v2_af", 
     #"unfreeze_injection_v4_af", 
-    "unfreeze_injection_IT_af", 
+    #"unfreeze_injection_IT_af", 
+
+    # subset 
+    "subset_injection_v1", 
+    #"subset_injection_v2", 
+    #"subset_injection_v4", 
+    #"subset_injection_IT", 
     
     #"v4_no_injection", 
     "resnet50_allfeatures", 
@@ -188,8 +201,8 @@ for key, metric_types in list_metrics.items():
     fig.supylabel('curvature')
     fig.tight_layout()
     plt.show()
-    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/all_features_IT_{}.png'.format(key))
-    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/all_features_IT_{}.png'.format(key))
+    #plt.savefig('/home/ec3731/issa_analysis/nn-analysis/all_features_IT_{}.png'.format(key))
+    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/v1_with_subset_{}.png'.format(key))
 
 
 
