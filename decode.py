@@ -63,6 +63,13 @@ dict_color = {
     "unfreeze_injection_v2": ["blue", '-'], 
     "unfreeze_injection_v4": ["orange", '-'], 
     "unfreeze_injection_IT": ["green", '-'], 
+
+    # subset injection 
+    "subset_injection_v1": ["blue", '-'], 
+    "subset_injection_v2": ["blue", '-'], 
+    "subset_injection_v4": ["blue", '-'], 
+    #"subset_injection_IT": ["blue", '-'], 
+    
     
     # control models 
     "v4_no_injection": ["purple", '--'], 
@@ -117,6 +124,12 @@ model_names = [
     "unfreeze_injection_v2", 
     "unfreeze_injection_v4", 
     "unfreeze_injection_IT", 
+
+    # subset 
+    #"subset_injection_v1", 
+    #"subset_injection_v2", 
+    "subset_injection_v4", 
+    #"subset_injection_IT",
     
     #"v4_no_injection", 
     "resnet50_untrained", 
