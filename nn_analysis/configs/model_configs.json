@@ -5,6 +5,9 @@
     "identity_af2": {
         "arch": "identity"
     },
+    "identity_pc": {
+        "arch": "identity"
+    },
     "subset_injection_v1": {
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/injection_subset_v1"
