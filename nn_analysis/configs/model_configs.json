@@ -2,6 +2,9 @@
     "identity": {
         "arch": "identity"
     },
+    "identity_af": {
+        "arch": "identity"
+    },
     "subset_injection_v1": {
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/injection_subset_v1"
