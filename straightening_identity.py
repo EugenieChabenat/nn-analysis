@@ -75,7 +75,7 @@ dict_color = {
     "bt_allfeatures": ["grey", '--'], 
     #"barlow_fact_no_injection": ["black", '--']
     
-    "identity_af": ["pink", '--'], 
+    #"identity_af": ["pink", '--'], 
     "identity_af2": ["purple", '--'], 
     "identity_pc": ["red", '--'], 
 }
