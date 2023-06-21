@@ -76,8 +76,8 @@ dict_color = {
     #"barlow_fact_no_injection": ["black", '--']
     
     #"identity_af": ["pink", '--'], 
-    "identity_af2": ["purple", '--'], 
-    "identity_pc": ["red", '--'], 
+    #"identity_af2": ["purple", '--'], 
+    #"identity_pc": ["red", '--'], 
 }
 
 epoch = 29
@@ -187,6 +187,10 @@ for key, metric_types in list_metrics.items():
                 axes[0,i].plot(layers, scores, label=model_name, color = dict_color[model_name][0], ls = dict_color[model_name][1])
         scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
         axes[0,i].plot(layers, scores, label='identity', color = 'black')
+        scores = [load_data(metric, 'identity_af2', None, 0)[metric_type] for layer in layers]
+        axes[0,i].plot(layers, scores, label='identity_af', color = 'pink')
+        scores = [load_data(metric, 'identity_pc', None, 0)[metric_type] for layer in layers]
+        axes[0,i].plot(layers, scores, label='identity_pc', color = 'red')
         
         axes[0,i].axvline(x = 3, color = 'grey', alpha = 0.5, ls = 'dotted')
         axes[0,i].axvline(x = 6, color = 'grey', alpha = 0.5, ls = 'dotted')
