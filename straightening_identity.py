@@ -156,8 +156,8 @@ model_names = [
     #"barlow_fact_no_injection"
     
     #"identity_af", 
-    "identity_af2", 
-    "identity_pc", 
+    #"identity_af2", 
+    #"identity_pc", 
 ]
 
 """model_names = [
