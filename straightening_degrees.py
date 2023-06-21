@@ -185,9 +185,11 @@ for key, metric_types in list_metrics.items():
             #scores = scores - scores_id 
             
             axes[0,i].plot(layers, scores, label=model_name, color = dict_color[model_name][0], ls = dict_color[model_name][1])
-        scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
-        scores = [i * 180 for i in scores]
-        axes[0,i].plot(layers, scores, label='identity', color = 'black')
+        #scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
+        #scores = [i * 180 for i in scores]
+        #axes[0,i].plot(layers, scores, label='identity', color = 'black')
+        
+        axes[0,i].axhline(y=0, label='identity', color = 'black')
         
         axes[0,i].axvline(x = 3, color = 'grey', alpha = 0.5, ls = 'dotted')
         axes[0,i].axvline(x = 6, color = 'grey', alpha = 0.5, ls = 'dotted')
