@@ -91,6 +91,7 @@ class Acts:
             #y, evr = utils.get_pcs(y, n_pcs, svd_solver=svd_solver)
             #return {'y': y, 'evr': evr}
             print('gets all features')
+            print('------')
             y = utils.get_all_components(y)
             return {'y': y}
         
