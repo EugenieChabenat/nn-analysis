@@ -177,7 +177,7 @@ for key, metric_types in list_metrics.items():
                 axes[0,i].plot(layers, scores, label="barlow_v3_inj", color = dict_color[model_name][0], ls = dict_color[model_name][1])
             else: 
                 axes[0,i].plot(layers, scores, label=model_name, color = dict_color[model_name][0], ls = dict_color[model_name][1])
-        scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
+        scores = [load_data(metric, 'identity_af', None, 0)[metric_type] for layer in layers]
         axes[0,i].plot(layers, scores, label='identity', color = 'black')
         
         axes[0,i].axvline(x = 3, color = 'grey', alpha = 0.5, ls = 'dotted')
@@ -202,7 +202,7 @@ for key, metric_types in list_metrics.items():
     fig.tight_layout()
     plt.show()
     #plt.savefig('/home/ec3731/issa_analysis/nn-analysis/all_features_IT_{}.png'.format(key))
-    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/v4_with_subset_{}.png'.format(key))
+    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/af_identity-v4_with_subset_{}.png'.format(key))
 
 
 
