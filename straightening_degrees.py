@@ -212,8 +212,8 @@ for key, metric_types in list_metrics.items():
     fig.supylabel('curvature')
     fig.tight_layout()
     plt.show()
-    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/degrees_v4_{}.png'.format(key))
-    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/degrees-v4_with_subset_{}.png'.format(key))
+    #plt.savefig('/home/ec3731/issa_analysis/nn-analysis/degrees_v4_{}.png'.format(key))
+    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/degrees/v4_with_subset_{}.png'.format(key))
 
 
 
