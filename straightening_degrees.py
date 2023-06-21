@@ -78,7 +78,7 @@ dict_color = {
 
 epoch = 29
 #layers = np.arange(12)
-layers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+layers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
 metric = ["curve", 1]
 #metric_types = ["x_cam_trans", "y_cam_trans", "x_cam_rot", "y_cam_rot"]
 #metric_types = ['x_pan-detailed', 'x_pan', 'y_pan-detailed', 'y_pan', 'z_pan-detailed', 'z_pan']
@@ -213,7 +213,7 @@ for key, metric_types in list_metrics.items():
     fig.tight_layout()
     plt.show()
     plt.savefig('/home/ec3731/issa_analysis/nn-analysis/degrees_v1_{}.png'.format(key))
-    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/degrees/v1_with_subset_{}.png'.format(key))
+    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/degrees/no_avgpool/v1_with_subset_{}.png'.format(key))
 
 
 
