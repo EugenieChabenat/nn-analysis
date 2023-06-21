@@ -70,7 +70,7 @@ dict_color = {
     #"subset_injection_IT": ["blue", '-'], 
     
     # control models 
-    #"v4_no_injection": ["purple", '--'], 
+    "v4_no_injection": ["purple", '--'], 
     "resnet50_allfeatures": ["pink", '--'], 
     "bt_allfeatures": ["grey", '--'], 
     #"barlow_fact_no_injection": ["black", '--']
@@ -146,7 +146,7 @@ model_names = [
     "subset_injection_v4", 
     #"subset_injection_IT", 
     
-    #"v4_no_injection", 
+    "v4_no_injection", 
     "resnet50_allfeatures", 
     "bt_allfeatures", 
     #"barlow_fact_no_injection"
