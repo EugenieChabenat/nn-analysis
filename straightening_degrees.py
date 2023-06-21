@@ -180,7 +180,9 @@ for key, metric_types in list_metrics.items():
             
             scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
             scores = [i * 180 for i in scores]
-            scores = scores - scores_id 
+            
+            scores = [element1 - element2 for (element1, element2) in zip(scores, scores_id)]
+            #scores = scores - scores_id 
             
             axes[0,i].plot(layers, scores, label=model_name, color = dict_color[model_name][0], ls = dict_color[model_name][1])
         scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
