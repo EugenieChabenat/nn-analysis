@@ -80,7 +80,11 @@ class Acts:
             _y = ac.core.load(tmp_acts_file, self.model_name, self.epoch, dataset_name, layer_name) # (images, neurons)
             _ys.append(_y)
         y = transform_data(_ys, transform)
-        
+
+        n_pcs = -1
+        # just for identity test - tbr 
+        y, evr = utils.get_pcs(y, n_pcs, svd_solver=svd_solver)
+        return {'y': y, 'evr': evr}
         # Compute PCs
         if n_pcs is not None:
             print('principal components are computed')
@@ -88,8 +92,8 @@ class Acts:
             print('n_pcs: ', n_pcs)
             
             # if we compute pcs 
-            #y, evr = utils.get_pcs(y, n_pcs, svd_solver=svd_solver)
-            #return {'y': y, 'evr': evr}
+            y, evr = utils.get_pcs(y, n_pcs, svd_solver=svd_solver)
+            return {'y': y, 'evr': evr}
             print('gets all features')
             print('------')
             y = utils.get_all_components(y)
