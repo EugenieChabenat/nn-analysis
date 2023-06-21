@@ -169,10 +169,11 @@ for key, metric_types in list_metrics.items():
 
     fig, axes = pt.core.subplots(1, len(metric_types), size=(10,8), sharex=True)
     # compute identity scores 
-    scores_id = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
-    scores_id = [i * 180 for i in scores_id]
+    
     
     for i, metric_type in enumerate(metric_types):
+        scores_id = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
+        scores_id = [i * 180 for i in scores_id]
         for model_name in model_names:
             print('model: ', model_name)
             print('layer: ', layers)
