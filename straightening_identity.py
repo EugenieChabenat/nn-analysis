@@ -155,7 +155,7 @@ model_names = [
     "bt_allfeatures", 
     #"barlow_fact_no_injection"
     
-    "identity_af", 
+    #"identity_af", 
     "identity_af2", 
     "identity_pc", 
 ]
