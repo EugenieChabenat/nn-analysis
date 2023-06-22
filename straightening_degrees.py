@@ -69,8 +69,14 @@ dict_color = {
     "subset_injection_v4": ["blue", '-'], 
     #"subset_injection_IT": ["blue", '-'], 
     
+    # separate learning weights injection 
+    "injection_separate_v1": ["purple", '-'], 
+    "injection_separate_v2": ["purple", '-'], 
+    #"injection_separate_v4": ["purple", '-'], 
+    #"injection_separate_IT": ["purple", '-'], 
+    
     # control models 
-    "v4_no_injection": ["purple", '--'], 
+    #"v4_no_injection": ["purple", '--'], 
     "resnet50_allfeatures": ["pink", '--'], 
     "bt_allfeatures": ["grey", '--'], 
     #"barlow_fact_no_injection": ["black", '--']
@@ -123,30 +129,36 @@ list_metrics = {
 
 model_names = [
     # random injection models  
-    #"injection_v1_af",
+    "injection_v1_af",
     #"injection_v2_af", 
-    "injection_v4_af",
+    #"injection_v4_af",
     #"injection_IT_af",
     
     # convolution injection models 
-    #"injection_conv_v1_af", 
+    "injection_conv_v1_af", 
     #"injection_conv_v2_af", 
-    "injection_conv_v4_af", 
+    #"injection_conv_v4_af", 
     #"injection_conv_IT_af", 
     
     # unfreeze convolution injection models 
-    #"unfreeze_injection_v1_af", 
+    "unfreeze_injection_v1_af", 
     #"unfreeze_injection_v2_af", 
-    "unfreeze_injection_v4_af", 
+    #"unfreeze_injection_v4_af", 
     #"unfreeze_injection_IT_af", 
 
     # subset 
-    #"subset_injection_v1", 
+    "subset_injection_v1", 
     #"subset_injection_v2", 
-    "subset_injection_v4", 
+    #"subset_injection_v4", 
     #"subset_injection_IT", 
     
-    "v4_no_injection", 
+    # separate learning of weights
+    "injection_separate_v1", 
+    #"injection_separate_v2", 
+    #"injection_separate_v4", 
+    #"injection_separate_IT", 
+    
+    #"v4_no_injection", 
     "resnet50_allfeatures", 
     "bt_allfeatures", 
     #"barlow_fact_no_injection"
@@ -213,7 +225,7 @@ for key, metric_types in list_metrics.items():
     fig.tight_layout()
     plt.show()
     #plt.savefig('/home/ec3731/issa_analysis/nn-analysis/degrees_v1_{}.png'.format(key))
-    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/degrees/no_avgpool/v4_with_subset_{}.png'.format(key))
+    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/degrees/separate/v1_with_separate_{}.png'.format(key))
 
 
 
