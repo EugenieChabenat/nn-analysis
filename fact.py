@@ -97,32 +97,32 @@ list_metrics = {
 
 model_names = [
     # random injection models  
-    "injection_v1",
-    #"injection_v2", 
+    #"injection_v1",
+    "injection_v2", 
     #"injection_v4",
     #"injection_IT",
     
     # convolution injection models 
-    "injection_conv_v1", 
-    #"injection_conv_v2", 
+    #"injection_conv_v1", 
+    "injection_conv_v2", 
     #"injection_conv_v4", 
     #"injection_conv_IT", 
     
     # unfreeze convolution injection models 
-    "unfreeze_injection_v1", 
-    #"unfreeze_injection_v2", 
+    #"unfreeze_injection_v1", 
+    "unfreeze_injection_v2", 
     #"unfreeze_injection_v4", 
     #"unfreeze_injection_IT", 
 
     # subset 
-    "subset_injection_v1", 
-    #"subset_injection_v2", 
+    #"subset_injection_v1", 
+    "subset_injection_v2", 
     #"subset_injection_v4", 
     #"subset_injection_IT",
 
     # separate 
-    "injection_separate_v1", 
-    #"injection_separate_v2", 
+    #"injection_separate_v1", 
+    "injection_separate_v2", 
     #"injection_separate_v4", 
     #"injection_separate_IT",
     
@@ -182,8 +182,8 @@ for key, metric_types in list_metrics.items():
     fig.supylabel('fact')
     fig.tight_layout()
     plt.show()
-    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/fact_v1_{}.png'.format(key))
-    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/v1_separate_{}.png'.format(key))
+    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/fact_v2_{}.png'.format(key))
+    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/v2_separate_{}.png'.format(key))
 
 
 # ------------------------------------------------------------------------------------
