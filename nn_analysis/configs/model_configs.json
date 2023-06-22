@@ -8,6 +8,15 @@
     "identity_pc": {
         "arch": "identity"
     },
+    "injection_separate_v1": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/injection_separate_v1"
+    },
+    "injection_separate_v2": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/injection_separate_v2_v1"
+    },
+    
     "subset_injection_v1": {
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/injection_subset_v1"
