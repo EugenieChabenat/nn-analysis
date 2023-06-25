@@ -87,13 +87,13 @@ class Acts:
         return {'y': y, 'evr': evr}
         # Compute PCs
         if n_pcs is not None:
-            print('principal components are computed')
+            #print('principal components are computed')
             #n_pcs = 1000
-            print('n_pcs: ', n_pcs)
+            #print('n_pcs: ', n_pcs)
             
             # if we compute pcs 
-            y, evr = utils.get_pcs(y, n_pcs, svd_solver=svd_solver)
-            return {'y': y, 'evr': evr}
+            #y, evr = utils.get_pcs(y, n_pcs, svd_solver=svd_solver)
+            #return {'y': y, 'evr': evr}
             print('gets all features')
             print('------')
             y = utils.get_all_components(y)
