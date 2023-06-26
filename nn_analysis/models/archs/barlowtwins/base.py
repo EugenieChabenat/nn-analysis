@@ -18,10 +18,10 @@ class BarlowTwins(nn.Module):
         self.backbone.fc = nn.Identity()
 
         # projector
-        #sizes = [2048] + list(map(int, args.projector.split('-')))
+        sizes = [2048] + list(map(int, args.projector.split('-')))
         #sizes = [1024] + list(map(int, args.projector.split('-')))
         #sizes = [512] + list(map(int, args.projector.split('-')))
-        sizes = [256] + list(map(int, args.projector.split('-')))
+        #sizes = [256] + list(map(int, args.projector.split('-')))
         
         layers = []
         for i in range(len(sizes) - 2):
