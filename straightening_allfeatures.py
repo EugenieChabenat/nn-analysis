@@ -38,13 +38,13 @@ dict_color = {
     "injection_v1_af" : ["orange", '-'],
     "injection_v2_af": ["orange", '-'], 
     "injection_v4_af": ["orange", '-'],
-    #"injection_IT_af": ["orange", '-'],
+    "injection_IT_af": ["orange", '-'],
     
     # convolution injection
-    "injection_conv_v1_af": ["red", '-'], 
-    "injection_conv_v2_af": ["red", '-'], 
-    "injection_conv_v4_af": ["red", '-'], 
-    #"injection_conv_IT_af": ["red", '-'], 
+    "injection_conv_v1": ["lightblue", '-'], 
+    "injection_conv_v2": ["lightblue", '-'], 
+    "injection_conv_v4": ["lightblue", '-'], 
+    "injection_conv_IT": ["lightblue", '-'],  
     
     #"injection_conv_v1_af": ["red", '-'], 
     #"injection_conv_v2_af": ["blue", '-'], 
@@ -55,7 +55,7 @@ dict_color = {
     "unfreeze_injection_v1_af": ["green", '-'], 
     "unfreeze_injection_v2_af": ["green", '-'], 
     "unfreeze_injection_v4_af": ["green", '-'], 
-    #"unfreeze_injection_IT_af": ["green", '-'], 
+    "unfreeze_injection_IT_af": ["green", '-'], 
     
     #"unfreeze_injection_v1_af": ["red", '-'], 
     #"unfreeze_injection_v2_af": ["blue", '-'], 
@@ -67,19 +67,24 @@ dict_color = {
     "subset_injection_v1": ["blue", '-'], 
     "subset_injection_v2": ["blue", '-'], 
     "subset_injection_v4": ["blue", '-'], 
-    #"subset_injection_IT": ["blue", '-'], 
+    "subset_injection_IT": ["blue", '-'], 
 
     # separate injection 
     "injection_separate_v1": ["purple", '-'], 
     "injection_separate_v2": ["purple", '-'], 
     "injection_separate_v4": ["purple", '-'], 
-    #"injection_separate_IT": ["purple", '-'], 
+    "injection_separate_IT": ["purple", '-'], 
     
     # control models 
+    #"v1_no_injection": ["red", '--'], 
+    #"v2_no_injection": ["blue", '--'], 
+    #"v4_no_injection": ["green", '--'], 
+    #"IT_no_injection": ["orange", '--'],
+
     "v1_no_injection": ["red", '--'], 
-    "v2_no_injection": ["blue", '--'], 
-    "v4_no_injection": ["green", '--'], 
-    "IT_no_injection": ["orange", '--'],
+    "v2_no_injection": ["red", '--'], 
+    "v4_no_injection": ["red", '--'], 
+    "IT_no_injection": ["red", '--'], 
     
     "resnet50_allfeatures": ["pink", '--'], 
     "bt_allfeatures": ["grey", '--'], 
@@ -133,39 +138,39 @@ list_metrics = {
 
 model_names = [
     # random injection models  
-    #"injection_v1_af",
+    "injection_v1_af",
     #"injection_v2_af", 
     #"injection_v4_af",
     #"injection_IT_af",
     
     # convolution injection models 
-    #"injection_conv_v1_af", 
+    "injection_conv_v1_af", 
     #"injection_conv_v2_af", 
     #"injection_conv_v4_af", 
     #"injection_conv_IT_af", 
     
     # unfreeze convolution injection models 
-    #"unfreeze_injection_v1_af", 
+    "unfreeze_injection_v1_af", 
     #"unfreeze_injection_v2_af", 
     #"unfreeze_injection_v4_af", 
     #"unfreeze_injection_IT_af", 
 
     # subset 
-    #"subset_injection_v1", 
+    "subset_injection_v1", 
     #"subset_injection_v2", 
     #"subset_injection_v4", 
     #"subset_injection_IT", 
 
     # separate
-    #"injection_separate_v1", 
+    "injection_separate_v1", 
     #"injection_separate_v2", 
     #"injection_separate_v4", 
     #"injection_separate_IT", 
 
     "v1_no_injection", 
-    "v2_no_injection", 
-    "v4_no_injection", 
-    "IT_no_injection",
+    #"v2_no_injection", 
+    #"v4_no_injection", 
+    #"IT_no_injection",
     
     "resnet50_allfeatures", 
     "bt_allfeatures", 
@@ -215,14 +220,14 @@ for key, metric_types in list_metrics.items():
         axes[0,i].text(8, 0.2, "Block V2", ha="center", va="center", size=12)
         axes[0,i].text(13, 0.2, "Block V4", ha="center", va="center", size=12)
         axes[0,i].text(17.5, 0.2, "Block IT", ha="center", va="center", size=12)
-        #axes[0,i].set_ylim(0.0, 1.)
+        axes[0,i].set_ylim(0.0, 1.)
         axes[0,i].legend(loc='lower left')
     fig.supxlabel('layers')
     fig.supylabel('curvature')
     fig.tight_layout()
     plt.show()
     #plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v2_with_separate_{}.png'.format(key))
-    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/no_ylim-controls_no_injection_{}.png'.format(key))
+    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/v1+_no_injection_{}.png'.format(key))
 
 
 
