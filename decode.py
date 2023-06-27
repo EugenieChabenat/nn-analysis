@@ -68,13 +68,13 @@ dict_color = {
     "subset_injection_v1": ["blue", '-'], 
     "subset_injection_v2": ["blue", '-'], 
     "subset_injection_v4": ["blue", '-'], 
-    #"subset_injection_IT": ["blue", '-'], 
+    "subset_injection_IT": ["blue", '-'], 
 
     # separate injection 
     "injection_separate_v1": ["purple", '-'], 
     "injection_separate_v2": ["purple", '-'], 
     "injection_separate_v4": ["purple", '-'], 
-    #"subset_injection_IT": ["purple", '-'], 
+    "injection_separate_IT": ["purple", '-'], 
     
     
     # control models 
