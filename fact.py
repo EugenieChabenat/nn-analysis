@@ -59,16 +59,20 @@ dict_color = {
     "subset_injection_v1": ["blue", '-'], 
     "subset_injection_v2": ["blue", '-'], 
     "subset_injection_v4": ["blue", '-'], 
-    #"subset_injection_IT": ["blue", '-'], 
+    "subset_injection_IT": ["blue", '-'], 
 
     # separate injection 
     "injection_separate_v1": ["purple", '-'], 
     "injection_separate_v2": ["purple", '-'], 
     "injection_separate_v4": ["purple", '-'], 
-    #"injection_separate_IT": ["purple", '-'], 
+    "injection_separate_IT": ["purple", '-'], 
     
     # control models 
+    "v1_no_injection": ["purple", '--'], 
+    "v2_no_injection": ["purple", '--'], 
     "v4_no_injection": ["purple", '--'], 
+    "IT_no_injection": ["purple", '--'], 
+
     "resnet50_untrained": ["pink", '--'], 
     "barlow_twins_50epochs": ["grey", '--'], 
     "barlow_fact_no_injection": ["black", '--']
@@ -98,35 +102,39 @@ list_metrics = {
 model_names = [
     # random injection models  
     #"injection_v1",
-    "injection_v2", 
+    #"injection_v2", 
     #"injection_v4",
     #"injection_IT",
     
     # convolution injection models 
     #"injection_conv_v1", 
-    "injection_conv_v2", 
+    #"injection_conv_v2", 
     #"injection_conv_v4", 
     #"injection_conv_IT", 
     
     # unfreeze convolution injection models 
     #"unfreeze_injection_v1", 
-    "unfreeze_injection_v2", 
+    #"unfreeze_injection_v2", 
     #"unfreeze_injection_v4", 
     #"unfreeze_injection_IT", 
 
     # subset 
     #"subset_injection_v1", 
-    "subset_injection_v2", 
+    #"subset_injection_v2", 
     #"subset_injection_v4", 
     #"subset_injection_IT",
 
     # separate 
     #"injection_separate_v1", 
-    "injection_separate_v2", 
+    #"injection_separate_v2", 
     #"injection_separate_v4", 
     #"injection_separate_IT",
     
-    #"v4_no_injection", 
+    "v1_no_injection", 
+    "v2_no_injection", 
+    "v4_no_injection", 
+    "IT_no_injection", 
+
     "resnet50_untrained", 
     "barlow_twins_50epochs", 
     #"barlow_fact_no_injection"
@@ -149,14 +157,9 @@ for key, metric_types in list_metrics.items():
             print('model: ', model_name)
             print('layer: ', layers)
 
-            #print('keys: ', load_data(metric, model_name, epoch, one_layer).keys())
-
             scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
             #axes[0,i].plot(layers, scores, label=model_name)
-            if model_name == "barlow_v1_inj_b": 
-                axes[0,i].plot(layers, scores, label="barlow_v3_inj", color = dict_color[model_name][0], ls = dict_color[model_name][1])
-            else: 
-                axes[0,i].plot(layers, scores, label=model_name, color = dict_color[model_name][0], ls = dict_color[model_name][1])
+            axes[0,i].plot(layers, scores, label=model_name, color = dict_color[model_name][0], ls = dict_color[model_name][1])
         #scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
         #axes[0,i].plot(layers, scores, label='identity')
         
@@ -167,7 +170,7 @@ for key, metric_types in list_metrics.items():
         axes[0,i].axvline(x = 19, color = 'grey', alpha = 0.5, ls = 'dotted')
         axes[0,i].axvline(x = 20, color = 'grey', alpha = 0.5, ls = 'dotted')
         axes[0,i].set_xticks([0, 3, 6, 10, 16, 19, 20])
-        axes[0,i].set_xticklabels(['', '', 'inj v1', 'inj v2', 'inj v4', 'inj IT', 20], rotation=45, ha='right')
+        axes[0,i].set_xticklabels(['', '', 'inj v1', 'inj v2', 'inj v4', 'inj IT', 'avgpool'], rotation=45, ha='right')
         
         axes[0,i].set_title(metric_type)
         
@@ -182,8 +185,8 @@ for key, metric_types in list_metrics.items():
     fig.supylabel('fact')
     fig.tight_layout()
     plt.show()
-    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/fact_v2_{}.png'.format(key))
-    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/v2_separate_{}.png'.format(key))
+    #plt.savefig('/home/ec3731/issa_analysis/nn-analysis/fact_v2_{}.png'.format(key))
+    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/controls_no_injection_{}.png'.format(key))
 
 
 # ------------------------------------------------------------------------------------
