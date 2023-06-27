@@ -135,7 +135,7 @@ model_names = [
     "v4_no_injection", 
     "IT_no_injection", 
 
-    "resnet50_untrained", 
+    #"resnet50_untrained", 
     "barlow_twins_50epochs", 
     #"barlow_fact_no_injection"
 ]
@@ -186,7 +186,7 @@ for key, metric_types in list_metrics.items():
     fig.tight_layout()
     plt.show()
     #plt.savefig('/home/ec3731/issa_analysis/nn-analysis/fact_v2_{}.png'.format(key))
-    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/controls_no_injection_{}.png'.format(key))
+    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/noresnet-controls_no_injection_{}.png'.format(key))
 
 
 # ------------------------------------------------------------------------------------
