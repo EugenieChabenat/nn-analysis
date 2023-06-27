@@ -178,7 +178,7 @@ for key, metric_types in list_metrics.items():
         axes[0,i].text(8, 0.2, "Block V2", ha="center", va="center", size=12)
         axes[0,i].text(13, 0.2, "Block V4", ha="center", va="center", size=12)
         axes[0,i].text(17.5, 0.2, "Block IT", ha="center", va="center", size=12)
-        axes[0,i].set_ylim(0.0, 1.0)
+        #axes[0,i].set_ylim(0.0, 1.0)
         
         axes[0,i].legend(loc='center left')
     fig.supxlabel('layers')
