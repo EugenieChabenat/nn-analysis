@@ -71,7 +71,7 @@ dict_color = {
     "v1_no_injection": ["red", '--'], 
     "v2_no_injection": ["blue", '--'], 
     "v4_no_injection": ["green", '--'], 
-    "IT_no_injection": ["orangle", '--'], 
+    "IT_no_injection": ["orange", '--'], 
 
     "resnet50_untrained": ["pink", '--'], 
     "barlow_twins_50epochs": ["grey", '--'], 
