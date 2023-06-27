@@ -198,14 +198,14 @@ for key, metric_types in list_metrics.items():
         axes[0,i].text(8, 0.8, "Block V2", ha="center", va="center", size=12)
         axes[0,i].text(13, 0.8, "Block V4", ha="center", va="center", size=12)
         axes[0,i].text(17.5, 0.8, "Block IT", ha="center", va="center", size=12)
-        #axes[0,i].set_ylim(0.0, 1.)
+        axes[0,i].set_ylim(0.0, 1.)
         axes[0,i].legend(loc='center left')
     fig.supxlabel('layers')
     fig.supylabel('decode')
     fig.tight_layout()
     plt.show()
     #plt.savefig('/home/ec3731/issa_analysis/nn-analysis/decode_v2_separate_{}.png'.format(key))
-    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/noylim-v1+_no_injection_{}.png'.format(key))
+    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/v1+_no_injection_{}.png'.format(key))
 
 
 
