@@ -68,10 +68,10 @@ dict_color = {
     "injection_separate_IT": ["purple", '-'], 
     
     # control models 
-    "v1_no_injection": ["purple", '--'], 
-    "v2_no_injection": ["purple", '--'], 
-    "v4_no_injection": ["purple", '--'], 
-    "IT_no_injection": ["purple", '--'], 
+    "v1_no_injection": ["red", '--'], 
+    "v2_no_injection": ["blue", '--'], 
+    "v4_no_injection": ["green", '--'], 
+    "IT_no_injection": ["orangle", '--'], 
 
     "resnet50_untrained": ["pink", '--'], 
     "barlow_twins_50epochs": ["grey", '--'], 
