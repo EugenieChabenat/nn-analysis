@@ -42,9 +42,9 @@ dict_color = {
     
     # convolution injection
     "injection_conv_v1_af": ["lightblue", '-'], 
-    "injection_conv_v2"_af: ["lightblue", '-'], 
-    "injection_conv_v4"_af: ["lightblue", '-'], 
-    "injection_conv_IT"_af: ["lightblue", '-'],  
+    "injection_conv_v2_af": ["lightblue", '-'], 
+    "injection_conv_v4_af": ["lightblue", '-'], 
+    "injection_conv_IT_af": ["lightblue", '-'],  
     
     #"injection_conv_v1_af": ["red", '-'], 
     #"injection_conv_v2_af": ["blue", '-'], 
