@@ -43,10 +43,10 @@ dict_color = {
     "injection_IT": ["orange", '-'],
     
     # convolution injection
-    "injection_conv_v1": ["red", '-'], 
-    "injection_conv_v2": ["red", '-'], 
-    "injection_conv_v4": ["red", '-'], 
-    "injection_conv_IT": ["red", '-'], 
+    "injection_conv_v1": ["lightblue", '-'], 
+    "injection_conv_v2": ["lightblue", '-'], 
+    "injection_conv_v4": ["lightblue", '-'], 
+    "injection_conv_IT": ["lightblue", '-'],  
     
     #"injection_conv_v1": ["red", '-'], 
     #"injection_conv_v2": ["blue", '-'], 
@@ -80,9 +80,9 @@ dict_color = {
     # control models 
     # control models 
     "v1_no_injection": ["red", '--'], 
-    "v2_no_injection": ["blue", '--'], 
-    "v4_no_injection": ["green", '--'], 
-    "IT_no_injection": ["orange", '--'], 
+    "v2_no_injection": ["red", '--'], 
+    "v4_no_injection": ["red", '--'], 
+    "IT_no_injection": ["red", '--'], 
 
     "resnet50_untrained": ["pink", '--'], 
     "barlow_twins_50epochs": ["grey", '--'], 
@@ -119,40 +119,40 @@ list_metrics = {
 }
 model_names = [
     # random injection models  
-    #"injection_v1",
+    "injection_v1",
     #"injection_v2", 
     #"injection_v4",
     #"injection_IT",
     
     # convolution injection models 
-    #"injection_conv_v1", 
+    "injection_conv_v1", 
     #"injection_conv_v2", 
     #"injection_conv_v4", 
     #"injection_conv_IT", 
     
     # unfreeze convolution injection models 
-    #"unfreeze_injection_v1", 
+    "unfreeze_injection_v1", 
     #"unfreeze_injection_v2", 
     #"unfreeze_injection_v4", 
     #"unfreeze_injection_IT", 
 
     # subset 
-    #"subset_injection_v1", 
+    "subset_injection_v1", 
     #"subset_injection_v2", 
     #"subset_injection_v4", 
     #"subset_injection_IT",
 
     # separate learning of weights 
-    #"injection_separate_v1", 
+    "injection_separate_v1", 
     #"injection_separate_v2", 
     #"injection_separate_v4", 
     #"injection_separate_IT",
     
     # control models 
     "v1_no_injection", 
-    "v2_no_injection", 
-    "v4_no_injection", 
-    "IT_no_injection", 
+    #"v2_no_injection", 
+    #"v4_no_injection", 
+    #"IT_no_injection", 
 
     "resnet50_untrained", 
     "barlow_twins_50epochs", 
@@ -205,7 +205,7 @@ for key, metric_types in list_metrics.items():
     fig.tight_layout()
     plt.show()
     #plt.savefig('/home/ec3731/issa_analysis/nn-analysis/decode_v2_separate_{}.png'.format(key))
-    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/noylim-controls_no_injection_{}.png'.format(key))
+    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/noylim-v1+_no_injection_{}.png'.format(key))
 
 
 
