@@ -170,7 +170,7 @@ for key, metric_types in list_metrics.items():
         axes[0,i].axvline(x = 19, color = 'grey', alpha = 0.5, ls = 'dotted')
         axes[0,i].axvline(x = 20, color = 'grey', alpha = 0.5, ls = 'dotted')
         axes[0,i].set_xticks([0, 3, 6, 10, 16, 19, 20])
-        axes[0,i].set_xticklabels(['', '', 'inj v1', 'inj v2', 'inj v4', 'inj IT', 'avgpool'], rotation=45, ha='right')
+        axes[0,i].set_xticklabels(['', 'maxpool', 'inj v1', 'inj v2', 'inj v4', 'inj IT', 'avgpool'], rotation=45, ha='right')
         
         axes[0,i].set_title(metric_type)
         
