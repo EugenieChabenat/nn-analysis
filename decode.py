@@ -77,10 +77,10 @@ dict_color = {
     "injection_separate_IT": ["purple", '-'], 
     
     # conv subset injection 
-    "injection_conv_subset_v1": ["brown", '-'], 
-    "injection_conv_subset_v2": ["brown", '-'], 
-    "injection_conv_subset_v4": ["brown", '-'], 
-    "injection_conv_subset_IT": ["brown", '-'],
+    "injection_conv_subset_v1": ["lime", '-'], 
+    "injection_conv_subset_v2": ["lime", '-'], 
+    "injection_conv_subset_v4": ["lime", '-'], 
+    "injection_conv_subset_IT": ["lime", '-'],
 
     
     # control models 
