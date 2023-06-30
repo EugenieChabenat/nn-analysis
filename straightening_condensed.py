@@ -62,12 +62,17 @@ dict_color = {
     #"unfreeze_injection_v4_af": ["orange", '-'], 
     #"unfreeze_injection_IT_af": ["green", '-'], 
 
-
     # subset injection 
     "subset_injection_v1": ["blue", '-'], 
     "subset_injection_v2": ["blue", '-'], 
     "subset_injection_v4": ["blue", '-'], 
-    "subset_injection_IT": ["blue", '-'], 
+    "subset_injection_IT": ["blue", '-'],
+
+    # conv subset injection 
+    "injection_conv_subset_v1": ["brown", '-'], 
+    "injection_conv_subset_v2": ["brown", '-'], 
+    "injection_conv_subset_v4": ["brown", '-'], 
+    "injection_conv_subset_IT": ["brown", '-'],
 
     # separate injection 
     "injection_separate_v1": ["purple", '-'], 
@@ -125,8 +130,14 @@ model_names = [
     "subset_injection_v1", 
     #"subset_injection_v2", 
     #"subset_injection_v4", 
-    #"subset_injection_IT", 
-
+    #"subset_injection_IT",$
+    
+    # conv subset injection 
+    "injection_conv_subset_v1", 
+    #"injection_conv_subset_v2", 
+    #"injection_conv_subset_v4", 
+    #"injection_conv_subset_IT",
+    
     # separate
     "injection_separate_v1", 
     #"injection_separate_v2", 
