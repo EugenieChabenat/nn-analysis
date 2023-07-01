@@ -123,7 +123,7 @@ model_names = [
     # unfreeze convolution injection models 
     #"unfreeze_injection_v1_af", 
     #"unfreeze_injection_v2_af", 
-    #-"unfreeze_injection_v4_af", 
+    "unfreeze_injection_v4_af", 
     #"unfreeze_injection_IT_af", 
 
     # subset 
