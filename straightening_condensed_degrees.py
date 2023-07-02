@@ -160,13 +160,20 @@ for key, metric_types in list_metrics.items():
 
     fig, axes = pt.core.subplots(1, len(metric_types), size=(10,8), sharex=True)
     for i, metric_type in enumerate(metric_types):
+        scores_id = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
+        scores_id = [i * 180 for i in scores_id]
         for model_name in model_names:
             print('model: ', model_name)
             print('layer: ', layers)
+            #scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
             scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
+            scores = [i * 180 for i in scores]
+            
+            scores = [element1 - element2 for (element1, element2) in zip(scores, scores_id)]
+            
             axes[0,i].plot(layers, scores, label=model_name, color = dict_color[model_name][0], ls = dict_color[model_name][1])
-        scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
-        axes[0,i].plot(layers, scores, label='identity', color = 'black')
+        #scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
+        #axes[0,i].plot(layers, scores, label='identity', color = 'black')
         
         axes[0,i].axvline(x = 3, color = 'grey', alpha = 0.5, ls = 'dotted')
         axes[0,i].axvline(x = 6, color = 'grey', alpha = 0.5, ls = 'dotted')
@@ -183,14 +190,14 @@ for key, metric_types in list_metrics.items():
         axes[0,i].text(8, 0.2, "Block V2", ha="center", va="center", size=12)
         axes[0,i].text(13, 0.2, "Block V4", ha="center", va="center", size=12)
         axes[0,i].text(17.5, 0.2, "Block IT", ha="center", va="center", size=12)
-        axes[0,i].set_ylim(0.0, 1.)
+        #axes[0,i].set_ylim(0.0, 1.)
         axes[0,i].legend(loc='lower left')
     fig.supxlabel('layers')
-    fig.supylabel('curvature')
+    fig.supylabel('curvature in degrees')
     fig.tight_layout()
     plt.show()
     #plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v2_with_separate_{}.png'.format(key))
-    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/final_metrics/IT+no_injection_{}.png'.format(key))
+    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/final_metrics/degrees/IT+no_injection_{}.png'.format(key))
 
 
 
