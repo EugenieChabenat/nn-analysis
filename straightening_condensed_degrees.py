@@ -196,7 +196,7 @@ for key, metric_types in list_metrics.items():
     fig.supylabel('curvature in degrees')
     fig.tight_layout()
     plt.show()
-    #plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v2_with_separate_{}.png'.format(key))
+    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/lookv1_{}.png'.format(key))
     plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/final_metrics/degrees/V1+no_injection_{}.png'.format(key))
 
 
