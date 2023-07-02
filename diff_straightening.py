@@ -283,6 +283,8 @@ for i, model_name in enumerate(model_names):
     ys = [[load_data(metric, model_name, epoch, one_layer[model_name])[metric_type] - load_data(metric, baseline_model[model_name], epoch, one_layer[model_name])[metric_type] for metric_type in metric_types] for metric_types in metricss]
     #xs = metricss
     xs = [[metric_dict[metric_type] for metric_type in metrics] for metrics in metricss]
+    print('xs:', xs.shape)
+    print('ys:', ys.shape)
     grouped_bar(axes[0,i], xs, ys)
     if model_name == "barlow_v1_inj_b": 
         axes[0, i].set_title("barlow_v3_inj")
