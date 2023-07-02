@@ -156,7 +156,7 @@ model_names = [
 # ------------------------------------------------------------------------------------
 # LAYERS PLOT 
 # ------------------------------------------------------------------------------------
-for key, metric_types in list_metrics.items(): 
+"""for key, metric_types in list_metrics.items(): 
 
     fig, axes = pt.core.subplots(1, len(metric_types), size=(10,8), sharex=True)
     for i, metric_type in enumerate(metric_types):
@@ -199,47 +199,7 @@ for key, metric_types in list_metrics.items():
     plt.show()
     #plt.savefig('/home/ec3731/issa_analysis/nn-analysis/lookv1_{}.png'.format(key))
     plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/final_metrics/degrees/IT+no_injection_{}.png'.format(key))
-
-
-
-
-# ------------------------------------------------------------------------------------
-# ROUND PLOT 
-# ------------------------------------------------------------------------------------
-one_layer = 16
-fig, axes = pt.round_plot.subplots(1, 1, height_per_plot=7.5, width_per_plot=7.5, polar=True)
-ax = axes[0,0]
-
-model_names = [
-    "barlow_v1_inj",
-    "barlow_v2_inj", 
-    "barlow_v1_inj_b",
-    "barlow_control"
-]
-"""model_names = [
-    "barlow_faces_texture",
-    "barlow_faces_notexture",
-    "barlow_control"
-]"""
-metric_types = ['x_pan-detailed', 'x_pan', 'y_pan-detailed', 'y_pan', 'z_pan-detailed', 'z_pan', 'x_focus_pan-detailed', 'x_focus_pan', 
-                'y_focus_pan-detailed', 'y_focus_pan', 'z_focus_pan-detailed', 'z_focus_pan', 'x_cam_pan-detailed', 'x_cam_pan', 'yz_cam_pan-detailed',
-                'yz_cam_pan', 'x_cam_rot', 'y_cam_rot', 'x_cam_trans', 'y_cam_trans', 'z_cam_trans', 
-                'x_obj_rot', 'y_obj_rot']
-
-"""x = metric_types
-for i, model_name in enumerate(model_names):
-    #y = np.array([results[model_name][metric][-1,0] for metric in metrics])
-    y = np.array([load_data(metric, model_name, epoch, one_layer)[metric_type] for metric_type in metric_types])
-    if model_name == "barlow_v1_inj_b": 
-        pt.round_plot.r_plot(ax, x, y, label="barlow_v3_inj")
-    else: 
-        pt.round_plot.r_plot(ax, x, y, label=model_names[i])
-pt.round_plot.r_xticks(ax, x, x_offset=0.3, y_offset=0.3, size=11, color="grey")
-pt.round_plot.r_yticks(ax, min=0.0, max=1.0, steps=4)
-pt.round_plot.r_legend(ax, loc=(1.0, 1.0))
-fig.tight_layout()
-pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/FINAL_rond_layer16.png')
-fig.show()"""
+"""
 
 
 
@@ -260,43 +220,64 @@ def grouped_bar(ax, xs, ys, width=0.2, sep=0.3):
     ax.set_xticks(all_xticks)
     ax.set_xticklabels(all_xlabels, rotation=45, ha='right')
     
+list_metrics = {
+    "Camera Translation" : ["x_cam_trans", "y_cam_trans", "z_cam_trans"], 
+    "Camera Rotation" : ["x_cam_rot", "y_cam_rot"], 
+    "Camera Pan" : ['x_cam_pan', 'yz_cam_pan'], 
+    "Object Rotation" : ['x_obj_rot', 'y_obj_rot'], 
+}
     
 metricss = [
-            ['x_pan',  'y_pan', 'z_pan', 'x_focus_pan', 'y_focus_pan', 'z_focus_pan'], 
-            ['x_cam_pan', 'yz_cam_pan', 'x_cam_rot', 'y_cam_rot', 'x_cam_trans', 'y_cam_trans', 'z_cam_trans'], 
-            ['x_obj_rot', 'y_obj_rot']]
+           ["x_cam_trans", "y_cam_trans", "z_cam_trans"], 
+            ["x_cam_rot", "y_cam_rot"], 
+            ['x_cam_pan', 'yz_cam_pan']]
 
-baseline_model = {"injection_conv_v1": "injection_v1",
-                  "injection_conv_v2": "injection_v2",
-                  "injection_conv_v4": "injection_v4", 
-                 "injection_conv_IT": "injection_IT"}
+baseline_model = {"injection_v1_af": "v1_no_injection",
+                  "injection_conv_v1_af" : "v1_no_injection",
+                  "unfreeze_injection_v1_af": "v1_no_injection", 
+                  "subset_injection_v1": "v1_no_injection", 
+                  "injection_conv_subset_v1": "v1_no_injection" ,
+                 "injection_separate_v1": "v1_no_injection"}
 
-one_layer = {"injection_conv_v1": 6,
+one_layer = {"injection_v1_af": 6,
+                  "injection_conv_v1_af" : 6,
+                  "unfreeze_injection_v1_af": 6, 
+                  "subset_injection_v1": 6, 
+                  "injection_conv_subset_v1": 6,
+                 "injection_separate_v1": 6, 
+    
+                "injection_conv_v1": 6,
                   "injection_conv_v2": 10,
                   "injection_conv_v4": 16, 
                 "injection_conv_IT": 19 }
 
-one_layer = {"injection_conv_v1": 20,
+"""one_layer = {"injection_conv_v1": 20,
                   "injection_conv_v2": 20,
                   "injection_conv_v4" :20, 
-                "injection_conv_IT": 20}
+                "injection_conv_IT": 20}"""
             
 model_names = [
+    "injection_v1_af",
+    "injection_conv_v1_af",
+    "unfreeze_injection_v1_af", 
+    "subset_injection_v1", 
+    "injection_conv_subset_v1",
+    "injection_separate_v1", 
     #"injection_v1",
     #"injection_v2", 
     #"injection_v4",
     #"injection_IT",
-    "injection_conv_v1", 
-    "injection_conv_v2", 
-    "injection_conv_v4", 
-    "injection_conv_IT", 
+    #"injection_conv_v1", 
+    #"injection_conv_v2", 
+    #"injection_conv_v4", 
+    #"injection_conv_IT", 
     #"v4_no_injection", 
     #"resnet50_untrained", 
     #"barlow_twins_50epochs", 
     #"barlow_fact_no_injection"
 ]
 
-"""fig, axes = pt.round_plot.subplots(1,4,height_per_plot=6,width_per_plot=6)
+fig, axes = pt.round_plot.subplots(1,4,height_per_plot=6,width_per_plot=6)
 for i, model_name in enumerate(model_names):
     #ys = [[results[model_name][metric][-1,0]-results[baseline_model_name][metric][-1,0] for metric in metrics] for metrics in metricss]
     ys = [[load_data(metric, model_name, epoch, one_layer[model_name])[metric_type] - load_data(metric, baseline_model[model_name], epoch, one_layer[model_name])[metric_type] for metric_type in metric_types] for metric_types in metricss]
@@ -313,9 +294,9 @@ y_lim_min = min([axes[0,i].get_ylim()[0] for i in range(len(model_names))])
 y_lim_max = max([axes[0,i].get_ylim()[1] for i in range(len(model_names))])
 for i in range(len(model_names)):
     axes[0,i].set_ylim(y_lim_min, y_lim_max)
-fig.suptitle('Comparison in straightening performance between Random and Convolution injection models at the last layer')
+fig.suptitle('Comparison in straightening performance between injection V1 models and control (no injection) at injection site')
 fig.tight_layout()
 
-pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/essai2.png')
-pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/compare_random_conv_last_layer.png')
-fig.show()"""
+pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/lookessai2.png')
+#pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/compare_random_conv_last_layer.png')
+fig.show()
