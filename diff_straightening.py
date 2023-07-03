@@ -303,20 +303,19 @@ def grouped_bar(ax, xs, ys, ys_, alpha, colors, edgecolor, width=0.2, sep=0.3):
     fig2 = plt.subplots()
     for i, (y, y_) in enumerate(zip(ys, ys_)):
         xticks = np.linspace(0.0,len(y)*width,num=len(y))+total
-        if np.abs(y_) > np.abs(y) and y_ < 0 and y <0 : # both decrease and Y_ decreases more 
+        if (np.abs(y_) > np.abs(y) and y_ < 0 and y <0) or  (np.abs(y_) > np.abs(y) and y_ > 0 and y > 0): # both decrease and Y_ decreases more 
             p1 = ax.bar(xticks, y, width=width, alpha = alpha, color =  colors[0], edgecolor = edgecolor)
             p2 = ax.bar(xticks, (y_-y), bottom = y, width=width, alpha = alpha, color = colors[1], edgecolor = edgecolor)
         # both decrease and y decreases more 
-        elif np.abs(y_) > np.abs(y) and y_ < 0 and y <0 : # both decrease and Y_ decreases more 
+        elif (np.abs(y_) < np.abs(y) and y_ < 0 and y <0) or (np.abs(y_) < np.abs(y) and y_ > 0 and y  >0) : # both decrease and Y_ decreases more 
             p1 = ax.bar(xticks, (y-y_), , bottom = y_, width=width, alpha = alpha, color =  colors[0], edgecolor = edgecolor)
             p2 = ax.bar(xticks, y_, width=width, alpha = alpha, color = colors[1], edgecolor = edgecolor)
-
-
-
-
+        # they are signed different 
+        #elif (y_ < 0 and y > 0) or (y_ > 0 and y < 0):  
         else: 
-            p1 = ax.bar(xticks, y, bottom = y_, width=width, alpha = alpha, color =  colors[0], edgecolor = edgecolor)
+            p1 = ax.bar(xticks, y, width=width, alpha = alpha, color =  colors[0], edgecolor = edgecolor)
             p2 = ax.bar(xticks, y_, width=width, alpha = alpha, color = colors[1], edgecolor = edgecolor)
+
         
         total += (len(y)+1.5)*width + sep
         all_xticks += list(xticks)
@@ -362,6 +361,6 @@ for i in range(3):
 fig.suptitle('Comparison in straightening performance between injection V1 models and control (no injection) at injection site', fontweight='bold')
 fig.tight_layout()
 
-pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/lookper12.png')
+pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/lookper12bis.png')
 #pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/compare_random_conv_last_layer.png')
 fig.show()
