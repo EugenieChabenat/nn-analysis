@@ -233,7 +233,16 @@ baseline_model = {"injection_v1": "v1_no_injection",
                   "unfreeze_injection_v1": "v1_no_injection", 
                   "subset_injection_v1": "v1_no_injection", 
                   "injection_conv_subset_v1": "v1_no_injection" ,
-                 "injection_separate_v1": "v1_no_injection"}
+                 "injection_separate_v1": "v1_no_injection", 
+
+                  "injection_v2": "v2_no_injection",
+                  "injection_conv_v2" : "v2_no_injection",
+                  "unfreeze_injection_v2": "v2_no_injection", 
+                  "subset_injection_v2": "v2_no_injection", 
+                  "injection_conv_subset_v2": "v2_no_injection" ,
+                 "injection_separate_v2": "v2_no_injection", 
+                 
+                 }
 
 one_layer = {"injection_v1": [6, 20],
                   "injection_conv_v1" : [6, 20],
@@ -241,24 +250,32 @@ one_layer = {"injection_v1": [6, 20],
                   "subset_injection_v1": [6, 20], 
                   "injection_conv_subset_v1": [6, 20],
                  "injection_separate_v1": [6, 20], 
+
+             "injection_v2": [6, 20],
+                  "injection_conv_v2" : [6, 20],
+                  "unfreeze_injection_v2": [6, 20], 
+                  "subset_injection_v2": [6, 20], 
+                  "injection_conv_subset_v2": [6, 20],
+                 "injection_separate_v2": [6, 20], 
+             
 }
 
 model_names = [
-    "injection_v1",
-    "injection_separate_v1", 
-    "subset_injection_v1", 
-    "injection_conv_v1",
-    "unfreeze_injection_v1", 
-    "injection_conv_subset_v1",
-    
     #"injection_v1",
-    #"injection_v2", 
-    #"injection_v4",
-    #"injection_IT",
-    #"injection_conv_v1", 
-    #"injection_conv_v2", 
-    #"injection_conv_v4", 
-    #"injection_conv_IT", 
+    #"injection_separate_v1", 
+    #"subset_injection_v1", 
+    #"injection_conv_v1",
+    #"unfreeze_injection_v1", 
+    #"injection_conv_subset_v1",
+
+    "injection_v2",
+    "injection_separate_v2", 
+    "subset_injection_v2", 
+    "injection_conv_v2",
+    "unfreeze_injection_v2", 
+    "injection_conv_subset_v2",
+    
+   
     #"v4_no_injection", 
     #"resnet50_untrained", 
     #"barlow_twins_50epochs", 
@@ -272,10 +289,10 @@ dict_model_names = {
     "subset_injection_v1": "Random linear injection of subset at V1", 
     "injection_conv_subset_v1": "Random convolutional injection of subset at V1" ,
 
-    "injection_v2_af": "Random linear injection at V2",
+    "injection_v2": "Random linear injection at V2",
     "injection_separate_v2": "Trained linear injection at V2" , 
-    "injection_conv_v2_af": "Random convolutional injection at V2" ,
-    "unfreeze_injection_v2_af": "Trained convolutional injection at V2" , 
+    "injection_conv_v2": "Random convolutional injection at V2" ,
+    "unfreeze_injection_v2": "Trained convolutional injection at V2" , 
     "subset_injection_v2": "Random linear injection of subset at V2", 
     "injection_conv_subset_v2": "Random convolutional injection of subset at V2" ,
 
@@ -354,10 +371,10 @@ y_lim_max = max(max([axes[0, i].get_ylim()[1] for i in range(3)]), max([axes[1, 
 for i in range(3):
     axes[0, i].set_ylim(y_lim_min, y_lim_max)
     axes[1, i].set_ylim(y_lim_min, y_lim_max)
-fig.suptitle('Comparison in factorization performance between injection V1 models and control (no injection) at injection site', fontweight='bold')
+fig.suptitle('Comparison in factorization performance between injection V2 models and control (no injection) at injection site', fontweight='bold')
 fig.tight_layout()
 
-#pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/factper1.png')
-pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/hist-compare_fact_v1.png')
+pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/factperv2.png')
+#pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/hist-compare_fact_v2.png')
 fig.show()
 
