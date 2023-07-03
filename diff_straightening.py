@@ -321,7 +321,7 @@ def grouped_bar(ax, xs, ys, ys_, alpha, colors, edgecolor, width=0.2, sep=0.3):
         all_xticks += list(xticks)
         all_xlabels += xs[i]
     ax.axhline(y=0, label='identity', color = 'grey', ls = '--')
-    ax.legend((p1[0], p2[0]), ('injection site', 'last layer'))
+    ax.legend((p1[0], p2[0]), ('injection site', 'last layer'), loc="lower left")
     ax.set_xticks(all_xticks)
     ax.set_xticklabels(all_xlabels, rotation=45, ha='right')
     
