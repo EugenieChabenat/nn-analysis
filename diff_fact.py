@@ -248,6 +248,13 @@ baseline_model = {"injection_v1": "v1_no_injection",
                   "subset_injection_v4": "v4_no_injection", 
                   "injection_conv_subset_v4": "v4_no_injection" ,
                  "injection_separate_v4": "v4_no_injection", 
+
+                "injection_IT": "IT_no_injection",
+                  "injection_conv_IT" : "IT_no_injection",
+                  "unfreeze_injection_IT": "IT_no_injection", 
+                  "subset_injection_IT": "IT_no_injection", 
+                  "injection_conv_subset_IT": "IT_no_injection" ,
+                 "injection_separate_IT": "IT_no_injection", 
                  
                  }
 
@@ -271,6 +278,13 @@ one_layer = {"injection_v1": [6, 20],
                   "subset_injection_v4": [6, 20], 
                   "injection_conv_subset_v4": [6, 20],
                  "injection_separate_v4": [6, 20], 
+
+             "injection_IT": [6, 20],
+                  "injection_conv_IT" : [6, 20],
+                  "unfreeze_injection_IT": [6, 20], 
+                  "subset_injection_IT": [6, 20], 
+                  "injection_conv_subset_IT": [6, 20],
+                 "injection_separate_IT": [6, 20], 
              
 }
 
@@ -289,12 +303,19 @@ model_names = [
     #"unfreeze_injection_v2", 
     #"injection_conv_subset_v2",
 
-    "injection_v4",
-    "injection_separate_v4", 
-    "subset_injection_v4", 
-    "injection_conv_v4",
-    "unfreeze_injection_v4", 
-    "injection_conv_subset_v4",
+    #"injection_v4",
+    #"injection_separate_v4", 
+    #"subset_injection_v4", 
+    #"injection_conv_v4",
+    #"unfreeze_injection_v4", 
+    #"injection_conv_subset_v4",
+
+    "injection_IT",
+    "injection_separate_IT", 
+    "subset_injection_IT", 
+    "injection_conv_IT",
+    "unfreeze_injection_IT", 
+    "injection_conv_subset_IT",
     
     #"v4_no_injection", 
     #"resnet50_untrained", 
@@ -323,10 +344,10 @@ dict_model_names = {
     "subset_injection_v4": "Random linear injection of subset at V4", 
     "injection_conv_subset_v4": "Random convolutional injection of subset at V4" ,
 
-    "injection_IT_af": "Random linear injection at IT",
+    "injection_IT": "Random linear injection at IT",
     "injection_separate_IT": "Trained linear injection at IT" , 
-    "injection_conv_IT_af": "Random convolutional injection at IT" ,
-    "unfreeze_injection_IT_af": "Trained convolutional injection at IT" , 
+    "injection_conv_IT": "Random convolutional injection at IT" ,
+    "unfreeze_injection_IT": "Trained convolutional injection at IT" , 
     "subset_injection_IT": "Random linear injection of subset at IT", 
     "injection_conv_subset_IT": "Random convolutional injection of subset at IT" ,
     
@@ -394,7 +415,7 @@ for i in range(3):
 fig.suptitle('Comparison in factorization performance between injection V2 models and control (no injection) at injection site', fontweight='bold')
 fig.tight_layout()
 
-pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/factperv4.png')
-pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/hist-compare_fact_v4.png')
+pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/factpervit.png')
+pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/hist-compare_fact_it.png')
 fig.show()
 
