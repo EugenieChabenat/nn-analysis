@@ -272,11 +272,12 @@ dict_model_names = {
 }    
 model_names = [
     "injection_v1_af",
+    "injection_separate_v1", 
+    "subset_injection_v1", 
     "injection_conv_v1_af",
     "unfreeze_injection_v1_af", 
-    "subset_injection_v1", 
     "injection_conv_subset_v1",
-    "injection_separate_v1", 
+    
     #"injection_v1",
     #"injection_v2", 
     #"injection_v4",
