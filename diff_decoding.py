@@ -242,7 +242,30 @@ baseline_model = {"injection_v1": "v1_no_injection",
                   "unfreeze_injection_v1": "v1_no_injection", 
                   "subset_injection_v1": "v1_no_injection", 
                   "injection_conv_subset_v1": "v1_no_injection" ,
-                 "injection_separate_v1": "v1_no_injection"}
+                 "injection_separate_v1": "v1_no_injection", 
+
+                  "injection_v2": "v2_no_injection",
+                  "injection_conv_v2" : "v2_no_injection",
+                  "unfreeze_injection_v2": "v2_no_injection", 
+                  "subset_injection_v2": "v2_no_injection", 
+                  "injection_conv_subset_v2": "v2_no_injection" ,
+                 "injection_separate_v2": "v2_no_injection", 
+
+                  "injection_v4": "v4_no_injection",
+                  "injection_conv_v4" : "v4_no_injection",
+                  "unfreeze_injection_v4": "v4_no_injection", 
+                  "subset_injection_v4": "v4_no_injection", 
+                  "injection_conv_subset_v4": "v4_no_injection" ,
+                 "injection_separate_v4": "v4_no_injection", 
+
+                "injection_IT": "IT_no_injection",
+                  "injection_conv_IT" : "IT_no_injection",
+                  "unfreeze_injection_IT": "IT_no_injection", 
+                  "subset_injection_IT": "IT_no_injection", 
+                  "injection_conv_subset_IT": "IT_no_injection" ,
+                 "injection_separate_IT": "IT_no_injection", 
+                 
+                 }
 
 one_layer = {"injection_v1": [6, 20],
                   "injection_conv_v1" : [6, 20],
