@@ -290,10 +290,10 @@ model_names = [
     #"barlow_twins_50epochs", 
     #"barlow_fact_no_injection"
 ]
-alphas = [0.5]#, 0.5]
+alphas = 0.5#, 0.5]
 #colors = ["darkblue", "blue", "lightblue"]
-edge_colors = ["black"]#, "black"]
-colors =  ["darkblue"]#, "white"]
+edge_colors = "black"#, "black"]
+colors =  "darkblue"#, "white"]
 def grouped_bar(ax, xs, ys, ys_, alpha, colors, edgecolor, width=0.2, sep=0.3):
     assert len(xs) == len(ys)
     total = 0.0
