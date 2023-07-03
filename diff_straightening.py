@@ -248,20 +248,36 @@ baseline_model = {"injection_v1_af": "v1_no_injection",
                   "injection_conv_subset_IT": "IT_no_injection" ,
                  "injection_separate_IT": "IT_no_injection"}
 
-one_layer = {"injection_v1_af": [6, 20],
-                  "injection_conv_v1_af" : [6, 20],
-                  "unfreeze_injection_v1_af": [6, 20], 
+one_layer = {"injection_v1": [6, 20],
+                  "injection_conv_v1" : [6, 20],
+                  "unfreeze_injection_v1": [6, 20], 
                   "subset_injection_v1": [6, 20], 
                   "injection_conv_subset_v1": [6, 20],
                  "injection_separate_v1": [6, 20], 
 
-             "injection_v2_af": [6, 20],
-                  "injection_conv_v2_af" : [6, 20],
-                  "unfreeze_injection_v2_af": [6, 20], 
-                  "subset_injection_v2": [6, 20], 
-                  "injection_conv_subset_v2": [6, 20],
-                 "injection_separate_v2": [6, 20], 
-    }
+             "injection_v2": [10, 20],
+                  "injection_conv_v2" : [10, 20],
+                  "unfreeze_injection_v2": [10, 20], 
+                  "subset_injection_v2": [10, 20], 
+                  "injection_conv_subset_v2": [10, 20],
+                 "injection_separate_v2": [10, 20], 
+
+             "injection_v4": [16, 20],
+                  "injection_conv_v4" : [16, 20],
+                  "unfreeze_injection_v4": [16, 20], 
+                  "subset_injection_v4": [16, 20], 
+                  "injection_conv_subset_v4": [16, 20],
+                 "injection_separate_v4": [16, 20], 
+
+             "injection_IT": [19, 20],
+                  "injection_conv_IT" : [19, 20],
+                  "unfreeze_injection_IT": [19, 20], 
+                  "subset_injection_IT": [19, 20], 
+                  "injection_conv_subset_IT": [19, 20],
+                 "injection_separate_IT": [19, 20], 
+             
+}
+
 
 dict_model_names = {
     "injection_v1_af": "Random linear injection at V1",
