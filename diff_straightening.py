@@ -279,7 +279,7 @@ model_names = [
 
 fig, axes = pt.round_plot.subplots(1,6,height_per_plot=6,width_per_plot=6)
 for i, model_name in enumerate(model_names):
-    #ys = [[results[model_name][metric][-1,0]-results[baseline_model_name][metric][-1,0] for metric in metrics] for metrics in metricss]
+    #ys = [[ (results[model_name][metric][-1,0]-results[baseline_model_name][metric][-1,0])*100/results[baseline_model_name][metric][-1,0] for metric in metrics] for metrics in metricss]
     ys = [[load_data(metric, model_name, epoch, one_layer[model_name])[metric_type] - load_data(metric, baseline_model[model_name], epoch, one_layer[model_name])[metric_type] for metric_type in metric_types] for metric_types in metricss]
     #xs = metricss
     xs = [[metric_dict[metric_type] for metric_type in metrics] for metrics in metricss]
@@ -288,7 +288,7 @@ for i, model_name in enumerate(model_names):
     grouped_bar(axes[0,i], xs, ys)
     
     axes[0,i].set_title(model_name)
-    axes[0,i].set_ylabel('Score (relative to baseline)')
+    axes[0,i].set_ylabel('Difference relative to baseline, in %')
 #     axes[0,i].set_ylim(-0.25,0.27)
 y_lim_min = min([axes[0,i].get_ylim()[0] for i in range(len(model_names))])
 y_lim_max = max([axes[0,i].get_ylim()[1] for i in range(len(model_names))])
@@ -297,6 +297,6 @@ for i in range(len(model_names)):
 fig.suptitle('Comparison in straightening performance between injection V1 models and control (no injection) at injection site')
 fig.tight_layout()
 
-pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/lookessai2.png')
+pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/lookessai1.png')
 #pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/compare_random_conv_last_layer.png')
 fig.show()
