@@ -206,19 +206,7 @@ model_names = [
 # ------------------------------------------------------------------------------------
 # HISTOGRAM PLOT 
 # ------------------------------------------------------------------------------------
-def grouped_bar(ax, xs, ys, alpha_, colors, edgecolor, width=0.2, sep=0.3):
-    assert len(xs) == len(ys)
-    total = 0.0
-    all_xticks = []
-    all_xlabels = []
-    for i, y in enumerate(ys):
-        xticks = np.linspace(0.0,len(y)*width,num=len(y))+total
-        ax.bar(xticks, y, width=width, alpha = alpha_, color =  colors, edgecolor = edgecolor)
-        total += (len(y)+1.5)*width + sep
-        all_xticks += list(xticks)
-        all_xlabels += xs[i]
-    ax.set_xticks(all_xticks)
-    ax.set_xticklabels(all_xlabels, rotation=45, ha='right')
+
     
 list_metrics = {
     "Camera Translation" : ["x_cam_trans", "y_cam_trans", "z_cam_trans"], 
@@ -302,10 +290,33 @@ model_names = [
     #"barlow_twins_50epochs", 
     #"barlow_fact_no_injection"
 ]
-alphas = [0.9, 0.5]
+alphas = [0.5]#, 0.5]
 #colors = ["darkblue", "blue", "lightblue"]
-edge_colors = ["black", "black"]
-colors =  ["darkblue", "white"]
+edge_colors = ["black"]#, "black"]
+colors =  ["darkblue"]#, "white"]
+def grouped_bar(ax, xs, ys, ys_ alpha, colors, edgecolor, width=0.2, sep=0.3):
+    assert len(xs) == len(ys)
+    total = 0.0
+    all_xticks = []
+    all_xlabels = []
+    fig2 = plt.subplots()
+    for i, y in enumerate(ys):
+        xticks = np.linspace(0.0,len(y)*width,num=len(y))+total
+        ax.bar(xticks, y, width=width, alpha = alpha, color =  colors, edgecolor = edgecolor)
+        total += (len(y)+1.5)*width + sep
+        all_xticks += list(xticks)
+        all_xlabels += xs[i]
+    ax.set_xticks(all_xticks)
+    ax.set_xticklabels(all_xlabels, rotation=45, ha='right')
+    for i, y in enumerate(ys_):
+        xticks = np.linspace(0.0,len(y)*width,num=len(y))+total
+        ax.bar(xticks, y, width=width, alpha = alpha, color =  colors, edgecolor = edgecolor)
+        total += (len(y)+1.5)*width + sep
+        all_xticks += list(xticks)
+        all_xlabels += xs[i]
+    ax.set_xticks(all_xticks)
+    ax.set_xticklabels(all_xlabels, rotation=45, ha='right')
+    
 fig, axes = pt.round_plot.subplots(1,6,height_per_plot=6,width_per_plot=6)
 for i, model_name in enumerate(model_names):
 
@@ -317,8 +328,8 @@ for i, model_name in enumerate(model_names):
   
     xs = [[metric_dict[metric_type] for metric_type in metrics] for metrics in metricss]
     
-    grouped_bar(axes[0,i], xs, ys, alphas[0], colors[0], edge_colors[0])
-    grouped_bar(axes[0,i], xs, ys_, alphas[1], colors[1], edge_colors[1])
+    grouped_bar(axes[0,i], xs, ys, ys_, alphas, colors, edge_colors)
+    #grouped_bar(axes[0,i], xs, ys_, alphas[1], colors[1], edge_colors[1])
     
     axes[0,i].set_title(dict_model_names[model_name])
     axes[0,i].set_ylabel('Difference relative to baseline, in %')
