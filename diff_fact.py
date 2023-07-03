@@ -375,6 +375,6 @@ fig.suptitle('Comparison in factorization performance between injection V2 model
 fig.tight_layout()
 
 pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/factperv2.png')
-#pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/hist-compare_fact_v2.png')
+pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/hist-compare_fact_v2.png')
 fig.show()
 
