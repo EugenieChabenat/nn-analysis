@@ -227,42 +227,7 @@ model_names = [
 # ROUND PLOT 
 # ------------------------------------------------------------------------------------
 
-"""one_layer = 3
-metric = ["decode", 0]
 
-metric_types = ['obj_class', 'cam_pos_x', 'cam_pos_y', 'cam_scale', 'cam_pos', 'brightness', 'contrast', 'saturation', 'hue', 'color', 'lighting', 
-                'obj_pos_x', 'obj_pos_y', 'obj_scale', 'obj_pos', 'obj_pose_x', 'obj_pose_y', 'obj_pose_z', 'obj_pose']
-model_names = [
-    "barlow_faces_texture",
-    #"identity", 
-    "barlow_faces_notexture", 
-    "barlow_control"
-]   
-model_names = [
-    "barlow_v1_inj",
-    #"identity", 
-    "barlow_v2_inj",
-    "barlow_v1_inj_b", 
-    "barlow_control"
-]
-
-fig, axes = pt.round_plot.subplots(1, 1, height_per_plot=7.5, width_per_plot=7.5, polar=True)
-ax = axes[0,0]
-
-x = metric_types
-for i, model_name in enumerate(model_names):
-    #y = np.array([results[model_name][metric][-1,0] for metric in metrics])
-    y = np.array([load_data(metric, model_name, epoch, one_layer)[metric_type] for metric_type in metric_types])
-    if model_name == "barlow_v1_inj_b": 
-        pt.round_plot.r_plot(ax, x, y, label="barlow_v3_inj")
-    else: 
-        pt.round_plot.r_plot(ax, x, y, label=model_names[i])
-pt.round_plot.r_xticks(ax, x, x_offset=0.3, y_offset=0.3, size=11, color="grey")
-pt.round_plot.r_yticks(ax, min=0.0, max=1.0, steps=4)
-pt.round_plot.r_legend(ax, loc=(1.0, 1.0))
-fig.tight_layout()
-pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/FINAL_rond_layer6.png')
-fig.show()"""
 
 # ------------------------------------------------------------------------------------
 # HISTOGRAM PLOT 
