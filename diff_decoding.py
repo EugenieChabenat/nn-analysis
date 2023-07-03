@@ -232,21 +232,6 @@ model_names = [
 # ------------------------------------------------------------------------------------
 # HISTOGRAM PLOT 
 # ------------------------------------------------------------------------------------
-def grouped_bar(ax, xs, ys, width=0.2, sep=0.3):
-    assert len(xs) == len(ys)
-    total = 0.0
-    all_xticks = []
-    all_xlabels = []
-    for i, y in enumerate(ys):
-        xticks = np.linspace(0.0,len(y)*width,num=len(y))+total
-        ax.bar(xticks, y, width=width)
-        total += (len(y)+1.5)*width + sep
-        all_xticks += list(xticks)
-        all_xlabels += xs[i]
-    ax.set_xticks(all_xticks)
-    ax.set_xticklabels(all_xlabels, rotation=45, ha='right')
-    
-    
 metricss = [
             ['cam_pos_x', 'cam_pos_y', 'cam_scale', 'cam_pos'], 
             ['brightness', 'contrast', 'saturation', 'hue', 'color', 'lighting'], 
@@ -259,36 +244,22 @@ baseline_model = {"injection_v1": "v1_no_injection",
                   "injection_conv_subset_v1": "v1_no_injection" ,
                  "injection_separate_v1": "v1_no_injection"}
 
-one_layer = {"injection_v1": 6,
-                  "injection_conv_v1" : 6,
-                  "unfreeze_injection_v1": 6, 
-                  "subset_injection_v1": 6, 
-                  "injection_conv_subset_v1": 6,
-                 "injection_separate_v1": 6, 
-    
-                "injection_conv_v1": 6,
-                  "injection_conv_v2": 10,
-                  "injection_conv_v4": 16, 
-                "injection_conv_IT": 19 }
-
-# if plotting at injection site 
-"""one_layer = {"injection_conv_v1": 6,
-                  "injection_conv_v2": 10,
-                  "injection_conv_v4": 16, 
-                  "injection_conv_IT": 19}"""
-# if plotting at last layer
-"""one_layer = {"injection_conv_v1": 20,
-                  "injection_conv_v2": 20,
-                  "injection_conv_v4": 20, 
-                   "injection_conv_IT": 20 }"""
+one_layer = {"injection_v1_af": [6, 20],
+                  "injection_conv_v1_af" : [6, 20],
+                  "unfreeze_injection_v1_af": [6, 20], 
+                  "subset_injection_v1": [6, 20], 
+                  "injection_conv_subset_v1": [6, 20],
+                 "injection_separate_v1": [6, 20], 
+}
 
 model_names = [
-    "injection_v1",
-    "injection_conv_v1",
-    "unfreeze_injection_v1", 
-    "subset_injection_v1", 
-    "injection_conv_subset_v1",
+    "injection_v1_af",
     "injection_separate_v1", 
+    "subset_injection_v1", 
+    "injection_conv_v1_af",
+    "unfreeze_injection_v1_af", 
+    "injection_conv_subset_v1",
+    
     #"injection_v1",
     #"injection_v2", 
     #"injection_v4",
@@ -332,26 +303,61 @@ dict_model_names = {
     "injection_conv_subset_IT": "Random convolutional injection of subset at IT" ,
 
 }    
+alphas = 1 # 0.5#, 0.5]
+#colors = ["darkblue", "blue", "lightblue"]
+edge_colors = "black"#, "black"]
+colors =  ["darkblue", "lightblue"]
+def grouped_bar(ax, xs, ys, ys_, alpha, colors, edgecolor, width=0.2, sep=0.3):
+    assert len(xs) == len(ys)
+    total = 0.0
+    all_xticks = []
+    all_xlabels = []
+    fig2 = plt.subplots()
+    for i, (y, y_) in enumerate(zip(ys, ys_)):
+        xticks = np.linspace(0.0,len(y)*width,num=len(y))+total
+        
+        p1 = ax.bar(xticks, y, width=width, alpha = alpha, color =  colors[0], edgecolor = edgecolor)
+        p2 = ax.bar(xticks, y_, width=width/2, alpha = alpha, color = colors[1], edgecolor = edgecolor)
 
-fig, axes = pt.round_plot.subplots(1,6,height_per_plot=6,width_per_plot=6)
-for i, model_name in enumerate(model_names):
-    #ys = [[ (results[model_name][metric][-1,0]-results[baseline_model_name][metric][-1,0])*100/results[baseline_model_name][metric][-1,0] for metric in metrics] for metrics in metricss]
-    ys = [[ (load_data(metric, model_name, epoch, one_layer[model_name])[metric_type] - load_data(metric, baseline_model[model_name], epoch, one_layer[model_name])[metric_type])\
-           *100/load_data(metric, baseline_model[model_name], epoch, one_layer[model_name])[metric_type] for metric_type in metric_types] for metric_types in metricss]
-    #xs = metricss
-    xs = [[metric_dict[metric_type] for metric_type in metrics] for metrics in metricss]
-    print('xs:', len(xs))
-    print('ys:', len(ys))
-    grouped_bar(axes[0,i], xs, ys)
+        
+        total += (len(y)+1.5)*width + sep
+        all_xticks += list(xticks)
+        all_xlabels += xs[i]
+    ax.axhline(y=0, label='identity', color = 'grey', ls = '--')
+    ax.legend((p1[0], p2[0]), ('injection site', 'last layer'), loc="lower left")
+    ax.set_xticks(all_xticks)
+    ax.set_xticklabels(all_xlabels, rotation=45, ha='right')
     
-    axes[0,i].set_title(dict_model_names[model_name])
-    axes[0,i].set_ylabel('Difference relative to baseline, in %')
-#     axes[0,i].set_ylim(-0.25,0.27)
-y_lim_min = min([axes[0,i].get_ylim()[0] for i in range(len(model_names))])
-y_lim_max = max([axes[0,i].get_ylim()[1] for i in range(len(model_names))])
-for i in range(len(model_names)):
-    axes[0,i].set_ylim(y_lim_min, y_lim_max)
-fig.suptitle('Comparison in straightening performance between injection V1 models and control (no injection) at injection site')
+fig, axes = pt.round_plot.subplots(2,3,height_per_plot=6,width_per_plot=6)
+k = 0 
+j = 0 
+for i, model_name in enumerate(model_names):
+
+    ys = [[ (load_data(metric, model_name, epoch, one_layer[model_name][0])[metric_type] - load_data(metric, baseline_model[model_name], epoch, one_layer[model_name][0])[metric_type])\
+           *100/load_data(metric, baseline_model[model_name], epoch, one_layer[model_name][0])[metric_type] for metric_type in metric_types] for metric_types in metricss]
+
+    ys_ = [[ (load_data(metric, model_name, epoch, one_layer[model_name][1])[metric_type] - load_data(metric, baseline_model[model_name], epoch, one_layer[model_name][1])[metric_type])\
+           *100/load_data(metric, baseline_model[model_name], epoch, one_layer[model_name][1])[metric_type] for metric_type in metric_types] for metric_types in metricss]
+  
+    xs = [[metric_dict[metric_type] for metric_type in metrics] for metrics in metricss]
+    
+    grouped_bar(axes[k,j], xs, ys, ys_, alphas, colors, edge_colors)
+    #grouped_bar(axes[k, j], xs, ys_, alphas[1], colors[1], edge_colors[1])
+    
+    axes[k, j].set_title(dict_model_names[model_name])
+    axes[k, j].set_ylabel('Difference relative to baseline, in %')
+    j += 1 
+    if j >2: 
+        k += 1 
+        j = 0 
+
+y_lim_min = min(min([axes[0, i].get_ylim()[0] for i in range(3)]), min([axes[1, i].get_ylim()[0] for i in range(3)]))
+y_lim_max = max(max([axes[0, i].get_ylim()[1] for i in range(3)]), max([axes[1, i].get_ylim()[1] for i in range(3)])) 
+
+for i in range(3):
+    axes[0, i].set_ylim(y_lim_min, y_lim_max)
+    axes[1, i].set_ylim(y_lim_min, y_lim_max)
+fig.suptitle('Comparison in decoding performance between injection V1 models and control (no injection) at injection site', fontweight='bold')
 fig.tight_layout()
 
 pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/decodeper1.png')
