@@ -225,7 +225,28 @@ baseline_model = {"injection_v1_af": "v1_no_injection",
                   "unfreeze_injection_v1_af": "v1_no_injection", 
                   "subset_injection_v1": "v1_no_injection", 
                   "injection_conv_subset_v1": "v1_no_injection" ,
-                 "injection_separate_v1": "v1_no_injection"}
+                 "injection_separate_v1": "v1_no_injection", 
+                 
+                 "injection_v2_af": "v2_no_injection",
+                  "injection_conv_v2_af" : "v2_no_injection",
+                  "unfreeze_injection_v2_af": "v2_no_injection", 
+                  "subset_injection_v2": "v2_no_injection", 
+                  "injection_conv_subset_v2": "v2_no_injection" ,
+                 "injection_separate_v2": "v2_no_injection", 
+                 
+                 "injection_v4_af": "v4_no_injection",
+                  "injection_conv_v4_af" : "v4_no_injection",
+                  "unfreeze_injection_v4_af": "v4_no_injection", 
+                  "subset_injection_v4": "v4_no_injection", 
+                  "injection_conv_subset_v4": "v4_no_injection" ,
+                 "injection_separate_v4": "v4_no_injection", 
+                 
+                 "injection_IT_af": "IT_no_injection",
+                  "injection_conv_IT_af" : "IT_no_injection",
+                  "unfreeze_injection_IT_af": "IT_no_injection", 
+                  "subset_injection_IT": "IT_no_injection", 
+                  "injection_conv_subset_IT": "IT_no_injection" ,
+                 "injection_separate_IT": "IT_no_injection"}
 
 one_layer = {"injection_v1_af": [6, 20],
                   "injection_conv_v1_af" : [6, 20],
@@ -233,6 +254,13 @@ one_layer = {"injection_v1_af": [6, 20],
                   "subset_injection_v1": [6, 20], 
                   "injection_conv_subset_v1": [6, 20],
                  "injection_separate_v1": [6, 20], 
+
+             "injection_v2_af": [6, 20],
+                  "injection_conv_v2_af" : [6, 20],
+                  "unfreeze_injection_v2_af": [6, 20], 
+                  "subset_injection_v2": [6, 20], 
+                  "injection_conv_subset_v2": [6, 20],
+                 "injection_separate_v2": [6, 20], 
     }
 
 dict_model_names = {
@@ -271,21 +299,34 @@ dict_model_names = {
     #"barlow_fact_no_injection"
 }    
 model_names = [
-    "injection_v1_af",
-    "injection_separate_v1", 
-    "subset_injection_v1", 
-    "injection_conv_v1_af",
-    "unfreeze_injection_v1_af", 
-    "injection_conv_subset_v1",
+    #"injection_v1_af",
+    #"injection_separate_v1", 
+    #"subset_injection_v1", 
+    #"injection_conv_v1_af",
+    #"unfreeze_injection_v1_af", 
+    #"injection_conv_subset_v1",
     
-    #"injection_v1",
-    #"injection_v2", 
+    "injection_v2_af",
+    "injection_separate_v2", 
+    "subset_injection_v2", 
+    "injection_conv_v2_af",
+    "unfreeze_injection_v2_af", 
+    "injection_conv_subset_v2",
+
     #"injection_v4",
+    #"injection_separate_v4", 
+    #"subset_injection_v4", 
+    #"injection_conv_v4",
+    #"unfreeze_injection_v4", 
+    #"injection_conv_subset_v4",
+
     #"injection_IT",
-    #"injection_conv_v1", 
-    #"injection_conv_v2", 
-    #"injection_conv_v4", 
-    #"injection_conv_IT", 
+    #"injection_separate_IT", 
+    #"subset_injection_IT", 
+    #"injection_conv_IT",
+    #"unfreeze_injection_IT", 
+    #"injection_conv_subset_IT",
+    
     #"v4_no_injection", 
     #"resnet50_untrained", 
     #"barlow_twins_50epochs", 
@@ -361,6 +402,6 @@ for i in range(3):
 fig.suptitle('Comparison in straightening performance between injection V1 models and control (no injection) at injection site', fontweight='bold')
 fig.tight_layout()
 
-pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/lookper12bis.png')
-#pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/compare_random_conv_last_layer.png')
+pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/straight_v2.png')
+pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/hist-compare_straightening_v2.png')
 fig.show()
