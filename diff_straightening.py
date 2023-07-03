@@ -213,7 +213,7 @@ def grouped_bar(ax, xs, ys, alpha_, colors, width=0.2, sep=0.3):
     all_xlabels = []
     for i, y in enumerate(ys):
         xticks = np.linspace(0.0,len(y)*width,num=len(y))+total
-        ax.bar(xticks, y, width=width, alpha = alpha_, edgecolor = "black", colors[i])
+        ax.bar(xticks, y, width=width, alpha = alpha_, color =  colors[i], edgecolor = "black")
         total += (len(y)+1.5)*width + sep
         all_xticks += list(xticks)
         all_xlabels += xs[i]
