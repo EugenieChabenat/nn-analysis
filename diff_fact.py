@@ -205,36 +205,6 @@ model_names = [
 # ROUND PLOT 
 # ------------------------------------------------------------------------------------
 
-"""one_layer = 16 
-fig, axes = pt.round_plot.subplots(1, 1, height_per_plot=7.5, width_per_plot=7.5, polar=True)
-ax = axes[0,0]
-
-model_names = [
-    "barlow_v1_inj",
-    "barlow_v2_inj", 
-    "barlow_v1_inj_b",
-    "barlow_control"
-]
-
-metric_types = ['ss_inv-background', 'ss_inv-obj_motion', 'ss_inv-crop','ss_inv-color','inv-background', 'inv-obj_motion', 'inv-crop', 'inv-color',
-                'fact-background', 'fact-obj_motion', 'fact-crop', 'fact-color']
-
-x = metric_types
-for i, model_name in enumerate(model_names):
-    #y = np.array([results[model_name][metric][-1,0] for metric in metrics])
-    y = np.array([load_data(metric, model_name, epoch, one_layer)[metric_type] for metric_type in metric_types])
-    if model_name == "barlow_v1_inj_b": 
-        pt.round_plot.r_plot(ax, x, y, label="barlow_v3_inj")
-    else: 
-        pt.round_plot.r_plot(ax, x, y, label=model_names[i])
-pt.round_plot.r_xticks(ax, x, x_offset=0.3, y_offset=0.3, size=11, color="grey")
-pt.round_plot.r_yticks(ax, min=0.0, max=1.0, steps=4)
-pt.round_plot.r_legend(ax, loc=(1.0, 1.0))
-fig.tight_layout()
-pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/FINAL_rond.png')
-fig.show()"""
-
-
 # ------------------------------------------------------------------------------------
 # HISTOGRAM PLOT
 # ------------------------------------------------------------------------------------
@@ -305,6 +275,41 @@ model_names = [
     #"barlow_twins_50epochs", 
     #"barlow_fact_no_injection"
 ]
+dict_model_names = {
+    "injection_v1_af": "Random linear injection at V1",
+    "injection_separate_v1": "Trained linear injection at V1" , 
+    "injection_conv_v1_af": "Random convolutional injection at V1" ,
+    "unfreeze_injection_v1_af": "Trained convolutional injection at V1" , 
+    "subset_injection_v1": "Random linear injection of subset at V1", 
+    "injection_conv_subset_v1": "Random convolutional injection of subset at V1" ,
+
+    "injection_v2_af": "Random linear injection at V2",
+    "injection_separate_v2": "Trained linear injection at V2" , 
+    "injection_conv_v2_af": "Random convolutional injection at V2" ,
+    "unfreeze_injection_v2_af": "Trained convolutional injection at V2" , 
+    "subset_injection_v2": "Random linear injection of subset at V2", 
+    "injection_conv_subset_v2": "Random convolutional injection of subset at V2" ,
+
+    "injection_v4_af": "Random linear injection at V4",
+    "injection_separate_v4": "Trained linear injection at V4" , 
+    "injection_conv_v4_af": "Random convolutional injection at V4" ,
+    "unfreeze_injection_v4_af": "Trained convolutional injection at V4" , 
+    "subset_injection_v4": "Random linear injection of subset at V4", 
+    "injection_conv_subset_v4": "Random convolutional injection of subset at V4" ,
+
+    "injection_IT_af": "Random linear injection at IT",
+    "injection_separate_IT": "Trained linear injection at IT" , 
+    "injection_conv_IT_af": "Random convolutional injection at IT" ,
+    "unfreeze_injection_IT_af": "Trained convolutional injection at IT" , 
+    "subset_injection_IT": "Random linear injection of subset at IT", 
+    "injection_conv_subset_IT": "Random convolutional injection of subset at IT" ,
+    
+
+    #"v4_no_injection", 
+    #"resnet50_untrained", 
+    #"barlow_twins_50epochs", 
+    #"barlow_fact_no_injection"
+}    
 fig, axes = pt.round_plot.subplots(1,6,height_per_plot=6,width_per_plot=6)
 for i, model_name in enumerate(model_names):
     #ys = [[ (results[model_name][metric][-1,0]-results[baseline_model_name][metric][-1,0])*100/results[baseline_model_name][metric][-1,0] for metric in metrics] for metrics in metricss]
@@ -316,7 +321,7 @@ for i, model_name in enumerate(model_names):
     print('ys:', len(ys))
     grouped_bar(axes[0,i], xs, ys)
     
-    axes[0,i].set_title(model_name)
+    axes[0,i].set_title(dict_model_names[model_name])
     axes[0,i].set_ylabel('Difference relative to baseline, in %')
 #     axes[0,i].set_ylim(-0.25,0.27)
 y_lim_min = min([axes[0,i].get_ylim()[0] for i in range(len(model_names))])
