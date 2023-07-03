@@ -206,7 +206,7 @@ model_names = [
 # ------------------------------------------------------------------------------------
 # HISTOGRAM PLOT 
 # ------------------------------------------------------------------------------------
-def grouped_bar(ax, xs, ys, alpha, width=0.2, sep=0.3):
+def grouped_bar(ax, xs, ys, alpha_, width=0.2, sep=0.3):
     assert len(xs) == len(ys)
     total = 0.0
     all_xticks = []
