@@ -233,9 +233,9 @@ model_names = [
 # HISTOGRAM PLOT 
 # ------------------------------------------------------------------------------------
 metricss = [
-            ['cam_pos_x', 'cam_pos_y', 'cam_scale', 'cam_pos'], 
-            ['brightness', 'contrast', 'saturation', 'hue', 'color', 'lighting'], 
-            ['obj_class', 'obj_pos_x', 'obj_pos_y', 'obj_scale', 'obj_pos', 'obj_pose_x', 'obj_pose_y', 'obj_pose_z', 'obj_pose']]
+            ['cam_pos_x', 'cam_pos_y', 'cam_scale'], # 'cam_pos',
+            ['brightness', 'lighting'], # 'contrast', 'saturation', 'hue', 'color',
+            ['obj_class', 'obj_pos_x', 'obj_pos_y', 'obj_scale', 'obj_pose_x', 'obj_pose_y', 'obj_pose_z']]#'obj_pos', 'obj_pose'
 
 baseline_model = {"injection_v1": "v1_no_injection",
                   "injection_conv_v1" : "v1_no_injection",
