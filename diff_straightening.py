@@ -213,7 +213,7 @@ def grouped_bar(ax, xs, ys, alpha_, width=0.2, sep=0.3):
     all_xlabels = []
     for i, y in enumerate(ys):
         xticks = np.linspace(0.0,len(y)*width,num=len(y))+total
-        ax.bar(xticks, y, width=width, alpha = alpha_)
+        ax.bar(xticks, y, width=width, alpha = alpha_, edgecolor = "black")
         total += (len(y)+1.5)*width + sep
         all_xticks += list(xticks)
         all_xlabels += xs[i]
@@ -302,7 +302,7 @@ model_names = [
     #"barlow_twins_50epochs", 
     #"barlow_fact_no_injection"
 ]
-alphas = [1, 0.5]
+alphas = [1, 0.05]
 fig, axes = pt.round_plot.subplots(1,6,height_per_plot=6,width_per_plot=6)
 for i, model_name in enumerate(model_names):
 
