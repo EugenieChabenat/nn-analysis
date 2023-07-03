@@ -314,7 +314,9 @@ def grouped_bar(ax, xs, ys, ys_, alpha, colors, edgecolor, width=0.2, sep=0.3):
     ax.set_xticklabels(all_xlabels, rotation=45, ha='right')
     
     
-fig, axes = pt.round_plot.subplots(1,6,height_per_plot=6,width_per_plot=6)
+fig, axes = pt.round_plot.subplots(2,3,height_per_plot=6,width_per_plot=6)
+k = 0 
+j = 0 
 for i, model_name in enumerate(model_names):
 
     ys = [[ (load_data(metric, model_name, epoch, one_layer[model_name][0])[metric_type] - load_data(metric, baseline_model[model_name], epoch, one_layer[model_name][0])[metric_type])\
@@ -325,19 +327,23 @@ for i, model_name in enumerate(model_names):
   
     xs = [[metric_dict[metric_type] for metric_type in metrics] for metrics in metricss]
     
-    grouped_bar(axes[0,i], xs, ys, ys_, alphas, colors, edge_colors)
-    #grouped_bar(axes[0,i], xs, ys_, alphas[1], colors[1], edge_colors[1])
+    grouped_bar(axes[k,j], xs, ys, ys_, alphas, colors, edge_colors)
+    #grouped_bar(axes[k, j], xs, ys_, alphas[1], colors[1], edge_colors[1])
     
-    axes[0,i].set_title(dict_model_names[model_name])
-    axes[0,i].set_ylabel('Difference relative to baseline, in %')
+    axes[k, j].set_title(dict_model_names[model_name])
+    axes[k, j].set_ylabel('Difference relative to baseline, in %')
+    j += 1 
+    if j >2: 
+        k += 1 
+        j = 0 
 
-y_lim_min = min([axes[0,i].get_ylim()[0] for i in range(len(model_names))])
-y_lim_max = max([axes[0,i].get_ylim()[1] for i in range(len(model_names))])
+y_lim_min = min([axes[k, j].get_ylim()[0] for i in range(len(model_names))])
+y_lim_max = max([axes[k, j].get_ylim()[1] for i in range(len(model_names))])
 for i in range(len(model_names)):
-    axes[0,i].set_ylim(y_lim_min, y_lim_max)
+    axes[k, j].set_ylim(y_lim_min, y_lim_max)
 fig.suptitle('Comparison in straightening performance between injection V1 models and control (no injection) at injection site', fontweight='bold')
 fig.tight_layout()
 
-pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/lookper10bis.png')
+pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/lookper10ter.png')
 #pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/compare_random_conv_last_layer.png')
 fig.show()
