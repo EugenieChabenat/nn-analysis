@@ -307,10 +307,10 @@ one_layer = {"injection_v1": 6,
                 "injection_conv_IT": 19 }
 
 # if plotting at injection site 
-one_layer = {"injection_conv_v1": 6,
+"""one_layer = {"injection_conv_v1": 6,
                   "injection_conv_v2": 10,
                   "injection_conv_v4": 16, 
-                  "injection_conv_IT": 19}
+                  "injection_conv_IT": 19}"""
 # if plotting at last layer
 """one_layer = {"injection_conv_v1": 20,
                   "injection_conv_v2": 20,
