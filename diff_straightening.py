@@ -343,7 +343,7 @@ for i, model_name in enumerate(model_names):
 y_lim_min = min(min([axes[0, i].get_ylim()[0] for i in range(3)]), min([axes[1, i].get_ylim()[0] for i in range(3)]))
 y_lim_max = max(max([axes[0, i].get_ylim()[1] for i in range(3)]), max([axes[0, i].get_ylim()[1] for i in range(3)]))
 
-for i in range(3)):
+for i in range(3):
     axes[0, i].set_ylim(y_lim_min, y_lim_max)
     axes[1, i].set_ylim(y_lim_min, y_lim_max)
 fig.suptitle('Comparison in straightening performance between injection V1 models and control (no injection) at injection site', fontweight='bold')
