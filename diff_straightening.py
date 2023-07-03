@@ -322,7 +322,7 @@ for i, model_name in enumerate(model_names):
     print('ys:', len(ys))
     grouped_bar(axes[0,i], xs, ys)
     
-    axes[0,i].set_title(dict_model_name[model_name])
+    axes[0,i].set_title(dict_model_names[model_name])
     axes[0,i].set_ylabel('Difference relative to baseline, in %')
 #     axes[0,i].set_ylim(-0.25,0.27)
 y_lim_min = min([axes[0,i].get_ylim()[0] for i in range(len(model_names))])
