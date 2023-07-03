@@ -304,7 +304,7 @@ model_names = [
 ]
 alphas = [0.5, 0.8]
 colors = ["darkblue", "blue", "lightblue"]
-#edge_colors = ["", "", ""]
+edge_colors = ["black", "black", "black"]
 
 fig, axes = pt.round_plot.subplots(1,6,height_per_plot=6,width_per_plot=6)
 for i, model_name in enumerate(model_names):
