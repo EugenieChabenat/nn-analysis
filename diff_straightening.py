@@ -280,7 +280,7 @@ model_names = [
 fig, axes = pt.round_plot.subplots(1,6,height_per_plot=6,width_per_plot=6)
 for i, model_name in enumerate(model_names):
     #ys = [[ (results[model_name][metric][-1,0]-results[baseline_model_name][metric][-1,0])*100/results[baseline_model_name][metric][-1,0] for metric in metrics] for metrics in metricss]
-    ys = [[load_data(metric, model_name, epoch, one_layer[model_name])[metric_type] - load_data(metric, baseline_model[model_name], epoch, one_layer[model_name])[metric_type] for metric_type in metric_types] for metric_types in metricss]
+    ys = [[ (load_data(metric, model_name, epoch, one_layer[model_name])[metric_type] - load_data(metric, baseline_model[model_name])*100/load_data(metric, baseline_model[model_name], epoch, one_layer[model_name])[metric_type] for metric_type in metric_types] for metric_types in metricss]
     #xs = metricss
     xs = [[metric_dict[metric_type] for metric_type in metrics] for metrics in metricss]
     print('xs:', len(xs))
@@ -297,6 +297,6 @@ for i in range(len(model_names)):
 fig.suptitle('Comparison in straightening performance between injection V1 models and control (no injection) at injection site')
 fig.tight_layout()
 
-pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/lookessai1.png')
+pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/lookper1.png')
 #pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/compare_random_conv_last_layer.png')
 fig.show()
