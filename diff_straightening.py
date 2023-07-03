@@ -290,10 +290,10 @@ model_names = [
     #"barlow_twins_50epochs", 
     #"barlow_fact_no_injection"
 ]
-alphas = 0.5#, 0.5]
+alphas = 1 # 0.5#, 0.5]
 #colors = ["darkblue", "blue", "lightblue"]
 edge_colors = "black"#, "black"]
-colors =  "darkblue"#, "white"]
+colors =  ["darkblue", "lightblue"]
 def grouped_bar(ax, xs, ys, ys_, alpha, colors, edgecolor, width=0.2, sep=0.3):
     assert len(xs) == len(ys)
     total = 0.0
@@ -302,8 +302,8 @@ def grouped_bar(ax, xs, ys, ys_, alpha, colors, edgecolor, width=0.2, sep=0.3):
     fig2 = plt.subplots()
     for i, (y, y_) in enumerate(zip(ys, ys_)):
         xticks = np.linspace(0.0,len(y)*width,num=len(y))+total
-        ax.bar(xticks, y, width=width, alpha = alpha, color =  colors, edgecolor = edgecolor)
-        ax.bar(xticks, y_, bottom = y, width=width, alpha = alpha, color =  colors, edgecolor = edgecolor)
+        ax.bar(xticks, y, width=width, alpha = alpha, color =  colors[0], edgecolor = edgecolor)
+        ax.bar(xticks, y_, bottom = y, width=width, alpha = alpha, color = colors[1], edgecolor = edgecolor)
         total += (len(y)+1.5)*width + sep
         all_xticks += list(xticks)
         all_xlabels += xs[i]
