@@ -265,10 +265,10 @@ model_names = [
     #"barlow_fact_no_injection"
 ]
 dict_model_names = {
-    "injection_v1_af": "Random linear injection at V1",
+    "injection_v1": "Random linear injection at V1",
     "injection_separate_v1": "Trained linear injection at V1" , 
-    "injection_conv_v1_af": "Random convolutional injection at V1" ,
-    "unfreeze_injection_v1_af": "Trained convolutional injection at V1" , 
+    "injection_conv_v1": "Random convolutional injection at V1" ,
+    "unfreeze_injection_v1": "Trained convolutional injection at V1" , 
     "subset_injection_v1": "Random linear injection of subset at V1", 
     "injection_conv_subset_v1": "Random convolutional injection of subset at V1" ,
 
