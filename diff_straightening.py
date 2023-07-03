@@ -206,14 +206,14 @@ model_names = [
 # ------------------------------------------------------------------------------------
 # HISTOGRAM PLOT 
 # ------------------------------------------------------------------------------------
-def grouped_bar(ax, xs, ys, alpha_, colors, width=0.2, sep=0.3):
+def grouped_bar(ax, xs, ys, alpha_, colors, edgecolor, width=0.2, sep=0.3):
     assert len(xs) == len(ys)
     total = 0.0
     all_xticks = []
     all_xlabels = []
     for i, y in enumerate(ys):
         xticks = np.linspace(0.0,len(y)*width,num=len(y))+total
-        ax.bar(xticks, y, width=width, alpha = alpha_, color =  colors[i], edgecolor = "black")
+        ax.bar(xticks, y, width=width, alpha = alpha_, color =  colors, edgecolor = edgecolor)
         total += (len(y)+1.5)*width + sep
         all_xticks += list(xticks)
         all_xlabels += xs[i]
@@ -303,9 +303,9 @@ model_names = [
     #"barlow_fact_no_injection"
 ]
 alphas = [0.5, 0.5]
-colors = ["darkblue", "blue", "lightblue"]
-edge_colors = ["black", "black", "black"]
-
+#colors = ["darkblue", "blue", "lightblue"]
+edge_colors = ["black", "black"]
+colors =  ["darkblue", "lightblue"]
 fig, axes = pt.round_plot.subplots(1,6,height_per_plot=6,width_per_plot=6)
 for i, model_name in enumerate(model_names):
 
@@ -317,8 +317,8 @@ for i, model_name in enumerate(model_names):
   
     xs = [[metric_dict[metric_type] for metric_type in metrics] for metrics in metricss]
     
-    grouped_bar(axes[0,i], xs, ys, alphas[0], colors)
-    grouped_bar(axes[0,i], xs, ys_, alphas[0], colors)
+    grouped_bar(axes[0,i], xs, ys, alphas[0], colors[0], edge_colors[0])
+    grouped_bar(axes[0,i], xs, ys_, alphas[1], colors[1], edge_colors[1])
     
     axes[0,i].set_title(dict_model_names[model_name])
     axes[0,i].set_ylabel('Difference relative to baseline, in %')
@@ -330,6 +330,6 @@ for i in range(len(model_names)):
 fig.suptitle('Comparison in straightening performance between injection V1 models and control (no injection) at injection site')
 fig.tight_layout()
 
-pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/lookper6.png')
+pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/lookper7.png')
 #pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/compare_random_conv_last_layer.png')
 fig.show()
