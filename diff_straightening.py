@@ -206,14 +206,14 @@ model_names = [
 # ------------------------------------------------------------------------------------
 # HISTOGRAM PLOT 
 # ------------------------------------------------------------------------------------
-def grouped_bar(ax, xs, ys, width=0.2, sep=0.3):
+def grouped_bar(ax, xs, ys, alpha, width=0.2, sep=0.3):
     assert len(xs) == len(ys)
     total = 0.0
     all_xticks = []
     all_xlabels = []
     for i, y in enumerate(ys):
         xticks = np.linspace(0.0,len(y)*width,num=len(y))+total
-        ax.bar(xticks, y, width=width)
+        ax.bar(xticks, y, width=width, alpha = alpha_)
         total += (len(y)+1.5)*width + sep
         all_xticks += list(xticks)
         all_xlabels += xs[i]
@@ -239,22 +239,14 @@ baseline_model = {"injection_v1_af": "v1_no_injection",
                   "injection_conv_subset_v1": "v1_no_injection" ,
                  "injection_separate_v1": "v1_no_injection"}
 
-one_layer = {"injection_v1_af": 6,
-                  "injection_conv_v1_af" : 6,
-                  "unfreeze_injection_v1_af": 6, 
-                  "subset_injection_v1": 6, 
-                  "injection_conv_subset_v1": 6,
-                 "injection_separate_v1": 6, 
-    
-                "injection_conv_v1": 6,
-                  "injection_conv_v2": 10,
-                  "injection_conv_v4": 16, 
-                "injection_conv_IT": 19 }
+one_layer = {"injection_v1_af": [6, 20],
+                  "injection_conv_v1_af" : [6, 20],
+                  "unfreeze_injection_v1_af": [6, 20], 
+                  "subset_injection_v1": [6, 20], 
+                  "injection_conv_subset_v1": [6, 20],
+                 "injection_separate_v1": [6, 20], 
+    }
 
-"""one_layer = {"injection_conv_v1": 20,
-                  "injection_conv_v2": 20,
-                  "injection_conv_v4" :20, 
-                "injection_conv_IT": 20}"""
 dict_model_names = {
     "injection_v1_af": "Random linear injection at V1",
     "injection_separate_v1": "Trained linear injection at V1" , 
@@ -310,21 +302,24 @@ model_names = [
     #"barlow_twins_50epochs", 
     #"barlow_fact_no_injection"
 ]
-
+alphas = [1, 0.5]
 fig, axes = pt.round_plot.subplots(1,6,height_per_plot=6,width_per_plot=6)
 for i, model_name in enumerate(model_names):
-    #ys = [[ (results[model_name][metric][-1,0]-results[baseline_model_name][metric][-1,0])*100/results[baseline_model_name][metric][-1,0] for metric in metrics] for metrics in metricss]
-    ys = [[ (load_data(metric, model_name, epoch, one_layer[model_name])[metric_type] - load_data(metric, baseline_model[model_name], epoch, one_layer[model_name])[metric_type])\
-           *100/load_data(metric, baseline_model[model_name], epoch, one_layer[model_name])[metric_type] for metric_type in metric_types] for metric_types in metricss]
-    #xs = metricss
+
+    ys = [[ (load_data(metric, model_name, epoch, one_layer[model_name][0])[metric_type] - load_data(metric, baseline_model[model_name], epoch, one_layer[model_name][0])[metric_type])\
+           *100/load_data(metric, baseline_model[model_name], epoch, one_layer[model_name][0])[metric_type] for metric_type in metric_types] for metric_types in metricss]
+
+    ys_ = [[ (load_data(metric, model_name, epoch, one_layer[model_name][1])[metric_type] - load_data(metric, baseline_model[model_name], epoch, one_layer[model_name][1])[metric_type])\
+           *100/load_data(metric, baseline_model[model_name], epoch, one_layer[model_name][1])[metric_type] for metric_type in metric_types] for metric_types in metricss]
+  
     xs = [[metric_dict[metric_type] for metric_type in metrics] for metrics in metricss]
-    print('xs:', len(xs))
-    print('ys:', len(ys))
-    grouped_bar(axes[0,i], xs, ys)
+    
+    grouped_bar(axes[0,i], xs, ys, alphas[0])
+    grouped_bar(axes[0,i], xs, ys_, alphas[0])
     
     axes[0,i].set_title(dict_model_names[model_name])
     axes[0,i].set_ylabel('Difference relative to baseline, in %')
-#     axes[0,i].set_ylim(-0.25,0.27)
+
 y_lim_min = min([axes[0,i].get_ylim()[0] for i in range(len(model_names))])
 y_lim_max = max([axes[0,i].get_ylim()[1] for i in range(len(model_names))])
 for i in range(len(model_names)):
