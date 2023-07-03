@@ -303,9 +303,17 @@ def grouped_bar(ax, xs, ys, ys_, alpha, colors, edgecolor, width=0.2, sep=0.3):
     fig2 = plt.subplots()
     for i, (y, y_) in enumerate(zip(ys, ys_)):
         xticks = np.linspace(0.0,len(y)*width,num=len(y))+total
-        if y_ < y: 
+        if np.abs(y_) > np.abs(y) and y_ < 0 and y <0 : # both decrease and Y_ decreases more 
             p1 = ax.bar(xticks, y, width=width, alpha = alpha, color =  colors[0], edgecolor = edgecolor)
-            p2 = ax.bar(xticks, y_, bottom = y, width=width, alpha = alpha, color = colors[1], edgecolor = edgecolor)
+            p2 = ax.bar(xticks, (y_-y), bottom = y, width=width, alpha = alpha, color = colors[1], edgecolor = edgecolor)
+        # both decrease and y decreases more 
+        elif np.abs(y_) > np.abs(y) and y_ < 0 and y <0 : # both decrease and Y_ decreases more 
+            p1 = ax.bar(xticks, (y-y_), , bottom = y_, width=width, alpha = alpha, color =  colors[0], edgecolor = edgecolor)
+            p2 = ax.bar(xticks, y_, width=width, alpha = alpha, color = colors[1], edgecolor = edgecolor)
+
+
+
+
         else: 
             p1 = ax.bar(xticks, y, bottom = y_, width=width, alpha = alpha, color =  colors[0], edgecolor = edgecolor)
             p2 = ax.bar(xticks, y_, width=width, alpha = alpha, color = colors[1], edgecolor = edgecolor)
