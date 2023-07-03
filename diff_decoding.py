@@ -244,20 +244,20 @@ baseline_model = {"injection_v1": "v1_no_injection",
                   "injection_conv_subset_v1": "v1_no_injection" ,
                  "injection_separate_v1": "v1_no_injection"}
 
-one_layer = {"injection_v1_af": [6, 20],
-                  "injection_conv_v1_af" : [6, 20],
-                  "unfreeze_injection_v1_af": [6, 20], 
+one_layer = {"injection_v1": [6, 20],
+                  "injection_conv_v1" : [6, 20],
+                  "unfreeze_injection_v1": [6, 20], 
                   "subset_injection_v1": [6, 20], 
                   "injection_conv_subset_v1": [6, 20],
                  "injection_separate_v1": [6, 20], 
 }
 
 model_names = [
-    "injection_v1_af",
+    "injection_v1",
     "injection_separate_v1", 
     "subset_injection_v1", 
-    "injection_conv_v1_af",
-    "unfreeze_injection_v1_af", 
+    "injection_conv_v1",
+    "unfreeze_injection_v1", 
     "injection_conv_subset_v1",
     
     #"injection_v1",
@@ -274,31 +274,31 @@ model_names = [
     #"barlow_fact_no_injection"
 ]
 dict_model_names = {
-    "injection_v1_af": "Random linear injection at V1",
+    "injection_v1": "Random linear injection at V1",
     "injection_separate_v1": "Trained linear injection at V1" , 
-    "injection_conv_v1_af": "Random convolutional injection at V1" ,
-    "unfreeze_injection_v1_af": "Trained convolutional injection at V1" , 
+    "injection_conv_v1": "Random convolutional injection at V1" ,
+    "unfreeze_injection_v1": "Trained convolutional injection at V1" , 
     "subset_injection_v1": "Random linear injection of subset at V1", 
     "injection_conv_subset_v1": "Random convolutional injection of subset at V1" ,
 
-    "injection_v2_af": "Random linear injection at V2",
+    "injection_v2": "Random linear injection at V2",
     "injection_separate_v2": "Trained linear injection at V2" , 
-    "injection_conv_v2_af": "Random convolutional injection at V2" ,
-    "unfreeze_injection_v2_af": "Trained convolutional injection at V2" , 
+    "injection_conv_v2": "Random convolutional injection at V2" ,
+    "unfreeze_injection_v2": "Trained convolutional injection at V2" , 
     "subset_injection_v2": "Random linear injection of subset at V2", 
     "injection_conv_subset_v2": "Random convolutional injection of subset at V2" ,
 
-    "injection_v4_af": "Random linear injection at V4",
+    "injection_v4": "Random linear injection at V4",
     "injection_separate_v4": "Trained linear injection at V4" , 
-    "injection_conv_v4_af": "Random convolutional injection at V4" ,
-    "unfreeze_injection_v4_af": "Trained convolutional injection at V4" , 
+    "injection_conv_v4": "Random convolutional injection at V4" ,
+    "unfreeze_injection_v4": "Trained convolutional injection at V4" , 
     "subset_injection_v4": "Random linear injection of subset at V4", 
     "injection_conv_subset_v4": "Random convolutional injection of subset at V4" ,
 
-    "injection_IT_af": "Random linear injection at IT",
+    "injection_IT": "Random linear injection at IT",
     "injection_separate_IT": "Trained linear injection at IT" , 
-    "injection_conv_IT_af": "Random convolutional injection at IT" ,
-    "unfreeze_injection_IT_af": "Trained convolutional injection at IT" , 
+    "injection_conv_IT": "Random convolutional injection at IT" ,
+    "unfreeze_injection_IT": "Trained convolutional injection at IT" , 
     "subset_injection_IT": "Random linear injection of subset at IT", 
     "injection_conv_subset_IT": "Random convolutional injection of subset at IT" ,
 
