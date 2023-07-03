@@ -287,16 +287,16 @@ metricss = [
             ['brightness', 'contrast', 'saturation', 'hue', 'color', 'lighting'], 
             ['obj_class', 'obj_pos_x', 'obj_pos_y', 'obj_scale', 'obj_pos', 'obj_pose_x', 'obj_pose_y', 'obj_pose_z', 'obj_pose']]
 
-baseline_model = {"injection_v1_af": "v1_no_injection",
-                  "injection_conv_v1_af" : "v1_no_injection",
-                  "unfreeze_injection_v1_af": "v1_no_injection", 
+baseline_model = {"injection_v1": "v1_no_injection",
+                  "injection_conv_v1" : "v1_no_injection",
+                  "unfreeze_injection_v1": "v1_no_injection", 
                   "subset_injection_v1": "v1_no_injection", 
                   "injection_conv_subset_v1": "v1_no_injection" ,
                  "injection_separate_v1": "v1_no_injection"}
 
-one_layer = {"injection_v1_af": 6,
-                  "injection_conv_v1_af" : 6,
-                  "unfreeze_injection_v1_af": 6, 
+one_layer = {"injection_v1": 6,
+                  "injection_conv_v1" : 6,
+                  "unfreeze_injection_v1": 6, 
                   "subset_injection_v1": 6, 
                   "injection_conv_subset_v1": 6,
                  "injection_separate_v1": 6, 
@@ -318,9 +318,9 @@ one_layer = {"injection_conv_v1": 6,
                    "injection_conv_IT": 20 }"""
 
 model_names = [
-    "injection_v1_af",
-    "injection_conv_v1_af",
-    "unfreeze_injection_v1_af", 
+    "injection_v1",
+    "injection_conv_v1",
+    "unfreeze_injection_v1", 
     "subset_injection_v1", 
     "injection_conv_subset_v1",
     "injection_separate_v1", 
