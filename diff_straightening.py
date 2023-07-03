@@ -206,14 +206,14 @@ model_names = [
 # ------------------------------------------------------------------------------------
 # HISTOGRAM PLOT 
 # ------------------------------------------------------------------------------------
-def grouped_bar(ax, xs, ys, alpha_, width=0.2, sep=0.3):
+def grouped_bar(ax, xs, ys, alpha_, colors width=0.2, sep=0.3):
     assert len(xs) == len(ys)
     total = 0.0
     all_xticks = []
     all_xlabels = []
     for i, y in enumerate(ys):
         xticks = np.linspace(0.0,len(y)*width,num=len(y))+total
-        ax.bar(xticks, y, width=width, alpha = alpha_, edgecolor = "black")
+        ax.bar(xticks, y, width=width, alpha = alpha_, edgecolor = "black", colors[i])
         total += (len(y)+1.5)*width + sep
         all_xticks += list(xticks)
         all_xlabels += xs[i]
@@ -303,6 +303,9 @@ model_names = [
     #"barlow_fact_no_injection"
 ]
 alphas = [1, 0.05]
+colors = ["darkblue", "blue", "lightblue"]
+#edge_colors = ["", "", ""]
+
 fig, axes = pt.round_plot.subplots(1,6,height_per_plot=6,width_per_plot=6)
 for i, model_name in enumerate(model_names):
 
@@ -314,8 +317,8 @@ for i, model_name in enumerate(model_names):
   
     xs = [[metric_dict[metric_type] for metric_type in metrics] for metrics in metricss]
     
-    grouped_bar(axes[0,i], xs, ys, alphas[0])
-    grouped_bar(axes[0,i], xs, ys_, alphas[0])
+    grouped_bar(axes[0,i], xs, ys, alphas[0], colors)
+    grouped_bar(axes[0,i], xs, ys_, alphas[0], colors)
     
     axes[0,i].set_title(dict_model_names[model_name])
     axes[0,i].set_ylabel('Difference relative to baseline, in %')
