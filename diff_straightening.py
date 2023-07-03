@@ -294,7 +294,7 @@ alphas = [0.5]#, 0.5]
 #colors = ["darkblue", "blue", "lightblue"]
 edge_colors = ["black"]#, "black"]
 colors =  ["darkblue"]#, "white"]
-def grouped_bar(ax, xs, ys, ys_ alpha, colors, edgecolor, width=0.2, sep=0.3):
+def grouped_bar(ax, xs, ys, ys_, alpha, colors, edgecolor, width=0.2, sep=0.3):
     assert len(xs) == len(ys)
     total = 0.0
     all_xticks = []
@@ -341,6 +341,6 @@ for i in range(len(model_names)):
 fig.suptitle('Comparison in straightening performance between injection V1 models and control (no injection) at injection site')
 fig.tight_layout()
 
-pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/lookper7ter.png')
+pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/lookper8.png')
 #pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/compare_random_conv_last_layer.png')
 fig.show()
