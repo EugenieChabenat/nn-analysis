@@ -291,7 +291,7 @@ model_names = [
     #"barlow_twins_50epochs", 
     #"barlow_fact_no_injection"
 ]
-alphas = 1 # 0.5#, 0.5]
+alphas = 0.8 # 0.5#, 0.5]
 #colors = ["darkblue", "blue", "lightblue"]
 edge_colors = "black"#, "black"]
 colors =  ["darkblue", "lightblue"]
@@ -350,6 +350,6 @@ for i in range(3):
 fig.suptitle('Comparison in straightening performance between injection V1 models and control (no injection) at injection site', fontweight='bold')
 fig.tight_layout()
 
-pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/lookper11.png')
+pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/lookper11bis.png')
 #pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/compare_random_conv_last_layer.png')
 fig.show()
