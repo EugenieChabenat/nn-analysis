@@ -302,11 +302,13 @@ def grouped_bar(ax, xs, ys, ys_, alpha, colors, edgecolor, width=0.2, sep=0.3):
     fig2 = plt.subplots()
     for i, (y, y_) in enumerate(zip(ys, ys_)):
         xticks = np.linspace(0.0,len(y)*width,num=len(y))+total
-        ax.bar(xticks, y, width=width, alpha = alpha, color =  colors[0], edgecolor = edgecolor)
-        ax.bar(xticks, y_, bottom = y, width=width, alpha = alpha, color = colors[1], edgecolor = edgecolor)
+        p1 = ax.bar(xticks, y, width=width, alpha = alpha, color =  colors[0], edgecolor = edgecolor)
+        p2 = ax.bar(xticks, y_, bottom = y, width=width, alpha = alpha, color = colors[1], edgecolor = edgecolor)
         total += (len(y)+1.5)*width + sep
         all_xticks += list(xticks)
         all_xlabels += xs[i]
+        
+    plt.legend((p1[0], p2[0]), ('injection site', 'last layer'))
     ax.set_xticks(all_xticks)
     ax.set_xticklabels(all_xlabels, rotation=45, ha='right')
     
@@ -332,9 +334,9 @@ y_lim_min = min([axes[0,i].get_ylim()[0] for i in range(len(model_names))])
 y_lim_max = max([axes[0,i].get_ylim()[1] for i in range(len(model_names))])
 for i in range(len(model_names)):
     axes[0,i].set_ylim(y_lim_min, y_lim_max)
-fig.suptitle('Comparison in straightening performance between injection V1 models and control (no injection) at injection site')
+fig.suptitle('Comparison in straightening performance between injection V1 models and control (no injection) at injection site', fontweight='bold')
 fig.tight_layout()
 
-pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/lookper9.png')
+pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/lookper9bis.png')
 #pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/compare_random_conv_last_layer.png')
 fig.show()
