@@ -104,7 +104,43 @@ list_metrics = {
     "Factorization 2": [ 'fact-crop', 'fact-color']
 }
 
+dict_model_names = {
+    "injection_v1": "Random linear injection at V1",
+    "injection_separate_v1": "Trained linear injection at V1" , 
+    "injection_conv_v1": "Random convolutional injection at V1" ,
+    "unfreeze_injection_v1": "Trained convolutional injection at V1" , 
+    "subset_injection_v1": "Random linear injection of subset at V1", 
+    "injection_conv_subset_v1": "Random convolutional injection of subset at V1" ,
 
+    "injection_v2": "Random linear injection at V2",
+    "injection_separate_v2": "Trained linear injection at V2" , 
+    "injection_conv_v2": "Random convolutional injection at V2" ,
+    "unfreeze_injection_v2": "Trained convolutional injection at V2" , 
+    "subset_injection_v2": "Random linear injection of subset at V2", 
+    "injection_conv_subset_v2": "Random convolutional injection of subset at V2" ,
+
+    "injection_v4": "Random linear injection at V4",
+    "injection_separate_v4": "Trained linear injection at V4" , 
+    "injection_conv_v4": "Random convolutional injection at V4" ,
+    "unfreeze_injection_v4": "Trained convolutional injection at V4" , 
+    "subset_injection_v4": "Random linear injection of subset at V4", 
+    "injection_conv_subset_v4": "Random convolutional injection of subset at V4" ,
+
+    "injection_IT": "Random linear injection at IT",
+    "injection_separate_IT": "Trained linear injection at IT" , 
+    "injection_conv_IT": "Random convolutional injection at IT" ,
+    "unfreeze_injection_IT": "Trained convolutional injection at IT" , 
+    "subset_injection_IT": "Random linear injection of subset at IT", 
+    "injection_conv_subset_IT": "Random convolutional injection of subset at IT", 
+    
+    "v1_no_injection": "Evaluation at V1, no injection", 
+    "v2_no_injection": "Evaluation at V2, no injection", 
+    "v4_no_injection": "Evaluation at V4, no injection", 
+    "IT_no_injection": "Evaluation at IT, no injection", 
+
+    "resnet50_untrained": "ResNet50 untrained", 
+    "barlow_twins_50epochs": "Vanilla Barlow Twins", 
+}
 model_names = [
     # random injection models  
     #"injection_v1",
@@ -171,7 +207,7 @@ for key, metric_types in list_metrics.items():
 
             scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
             #axes[0,i].plot(layers, scores, label=model_name)
-            axes[0,i].plot(layers, scores, label=model_name, color = dict_color[model_name][0], ls = dict_color[model_name][1])
+            axes[0,i].plot(layers, scores, label=dict_model_names[model_name], color = dict_color[model_name][0], ls = dict_color[model_name][1])
         #scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
         #axes[0,i].plot(layers, scores, label='identity')
         
@@ -197,8 +233,8 @@ for key, metric_types in list_metrics.items():
     fig.supylabel('fact')
     fig.tight_layout()
     plt.show()
-    #plt.savefig('/home/ec3731/issa_analysis/nn-analysis/fact_v2_{}.png'.format(key))
-    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/IT+_no_injection_{}.png'.format(key))
+    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/fact_modelname_{}.png'.format(key))
+    #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/IT+_no_injection_{}.png'.format(key))
 
 
 # ------------------------------------------------------------------------------------
