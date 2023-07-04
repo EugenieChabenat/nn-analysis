@@ -150,7 +150,12 @@ dict_model_names = {
     "injection_conv_IT": "Random convolutional injection at IT" ,
     "unfreeze_injection_IT": "Trained convolutional injection at IT" , 
     "subset_injection_IT": "Random linear injection of subset at IT", 
-    "injection_conv_subset_IT": "Random convolutional injection of subset at IT"
+    "injection_conv_subset_IT": "Random convolutional injection of subset at IT", 
+
+    "v1_no_injection": "Evaluation at V1, no injection", 
+    "v2_no_injection": "Evaluation at V2, no injection", 
+    "v4_no_injection": "Evaluation at V4, no injection", 
+    "IT_no_injection": "Evaluation at IT, no injection", 
 }
 model_names = [
     # random injection models  
