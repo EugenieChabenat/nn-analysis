@@ -123,6 +123,35 @@ list_metrics = {
     "Object Pose": ['obj_pose_x', 'obj_pose_y'], 
     "Object Pose 2": ['obj_pose_z', 'obj_pose']
 }
+dict_model_names = {
+    "injection_v1": "Random linear injection at V1",
+    "injection_separate_v1": "Trained linear injection at V1" , 
+    "injection_conv_v1": "Random convolutional injection at V1" ,
+    "unfreeze_injection_v1": "Trained convolutional injection at V1" , 
+    "subset_injection_v1": "Random linear injection of subset at V1", 
+    "injection_conv_subset_v1": "Random convolutional injection of subset at V1" ,
+
+    "injection_v2": "Random linear injection at V2",
+    "injection_separate_v2": "Trained linear injection at V2" , 
+    "injection_conv_v2": "Random convolutional injection at V2" ,
+    "unfreeze_injection_v2": "Trained convolutional injection at V2" , 
+    "subset_injection_v2": "Random linear injection of subset at V2", 
+    "injection_conv_subset_v2": "Random convolutional injection of subset at V2" ,
+
+    "injection_v4": "Random linear injection at V4",
+    "injection_separate_v4": "Trained linear injection at V4" , 
+    "injection_conv_v4": "Random convolutional injection at V4" ,
+    "unfreeze_injection_v4": "Trained convolutional injection at V4" , 
+    "subset_injection_v4": "Random linear injection of subset at V4", 
+    "injection_conv_subset_v4": "Random convolutional injection of subset at V4" ,
+
+    "injection_IT": "Random linear injection at IT",
+    "injection_separate_IT": "Trained linear injection at IT" , 
+    "injection_conv_IT": "Random convolutional injection at IT" ,
+    "unfreeze_injection_IT": "Trained convolutional injection at IT" , 
+    "subset_injection_IT": "Random linear injection of subset at IT", 
+    "injection_conv_subset_IT": "Random convolutional injection of subset at IT"
+}
 model_names = [
     # random injection models  
     #"injection_v1",
@@ -189,10 +218,7 @@ for key, metric_types in list_metrics.items():
     for i, metric_type in enumerate(metric_types):
         for model_name in model_names:
             scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
-            if model_name == "barlow_v1_inj_b": 
-                axes[0,i].plot(layers, scores, label="barlow_v3_inj", color = dict_color[model_name][0], ls = dict_color[model_name][1])
-            else: 
-                axes[0,i].plot(layers, scores, label=model_name, color = dict_color[model_name][0], ls = dict_color[model_name][1])
+            axes[0,i].plot(layers, scores, label=dict_model_names[model_name], color = dict_color[model_name][0], ls = dict_color[model_name][1])
         #scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
         #axes[0,i].plot(layers, scores, label='identity')
         
@@ -218,8 +244,8 @@ for key, metric_types in list_metrics.items():
     fig.supylabel('decode')
     fig.tight_layout()
     plt.show()
-    #plt.savefig('/home/ec3731/issa_analysis/nn-analysis/decode_v2_separate_{}.png'.format(key))
-    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/IT+_no_injection_{}.png'.format(key))
+    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/decode_modelname_{}.png'.format(key))
+    #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/IT+_no_injection_{}.png'.format(key))
 
 
 
