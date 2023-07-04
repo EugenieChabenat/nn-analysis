@@ -140,9 +140,10 @@ dict_model_names = {
     "v2_no_injection": "Evaluation at V2, no injection", 
     "v4_no_injection": "Evaluation at V4, no injection", 
     "IT_no_injection": "Evaluation at IT, no injection", 
-
-    "resnet50_untrained": "ResNet50 untrained", 
-    "barlow_twins_50epochs": "Vanilla Barlow Twins", 
+    
+    
+    "resnet50_allfeatures": "ResNet50 untrained", 
+    "bt_allfeatures": "Vanilla Barlow Twins", 
 }
 model_names = [
     # random injection models  
