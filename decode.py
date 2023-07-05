@@ -101,15 +101,27 @@ layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 2
 one_layer = 0
 metric = ["decode", 0]
 
-metric_types = ['obj_class']
-                
-metric_types = ['cam_pos_x', 'cam_pos_y', 'cam_scale', 'cam_pos']
-                
-#metric_types = ['brightness', 'contrast', 'saturation', 'hue', 'color', 'lighting']
-                
-#metric_types = ['obj_pos_x', 'obj_pos_y', 'obj_scale', 'obj_pos'] 
-
-#metric_types = ['obj_pose_x', 'obj_pose_y', 'obj_pose_z', 'obj_pose']
+dict_metric_names = {
+    'obj_class': "Object Class" , 
+    'cam_pos_x': "Camera Position - x", 
+    'cam_pos_y': "Camera Position - y", 
+    'cam_pos': "Camera Position", 
+    'cam_scale': "Camera Scale", 
+    'brightness': "Brightness", 
+    'lighting': "Lighting",
+    'contrast': "Contrast", 
+    'saturation': "Saturation",
+    'hue': "Hue", 
+    'color': "Color",
+    'obj_pos_x': "Object Position - x",
+    'obj_pos_y': "Object Position - y", 
+    'obj_pos': "Object Position", 
+    'obj_scale': "Object Scale",
+    'obj_pose_x': "Object Pose - x", 
+    'obj_pose_y': "Object Pose - y", 
+    'obj_pose_z':"Object Pose - z", 
+    'obj_pose': "Object Pose"
+}
 
 list_metrics = {
     "Object Class" : ['obj_class'], 
@@ -210,15 +222,6 @@ model_names = [
     #"barlow_fact_no_injection"
 ]
 
-"""model_names = [
-    "barlow_faces_texture",
-    #"identity", 
-    "barlow_faces_notexture", 
-    "barlow_faces_control", 
-    "faces_pretrained_notexture"
-    #"barlow_control"
-]"""
-
 
 for key, metric_types in list_metrics.items(): 
     
@@ -238,9 +241,9 @@ for key, metric_types in list_metrics.items():
         axes[0,i].axvline(x = 19, color = 'grey', alpha = 0.5, ls = 'dotted')
         axes[0,i].axvline(x = 20, color = 'grey', alpha = 0.5, ls = 'dotted')
         
-        axes[0,i].set_title(metric_type)
+        axes[0,i].set_title(dict_metric_names[metric_type])
         axes[0,i].set_xticks([0, 3, 6, 10, 16, 19, 20])
-        axes[0,i].set_xticklabels(['convolution', 'maxpool', 'inj v1', 'inj v2', 'inj v4', 'inj IT', 'avgpool'], rotation=45, ha='right')
+        axes[0,i].set_xticklabels(['1st convolution', 'maxpool', 'v1 injection', 'v2 injection', 'v4 injection', 'IT injection', 'avgpool'], rotation=45, ha='right')
         
         axes[0,i].text(4.5, 0.8, "Block V1", ha="center", va="center", size=12)
         axes[0,i].text(8, 0.8, "Block V2", ha="center", va="center", size=12)
@@ -252,7 +255,7 @@ for key, metric_types in list_metrics.items():
     fig.supylabel('decode')
     fig.tight_layout()
     plt.show()
-    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/decode_modelname_{}.png'.format(key))
+    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/decode_label_{}.png'.format(key))
     #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/IT+_no_injection_{}.png'.format(key))
 
 
