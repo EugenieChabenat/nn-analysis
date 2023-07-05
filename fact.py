@@ -89,11 +89,16 @@ layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 2
 one_layer = 0
 metric = ["fact", 0]
 
-metric_types = ['ss_inv-background', 'ss_inv-obj_motion', 'ss_inv-crop','ss_inv-color']
-                
-#metric_types = ['inv-background', 'inv-obj_motion', 'inv-crop', 'inv-color']
-                
-#metric_types = ['fact-background', 'fact-obj_motion', 'fact-crop', 'fact-color']
+dict_metric_names = {
+    'inv-background': "Background Invariance", 
+    'inv-obj_motion': "Background Invariance" , 
+    'inv-crop': "Crop Invariance",
+    'inv-color': "Color Invariance", 
+    'fact-background': "Background Factorization" ,
+    'fact-obj_motion': "Object Motion Factorization",
+    'fact-crop': "Crop Factorization", 
+    'fact-color': "Color Factorization"
+}
 
 list_metrics = {
     "Subspace Invariance": ['ss_inv-background', 'ss_inv-obj_motion'], 
@@ -218,9 +223,9 @@ for key, metric_types in list_metrics.items():
         axes[0,i].axvline(x = 19, color = 'grey', alpha = 0.5, ls = 'dotted')
         axes[0,i].axvline(x = 20, color = 'grey', alpha = 0.5, ls = 'dotted')
         axes[0,i].set_xticks([0, 3, 6, 10, 16, 19, 20])
-        axes[0,i].set_xticklabels(['', 'maxpool', 'inj v1', 'inj v2', 'inj v4', 'inj IT', 'avgpool'], rotation=45, ha='right')
+        axes[0,i].set_xticklabels(['', 'maxpool', 'v1 injection', 'v2 injection', 'v4 injection', 'IT injection', 'avgpool'], rotation=45, ha='right')
         
-        axes[0,i].set_title(metric_type)
+        axes[0,i].set_title(dict_metric_names[metric_type])
         
         axes[0,i].text(4.5, 0.2, "Block V1", ha="center", va="center", size=12)
         axes[0,i].text(8, 0.2, "Block V2", ha="center", va="center", size=12)
@@ -228,12 +233,12 @@ for key, metric_types in list_metrics.items():
         axes[0,i].text(17.5, 0.2, "Block IT", ha="center", va="center", size=12)
         axes[0,i].set_ylim(0.0, 1.0)
         
-        axes[0,i].legend(loc='center left')
+        axes[0,i].legend()#loc='center left')
     fig.supxlabel('layers')
     fig.supylabel('fact')
     fig.tight_layout()
     plt.show()
-    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/fact_modelname_{}.png'.format(key))
+    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/fact_labels_{}.png'.format(key))
     #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/IT+_no_injection_{}.png'.format(key))
 
 
