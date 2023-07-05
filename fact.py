@@ -233,12 +233,13 @@ for key, metric_types in list_metrics.items():
         axes[0,i].text(17.5, 0.2, "Block IT", ha="center", va="center", size=12)
         axes[0,i].set_ylim(0.0, 1.0)
         
-        axes[0,i].legend()#loc='center left')
+        #axes[0,i].legend()#loc='center left')
     fig.supxlabel('layers')
     fig.supylabel('fact')
     fig.tight_layout()
     plt.show()
-    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/fact_labels_{}.png'.format(key))
+    #plt.savefig('/home/ec3731/issa_analysis/nn-analysis/fact_labels_{}.png'.format(key))
+    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/IT_fact_{}.png'.format(key))
     #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/IT+_no_injection_{}.png'.format(key))
 
 
