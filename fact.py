@@ -223,7 +223,7 @@ for key, metric_types in list_metrics.items():
         axes[0,i].axvline(x = 19, color = 'grey', alpha = 0.5, ls = 'dotted')
         axes[0,i].axvline(x = 20, color = 'grey', alpha = 0.5, ls = 'dotted')
         axes[0,i].set_xticks([0, 3, 6, 10, 16, 19, 20])
-        axes[0,i].set_xticklabels(['', 'maxpool', 'v1 injection', 'v2 injection', 'v4 injection', 'IT injection', 'avgpool'], rotation=45, ha='right')
+        axes[0,i].set_xticklabels(['1st convolution', 'maxpool', 'v1 injection', 'v2 injection', 'v4 injection', 'IT injection', 'avgpool'], rotation=45, ha='right')
         
         axes[0,i].set_title(dict_metric_names[metric_type])
         
