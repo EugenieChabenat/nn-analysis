@@ -100,6 +100,18 @@ epoch = 29
 layers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 metric = ["curve", 1]
 
+dict_metric_names = {
+    "x_cam_trans": "Camera Translation - x", 
+    "y_cam_trans": "Camera Translation - y", 
+    "z_cam_trans": "Camera Translation - z", 
+    "x_cam_rot": "Camera Rotation - x", 
+    "y_cam_rot": "Camera Rotation - y", 
+    'x_cam_pan' "Camera Pan - x", 
+    'yz_cam_pan': "Camera Pan - yz", 
+    'x_obj_rot': "Object Rotation - x" ,
+    'y_obj_rot': "Object Rotation - y" , 
+}
+
 list_metrics = {
     "Camera Translation" : ["x_cam_trans", "y_cam_trans", "z_cam_trans"], 
     "Camera Rotation" : ["x_cam_rot", "y_cam_rot"], 
@@ -213,21 +225,21 @@ for key, metric_types in list_metrics.items():
         axes[0,i].axvline(x = 19, color = 'grey', alpha = 0.5, ls = 'dotted')
         axes[0,i].axvline(x = 20, color = 'grey', alpha = 0.5, ls = 'dotted')
         
-        axes[0,i].set_title(metric_type)
+        axes[0,i].set_title(dict_metric_names[metric_type])
         axes[0,i].set_xticks([0, 3, 6, 10, 16, 19, 20])
-        axes[0,i].set_xticklabels(['convolution', 'maxpool', 'inj v1', 'inj v2', 'inj v4', 'inj IT', 'avgpool'], rotation=45, ha='right')
+        axes[0,i].set_xticklabels(['1st convolution', 'maxpool', 'inj v1', 'inj v2', 'inj v4', 'inj IT', 'avgpool'], rotation=45, ha='right')
         
         axes[0,i].text(4.5, 0.2, "Block V1", ha="center", va="center", size=12)
         axes[0,i].text(8, 0.2, "Block V2", ha="center", va="center", size=12)
         axes[0,i].text(13, 0.2, "Block V4", ha="center", va="center", size=12)
         axes[0,i].text(17.5, 0.2, "Block IT", ha="center", va="center", size=12)
         axes[0,i].set_ylim(0.0, 1.)
-        axes[0,i].legend(loc='lower left')
+        axes[0,i].legend()#loc='lower left')
     fig.supxlabel('layers')
     fig.supylabel('curvature')
     fig.tight_layout()
     plt.show()
-    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/straight_modelname_{}.png'.format(key))
+    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/straight_label_{}.png'.format(key))
     #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/final_metrics/IT+no_injection_{}.png'.format(key))
 
 
