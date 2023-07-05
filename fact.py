@@ -91,7 +91,7 @@ metric = ["fact", 0]
 
 dict_metric_names = {
     'inv-background': "Background Invariance", 
-    'inv-obj_motion': "Background Invariance" , 
+    'inv-obj_motion': "Object Motion Invariance" , 
     'inv-crop': "Crop Invariance",
     'inv-color': "Color Invariance", 
     'fact-background': "Background Factorization" ,
