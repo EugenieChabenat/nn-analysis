@@ -106,7 +106,7 @@ dict_metric_names = {
     "z_cam_trans": "Camera Translation - z", 
     "x_cam_rot": "Camera Rotation - x", 
     "y_cam_rot": "Camera Rotation - y", 
-    'x_cam_pan' "Camera Pan - x", 
+    'x_cam_pan': "Camera Pan - x", 
     'yz_cam_pan': "Camera Pan - yz", 
     'x_obj_rot': "Object Rotation - x" ,
     'y_obj_rot': "Object Rotation - y" , 
