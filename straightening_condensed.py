@@ -127,7 +127,7 @@ dict_model_names = {
     "subset_injection_v1": "Random linear injection of subset at V1", 
     "injection_conv_subset_v1": "Random convolutional injection of subset at V1" ,
 
-    "injection_v2": "Random linear injection at V2",
+    "injection_v2_af": "Random linear injection at V2",
     "injection_separate_v2": "Trained linear injection at V2" , 
     "injection_conv_v2_af": "Random convolutional injection at V2" ,
     "unfreeze_injection_v2_af": "Trained convolutional injection at V2" , 
