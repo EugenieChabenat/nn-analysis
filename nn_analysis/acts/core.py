@@ -49,16 +49,20 @@ def compute_sizes(model, layer_names, dataset, device='cpu'):
             x1 = model.backbone.relu(x1)
             x1 = model.backbone.maxpool(x1)
             x1 = model.backbone.layer1(x1)
+            print('layer 1: ', x1.shape)
 
             x1_ = model.backbone.avgpool(x1)
             x1_ = x1.reshape(x1_.shape[0], -1)
+            print('reshape: ', x1_.shape)
             x1_ = model.backbone.fc(x1_)
+
+            z1 = model.bn(model.projector(x1_))
             
             x1 = model.backbone.layer2(x1)
             x1 = model.backbone.layer3(x1)
             x1 = model.backbone.layer4(x1)
             
-            z1 = model.bn(model.projector(x1_))
+            
             # ---- 
             
     finally:
