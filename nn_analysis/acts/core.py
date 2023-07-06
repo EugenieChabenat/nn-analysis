@@ -42,7 +42,18 @@ def compute_sizes(model, layer_names, dataset, device='cpu'):
             
             #model = model.module
             #model(images)
-            model.backbone(images)
+            #model.backbone(images)
+            # for v1 proj analysis 
+            x1 = model.backbone.conv1(images)
+            x1 = model.backbone.bn1(x1)
+            x1 = model.backbone.relu(x1)
+            x1 = model.backbone.maxpool(x1)
+            x1 = model.backbone.layer1(x1)
+            x1 = model.backbone.avgpool(x1)
+            x1 = x1.reshape(x1.shape[0], -1)
+            x1 = model.backbone.fc(x1)
+            z1 = model.bn(self.projector(x1))
+            # ---- 
             
     finally:
         remove_hooks(handles)
@@ -127,13 +138,20 @@ def save_dataset(filename, path, model, layer_names, dataset, device='cpu', batc
                     for j, index in enumerate(zip(*indices)):
                         f[path]['x'][index] = targets[j]
             with torch.no_grad():
-                #model(images)
-                #print('image shape: ', images.shape)
-      
-                #model.custom_resnet(images)
-                model.backbone(images)
-                #print('pred: \n', model.backbone(images))
-                #print('size: ', model.backbone(images).shape)"""
+                #model(images)      
+                #model.backbone(images)
+                
+                # for v1 no projector 
+                x1 = model.backbone.conv1(images)
+                x1 = model.backbone.bn1(x1)
+                x1 = model.backbone.relu(x1)
+                x1 = model.backbone.maxpool(x1)
+                x1 = model.backbone.layer1(x1)
+                x1 = model.backbone.avgpool(x1)
+                x1 = x1.reshape(x1.shape[0], -1)
+                x1 = model.backbone.fc(x1)
+                z1 = model.bn(self.projector(x1))
+                # --------- 
             
             
     finally:
