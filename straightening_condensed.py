@@ -205,7 +205,7 @@ model_names = [
     #"IT_no_injection",
     
     "resnet50_allfeatures", 
-    "bt_allfeatures", 
+    #"bt_allfeatures", 
     #"barlow_fact_no_injection"
 ]
 # ------------------------------------------------------------------------------------
