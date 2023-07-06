@@ -204,7 +204,7 @@ model_names = [
     #"v4_no_injection", 
     #"IT_no_injection",
     
-    "resnet50_allfeatures", 
+    #"resnet50_allfeatures", 
     #"bt_allfeatures", 
     #"barlow_fact_no_injection"
 ]
