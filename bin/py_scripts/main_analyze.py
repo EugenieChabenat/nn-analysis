@@ -27,8 +27,8 @@ def main(model_name, layers, metric_name, version, epoch=None, overwrite=False, 
     # v3 
     #layers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 16]
     
-    # v1
-    #layers = [0, 1, 2, 16]
+    # v1 no proj 
+    layers = [0, 1, 2, 3, 4, 5, 6, 20, 21, 22]
     
     # identity 
     #layers = [0]
@@ -53,7 +53,7 @@ def main(model_name, layers, metric_name, version, epoch=None, overwrite=False, 
 if __name__ == '__main__':
     print("Started main_analyze.py...")
     parser = argparse.ArgumentParser(description='Analyze activations')
-    parser.add_argument('--model_name', default= "injection_conv_subset_IT",  type=str,
+    parser.add_argument('--model_name', default= "injection_conv_subset_v1_proj",  type=str,
                         help='specify the model of which activations are saved')
     parser.add_argument('--layers', default = 0, type=int, nargs='+',
                         help='specify the layers of which activations are saved')
