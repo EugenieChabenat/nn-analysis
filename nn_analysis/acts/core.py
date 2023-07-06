@@ -52,6 +52,7 @@ def compute_sizes(model, layer_names, dataset, device='cpu'):
             print('layer 1: ', x1.shape)
 
             x1_ = model.backbone.avgpool(x1)
+            print('avgpool: ', x1_.shape)
             x1_ = x1.reshape(x1_.shape[0], -1)
             print('reshape: ', x1_.shape)
             x1_ = model.backbone.fc(x1_)
