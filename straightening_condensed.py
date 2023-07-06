@@ -34,6 +34,7 @@ metric_dict = {
              }
 
 dict_color = {
+    'injection_conv_subset_v1_proj':["black", '-'], 
     # random injection 
     "injection_v1_af" : ["orange", '-'],
     "injection_v2_af": ["orange", '-'], 
@@ -120,6 +121,8 @@ list_metrics = {
 }
 
 dict_model_names = {
+    "injection_conv_subset_v1_proj": "Random convolutional injection after projector at V1",  
+    
     "injection_v1_af": "Random linear injection at V1",
     "injection_separate_v1": "Trained linear injection at V1" , 
     "injection_conv_v1_af": "Random convolutional injection at V1" ,
@@ -158,6 +161,8 @@ dict_model_names = {
     "bt_allfeatures": "Vanilla Barlow Twins", 
 }
 model_names = [
+    "injection_conv_subset_v1_proj", 
+    
     # random injection models  
     "injection_v1_af",
     #"injection_v2_af", 
@@ -239,8 +244,8 @@ for key, metric_types in list_metrics.items():
     fig.supylabel('curvature')
     fig.tight_layout()
     plt.show()
-    #plt.savefig('/home/ec3731/issa_analysis/nn-analysis/straight_label_{}.png'.format(key))
-    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_straightening_{}.png'.format(key))
+    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/no_proj_v1_{}.png'.format(key))
+    #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_straightening_{}.png'.format(key))
     #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/final_metrics/V4+no_injection_{}.png'.format(key))
 
 
