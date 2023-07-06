@@ -68,7 +68,7 @@ def main(model_name, layers, acts_name, version, epoch=None, overwrite=False, de
     #layers = [0, 1, 2, 3, 4, 5, 6, 16]
     
     # v1 no proj 
-    layers = [0, 1, 2, 3, 4, 5, 6,7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
+    layers = [0, 1, 2, 3, 4, 5, 6,7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
     
     # identity 
     #layers = [0]
@@ -124,7 +124,7 @@ def main(model_name, layers, acts_name, version, epoch=None, overwrite=False, de
 if __name__ == '__main__':
     print("Started main_save.py...")
     parser = argparse.ArgumentParser(description='Save activations')
-    parser.add_argument('--model_name', default = "bt_allfeatures", type=str,
+    parser.add_argument('--model_name', default = ""injection_conv_subset_v1_proj", type=str,
                         help='Specify the model of which activations are saved')
     parser.add_argument('--layers',default= 2, type=int, nargs='+',
                         help='Specify the layers of which activations are saved')
