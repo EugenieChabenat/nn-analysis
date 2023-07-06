@@ -246,8 +246,9 @@ for key, metric_types in list_metrics.items():
     fig.tight_layout()
     plt.show()
     plt.savefig('/home/ec3731/issa_analysis/nn-analysis/d3-all-no_proj_v1_{}.png'.format(key))
+    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/no_proj/V1_{}.png'.format(key))
     #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_straightening_{}.png'.format(key))
-    #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/final_metrics/V4+no_injection_{}.png'.format(key))
+    
 
 
 
