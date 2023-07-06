@@ -91,7 +91,7 @@
     },
     "unfreeze_injection_IT": {
         "arch": "barlowtwins",
-        "path": "checkpoints/barlowtwins/unfreeze_conv_injection/unfreeze_injection_conv_IT_v1"
+        "path": "checkpoints/barlowtwins/unfreeze_injection_conv_IT_v1"
     },
     
     "unfreeze_injection_v1_af": {
