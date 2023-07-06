@@ -68,7 +68,7 @@ def main(model_name, layers, acts_name, version, epoch=None, overwrite=False, de
     #layers = [0, 1, 2, 3, 4, 5, 6, 16]
     
     # v1 no proj 
-    layers = [0, 1, 2, 20, 21, 22, 23, 24]
+    layers = [0, 1, 2, 20, 21, 22]
     
     # identity 
     #layers = [0]
