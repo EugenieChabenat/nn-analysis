@@ -13,7 +13,7 @@
         "path": "checkpoints/barlowtwins/injection_conv_subset_v1"
     },
     "injection_conv_subset_v1_proj": {
-        "arch": "barlowtwins",
+        "arch": "barlowtwins_proj",
         "path": "checkpoints/barlowtwins/injection_conv_subset_v1"
     },
     "injection_conv_subset_v2": {
