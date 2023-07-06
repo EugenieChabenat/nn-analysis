@@ -52,7 +52,7 @@ def compute_sizes(model, layer_names, dataset, device='cpu'):
             x1 = model.backbone.avgpool(x1)
             x1 = x1.reshape(x1.shape[0], -1)
             x1 = model.backbone.fc(x1)
-            z1 = model.bn(self.projector(x1))
+            z1 = model.bn(model.projector(x1))
             # ---- 
             
     finally:
@@ -150,7 +150,7 @@ def save_dataset(filename, path, model, layer_names, dataset, device='cpu', batc
                 x1 = model.backbone.avgpool(x1)
                 x1 = x1.reshape(x1.shape[0], -1)
                 x1 = model.backbone.fc(x1)
-                z1 = model.bn(self.projector(x1))
+                z1 = model.bn(model.projector(x1))
                 # --------- 
             
             
