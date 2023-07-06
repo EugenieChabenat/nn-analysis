@@ -59,7 +59,7 @@ def main(model_name, layers, acts_name, version, epoch=None, overwrite=False, de
     Model = importlib.import_module('.' + args.name, 'models').Model"""
     # --- 
     # complete 
-    layers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+    #layers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
     
     # v3 
     #layers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 16]
@@ -67,8 +67,8 @@ def main(model_name, layers, acts_name, version, epoch=None, overwrite=False, de
     # v2 
     #layers = [0, 1, 2, 3, 4, 5, 6, 16]
     
-    # v1
-    #layers = [0, 1, 2, 16]
+    # v1 no proj 
+    layers = [0, 1, 2, 20, 21, 22, 23, 24]
     
     # identity 
     #layers = [0]
@@ -124,11 +124,11 @@ def main(model_name, layers, acts_name, version, epoch=None, overwrite=False, de
 if __name__ == '__main__':
     print("Started main_save.py...")
     parser = argparse.ArgumentParser(description='Save activations')
-    parser.add_argument('--model_name', default = "injection_conv_subset_IT", type=str,
+    parser.add_argument('--model_name', default = "injection_conv_subset_v1_proj", type=str,
                         help='Specify the model of which activations are saved')
     parser.add_argument('--layers',default= 2, type=int, nargs='+',
                         help='Specify the layers of which activations are saved')
-    parser.add_argument('--acts_name', default = "pseudo_hvm_factorize_crop", type=str,
+    parser.add_argument('--acts_name', default = "hk2_cam_color", type=str,
                         help='Specify what activations are saved')
     parser.add_argument('--version', default = 0,  type=int,
                         help='Version number. Error will be raised if the activations for the specified version' \
