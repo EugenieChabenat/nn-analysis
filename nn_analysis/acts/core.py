@@ -49,7 +49,7 @@ def compute_sizes(model, layer_names, dataset, device='cpu'):
             x1 = model.backbone.relu(x1)
             x1 = model.backbone.maxpool(x1)
             x1 = model.backbone.layer1(x1)
-            #print('layer 1: ', x1.shape)
+            x1 = model.backbone.layer2(x1)
 
             x1_ = model.backbone.avgpool(x1)
             #print('avgpool: ', x1_.shape)
@@ -60,7 +60,7 @@ def compute_sizes(model, layer_names, dataset, device='cpu'):
 
             z1 = model.bn(model.projector(x1_))
             
-            x1 = model.backbone.layer2(x1)
+            #x1 = model.backbone.layer2(x1)
             x1 = model.backbone.layer3(x1)
             x1 = model.backbone.layer4(x1)
             
@@ -159,7 +159,8 @@ def save_dataset(filename, path, model, layer_names, dataset, device='cpu', batc
                 x1 = model.backbone.relu(x1)
                 x1 = model.backbone.maxpool(x1)
                 x1 = model.backbone.layer1(x1)
-    
+                x1 = model.backbone.layer2(x1)
+                
                 x1_ = model.backbone.avgpool(x1)
                 #x1_ = x1.reshape(x1_.shape[0], -1)
                 x1_ = x1_[:, :, 0, 0]
@@ -167,7 +168,7 @@ def save_dataset(filename, path, model, layer_names, dataset, device='cpu', batc
     
                 z1 = model.bn(model.projector(x1_))
                 
-                x1 = model.backbone.layer2(x1)
+                #x1 = model.backbone.layer2(x1)
                 x1 = model.backbone.layer3(x1)
                 x1 = model.backbone.layer4(x1)
                 # --------- 
