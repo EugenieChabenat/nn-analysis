@@ -97,7 +97,7 @@ dict_color = {
 # --- 
 epoch = 29
 layers = np.arange(2)
-layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28]
 one_layer = 0
 metric = ["decode", 0]
 
@@ -217,7 +217,7 @@ model_names = [
     #"v4_no_injection", 
     #"IT_no_injection", 
 
-    "resnet50_untrained", 
+    #"resnet50_untrained", 
     "barlow_twins_50epochs", 
     #"barlow_fact_no_injection"
 ]
@@ -255,8 +255,9 @@ for key, metric_types in list_metrics.items():
     fig.supylabel('decode')
     fig.tight_layout()
     plt.show()
-    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_decode_{}.png'.format(key))
-    #plt.savefig('/home/ec3731/issa_analysis/nn-analysis/decode_1label_{}.png'.format(key))
+    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/noproj_decode_{}.png'.format(key))
+    #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_decode_{}.png'.format(key))
+    
     #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/IT+_no_injection_{}.png'.format(key))
 
 
