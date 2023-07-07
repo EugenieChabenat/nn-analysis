@@ -232,7 +232,7 @@ for key, metric_types in list_metrics.items():
         
         axes[0,i].set_title(dict_metric_names[metric_type])
         axes[0,i].set_xticks([0, 3, 6, 10, 16, 19, 20])
-        axes[0,i].set_xticklabels(['1st convolution', 'maxpool', 'inj v1', 'inj v2', 'inj v4', 'inj IT', 'avgpool'], rotation=45, ha='right')
+        axes[0,i].set_xticklabels(['1st convolution', 'maxpool', 'v1 injection', 'v2 injection', 'v4 injection', 'IT injection', 'avgpool'], rotation=45, ha='right')
         
         axes[0,i].text(4.5, 0.9, "Block V1", ha="center", va="center", size=12)
         axes[0,i].text(8, 0.9, "Block V2", ha="center", va="center", size=12)
