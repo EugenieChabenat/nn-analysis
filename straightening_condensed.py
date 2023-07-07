@@ -161,7 +161,7 @@ dict_model_names = {
     "bt_allfeatures": "Vanilla Barlow Twins", 
 }
 model_names = [
-    "injection_conv_subset_v1_proj", 
+    #"injection_conv_subset_v1_proj", 
     
     # random injection models  
     "injection_v1_af",
@@ -205,7 +205,7 @@ model_names = [
     #"IT_no_injection",
     
     #"resnet50_allfeatures", 
-    #"bt_allfeatures", 
+    "bt_allfeatures", 
     #"barlow_fact_no_injection"
 ]
 # ------------------------------------------------------------------------------------
