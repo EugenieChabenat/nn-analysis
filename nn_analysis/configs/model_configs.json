@@ -135,7 +135,7 @@
         "path": "checkpoints/barlowtwins/vanilla_barlowtwins"
     },
     "bt_allfeatures": {
-        "arch": "resnet50",
+        "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/vanilla_barlowtwins"
     },
     
