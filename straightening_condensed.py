@@ -240,12 +240,13 @@ for key, metric_types in list_metrics.items():
         axes[0,i].text(17.5, 0.9, "Block IT", ha="center", va="center", size=12)
         axes[0,i].text(23.5, 0.9, "Projector", ha="center", va="center", size=12)
         axes[0,i].set_ylim(0.0, 1.)
-        #axes[0,i].legend()#loc='lower left')
+        if i == len(metric_types)-1: 
+            axes[0,i].legend(loc='center right', bbox_to_anchor=(1.25, 0.5))
     fig.supxlabel('layers')
     fig.supylabel('curvature')
     fig.tight_layout()
     plt.show()
-    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/d3-all-no_proj_IT_{}.png'.format(key))
+    #plt.savefig('/home/ec3731/issa_analysis/nn-analysis/d3-all-no_proj_IT_{}.png'.format(key))
     plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/no_proj/IT_{}.png'.format(key))
     #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_straightening_{}.png'.format(key))
     
