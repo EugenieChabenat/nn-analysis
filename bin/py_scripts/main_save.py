@@ -124,11 +124,11 @@ def main(model_name, layers, acts_name, version, epoch=None, overwrite=False, de
 if __name__ == '__main__':
     print("Started main_save.py...")
     parser = argparse.ArgumentParser(description='Save activations')
-    parser.add_argument('--model_name', default = "subset_injection_v2", type=str,
+    parser.add_argument('--model_name', default = "injection_conv_subset_v2", type=str,
                         help='Specify the model of which activations are saved')
     parser.add_argument('--layers',default= 2, type=int, nargs='+',
                         help='Specify the layers of which activations are saved')
-    parser.add_argument('--acts_name', default = "hvm", type=str,
+    parser.add_argument('--acts_name', default = "hk2_cam_color", type=str,
                         help='Specify what activations are saved')
     parser.add_argument('--version', default = 0,  type=int,
                         help='Version number. Error will be raised if the activations for the specified version' \
