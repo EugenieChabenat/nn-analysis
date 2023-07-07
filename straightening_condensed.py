@@ -234,11 +234,11 @@ for key, metric_types in list_metrics.items():
         axes[0,i].set_xticks([0, 3, 6, 10, 16, 19, 20])
         axes[0,i].set_xticklabels(['1st convolution', 'maxpool', 'v1 injection', 'v2 injection', 'v4 injection', 'IT injection', 'avgpool'], rotation=45, ha='right')
         
-        axes[0,i].text(4.5, 0.9, "Block V1", ha="center", va="center", size=11)
-        axes[0,i].text(8, 0.9, "Block V2", ha="center", va="center", size=11)
-        axes[0,i].text(13, 0.9, "Block V4", ha="center", va="center", size=11)
-        axes[0,i].text(17.5, 0.9, "Block IT", ha="center", va="center", size=11)
-        axes[0,i].text(23.5, 0.9, "Projector", ha="center", va="center", size=11)
+        axes[0,i].text(4.5, 0.9, "Block V1", ha="center", va="center", size=10)
+        axes[0,i].text(8, 0.9, "Block V2", ha="center", va="center", size=10)
+        axes[0,i].text(13, 0.9, "Block V4", ha="center", va="center", size=10)
+        axes[0,i].text(17.5, 0.9, "Block IT", ha="center", va="center", size=10)
+        axes[0,i].text(23.5, 0.9, "Projector", ha="center", va="center", size=10)
         axes[0,i].set_ylim(0.0, 1.)
         if i == len(metric_types)-1: 
             axes[0,i].legend(loc='center right', bbox_to_anchor=(1.6, 0.5))
