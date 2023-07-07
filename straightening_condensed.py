@@ -241,7 +241,7 @@ for key, metric_types in list_metrics.items():
         axes[0,i].text(23.5, 0.9, "Projector", ha="center", va="center", size=12)
         axes[0,i].set_ylim(0.0, 1.)
         if i == len(metric_types)-1: 
-            axes[0,i].legend(loc='center right', bbox_to_anchor=(1.25, 0.5))
+            axes[0,i].legend(loc='center right', bbox_to_anchor=(1.75, 0.5))
     fig.supxlabel('layers')
     fig.supylabel('curvature')
     fig.tight_layout()
