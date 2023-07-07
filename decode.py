@@ -174,8 +174,8 @@ dict_model_names = {
 }
 model_names = [
     # random injection models  
-    #"injection_v1",
-    "injection_v2", 
+    "injection_v1",
+    #"injection_v2", 
     #"injection_v4",
     #"injection_IT",
     
