@@ -128,7 +128,7 @@ if __name__ == '__main__':
                         help='Specify the model of which activations are saved')
     parser.add_argument('--layers',default= 2, type=int, nargs='+',
                         help='Specify the layers of which activations are saved')
-    parser.add_argument('--acts_name', default = "rust", type=str,
+    parser.add_argument('--acts_name', default = "pseudo_hvm_factorize_crop", type=str,
                         help='Specify what activations are saved')
     parser.add_argument('--version', default = 0,  type=int,
                         help='Version number. Error will be raised if the activations for the specified version' \
