@@ -244,7 +244,7 @@ for key, metric_types in list_metrics.items():
         for model_name in model_names:
             scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
             
-            for j in range len(scores): 
+            for j in range(len(scores)): 
                 if scores[j] <0: 
                     scores[j] = 0
                     
