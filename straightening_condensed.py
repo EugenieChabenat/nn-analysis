@@ -233,9 +233,9 @@ for key, metric_types in list_metrics.items():
             print('model: ', model_name)
             print('layer: ', layers)
             scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
-            axes[0,i].plot(layers, scores, label=dict_model_names[model_name], color = dict_color[model_name][0], ls = dict_color[model_name][1])
+            axes[key,i].plot(layers, scores, label=dict_model_names[model_name], color = dict_color[model_name][0], ls = dict_color[model_name][1])
         scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
-        axes[0,i].plot(layers, scores, label='identity', color = 'black')
+        axes[key,i].plot(layers, scores, label='identity', color = 'black')
         
         axes[key,i].axvline(x = 3, color = 'grey',  ls = 'dotted')
         axes[key,i].axvline(x = 6, color = 'grey', ls = 'dotted')
@@ -253,14 +253,14 @@ for key, metric_types in list_metrics.items():
         axes[key,i].text(13, 0.95, "Block V4", ha="center", va="center", size=14)#, size=60)
         axes[key,i].text(17.5, 0.95, "Block IT", ha="center", va="center", size=14)#, size=60)
         #axes[0,i].text(23.5, 0.9, "Projector", ha="center", va="center", size=10)
-        axes[0,i].set_ylim(0.0, 1.)
+        axes[key,i].set_ylim(0.0, 1.)
         if i == len(metric_types)-1 and key==1: 
             axes[0,i].legend(loc='center right', bbox_to_anchor=(1.6, 0.5))
 fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/V1_curve{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/1-V1_curve{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/2no_proj/V1_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_straightening_{}.png'.format(key))
     
