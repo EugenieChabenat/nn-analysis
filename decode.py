@@ -235,7 +235,7 @@ model_names = [
     #"barlow_fact_no_injection"
 ]
 
-fig, axes = pt.core.subplots(2, 5, size=(15,8), sharex=True)
+fig, axes = pt.core.subplots(2, 5, size=(15, 15), sharex=True)
 for key, metric_types in list_metrics.items(): 
     
     #fig, axes = pt.core.subplots(1, len(metric_types), size=(15,8), sharex=True)
@@ -271,15 +271,15 @@ for key, metric_types in list_metrics.items():
         #axes[0,i].text(23.5, 0.95, "Projector", ha="center", va="center", size=10)
         axes[key,i].set_ylim(0.0, 1.)
         #axes[0,i].legend()#loc='center left')
-        if i == len(metric_types)-1: 
-            axes[key,i].legend(loc='center right', bbox_to_anchor=(1.75, 0.5))
-    fig.supxlabel('layers')
-    fig.supylabel('decode')
-    fig.tight_layout()
-    plt.show()
-    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/1thesis-v1_decode_{}.png'.format(key))
-    #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/no_proj2/v1_decode_{}.png'.format(key))
-    #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_decode_{}.png'.format(key))
+        if i == len(metric_types)-1 and key == 0: 
+            axes[key,i].legend(loc='center right', bbox_to_anchor=(1.65, 0.5))
+fig.supxlabel('layers')
+fig.supylabel('decode')
+fig.tight_layout()
+plt.show()
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/2thesis-v1_decode_{}.png'.format(key))
+#plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/no_proj2/v1_decode_{}.png'.format(key))
+#plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_decode_{}.png'.format(key))
     
    
 
