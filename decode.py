@@ -263,7 +263,7 @@ for key, metric_types in list_metrics.items():
         axes[key,i].axvline(x = 19, color = 'grey', ls = 'dotted')
         axes[key,i].axvline(x = 20, color = 'grey' , ls = 'dotted')
         
-        axes[key,i].set_title(dict_metric_names[metric_type])#, fontsize =60)
+        axes[key,i].set_title(dict_metric_names[metric_type], fontsize=18)#, fontsize =60)
         axes[key,i].set_xticks([0, 3, 6, 10, 16, 19, 20])
         axes[key,i].set_xticklabels(['1st convolution', 'maxpool', 'v1 injection', 'v2 injection', 'v4 injection', 'IT injection', 'avgpool'], rotation=45, ha='right')#, fontsize=60)
         
@@ -275,12 +275,12 @@ for key, metric_types in list_metrics.items():
         axes[key,i].set_ylim(0.0, 1.)
         #axes[0,i].legend()#loc='center left')
         if i == len(metric_types)-1 and key == 0: 
-            axes[key,i].legend(loc='center right', bbox_to_anchor=(1.75, 0.5), fontsize=12)#, fontsize=60)
+            axes[key,i].legend(loc='center right', bbox_to_anchor=(1.75, 0.5), fontsize=18)#, fontsize=60)
 fig.supxlabel('layers')#, fontsize=60)
 fig.supylabel('decode')#, fontsize=60)
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/11thesis-v1_decode_{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/12thesis-v1_decode_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/no_proj2/v1_decode_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_decode_{}.png'.format(key))
     
