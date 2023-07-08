@@ -37,7 +37,7 @@ metric_dict = {'obj_class': 'Object Class',
 
 dict_color = {
     # no projector linear 
-    "no_projector_linear_v1":  ["orange", '--'], 
+    "no_projector_linear_v1":  ["red", '--'], 
     
     # random injection 
     "injection_v1" : ["orange", '-'],
@@ -256,7 +256,7 @@ for key, metric_types in list_metrics.items():
         axes[0,i].text(8, 0.95, "Block V2", ha="center", va="center", size=10)
         axes[0,i].text(13, 0.95, "Block V4", ha="center", va="center", size=10)
         axes[0,i].text(17.5, 0.95, "Block IT", ha="center", va="center", size=10)
-        axes[0,i].text(23.5, 0.95, "Projector", ha="center", va="center", size=10)
+        #axes[0,i].text(23.5, 0.95, "Projector", ha="center", va="center", size=10)
         axes[0,i].set_ylim(0.0, 1.)
         #axes[0,i].legend()#loc='center left')
         if i == len(metric_types)-1: 
