@@ -275,7 +275,7 @@ for key, metric_types in list_metrics.items():
         axes[key,i].set_ylim(0.0, 1.)
         #axes[0,i].legend()#loc='center left')
         if i == len(metric_types)-1 and key == 0: 
-            axes[key,i].legend(loc='center right', bbox_to_anchor=(1.75, 0.5), size=12)#, fontsize=60)
+            axes[key,i].legend(loc='center right', bbox_to_anchor=(1.75, 0.5), fontsize=12)#, fontsize=60)
 fig.supxlabel('layers')#, fontsize=60)
 fig.supylabel('decode')#, fontsize=60)
 fig.tight_layout()
