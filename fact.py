@@ -241,13 +241,13 @@ for key, metric_types in list_metrics.items():
         axes[key,i].tick_params(axis='y', labelsize=14)
         
         axes[0,i].legend()#loc='center left')
-    fig.supxlabel('layers')
-    fig.supylabel('factorization')
-    fig.tight_layout()
-    plt.show()
-    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/1v1_fact_{}.png'.format(key))
-    #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_fact_{}.png'.format(key))
-    #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/IT+_no_injection_{}.png'.format(key))
+fig.supxlabel('layers')
+fig.supylabel('factorization')
+fig.tight_layout()
+plt.show()
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/2v1_fact_{}.png'.format(key))
+#plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_fact_{}.png'.format(key))
+#plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/IT+_no_injection_{}.png'.format(key))
 
 
 # ------------------------------------------------------------------------------------
