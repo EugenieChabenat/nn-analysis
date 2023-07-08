@@ -97,10 +97,10 @@ dict_metric_names = {
     'inv-obj_motion': "Object Motion Invariance" , 
     'inv-crop': "Crop Invariance",
     'inv-color': "Color Invariance", 
-    'fact-background': "Background Factorization" ,
-    'fact-obj_motion': "Object Motion Factorization",
-    'fact-crop': "Crop Factorization", 
-    'fact-color': "Color Factorization"
+    'fact-background': "Factorization - Background" ,
+    'fact-obj_motion': "Factorization - Object Motion",
+    'fact-crop': "Factorization - Crop", 
+    'fact-color': "Factorization - Color"
 }
 
 """list_metrics = {
@@ -209,7 +209,7 @@ model_names = [
 # ------------------------------------------------------------------------------------
 # LAYERS PLOT 
 # ------------------------------------------------------------------------------------
-fig, axes = pt.core.subplots(2,2 , size=(10, 10), sharex=True)
+fig, axes = pt.core.subplots(2,2 , size=(8, 8), sharex=True)
 for key, metric_types in list_metrics.items(): 
     #fig, axes = pt.core.subplots(1, len(metric_types), size=(10, 8), sharex=True)
     for i, metric_type in enumerate(metric_types):
@@ -245,7 +245,7 @@ fig.supxlabel('layers')
 fig.supylabel('factorization')
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/1-v1_fact_{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/2-v1_fact_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_fact_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/IT+_no_injection_{}.png'.format(key))
 
