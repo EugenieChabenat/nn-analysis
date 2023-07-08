@@ -140,7 +140,7 @@ dict_metric_names = {
 }"""
 
 list_metrics = {
-    0 : ['obj_class', 'obj_pos_x', 'obj_pos_y,' 'obj_pose', 'obj_scale'], 
+    0 : ['obj_class', 'obj_pos_x', 'obj_pos_y', 'obj_pose', 'obj_scale'], 
     1 : ['cam_pos_x', 'cam_pos_y', 'cam_scale',  'lighting', 'color']
 }
 
