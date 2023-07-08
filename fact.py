@@ -27,6 +27,9 @@ metric_dict = {'ss_inv-background': 'SS Invariance - Background',
                'fact-color': 'Factorization - Color'
               }
 dict_color = {
+    # trained without projector 
+    "noprojector_linear_v1":  ["brown", '--'], 
+    
     # random injection 
     "injection_v1" : ["orange", '-'],
     "injection_v2": ["orange", '-'], 
@@ -116,7 +119,8 @@ dict_model_names = {
     "unfreeze_injection_v1": "Trained convolutional injection at V1" , 
     "subset_injection_v1": "Random linear injection of subset at V1", 
     "injection_conv_subset_v1": "Random convolutional injection of subset at V1" ,
-
+    "noprojector_linear_v1": "Random linear injection at V1 - no projector", 
+    
     "injection_v2": "Random linear injection at V2",
     "injection_separate_v2": "Trained linear injection at V2" , 
     "injection_conv_v2": "Random convolutional injection at V2" ,
@@ -147,6 +151,9 @@ dict_model_names = {
     "barlow_twins_50epochs": "Vanilla Barlow Twins", 
 }
 model_names = [
+    # trained without projector 
+    "noprojector_linear_v1", 
+    
     # random injection models  
     "injection_v1",
     #"injection_v2", 
@@ -232,8 +239,8 @@ for key, metric_types in list_metrics.items():
     fig.supylabel('fact')
     fig.tight_layout()
     plt.show()
-    #plt.savefig('/home/ec3731/issa_analysis/nn-analysis/fact_labels_{}.png'.format(key))
-    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_fact_{}.png'.format(key))
+    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v1_fact_{}.png'.format(key))
+    #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_fact_{}.png'.format(key))
     #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/IT+_no_injection_{}.png'.format(key))
 
 
