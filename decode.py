@@ -236,7 +236,7 @@ model_names = [
 ]
 
 #fig, axes = pt.core.subplots(2, 5, size=(40, 40), sharex=True)
-fig, axes = pt.core.subplots(2, 5, size=(8, 8), sharex=True)
+fig, axes = pt.core.subplots(2, 5, size=(10, 8), sharex=True)
 for key, metric_types in list_metrics.items(): 
     
     #fig, axes = pt.core.subplots(1, len(metric_types), size=(15,8), sharex=True)
@@ -265,7 +265,7 @@ for key, metric_types in list_metrics.items():
         
         axes[key,i].set_title(dict_metric_names[metric_type], fontsize=18)#, fontsize =60)
         axes[key,i].set_xticks([0, 3, 6, 10, 16, 19, 20])
-        axes[key,i].set_xticklabels(['1st convolution', 'maxpool', 'v1 injection', 'v2 injection', 'v4 injection', 'IT injection', 'avgpool'], rotation=45, ha='right')#, fontsize=60)
+        axes[key,i].set_xticklabels(['1st convolution', 'maxpool', 'v1 injection', 'v2 injection', 'v4 injection', 'IT injection', 'avgpool'], rotation=45, ha='right', fontsize=16)#, fontsize=60)
         
         axes[key,i].text(4.5, 0.95, "Block V1", ha="center", va="center", size=12)#, size=60)
         axes[key,i].text(8, 0.95, "Block V2", ha="center", va="center", size=12)#, size=60)
@@ -280,7 +280,7 @@ fig.supxlabel('layers')#, fontsize=60)
 fig.supylabel('decode')#, fontsize=60)
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/12thesis-v1_decode_{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/13thesis-v1_decode_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/no_proj2/v1_decode_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_decode_{}.png'.format(key))
     
