@@ -188,46 +188,46 @@ model_names = [
     #"noprojector_linear_v1", 
     
     # random injection models  
-    #"injection_v1",
-    "injection_v2", 
+    "injection_v1",
+    #"injection_v2", 
     #"injection_v4",
     #"injection_IT",
     
     # convolution injection models 
-    #"injection_conv_v1", 
-    "injection_conv_v2", 
+    "injection_conv_v1", 
+    #"injection_conv_v2", 
     #"injection_conv_v4", 
     #"injection_conv_IT", 
     
     # unfreeze convolution injection models 
-    #"unfreeze_injection_v1", 
-    "unfreeze_injection_v2", 
+    "unfreeze_injection_v1", 
+    #"unfreeze_injection_v2", 
     #"unfreeze_injection_v4", 
     #"unfreeze_injection_IT", 
 
     # subset 
-    #"subset_injection_v1", 
-    "subset_injection_v2", 
+    "subset_injection_v1", 
+    #"subset_injection_v2", 
     #"subset_injection_v4", 
     #"subset_injection_IT",
 
     # conv subset injection 
-    #"injection_conv_subset_v1", 
-    "injection_conv_subset_v2", 
+    "injection_conv_subset_v1", 
+    #"injection_conv_subset_v2", 
     #"injection_conv_subset_v4", 
     #"injection_conv_subset_IT",
 
 
     # separate learning of weights 
-    #"injection_separate_v1", 
-    "injection_separate_v2", 
+    "injection_separate_v1", 
+    #"injection_separate_v2", 
     #"injection_separate_v4", 
     #"injection_separate_IT",
     
     
     # control models 
-    #"v1_no_injection", 
-    "v2_no_injection", 
+    "v1_no_injection", 
+    #"v2_no_injection", 
     #"v4_no_injection", 
     #"IT_no_injection", 
 
@@ -282,7 +282,7 @@ fig.supxlabel('layers')#, fontsize=60)
 fig.supylabel('decode')#, fontsize=60)
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/V2_decode_{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/V1_decode_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/no_proj2/v1_decode_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_decode_{}.png'.format(key))
     
