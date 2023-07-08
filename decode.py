@@ -272,12 +272,12 @@ for key, metric_types in list_metrics.items():
         axes[key,i].set_ylim(0.0, 1.)
         #axes[0,i].legend()#loc='center left')
         if i == len(metric_types)-1 and key == 0: 
-            axes[key,i].legend(loc='center right', bbox_to_anchor=(1.65, 0.5))
-fig.supxlabel('layers')
-fig.supylabel('decode')
+            axes[key,i].legend(loc='center right', bbox_to_anchor=(1.65, 0.5), fontsize=20)
+fig.supxlabel('layers', fontsize=20)
+fig.supylabel('decode', fontsize=20)
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/2thesis-v1_decode_{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/3thesis-v1_decode_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/no_proj2/v1_decode_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_decode_{}.png'.format(key))
     
