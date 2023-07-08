@@ -235,7 +235,7 @@ model_names = [
     #"barlow_fact_no_injection"
 ]
 
-fig, axes = pt.core.subplots(2, 5, size=(25, 25), sharex=True)
+fig, axes = pt.core.subplots(2, 5, size=(40, 40), sharex=True)
 for key, metric_types in list_metrics.items(): 
     
     #fig, axes = pt.core.subplots(1, len(metric_types), size=(15,8), sharex=True)
@@ -277,7 +277,7 @@ fig.supxlabel('layers', fontsize=60)
 fig.supylabel('decode', fontsize=60)
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/4thesis-v1_decode_{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/5thesis-v1_decode_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/no_proj2/v1_decode_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_decode_{}.png'.format(key))
     
