@@ -232,7 +232,7 @@ model_names = [
 
 for key, metric_types in list_metrics.items(): 
     
-    fig, axes = pt.core.subplots(1, len(metric_types), size=(10,8), sharex=True)
+    fig, axes = pt.core.subplots(1, len(metric_types), size=(15,8), sharex=True)
     for i, metric_type in enumerate(metric_types):
         for model_name in model_names:
             scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
@@ -260,7 +260,7 @@ for key, metric_types in list_metrics.items():
         axes[0,i].set_ylim(0.0, 1.)
         #axes[0,i].legend()#loc='center left')
         if i == len(metric_types)-1: 
-            axes[0,i].legend(loc='center right', bbox_to_anchor=(1.6, 0.5))
+            axes[0,i].legend(loc='center right', bbox_to_anchor=(1.75, 0.5))
     fig.supxlabel('layers')
     fig.supylabel('decode')
     fig.tight_layout()
