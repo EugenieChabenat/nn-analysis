@@ -36,6 +36,9 @@ metric_dict = {'obj_class': 'Object Class',
                }
 
 dict_color = {
+    # no projector linear 
+    "no_projector_linear_v1":  ["darkblue", '-']
+    
     # random injection 
     "injection_v1" : ["orange", '-'],
     "injection_v2": ["orange", '-'], 
@@ -97,7 +100,7 @@ dict_color = {
 # --- 
 epoch = 29
 layers = np.arange(2)
-layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27]
+layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]#, 21, 22, 23, 24, 25, 26, 27]
 one_layer = 0
 metric = ["decode", 0]
 
@@ -142,6 +145,7 @@ dict_model_names = {
     "unfreeze_injection_v1": "Trained convolutional injection at V1" , 
     "subset_injection_v1": "Random linear injection of subset at V1", 
     "injection_conv_subset_v1": "Random convolutional injection of subset at V1" ,
+    "no_projector_linear_v1": "Random linear injection of subset at V1 - no projector" ,
 
     "injection_v2": "Random linear injection at V2",
     "injection_separate_v2": "Trained linear injection at V2" , 
@@ -173,51 +177,54 @@ dict_model_names = {
     "barlow_twins_50epochs": "Vanilla Barlow Twins", 
 }
 model_names = [
+    # random linear no projector
+    "no_projector_linear_v1", 
+    
     # random injection models  
     #"injection_v1",
     #"injection_v2", 
     #"injection_v4",
-    "injection_IT",
+    #"injection_IT",
     
     # convolution injection models 
-    #"injection_conv_v1", 
+    "injection_conv_v1", 
     #"injection_conv_v2", 
     #"injection_conv_v4", 
-    "injection_conv_IT", 
+    #"injection_conv_IT", 
     
     # unfreeze convolution injection models 
-    #"unfreeze_injection_v1", 
+    "unfreeze_injection_v1", 
     #"unfreeze_injection_v2", 
     #"unfreeze_injection_v4", 
-    "unfreeze_injection_IT", 
+    #"unfreeze_injection_IT", 
 
     # subset 
-    #"subset_injection_v1", 
+    "subset_injection_v1", 
     #"subset_injection_v2", 
     #"subset_injection_v4", 
-    "subset_injection_IT",
+    #"subset_injection_IT",
 
     # conv subset injection 
-    #"injection_conv_subset_v1", 
+    "injection_conv_subset_v1", 
     #"injection_conv_subset_v2", 
     #"injection_conv_subset_v4", 
-    "injection_conv_subset_IT",
+    #"injection_conv_subset_IT",
 
 
     # separate learning of weights 
-    #"injection_separate_v1", 
+    "injection_separate_v1", 
     #"injection_separate_v2", 
     #"injection_separate_v4", 
-    "injection_separate_IT",
+    #"injection_separate_IT",
     
     
     # control models 
-    #"v1_no_injection", 
+    "v1_no_injection", 
     #"v2_no_injection", 
     #"v4_no_injection", 
-    "IT_no_injection", 
+    #"IT_no_injection", 
 
-    #"resnet50_untrained", 
+    "resnet50_untrained", 
     "barlow_twins_50epochs", 
     #"barlow_fact_no_injection"
 ]
@@ -258,8 +265,8 @@ for key, metric_types in list_metrics.items():
     fig.supylabel('decode')
     fig.tight_layout()
     plt.show()
-    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/noproj_IT_decode_{}.png'.format(key))
-    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/no_proj/noproj_IT_decode_{}.png'.format(key))
+    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/new_v1_decode_{}.png'.format(key))
+    #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/no_proj/noproj_IT_decode_{}.png'.format(key))
     #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_decode_{}.png'.format(key))
     
    
