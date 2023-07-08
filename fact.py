@@ -111,11 +111,17 @@ dict_metric_names = {
     "Factorization": ['fact-background', 'fact-obj_motion'],
     "Factorization 2": [ 'fact-crop', 'fact-color']
 }"""
-
+# factorization
 list_metrics = {
     0: ['fact-background', 'fact-obj_motion'],
     1: ['fact-crop', 'fact-color']
 }
+# invariance
+list_metrics = {
+    0: ['inv-background', 'inv-obj_motion'],
+    1: ['inv-crop', 'inv-color']
+}
+
 
 dict_model_names = {
     "injection_v1": "Random linear injection at V1",
@@ -245,7 +251,7 @@ fig.supxlabel('layers')
 fig.supylabel('factorization')
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/4-IT_fact_{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/4-IT_inv_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_fact_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/IT+_no_injection_{}.png'.format(key))
 
