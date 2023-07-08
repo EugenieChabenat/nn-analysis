@@ -223,7 +223,7 @@ model_names = [
 # ------------------------------------------------------------------------------------
 # LAYERS PLOT 
 # ------------------------------------------------------------------------------------
-fig, axes = pt.core.subplots(2, 2, size=(10, 10), sharex=True)
+fig, axes = pt.core.subplots(2, 2, size=(10, 8), sharex=True)
 for key, metric_types in list_metrics.items(): 
 
     #fig, axes = pt.core.subplots(1, len(metric_types), size=(10,8), sharex=True)
@@ -258,7 +258,7 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/pan-rot-IT_curve{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/pan-rot-2-IT_curve{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/2no_proj/V1_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_straightening_{}.png'.format(key))
     
