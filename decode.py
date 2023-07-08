@@ -37,7 +37,7 @@ metric_dict = {'obj_class': 'Object Class',
 
 dict_color = {
     # no projector linear 
-    "no_projector_linear_v1":  ["red", '--'], 
+    "no_projector_linear_v1":  ["brown", '--'], 
     
     # random injection 
     "injection_v1" : ["orange", '-'],
