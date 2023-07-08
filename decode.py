@@ -190,46 +190,46 @@ model_names = [
     # random injection models  
     #"injection_v1",
     #"injection_v2", 
-    #"injection_v4",
-    "injection_IT",
+    "injection_v4",
+    #"injection_IT",
     
     # convolution injection models 
     #"injection_conv_v1", 
     #"injection_conv_v2", 
-    #"injection_conv_v4", 
-    "injection_conv_IT", 
+    "injection_conv_v4", 
+    #"injection_conv_IT", 
     
     # unfreeze convolution injection models 
     #"unfreeze_injection_v1", 
     #"unfreeze_injection_v2", 
-    #"unfreeze_injection_v4", 
-    "unfreeze_injection_IT", 
+    "unfreeze_injection_v4", 
+    #"unfreeze_injection_IT", 
 
     # subset 
     #"subset_injection_v1", 
     #"subset_injection_v2", 
-    #"subset_injection_v4", 
-    "subset_injection_IT",
+    "subset_injection_v4", 
+    #"subset_injection_IT",
 
     # conv subset injection 
     #"injection_conv_subset_v1", 
     #"injection_conv_subset_v2", 
-    #"injection_conv_subset_v4", 
-    "injection_conv_subset_IT",
+    "injection_conv_subset_v4", 
+    #"injection_conv_subset_IT",
 
 
     # separate learning of weights 
     #"injection_separate_v1", 
     #"injection_separate_v2", 
-    #"injection_separate_v4", 
-    "injection_separate_IT",
+    "injection_separate_v4", 
+    #"injection_separate_IT",
     
     
     # control models 
     #"v1_no_injection", 
     #"v2_no_injection", 
-    #"v4_no_injection", 
-    "IT_no_injection", 
+    "v4_no_injection", 
+    #"IT_no_injection", 
 
     "resnet50_untrained", 
     "barlow_twins_50epochs", 
@@ -276,13 +276,13 @@ for key, metric_types in list_metrics.items():
         axes[key,i].set_ylim(0.0, 1.)
         axes[key,i].tick_params(axis='y', labelsize=14)
         #axes[0,i].legend()#loc='center left')
-        #if i == len(metric_types)-1 and key == 0: 
-            #axes[key,i].legend(loc='center right', bbox_to_anchor=(1.75, 0.5), fontsize=18)#, fontsize=60)
+        if i == len(metric_types)-2 and key == 0: 
+            axes[key,i].legend(loc='lower right', bbox_to_anchor=(1.75, 0.5), fontsize=18)#, fontsize=60)
 fig.supxlabel('layers')#, fontsize=60)
 fig.supylabel('decode')#, fontsize=60)
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/1thesis-IT_decode_{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/1thesis-V4_decode_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/no_proj2/v1_decode_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_decode_{}.png'.format(key))
     
