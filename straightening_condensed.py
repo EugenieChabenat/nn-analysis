@@ -253,7 +253,7 @@ for key, metric_types in list_metrics.items():
     fig.tight_layout()
     plt.show()
     plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v1_curve{}.png'.format(key))
-    #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/no_proj/V1_{}.png'.format(key))
+    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/2no_proj/V1_{}.png'.format(key))
     #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_straightening_{}.png'.format(key))
     
 
