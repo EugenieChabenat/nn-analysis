@@ -114,7 +114,7 @@ dict_metric_names = {
 
 list_metrics = {
     0: ['fact-background', 'fact-obj_motion'],
-    1: [ 'fact-crop', 'fact-color']
+    1: ['fact-crop', 'fact-color']
 }
 
 dict_model_names = {
@@ -211,7 +211,7 @@ model_names = [
 # ------------------------------------------------------------------------------------
 fig, axes = pt.core.subplots(2,2 , size=(10, 10), sharex=True)
 for key, metric_types in list_metrics.items(): 
-    fig, axes = pt.core.subplots(1, len(metric_types), size=(10, 8), sharex=True)
+    #fig, axes = pt.core.subplots(1, len(metric_types), size=(10, 8), sharex=True)
     for i, metric_type in enumerate(metric_types):
         for model_name in model_names:
         
