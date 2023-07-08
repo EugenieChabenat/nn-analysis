@@ -140,8 +140,9 @@ dict_metric_names = {
 }"""
 
 list_metrics = {
-    0 : ['obj_class', 'obj_pos_x', 'obj_pos_y', 'obj_pose', 'obj_scale'], 
-    1 : ['cam_pos_x', 'cam_pos_y', 'cam_scale',  'lighting', 'color']
+    0 : ['obj_class', 'obj_pos', 'obj_scale'], 
+    1 : ['obj_pose', 'cam_pos_x', 'cam_pos_y'], 
+    2 : ['cam_scale',  'lighting', 'color']
 }
 
 dict_model_names = {
@@ -236,7 +237,7 @@ model_names = [
 ]
 
 #fig, axes = pt.core.subplots(2, 5, size=(40, 40), sharex=True)
-fig, axes = pt.core.subplots(2, 5, size=(10, 10), sharex=True)
+fig, axes = pt.core.subplots(3, 3, size=(10, 10), sharex=True)
 for key, metric_types in list_metrics.items(): 
     
     #fig, axes = pt.core.subplots(1, len(metric_types), size=(15,8), sharex=True)
@@ -281,7 +282,7 @@ fig.supxlabel('layers')#, fontsize=60)
 fig.supylabel('decode')#, fontsize=60)
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/17thesis-IT_decode_{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/1thesis-IT_decode_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/no_proj2/v1_decode_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_decode_{}.png'.format(key))
     
