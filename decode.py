@@ -37,7 +37,7 @@ metric_dict = {'obj_class': 'Object Class',
 
 dict_color = {
     # no projector linear 
-    "no_projector_linear_v1":  ["brown", '--'], 
+    "noprojector_linear_v1":  ["brown", '--'], 
     
     # random injection 
     "injection_v1" : ["orange", '-'],
@@ -145,7 +145,7 @@ dict_model_names = {
     "unfreeze_injection_v1": "Trained convolutional injection at V1" , 
     "subset_injection_v1": "Random linear injection of subset at V1", 
     "injection_conv_subset_v1": "Random convolutional injection of subset at V1" ,
-    "no_projector_linear_v1": "Random linear injection of subset at V1 - no projector" ,
+    "noprojector_linear_v1": "Random linear injection of subset at V1 - no projector" ,
 
     "injection_v2": "Random linear injection at V2",
     "injection_separate_v2": "Trained linear injection at V2" , 
@@ -178,7 +178,7 @@ dict_model_names = {
 }
 model_names = [
     # random linear no projector
-    "no_projector_linear_v1", 
+    "noprojector_linear_v1", 
     
     # random injection models  
     "injection_v1",
