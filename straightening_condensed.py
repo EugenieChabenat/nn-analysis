@@ -167,7 +167,7 @@ dict_model_names = {
 }
 model_names = [
     #"injection_conv_subset_v1_proj", 
-    "no_projector_linear_v1"
+    "no_projector_linear_v1", 
     
     # random injection models  
     "injection_v1_af",
