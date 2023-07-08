@@ -8,6 +8,10 @@
     "identity_pc": {
         "arch": "identity"
     },
+    "no_projector_linear_v1": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/injection_conv_subset_v1"
+    },
     "injection_conv_subset_v1": {
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/injection_conv_subset_v1"
