@@ -276,13 +276,13 @@ for key, metric_types in list_metrics.items():
         axes[key,i].set_ylim(0.0, 1.)
         axes[key,i].tick_params(axis='y', labelsize=14)
         #axes[0,i].legend()#loc='center left')
-        if i == len(metric_types)-2 and key == 2: 
-            axes[key,i].legend(loc='lower center', bbox_to_anchor=(1.75, 0.5), fontsize=18)#, fontsize=60)
+        #if i == len(metric_types)-2 and key == 2: 
+            #axes[key,i].legend(loc='lower center', bbox_to_anchor=(1.75, 0.5), fontsize=18)#, fontsize=60)
 fig.supxlabel('layers')#, fontsize=60)
 fig.supylabel('decode')#, fontsize=60)
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/2thesis-V4_decode_{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/V4_decode_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/no_proj2/v1_decode_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_decode_{}.png'.format(key))
     
