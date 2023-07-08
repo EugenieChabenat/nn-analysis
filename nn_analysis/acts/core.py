@@ -42,9 +42,9 @@ def compute_sizes(model, layer_names, dataset, device='cpu'):
             
             #model = model.module
             #model(images)
-            #model.backbone(images)
+            model.backbone(images)
             # for v1 proj analysis 
-            x1 = model.backbone.conv1(images)
+            """x1 = model.backbone.conv1(images)
             x1 = model.backbone.bn1(x1)
             x1 = model.backbone.relu(x1)
             x1 = model.backbone.maxpool(x1)
@@ -64,7 +64,7 @@ def compute_sizes(model, layer_names, dataset, device='cpu'):
             
             #x1 = model.backbone.layer2(x1)
             #x1 = model.backbone.layer3(x1)
-            #x1 = model.backbone.layer4(x1)
+            #x1 = model.backbone.layer4(x1)"""
             
             
             # ---- 
@@ -153,10 +153,10 @@ def save_dataset(filename, path, model, layer_names, dataset, device='cpu', batc
                         f[path]['x'][index] = targets[j]
             with torch.no_grad():
                 #model(images)      
-                #model.backbone(images)
+                model.backbone(images)
                 
                 # for v1 no projector 
-                x1 = model.backbone.conv1(images)
+                """x1 = model.backbone.conv1(images)
                 x1 = model.backbone.bn1(x1)
                 x1 = model.backbone.relu(x1)
                 x1 = model.backbone.maxpool(x1)
@@ -174,7 +174,7 @@ def save_dataset(filename, path, model, layer_names, dataset, device='cpu', batc
                 
                 #x1 = model.backbone.layer2(x1)
                 #x1 = model.backbone.layer3(x1)
-                #x1 = model.backbone.layer4(x1)
+                #x1 = model.backbone.layer4(x1)"""
                 # --------- 
             
             
