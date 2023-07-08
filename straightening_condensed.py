@@ -117,11 +117,18 @@ dict_metric_names = {
     'y_obj_rot': "Object Rotation - y" , 
 }
 
-list_metrics = {
+"""list_metrics = {
     "Camera Translation" : ["x_cam_trans", "y_cam_trans", "z_cam_trans"], 
     "Camera Rotation" : ["x_cam_rot", "y_cam_rot"], 
     "Camera Pan" : ['x_cam_pan', 'yz_cam_pan'], 
-    "Object Rotation" : ['x_obj_rot', 'y_obj_rot'], 
+    #"Object Rotation" : ['x_obj_rot', 'y_obj_rot'], 
+}"""
+
+list_metrics = {
+    0 : ["x_cam_trans", "y_cam_trans", "z_cam_trans"], 
+    1 : ["x_cam_rot", "y_cam_rot"], 
+    2 : ['x_cam_pan', 'yz_cam_pan'], 
+    #"Object Rotation" : ['x_obj_rot', 'y_obj_rot'], 
 }
 
 dict_model_names = {
@@ -217,9 +224,10 @@ model_names = [
 # ------------------------------------------------------------------------------------
 # LAYERS PLOT 
 # ------------------------------------------------------------------------------------
+fig, axes = pt.core.subplots(3, 3, size=(10, 10), sharex=True)
 for key, metric_types in list_metrics.items(): 
 
-    fig, axes = pt.core.subplots(1, len(metric_types), size=(10,8), sharex=True)
+    #fig, axes = pt.core.subplots(1, len(metric_types), size=(10,8), sharex=True)
     for i, metric_type in enumerate(metric_types):
         for model_name in model_names:
             print('model: ', model_name)
@@ -229,32 +237,32 @@ for key, metric_types in list_metrics.items():
         scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
         axes[0,i].plot(layers, scores, label='identity', color = 'black')
         
-        axes[0,i].axvline(x = 3, color = 'grey', alpha = 0.5, ls = 'dotted')
-        axes[0,i].axvline(x = 6, color = 'grey', alpha = 0.5, ls = 'dotted')
-        axes[0,i].axvline(x = 10, color = 'grey', alpha = 0.5, ls = 'dotted')
-        axes[0,i].axvline(x = 16, color = 'grey', alpha = 0.5, ls = 'dotted')
-        axes[0,i].axvline(x = 19, color = 'grey', alpha = 0.5, ls = 'dotted')
-        axes[0,i].axvline(x = 20, color = 'grey', alpha = 0.5, ls = 'dotted')
+        axes[key,i].axvline(x = 3, color = 'grey',  ls = 'dotted')
+        axes[key,i].axvline(x = 6, color = 'grey', ls = 'dotted')
+        axes[key,i].axvline(x = 10, color = 'grey', ls = 'dotted')
+        axes[key,i].axvline(x = 16, color = 'grey',  ls = 'dotted')
+        axes[key,i].axvline(x = 19, color = 'grey', ls = 'dotted')
+        axes[key,i].axvline(x = 20, color = 'grey' , ls = 'dotted')
         
-        axes[0,i].set_title(dict_metric_names[metric_type])
-        axes[0,i].set_xticks([0, 3, 6, 10, 16, 19, 20])
-        axes[0,i].set_xticklabels(['1st convolution', 'maxpool', 'v1 injection', 'v2 injection', 'v4 injection', 'IT injection', 'avgpool'], rotation=45, ha='right')
+        axes[key,i].set_title(dict_metric_names[metric_type], fontsize=18)
+        axes[key,i].set_xticks([0, 3, 6, 10, 16, 19, 20])
+        axes[key,i].set_xticklabels(['1st convolution', 'maxpool', 'v1 injection', 'v2 injection', 'v4 injection', 'IT injection', 'avgpool'], rotation=45, ha='right', fontsize=16)
         
-        axes[0,i].text(4.5, 0.9, "Block V1", ha="center", va="center", size=10)
-        axes[0,i].text(8, 0.9, "Block V2", ha="center", va="center", size=10)
-        axes[0,i].text(13, 0.9, "Block V4", ha="center", va="center", size=10)
-        axes[0,i].text(17.5, 0.9, "Block IT", ha="center", va="center", size=10)
+        axes[key,i].text(4.5, 0.95, "Block V1", ha="center", va="center", size=14)#, size=60)
+        axes[key,i].text(8, 0.95, "Block V2", ha="center", va="center", size=14)#, size=60)
+        axes[key,i].text(13, 0.95, "Block V4", ha="center", va="center", size=14)#, size=60)
+        axes[key,i].text(17.5, 0.95, "Block IT", ha="center", va="center", size=14)#, size=60)
         #axes[0,i].text(23.5, 0.9, "Projector", ha="center", va="center", size=10)
         axes[0,i].set_ylim(0.0, 1.)
-        if i == len(metric_types)-1: 
+        if i == len(metric_types)-1 and key==1: 
             axes[0,i].legend(loc='center right', bbox_to_anchor=(1.6, 0.5))
-    fig.supxlabel('layers')
-    fig.supylabel('curvature')
-    fig.tight_layout()
-    plt.show()
-    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v1_curve{}.png'.format(key))
-    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/2no_proj/V1_{}.png'.format(key))
-    #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_straightening_{}.png'.format(key))
+fig.supxlabel('layers')
+fig.supylabel('curvature')
+fig.tight_layout()
+plt.show()
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/V1_curve{}.png'.format(key))
+#plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/2no_proj/V1_{}.png'.format(key))
+#plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_straightening_{}.png'.format(key))
     
 
 
