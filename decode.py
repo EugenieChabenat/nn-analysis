@@ -235,7 +235,7 @@ model_names = [
     #"barlow_fact_no_injection"
 ]
 
-fig, axes = pt.core.subplots(2, 5, size=(15, 15), sharex=True)
+fig, axes = pt.core.subplots(2, 5, size=(25, 25), sharex=True)
 for key, metric_types in list_metrics.items(): 
     
     #fig, axes = pt.core.subplots(1, len(metric_types), size=(15,8), sharex=True)
@@ -264,10 +264,10 @@ for key, metric_types in list_metrics.items():
         axes[key,i].set_xticks([0, 3, 6, 10, 16, 19, 20])
         axes[key,i].set_xticklabels(['1st convolution', 'maxpool', 'v1 injection', 'v2 injection', 'v4 injection', 'IT injection', 'avgpool'], rotation=45, ha='right')
         
-        axes[key,i].text(4.5, 0.95, "Block V1", ha="center", va="center", size=10)
-        axes[key,i].text(8, 0.95, "Block V2", ha="center", va="center", size=10)
-        axes[key,i].text(13, 0.95, "Block V4", ha="center", va="center", size=10)
-        axes[key,i].text(17.5, 0.95, "Block IT", ha="center", va="center", size=10)
+        axes[key,i].text(4.5, 0.95, "Block V1", ha="center", va="center", size=16)
+        axes[key,i].text(8, 0.95, "Block V2", ha="center", va="center", size=16)
+        axes[key,i].text(13, 0.95, "Block V4", ha="center", va="center", size=16)
+        axes[key,i].text(17.5, 0.95, "Block IT", ha="center", va="center", size=16)
         #axes[0,i].text(23.5, 0.95, "Projector", ha="center", va="center", size=10)
         axes[key,i].set_ylim(0.0, 1.)
         #axes[0,i].legend()#loc='center left')
