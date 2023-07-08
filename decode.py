@@ -273,7 +273,7 @@ for key, metric_types in list_metrics.items():
         axes[key,i].text(17.5, 0.95, "Block IT", ha="center", va="center", size=14)#, size=60)
         #axes[0,i].text(23.5, 0.95, "Projector", ha="center", va="center", size=12)#, size=10)
         axes[key,i].set_ylim(0.0, 1.)
-        ax.tick_params(axis='y', labelsize=14)
+        axes[key,i].tick_params(axis='y', labelsize=14)
         #axes[0,i].legend()#loc='center left')
         #if i == len(metric_types)-1 and key == 0: 
             #axes[key,i].legend(loc='center right', bbox_to_anchor=(1.75, 0.5), fontsize=18)#, fontsize=60)
