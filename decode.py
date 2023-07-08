@@ -126,7 +126,7 @@ dict_metric_names = {
     'obj_pose': "Object Pose"
 }
 
-list_metrics = {
+"""list_metrics = {
     "Object Class" : ['obj_class'], 
     "Camera Pos" : ['cam_pos_x', 'cam_pos_y'], 
     "Camera Scale" : ['cam_scale', 'cam_pos'], 
@@ -137,7 +137,13 @@ list_metrics = {
     "Object Scale" : ['obj_scale', 'obj_pos'], 
     "Object Pose": ['obj_pose_x', 'obj_pose_y'], 
     "Object Pose 2": ['obj_pose_z', 'obj_pose']
+}"""
+
+list_metrics = {
+    0 : ['obj_class', 'obj_pos_x', 'obj_pos_y,' 'obj_pose', 'obj_scale'], 
+    1 : ['cam_pos_x', 'cam_pos_y', 'cam_scale',  'lighting', 'color']
 }
+
 dict_model_names = {
     "injection_v1": "Random linear injection at V1",
     "injection_separate_v1": "Trained linear injection at V1" , 
@@ -178,7 +184,7 @@ dict_model_names = {
 }
 model_names = [
     # random linear no projector
-    "noprojector_linear_v1", 
+    #"noprojector_linear_v1", 
     
     # random injection models  
     "injection_v1",
@@ -232,41 +238,47 @@ model_names = [
 
 for key, metric_types in list_metrics.items(): 
     
-    fig, axes = pt.core.subplots(1, len(metric_types), size=(15,8), sharex=True)
+    #fig, axes = pt.core.subplots(1, len(metric_types), size=(15,8), sharex=True)
+    fig, axes = pt.core.subplots(2, 10, size=(15,8), sharex=True)
     for i, metric_type in enumerate(metric_types):
         for model_name in model_names:
             scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
-            axes[0,i].plot(layers, scores, label=dict_model_names[model_name], color = dict_color[model_name][0], ls = dict_color[model_name][1])
+            
+            for j in range len(scores): 
+                if scores[j] <0: 
+                    scores[j] = 0
+                    
+            axes[key,i].plot(layers, scores, label=dict_model_names[model_name], color = dict_color[model_name][0], ls = dict_color[model_name][1])
         #scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
         #axes[0,i].plot(layers, scores, label='identity')
         
         # blocks 
-        axes[0,i].axvline(x = 3, color = 'grey', alpha = 0.5, ls = 'dotted')
-        axes[0,i].axvline(x = 6, color = 'grey', alpha = 0.5, ls = 'dotted')
-        axes[0,i].axvline(x = 10, color = 'grey', alpha = 0.5, ls = 'dotted')
-        axes[0,i].axvline(x = 16, color = 'grey', alpha = 0.5, ls = 'dotted')
-        axes[0,i].axvline(x = 19, color = 'grey', alpha = 0.5, ls = 'dotted')
-        axes[0,i].axvline(x = 20, color = 'grey', alpha = 0.5, ls = 'dotted')
+        axes[key,i].axvline(x = 3, color = 'grey', alpha = 0.5, ls = 'dotted')
+        axes[key,i].axvline(x = 6, color = 'grey', alpha = 0.5, ls = 'dotted')
+        axes[key,i].axvline(x = 10, color = 'grey', alpha = 0.5, ls = 'dotted')
+        axes[key,i].axvline(x = 16, color = 'grey', alpha = 0.5, ls = 'dotted')
+        axes[key,i].axvline(x = 19, color = 'grey', alpha = 0.5, ls = 'dotted')
+        axes[key,i].axvline(x = 20, color = 'grey', alpha = 0.5, ls = 'dotted')
         
-        axes[0,i].set_title(dict_metric_names[metric_type])
-        axes[0,i].set_xticks([0, 3, 6, 10, 16, 19, 20])
-        axes[0,i].set_xticklabels(['1st convolution', 'maxpool', 'v1 injection', 'v2 injection', 'v4 injection', 'IT injection', 'avgpool'], rotation=45, ha='right')
+        axes[key,i].set_title(dict_metric_names[metric_type])
+        axes[key,i].set_xticks([0, 3, 6, 10, 16, 19, 20])
+        axes[key,i].set_xticklabels(['1st convolution', 'maxpool', 'v1 injection', 'v2 injection', 'v4 injection', 'IT injection', 'avgpool'], rotation=45, ha='right')
         
-        axes[0,i].text(4.5, 0.95, "Block V1", ha="center", va="center", size=10)
-        axes[0,i].text(8, 0.95, "Block V2", ha="center", va="center", size=10)
-        axes[0,i].text(13, 0.95, "Block V4", ha="center", va="center", size=10)
-        axes[0,i].text(17.5, 0.95, "Block IT", ha="center", va="center", size=10)
+        axes[key,i].text(4.5, 0.95, "Block V1", ha="center", va="center", size=10)
+        axes[key,i].text(8, 0.95, "Block V2", ha="center", va="center", size=10)
+        axes[key,i].text(13, 0.95, "Block V4", ha="center", va="center", size=10)
+        axes[key,i].text(17.5, 0.95, "Block IT", ha="center", va="center", size=10)
         #axes[0,i].text(23.5, 0.95, "Projector", ha="center", va="center", size=10)
-        axes[0,i].set_ylim(0.0, 1.)
+        axes[key,i].set_ylim(0.0, 1.)
         #axes[0,i].legend()#loc='center left')
         if i == len(metric_types)-1: 
-            axes[0,i].legend(loc='center right', bbox_to_anchor=(1.75, 0.5))
+            axes[key,i].legend(loc='center right', bbox_to_anchor=(1.75, 0.5))
     fig.supxlabel('layers')
     fig.supylabel('decode')
     fig.tight_layout()
     plt.show()
-    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v1_decode_{}.png'.format(key))
-    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/no_proj2/v1_decode_{}.png'.format(key))
+    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/thesis-v1_decode_{}.png'.format(key))
+    #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/no_proj2/v1_decode_{}.png'.format(key))
     #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_decode_{}.png'.format(key))
     
    
