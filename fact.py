@@ -209,7 +209,7 @@ model_names = [
 # ------------------------------------------------------------------------------------
 # LAYERS PLOT 
 # ------------------------------------------------------------------------------------
-fig, axes = pt.core.subplots(2,2 , size=(8, 8), sharex=True)
+fig, axes = pt.core.subplots(2,2 , size=(8, 6), sharex=True)
 for key, metric_types in list_metrics.items(): 
     #fig, axes = pt.core.subplots(1, len(metric_types), size=(10, 8), sharex=True)
     for i, metric_type in enumerate(metric_types):
@@ -231,21 +231,21 @@ for key, metric_types in list_metrics.items():
         axes[key,i].set_xticks([0, 3, 6, 10, 16, 19, 20])
         axes[key,i].set_xticklabels(['1st convolution', 'maxpool', 'v1 injection', 'v2 injection', 'v4 injection', 'IT injection', 'avgpool'], rotation=45, ha='right',fontsize=16)
         
-        axes[0,i].set_title(dict_metric_names[metric_type])
+        axes[key,i].set_title(dict_metric_names[metric_type])
         
-        axes[0,i].text(4.5, 0.2, "Block V1", ha="center", va="center", size=14)
-        axes[0,i].text(8, 0.2, "Block V2", ha="center", va="center", size=14)
-        axes[0,i].text(13, 0.2, "Block V4", ha="center", va="center", size=14)
-        axes[0,i].text(17.5, 0.2, "Block IT", ha="center", va="center", size=14)
-        axes[0,i].set_ylim(0.0, 1.0)
+        axes[key,i].text(4.5, 0.2, "Block V1", ha="center", va="center", size=14)
+        axes[key,i].text(8, 0.2, "Block V2", ha="center", va="center", size=14)
+        axes[key,i].text(13, 0.2, "Block V4", ha="center", va="center", size=14)
+        axes[key,i].text(17.5, 0.2, "Block IT", ha="center", va="center", size=14)
+        axes[key,i].set_ylim(0.0, 1.0)
         axes[key,i].tick_params(axis='y', labelsize=14)
         
-        axes[0,i].legend()#loc='center left')
+        #axes[0,i].legend()#loc='center left')
 fig.supxlabel('layers')
 fig.supylabel('factorization')
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/2-v1_fact_{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/3-v1_fact_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_fact_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/IT+_no_injection_{}.png'.format(key))
 
