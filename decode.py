@@ -235,11 +235,11 @@ model_names = [
     #"barlow_fact_no_injection"
 ]
 
-
+fig, axes = pt.core.subplots(2, 5, size=(15,8), sharex=True)
 for key, metric_types in list_metrics.items(): 
     
     #fig, axes = pt.core.subplots(1, len(metric_types), size=(15,8), sharex=True)
-    fig, axes = pt.core.subplots(2, 10, size=(15,8), sharex=True)
+    
     for i, metric_type in enumerate(metric_types):
         for model_name in model_names:
             scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
