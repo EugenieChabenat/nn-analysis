@@ -127,8 +127,7 @@ dict_metric_names = {
 list_metrics = {
     0 : ["x_cam_trans", "y_cam_trans", "z_cam_trans"], 
     #1 : ["x_cam_rot", "y_cam_rot"], 
-    #2 : ['x_cam_pan', 'yz_cam_pan'], 
-    #"Object Rotation" : ['x_obj_rot', 'y_obj_rot'], 
+    #2 : ['x_cam_pan', 'yz_cam_pan']
 }
 
 dict_model_names = {
@@ -224,14 +223,13 @@ model_names = [
 # ------------------------------------------------------------------------------------
 # LAYERS PLOT 
 # ------------------------------------------------------------------------------------
-fig, axes = pt.core.subplots(3, 1, size=(10, 10), sharex=True)
+fig, axes = pt.core.subplots(1, 3, size=(10, 10), sharex=True)
 for key, metric_types in list_metrics.items(): 
 
     #fig, axes = pt.core.subplots(1, len(metric_types), size=(10,8), sharex=True)
     for i, metric_type in enumerate(metric_types):
         for model_name in model_names:
-            print('model: ', model_name)
-            print('layer: ', layers)
+            
             scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
             axes[key,i].plot(layers, scores, label=dict_model_names[model_name], color = dict_color[model_name][0], ls = dict_color[model_name][1])
         scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
