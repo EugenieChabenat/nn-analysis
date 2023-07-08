@@ -34,7 +34,11 @@ metric_dict = {
              }
 
 dict_color = {
-    'injection_conv_subset_v1_proj':["black", '-'], 
+    # no projector linear 
+    "no_projector_linear_v1":  ["brown", '--'], 
+    
+    'injection_conv_subset_v1_proj':["black", '-'],
+    
     # random injection 
     "injection_v1_af" : ["orange", '-'],
     "injection_v2_af": ["orange", '-'], 
@@ -98,7 +102,7 @@ dict_color = {
 }
 
 epoch = 29
-layers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27]
+layers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]#, 21, 22, 23, 24, 25, 26, 27]
 metric = ["curve", 1]
 
 dict_metric_names = {
@@ -129,6 +133,7 @@ dict_model_names = {
     "unfreeze_injection_v1_af": "Trained convolutional injection at V1" , 
     "subset_injection_v1": "Random linear injection of subset at V1", 
     "injection_conv_subset_v1": "Random convolutional injection of subset at V1" ,
+    "no_projector_linear_v1": "Random linear injection at V1 - no projector" , 
 
     "injection_v2_af": "Random linear injection at V2",
     "injection_separate_v2": "Trained linear injection at V2" , 
@@ -162,6 +167,7 @@ dict_model_names = {
 }
 model_names = [
     #"injection_conv_subset_v1_proj", 
+    "no_projector_linear_v1"
     
     # random injection models  
     "injection_v1_af",
@@ -238,7 +244,7 @@ for key, metric_types in list_metrics.items():
         axes[0,i].text(8, 0.9, "Block V2", ha="center", va="center", size=10)
         axes[0,i].text(13, 0.9, "Block V4", ha="center", va="center", size=10)
         axes[0,i].text(17.5, 0.9, "Block IT", ha="center", va="center", size=10)
-        axes[0,i].text(23.5, 0.9, "Projector", ha="center", va="center", size=10)
+        #axes[0,i].text(23.5, 0.9, "Projector", ha="center", va="center", size=10)
         axes[0,i].set_ylim(0.0, 1.)
         if i == len(metric_types)-1: 
             axes[0,i].legend(loc='center right', bbox_to_anchor=(1.6, 0.5))
@@ -246,8 +252,8 @@ for key, metric_types in list_metrics.items():
     fig.supylabel('curvature')
     fig.tight_layout()
     plt.show()
-    #plt.savefig('/home/ec3731/issa_analysis/nn-analysis/d3-all-no_proj_IT_{}.png'.format(key))
-    plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/no_proj/V1_{}.png'.format(key))
+    plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v1_curve{}.png'.format(key))
+    #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/no_proj/V1_{}.png'.format(key))
     #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_straightening_{}.png'.format(key))
     
 
