@@ -414,11 +414,11 @@ y_lim_max = max(max([axes[0, i].get_ylim()[1] for i in range(3)]), max([axes[1, 
 for i in range(3):
     axes[0, i].set_ylim(y_lim_min, y_lim_max)
     axes[1, i].set_ylim(y_lim_min, y_lim_max)
-fig.suptitle('Comparison in decoding performance between injection V1 models and control (no injection) at injection site', fontweight='bold')
+#fig.suptitle('Comparison in decoding performance between injection V1 models and control (no injection) at injection site', fontweight='bold')
 fig.tight_layout()
 
-pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/decode_v1.png')
-pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/hist-compare_decoding_v1.png')
+pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/no-titledecode_v1.png')
+#pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/hist-compare_decoding_v1.png')
 fig.show()
 
 
