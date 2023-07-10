@@ -322,19 +322,19 @@ model_names = [
     #"unfreeze_injection_v1_af", 
     #"injection_conv_subset_v1",
     
-    "injection_v2_af",
-    "injection_separate_v2", 
-    "subset_injection_v2", 
-    "injection_conv_v2_af",
-    "unfreeze_injection_v2_af", 
-    "injection_conv_subset_v2",
+    #"injection_v2_af",
+    #"injection_separate_v2", 
+    #"subset_injection_v2", 
+    #"injection_conv_v2_af",
+    #"unfreeze_injection_v2_af", 
+    #"injection_conv_subset_v2",
 
-    #"injection_v4_af",
-    #"injection_separate_v4", 
-    #"subset_injection_v4", 
-    #"injection_conv_v4_af",
-    #"unfreeze_injection_v4_af", 
-    #"injection_conv_subset_v4",
+    "injection_v4_af",
+    "injection_separate_v4", 
+    "subset_injection_v4", 
+    "injection_conv_v4_af",
+    "unfreeze_injection_v4_af", 
+    "injection_conv_subset_v4",
 
     #"injection_IT_af",
     #"injection_separate_IT", 
@@ -409,6 +409,6 @@ for i in range(3):
 #fig.suptitle('Comparison in straightening performance between injection V1 models and control (no injection) at injection site', fontweight='bold')
 fig.tight_layout()
 
-pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/no-title_straight_v2.png')
+pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/no-title_straight_v4.png')
 #pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/hist-compare_straightening_v1.png')
 fig.show()
