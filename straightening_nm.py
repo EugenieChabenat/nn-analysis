@@ -152,7 +152,7 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/nm2_test.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/nm3_test.png')
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/natural_movies/unfreeze_conv_nm1.png')
 
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/natural_movies/sanity_control/10frames_metrics_plot9.png')
