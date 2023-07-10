@@ -83,7 +83,7 @@ dict_color = {
 }
 
 model_names = [
-    "noprojector_linear_v1_nm3", 
+    #"noprojector_linear_v1_nm3", 
     "noprojector_linear_v1_nm6", 
     # random injection models  
     #"injection_v1",
