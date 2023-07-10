@@ -289,19 +289,19 @@ one_layer = {"injection_v1": [6, 20],
 }
 
 model_names = [
-    "injection_v1",
-    "injection_separate_v1", 
-    "subset_injection_v1", 
-    "injection_conv_v1",
-    "unfreeze_injection_v1", 
-    "injection_conv_subset_v1",
+    #"injection_v1",
+    #"injection_separate_v1", 
+    #"subset_injection_v1", 
+    #"injection_conv_v1",
+    #"unfreeze_injection_v1", 
+    #"injection_conv_subset_v1",
 
-    #"injection_v2",
-    #"injection_separate_v2", 
-    #"subset_injection_v2", 
-    #"injection_conv_v2",
-    #"unfreeze_injection_v2", 
-    #"injection_conv_subset_v2",
+    "injection_v2",
+    "injection_separate_v2", 
+    "subset_injection_v2", 
+    "injection_conv_v2",
+    "unfreeze_injection_v2", 
+    "injection_conv_subset_v2",
 
     #"injection_v4",
     #"injection_separate_v4", 
@@ -415,7 +415,7 @@ for i in range(3):
 #fig.suptitle('Comparison in factorization performance between injection V1 models and control (no injection) at injection site', fontweight='bold')
 fig.tight_layout()
 
-pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/no-title_fact_v1.png')
+pt.round_plot.savefig(fig, '/home/ec3731/issa_analysis/nn-analysis/no-title_fact_v2.png')
 #pt.round_plot.savefig(fig, '/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/hist-compare_fact_V1.png')
 fig.show()
 
