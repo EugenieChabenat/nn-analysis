@@ -50,6 +50,7 @@ model_names = [
 ]"""
 
 dict_color = {
+    "noprojector_linear_v1_nm3" : ["orange", '-'],
     # random injection 
     "injection_v1" : ["orange", '-'],
     "injection_v2": ["orange", '-'], 
@@ -83,7 +84,7 @@ dict_color = {
 model_names = [
     "noprojector_linear_v1_nm3", 
     # random injection models  
-    "injection_v1",
+    #"injection_v1",
     #"injection_v2", 
     #"injection_v4",
     #"injection_IT",
