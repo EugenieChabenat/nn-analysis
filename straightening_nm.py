@@ -51,6 +51,7 @@ model_names = [
 
 dict_color = {
     "noprojector_linear_v1_nm3" : ["orange", '-'],
+    "noprojector_linear_v1_nm6" : ["red", '-'],
     # random injection 
     "injection_v1" : ["orange", '-'],
     "injection_v2": ["orange", '-'], 
@@ -83,6 +84,7 @@ dict_color = {
 
 model_names = [
     "noprojector_linear_v1_nm3", 
+    "noprojector_linear_v1_nm6", 
     # random injection models  
     #"injection_v1",
     #"injection_v2", 
@@ -150,7 +152,7 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/nm1_test.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/nm2_test.png')
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/natural_movies/unfreeze_conv_nm1.png')
 
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/natural_movies/sanity_control/10frames_metrics_plot9.png')
