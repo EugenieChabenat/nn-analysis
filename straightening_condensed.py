@@ -36,11 +36,13 @@ metric_dict = {
 dict_color = {
     # no projector linear 
     "noprojector_linear_v1":  ["brown", '--'], 
+    "noprojector_linear_v1_nm3":  ["brown", '--'], 
     
     'injection_conv_subset_v1_proj':["black", '-'],
     
     # no projector conv
     "noprojector_conv_IT": ["gold", '--'], 
+    
     
     # random injection 
     "injection_v1_af" : ["orange", '-'],
@@ -107,6 +109,7 @@ dict_color = {
 epoch = 29
 layers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]#, 21, 22, 23, 24, 25, 26, 27]
 metric = ["curve", 1]
+metric = ["curve", 4]
 
 dict_metric_names = {
     "x_cam_trans": "Camera Translation - x", 
@@ -179,54 +182,55 @@ model_names = [
     #"injection_conv_subset_v1_proj", 
     
     # no projector linear 
-    #"noprojector_linear_v1", 
+    #"noprojector_linear_v1",
+    "noprojector_linear_v1_nm3",
     
     # random conv no projector 
-    "noprojector_conv_IT", 
+    #"noprojector_conv_IT", 
     
     # random injection models  
     #"injection_v1_af",
     #"injection_v2_af", 
     #"injection_v4_af",
-    "injection_IT_af",
+    #"injection_IT_af",
     
     # convolution injection models 
     #"injection_conv_v1_af", 
     #"injection_conv_v2_af", 
     #"injection_conv_v4_af", 
-    "injection_conv_IT_af", 
+    #"injection_conv_IT_af", 
     
     # unfreeze convolution injection models 
     #"unfreeze_injection_v1_af", 
     #"unfreeze_injection_v2_af", 
     #"unfreeze_injection_v4_af", 
-    "unfreeze_injection_IT_af", 
+    #"unfreeze_injection_IT_af", 
 
     # subset 
     #"subset_injection_v1", 
     #"subset_injection_v2", 
     #"subset_injection_v4", 
-    "subset_injection_IT",
+    #"subset_injection_IT",
     
     # conv subset injection 
     #"injection_conv_subset_v1", 
     #"injection_conv_subset_v2", 
     #"injection_conv_subset_v4", 
-    "injection_conv_subset_IT",
+    #"injection_conv_subset_IT",
     
     # separate
     #"injection_separate_v1", 
     #"injection_separate_v2", 
     #"injection_separate_v4", 
-    "injection_separate_IT", 
+    #"injection_separate_IT", 
 
     #"v1_no_injection", 
     #"v2_no_injection", 
     #"v4_no_injection", 
-    "IT_no_injection",
+    #"IT_no_injection",
     
     #"resnet50_allfeatures", 
-    "bt_allfeatures", 
+    #"bt_allfeatures", 
     #"barlow_fact_no_injection"
 ]
 # ------------------------------------------------------------------------------------
@@ -267,7 +271,7 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/IT-trans_curve{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/nm_test{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/2no_proj/V1_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_straightening_{}.png'.format(key))
     
