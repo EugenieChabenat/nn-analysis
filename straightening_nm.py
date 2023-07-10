@@ -24,7 +24,7 @@ epoch = 29
 #layers = np.arange(12)
 layers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 metric = ["curve", 3]
-#metric = ["curve", 4]
+metric = ["curve", 4]
 #metric = ["curve", 5]
 #metric = ["curve", 6]
 
@@ -81,8 +81,9 @@ dict_color = {
 }
 
 model_names = [
+    "noprojector_linear_v1_nm3", 
     # random injection models  
-    #"injection_v1",
+    "injection_v1",
     #"injection_v2", 
     #"injection_v4",
     #"injection_IT",
@@ -94,10 +95,10 @@ model_names = [
     #"injection_conv_IT", 
     
     # unfreeze convolution injection models 
-    "unfreeze_injection_v1", 
-    "unfreeze_injection_v2", 
-    "unfreeze_injection_v4", 
-    "unfreeze_injection_IT", 
+    #"unfreeze_injection_v1", 
+    #"unfreeze_injection_v2", 
+    #"unfreeze_injection_v4", 
+    #"unfreeze_injection_IT", 
     
     #"v4_no_injection", 
     #"resnet50_untrained", 
@@ -148,8 +149,8 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/unfreeze_conv_nm1.png')
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/natural_movies/unfreeze_conv_nm1.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/nm1_test.png')
+#plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/natural_movies/unfreeze_conv_nm1.png')
 
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/natural_movies/sanity_control/10frames_metrics_plot9.png')
 
