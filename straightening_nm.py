@@ -29,7 +29,7 @@ metric = ["curve", 4]
 #metric = ["curve", 6]
 
                 
-metric_types = ["artificial_movie_labels", "natural_movie_labels"]
+metric_types = ["artificial_movie_labels", "contrast_movie_labels", "natural_movie_labels"]
 
 
 """model_names = [
