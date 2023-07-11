@@ -117,7 +117,7 @@ dict_metric_names = {
 }"""
 # factorization
 list_metrics = {
-    0: ['fact-background']#, 'fact-obj_motion'],
+    0: ['fact-background'], #, 'fact-obj_motion'],
     1: ['fact-crop']#, 'fact-color']
 }
 # invariance
