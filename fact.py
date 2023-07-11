@@ -261,7 +261,7 @@ fig.supxlabel('layers')
 fig.supylabel('factorization')
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/3IT_convinv_{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/4IT_convinv_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_fact_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/v4linear_factorization_{}.png'.format(key))
 
