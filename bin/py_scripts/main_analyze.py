@@ -53,13 +53,13 @@ def main(model_name, layers, metric_name, version, epoch=None, overwrite=False, 
 if __name__ == '__main__':
     print("Started main_analyze.py...")
     parser = argparse.ArgumentParser(description='Analyze activations')
-    parser.add_argument('--model_name', default= "noprojector_linear_v1_nm6",  type=str,
+    parser.add_argument('--model_name', default= "noprojector_linear_v4",  type=str,
                         help='specify the model of which activations are saved')
     parser.add_argument('--layers', default = 0, type=int, nargs='+',
                         help='specify the layers of which activations are saved')
-    parser.add_argument('--metric_name', default = "curve", type=str,
+    parser.add_argument('--metric_name', default = "decode", type=str,
                         help='specify what activations are saved')
-    parser.add_argument('--version', default = 4, type=int,
+    parser.add_argument('--version', default = 0, type=int,
                         help='Version number. Error will be raised if the result for the specified version' \
                              'already exists and --overwrite flag is not provided.')
     parser.add_argument('--epoch', default = 29, type=int,
