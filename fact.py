@@ -117,8 +117,8 @@ dict_metric_names = {
 }"""
 # factorization
 list_metrics = {
-    0: ['fact-background', 'fact-obj_motion'],
-    1: ['fact-crop', 'fact-color']
+    0: ['fact-background']#, 'fact-obj_motion'],
+    1: ['fact-crop']#, 'fact-color']
 }
 # invariance
 """list_metrics = {
@@ -225,7 +225,7 @@ model_names = [
 # ------------------------------------------------------------------------------------
 # LAYERS PLOT 
 # ------------------------------------------------------------------------------------
-fig, axes = pt.core.subplots(2,2 , size=(8, 6), sharex=True)
+fig, axes = pt.core.subplots(1,2 , size=(8, 6), sharex=True)
 for key, metric_types in list_metrics.items(): 
     #fig, axes = pt.core.subplots(1, len(metric_types), size=(10, 8), sharex=True)
     for i, metric_type in enumerate(metric_types):
@@ -261,7 +261,7 @@ fig.supxlabel('layers')
 fig.supylabel('factorization')
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/2IT_convinv_{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/3IT_convinv_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_fact_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/v4linear_factorization_{}.png'.format(key))
 
