@@ -29,6 +29,7 @@ metric_dict = {'ss_inv-background': 'SS Invariance - Background',
 dict_color = {
     # trained without projector 
     "noprojector_linear_v1":  ["brown", '--'], 
+    "noprojector_linear_v4":  ["brown", '--'], 
     
     # no projector conv
     "noprojector_conv_IT": ["gold", '--'], 
@@ -148,6 +149,7 @@ dict_model_names = {
     "unfreeze_injection_v4": "Trained convolutional injection at V4" , 
     "subset_injection_v4": "Random linear injection of subset at V4", 
     "injection_conv_subset_v4": "Random convolutional injection of subset at V4" ,
+    "noprojector_linear_v1":  "Random linear injection at V4 - no projector",
 
     "injection_IT": "Random linear injection at IT",
     "injection_separate_IT": "Trained linear injection at IT" , 
@@ -168,50 +170,51 @@ dict_model_names = {
 model_names = [
     # trained without projector 
     #"noprojector_linear_v1", 
+    "noprojector_linear_v4", 
     
     # random con - noprojector 
-    "noprojector_conv_IT", 
+    #"noprojector_conv_IT", 
     
     # random injection models  
     #"injection_v1",
     #"injection_v2", 
-    #"injection_v4",
-    "injection_IT",
+    "injection_v4",
+    #"injection_IT",
     
     # convolution injection models 
     #"injection_conv_v1", 
     #"injection_conv_v2", 
-    #"injection_conv_v4", 
-    "injection_conv_IT", 
+    "injection_conv_v4", 
+    #"injection_conv_IT", 
     
     # unfreeze convolution injection models 
-    "unfreeze_injection_v1", 
+    #"unfreeze_injection_v1", 
     #"unfreeze_injection_v2", 
-    #"unfreeze_injection_v4", 
-    "unfreeze_injection_IT", 
+    "unfreeze_injection_v4", 
+    #"unfreeze_injection_IT", 
 
     # subset 
     #"subset_injection_v1", 
     #"subset_injection_v2", 
-    #"subset_injection_v4", 
-    "subset_injection_IT",
+    "subset_injection_v4", 
+    #"subset_injection_IT",
 
     # conv subset injection 
     #"injection_conv_subset_v1", 
     #"injection_conv_subset_v2", 
-    #"injection_conv_subset_v4", 
-    "injection_conv_subset_IT",
+    "injection_conv_subset_v4", 
+    #"injection_conv_subset_IT",
 
     # separate 
     #"injection_separate_v1", 
     #"injection_separate_v2", 
-    #"injection_separate_v4", 
-    "injection_separate_IT",
+    "injection_separate_v4", 
+    #"injection_separate_IT",
     
     #"v1_no_injection", 
     #"v2_no_injection", 
-    #"v4_no_injection", 
-    "IT_no_injection", 
+    "v4_no_injection", 
+    #"IT_no_injection", 
 
     "resnet50_untrained", 
     "barlow_twins_50epochs", 
@@ -258,9 +261,9 @@ fig.supxlabel('layers')
 fig.supylabel('factorization')
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/IT_convinv_{}.png'.format(key))
+#plt.savefig('/home/ec3731/issa_analysis/nn-analysis/IT_convinv_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_fact_{}.png'.format(key))
-#plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/IT+_no_injection_{}.png'.format(key))
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/v4linear_invariance_{}.png'.format(key))
 
 
 # ------------------------------------------------------------------------------------
