@@ -225,7 +225,7 @@ model_names = [
 # ------------------------------------------------------------------------------------
 # LAYERS PLOT 
 # ------------------------------------------------------------------------------------
-fig, axes = pt.core.subplots(2,1, size=(8, 6), sharex=True)
+fig, axes = pt.core.subplots(2,2, size=(8, 6), sharex=True)
 for key, metric_types in list_metrics.items(): 
     #fig, axes = pt.core.subplots(1, len(metric_types), size=(10, 8), sharex=True)
     for i, metric_type in enumerate(metric_types):
