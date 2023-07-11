@@ -121,10 +121,10 @@ list_metrics = {
     1: ['fact-crop', 'fact-color']
 }
 # invariance
-list_metrics = {
+"""list_metrics = {
     0: ['inv-background', 'inv-obj_motion'],
     1: ['inv-crop', 'inv-color']
-}
+}"""
 
 
 dict_model_names = {
@@ -263,7 +263,7 @@ fig.tight_layout()
 plt.show()
 #plt.savefig('/home/ec3731/issa_analysis/nn-analysis/IT_convinv_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_fact_{}.png'.format(key))
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/v4linear_invariance_{}.png'.format(key))
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/v4linear_factorization_{}.png'.format(key))
 
 
 # ------------------------------------------------------------------------------------
