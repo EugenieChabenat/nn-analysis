@@ -256,12 +256,12 @@ for key, metric_types in list_metrics.items():
         axes[key,i].set_ylim(0.0, 1.0)
         axes[key,i].tick_params(axis='y', labelsize=14)
         
-        axes[key,i].legend(loc='center left')
+        axes[key,i].legend(loc='center left',bbox_to_anchor=(1.6, 0.5))
 fig.supxlabel('layers')
 fig.supylabel('factorization')
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/IT_convinv_{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/2IT_convinv_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_fact_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/v4linear_factorization_{}.png'.format(key))
 
