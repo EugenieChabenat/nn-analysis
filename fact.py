@@ -149,7 +149,7 @@ dict_model_names = {
     "unfreeze_injection_v4": "Trained convolutional injection at V4" , 
     "subset_injection_v4": "Random linear injection of subset at V4", 
     "injection_conv_subset_v4": "Random convolutional injection of subset at V4" ,
-    "noprojector_linear_v1":  "Random linear injection at V4 - no projector",
+    "noprojector_linear_v4":  "Random linear injection at V4 - no projector",
 
     "injection_IT": "Random linear injection at IT",
     "injection_separate_IT": "Trained linear injection at IT" , 
