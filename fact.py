@@ -262,7 +262,7 @@ for key, metric_types in list_metrics.items():
         axes[key,i].set_ylim(0.0, 1.0)
         axes[key,i].tick_params(axis='y', labelsize=14)
         
-        axes[key,i].legend(loc='center left',bbox_to_anchor=(1.6, 0.5), fontsize=20)
+        #axes[key,i].legend(loc='center left',bbox_to_anchor=(1.6, 0.5), fontsize=20)
 fig.supxlabel('layers')
 fig.supylabel('factorization')
 fig.tight_layout()
