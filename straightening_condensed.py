@@ -36,6 +36,7 @@ metric_dict = {
 dict_color = {
     # no projector linear 
     "noprojector_linear_v1":  ["brown", '--'], 
+    "noprojector_linear_v2":  ["brown", '--'], 
     "noprojector_linear_v1_nm3":  ["brown", '--'], 
     "noprojector_linear_v4":  ["brown", '--'], 
     
@@ -154,6 +155,7 @@ dict_model_names = {
     "unfreeze_injection_v2_af": "Trained convolutional injection at V2" , 
     "subset_injection_v2": "Random linear injection of subset at V2", 
     "injection_conv_subset_v2": "Random convolutional injection of subset at V2" ,
+    "noprojector_linear_v2": "Random linear injection at V2 - no projector",
     "noprojector_conv_v2": "Random convolutional injection at V2 - no projector" ,
     
     "injection_v4_af": "Random linear injection at V4",
@@ -187,6 +189,7 @@ model_names = [
     # no projector linear 
     #"noprojector_linear_v1",
     #"noprojector_linear_v1_nm3",
+    "noprojector_linear_v2"
     #"noprojector_linear_v4", 
     
     # random conv no projector 
@@ -277,7 +280,7 @@ fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
 plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v2-camrot-nop{}.png'.format(key))
-#plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/V4linear_campan_{}.png'.format(key))
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/V2_campan_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_straightening_{}.png'.format(key))
     
 
