@@ -133,9 +133,9 @@ dict_metric_names = {
 }"""
 
 list_metrics = {
-    #0 : ["x_cam_trans", "y_cam_trans", "z_cam_trans"], 
+    0 : ["x_cam_trans", "y_cam_trans", "z_cam_trans"], 
     #0 : ["x_cam_rot", "y_cam_rot"], 
-    0 : ['x_cam_pan', 'yz_cam_pan']
+    #0 : ['x_cam_pan', 'yz_cam_pan']
 }
 
 dict_model_names = {
@@ -244,7 +244,7 @@ model_names = [
 # ------------------------------------------------------------------------------------
 # LAYERS PLOT 
 # ------------------------------------------------------------------------------------
-fig, axes = pt.core.subplots(1, 2, size=(10, 8), sharex=True)
+fig, axes = pt.core.subplots(1, 3, size=(10, 8), sharex=True)
 for key, metric_types in list_metrics.items(): 
 
     #fig, axes = pt.core.subplots(1, len(metric_types), size=(10,8), sharex=True)
@@ -273,14 +273,14 @@ for key, metric_types in list_metrics.items():
         axes[key,i].text(17.5, 0.95, "Block IT", ha="center", va="center", size=14)#, size=60)
         #axes[0,i].text(23.5, 0.9, "Projector", ha="center", va="center", size=10)
         axes[key,i].set_ylim(0.0, 1.)
-        if i == len(metric_types)-1 and key==1: 
+        if i == len(metric_types)-1 and key==0: 
             axes[0,i].legend(loc='center right', bbox_to_anchor=(1.6, 0.5))
 fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v2-campan-nop{}.png'.format(key))
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/V2_campan_{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v2-camtrans-nop{}.png'.format(key))
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/V2_camtrans_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_straightening_{}.png'.format(key))
     
 
