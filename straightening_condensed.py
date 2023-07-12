@@ -189,7 +189,7 @@ model_names = [
     # no projector linear 
     #"noprojector_linear_v1",
     #"noprojector_linear_v1_nm3",
-    "noprojector_linear_v2"
+    "noprojector_linear_v2", 
     #"noprojector_linear_v4", 
     
     # random conv no projector 
@@ -280,7 +280,7 @@ fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
 plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v2-camrot-nop{}.png'.format(key))
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/V2_campan_{}.png'.format(key))
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/V2_camrot_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_straightening_{}.png'.format(key))
     
 
