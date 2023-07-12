@@ -276,13 +276,13 @@ for key, metric_types in list_metrics.items():
         axes[key,i].text(17.5, 0.95, "Block IT", ha="center", va="center", size=14)#, size=60)
         #axes[0,i].text(23.5, 0.9, "Projector", ha="center", va="center", size=10)
         axes[key,i].set_ylim(0.0, 1.)
-        if i == len(metric_types)-1 and key==0: 
-            axes[0,i].legend(loc='center right', bbox_to_anchor=(1.6, 0.5))
+        #if i == len(metric_types)-1 and key==0: 
+            #axes[0,i].legend(loc='center right', bbox_to_anchor=(1.6, 0.5))
 fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v4-camtrans-nop{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v4-camtrans{}.png'.format(key))
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/v4_camtrans_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_straightening_{}.png'.format(key))
     
