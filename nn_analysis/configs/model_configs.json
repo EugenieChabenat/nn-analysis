@@ -32,6 +32,10 @@
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/no_projector_linear_v1"
     },
+    "noprojector_conv_v1": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/no_projector_conv_v1"
+    },
     "noprojector_conv_v2": {
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/no_projector_conv_v2_v1"
