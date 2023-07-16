@@ -37,10 +37,11 @@ dict_color = {
     # no projector linear 
     "noprojector_linear_v1":  ["brown", '--'], 
     "noprojector_linear_v2":  ["brown", '--'], 
-    "noprojector_linear_v1_nm3":  ["brown", '--'], 
     "noprojector_linear_v4":  ["brown", '--'], 
+    "noprojector_linear_IT":  ["brown", '--'], 
     
     'injection_conv_subset_v1_proj':["black", '-'],
+    "noprojector_linear_v1_nm3":  ["brown", '--'], 
     
     # no projector conv
     "noprojector_conv_v1": ["gold", '--'], 
@@ -176,7 +177,8 @@ dict_model_names = {
     "unfreeze_injection_IT_af": "Trained convolutional injection at IT" , 
     "subset_injection_IT": "Random linear injection of subset at IT", 
     "injection_conv_subset_IT": "Random convolutional injection of subset at IT", 
-    "noprojector_conv_IT": "Random convolutional injection of subset at IT - no projector", 
+    "noprojector_linear_IT":  "Random linear injection at IT - no projector", 
+    "noprojector_conv_IT": "Random convolutional injection at IT - no projector", 
     
     "v1_no_injection": "Evaluation at V1, no injection", 
     "v2_no_injection": "Evaluation at V2, no injection", 
@@ -189,12 +191,13 @@ dict_model_names = {
 }
 model_names = [
     #"injection_conv_subset_v1_proj", 
+    #"noprojector_linear_v1_nm3",
     
     # no projector linear 
     #"noprojector_linear_v1",
-    #"noprojector_linear_v1_nm3",
     #"noprojector_linear_v2", 
     "noprojector_linear_v4", 
+    "noprojector_linear_IT", 
     
     # random conv no projector 
     "noprojector_conv_v1", 
