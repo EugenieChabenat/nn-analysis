@@ -43,6 +43,7 @@ dict_color = {
     'injection_conv_subset_v1_proj':["black", '-'],
     
     # no projector conv
+    "noprojector_conv_v1": ["gold", '--'], 
     "noprojector_conv_v2": ["gold", '--'], 
     "noprojector_conv_v4": ["gold", '--'], 
     "noprojector_conv_IT": ["gold", '--'], 
@@ -149,6 +150,7 @@ dict_model_names = {
     "subset_injection_v1": "Random linear injection of subset at V1", 
     "injection_conv_subset_v1": "Random convolutional injection of subset at V1" ,
     "noprojector_linear_v1": "Random linear injection at V1 - no projector" , 
+    "noprojector_conv_v1": "Random convolutional injection at V1 - no projector" , 
 
     "injection_v2_af": "Random linear injection at V2",
     "injection_separate_v2": "Trained linear injection at V2" , 
@@ -195,6 +197,7 @@ model_names = [
     "noprojector_linear_v4", 
     
     # random conv no projector 
+    "noprojector_conv_v1", 
     #"noprojector_conv_v2", 
     "noprojector_conv_v4",
     #"noprojector_conv_IT", 
