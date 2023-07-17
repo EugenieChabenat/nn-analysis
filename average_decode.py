@@ -277,30 +277,31 @@ for model_name in model_names:
       average_scores = scores
   average_scores = [x/nb_metrics for x in average_scores]
   plt.plot(layers, average_scores, label=dict_model_names[model_name], color = dict_color[model_name][0], ls = dict_color[model_name][1])
-  plt.axvline(x = 3, color = 'grey',  ls = 'dotted')
-"""axes[key,i].axvline(x = 6, color = 'grey', ls = 'dotted')
-axes[key,i].axvline(x = 10, color = 'grey', ls = 'dotted')
-axes[key,i].axvline(x = 16, color = 'grey',  ls = 'dotted')
-axes[key,i].axvline(x = 19, color = 'grey', ls = 'dotted')
-axes[key,i].axvline(x = 20, color = 'grey' , ls = 'dotted')
+plt.axvline(x = 3, color = 'grey',  ls = 'dotted')
+plt.axvline(x = 6, color = 'grey', ls = 'dotted')
+plt.axvline(x = 10, color = 'grey', ls = 'dotted')
+plt.axvline(x = 16, color = 'grey',  ls = 'dotted')
+plt.axvline(x = 19, color = 'grey', ls = 'dotted')
+plt.axvline(x = 20, color = 'grey' , ls = 'dotted')
 
-axes[key,i].set_title(dict_metric_names[metric_type], fontsize=18)#, fontsize =60)
-axes[key,i].set_xticks([0, 3, 6, 10, 16, 19, 20])
-axes[key,i].set_xticklabels(['1st convolution', 'maxpool', 'v1 injection', 'v2 injection', 'v4 injection', 'IT injection', 'avgpool'], rotation=45, ha='right', fontsize=16)#, fontsize=60)
+#axes[key,i].set_title(dict_metric_names[metric_type], fontsize=18)#, fontsize =60)
+plt.xticks([0, 3, 6, 10, 16, 19, 20])
+plt.xticklabels(['1st convolution', 'maxpool', 'v1 injection', 'v2 injection', 'v4 injection', 'IT injection', 'avgpool'], rotation=45, ha='right', fontsize=16)#, fontsize=60)
 
-axes[key,i].text(4.5, 0.95, "Block V1", ha="center", va="center", size=14)#, size=60)
+"""axes[key,i].text(4.5, 0.95, "Block V1", ha="center", va="center", size=14)#, size=60)
 axes[key,i].text(8, 0.95, "Block V2", ha="center", va="center", size=14)#, size=60)
 axes[key,i].text(13, 0.95, "Block V4", ha="center", va="center", size=14)#, size=60)
 axes[key,i].text(17.5, 0.95, "Block IT", ha="center", va="center", size=14)#, size=60)
 #axes[0,i].text(23.5, 0.95, "Projector", ha="center", va="center", size=12)#, size=10)
 axes[key,i].set_ylim(0.0, 1.)
 axes[key,i].tick_params(axis='y', labelsize=14)
-#axes[0,i].legend()#loc='center left')
+#axes[0,i].legend()#loc='center left')"""
 #if i == len(metric_types)-2 and key == 2: 
-    #axes[key,i].legend(loc='lower center', bbox_to_anchor=(1.75, 0.5), fontsize=18)#, fontsize=60)
+
+plt.legend(loc='lower center', bbox_to_anchor=(1.75, 0.5), fontsize=18)#, fontsize=60)
 fig.supxlabel('layers')#, fontsize=60)
 fig.supylabel('decode')#, fontsize=60)
-fig.tight_layout()"""
+fig.tight_layout()
 plt.show()
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/avg-decode.png')
 
