@@ -286,6 +286,7 @@ for model_name in model_names:
         average_identity_scores = scores
         
   average_scores = [x/nb_metrics for x in average_scores]
+  average_identity_scores= [x/nb_metrics for x in average_identity_scores]
     
   plt.plot(layers, average_scores, label=dict_model_names[model_name], color = dict_color[model_name][0], ls = dict_color[model_name][1])
   plt.plot(layers, average_identity_scores, label='identity', color = 'black')
