@@ -110,7 +110,7 @@ list_metrics = {
 model_names = [
     # random injection models  
     #"injection_v1_af",
-    "injection_v2_af", 
+    #"injection_v2_af", 
     #"injection_v4_af",
     #"injection_IT_af",
     
