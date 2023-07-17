@@ -155,13 +155,13 @@ model_names = [
 ]
 
 list_metrics = {
-    #"Camera Translation" : ["x_cam_trans", "y_cam_trans", "z_cam_trans"], 
-    "Camera Rotation" : ["y_cam_rot"], 
+    "Camera Translation" : ["x_cam_trans", "y_cam_trans", "z_cam_trans"], 
+    #"Camera Rotation" : ["y_cam_rot"], 
     #"Camera Pan" : [ 'yz_cam_pan'], 
     
 }
 
-layers = [10]
+layers = [16]
 # ------------------------------------------------------------------------------------
 # LAYERS PLOT 
 # ------------------------------------------------------------------------------------
