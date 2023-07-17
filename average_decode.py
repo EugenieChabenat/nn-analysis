@@ -276,9 +276,9 @@ for model_name in model_names:
     else: 
       average_scores = scores
   average_scores = [x/nb_metrics for x in average_scores]
-  axes[0,i].plot(layers, average_scores, label=dict_model_names[model_name], color = dict_color[model_name][0], ls = dict_color[model_name][1])
-  axes[key,i].axvline(x = 3, color = 'grey',  ls = 'dotted')
-axes[key,i].axvline(x = 6, color = 'grey', ls = 'dotted')
+  plt.plot(layers, average_scores, label=dict_model_names[model_name], color = dict_color[model_name][0], ls = dict_color[model_name][1])
+  plt.axvline(x = 3, color = 'grey',  ls = 'dotted')
+"""axes[key,i].axvline(x = 6, color = 'grey', ls = 'dotted')
 axes[key,i].axvline(x = 10, color = 'grey', ls = 'dotted')
 axes[key,i].axvline(x = 16, color = 'grey',  ls = 'dotted')
 axes[key,i].axvline(x = 19, color = 'grey', ls = 'dotted')
@@ -300,7 +300,7 @@ axes[key,i].tick_params(axis='y', labelsize=14)
     #axes[key,i].legend(loc='lower center', bbox_to_anchor=(1.75, 0.5), fontsize=18)#, fontsize=60)
 fig.supxlabel('layers')#, fontsize=60)
 fig.supylabel('decode')#, fontsize=60)
-fig.tight_layout()
+fig.tight_layout()"""
 plt.show()
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/avg-decode_{}.png'.format(key))
 
