@@ -157,7 +157,7 @@ model_names = [
 list_metrics = {
     #"Camera Translation" : ["x_cam_trans", "y_cam_trans", "z_cam_trans"], 
     #"Camera Rotation" : ["y_cam_rot"], 
-    "Camera Pan" : [ 'yz_cam_pan'], 
+    "Camera Pan" : ['x_cam_pan', 'yz_cam_pan'], 
     
 }
 
