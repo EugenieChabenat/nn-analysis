@@ -270,12 +270,11 @@ metric_types = ['fact-background', 'fact-obj_motion', 'fact-crop', 'fact-color']
 
 nb_metrics = len(metric_types)
 
-average_scores = []
-average_identity_scores = []
+
 
 #fig, axes = pt.core.subplots(2, 2, size=(10, 10), sharex=True)
 plt.figure(figsize=(15,15))
-
+average_identity_scores = []
 if metric[0] == "curve": 
     for i, metric_type in enumerate(metric_types): 
         scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
@@ -287,6 +286,8 @@ if metric[0] == "curve":
 
 
 for model_name in model_names: 
+  average_scores = []
+  
   for i, metric_type in enumerate(metric_types): 
     scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
     if average_scores: 
