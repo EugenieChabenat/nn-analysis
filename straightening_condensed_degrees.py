@@ -116,8 +116,8 @@ model_names = [
     
     # convolution injection models 
     #"injection_conv_v1_af", 
-    "injection_conv_v2_af", 
-    #"injection_conv_v4_af", 
+    #"injection_conv_v2_af", 
+    "injection_conv_v4_af", 
     #"injection_conv_IT_af", 
     
     # unfreeze convolution injection models 
@@ -145,8 +145,8 @@ model_names = [
     #"injection_separate_IT", 
 
     #"v1_no_injection", 
-    "v2_no_injection", 
-    #"v4_no_injection", 
+    #"v2_no_injection", 
+    "v4_no_injection", 
     #"IT_no_injection",
     
     #"resnet50_allfeatures", 
