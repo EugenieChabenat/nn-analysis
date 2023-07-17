@@ -202,13 +202,13 @@ dict_model_names = {
 }
 model_names = [
     # random linear no projector
-    "noprojector_linear_v1", 
+    #"noprojector_linear_v1", 
     #"noprojector_linear_v2",
     #"noprojector_linear_v4", 
     #"noprojector_linear_IT", 
     
     # random convolution no projector 
-    "noprojector_conv_v1", 
+    #"noprojector_conv_v1", 
     #"noprojector_conv_v2",
     #"noprojector_conv_v4", 
     #"noprojector_conv_IT", 
@@ -226,26 +226,26 @@ model_names = [
     #"injection_conv_IT", 
     
     # unfreeze convolution injection models 
-    "unfreeze_injection_v1", 
+    #"unfreeze_injection_v1", 
     #"unfreeze_injection_v2", 
     #"unfreeze_injection_v4", 
     #"unfreeze_injection_IT", 
 
     # subset 
-    "subset_injection_v1", 
+    #"subset_injection_v1", 
     #"subset_injection_v2", 
     #"subset_injection_v4", 
     #"subset_injection_IT",
 
     # conv subset injection 
-    "injection_conv_subset_v1", 
+    #"injection_conv_subset_v1", 
     #"injection_conv_subset_v2", 
     #"injection_conv_subset_v4", 
     #"injection_conv_subset_IT",
 
 
     # separate learning of weights 
-    "injection_separate_v1", 
+    #"injection_separate_v1", 
     #"injection_separate_v2", 
     #"injection_separate_v4", 
     #"injection_separate_IT",
