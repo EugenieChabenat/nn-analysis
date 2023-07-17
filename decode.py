@@ -262,7 +262,7 @@ model_names = [
     #"barlow_fact_no_injection"
 ]
 
-layers = [6]
+layers = [16]
 
 #fig, axes = pt.core.subplots(2, 5, size=(40, 40), sharex=True)
 fig, axes = pt.core.subplots(3, 3, size=(10, 10), sharex=True)
