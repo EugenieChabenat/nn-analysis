@@ -214,14 +214,14 @@ model_names = [
     #"noprojector_conv_IT", 
     
     # random injection models  
-    "injection_v1",
-    #"injection_v2", 
+    #"injection_v1",
+    "injection_v2", 
     #"injection_v4",
     #"injection_IT",
     
     # convolution injection models 
-    "injection_conv_v1", 
-    #"injection_conv_v2", 
+    #"injection_conv_v1", 
+    "injection_conv_v2", 
     #"injection_conv_v4", 
     #"injection_conv_IT", 
     
@@ -252,8 +252,8 @@ model_names = [
     
     
     # control models 
-    "v1_no_injection", 
-    #"v2_no_injection", 
+    #"v1_no_injection", 
+    "v2_no_injection", 
     #"v4_no_injection", 
     #"IT_no_injection", 
 
