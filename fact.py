@@ -156,7 +156,7 @@ dict_model_names = {
     "injection_conv_v4": "Random convolutional injection at V4" ,
     "unfreeze_injection_v4": "Trained convolutional injection at V4" , 
     "subset_injection_v4": "Random linear injection of spatial information at V4", 
-    "injection_conv_subset_v4": "Random convolutional injection of spatial at V4" ,
+    "injection_conv_subset_v4": "Random convolutional injection of spatial information at V4" ,
     "noprojector_linear_v4":  "Random linear injection at V4 - no projector",
     "noprojector_conv_v4":  "Random convolutional injection at V4 - no projector",
 
