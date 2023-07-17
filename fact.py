@@ -181,13 +181,13 @@ model_names = [
     # trained without projector 
     #"noprojector_linear_v1", 
     #"noprojector_linear_v2", 
-    "noprojector_linear_v4", 
-    "noprojector_linear_IT", 
+    #"noprojector_linear_v4", 
+    #"noprojector_linear_IT", 
     
     # random con - noprojector 
-    "noprojector_conv_v1", 
+    #"noprojector_conv_v1", 
     #"noprojector_conv_v2", 
-    "noprojector_conv_v4", 
+    #"noprojector_conv_v4", 
     #"noprojector_conv_IT", 
     
     # random injection models  
@@ -276,7 +276,8 @@ fig.supxlabel('layers')
 fig.supylabel('factorization')
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v4-legend_{}.png'.format(key))
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/v4-legend_{}.png'.format(key))
+#plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v4-legend_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_fact_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/v4-fact_{}.png'.format(key))
 
