@@ -272,7 +272,7 @@ for model_name in model_names:
   for i, metric_type in enumerate(metric_types): 
     scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
     if average_scores: 
-      average_scores = [sum(x) for x in zip(list1, list2)]
+      average_scores = [sum(x) for x in zip(scores, average_scores)]
     else: 
       average_scores = scores
   average_scores = [x/nb_metrics for x in average_scores]
