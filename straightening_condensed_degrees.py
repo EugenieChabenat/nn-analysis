@@ -109,50 +109,59 @@ list_metrics = {
 
 model_names = [
     # random injection models  
-    #"injection_v1_af",
+    "injection_v1_af",
     #"injection_v2_af", 
     #"injection_v4_af",
-    "injection_IT_af",
+    #"injection_IT_af",
     
     # convolution injection models 
-    #"injection_conv_v1_af", 
+    "injection_conv_v1_af", 
     #"injection_conv_v2_af", 
     #"injection_conv_v4_af", 
-    "injection_conv_IT_af", 
+    #"injection_conv_IT_af", 
     
     # unfreeze convolution injection models 
     #"unfreeze_injection_v1_af", 
     #"unfreeze_injection_v2_af", 
     #"unfreeze_injection_v4_af", 
-    "unfreeze_injection_IT_af", 
+    #"unfreeze_injection_IT_af", 
 
     # subset 
     #"subset_injection_v1", 
     #"subset_injection_v2", 
     #"subset_injection_v4", 
-    "subset_injection_IT",
+    #"subset_injection_IT",
     
     # conv subset injection 
     #"injection_conv_subset_v1", 
     #"injection_conv_subset_v2", 
     #"injection_conv_subset_v4", 
-    "injection_conv_subset_IT",
+    #"injection_conv_subset_IT",
     
     # separate
     #"injection_separate_v1", 
     #"injection_separate_v2", 
     #"injection_separate_v4", 
-    "injection_separate_IT", 
+    #"injection_separate_IT", 
 
-    #"v1_no_injection", 
+    "v1_no_injection", 
     #"v2_no_injection", 
     #"v4_no_injection", 
-    "IT_no_injection",
+    #"IT_no_injection",
     
-    "resnet50_allfeatures", 
-    "bt_allfeatures", 
+    #"resnet50_allfeatures", 
+    #"bt_allfeatures", 
     #"barlow_fact_no_injection"
 ]
+
+list_metrics = {
+    #"Camera Translation" : ["x_cam_trans", "y_cam_trans", "z_cam_trans"], 
+    #"Camera Rotation" : ["x_cam_rot", "y_cam_rot"], 
+    "Camera Pan" : [ 'yz_cam_pan'], 
+    
+}
+
+layer = [6]
 # ------------------------------------------------------------------------------------
 # LAYERS PLOT 
 # ------------------------------------------------------------------------------------
@@ -168,6 +177,10 @@ for key, metric_types in list_metrics.items():
             #scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
             scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
             scores = [i * 180 for i in scores]
+
+            print(model_name)
+            print(metric_type)
+            print(scores)
             
             scores = [element1 - element2 for (element1, element2) in zip(scores, scores_id)]
             
