@@ -267,7 +267,7 @@ nb_metrics = len(metric_types)
 
 average_scores = []
 
-fig, axes = pt.core.subplots(2, 2, size=(10, 10), sharex=True)
+#fig, axes = pt.core.subplots(2, 2, size=(10, 10), sharex=True)
 for model_name in model_names: 
   for i, metric_type in enumerate(metric_types): 
     scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
