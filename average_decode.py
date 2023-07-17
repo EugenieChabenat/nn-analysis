@@ -277,8 +277,8 @@ for model_name in model_names:
       average_scores = scores
   average_scores = [x/nb_metrics for x in average_scores]
   plt.plot(layers, average_scores, label=dict_model_names[model_name], color = dict_color[model_name][0], ls = dict_color[model_name][1])
-plt.axvline(x = 3, color = 'red',  ls = 'dotted', linewidth=4)
-plt.axvline(x = 6, color = 'grey', ls = 'dotted')
+plt.axvline(x = 3, color = 'grey',  ls = 'dotted')
+plt.axvline(x = 6, color = 'red', ls = 'dotted', linewidth=4)
 plt.axvline(x = 10, color = 'grey', ls = 'dotted')
 plt.axvline(x = 16, color = 'grey',  ls = 'dotted')
 plt.axvline(x = 19, color = 'grey', ls = 'dotted')
