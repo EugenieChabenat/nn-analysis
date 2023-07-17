@@ -262,6 +262,8 @@ model_names = [
 
 metric_types = ['obj_scale', 'obj_class', 'obj_pos', 'obj_pose', 'cam_pos_x', 'cam_pos_y', 'cam_scale', 'lighting', 'color']
 
+metric_types = ["x_cam_trans", "y_cam_trans", "z_cam_trans", "x_cam_rot", "y_cam_rot", 'x_cam_pan', 'yz_cam_pan']
+
 nb_metrics = len(metric_types)
 
 average_scores = []
@@ -302,10 +304,10 @@ plt.tick_params(axis='y', labelsize=14)
 #fig.supylabel('decode')#, fontsize=60)
 #fig.tight_layout()
 plt.xlabel('layers', fontsize=14)
-plt.ylabel('average decoding score', fontsize=14)
+plt.ylabel('average curvature score', fontsize=14)
 plt.title('Injection and evaluation at V2', fontsize=20)
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/avg-decode.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/avg-curvature.png')
 
 
     
