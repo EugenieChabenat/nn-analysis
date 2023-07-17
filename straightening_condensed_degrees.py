@@ -109,14 +109,14 @@ list_metrics = {
 
 model_names = [
     # random injection models  
-    "injection_v1_af",
-    #"injection_v2_af", 
+    #"injection_v1_af",
+    "injection_v2_af", 
     #"injection_v4_af",
     #"injection_IT_af",
     
     # convolution injection models 
-    "injection_conv_v1_af", 
-    #"injection_conv_v2_af", 
+    #"injection_conv_v1_af", 
+    "injection_conv_v2_af", 
     #"injection_conv_v4_af", 
     #"injection_conv_IT_af", 
     
@@ -144,8 +144,8 @@ model_names = [
     #"injection_separate_v4", 
     #"injection_separate_IT", 
 
-    "v1_no_injection", 
-    #"v2_no_injection", 
+    #"v1_no_injection", 
+    "v2_no_injection", 
     #"v4_no_injection", 
     #"IT_no_injection",
     
@@ -155,13 +155,13 @@ model_names = [
 ]
 
 list_metrics = {
-    "Camera Translation" : ["x_cam_trans", "y_cam_trans", "z_cam_trans"], 
+    #"Camera Translation" : ["x_cam_trans", "y_cam_trans", "z_cam_trans"], 
     #"Camera Rotation" : ["y_cam_rot"], 
-    #"Camera Pan" : [ 'yz_cam_pan'], 
+    "Camera Pan" : [ 'yz_cam_pan'], 
     
 }
 
-layers = [6]
+layers = [10]
 # ------------------------------------------------------------------------------------
 # LAYERS PLOT 
 # ------------------------------------------------------------------------------------
