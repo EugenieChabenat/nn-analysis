@@ -172,8 +172,7 @@ for key, metric_types in list_metrics.items():
         scores_id = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
         scores_id = [i * 180 for i in scores_id]
         for model_name in model_names:
-            print('model: ', model_name)
-            print('layer: ', layers)
+            
             #scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
             scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
             scores = [i * 180 for i in scores]
