@@ -117,7 +117,7 @@ model_names = [
     # convolution injection models 
     #"injection_conv_v1_af", 
     #"injection_conv_v2_af", 
-    "injection_conv_v4_af", 
+    #"injection_conv_v4_af", 
     #"injection_conv_IT_af", 
     
     # unfreeze convolution injection models 
@@ -130,7 +130,7 @@ model_names = [
     #"subset_injection_v1", 
     #"subset_injection_v2", 
     #"subset_injection_v4", 
-    #"subset_injection_IT",
+    "subset_injection_IT",
     
     # conv subset injection 
     #"injection_conv_subset_v1", 
@@ -146,8 +146,8 @@ model_names = [
 
     #"v1_no_injection", 
     #"v2_no_injection", 
-    "v4_no_injection", 
-    #"IT_no_injection",
+    #"v4_no_injection", 
+    "IT_no_injection",
     
     #"resnet50_allfeatures", 
     #"bt_allfeatures", 
@@ -155,13 +155,13 @@ model_names = [
 ]
 
 list_metrics = {
-    #"Camera Translation" : ["x_cam_trans", "y_cam_trans", "z_cam_trans"], 
+    "Camera Translation" : ["x_cam_trans", "y_cam_trans", "z_cam_trans"], 
     #"Camera Rotation" : ["y_cam_rot"], 
-    "Camera Pan" : ['x_cam_pan', 'yz_cam_pan'], 
+    #"Camera Pan" : ['x_cam_pan', 'yz_cam_pan'], 
     
 }
 
-layers = [16]
+layers = [19]
 # ------------------------------------------------------------------------------------
 # LAYERS PLOT 
 # ------------------------------------------------------------------------------------
