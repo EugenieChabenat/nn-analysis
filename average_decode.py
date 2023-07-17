@@ -299,9 +299,11 @@ axes[key,i].tick_params(axis='y', labelsize=14)
 #if i == len(metric_types)-2 and key == 2: 
 
 plt.legend(loc='lower center', bbox_to_anchor=(1.75, 0.5), fontsize=18)#, fontsize=60)
-fig.supxlabel('layers')#, fontsize=60)
-fig.supylabel('decode')#, fontsize=60)
-fig.tight_layout()
+#fig.supxlabel('layers')#, fontsize=60)
+#fig.supylabel('decode')#, fontsize=60)
+#fig.tight_layout()
+plt.xlabel('layers')
+plt.ylabel('average decode')
 plt.show()
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/avg-decode.png')
 
