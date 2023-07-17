@@ -229,26 +229,25 @@ model_names = [
     #"unfreeze_injection_v1", 
     #"unfreeze_injection_v2", 
     #"unfreeze_injection_v4", 
-    #"unfreeze_injection_IT", 
+    "unfreeze_injection_IT", 
 
     # subset 
     #"subset_injection_v1", 
     #"subset_injection_v2", 
     #"subset_injection_v4", 
-    #"subset_injection_IT",
+    "subset_injection_IT",
 
     # conv subset injection 
     #"injection_conv_subset_v1", 
     #"injection_conv_subset_v2", 
     #"injection_conv_subset_v4", 
-    #"injection_conv_subset_IT",
-
+    "injection_conv_subset_IT",
 
     # separate learning of weights 
     #"injection_separate_v1", 
     #"injection_separate_v2", 
     #"injection_separate_v4", 
-    #"injection_separate_IT",
+    "injection_separate_IT",
     
     # control models 
     #"v1_no_injection", 
@@ -256,7 +255,7 @@ model_names = [
     #"v4_no_injection", 
     "IT_no_injection", 
 
-    #"resnet50_untrained", 
+    "resnet50_untrained", 
     "barlow_twins_50epochs", 
     #"barlow_fact_no_injection"
 ]
@@ -299,7 +298,7 @@ axes[key,i].tick_params(axis='y', labelsize=14)
 #axes[0,i].legend()#loc='center left')"""
 #if i == len(metric_types)-2 and key == 2: 
 
-plt.legend(loc='lower center', bbox_to_anchor=(1.25, 0.5), fontsize=18)#, fontsize=60)
+#plt.legend(loc='lower center', bbox_to_anchor=(1.25, 0.5), fontsize=18)#, fontsize=60)
 #fig.supxlabel('layers')#, fontsize=60)
 #fig.supylabel('decode')#, fontsize=60)
 #fig.tight_layout()
