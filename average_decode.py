@@ -288,15 +288,14 @@ plt.axvline(x = 20, color = 'grey' , ls = 'dotted')
 plt.xticks([0, 3, 6, 10, 16, 19, 20], labels=['1st convolution', 'maxpool', 'v1 injection', 'v2 injection', 'v4 injection', 'IT injection', 'avgpool'], rotation=45)
 #plt.xticklabels(['1st convolution', 'maxpool', 'v1 injection', 'v2 injection', 'v4 injection', 'IT injection', 'avgpool'], rotation=45, ha='right', fontsize=16)#, fontsize=60)
 
-"""axes[key,i].text(4.5, 0.95, "Block V1", ha="center", va="center", size=14)#, size=60)
-axes[key,i].text(8, 0.95, "Block V2", ha="center", va="center", size=14)#, size=60)
-axes[key,i].text(13, 0.95, "Block V4", ha="center", va="center", size=14)#, size=60)
-axes[key,i].text(17.5, 0.95, "Block IT", ha="center", va="center", size=14)#, size=60)
+plt.text(4.5, 0.95, "Block V1", ha="center", va="center", size=14)#, size=60)
+plt.text(8, 0.95, "Block V2", ha="center", va="center", size=14)#, size=60)
+plt.text(13, 0.95, "Block V4", ha="center", va="center", size=14)#, size=60)
+plt.text(17.5, 0.95, "Block IT", ha="center", va="center", size=14)#, size=60)
 #axes[0,i].text(23.5, 0.95, "Projector", ha="center", va="center", size=12)#, size=10)
-axes[key,i].set_ylim(0.0, 1.)
-axes[key,i].tick_params(axis='y', labelsize=14)
-#axes[0,i].legend()#loc='center left')"""
-#if i == len(metric_types)-2 and key == 2: 
+plt.set_ylim(0.0, 1.)
+plt.tick_params(axis='y', labelsize=14)
+#axes[0,i].legend()#loc='center left')
 
 #plt.legend(loc='lower center', bbox_to_anchor=(1.25, 0.5), fontsize=18)#, fontsize=60)
 #fig.supxlabel('layers')#, fontsize=60)
