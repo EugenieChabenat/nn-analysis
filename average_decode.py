@@ -268,7 +268,7 @@ nb_metrics = len(metric_types)
 average_scores = []
 
 #fig, axes = pt.core.subplots(2, 2, size=(10, 10), sharex=True)
-plt.figure(figsize=(15,10))
+plt.figure(figsize=(15,15))
 for model_name in model_names: 
   for i, metric_type in enumerate(metric_types): 
     scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
@@ -299,7 +299,7 @@ axes[key,i].tick_params(axis='y', labelsize=14)
 #axes[0,i].legend()#loc='center left')"""
 #if i == len(metric_types)-2 and key == 2: 
 
-plt.legend(loc='lower center', bbox_to_anchor=(1., 0.5), fontsize=18)#, fontsize=60)
+plt.legend(loc='lower center', bbox_to_anchor=(1.25, 0.5), fontsize=18)#, fontsize=60)
 #fig.supxlabel('layers')#, fontsize=60)
 #fig.supylabel('decode')#, fontsize=60)
 #fig.tight_layout()
