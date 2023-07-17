@@ -113,7 +113,7 @@ layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 2
 one_layer = 0
 metric = ["decode", 0]
 metric = ["curve", 1]
-#metric = ["fact", 0]
+metric = ["fact", 0]
 
 dict_metric_names = {
     'obj_class': "Object Class" , 
@@ -266,7 +266,7 @@ metric_types = ['obj_scale', 'obj_class', 'obj_pos', 'obj_pose', 'cam_pos_x', 'c
 
 metric_types = ["x_cam_trans", "y_cam_trans", "z_cam_trans", "x_cam_rot", "y_cam_rot", 'x_cam_pan', 'yz_cam_pan']
 
-#metric_types = ['fact-background', 'fact-obj_motion', 'fact-crop', 'fact-color']
+metric_types = ['fact-background', 'fact-obj_motion', 'fact-crop', 'fact-color']
 
 nb_metrics = len(metric_types)
 
@@ -298,7 +298,7 @@ for model_name in model_names:
   average_scores = [x/nb_metrics for x in average_scores]
     
   plt.plot(layers, average_scores, label=dict_model_names[model_name], color = dict_color[model_name][0], ls = dict_color[model_name][1])
-  plt.plot(layers, average_identity_scores, label='identity', color = 'black')
+  #plt.plot(layers, average_identity_scores, label='identity', color = 'black')
 
 plt.axvline(x = 3, color = 'grey',  ls = 'dotted')
 plt.axvline(x = 6, color = 'grey', ls = 'dotted')
@@ -325,10 +325,10 @@ plt.tick_params(axis='y', labelsize=14)
 #fig.supylabel('decode')#, fontsize=60)
 #fig.tight_layout()
 plt.xlabel('layers', fontsize=14)
-plt.ylabel('average curvature score', fontsize=14)
+plt.ylabel('average factorization score', fontsize=14)
 plt.title('Injection and evaluation at IT', fontsize=20)
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/avg-curvature.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/avg-fact.png')
 
 
     
