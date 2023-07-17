@@ -149,9 +149,9 @@ dict_metric_names = {
 }"""
 
 list_metrics = {
-    0 : ['obj_class', 'obj_pos', 'obj_scale'], 
-    1 : ['obj_pose', 'cam_pos_x', 'cam_pos_y'], 
-    2 : ['cam_scale',  'lighting', 'color']
+    0 : ['obj_class']#, 'obj_pos', 'obj_scale'], 
+    #1 : ['obj_pose', 'cam_pos_x', 'cam_pos_y'], 
+   # 2 : ['cam_scale',  'lighting', 'color']
 }
 
 dict_model_names = {
@@ -201,65 +201,67 @@ dict_model_names = {
 }
 model_names = [
     # random linear no projector
-    #"noprojector_linear_v1", 
+    "noprojector_linear_v1", 
     #"noprojector_linear_v2",
-    "noprojector_linear_v4", 
-    "noprojector_linear_IT", 
+    #"noprojector_linear_v4", 
+    #"noprojector_linear_IT", 
     
     # random convolution no projector 
     "noprojector_conv_v1", 
     #"noprojector_conv_v2",
-    "noprojector_conv_v4", 
+    #"noprojector_conv_v4", 
     #"noprojector_conv_IT", 
     
     # random injection models  
-    #"injection_v1",
+    "injection_v1",
     #"injection_v2", 
-    "injection_v4",
+    #"injection_v4",
     #"injection_IT",
     
     # convolution injection models 
-    #"injection_conv_v1", 
+    "injection_conv_v1", 
     #"injection_conv_v2", 
-    "injection_conv_v4", 
+    #"injection_conv_v4", 
     #"injection_conv_IT", 
     
     # unfreeze convolution injection models 
-    #"unfreeze_injection_v1", 
+    "unfreeze_injection_v1", 
     #"unfreeze_injection_v2", 
-    "unfreeze_injection_v4", 
+    #"unfreeze_injection_v4", 
     #"unfreeze_injection_IT", 
 
     # subset 
-    #"subset_injection_v1", 
+    "subset_injection_v1", 
     #"subset_injection_v2", 
-    "subset_injection_v4", 
+    #"subset_injection_v4", 
     #"subset_injection_IT",
 
     # conv subset injection 
-    #"injection_conv_subset_v1", 
+    "injection_conv_subset_v1", 
     #"injection_conv_subset_v2", 
-    "injection_conv_subset_v4", 
+    #"injection_conv_subset_v4", 
     #"injection_conv_subset_IT",
 
 
     # separate learning of weights 
-    #"injection_separate_v1", 
+    "injection_separate_v1", 
     #"injection_separate_v2", 
-    "injection_separate_v4", 
+    #"injection_separate_v4", 
     #"injection_separate_IT",
     
     
     # control models 
-    #"v1_no_injection", 
+    "v1_no_injection", 
     #"v2_no_injection", 
-    "v4_no_injection", 
+    #"v4_no_injection", 
     #"IT_no_injection", 
 
-    "resnet50_untrained", 
+    #"resnet50_untrained", 
     "barlow_twins_50epochs", 
     #"barlow_fact_no_injection"
 ]
+
+layers = [6]
 
 #fig, axes = pt.core.subplots(2, 5, size=(40, 40), sharex=True)
 fig, axes = pt.core.subplots(3, 3, size=(10, 10), sharex=True)
@@ -270,6 +272,9 @@ for key, metric_types in list_metrics.items():
     for i, metric_type in enumerate(metric_types):
         for model_name in model_names:
             scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
+            print(model_name)
+            print(metric_type)
+            print(score)
             
             for j in range(len(scores)): 
                 if scores[j] <0: 
@@ -307,8 +312,8 @@ fig.supxlabel('layers')#, fontsize=60)
 fig.supylabel('decode')#, fontsize=60)
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v4-decode_{}.png'.format(key))
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/v4-decode_{}.png'.format(key))
+#plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v4-decode_{}.png'.format(key))
+#plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/v4-decode_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_decode_{}.png'.format(key))
     
    
