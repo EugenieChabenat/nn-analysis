@@ -113,7 +113,7 @@ layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 2
 one_layer = 0
 metric = ["decode", 0]
 metric = ["curve", 1]
-metric = ["fact", 0]
+#metric = ["fact", 0]
 
 dict_metric_names = {
     'obj_class': "Object Class" , 
