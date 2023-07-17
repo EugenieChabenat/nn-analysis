@@ -272,6 +272,16 @@ average_identity_scores = []
 
 #fig, axes = pt.core.subplots(2, 2, size=(10, 10), sharex=True)
 plt.figure(figsize=(15,15))
+
+for i, metric_type in enumerate(metric_types): 
+    scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
+    if average_identity_scores: 
+        average_identity_scores = [sum(x) for x in zip(scores, average_identity_scores)]
+    else: 
+        average_identity_scores = scores
+    average_identity_scores= [x/nb_metrics for x in average_identity_scores]
+
+
 for model_name in model_names: 
   for i, metric_type in enumerate(metric_types): 
     scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
@@ -279,14 +289,9 @@ for model_name in model_names:
       average_scores = [sum(x) for x in zip(scores, average_scores)]
     else: 
       average_scores = scores
-    scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
-    if average_identity_scores: 
-        average_identity_scores = [sum(x) for x in zip(scores, average_identity_scores)]
-    else: 
-        average_identity_scores = scores
         
+   
   average_scores = [x/nb_metrics for x in average_scores]
-  average_identity_scores= [x/nb_metrics for x in average_identity_scores]
     
   plt.plot(layers, average_scores, label=dict_model_names[model_name], color = dict_color[model_name][0], ls = dict_color[model_name][1])
   plt.plot(layers, average_identity_scores, label='identity', color = 'black')
