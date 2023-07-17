@@ -303,7 +303,7 @@ plt.tick_params(axis='y', labelsize=14)
 #fig.tight_layout()
 plt.xlabel('layers')
 plt.ylabel('average decode')
-plt.title('Injection and evaluation at V4', fontsize=14)
+plt.title('Injection and evaluation at V4', fontsize=20)
 plt.show()
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/avg-decode.png')
 
