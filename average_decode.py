@@ -294,7 +294,6 @@ for model_name in model_names:
     else: 
       average_scores = scores
         
-   
   average_scores = [x/nb_metrics for x in average_scores]
     
   plt.plot(layers, average_scores, label=dict_model_names[model_name], color = dict_color[model_name][0], ls = dict_color[model_name][1])
