@@ -41,16 +41,16 @@ dict_color = {
     "noprojector_control_v2":  ["black", ':'], 
     
     # no projector linear 
-    "noprojector_linear_v1":  ["brown", '--'], 
-    "noprojector_linear_v2":  ["brown", '--'], 
-    "noprojector_linear_v4": ["brown", '--'], 
-    "noprojector_linear_IT": ["brown", '--'], 
+    "noprojector_linear_v1":  ["brown", ':'], 
+    "noprojector_linear_v2":  ["brown", ':'], 
+    "noprojector_linear_v4": ["brown", ':'], 
+    "noprojector_linear_IT": ["brown", ':'], 
 
     # no projector conv
-    "noprojector_conv_v1": ["gold", '--'], 
-    "noprojector_conv_v2": ["gold", '--'], 
-    "noprojector_conv_v4": ["gold", '--'], 
-    "noprojector_conv_IT": ["gold", '--'], 
+    "noprojector_conv_v1": ["gold", ':'], 
+    "noprojector_conv_v2": ["gold", ':'], 
+    "noprojector_conv_v4": ["gold", ':'], 
+    "noprojector_conv_IT": ["gold", ':'], 
     
     # random injection 
     "injection_v1" : ["orange", '-'],
@@ -93,7 +93,7 @@ dict_color = {
     "injection_separate_IT": ["purple", '-'], 
     
     # conv subset injection 
-    "injection_conv_subset_v1": ["lime", '-.'], 
+    "injection_conv_subset_v1": ["lime", '-'], 
     "injection_conv_subset_v2": ["lime", '-'], 
     "injection_conv_subset_v4": ["lime", '-'], 
     "injection_conv_subset_IT": ["lime", '-'],
@@ -249,7 +249,7 @@ model_names = [
     #"subset_injection_IT",
 
     # conv subset injection 
-    "injection_conv_subset_v1", 
+    #"injection_conv_subset_v1", 
     #"injection_conv_subset_v2", 
     #"injection_conv_subset_v4", 
     #"injection_conv_subset_IT",
@@ -316,7 +316,7 @@ fig.supxlabel('layers')#, fontsize=60)
 fig.supylabel('decode')#, fontsize=60)
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/decode-v1-control-_{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/decode-v1-{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/v4-decode_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_decode_{}.png'.format(key))
     
