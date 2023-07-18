@@ -27,29 +27,35 @@ metric_dict = {'ss_inv-background': 'SS Invariance - Background',
                'fact-color': 'Factorization - Color'
               }
 dict_color = {
-    # trained without projector 
-    "noprojector_linear_v1":  ["brown", '--'], 
-    "noprojector_linear_v2":  ["brown", '--'], 
+    "noprojector_control_v1":  ["black", '-'], 
+    "noprojector_control_v2":  ["black", '-'], 
+    
+    # no projector linear 
+    "noprojector_linear_v1":  ["brown", '-'], 
+    "noprojector_linear_v2":  ["brown", '-'], 
     "noprojector_linear_v4":  ["brown", '--'], 
     "noprojector_linear_IT":  ["brown", '--'], 
     
+    #'injection_conv_subset_v1_proj':["black", '-'],
+    #"noprojector_linear_v1_nm3":  ["brown", '--'], 
+    
     # no projector conv
-    "noprojector_conv_v1": ["gold", '--'], 
-    "noprojector_conv_v2": ["gold", '--'], 
-    "noprojector_conv_v4": ["gold", '--'], 
-    "noprojector_conv_IT": ["gold", '--'], 
+    "noprojector_conv_v1": ["gold", '-'], 
+    "noprojector_conv_v2": ["gold", '-'], 
+    "noprojector_conv_v4": ["gold", '-'], 
+    "noprojector_conv_IT": ["gold", '-'], 
     
     # random injection 
-    "injection_v1" : ["orange", '-'],
-    "injection_v2": ["orange", '-'], 
-    "injection_v4": ["orange", '-'],
-    "injection_IT": ["orange", '-'],
+    "injection_v1" : ["orange", ':'],
+    "injection_v2": ["orange", ':'], 
+    "injection_v4": ["orange", ':'],
+    "injection_IT": ["orange", ':'],
     
     # convolution injection
-    "injection_conv_v1": ["lightblue", '-'], 
-    "injection_conv_v2": ["lightblue", '-'], 
-    "injection_conv_v4": ["lightblue", '-'], 
-    "injection_conv_IT": ["lightblue", '-'], 
+    "injection_conv_v1": ["lightblue", ':'], 
+    "injection_conv_v2": ["lightblue", ':'], 
+    "injection_conv_v4": ["lightblue", ':'], 
+    "injection_conv_IT": ["lightblue", ':'], 
     
     #"injection_conv_v1": ["red", '-'], 
     #"injection_conv_v2": ["blue", '-'], 
@@ -141,6 +147,7 @@ dict_model_names = {
     "injection_conv_subset_v1": "Random convolutional injection of spatial information at V1" ,
     "noprojector_linear_v1": "Random linear injection at V1 - no projector", 
     "noprojector_conv_v1": "Random convolutional injection at V1 - no projector", 
+    "noprojector_control_v1": "Evaluation at V1, no injection - no projector", 
 
     "injection_v2": "Random linear injection at V2",
     "injection_separate_v2": "Trained linear injection at V2" , 
@@ -150,6 +157,7 @@ dict_model_names = {
     "injection_conv_subset_v2": "Random convolutional injection of spatial information at V2" ,
     "noprojector_linear_v2":  "Random linear injection at V2 - no projector",
     "noprojector_conv_v2":  "Random convolutional injection at V2 - no projector",
+    "noprojector_control_v2": "Evaluation at V2, no injection - no projector", 
 
     "injection_v4": "Random linear injection at V4",
     "injection_separate_v4": "Trained linear injection at V4" , 
@@ -178,58 +186,62 @@ dict_model_names = {
     "barlow_twins_50epochs": "Vanilla Barlow Twins", 
 }
 model_names = [
+    # no projector control 
+    "noprojector_control_v1", 
+    #"noprojector_control_v2", 
+    
     # trained without projector 
-    #"noprojector_linear_v1", 
+    "noprojector_linear_v1", 
     #"noprojector_linear_v2", 
     #"noprojector_linear_v4", 
     #"noprojector_linear_IT", 
     
     # random con - noprojector 
-    #"noprojector_conv_v1", 
+    "noprojector_conv_v1", 
     #"noprojector_conv_v2", 
     #"noprojector_conv_v4", 
     #"noprojector_conv_IT", 
     
     # random injection models  
-    #"injection_v1",
+    "injection_v1",
     #"injection_v2", 
     #"injection_v4",
-    "injection_IT",
+    #"injection_IT",
     
     # convolution injection models 
-    #"injection_conv_v1", 
+    "injection_conv_v1", 
     #"injection_conv_v2", 
     #"injection_conv_v4", 
-    "injection_conv_IT", 
+    #"injection_conv_IT", 
     
     # unfreeze convolution injection models 
     #"unfreeze_injection_v1", 
     #"unfreeze_injection_v2", 
     #"unfreeze_injection_v4", 
-    "unfreeze_injection_IT", 
+    #"unfreeze_injection_IT", 
 
     # subset 
     #"subset_injection_v1", 
     #"subset_injection_v2", 
     #"subset_injection_v4", 
-    "subset_injection_IT",
+    #"subset_injection_IT",
 
     # conv subset injection 
     #"injection_conv_subset_v1", 
     #"injection_conv_subset_v2", 
     #"injection_conv_subset_v4", 
-    "injection_conv_subset_IT",
+    #"injection_conv_subset_IT",
 
     # separate 
     #"injection_separate_v1", 
     #"injection_separate_v2", 
     #"injection_separate_v4", 
-    "injection_separate_IT",
+    #"injection_separate_IT",
     
-    #"v1_no_injection", 
+    "v1_no_injection", 
     #"v2_no_injection", 
     #"v4_no_injection", 
-    "IT_no_injection", 
+    #"IT_no_injection", 
 
     "resnet50_untrained", 
     "barlow_twins_50epochs", 
@@ -254,7 +266,7 @@ for key, metric_types in list_metrics.items():
         #axes[0,i].plot(layers, scores, label='identity')
         
         axes[key,i].axvline(x = 3, color = 'grey', ls = 'dotted')
-        axes[key,i].axvline(x = 6, color = 'grey', ls = 'dotted')
+        axes[key,i].axvline(x = 6, color = 'red', ls = 'dotted', linewidth=4)
         axes[key,i].axvline(x = 10, color = 'grey',  ls = 'dotted')
         axes[key,i].axvline(x = 16, color = 'grey', ls = 'dotted')
         axes[key,i].axvline(x = 19, color = 'grey', ls = 'dotted')
@@ -271,13 +283,13 @@ for key, metric_types in list_metrics.items():
         axes[key,i].set_ylim(0.0, 1.0)
         axes[key,i].tick_params(axis='y', labelsize=14)
         
-        axes[key,i].legend(loc='center left',bbox_to_anchor=(1.6, 0.5), fontsize=20)
+        #axes[key,i].legend(loc='center left',bbox_to_anchor=(1.6, 0.5), fontsize=20)
 fig.supxlabel('layers')
 fig.supylabel('factorization')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/it-legend_{}.png'.format(key))
-#plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v4-legend_{}.png'.format(key))
+#plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/it-legend_{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v1-fact-{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_fact_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/v4-fact_{}.png'.format(key))
 
