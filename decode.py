@@ -153,10 +153,10 @@ dict_metric_names = {
 }"""
 
 list_metrics = {
-    0 : ['obj_scale'], 
-    #0 : ['obj_class']#, 'obj_pos', 'obj_scale'], 
-    #1 : ['obj_pose', 'cam_pos_x', 'cam_pos_y'], 
-   # 2 : ['cam_scale',  'lighting', 'color']
+    #0 : ['obj_scale'], 
+    0 : ['obj_class', 'obj_pos', 'obj_scale'], 
+    1 : ['obj_pose', 'cam_pos_x', 'cam_pos_y'], 
+   2 : ['cam_scale',  'lighting', 'color']
 }
 
 dict_model_names = {
