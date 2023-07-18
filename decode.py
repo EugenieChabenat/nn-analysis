@@ -36,16 +36,15 @@ metric_dict = {'obj_class': 'Object Class',
                }
 
 dict_color = {
-    # no projector control 
-    "noprojector_control_v1":  ["green", '-'], 
-    "noprojector_control_v2":  ["green", '-'], 
+    "noprojector_control_v1":  ["black", '-'], 
+    "noprojector_control_v2":  ["black", '-'], 
     
     # no projector linear 
-    "noprojector_linear_v1":  ["lime", '-'], 
-    "noprojector_linear_v2":  ["lime", '-'], 
-    "noprojector_linear_v4": ["lime", '-'], 
-    "noprojector_linear_IT": ["lime", '-'], 
-
+    "noprojector_linear_v1":  ["brown", '-'], 
+    "noprojector_linear_v2":  ["brown", '-'], 
+    "noprojector_linear_v4":  ["brown", '--'], 
+    "noprojector_linear_IT":  ["brown", '--'], 
+    
     # no projector conv
     "noprojector_conv_v1": ["gold", '-'], 
     "noprojector_conv_v2": ["gold", '-'], 
@@ -62,7 +61,7 @@ dict_color = {
     "injection_conv_v1": ["lightblue", ':'], 
     "injection_conv_v2": ["lightblue", ':'], 
     "injection_conv_v4": ["lightblue", ':'], 
-    "injection_conv_IT": ["lightblue", ':'],  
+    "injection_conv_IT": ["lightblue", ':'], 
     
     #"injection_conv_v1": ["red", '-'], 
     #"injection_conv_v2": ["blue", '-'], 
@@ -316,7 +315,7 @@ fig.supxlabel('layers')#, fontsize=60)
 fig.supylabel('decode')#, fontsize=60)
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/decode-v2-{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/f-decode-v2-{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/v4-decode_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_decode_{}.png'.format(key))
     
