@@ -35,36 +35,36 @@ metric_dict = {
 
 dict_color = {
     # no projector control
-    "noprojector_control_v1":  ["black", '--'], 
-    "noprojector_control_v2":  ["black", '--'], 
+    "noprojector_control_v1":  ["black", '-'], 
+    "noprojector_control_v2":  ["black", '-'], 
     
     # no projector linear 
-    "noprojector_linear_v1":  ["brown", '--'], 
-    "noprojector_linear_v2":  ["brown", '--'], 
+    "noprojector_linear_v1":  ["brown", '-'], 
+    "noprojector_linear_v2":  ["brown", '-'], 
     "noprojector_linear_v4":  ["brown", '--'], 
     "noprojector_linear_IT":  ["brown", '--'], 
     
-    'injection_conv_subset_v1_proj':["black", '-'],
-    "noprojector_linear_v1_nm3":  ["brown", '--'], 
+    #'injection_conv_subset_v1_proj':["black", '-'],
+    #"noprojector_linear_v1_nm3":  ["brown", '--'], 
     
     # no projector conv
-    "noprojector_conv_v1": ["gold", '--'], 
-    "noprojector_conv_v2": ["gold", '--'], 
-    "noprojector_conv_v4": ["gold", '--'], 
-    "noprojector_conv_IT": ["gold", '--'], 
+    "noprojector_conv_v1": ["gold", '-'], 
+    "noprojector_conv_v2": ["gold", '-'], 
+    "noprojector_conv_v4": ["gold", '-'], 
+    "noprojector_conv_IT": ["gold", '-'], 
     
     
     # random injection 
-    "injection_v1_af" : ["orange", '-'],
-    "injection_v2_af": ["orange", '-'], 
-    "injection_v4_af": ["orange", '-'],
-    "injection_IT_af": ["orange", '-'],
+    "injection_v1_af" : ["orange", ':'],
+    "injection_v2_af": ["orange", ':'], 
+    "injection_v4_af": ["orange", ':'],
+    "injection_IT_af": ["orange", ':'],
     
     # convolution injection
-    "injection_conv_v1_af": ["lightblue", '-'], 
-    "injection_conv_v2_af": ["lightblue", '-'], 
-    "injection_conv_v4_af": ["lightblue", '-'], 
-    "injection_conv_IT_af": ["lightblue", '-'],  
+    "injection_conv_v1_af": ["lightblue", ':'], 
+    "injection_conv_v2_af": ["lightblue", ':'], 
+    "injection_conv_v4_af": ["lightblue", ':'], 
+    "injection_conv_IT_af": ["lightblue", ':'],  
     
     #"injection_conv_v1_af": ["red", '-'], 
     #"injection_conv_v2_af": ["blue", '-'], 
@@ -298,7 +298,7 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v1-camtrans-{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/1-v1-camtrans-{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/v4_campan_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_straightening_{}.png'.format(key))
     
