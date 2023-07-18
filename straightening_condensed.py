@@ -204,26 +204,26 @@ model_names = [
     # no projector linear 
     #"noprojector_linear_v1",
     #"noprojector_linear_v2", 
-    "noprojector_linear_v4", 
-    #"noprojector_linear_IT", 
+    #"noprojector_linear_v4", 
+    "noprojector_linear_IT", 
     
     # random conv no projector 
     #"noprojector_conv_v1", 
     #"noprojector_conv_v2", 
-    "noprojector_conv_v4",
-    #"noprojector_conv_IT", 
+    #"noprojector_conv_v4",
+    "noprojector_conv_IT", 
     
     # random injection models  
     #"injection_v1_af",
     #"injection_v2_af", 
-    "injection_v4_af",
-    #"injection_IT_af",
+    #"injection_v4_af",
+    "injection_IT_af",
     
     # convolution injection models 
     #"injection_conv_v1_af", 
     #"injection_conv_v2_af", 
-    "injection_conv_v4_af", 
-    #"injection_conv_IT_af", 
+    #"injection_conv_v4_af", 
+    "injection_conv_IT_af", 
     
     # unfreeze convolution injection models 
     #"unfreeze_injection_v1_af", 
@@ -251,8 +251,8 @@ model_names = [
 
     #"v1_no_injection", 
     #"v2_no_injection", 
-    "v4_no_injection", 
-    #"IT_no_injection",
+    #"v4_no_injection", 
+    "IT_no_injection",
     
     "resnet50_allfeatures", 
     "bt_allfeatures", 
@@ -276,8 +276,8 @@ for key, metric_types in list_metrics.items():
         axes[key,i].axvline(x = 3, color = 'grey',  ls = 'dotted')
         axes[key,i].axvline(x = 6, color = 'grey', ls = 'dotted')
         axes[key,i].axvline(x = 10, color = 'grey', ls = 'dotted')
-        axes[key,i].axvline(x = 16, color = 'red',  ls = 'dotted', linewidth=4)
-        axes[key,i].axvline(x = 19, color = 'grey', ls = 'dotted')
+        axes[key,i].axvline(x = 16, color = 'grey',  ls = 'dotted')
+        axes[key,i].axvline(x = 19, color = 'red', ls = 'dotted', linewidth=4)
         axes[key,i].axvline(x = 20, color = 'grey' , ls = 'dotted')
         
         axes[key,i].set_title(dict_metric_names[metric_type], fontsize=18)
@@ -296,7 +296,7 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/g-v4-campan-{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/g-it-campan-{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/v4_campan_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_straightening_{}.png'.format(key))
     
