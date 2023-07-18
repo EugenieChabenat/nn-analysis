@@ -276,8 +276,8 @@ for key, metric_types in list_metrics.items():
         axes[key,i].plot(layers, scores, label='identity', color = 'black')
         
         axes[key,i].axvline(x = 3, color = 'grey',  ls = 'dotted')
-        axes[key,i].axvline(x = 6, color = 'red', ls = 'dotted', linewidth=4)
-        axes[key,i].axvline(x = 10, color = 'grey', ls = 'dotted')
+        axes[key,i].axvline(x = 6, color = 'grey', ls = 'dotted')
+        axes[key,i].axvline(x = 10, color = 'red', ls = 'dotted', linewidth=4)
         axes[key,i].axvline(x = 16, color = 'grey',  ls = 'dotted')
         axes[key,i].axvline(x = 19, color = 'grey', ls = 'dotted')
         axes[key,i].axvline(x = 20, color = 'grey' , ls = 'dotted')
