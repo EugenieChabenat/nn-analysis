@@ -282,9 +282,6 @@ for key, metric_types in list_metrics.items():
     for i, metric_type in enumerate(metric_types):
         for model_name in model_names:
             scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
-            print(model_name)
-            print(metric_type)
-            print(scores)
             
             for j in range(len(scores)): 
                 if scores[j] <0: 
@@ -295,8 +292,6 @@ for key, metric_types in list_metrics.items():
         #axes[0,i].plot(layers, scores, label='identity')
         
         # blocks 
-        #axes[key,i].axvline(x = 3, color = 'grey', alpha = 0.5, ls = 'dotted')
-
         axes[key,i].axvline(x = 3, color = 'grey',  ls = 'dotted')
         axes[key,i].axvline(x = 6, color = 'grey', ls = 'dotted')
         axes[key,i].axvline(x = 10, color = 'grey', ls = 'dotted')
