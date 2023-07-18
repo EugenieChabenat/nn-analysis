@@ -36,6 +36,10 @@ metric_dict = {'obj_class': 'Object Class',
                }
 
 dict_color = {
+    # no projector control 
+    "noprojector_control_v1":  ["black", '--'], 
+    "noprojector_control_v2":  ["black", '--'], 
+    
     # no projector linear 
     "noprojector_linear_v1":  ["brown", '--'], 
     "noprojector_linear_v2":  ["brown", '--'], 
@@ -164,15 +168,18 @@ dict_model_names = {
     "injection_conv_subset_v1": "Random convolutional injection of spatial information at V1" ,
     "noprojector_linear_v1": "Random linear injection at V1 - no projector" ,
     "noprojector_conv_v1": "Random convolutional injection of subset at V1 - no projector" ,
+    "noprojector_control_v1": "Evaluation at V1, no injection - no projector", 
+    
 
     "injection_v2": "Random linear injection at V2",
     "injection_separate_v2": "Trained linear injection at V2" , 
     "injection_conv_v2": "Random convolutional injection at V2" ,
     "unfreeze_injection_v2": "Trained convolutional injection at V2" , 
-    "subset_injection_v2": "Random linear injection of spaial information at V2", 
+    "subset_injection_v2": "Random linear injection of spatial information at V2", 
     "injection_conv_subset_v2": "Random convolutional injection of spatial information at V2" ,
     "noprojector_linear_v2": "Random linear injection at V2 - no projector",
     "noprojector_conv_v2": "Random convolutional injection at V2 - no projector" ,
+    "noprojector_control_v2": "Evaluation at V2, no injection - no projector", 
 
     "injection_v4": "Random linear injection at V4",
     "injection_separate_v4": "Trained linear injection at V4" , 
@@ -201,29 +208,33 @@ dict_model_names = {
     "barlow_twins_50epochs": "Vanilla Barlow Twins", 
 }
 model_names = [
+    # no projector - control 
+    "noprojector_control_v1", 
+    #"noprojector_control_v2", 
+    
     # random linear no projector
-    #"noprojector_linear_v1", 
+    "noprojector_linear_v1", 
     #"noprojector_linear_v2",
     #"noprojector_linear_v4", 
     #"noprojector_linear_IT", 
     
     # random convolution no projector 
-    #"noprojector_conv_v1", 
+    "noprojector_conv_v1", 
     #"noprojector_conv_v2",
     #"noprojector_conv_v4", 
     #"noprojector_conv_IT", 
     
     # random injection models  
-    #"injection_v1",
+    "injection_v1",
     #"injection_v2", 
     #"injection_v4",
-    "injection_IT",
+    #"injection_IT",
     
     # convolution injection models 
-    #"injection_conv_v1", 
+    "injection_conv_v1", 
     #"injection_conv_v2", 
     #"injection_conv_v4", 
-    "injection_conv_IT", 
+    #"injection_conv_IT", 
     
     # unfreeze convolution injection models 
     #"unfreeze_injection_v1", 
@@ -238,11 +249,10 @@ model_names = [
     #"subset_injection_IT",
 
     # conv subset injection 
-    #"injection_conv_subset_v1", 
+    "injection_conv_subset_v1", 
     #"injection_conv_subset_v2", 
     #"injection_conv_subset_v4", 
     #"injection_conv_subset_IT",
-
 
     # separate learning of weights 
     #"injection_separate_v1", 
@@ -250,14 +260,13 @@ model_names = [
     #"injection_separate_v4", 
     #"injection_separate_IT",
     
-    
     # control models 
-    #"v1_no_injection", 
+    "v1_no_injection", 
     #"v2_no_injection", 
     #"v4_no_injection", 
-    "IT_no_injection", 
+    #"IT_no_injection", 
 
-    #"resnet50_untrained", 
+    "resnet50_untrained", 
     "barlow_twins_50epochs", 
     #"barlow_fact_no_injection"
 ]
@@ -313,7 +322,7 @@ fig.supxlabel('layers')#, fontsize=60)
 fig.supylabel('decode')#, fontsize=60)
 fig.tight_layout()
 plt.show()
-#plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v4-decode_{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/decode-v1-control-_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/v4-decode_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_decode_{}.png'.format(key))
     
