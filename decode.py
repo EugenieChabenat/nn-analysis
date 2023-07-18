@@ -37,8 +37,8 @@ metric_dict = {'obj_class': 'Object Class',
 
 dict_color = {
     # no projector control 
-    "noprojector_control_v1":  ["black", '--'], 
-    "noprojector_control_v2":  ["black", '--'], 
+    "noprojector_control_v1":  ["black", 'densely dashdotdotted'], 
+    "noprojector_control_v2":  ["black", 'densely dashdotdotted'], 
     
     # no projector linear 
     "noprojector_linear_v1":  ["brown", '--'], 
