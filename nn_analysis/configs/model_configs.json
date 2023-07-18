@@ -8,6 +8,10 @@
     "identity_pc": {
         "arch": "identity"
     },
+    "noprojector_control_v1": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/no_projector_linear_control_v1"
+    },
     "noprojector_linear_v1": {
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/no_projector_linear_v1"
