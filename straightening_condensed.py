@@ -139,8 +139,8 @@ dict_metric_names = {
 
 list_metrics = {
     #0 : ["x_cam_trans", "y_cam_trans", "z_cam_trans"], 
-    0 : ["x_cam_rot", "y_cam_rot"], 
-    #0 : ['x_cam_pan', 'yz_cam_pan']
+    #0 : ["x_cam_rot", "y_cam_rot"], 
+    0 : ['x_cam_pan', 'yz_cam_pan']
 }
 
 dict_model_names = {
@@ -296,7 +296,7 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/g-v4-camrot-{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/g-v4-campan-{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/v4_campan_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_straightening_{}.png'.format(key))
     
