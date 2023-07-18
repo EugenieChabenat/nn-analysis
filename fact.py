@@ -274,7 +274,7 @@ for key, metric_types in list_metrics.items():
         axes[key,i].set_xticks([0, 3, 6, 10, 16, 19, 20])
         axes[key,i].set_xticklabels(['1st convolution', 'maxpool', 'v1 injection', 'v2 injection', 'v4 injection', 'IT injection', 'avgpool'], rotation=45, ha='right',fontsize=14)
         
-        axes[key,i].set_title(dict_metric_names[metric_type])
+        axes[key,i].set_title(dict_metric_names[metric_type], fontsize=18)
         
         axes[key,i].text(4.5, 0.1, "Block V1", ha="center", va="center", size=14)
         axes[key,i].text(8, 0.1, "Block V2", ha="center", va="center", size=14)
@@ -283,13 +283,13 @@ for key, metric_types in list_metrics.items():
         axes[key,i].set_ylim(0.0, 1.0)
         axes[key,i].tick_params(axis='y', labelsize=14)
         
-        axes[key,i].legend(loc='center left',bbox_to_anchor=(1.6, 0.5), fontsize=20)
+        #axes[key,i].legend(loc='center left',bbox_to_anchor=(1.6, 0.5), fontsize=20)
 fig.supxlabel('layers')
 fig.supylabel('factorization')
 fig.tight_layout()
 plt.show()
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/it-legend_{}.png'.format(key))
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v1-legend-{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/1v1-fact-{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_fact_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/v4-fact_{}.png'.format(key))
 
