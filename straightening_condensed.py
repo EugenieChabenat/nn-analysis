@@ -34,7 +34,6 @@ metric_dict = {
              }
 
 dict_color = {
-    # no projector control
     "noprojector_control_v1":  ["black", '-'], 
     "noprojector_control_v2":  ["black", '-'], 
     
@@ -52,7 +51,6 @@ dict_color = {
     "noprojector_conv_v2": ["gold", '-'], 
     "noprojector_conv_v4": ["gold", '-'], 
     "noprojector_conv_IT": ["gold", '-'], 
-    
     
     # random injection 
     "injection_v1_af" : ["orange", ':'],
@@ -242,7 +240,7 @@ model_names = [
     # conv subset injection 
     #"injection_conv_subset_v1", 
     #"injection_conv_subset_v2", 
-    "injection_conv_subset_v4", 
+    #"injection_conv_subset_v4", 
     #"injection_conv_subset_IT",
     
     # separate
@@ -298,7 +296,7 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/1-v2-camtrans-{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/f-v2-camtrans-{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/v4_campan_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_straightening_{}.png'.format(key))
     
