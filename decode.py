@@ -271,7 +271,7 @@ model_names = [
     #"barlow_fact_no_injection"
 ]
 
-layers = [19]
+
 
 #fig, axes = pt.core.subplots(2, 5, size=(40, 40), sharex=True)
 fig, axes = pt.core.subplots(3, 3, size=(10, 10), sharex=True)
@@ -286,7 +286,6 @@ for key, metric_types in list_metrics.items():
             for j in range(len(scores)): 
                 if scores[j] <0: 
                     scores[j] = 0
-                    
             axes[key,i].plot(layers, scores, label=dict_model_names[model_name], color = dict_color[model_name][0], ls = dict_color[model_name][1])
         #scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
         #axes[0,i].plot(layers, scores, label='identity')
