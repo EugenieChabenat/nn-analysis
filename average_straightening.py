@@ -121,8 +121,8 @@ epoch = 29
 layers = np.arange(2)
 layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]#, 21, 22, 23, 24, 25, 26, 27]
 
-#layers =[ 19, 20]#, 21, 22, 23, 24, 25, 26, 27]
-layers = [ 21, 22, 23, 24, 25, 26, 27]
+layers =[18, 19]#, 21, 22, 23, 24, 25, 26, 27]
+#layers = [ 21, 22, 23, 24, 25, 26, 27]
 
 one_layer = 0
 metric = ["curve", 1]
@@ -216,16 +216,16 @@ model_names = [
     #"noprojector_conv_IT", 
     
     # random injection models  
-    "injection_v1_af",
+    #"injection_v1_af",
     #"injection_v2_af", 
     #"injection_v4_af",
-    #"injection_IT_af",
+    "injection_IT_af",
     
     # convolution injection models 
-    "injection_conv_v1_af", 
+    #"injection_conv_v1_af", 
     #"injection_conv_v2_af", 
     #"injection_conv_v4_af", 
-    #"injection_conv_IT_af", 
+    "injection_conv_IT_af", 
     
     # unfreeze convolution injection models 
     #"unfreeze_injection_v1_af", 
@@ -252,7 +252,7 @@ model_names = [
     #"injection_separate_IT",
     
     # control models 
-    "v1_no_injection", 
+    #v1_no_injection", 
     #"v2_no_injection", 
     #"v4_no_injection", 
     #"IT_no_injection", 
