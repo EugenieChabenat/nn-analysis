@@ -122,7 +122,7 @@ layers = np.arange(2)
 layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]#, 21, 22, 23, 24, 25, 26, 27]
 
 layers =[10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]#, 21, 22, 23, 24, 25, 26, 27]
-#layers = [ 21, 22, 23, 24, ]#25, 26, 27]
+layers = [ 21, 22, 23, 24, ]#25, 26, 27]
 
 one_layer = 0
 metric = ["curve", 1]
@@ -217,14 +217,14 @@ model_names = [
     
     # random injection models  
     #"injection_v1_af",
-    "injection_v2_af", 
-    #"injection_v4_af",
+    #"injection_v2_af", 
+    "injection_v4_af",
     #"injection_IT_af",
     
     # convolution injection models 
     #"injection_conv_v1_af", 
-    "injection_conv_v2_af", 
-    #"injection_conv_v4_af", 
+    #"injection_conv_v2_af", 
+    "injection_conv_v4_af", 
     #"injection_conv_IT_af", 
     
     # unfreeze convolution injection models 
@@ -253,12 +253,12 @@ model_names = [
     
     # control models 
     #"v1_no_injection", 
-    "v2_no_injection", 
-    #"v4_no_injection", 
+    #"v2_no_injection", 
+    "v4_no_injection", 
     #"IT_no_injection", 
 
-    "resnet50_untrained", 
-    "barlow_twins_50epochs", 
+    #"resnet50_untrained", 
+    #"barlow_twins_50epochs", 
     #"barlow_fact_no_injection"
 ]
 metric_types = ["x_cam_trans", "y_cam_trans", "z_cam_trans", "x_cam_rot", "y_cam_rot", 'x_cam_pan', 'yz_cam_pan']
