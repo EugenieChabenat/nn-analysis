@@ -119,7 +119,6 @@ layers = np.arange(2)
 layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]#, 21, 22, 23, 24, 25, 26, 27]
 one_layer = 0
 metric = ["decode", 0]
-#metric = ["curve", 1]
 #metric = ["fact", 0]
 
 dict_metric_names = {
@@ -144,25 +143,7 @@ dict_metric_names = {
     'obj_pose': "Object Pose"
 }
 
-"""list_metrics = {
-    "Object Class" : ['obj_class'], 
-    "Camera Pos" : ['cam_pos_x', 'cam_pos_y'], 
-    "Camera Scale" : ['cam_scale', 'cam_pos'], 
-    "Lightning": ['brightness', 'lighting'],
-    "Contrast": ['contrast', 'saturation'],
-    "Color": ['hue', 'color'],
-    "Object Pos" : ['obj_pos_x', 'obj_pos_y'], 
-    "Object Scale" : ['obj_scale', 'obj_pos'], 
-    "Object Pose": ['obj_pose_x', 'obj_pose_y'], 
-    "Object Pose 2": ['obj_pose_z', 'obj_pose']
-}"""
 
-list_metrics = {
-    0 : ['obj_scale'], 
-    #0 : ['obj_class']#, 'obj_pos', 'obj_scale'], 
-    #1 : ['obj_pose', 'cam_pos_x', 'cam_pos_y'], 
-   # 2 : ['cam_scale',  'lighting', 'color']
-}
 
 dict_model_names = {
     "injection_v1": "Random linear injection at V1",
@@ -210,59 +191,63 @@ dict_model_names = {
     "barlow_twins_50epochs": "Vanilla Barlow Twins", 
 }
 model_names = [
+    # control no projector
+    "noprojector_control_v1", 
+    #"noprojector_control_v2",
+    
     # random linear no projector
-    #"noprojector_linear_v1", 
+    "noprojector_linear_v1", 
     #"noprojector_linear_v2",
     #"noprojector_linear_v4", 
     #"noprojector_linear_IT", 
     
     # random convolution no projector 
-    #"noprojector_conv_v1", 
+    "noprojector_conv_v1", 
     #"noprojector_conv_v2",
     #"noprojector_conv_v4", 
     #"noprojector_conv_IT", 
     
     # random injection models  
-    #"injection_v1",
+    "injection_v1",
     #"injection_v2", 
-    "injection_v4",
+    #"injection_v4",
     #"injection_IT",
     
     # convolution injection models 
-    #"injection_conv_v1", 
+    "injection_conv_v1", 
     #"injection_conv_v2", 
     #"injection_conv_v4", 
-    "injection_conv_IT", 
+    #"injection_conv_IT", 
     
     # unfreeze convolution injection models 
     #"unfreeze_injection_v1", 
     #"unfreeze_injection_v2", 
     #"unfreeze_injection_v4", 
-    "unfreeze_injection_IT", 
+    #"unfreeze_injection_IT", 
 
     # subset 
     #"subset_injection_v1", 
     #"subset_injection_v2", 
     #"subset_injection_v4", 
-    "subset_injection_IT",
+    #"subset_injection_IT",
 
     # conv subset injection 
     #"injection_conv_subset_v1", 
     #"injection_conv_subset_v2", 
     #"injection_conv_subset_v4", 
-    "injection_conv_subset_IT",
+    #"injection_conv_subset_IT",
 
     # separate learning of weights 
     #"injection_separate_v1", 
     #"injection_separate_v2", 
     #"injection_separate_v4", 
-    "injection_separate_IT",
+    #"injection_separate_IT",
     
     # control models 
-    #"v1_no_injection", 
+    "v1_no_injection", 
     #"v2_no_injection", 
     #"v4_no_injection", 
-    "IT_no_injection", 
+    #"IT_no_injection", 
 
     "resnet50_untrained", 
     "barlow_twins_50epochs", 
@@ -270,8 +255,6 @@ model_names = [
 ]
 
 metric_types = ['obj_scale', 'obj_class', 'obj_pos', 'obj_pose', 'cam_pos_x', 'cam_pos_y', 'cam_scale', 'lighting', 'color']
-
-#metric_types = ["x_cam_trans", "y_cam_trans", "z_cam_trans", "x_cam_rot", "y_cam_rot", 'x_cam_pan', 'yz_cam_pan']
 
 #metric_types = ['fact-background', 'fact-obj_motion', 'fact-crop', 'fact-color']
 
@@ -308,10 +291,10 @@ for model_name in model_names:
   #plt.plot(layers, average_identity_scores, label='identity', color = 'black')
 
 plt.axvline(x = 3, color = 'grey',  ls = 'dotted')
-plt.axvline(x = 6, color = 'grey', ls = 'dotted')
+plt.axvline(x = 6, color = 'red', ls = 'dotted', linewidth=4)
 plt.axvline(x = 10, color = 'grey', ls = 'dotted')
 plt.axvline(x = 16, color = 'grey',  ls = 'dotted')
-plt.axvline(x = 19, color = 'red', ls = 'dotted', linewidth=4)
+plt.axvline(x = 19, color = 'grey', ls = 'dotted')
 plt.axvline(x = 20, color = 'grey' , ls = 'dotted')
 
 #axes[key,i].set_title(dict_metric_names[metric_type], fontsize=18)#, fontsize =60)
@@ -333,9 +316,9 @@ plt.tick_params(axis='y', labelsize=14)
 #fig.tight_layout()
 plt.xlabel('layers', fontsize=14)
 plt.ylabel('average decoding score', fontsize=14)
-plt.title('Injection and evaluation at IT', fontsize=20)
+plt.title('Injection and evaluation at V1', fontsize=20)
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/avg-decode.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/avg-decode-np-v1.png')
 
 
     
