@@ -120,6 +120,10 @@ dict_color = {
 epoch = 29
 layers = np.arange(2)
 layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]#, 21, 22, 23, 24, 25, 26, 27]
+
+layers =[6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]#, 21, 22, 23, 24, 25, 26, 27]
+
+
 one_layer = 0
 metric = ["curve", 1]
 
@@ -196,17 +200,17 @@ dict_model_names = {
 }
 model_names = [
     # control no projector
-    "noprojector_control_v1", 
+    #"noprojector_control_v1", 
     #"noprojector_control_v2",
     
     # random linear no projector
-    "noprojector_linear_v1", 
+    #"noprojector_linear_v1", 
     #"noprojector_linear_v2",
     #"noprojector_linear_v4", 
     #"noprojector_linear_IT", 
     
     # random convolution no projector 
-    "noprojector_conv_v1", 
+    #"noprojector_conv_v1", 
     #"noprojector_conv_v2",
     #"noprojector_conv_v4", 
     #"noprojector_conv_IT", 
@@ -224,25 +228,25 @@ model_names = [
     #"injection_conv_IT_af", 
     
     # unfreeze convolution injection models 
-    #"unfreeze_injection_v1_af", 
+    "unfreeze_injection_v1_af", 
     #"unfreeze_injection_v2_af", 
     #"unfreeze_injection_v4_af", 
     #"unfreeze_injection_IT_af", 
 
     # subset 
-    #"subset_injection_v1", 
+    "subset_injection_v1", 
     #"subset_injection_v2", 
     #"subset_injection_v4", 
     #"subset_injection_IT",
 
     # conv subset injection 
-    #"injection_conv_subset_v1", 
+    "injection_conv_subset_v1", 
     #"injection_conv_subset_v2", 
     #"injection_conv_subset_v4", 
     #"injection_conv_subset_IT",
 
     # separate learning of weights 
-    #"injection_separate_v1", 
+    "injection_separate_v1", 
     #"injection_separate_v2", 
     #"injection_separate_v4", 
     #"injection_separate_IT",
@@ -277,7 +281,7 @@ average_identity_scores= [x/nb_metrics for x in average_identity_scores]
 
 for model_name in model_names: 
   average_scores = []
-  
+  print(model_name)
   for i, metric_type in enumerate(metric_types): 
     scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
     if average_scores: 
@@ -286,8 +290,9 @@ for model_name in model_names:
       average_scores = scores
         
   average_scores = [x/nb_metrics for x in average_scores]
+  print('mean: ', np.mean(average_scores))
     
-  plt.plot(layers, average_scores, label=dict_model_names[model_name], color = dict_color[model_name][0], ls = dict_color[model_name][1])
+  """plt.plot(layers, average_scores, label=dict_model_names[model_name], color = dict_color[model_name][0], ls = dict_color[model_name][1])
   plt.plot(layers, average_identity_scores, label='identity', color = 'black')
 
 plt.axvline(x = 3, color = 'grey',  ls = 'dotted')
@@ -319,7 +324,7 @@ plt.ylabel('average curvature score', fontsize=14)
 plt.title('Injection and evaluation at V1', fontsize=20)
 plt.show()
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/avg-curve-np-v1.png')
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/avg-curve-np-v1.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/avg-curve-np-v1.png')"""
 
 
     
