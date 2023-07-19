@@ -158,10 +158,10 @@ dict_model_names = {
     "noprojector_conv_v1": "Random convolutional injection of subset at V1 - no projector" ,
     "noprojector_control_v1": "Evaluation at V1, no injection - no projector" ,
 
-    "injection_v2": "Random linear injection at V2",
+    "injection_v2_af": "Random linear injection at V2",
     "injection_separate_v2": "Trained linear injection at V2" , 
-    "injection_conv_v2": "Random convolutional injection at V2" ,
-    "unfreeze_injection_v2": "Trained convolutional injection at V2" , 
+    "injection_conv_v2_af": "Random convolutional injection at V2" ,
+    "unfreeze_injection_v2_af": "Trained convolutional injection at V2" , 
     "subset_injection_v2": "Random linear injection of spaial information at V2", 
     "injection_conv_subset_v2": "Random convolutional injection of spatial information at V2" ,
     "noprojector_linear_v2": "Random linear injection at V2 - no projector",
@@ -196,30 +196,30 @@ dict_model_names = {
 }
 model_names = [
     # control no projector
-    "noprojector_control_v1", 
-    #"noprojector_control_v2",
+    #"noprojector_control_v1", 
+    "noprojector_control_v2",
     
     # random linear no projector
-    "noprojector_linear_v1", 
-    #"noprojector_linear_v2",
+    #"noprojector_linear_v1", 
+    "noprojector_linear_v2",
     #"noprojector_linear_v4", 
     #"noprojector_linear_IT", 
     
     # random convolution no projector 
-    "noprojector_conv_v1", 
-    #"noprojector_conv_v2",
+    #"noprojector_conv_v1", 
+    "noprojector_conv_v2",
     #"noprojector_conv_v4", 
     #"noprojector_conv_IT", 
     
     # random injection models  
-    "injection_v1_af",
-    #"injection_v2_af", 
+    #"injection_v1_af",
+    "injection_v2_af", 
     #"injection_v4_af",
     #"injection_IT_af",
     
     # convolution injection models 
-    "injection_conv_v1_af", 
-    #"injection_conv_v2_af", 
+    #"injection_conv_v1_af", 
+    "injection_conv_v2_af", 
     #"injection_conv_v4_af", 
     #"injection_conv_IT_af", 
     
@@ -248,8 +248,8 @@ model_names = [
     #"injection_separate_IT",
     
     # control models 
-    "v1_no_injection", 
-    #"v2_no_injection", 
+    #"v1_no_injection", 
+    "v2_no_injection", 
     #"v4_no_injection", 
     #"IT_no_injection", 
 
@@ -292,9 +292,9 @@ for model_name in model_names:
 
 plt.axvline(x = 3, color = 'grey',  ls = 'dotted')
 plt.axvline(x = 6, color = 'grey', ls = 'dotted')
-plt.axvline(x = 10, color = 'grey', ls = 'dotted')
+plt.axvline(x = 10, color = 'red', ls = 'dotted', linewidth=4)
 plt.axvline(x = 16, color = 'grey',  ls = 'dotted')
-plt.axvline(x = 19, color = 'red', ls = 'dotted', linewidth=4)
+plt.axvline(x = 19, color = 'grey', ls = 'dotted')
 plt.axvline(x = 20, color = 'grey' , ls = 'dotted')
 
 #axes[key,i].set_title(dict_metric_names[metric_type], fontsize=18)#, fontsize =60)
@@ -316,10 +316,10 @@ plt.tick_params(axis='y', labelsize=14)
 #fig.tight_layout()
 plt.xlabel('layers', fontsize=14)
 plt.ylabel('average curvature score', fontsize=14)
-plt.title('Injection and evaluation at V1', fontsize=20)
+plt.title('Injection and evaluation at V2', fontsize=20)
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/avg-curve-np-v1.png')
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/avg-curve-np-v1.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/avg-curve-np-v2.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/avg-curve-np-v2.png')
 
 
     
