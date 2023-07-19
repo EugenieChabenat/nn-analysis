@@ -204,43 +204,43 @@ model_names = [
     
     # random injection models  
     #"injection_v1",
-    "injection_v2", 
-    #"injection_v4",
+    #"injection_v2", 
+    "injection_v4",
     #"injection_IT",
     
     # convolution injection models 
     #"injection_conv_v1", 
-    "injection_conv_v2", 
-    #"injection_conv_v4", 
+    #"injection_conv_v2", 
+    "injection_conv_v4", 
     #"injection_conv_IT", 
     
     # unfreeze convolution injection models 
     #"unfreeze_injection_v1", 
-    "unfreeze_injection_v2", 
-    #"unfreeze_injection_v4", 
+    #"unfreeze_injection_v2", 
+    "unfreeze_injection_v4", 
     #"unfreeze_injection_IT", 
 
     # subset 
     #"subset_injection_v1", 
-    "subset_injection_v2", 
-    #"subset_injection_v4", 
+    #"subset_injection_v2", 
+    "subset_injection_v4", 
     #"subset_injection_IT",
 
     # conv subset injection 
     #"injection_conv_subset_v1", 
-    "injection_conv_subset_v2", 
-    #"injection_conv_subset_v4", 
+    #"injection_conv_subset_v2", 
+    "injection_conv_subset_v4", 
     #"injection_conv_subset_IT",
 
     # separate 
     #"injection_separate_v1", 
-    "injection_separate_v2", 
-    #"injection_separate_v4", 
+    #"injection_separate_v2", 
+    "injection_separate_v4", 
     #"injection_separate_IT",
     
     #"v1_no_injection", 
-    "v2_no_injection", 
-    #"v4_no_injection", 
+    #"v2_no_injection", 
+    "v4_no_injection", 
     #"IT_no_injection", 
 
     "resnet50_untrained", 
@@ -268,8 +268,8 @@ for key, metric_types in list_metrics.items():
         
         axes[key,i].axvline(x = 3, color = 'grey', ls = 'dotted')
         axes[key,i].axvline(x = 6, color = 'grey', ls = 'dotted')
-        axes[key,i].axvline(x = 10, color = 'red',  ls = 'dotted', linewidth=4)
-        axes[key,i].axvline(x = 16, color = 'grey', ls = 'dotted')
+        axes[key,i].axvline(x = 10, color = 'grey',  ls = 'dotted')
+        axes[key,i].axvline(x = 16, color = 'red', ls = 'dotted', linewidth=4)
         axes[key,i].axvline(x = 19, color = 'grey', ls = 'dotted')
         axes[key,i].axvline(x = 20, color = 'grey', ls = 'dotted')
         axes[key,i].set_xticks([0, 3, 6, 10, 16, 19, 20])
@@ -292,7 +292,7 @@ plt.show()
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/it-legend_{}.png'.format(key))
 #plt.savefig('/home/ec3731/issa_analysis/nn-analysis/g-v4-legend-{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_fact_{}.png'.format(key))
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/v2-fact_{}.png'.format(key))
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/v4-fact_{}.png'.format(key))
 
 
 # ------------------------------------------------------------------------------------
