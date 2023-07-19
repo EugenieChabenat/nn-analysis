@@ -206,14 +206,14 @@ model_names = [
     # random linear no projector
     #"noprojector_linear_v1", 
     #"noprojector_linear_v2",
-    "noprojector_linear_v4", 
-    #"noprojector_linear_IT", 
+    #"noprojector_linear_v4", 
+    "noprojector_linear_IT", 
     
     # random convolution no projector 
     #"noprojector_conv_v1", 
     #"noprojector_conv_v2",
     #"noprojector_conv_v4", 
-    #"noprojector_conv_IT", 
+    "noprojector_conv_IT", 
     
     # random injection models  
     #"injection_v1_af",
@@ -254,8 +254,8 @@ model_names = [
     # control models 
     #"v1_no_injection", 
     #"v2_no_injection", 
-    "v4_no_injection", 
-    #"IT_no_injection", 
+    #"v4_no_injection", 
+    "IT_no_injection", 
 
     #"resnet50_untrained", 
     #"barlow_twins_50epochs", 
