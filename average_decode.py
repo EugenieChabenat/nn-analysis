@@ -321,6 +321,8 @@ plt.ylabel('average decoding score', fontsize=14)
 plt.title('Injection and evaluation at V1', fontsize=20)
 plt.show()
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/avg-decode-np-v1.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/avg-decode-np-v1.png')
+
 
 
     
