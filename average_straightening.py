@@ -278,7 +278,7 @@ for i, metric_type in enumerate(metric_types):
       average_identity_scores = scores
 average_identity_scores= [x/nb_metrics for x in average_identity_scores]
 scores_id = [i * 180 for i in average_identity_scores]
-print('pixels: ', scores_id)
+print('pixels: ', np.mean(scores_id))
 
 for model_name in model_names: 
   average_scores = []
