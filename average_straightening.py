@@ -122,7 +122,7 @@ layers = np.arange(2)
 layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]#, 21, 22, 23, 24, 25, 26, 27]
 
 layers =[6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]#, 21, 22, 23, 24, 25, 26, 27]
-layers = [ 21, 22, 23, 24, 25, 26, 27]
+layers = [ 21, 22, 23, 24, ]#25, 26, 27]
 
 one_layer = 0
 metric = ["curve", 1]
@@ -216,7 +216,7 @@ model_names = [
     #"noprojector_conv_IT", 
     
     # random injection models  
-    "injection_v1",
+    "injection_v1_af",
     #"injection_v2_af", 
     #"injection_v4_af",
     #"injection_IT_af",
