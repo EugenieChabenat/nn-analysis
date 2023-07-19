@@ -319,6 +319,7 @@ plt.ylabel('average curvature score', fontsize=14)
 plt.title('Injection and evaluation at IT', fontsize=20)
 plt.show()
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/avg-curve-np-v1.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/avg-curve-np-v1.png')
 
 
     
