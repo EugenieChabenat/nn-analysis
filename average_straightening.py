@@ -216,44 +216,44 @@ model_names = [
     #"noprojector_conv_IT", 
     
     # random injection models  
-    "injection_v1_af",
-    #"injection_v2_af", 
+    #"injection_v1_af",
+    "injection_v2_af", 
     #"injection_v4_af",
     #"injection_IT_af",
     
     # convolution injection models 
-    "injection_conv_v1_af", 
-    #"injection_conv_v2_af", 
+    #"injection_conv_v1_af", 
+    "injection_conv_v2_af", 
     #"injection_conv_v4_af", 
     #"injection_conv_IT_af", 
     
     # unfreeze convolution injection models 
-    "unfreeze_injection_v1_af", 
+    #"unfreeze_injection_v1_af", 
     #"unfreeze_injection_v2_af", 
     #"unfreeze_injection_v4_af", 
     #"unfreeze_injection_IT_af", 
 
     # subset 
-    "subset_injection_v1", 
+    #"subset_injection_v1", 
     #"subset_injection_v2", 
     #"subset_injection_v4", 
     #"subset_injection_IT",
 
     # conv subset injection 
-    "injection_conv_subset_v1", 
+    #"injection_conv_subset_v1", 
     #"injection_conv_subset_v2", 
     #"injection_conv_subset_v4", 
     #"injection_conv_subset_IT",
 
     # separate learning of weights 
-    "injection_separate_v1", 
+    #"injection_separate_v1", 
     #"injection_separate_v2", 
     #"injection_separate_v4", 
     #"injection_separate_IT",
     
     # control models 
-    "v1_no_injection", 
-    #"v2_no_injection", 
+    #"v1_no_injection", 
+    "v2_no_injection", 
     #"v4_no_injection", 
     #"IT_no_injection", 
 
