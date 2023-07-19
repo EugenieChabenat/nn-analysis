@@ -194,30 +194,30 @@ dict_model_names = {
 }
 model_names = [
     # control no projector
-    #"noprojector_control_v1", 
-    "noprojector_control_v2",
+    "noprojector_control_v1", 
+    #"noprojector_control_v2",
     
     # random linear no projector
-    #"noprojector_linear_v1", 
-    "noprojector_linear_v2",
+    "noprojector_linear_v1", 
+    #"noprojector_linear_v2",
     #"noprojector_linear_v4", 
     #"noprojector_linear_IT", 
     
     # random convolution no projector 
-    #"noprojector_conv_v1", 
-    "noprojector_conv_v2",
+    "noprojector_conv_v1", 
+    #"noprojector_conv_v2",
     #"noprojector_conv_v4", 
     #"noprojector_conv_IT", 
     
     # random injection models  
-    #"injection_v1",
-    "injection_v2", 
+    "injection_v1",
+    #"injection_v2", 
     #"injection_v4",
     #"injection_IT",
     
     # convolution injection models 
-    #"injection_conv_v1", 
-    "injection_conv_v2", 
+    "injection_conv_v1", 
+    #"injection_conv_v2", 
     #"injection_conv_v4", 
     #"injection_conv_IT", 
     
@@ -246,8 +246,8 @@ model_names = [
     #"injection_separate_IT",
     
     # control models 
-    #"v1_no_injection", 
-    "v2_no_injection", 
+    "v1_no_injection", 
+    #"v2_no_injection", 
     #"v4_no_injection", 
     #"IT_no_injection", 
 
@@ -285,8 +285,8 @@ for model_name in model_names:
   #plt.plot(layers, average_identity_scores, label='identity', color = 'black')
 
 plt.axvline(x = 3, color = 'grey',  ls = 'dotted')
-plt.axvline(x = 6, color = 'grey', ls = 'dotted')
-plt.axvline(x = 10, color = 'red', ls = 'dotted', linewidth=4)
+plt.axvline(x = 6, color = 'red', ls = 'dotted', linewidth=4)
+plt.axvline(x = 10, color = 'grey', ls = 'dotted')
 plt.axvline(x = 16, color = 'grey',  ls = 'dotted')
 plt.axvline(x = 19, color = 'grey', ls = 'dotted')
 plt.axvline(x = 20, color = 'grey' , ls = 'dotted')
@@ -310,10 +310,10 @@ plt.tick_params(axis='y', labelsize=14)
 #fig.tight_layout()
 plt.xlabel('layers', fontsize=14)
 plt.ylabel('average factorization score', fontsize=14)
-plt.title('Injection and evaluation at V2', fontsize=20)
+plt.title('Injection and evaluation at V1', fontsize=20)
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/avg-fact-np-v2.png')
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/avg-fact-np-v2.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/avg-fact-np-v1.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/avg-fact-np-v1.png')
 
 
 
