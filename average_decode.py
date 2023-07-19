@@ -37,28 +37,35 @@ metric_dict = {'obj_class': 'Object Class',
 
 dict_color = {
     # no projector linear 
-    "noprojector_linear_v1":  ["brown", '--'], 
-    "noprojector_linear_v2":  ["brown", '--'], 
-    "noprojector_linear_v4": ["brown", '--'], 
-    "noprojector_linear_IT": ["brown", '--'], 
-
+    "noprojector_control_v1":  ["black", '-'], 
+    "noprojector_control_v2":  ["black", '-'], 
+    
+    # no projector linear 
+    "noprojector_linear_v1":  ["brown", '-'], 
+    "noprojector_linear_v2":  ["brown", '-'], 
+    "noprojector_linear_v4":  ["brown", '-'], 
+    "noprojector_linear_IT":  ["brown", '-'], 
+    
+    #'injection_conv_subset_v1_proj':["black", '-'],
+    #"noprojector_linear_v1_nm3":  ["brown", '--'], 
+    
     # no projector conv
-    "noprojector_conv_v1": ["gold", '--'], 
-    "noprojector_conv_v2": ["gold", '--'], 
-    "noprojector_conv_v4": ["gold", '--'], 
-    "noprojector_conv_IT": ["gold", '--'], 
+    "noprojector_conv_v1": ["gold", '-'], 
+    "noprojector_conv_v2": ["gold", '-'], 
+    "noprojector_conv_v4": ["gold", '-'], 
+    "noprojector_conv_IT": ["gold", '-'], 
     
     # random injection 
-    "injection_v1" : ["orange", '-'],
-    "injection_v2": ["orange", '-'], 
-    "injection_v4": ["orange", '-'],
-    "injection_IT": ["orange", '-'],
-    
+    "injection_v1" : ["orange", ':'],
+    "injection_v2": ["orange", ':'], 
+    "injection_v4": ["orange", ':'],
+    "injection_IT": ["orange", ':'],
+
     # convolution injection
-    "injection_conv_v1": ["lightblue", '-'], 
-    "injection_conv_v2": ["lightblue", '-'], 
-    "injection_conv_v4": ["lightblue", '-'], 
-    "injection_conv_IT": ["lightblue", '-'],  
+    "injection_conv_v1": ["lightblue", ':'], 
+    "injection_conv_v2": ["lightblue", ':'], 
+    "injection_conv_v4": ["lightblue", ':'], 
+    "injection_conv_IT": ["lightblue", ':'], 
     
     #"injection_conv_v1": ["red", '-'], 
     #"injection_conv_v2": ["blue", '-'], 
