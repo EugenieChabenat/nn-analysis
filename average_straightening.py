@@ -252,7 +252,7 @@ model_names = [
     #"injection_separate_IT",
     
     # control models 
-    v1_no_injection", 
+    "v1_no_injection", 
     #"v2_no_injection", 
     #"v4_no_injection", 
     #"IT_no_injection", 
