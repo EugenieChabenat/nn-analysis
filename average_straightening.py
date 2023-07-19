@@ -200,12 +200,12 @@ dict_model_names = {
 }
 model_names = [
     # control no projector
-    #"noprojector_control_v1", 
-    "noprojector_control_v2",
+    "noprojector_control_v1", 
+    #"noprojector_control_v2",
     
     # random linear no projector
-    #"noprojector_linear_v1", 
-    "noprojector_linear_v2",
+    "noprojector_linear_v1", 
+    #"noprojector_linear_v2",
     #"noprojector_linear_v4", 
     #"noprojector_linear_IT", 
     
@@ -252,8 +252,8 @@ model_names = [
     #"injection_separate_IT",
     
     # control models 
-    #"v1_no_injection", 
-    "v2_no_injection", 
+    "v1_no_injection", 
+    #"v2_no_injection", 
     #"v4_no_injection", 
     #"IT_no_injection", 
 
@@ -277,7 +277,8 @@ for i, metric_type in enumerate(metric_types):
   else: 
       average_identity_scores = scores
 average_identity_scores= [x/nb_metrics for x in average_identity_scores]
-
+scores_id = [i * 180 for i in average_identity_scores]
+print('pixels: ', scores_id)
 
 for model_name in model_names: 
   average_scores = []
