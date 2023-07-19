@@ -266,13 +266,13 @@ nb_metrics = len(metric_types)
 plt.figure(figsize=(15,15))
 average_identity_scores = []
  
-  for i, metric_type in enumerate(metric_types): 
-      scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
-      if average_identity_scores: 
-          average_identity_scores = [sum(x) for x in zip(scores, average_identity_scores)]
-      else: 
-          average_identity_scores = scores
-  average_identity_scores= [x/nb_metrics for x in average_identity_scores]
+for i, metric_type in enumerate(metric_types): 
+  scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
+  if average_identity_scores: 
+      average_identity_scores = [sum(x) for x in zip(scores, average_identity_scores)]
+  else: 
+      average_identity_scores = scores
+average_identity_scores= [x/nb_metrics for x in average_identity_scores]
 
 
 for model_name in model_names: 
