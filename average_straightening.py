@@ -172,19 +172,19 @@ dict_model_names = {
     "noprojector_conv_v2": "Random convolutional injection at V2 - no projector" ,
     "noprojector_control_v2": "Evaluation at V2, no injection - no projector" ,
 
-    "injection_v4": "Random linear injection at V4",
+    "injection_v4_af": "Random linear injection at V4",
     "injection_separate_v4": "Trained linear injection at V4" , 
-    "injection_conv_v4": "Random convolutional injection at V4" ,
-    "unfreeze_injection_v4": "Trained convolutional injection at V4" , 
+    "injection_conv_v4_af": "Random convolutional injection at V4" ,
+    "unfreeze_injection_v4_af": "Trained convolutional injection at V4" , 
     "subset_injection_v4": "Random linear injection of spatial information at V4", 
     "injection_conv_subset_v4": "Random convolutional injection of spatial information at V4",
     "noprojector_linear_v4": "Random linear injection at V4 - no projector",
     "noprojector_conv_v4": "Random convolutional injection at V4 - no projector",
 
-    "injection_IT": "Random linear injection at IT",
+    "injection_IT_af": "Random linear injection at IT",
     "injection_separate_IT": "Trained linear injection at IT" , 
-    "injection_conv_IT": "Random convolutional injection at IT" ,
-    "unfreeze_injection_IT": "Trained convolutional injection at IT" , 
+    "injection_conv_IT_af": "Random convolutional injection at IT" ,
+    "unfreeze_injection_IT_af": "Trained convolutional injection at IT" , 
     "subset_injection_IT": "Random linear injection of spatial information at IT", 
     "injection_conv_subset_IT": "Random convolutional injection of spatial information at IT", 
     "noprojector_linear_IT": "Random linear injection at IT - no projector", 
@@ -282,7 +282,7 @@ print('pixels: ', np.mean(scores_id))
 
 for model_name in model_names: 
   average_scores = []
-  print(model_name)
+  #print(model_name)
   for i, metric_type in enumerate(metric_types): 
     scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
     if average_scores: 
