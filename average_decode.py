@@ -62,15 +62,15 @@ dict_color = {
     "injection_IT": ["orange", ':'],
 
     # convolution injection
-    "injection_conv_v1": ["lightblue", ':'], 
-    "injection_conv_v2": ["lightblue", ':'], 
-    "injection_conv_v4": ["lightblue", ':'], 
-    "injection_conv_IT": ["lightblue", ':'], 
+    #"injection_conv_v1": ["lightblue", ':'], 
+    #"injection_conv_v2": ["lightblue", ':'], 
+    #"injection_conv_v4": ["lightblue", ':'], 
+    #"injection_conv_IT": ["lightblue", ':'], 
     
-    #"injection_conv_v1": ["red", '-'], 
-    #"injection_conv_v2": ["blue", '-'], 
-    #"injection_conv_v4": ["orange", '-'], 
-    #"injection_conv_IT": ["green", '-'], 
+    "injection_conv_v1": ["red", '-'], 
+    "injection_conv_v2": ["blue", '-'], 
+    "injection_conv_v4": ["orange", '-'], 
+    "injection_conv_IT": ["green", '-'], 
         
     # unfreeze convolution injection 
     "unfreeze_injection_v1": ["green", '-'], 
@@ -194,32 +194,32 @@ dict_model_names = {
 }
 model_names = [
     # control no projector
-    "noprojector_control_v1", 
+    #"noprojector_control_v1", 
     #"noprojector_control_v2",
     
     # random linear no projector
-    "noprojector_linear_v1", 
+    #"noprojector_linear_v1", 
     #"noprojector_linear_v2",
     #"noprojector_linear_v4", 
     #"noprojector_linear_IT", 
     
     # random convolution no projector 
-    "noprojector_conv_v1", 
+    #"noprojector_conv_v1", 
     #"noprojector_conv_v2",
     #"noprojector_conv_v4", 
     #"noprojector_conv_IT", 
     
     # random injection models  
-    "injection_v1",
+    #"injection_v1",
     #"injection_v2", 
     #"injection_v4",
     #"injection_IT",
     
     # convolution injection models 
     "injection_conv_v1", 
-    #"injection_conv_v2", 
-    #"injection_conv_v4", 
-    #"injection_conv_IT", 
+    "injection_conv_v2", 
+    "injection_conv_v4", 
+    "injection_conv_IT", 
     
     # unfreeze convolution injection models 
     #"unfreeze_injection_v1", 
@@ -246,7 +246,7 @@ model_names = [
     #"injection_separate_IT",
     
     # control models 
-    "v1_no_injection", 
+    #"v1_no_injection", 
     #"v2_no_injection", 
     #"v4_no_injection", 
     #"IT_no_injection", 
@@ -285,10 +285,10 @@ for model_name in model_names:
   #plt.plot(layers, average_identity_scores, label='identity', color = 'black')
 
 plt.axvline(x = 3, color = 'grey',  ls = 'dotted')
-plt.axvline(x = 6, color = 'red', ls = 'dotted', linewidth=4)
-plt.axvline(x = 10, color = 'grey', ls = 'dotted')
-plt.axvline(x = 16, color = 'grey',  ls = 'dotted')
-plt.axvline(x = 19, color = 'grey', ls = 'dotted')
+plt.axvline(x = 6, color = 'red', ls = 'dotted')#, linewidth=4)
+plt.axvline(x = 10, color = 'blue', ls = 'dotted')
+plt.axvline(x = 16, color = 'orange',  ls = 'dotted')
+plt.axvline(x = 19, color = 'green', ls = 'dotted')
 plt.axvline(x = 20, color = 'grey' , ls = 'dotted')
 
 #axes[key,i].set_title(dict_metric_names[metric_type], fontsize=18)#, fontsize =60)
@@ -312,8 +312,8 @@ plt.xlabel('layers', fontsize=14)
 plt.ylabel('average factorization score', fontsize=14)
 plt.title('Injection and evaluation at V1', fontsize=20)
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/avg-fact-np-v1.png')
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/avg-fact-np-v1.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/avg-fact-all1.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/avg-fact-all1.png')
 
 
 
