@@ -52,15 +52,15 @@ dict_color = {
     "injection_IT": ["orange", '-'], #':'],
     
     # convolution injection
-    "injection_conv_v1": ["lightblue", '-'], #':'],
-    "injection_conv_v2": ["lightblue", '-'], #':'],
-    "injection_conv_v4": ["lightblue", '-'], #':'],
-    "injection_conv_IT": ["lightblue", '-'], #':'],
+    #"injection_conv_v1": ["lightblue", '-'], #':'],
+    #"injection_conv_v2": ["lightblue", '-'], #':'],
+    #"injection_conv_v4": ["lightblue", '-'], #':'],
+    #"injection_conv_IT": ["lightblue", '-'], #':'],
     
-    #"injection_conv_v1": ["red", '-'], 
-    #"injection_conv_v2": ["blue", '-'], 
-    #"injection_conv_v4": ["orange", '-'], 
-    #"injection_conv_IT": ["green", '-'], 
+    "injection_conv_v1": ["red", '-'], 
+    "injection_conv_v2": ["blue", '-'], 
+    "injection_conv_v4": ["orange", '-'], 
+    "injection_conv_IT": ["green", '-'], 
         
     # unfreeze convolution injection 
     "unfreeze_injection_v1": ["green", '-'], 
@@ -206,42 +206,42 @@ model_names = [
     #"injection_v1",
     #"injection_v2", 
     #"injection_v4",
-    "injection_IT",
+    #"injection_IT",
     
     # convolution injection models 
-    #"injection_conv_v1", 
-    #"injection_conv_v2", 
-    #"injection_conv_v4", 
+    "injection_conv_v1", 
+    "injection_conv_v2", 
+    "injection_conv_v4", 
     "injection_conv_IT", 
     
     # unfreeze convolution injection models 
     #"unfreeze_injection_v1", 
     #"unfreeze_injection_v2", 
     #"unfreeze_injection_v4", 
-    "unfreeze_injection_IT", 
+    #"unfreeze_injection_IT", 
 
     # subset 
     #"subset_injection_v1", 
     #"subset_injection_v2", 
     #"subset_injection_v4", 
-    "subset_injection_IT",
+    #"subset_injection_IT",
 
     # conv subset injection 
     #"injection_conv_subset_v1", 
     #"injection_conv_subset_v2", 
     #"injection_conv_subset_v4", 
-    "injection_conv_subset_IT",
+    #"injection_conv_subset_IT",
 
     # separate 
     #"injection_separate_v1", 
     #"injection_separate_v2", 
     #"injection_separate_v4", 
-    "injection_separate_IT",
+    #"injection_separate_IT",
     
     #"v1_no_injection", 
     #"v2_no_injection", 
     #"v4_no_injection", 
-    "IT_no_injection", 
+    #"IT_no_injection", 
 
     "resnet50_untrained", 
     "barlow_twins_50epochs", 
@@ -252,8 +252,8 @@ model_names = [
 # ------------------------------------------------------------------------------------
 # LAYERS PLOT 
 # ------------------------------------------------------------------------------------
-#fig, axes = pt.core.subplots(2,2, size=(20, 10), sharex=True)
-fig, axes = pt.core.subplots(2,2, size=(10, 8), sharex=True)
+fig, axes = pt.core.subplots(2,2, size=(20, 10), sharex=True)
+#fig, axes = pt.core.subplots(2,2, size=(10, 8), sharex=True)
 for key, metric_types in list_metrics.items(): 
     #fig, axes = pt.core.subplots(1, len(metric_types), size=(10, 8), sharex=True)
     for i, metric_type in enumerate(metric_types):
@@ -284,15 +284,15 @@ for key, metric_types in list_metrics.items():
         axes[key,i].set_ylim(0.0, 1.0)
         axes[key,i].tick_params(axis='y', labelsize=14)
         
-        #axes[key,i].legend(loc='center left',bbox_to_anchor=(1.6, 0.5), fontsize=20)
+        axes[key,i].legend(loc='center left',bbox_to_anchor=(1.6, 0.5), fontsize=20)
 fig.supxlabel('layers')
 fig.supylabel('factorization')
 fig.tight_layout()
 plt.show()
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/it-legend_{}.png'.format(key))
-#plt.savefig('/home/ec3731/issa_analysis/nn-analysis/g-v4-legend-{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/legend-all-{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_fact_{}.png'.format(key))
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/it-fact_{}.png'.format(key))
+#plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/legend-all_{}.png'.format(key))
 
 
 # ------------------------------------------------------------------------------------
