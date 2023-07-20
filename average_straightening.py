@@ -323,10 +323,11 @@ plt.tick_params(axis='y', labelsize=14)
 #fig.tight_layout()
 plt.xlabel('layers', fontsize=14)
 plt.ylabel('average curvature score', fontsize=14)
-plt.title('Injection and evaluation at V1', fontsize=20)
+#plt.title('Injection and evaluation at V1', fontsize=20)
+plt.title('Average curvature', fontsize=20)
 plt.show()
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/avg-curve-all1.png')
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/avg-curve-all3.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/avg-curve-all4.png')
 
 
     
