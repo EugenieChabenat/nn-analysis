@@ -310,10 +310,10 @@ plt.tick_params(axis='y', labelsize=14)
 #fig.tight_layout()
 plt.xlabel('layers', fontsize=14)
 plt.ylabel('average factorization score', fontsize=14)
-plt.title('Injection and evaluation at V1', fontsize=20)
+plt.title('Average Factorization score', fontsize=20)
 plt.show()
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/avg-fact-all1.png')
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/avg-fact-all1.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/avg-fact-all2.png')
 
 
 
@@ -373,60 +373,6 @@ plt.show()
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_decode_{}.png'.format(key))
     
    
-
-# ------------------------------------------------------------------------------------
-# HISTOGRAM PLOT 
-# ------------------------------------------------------------------------------------
-def grouped_bar(ax, xs, ys, width=0.2, sep=0.3):
-    assert len(xs) == len(ys)
-    total = 0.0
-    all_xticks = []
-    all_xlabels = []
-    for i, y in enumerate(ys):
-        xticks = np.linspace(0.0,len(y)*width,num=len(y))+total
-        ax.bar(xticks, y, width=width)
-        total += (len(y)+1.5)*width + sep
-        all_xticks += list(xticks)
-        all_xlabels += xs[i]
-    ax.set_xticks(all_xticks)
-    ax.set_xticklabels(all_xlabels, rotation=45, ha='right')
-    
-    
-metricss = [
-            ['cam_pos_x', 'cam_pos_y', 'cam_scale', 'cam_pos'], 
-            ['brightness', 'contrast', 'saturation', 'hue', 'color', 'lighting'], 
-            ['obj_class', 'obj_pos_x', 'obj_pos_y', 'obj_scale', 'obj_pos', 'obj_pose_x', 'obj_pose_y', 'obj_pose_z', 'obj_pose']]
-
-baseline_model = {"injection_conv_v1": "injection_v1",
-                  "injection_conv_v2": "injection_v2",
-                  "injection_conv_v4": "injection_v4", 
-                  "injection_conv_IT": "injection_IT" }
-
-# if plotting at injection site 
-one_layer = {"injection_conv_v1": 6,
-                  "injection_conv_v2": 10,
-                  "injection_conv_v4": 16, 
-                  "injection_conv_IT": 19}
-# if plotting at last layer
-"""one_layer = {"injection_conv_v1": 20,
-                  "injection_conv_v2": 20,
-                  "injection_conv_v4": 20, 
-                   "injection_conv_IT": 20 }"""
-
-model_names = [
-    #"injection_v1",
-    #"injection_v2", 
-    #"injection_v4",
-    #"injection_IT",
-    "injection_conv_v1", 
-    "injection_conv_v2", 
-    "injection_conv_v4",
-    "injection_conv_IT", 
-    #"v4_no_injection", 
-    #"resnet50_untrained", 
-    #"barlow_twins_50epochs", 
-    #"barlow_fact_no_injection"
-]
 
 
 
