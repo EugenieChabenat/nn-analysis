@@ -61,16 +61,16 @@ dict_color = {
     "injection_IT_af": ["orange", '-'], #, ':'],
     
     # convolution injection
-    "injection_conv_v1_af": ["lightblue", '-'], #, ':'], 
-    "injection_conv_v2_af": ["lightblue", '-'], #, ':'], 
-    "injection_conv_v4_af": ["lightblue", '-'], #, ':'], 
-    "injection_conv_IT_af": ["lightblue", '-'], #, ':'],  
+    #"injection_conv_v1_af": ["lightblue", '-'], #, ':'], 
+    #"injection_conv_v2_af": ["lightblue", '-'], #, ':'], 
+    #"injection_conv_v4_af": ["lightblue", '-'], #, ':'], 
+    #"injection_conv_IT_af": ["lightblue", '-'], #, ':'],  
     
-    #"injection_conv_v1": ["red", '-'], 
-    #"injection_conv_v2": ["blue", '-'], 
-    #"injection_conv_v4": ["orange", '-'], 
-    #"injection_conv_IT": ["green", '-'], 
-        
+    "injection_conv_v1_af": ["red", '-'], 
+    "injection_conv_v2_af": ["blue", '-'], 
+    "injection_conv_v4_af": ["orange", '-'], 
+    "injection_conv_IT_af": ["green", '-'], 
+       
     # unfreeze convolution injection 
     "unfreeze_injection_v1_af": ["green", '-'], 
     "unfreeze_injection_v2_af": ["green", '-'], 
