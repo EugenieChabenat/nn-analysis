@@ -181,6 +181,7 @@ dict_model_names = {
     "injection_conv_subset_v4": "Random convolutional injection of spatial information at V4",
     "noprojector_linear_v4": "Random linear injection at V4 - no projector",
     "noprojector_conv_v4": "Random convolutional injection at V4 - no projector",
+    "noprojector_control_v4": "Evaluation at V4, no injection - no projector" ,
 
     "injection_IT_af": "Random linear injection at IT",
     "injection_separate_IT": "Trained linear injection at IT" , 
@@ -203,30 +204,31 @@ model_names = [
     # control no projector
     #"noprojector_control_v1", 
     #"noprojector_control_v2",
+    "noprojector_control_v4",
     
     # random linear no projector
     #"noprojector_linear_v1", 
     #"noprojector_linear_v2",
-    #"noprojector_linear_v4", 
+    "noprojector_linear_v4", 
     #"noprojector_linear_IT", 
     
     # random convolution no projector 
     #"noprojector_conv_v1", 
     #"noprojector_conv_v2",
-    #"noprojector_conv_v4", 
+    "noprojector_conv_v4", 
     #"noprojector_conv_IT", 
     
     # random injection models  
     #"injection_v1_af",
     #"injection_v2_af", 
-    #"injection_v4_af",
+    "injection_v4_af",
     #"injection_IT_af",
     
     # convolution injection models 
-    "injection_conv_v1_af", 
-    "injection_conv_v2_af", 
+    #"injection_conv_v1_af", 
+    #"injection_conv_v2_af", 
     "injection_conv_v4_af", 
-    "injection_conv_IT_af", 
+    #"injection_conv_IT_af", 
     
     # unfreeze convolution injection models 
     #"unfreeze_injection_v1_af", 
@@ -255,7 +257,7 @@ model_names = [
     # control models 
     #"v1_no_injection", 
     #"v2_no_injection", 
-    #"v4_no_injection", 
+    "v4_no_injection", 
     #"IT_no_injection", 
 
     "resnet50_untrained", 
@@ -299,10 +301,10 @@ for model_name in model_names:
   plt.plot(layers, average_identity_scores, label='identity', color = 'black')
 
 plt.axvline(x = 3, color = 'grey',  ls = 'dotted')
-plt.axvline(x = 6, color = 'red', ls = 'dotted')#, linewidth=4)
-plt.axvline(x = 10, color = 'blue', ls = 'dotted')
-plt.axvline(x = 16, color = 'orange',  ls = 'dotted')
-plt.axvline(x = 19, color = 'green', ls = 'dotted')
+plt.axvline(x = 6, color = 'grey', ls = 'dotted')
+plt.axvline(x = 10, color = 'grey', ls = 'dotted')
+plt.axvline(x = 16, color = 'red',  ls = 'dotted', linewidth=4)
+plt.axvline(x = 19, color = 'grey', ls = 'dotted')
 plt.axvline(x = 20, color = 'grey' , ls = 'dotted')
 
 #axes[key,i].set_title(dict_metric_names[metric_type], fontsize=18)#, fontsize =60)
@@ -327,8 +329,8 @@ plt.ylabel('average curvature score', fontsize=14)
 #plt.title('Injection and evaluation at V1', fontsize=20)
 plt.title('Average curvature', fontsize=20)
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/avg-curve-all1.png')
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/avg-curve-all4.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/avg-curve-v4.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/avg-curve-v4.png')
 
 
     
