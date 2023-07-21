@@ -38,6 +38,7 @@ metric_dict = {'obj_class': 'Object Class',
 dict_color = {
     "noprojector_control_v1":  ["black", '-'], 
     "noprojector_control_v2":  ["black", '-'], 
+    "noprojector_control_v4":  ["black", '-'], 
     
     # no projector linear 
     "noprojector_linear_v1":  ["brown", '-'], 
@@ -55,21 +56,21 @@ dict_color = {
     "noprojector_conv_IT": ["gold", '-'], 
     
     # random injection 
-    "injection_v1_af" : ["orange", '-'], #, ':'],
-    "injection_v2_af": ["orange", '-'], #, ':'], 
-    "injection_v4_af": ["orange", '-'], #, ':'],
-    "injection_IT_af": ["orange", '-'], #, ':'],
+    "injection_v1_af" : ["orange", ':'], #, '-'],
+    "injection_v2_af": ["orange", ':'], #, '-'],
+    "injection_v4_af": ["orange", ':'], #, '-'],
+    "injection_IT_af": ["orange", ':'], #, '-'],
     
     # convolution injection
-    #"injection_conv_v1_af": ["lightblue", '-'], #, ':'], 
-    #"injection_conv_v2_af": ["lightblue", '-'], #, ':'], 
-    #"injection_conv_v4_af": ["lightblue", '-'], #, ':'], 
-    #"injection_conv_IT_af": ["lightblue", '-'], #, ':'],  
+    "injection_conv_v1_af": ["lightblue", ':'], #, '-'],
+    "injection_conv_v2_af": ["lightblue", ':'], #, '-'],
+    "injection_conv_v4_af": ["lightblue", ':'], #, '-'],
+    "injection_conv_IT_af": ["lightblue", ':'], #, '-'],
     
-    "injection_conv_v1_af": ["red", '-'], 
-    "injection_conv_v2_af": ["blue", '-'], 
-    "injection_conv_v4_af": ["orange", '-'], 
-    "injection_conv_IT_af": ["green", '-'], 
+    #"injection_conv_v1_af": ["red", '-'], 
+    #"injection_conv_v2_af": ["blue", '-'], 
+    #"injection_conv_v4_af": ["orange", '-'], 
+    #"injection_conv_IT_af": ["green", '-'], 
        
     # unfreeze convolution injection 
     "unfreeze_injection_v1_af": ["green", '-'], 
