@@ -312,11 +312,11 @@ plt.tick_params(axis='y', labelsize=14)
 #fig.supylabel('decode')#, fontsize=60)
 #fig.tight_layout()
 plt.xlabel('layers', fontsize=14)
-plt.ylabel('average decoding score', fontsize=14)
-plt.title('Average Decoding score', fontsize=20)
+plt.ylabel('average factorization score', fontsize=14)
+plt.title('Average Factorization score', fontsize=20)
 plt.show()
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/avg-fact-v4.png')
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/avg-fact-v4.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/2avg-fact-v4.png')
 
 
 
