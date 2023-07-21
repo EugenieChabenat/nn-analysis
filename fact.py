@@ -29,6 +29,7 @@ metric_dict = {'ss_inv-background': 'SS Invariance - Background',
 dict_color = {
     "noprojector_control_v1":  ["black", '-'], 
     "noprojector_control_v2":  ["black", '-'], 
+    "noprojector_control_v4":  ["black", '-'], 
     
     # no projector linear 
     "noprojector_linear_v1":  ["brown", '-'], 
@@ -46,21 +47,21 @@ dict_color = {
     "noprojector_conv_IT": ["gold", '-'], 
     
     # random injection 
-    "injection_v1" : ["orange", '-'], #':'],
-    "injection_v2": ["orange", '-'], #':'],
-    "injection_v4": ["orange", '-'], #':'],
-    "injection_IT": ["orange", '-'], #':'],
+    "injection_v1" : ["orange", ':'], #'-'],
+    "injection_v2": ["orange",':'], #'-'],
+    "injection_v4": ["orange",':'], #'-'],
+    "injection_IT": ["orange", ':'], #'-'],
     
     # convolution injection
-    #"injection_conv_v1": ["lightblue", '-'], #':'],
-    #"injection_conv_v2": ["lightblue", '-'], #':'],
-    #"injection_conv_v4": ["lightblue", '-'], #':'],
-    #"injection_conv_IT": ["lightblue", '-'], #':'],
+    "injection_conv_v1": ["lightblue", ':'], #'-'],
+    "injection_conv_v2": ["lightblue", ':'], #'-'],
+    "injection_conv_v4": ["lightblue", ':'], #'-'],
+    "injection_conv_IT": ["lightblue", ':'], #'-'],
     
-    "injection_conv_v1": ["red", '-'], 
-    "injection_conv_v2": ["blue", '-'], 
-    "injection_conv_v4": ["orange", '-'], 
-    "injection_conv_IT": ["green", '-'], 
+    #"injection_conv_v1": ["red", '-'], 
+    #"injection_conv_v2": ["blue", '-'], 
+    #"injection_conv_v4": ["orange", '-'], 
+    #"injection_conv_IT": ["green", '-'], 
         
     # unfreeze convolution injection 
     "unfreeze_injection_v1": ["green", '-'], 
@@ -167,6 +168,7 @@ dict_model_names = {
     "injection_conv_subset_v4": "Random convolutional injection of spatial information at V4" ,
     "noprojector_linear_v4":  "Random linear injection at V4 - no projector",
     "noprojector_conv_v4":  "Random convolutional injection at V4 - no projector",
+    "noprojector_control_v4": "Evaluation at V4, no injection - no projector", 
 
     "injection_IT": "Random linear injection at IT",
     "injection_separate_IT": "Trained linear injection at IT" , 
@@ -189,30 +191,31 @@ model_names = [
     # no projector control 
     #"noprojector_control_v1", 
     #"noprojector_control_v2", 
+    "noprojector_control_v4", 
     
     # trained without projector 
     #"noprojector_linear_v1", 
     #"noprojector_linear_v2", 
-    #"noprojector_linear_v4", 
+    "noprojector_linear_v4", 
     #"noprojector_linear_IT", 
     
     # random con - noprojector 
     #"noprojector_conv_v1", 
     #"noprojector_conv_v2", 
-    #"noprojector_conv_v4", 
+    "noprojector_conv_v4", 
     #"noprojector_conv_IT", 
     
     # random injection models  
     #"injection_v1",
     #"injection_v2", 
-    #"injection_v4",
+    "injection_v4",
     #"injection_IT",
     
     # convolution injection models 
-    "injection_conv_v1", 
-    "injection_conv_v2", 
+    #"injection_conv_v1", 
+    #"injection_conv_v2", 
     "injection_conv_v4", 
-    "injection_conv_IT", 
+    #"injection_conv_IT", 
     
     # unfreeze convolution injection models 
     #"unfreeze_injection_v1", 
@@ -240,7 +243,7 @@ model_names = [
     
     #"v1_no_injection", 
     #"v2_no_injection", 
-    #"v4_no_injection", 
+    "v4_no_injection", 
     #"IT_no_injection", 
 
     "resnet50_untrained", 
@@ -290,7 +293,7 @@ fig.supylabel('factorization')
 fig.tight_layout()
 plt.show()
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/it-legend_{}.png'.format(key))
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/legend-all-{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/legend-avg-v4-{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_fact_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/legend-all_{}.png'.format(key))
 
