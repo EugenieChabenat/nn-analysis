@@ -40,6 +40,7 @@ dict_color = {
     "noprojector_control_v1":  ["black", '-'], 
     "noprojector_control_v2":  ["black", '-'], 
     "noprojector_control_v4":  ["black", '-'], 
+    "noprojector_control_IT":  ["black", '-'], 
     
     # no projector linear 
     "noprojector_linear_v1":  ["brown", '-'], 
@@ -120,7 +121,7 @@ layers = np.arange(2)
 layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]#, 21, 22, 23, 24, 25, 26, 27]
 one_layer = 0
 metric = ["decode", 0]
-metric = ["fact", 0]
+#metric = ["fact", 0]
 
 dict_metric_names = {
     'obj_class': "Object Class" , 
@@ -185,6 +186,7 @@ dict_model_names = {
     "injection_conv_subset_IT": "Random convolutional injection of spatial information at IT", 
     "noprojector_linear_IT": "Random linear injection at IT - no projector", 
     "noprojector_conv_IT": "Random convolutional injection at IT - no projector", 
+    "noprojector_control_IT": "Evaluation at IT, no injection - no projector" , 
     
     "v1_no_injection": "Evaluation at V1, no injection", 
     "v2_no_injection": "Evaluation at V2, no injection", 
@@ -198,31 +200,32 @@ model_names = [
     # control no projector
     #"noprojector_control_v1", 
     #"noprojector_control_v2",
-    "noprojector_control_v4",
+    #"noprojector_control_v4",
+    "noprojector_control_IT",
     
     # random linear no projector
     #"noprojector_linear_v1", 
     #"noprojector_linear_v2",
-    "noprojector_linear_v4", 
-    #"noprojector_linear_IT", 
+    #"noprojector_linear_v4", 
+    "noprojector_linear_IT", 
     
     # random convolution no projector 
     #"noprojector_conv_v1", 
     #"noprojector_conv_v2",
-    "noprojector_conv_v4", 
-    #"noprojector_conv_IT", 
+    #"noprojector_conv_v4", 
+    "noprojector_conv_IT", 
     
     # random injection models  
     #"injection_v1",
     #"injection_v2", 
-    "injection_v4",
-    #"injection_IT",
+    #"injection_v4",
+    "injection_IT",
     
     # convolution injection models 
     #"injection_conv_v1", 
     #"injection_conv_v2", 
-    "injection_conv_v4", 
-    #"injection_conv_IT", 
+    #"injection_conv_v4", 
+    "injection_conv_IT", 
     
     # unfreeze convolution injection models 
     #"unfreeze_injection_v1", 
@@ -251,8 +254,8 @@ model_names = [
     # control models 
     #"v1_no_injection", 
     #"v2_no_injection", 
-    "v4_no_injection", 
-    #"IT_no_injection", 
+    #"v4_no_injection", 
+    "IT_no_injection", 
 
     "resnet50_untrained", 
     "barlow_twins_50epochs", 
@@ -261,7 +264,7 @@ model_names = [
 
 metric_types = ['obj_scale', 'obj_class', 'obj_pos', 'obj_pose', 'cam_pos_x', 'cam_pos_y', 'cam_scale', 'lighting', 'color']
 
-metric_types = ['fact-background', 'fact-obj_motion', 'fact-crop', 'fact-color']
+#metric_types = ['fact-background', 'fact-obj_motion', 'fact-crop', 'fact-color']
 
 nb_metrics = len(metric_types)
 
@@ -290,8 +293,8 @@ for model_name in model_names:
 plt.axvline(x = 3, color = 'grey',  ls = 'dotted')
 plt.axvline(x = 6, color = 'grey', ls = 'dotted')#, linewidth=4)
 plt.axvline(x = 10, color = 'grey', ls = 'dotted')
-plt.axvline(x = 16, color = 'red',  ls = 'dotted', linewidth=4)
-plt.axvline(x = 19, color = 'grey', ls = 'dotted')
+plt.axvline(x = 16, color = 'grey',  ls = 'dotted')
+plt.axvline(x = 19, color = 'red', ls = 'dotted', linewidth=4)
 plt.axvline(x = 20, color = 'grey' , ls = 'dotted')
 
 #axes[key,i].set_title(dict_metric_names[metric_type], fontsize=18)#, fontsize =60)
@@ -315,8 +318,8 @@ plt.xlabel('layers', fontsize=14)
 plt.ylabel('average factorization score', fontsize=14)
 plt.title('Average Factorization score', fontsize=20)
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/avg-fact-v4.png')
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/2avg-fact-v4.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/avg-decode-it.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/2avg-decode-it.png')
 
 
 
