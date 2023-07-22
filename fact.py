@@ -30,6 +30,7 @@ dict_color = {
     "noprojector_control_v1":  ["black", '-'], 
     "noprojector_control_v2":  ["black", '-'], 
     "noprojector_control_v4":  ["black", '-'], 
+    "noprojector_control_IT":  ["black", '-'], 
     
     # no projector linear 
     "noprojector_linear_v1":  ["brown", '-'], 
@@ -178,6 +179,7 @@ dict_model_names = {
     "injection_conv_subset_IT": "Random convolutional injection of spatial information at IT", 
     "noprojector_linear_IT": "Random linear injection at IT - no projector", 
     "noprojector_conv_IT": "Random convolutional injection at IT - no projector", 
+    "noprojector_control_IT": "Evaluation at IT, no injection - no projector",
     
     "v1_no_injection": "Evaluation at V1, no injection", 
     "v2_no_injection": "Evaluation at V2, no injection", 
