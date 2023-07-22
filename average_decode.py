@@ -121,7 +121,7 @@ layers = np.arange(2)
 layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]#, 21, 22, 23, 24, 25, 26, 27]
 one_layer = 0
 metric = ["decode", 0]
-#metric = ["fact", 0]
+metric = ["fact", 0]
 
 dict_metric_names = {
     'obj_class': "Object Class" , 
@@ -264,7 +264,7 @@ model_names = [
 
 metric_types = ['obj_scale', 'obj_class', 'obj_pos', 'obj_pose', 'cam_pos_x', 'cam_pos_y', 'cam_scale', 'lighting', 'color']
 
-#metric_types = ['fact-background', 'fact-obj_motion', 'fact-crop', 'fact-color']
+metric_types = ['fact-background', 'fact-obj_motion', 'fact-crop', 'fact-color']
 
 nb_metrics = len(metric_types)
 
@@ -315,11 +315,11 @@ plt.tick_params(axis='y', labelsize=14)
 #fig.supylabel('decode')#, fontsize=60)
 #fig.tight_layout()
 plt.xlabel('layers', fontsize=14)
-plt.ylabel('average decoding score', fontsize=14)
-plt.title('Average Decoding score', fontsize=20)
+plt.ylabel('average factorization score', fontsize=14)
+plt.title('Average Factorization score', fontsize=20)
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/avg-decode-it.png')
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/2avg-decode-it.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/avg-fact-it.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/2avg-fact-it.png')
 
 
 
