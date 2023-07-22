@@ -171,20 +171,20 @@ dict_model_names = {
     "noprojector_conv_v4":  "Random convolutional injection at V4 - no projector",
     "noprojector_control_v4": "Evaluation at V4, no injection - no projector", 
 
-    "injection_IT": "Random linear injection at IT",
+    "injection_IT": "Random linear injection",
     "injection_separate_IT": "Trained linear injection at IT" , 
-    "injection_conv_IT": "Random convolutional injection at IT" ,
+    "injection_conv_IT": "Random convolutional injection" ,
     "unfreeze_injection_IT": "Trained convolutional injection at IT" , 
     "subset_injection_IT": "Random linear injection of spatial information at IT", 
     "injection_conv_subset_IT": "Random convolutional injection of spatial information at IT", 
-    "noprojector_linear_IT": "Random linear injection at IT - no projector", 
-    "noprojector_conv_IT": "Random convolutional injection at IT - no projector", 
-    "noprojector_control_IT": "Evaluation at IT, no injection - no projector",
+    "noprojector_linear_IT": "Random linear injection - no projector", 
+    "noprojector_conv_IT": "Random convolutional injection - no projector", 
+    "noprojector_control_IT": "Evaluation at injection, no injection - no projector",
     
     "v1_no_injection": "Evaluation at V1, no injection", 
     "v2_no_injection": "Evaluation at V2, no injection", 
     "v4_no_injection": "Evaluation at V4, no injection", 
-    "IT_no_injection": "Evaluation at IT, no injection", 
+    "IT_no_injection": "Evaluation at injection site, no injection", 
 
     "resnet50_untrained": "ResNet50 untrained", 
     "barlow_twins_50epochs": "Vanilla Barlow Twins", 
@@ -193,31 +193,32 @@ model_names = [
     # no projector control 
     #"noprojector_control_v1", 
     #"noprojector_control_v2", 
-    "noprojector_control_v4", 
+    #"noprojector_control_v4", 
+    "noprojector_control_IT", 
     
     # trained without projector 
     #"noprojector_linear_v1", 
     #"noprojector_linear_v2", 
-    "noprojector_linear_v4", 
-    #"noprojector_linear_IT", 
+    #"noprojector_linear_v4", 
+    "noprojector_linear_IT", 
     
     # random con - noprojector 
     #"noprojector_conv_v1", 
     #"noprojector_conv_v2", 
-    "noprojector_conv_v4", 
-    #"noprojector_conv_IT", 
+    #"noprojector_conv_v4", 
+    "noprojector_conv_IT", 
     
     # random injection models  
     #"injection_v1",
     #"injection_v2", 
-    "injection_v4",
-    #"injection_IT",
+    #"injection_v4",
+    "injection_IT",
     
     # convolution injection models 
     #"injection_conv_v1", 
     #"injection_conv_v2", 
-    "injection_conv_v4", 
-    #"injection_conv_IT", 
+    #"injection_conv_v4", 
+    "injection_conv_IT", 
     
     # unfreeze convolution injection models 
     #"unfreeze_injection_v1", 
@@ -245,8 +246,8 @@ model_names = [
     
     #"v1_no_injection", 
     #"v2_no_injection", 
-    "v4_no_injection", 
-    #"IT_no_injection", 
+    #"v4_no_injection", 
+    "IT_no_injection", 
 
     "resnet50_untrained", 
     "barlow_twins_50epochs", 
@@ -295,7 +296,7 @@ fig.supylabel('factorization')
 fig.tight_layout()
 plt.show()
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/it-legend_{}.png'.format(key))
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/legend-avg-v4-{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/legend-avg-{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_fact_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/legend-all_{}.png'.format(key))
 
