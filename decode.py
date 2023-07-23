@@ -58,16 +58,16 @@ dict_color = {
     "noprojector_conv_IT": ["gold", '-'], 
     
     # random injection 
-    "injection_v1" : ["orange", '-'], # ':'],
-    "injection_v2": ["orange", '-'], # ':'],
-    "injection_v4": ["orange", '-'], # ':'],
-    "injection_IT": ["orange", '-'], # ':'],
+    "injection_v1" : ["orange", ':'], # '-'],
+    "injection_v2": ["orange", ':'], # '-'],
+    "injection_v4": ["orange",  ':'], # '-'],
+    "injection_IT": ["orange",  ':'], # '-'],
     
     # convolution injection
-    "injection_conv_v1": ["lightblue", '-'], # ':'],
-    "injection_conv_v2": ["lightblue", '-'], # ':'],
-    "injection_conv_v4": ["lightblue", '-'], # ':'],
-    "injection_conv_IT": ["lightblue", '-'], # ':'],
+    "injection_conv_v1": ["lightblue", ':'], # '-'],
+    "injection_conv_v2": ["lightblue",':'], # '-'],
+    "injection_conv_v4": ["lightblue", ':'], # '-'],
+    "injection_conv_IT": ["lightblue", ':'], # '-'],
     
     #"injection_conv_v1": ["red", '-'], 
     #"injection_conv_v2": ["blue", '-'], 
