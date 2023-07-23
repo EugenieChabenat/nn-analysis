@@ -177,15 +177,15 @@ dict_model_names = {
     "noprojector_conv_v4":  "Random convolutional injection at V4 - no projector",
     "noprojector_control_v4": "Evaluation at V4, no injection - no projector", 
 
-    "injection_IT": "Random linear injection",
+    "injection_IT": "Random linear injection at IT",
     "injection_separate_IT": "Trained linear injection at IT" , 
-    "injection_conv_IT": "Random convolutional injection" ,
+    "injection_conv_IT": "Random convolutional injection at IT" ,
     "unfreeze_injection_IT": "Trained convolutional injection at IT" , 
     "subset_injection_IT": "Random linear injection of spatial information at IT", 
     "injection_conv_subset_IT": "Random convolutional injection of spatial information at IT", 
-    "noprojector_linear_IT": "Random linear injection - no projector", 
-    "noprojector_conv_IT": "Random convolutional injection - no projector", 
-    "noprojector_control_IT": "Evaluation at injection, no injection - no projector",
+    "noprojector_linear_IT": "Random linear injection at IT - no projector", 
+    "noprojector_conv_IT": "Random convolutional injection at IT - no projector", 
+    "noprojector_control_IT": "Evaluation at injection at IT, no injection - no projector",
     
     "v1_no_injection": "Evaluation at V1, no injection", 
     "v2_no_injection": "Evaluation at V2, no injection", 
@@ -305,7 +305,7 @@ fig.supylabel('factorization')
 fig.tight_layout()
 plt.show()
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/it-np-legend_{}.png'.format(key))
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/it-np-legend-{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/it-np-legend2-{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_fact_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/legend-all_{}.png'.format(key))
 
