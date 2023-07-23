@@ -36,6 +36,10 @@ metric_dict = {'obj_class': 'Object Class',
                }
 
 dict_color = {
+    # new architectures
+    "inj_v1_evaluate_IT":  ["magenta", '-'], 
+
+    # no projector controls 
     "noprojector_control_v1":  ["black", '-'], 
     "noprojector_control_v2":  ["black", '-'], 
     "noprojector_control_v4":  ["black", '-'], 
@@ -154,6 +158,8 @@ dict_metric_names = {
 
 
 dict_model_names = {
+    "inj_v1_evaluate_IT": "Random linear injection at V1, Evaluation at IT after projector",
+    
     "injection_v1_af": "Random linear injection at V1",
     "injection_separate_v1": "Trained linear injection at V1" , 
     "injection_conv_v1_af": "Random convolutional injection at V1" ,
@@ -203,6 +209,9 @@ dict_model_names = {
     "barlow_twins_50epochs": "Vanilla Barlow Twins", 
 }
 model_names = [
+    # new architectures 
+    "inj_v1_evaluate_IT", 
+    
     # control no projector
     "noprojector_control_v1", 
     #"noprojector_control_v2",
@@ -332,8 +341,8 @@ plt.ylabel('average curvature score', fontsize=14)
 #plt.title('Injection and evaluation at V1', fontsize=20)
 plt.title('Average curvature', fontsize=20)
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/avg-curve-v1.png')
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/avg-curve-v1.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/v1-it-avg-curve.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v1-it-avg-curve.png')
 
 
     
