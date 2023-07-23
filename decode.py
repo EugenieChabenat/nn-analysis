@@ -198,6 +198,7 @@ dict_model_names = {
     "injection_conv_subset_v4": "Random convolutional injection of spatial information at V4",
     "noprojector_linear_v4": "Random linear injection at V4 - no projector",
     "noprojector_conv_v4": "Random convolutional injection at V4 - no projector",
+    "noprojector_control_v4": "Evaluation at V4, no injection - no projector", 
 
     "injection_IT": "Random linear injection at IT",
     "injection_separate_IT": "Trained linear injection at IT" , 
@@ -207,6 +208,7 @@ dict_model_names = {
     "injection_conv_subset_IT": "Random convolutional injection of spatial information at IT", 
     "noprojector_linear_IT": "Random linear injection at IT - no projector", 
     "noprojector_conv_IT": "Random convolutional injection at IT - no projector", 
+    "noprojector_control_IT": "Evaluation at V2, no injection - no projector", 
     
     "v1_no_injection": "Evaluation at V1, no injection", 
     "v2_no_injection": "Evaluation at V2, no injection", 
@@ -218,37 +220,37 @@ dict_model_names = {
 }
 model_names = [
     # new architectures 
-    "inj_v1_evaluate_IT", 
+    #"inj_v1_evaluate_IT", 
     
     # no projector - control 
     #"noprojector_control_v1", 
     #"noprojector_control_v2", 
-    #"noprojector_control_v4", 
+    "noprojector_control_v4", 
     #"noprojector_control_IT", 
     
     # random linear no projector
     #"noprojector_linear_v1", 
     #"noprojector_linear_v2",
-    #"noprojector_linear_v4", 
+    "noprojector_linear_v4", 
     #"noprojector_linear_IT", 
     
     # random convolution no projector 
     #"noprojector_conv_v1", 
     #"noprojector_conv_v2",
-    #"noprojector_conv_v4", 
+    "noprojector_conv_v4", 
     #"noprojector_conv_IT", 
     
     # random injection models  
     #"injection_v1",
     #"injection_v2", 
-    #"injection_v4",
-    "injection_IT",
+    "injection_v4",
+    #"injection_IT",
     
     # convolution injection models 
     #"injection_conv_v1", 
     #"injection_conv_v2", 
-    #"injection_conv_v4", 
-    "injection_conv_IT", 
+    "injection_conv_v4", 
+    #"injection_conv_IT", 
     
     # unfreeze convolution injection models 
     #"unfreeze_injection_v1", 
@@ -277,8 +279,8 @@ model_names = [
     # control models 
     #"v1_no_injection", 
     #"v2_no_injection", 
-    #"v4_no_injection", 
-    "IT_no_injection", 
+    "v4_no_injection", 
+    #"IT_no_injection", 
 
     "resnet50_untrained", 
     "barlow_twins_50epochs", 
@@ -306,9 +308,9 @@ for key, metric_types in list_metrics.items():
         
         # blocks 
         axes[key,i].axvline(x = 3, color = 'grey',  ls = 'dotted')
-        axes[key,i].axvline(x = 6, color = 'red', ls = 'dotted', linewidth=4)
+        axes[key,i].axvline(x = 6, color = 'grey', ls = 'dotted')
         axes[key,i].axvline(x = 10, color = 'grey', ls = 'dotted')
-        axes[key,i].axvline(x = 16, color = 'grey',  ls = 'dotted')
+        axes[key,i].axvline(x = 16, color = 'red',  ls = 'dotted', linewidth=4)
         axes[key,i].axvline(x = 19, color = 'grey', ls = 'dotted')
         axes[key,i].axvline(x = 20, color = 'grey' , ls = 'dotted')
         
@@ -330,8 +332,8 @@ fig.supxlabel('layers')#, fontsize=60)
 fig.supylabel('decode')#, fontsize=60)
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/1decode-v1-IT-{}.png'.format(key))
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/decode-v1-IT-{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/decode-v4-np-{}.png'.format(key))
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/decode-v4-np-{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_decode_{}.png'.format(key))
     
    
