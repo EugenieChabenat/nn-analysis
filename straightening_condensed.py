@@ -34,8 +34,14 @@ metric_dict = {
              }
 
 dict_color = {
+    # new architectures
+    "inj_v1_evaluate_IT": ["magenta", '-'], 
+    
+    # no projector control
     "noprojector_control_v1":  ["black", '-'], 
     "noprojector_control_v2":  ["black", '-'], 
+    "noprojector_control_v4":  ["black", '-'], 
+    "noprojector_control_IT":  ["black", '-'], 
     
     # no projector linear 
     "noprojector_linear_v1":  ["brown", '-'], 
@@ -144,6 +150,8 @@ list_metrics = {
 }
 
 dict_model_names = {
+    "inj_v1_evaluate_IT": "Random linear injection at V1, Evaluation at IT after projector",
+    
     "injection_conv_subset_v1_proj": "Random convolutional injection after projector at V1",  
     
     "injection_v1_af": "Random linear injection at V1",
@@ -197,18 +205,22 @@ model_names = [
     #"injection_conv_subset_v1_proj", 
     #"noprojector_linear_v1_nm3",
 
+    "inj_v1_evaluate_IT", 
+
     # no projector control 
-    #"noprojector_control_v1",
+    "noprojector_control_v1",
     #"noprojector_control_v2",
+    #"noprojector_control_v4",
+    #"noprojector_control_IT",
     
     # no projector linear 
-    #"noprojector_linear_v1",
+    "noprojector_linear_v1",
     #"noprojector_linear_v2", 
     #"noprojector_linear_v4", 
     #"noprojector_linear_IT", 
     
     # random conv no projector 
-    #"noprojector_conv_v1", 
+    "noprojector_conv_v1", 
     #"noprojector_conv_v2", 
     #"noprojector_conv_v4",
     #"noprojector_conv_IT", 
@@ -217,42 +229,42 @@ model_names = [
     #"injection_v1_af",
     #"injection_v2_af", 
     #"injection_v4_af",
-    "injection_IT_af",
+    #"injection_IT_af",
     
     # convolution injection models 
     #"injection_conv_v1_af", 
     #"injection_conv_v2_af", 
     #"injection_conv_v4_af", 
-    "injection_conv_IT_af", 
+    #"injection_conv_IT_af", 
     
     # unfreeze convolution injection models 
     #"unfreeze_injection_v1_af", 
     #"unfreeze_injection_v2_af", 
     #"unfreeze_injection_v4_af", 
-    "unfreeze_injection_IT_af", 
+    #"unfreeze_injection_IT_af", 
 
     # subset 
     #"subset_injection_v1", 
     #"subset_injection_v2", 
     #"subset_injection_v4", 
-    "subset_injection_IT",
+    #"subset_injection_IT",
     
     # conv subset injection 
     #"injection_conv_subset_v1", 
     #"injection_conv_subset_v2", 
     #"injection_conv_subset_v4", 
-    "injection_conv_subset_IT",
+    #"injection_conv_subset_IT",
     
     # separate
     #"injection_separate_v1", 
     #"injection_separate_v2", 
     #"injection_separate_v4", 
-    "injection_separate_IT", 
+    #"injection_separate_IT", 
 
     #"v1_no_injection", 
     #"v2_no_injection", 
     #"v4_no_injection", 
-    "IT_no_injection",
+    #"IT_no_injection",
     
     "resnet50_allfeatures", 
     "bt_allfeatures", 
@@ -274,10 +286,10 @@ for key, metric_types in list_metrics.items():
         axes[key,i].plot(layers, scores, label='identity', color = 'black')
         
         axes[key,i].axvline(x = 3, color = 'grey',  ls = 'dotted')
-        axes[key,i].axvline(x = 6, color = 'grey', ls = 'dotted')
+        axes[key,i].axvline(x = 6, color = 'red', ls = 'dotted', linewidth=4)
         axes[key,i].axvline(x = 10, color = 'grey', ls = 'dotted')
         axes[key,i].axvline(x = 16, color = 'grey',  ls = 'dotted')
-        axes[key,i].axvline(x = 19, color = 'red', ls = 'dotted', linewidth=4)
+        axes[key,i].axvline(x = 19, color = 'grey', ls = 'dotted')
         axes[key,i].axvline(x = 20, color = 'grey' , ls = 'dotted')
         
         axes[key,i].set_title(dict_metric_names[metric_type], fontsize=18)
@@ -296,8 +308,8 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-#plt.savefig('/home/ec3731/issa_analysis/nn-analysis/g-it-camtrans-{}.png'.format(key))
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/it_camtrans_{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v1-it-camtrans-{}.png'.format(key))
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/v1-it_camtrans_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_straightening_{}.png'.format(key))
     
 
