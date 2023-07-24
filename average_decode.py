@@ -124,7 +124,7 @@ layers = np.arange(2)
 layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]#, 21, 22, 23, 24, 25, 26, 27]
 one_layer = 0
 metric = ["decode", 0]
-#metric = ["fact", 0]
+metric = ["fact", 0]
 
 dict_metric_names = {
     'obj_class': "Object Class" , 
@@ -271,7 +271,7 @@ model_names = [
 
 metric_types = ['obj_scale', 'obj_class', 'obj_pos', 'obj_pose', 'cam_pos_x', 'cam_pos_y', 'cam_scale', 'lighting', 'color']
 
-#metric_types = ['fact-background', 'fact-obj_motion', 'fact-crop', 'fact-color']
+metric_types = ['fact-background', 'fact-obj_motion', 'fact-crop', 'fact-color']
 
 nb_metrics = len(metric_types)
 
@@ -280,7 +280,7 @@ nb_metrics = len(metric_types)
 #fig, axes = pt.core.subplots(2, 2, size=(10, 10), sharex=True)
 plt.figure(figsize=(15,15))
 
-layers = [19]
+layers = [16, 17, 18, 19, 20]
 
 for model_name in model_names: 
   average_scores = []
@@ -294,7 +294,7 @@ for model_name in model_names:
         
   average_scores = [x/nb_metrics for x in average_scores]
   print(model_name)
-  print(average_scores[-1])
+  print(np.mean(average_scores))
     
     
   plt.plot(layers, average_scores, label=dict_model_names[model_name], color = dict_color[model_name][0], ls = dict_color[model_name][1])
