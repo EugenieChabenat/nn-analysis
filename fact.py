@@ -29,7 +29,7 @@ metric_dict = {'ss_inv-background': 'SS Invariance - Background',
 dict_color = {
     # new architectures 
     "inj_v1_evaluate_IT":  ["magenta", '-'], 
-    "inj_v2_evaluate_IT":  ["purple", '-'], 
+    "inj_v2_evaluate_IT":  ["forestgreen", '-'], 
     
     # no projector controls
     "noprojector_control_v1":  ["black", '-'], 
@@ -308,7 +308,7 @@ fig.supylabel('factorization')
 fig.tight_layout()
 plt.show()
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/v2it-fact_{}.png'.format(key))
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v2it-fact_{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/1-v2it-fact_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_fact_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/legend-all_{}.png'.format(key))
 
