@@ -223,7 +223,7 @@ dict_model_names = {
 model_names = [
     # new architectures 
     "inj_v1_evaluate_IT", 
-    "inj_v2_evaluate_IT"
+    "inj_v2_evaluate_IT", 
     
     # no projector - control 
     #"noprojector_control_v1", 
