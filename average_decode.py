@@ -330,10 +330,10 @@ plt.tick_params(axis='y', labelsize=14)
 plt.xlabel('layers', fontsize=14)
 plt.ylabel('average factorization score', fontsize=14)
 #plt.title('Injection and evaluation at IT', fontsize=20)
-plt.title('1verage Factorization score', fontsize=20)
+plt.title('Average Factorization score', fontsize=20)
 plt.show()
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/v2it-avg-decode.png')
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v2it-avg-decode.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/1-v2it-avg-decode.png')
 
 
 
