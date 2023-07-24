@@ -207,32 +207,32 @@ model_names = [
     # control no projector
     #"noprojector_control_v1", 
     #"noprojector_control_v2",
-    "noprojector_control_v4",
-    #"noprojector_control_IT",
+    #"noprojector_control_v4",
+    "noprojector_control_IT",
     
     # random linear no projector
     #"noprojector_linear_v1", 
     #"noprojector_linear_v2",
-    "noprojector_linear_v4", 
-    #"noprojector_linear_IT", 
+    #"noprojector_linear_v4", 
+    "noprojector_linear_IT", 
     
     # random convolution no projector 
     #"noprojector_conv_v1", 
     #"noprojector_conv_v2",
-    "noprojector_conv_v4", 
-    #"noprojector_conv_IT", 
+    #"noprojector_conv_v4", 
+    "noprojector_conv_IT", 
     
     # random injection models  
     #"injection_v1",
     #"injection_v2", 
-    "injection_v4",
-    #"injection_IT",
+    #"injection_v4",
+    "injection_IT",
     
     # convolution injection models 
     #"injection_conv_v1", 
     #"injection_conv_v2", 
-    "injection_conv_v4", 
-    #"injection_conv_IT", 
+    #"injection_conv_v4", 
+    "injection_conv_IT", 
     
     # unfreeze convolution injection models 
     #"unfreeze_injection_v1", 
@@ -261,8 +261,8 @@ model_names = [
     # control models 
     #"v1_no_injection", 
     #"v2_no_injection", 
-    "v4_no_injection", 
-    #"IT_no_injection", 
+    #"v4_no_injection", 
+    "IT_no_injection", 
 
     "resnet50_untrained", 
     "barlow_twins_50epochs", 
@@ -323,10 +323,10 @@ plt.tick_params(axis='y', labelsize=14)
 #fig.tight_layout()
 plt.xlabel('layers', fontsize=14)
 plt.ylabel('average factorization score', fontsize=14)
-plt.title('Injection and evaluation at V4', fontsize=20)
+plt.title('Injection and evaluation at IT', fontsize=20)
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/new-v4-avg-fact.png')
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/new-v4-avg-fact.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/new-it-avg-fact.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/new-it-avg-fact.png')
 
 
 
