@@ -38,6 +38,7 @@ metric_dict = {'obj_class': 'Object Class',
 dict_color = {
     # new architectures 
     "inj_v1_evaluate_IT": ["magenta", '-'], 
+    "inj_v2_evaluate_IT": ["magenta", '--'], 
     
     # no projector control 
     "noprojector_control_v1":  ["black", '-'], 
@@ -168,6 +169,7 @@ dict_model_names = {
 
     # new architectures 
     "inj_v1_evaluate_IT": "Random linear injection at V1, evaluation at IT after projector",
+    "inj_v2_evaluate_IT": "Random linear injection at V2, evaluation at IT after projector",
     
     "injection_v1": "Random linear injection at V1",
     "injection_separate_v1": "Trained linear injection at V1" , 
@@ -220,7 +222,8 @@ dict_model_names = {
 }
 model_names = [
     # new architectures 
-    #"inj_v1_evaluate_IT", 
+    "inj_v1_evaluate_IT", 
+    "inj_v2_evaluate_IT"
     
     # no projector - control 
     #"noprojector_control_v1", 
@@ -311,7 +314,7 @@ for key, metric_types in list_metrics.items():
         axes[key,i].axvline(x = 6, color = 'grey', ls = 'dotted')
         axes[key,i].axvline(x = 10, color = 'grey', ls = 'dotted')
         axes[key,i].axvline(x = 16, color = 'grey',  ls = 'dotted')
-        axes[key,i].axvline(x = 19, color = 'red', ls = 'dotted', linewidth=4)
+        axes[key,i].axvline(x = 19, color = 'grey', ls = 'dotted')#, linewidth=4)
         axes[key,i].axvline(x = 20, color = 'grey' , ls = 'dotted')
         
         axes[key,i].set_title(dict_metric_names[metric_type], fontsize=18)#, fontsize =60)
@@ -332,8 +335,8 @@ fig.supxlabel('layers')#, fontsize=60)
 fig.supylabel('decode')#, fontsize=60)
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/it-np-decode{}.png'.format(key))
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/it-np-decode-{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v2it-decode{}.png'.format(key))
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/v2it-decode-{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_decode_{}.png'.format(key))
     
    
