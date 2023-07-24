@@ -197,7 +197,7 @@ dict_model_names = {
 }
 model_names = [
     # new architectures
-    #"inj_v1_evaluate_IT", 
+    "inj_v1_evaluate_IT", 
     
     # no projector control 
     #"noprojector_control_v1", 
@@ -304,8 +304,8 @@ fig.supxlabel('layers')
 fig.supylabel('factorization')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/it-np-legend_{}.png'.format(key))
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/it-np-legend2-{}.png'.format(key))
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/v1-it-legend_{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v1-it-legend-{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_fact_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/legend-all_{}.png'.format(key))
 
