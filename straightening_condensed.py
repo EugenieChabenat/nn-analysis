@@ -36,6 +36,7 @@ metric_dict = {
 dict_color = {
     # new architectures
     "inj_v1_evaluate_IT": ["magenta", '-'], 
+    "inj_v2_evaluate_IT": ["magenta", '--'], 
     
     # no projector control
     "noprojector_control_v1":  ["black", '-'], 
@@ -151,6 +152,7 @@ list_metrics = {
 
 dict_model_names = {
     "inj_v1_evaluate_IT": "Random linear injection at V1, Evaluation at IT after projector",
+    "inj_v2_evaluate_IT": "Random linear injection at V2, Evaluation at IT after projector", 
     
     "injection_conv_subset_v1_proj": "Random convolutional injection after projector at V1",  
     
@@ -207,37 +209,38 @@ model_names = [
     #"injection_conv_subset_v1_proj", 
     #"noprojector_linear_v1_nm3",
 
-    #"inj_v1_evaluate_IT", 
+    "inj_v1_evaluate_IT", 
+    "inj_v2_evaluate_IT", 
 
     # no projector control 
-    #"noprojector_control_v1",
+    "noprojector_control_v1",
     #"noprojector_control_v2",
     #"noprojector_control_v4",
-    "noprojector_control_IT",
+    #"noprojector_control_IT",
     
     # no projector linear 
-    #"noprojector_linear_v1",
+    "noprojector_linear_v1",
     #"noprojector_linear_v2", 
     #"noprojector_linear_v4", 
-    "noprojector_linear_IT", 
+    #"noprojector_linear_IT", 
     
     # random conv no projector 
-    #"noprojector_conv_v1", 
+    "noprojector_conv_v1", 
     #"noprojector_conv_v2", 
     #"noprojector_conv_v4",
-    "noprojector_conv_IT", 
+    #"noprojector_conv_IT", 
     
     # random injection models  
-    #"injection_v1_af",
+    "injection_v1_af",
     #"injection_v2_af", 
     #"injection_v4_af",
-    "injection_IT_af",
+    #"injection_IT_af",
     
     # convolution injection models 
-    #"injection_conv_v1_af", 
+    "injection_conv_v1_af", 
     #"injection_conv_v2_af", 
     #"injection_conv_v4_af", 
-    "injection_conv_IT_af", 
+    #"injection_conv_IT_af", 
     
     # unfreeze convolution injection models 
     #"unfreeze_injection_v1_af", 
@@ -263,10 +266,10 @@ model_names = [
     #"injection_separate_v4", 
     #"injection_separate_IT", 
 
-    #"v1_no_injection", 
+    "v1_no_injection", 
     #"v2_no_injection", 
     #"v4_no_injection", 
-    "IT_no_injection",
+    #"IT_no_injection",
     
     "resnet50_allfeatures", 
     "bt_allfeatures", 
@@ -291,7 +294,7 @@ for key, metric_types in list_metrics.items():
         axes[key,i].axvline(x = 6, color = 'grey', ls = 'dotted')
         axes[key,i].axvline(x = 10, color = 'grey', ls = 'dotted')
         axes[key,i].axvline(x = 16, color = 'grey',  ls = 'dotted')
-        axes[key,i].axvline(x = 19, color = 'red', ls = 'dotted', linewidth=4)
+        axes[key,i].axvline(x = 19, color = 'grey', ls = 'dotted')#, linewidth=4)
         axes[key,i].axvline(x = 20, color = 'grey' , ls = 'dotted')
         
         axes[key,i].set_title(dict_metric_names[metric_type], fontsize=18)
@@ -310,8 +313,8 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/it-np-campan-{}.png'.format(key))
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/it-np-campan_{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v2it-np-campan-{}.png'.format(key))
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/v2it-np-campan_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_straightening_{}.png'.format(key))
     
 
