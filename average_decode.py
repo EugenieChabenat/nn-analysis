@@ -202,7 +202,7 @@ dict_model_names = {
     "barlow_twins_50epochs": "Vanilla Barlow Twins", 
 }
 model_names = [
-    #"inj_v1_evaluate_IT", 
+    "inj_v1_evaluate_IT", 
     
     # control no projector
     #"noprojector_control_v1", 
