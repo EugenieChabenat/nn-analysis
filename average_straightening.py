@@ -210,7 +210,7 @@ dict_model_names = {
 }
 model_names = [
     # new architectures 
-    "inj_v1_evaluate_IT", 
+    #"inj_v1_evaluate_IT", 
     
     # control no projector
     "noprojector_control_v1", 
@@ -339,10 +339,10 @@ plt.tick_params(axis='y', labelsize=14)
 plt.xlabel('layers', fontsize=14)
 plt.ylabel('average curvature score', fontsize=14)
 #plt.title('Injection and evaluation at V1', fontsize=20)
-plt.title('Average curvature', fontsize=20)
+plt.title('Injection and Evaluation at V1', fontsize=20)
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/v1-it-avg-curve.png')
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v1-it-avg-curve.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/new-v1-avg-curve.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/new-v1-avg-curve.png')
 
 
     
