@@ -213,32 +213,32 @@ model_names = [
     #"inj_v1_evaluate_IT", 
     
     # control no projector
-    "noprojector_control_v1", 
-    #"noprojector_control_v2",
+    #"noprojector_control_v1", 
+    "noprojector_control_v2",
     #"noprojector_control_v4",
     #"noprojector_control_IT",
     
     # random linear no projector
-    "noprojector_linear_v1", 
-    #"noprojector_linear_v2",
+    #"noprojector_linear_v1", 
+    "noprojector_linear_v2",
     #"noprojector_linear_v4", 
     #"noprojector_linear_IT", 
     
     # random convolution no projector 
-    "noprojector_conv_v1", 
-    #"noprojector_conv_v2",
+    #"noprojector_conv_v1", 
+    "noprojector_conv_v2",
     #"noprojector_conv_v4", 
     #"noprojector_conv_IT", 
     
     # random injection models  
-    "injection_v1_af",
-    #"injection_v2_af", 
+    #"injection_v1_af",
+    "injection_v2_af", 
     #"injection_v4_af",
     #"injection_IT_af",
     
     # convolution injection models 
-    "injection_conv_v1_af", 
-    #"injection_conv_v2_af", 
+    #"injection_conv_v1_af", 
+    "injection_conv_v2_af", 
     #"injection_conv_v4_af", 
     #"injection_conv_IT_af", 
     
@@ -267,8 +267,8 @@ model_names = [
     #"injection_separate_IT",
     
     # control models 
-    "v1_no_injection", 
-    #"v2_no_injection", 
+    #"v1_no_injection", 
+    "v2_no_injection", 
     #"v4_no_injection", 
     #"IT_no_injection", 
 
@@ -313,8 +313,8 @@ for model_name in model_names:
   plt.plot(layers, average_identity_scores, label='identity', color = 'grey')
 
 plt.axvline(x = 3, color = 'grey',  ls = 'dotted')
-plt.axvline(x = 6, color = 'red', ls = 'dotted', linewidth=4)
-plt.axvline(x = 10, color = 'grey', ls = 'dotted')
+plt.axvline(x = 6, color = 'grey', ls = 'dotted')
+plt.axvline(x = 10, color = 'red', ls = 'dotted', linewidth=4)
 plt.axvline(x = 16, color = 'grey',  ls = 'dotted')
 plt.axvline(x = 19, color = 'grey', ls = 'dotted')
 plt.axvline(x = 20, color = 'grey' , ls = 'dotted')
@@ -339,10 +339,10 @@ plt.tick_params(axis='y', labelsize=14)
 plt.xlabel('layers', fontsize=14)
 plt.ylabel('average curvature score', fontsize=14)
 #plt.title('Injection and evaluation at V1', fontsize=20)
-plt.title('Injection and Evaluation at V1', fontsize=20)
+plt.title('Injection and Evaluation at V2', fontsize=20)
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/new-v1-avg-curve.png')
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/new-v1-avg-curve.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/new-v2-avg-curve.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/new-v2-avg-curve.png')
 
 
     
