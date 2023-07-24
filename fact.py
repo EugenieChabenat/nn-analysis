@@ -29,7 +29,7 @@ metric_dict = {'ss_inv-background': 'SS Invariance - Background',
 dict_color = {
     # new architectures 
     "inj_v1_evaluate_IT":  ["magenta", '-'], 
-    "inj_v2_evaluate_IT":  ["magenta", '--'], 
+    "inj_v2_evaluate_IT":  ["purple", '-'], 
     
     # no projector controls
     "noprojector_control_v1":  ["black", '-'], 
