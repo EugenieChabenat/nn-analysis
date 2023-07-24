@@ -271,7 +271,7 @@ model_names = [
 
 metric_types = ['obj_scale', 'obj_class', 'obj_pos', 'obj_pose', 'cam_pos_x', 'cam_pos_y', 'cam_scale', 'lighting', 'color']
 
-metric_types = ['fact-background', 'fact-obj_motion', 'fact-crop', 'fact-color']
+#metric_types = ['fact-background', 'fact-obj_motion', 'fact-crop', 'fact-color']
 
 nb_metrics = len(metric_types)
 
