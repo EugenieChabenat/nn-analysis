@@ -210,37 +210,37 @@ dict_model_names = {
 }
 model_names = [
     # new architectures 
-    #"inj_v1_evaluate_IT", 
+    "inj_v1_evaluate_IT", 
     
     # control no projector
-    #"noprojector_control_v1", 
+    "noprojector_control_v1", 
     #"noprojector_control_v2",
     #"noprojector_control_v4",
-    "noprojector_control_IT",
+    #"noprojector_control_IT",
     
     # random linear no projector
-    #"noprojector_linear_v1", 
+    "noprojector_linear_v1", 
     #"noprojector_linear_v2",
     #"noprojector_linear_v4", 
-    "noprojector_linear_IT", 
+    #"noprojector_linear_IT", 
     
     # random convolution no projector 
-    #"noprojector_conv_v1", 
+    "noprojector_conv_v1", 
     #"noprojector_conv_v2",
     #"noprojector_conv_v4", 
-    "noprojector_conv_IT", 
+    #"noprojector_conv_IT", 
     
     # random injection models  
-    #"injection_v1_af",
+    "injection_v1_af",
     #"injection_v2_af", 
     #"injection_v4_af",
-    "injection_IT_af",
+    #"injection_IT_af",
     
     # convolution injection models 
-    #"injection_conv_v1_af", 
+    "injection_conv_v1_af", 
     #"injection_conv_v2_af", 
     #"injection_conv_v4_af", 
-    "injection_conv_IT_af", 
+    #"injection_conv_IT_af", 
     
     # unfreeze convolution injection models 
     #"unfreeze_injection_v1_af", 
@@ -267,10 +267,10 @@ model_names = [
     #"injection_separate_IT",
     
     # control models 
-    #"v1_no_injection", 
+    "v1_no_injection", 
     #"v2_no_injection", 
     #"v4_no_injection", 
-    "IT_no_injection", 
+    #"IT_no_injection", 
 
     "resnet50_untrained", 
     "barlow_twins_50epochs", 
@@ -278,6 +278,7 @@ model_names = [
 ]
 metric_types = ["x_cam_trans", "y_cam_trans", "z_cam_trans", "x_cam_rot", "y_cam_rot", 'x_cam_pan', 'yz_cam_pan']
 
+layers =[6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 
 nb_metrics = len(metric_types)
 
@@ -307,6 +308,8 @@ for model_name in model_names:
         
   average_scores = [x/nb_metrics for x in average_scores]
   scores = [i * 180 for i in average_scores]
+  print(model_name)
+  print(np.mean(scores))
   
     
   plt.plot(layers, average_scores, label=dict_model_names[model_name], color = dict_color[model_name][0], ls = dict_color[model_name][1])
@@ -341,8 +344,8 @@ plt.ylabel('average curvature score', fontsize=14)
 #plt.title('Injection and evaluation at V1', fontsize=20)
 plt.title('Injection and Evaluation at IT', fontsize=20)
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/new-it-avg-curve.png')
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/new-it-avg-curve.png')
+#plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/new-it-avg-curve.png')
+#plt.savefig('/home/ec3731/issa_analysis/nn-analysis/new-it-avg-curve.png')
 
 
     
