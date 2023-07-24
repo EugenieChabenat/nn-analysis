@@ -205,32 +205,32 @@ model_names = [
     #"inj_v1_evaluate_IT", 
     
     # control no projector
-    "noprojector_control_v1", 
-    #"noprojector_control_v2",
+    #"noprojector_control_v1", 
+    "noprojector_control_v2",
     #"noprojector_control_v4",
     #"noprojector_control_IT",
     
     # random linear no projector
-    "noprojector_linear_v1", 
-    #"noprojector_linear_v2",
+    #"noprojector_linear_v1", 
+    "noprojector_linear_v2",
     #"noprojector_linear_v4", 
     #"noprojector_linear_IT", 
     
     # random convolution no projector 
-    "noprojector_conv_v1", 
-    #"noprojector_conv_v2",
+    #"noprojector_conv_v1", 
+    "noprojector_conv_v2",
     #"noprojector_conv_v4", 
     #"noprojector_conv_IT", 
     
     # random injection models  
-    "injection_v1",
-    #"injection_v2", 
+    #"injection_v1",
+    "injection_v2", 
     #"injection_v4",
     #"injection_IT",
     
     # convolution injection models 
-    "injection_conv_v1", 
-    #"injection_conv_v2", 
+    #"injection_conv_v1", 
+    "injection_conv_v2", 
     #"injection_conv_v4", 
     #"injection_conv_IT", 
     
@@ -259,8 +259,8 @@ model_names = [
     #"injection_separate_IT",
     
     # control models 
-    "v1_no_injection", 
-    #"v2_no_injection", 
+    #"v1_no_injection", 
+    "v2_no_injection", 
     #"v4_no_injection", 
     #"IT_no_injection", 
 
@@ -280,7 +280,7 @@ nb_metrics = len(metric_types)
 #fig, axes = pt.core.subplots(2, 2, size=(10, 10), sharex=True)
 plt.figure(figsize=(15,15))
 
-layers = [6]
+layers = [10]
 
 for model_name in model_names: 
   average_scores = []
