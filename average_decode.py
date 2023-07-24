@@ -207,32 +207,32 @@ model_names = [
     # control no projector
     #"noprojector_control_v1", 
     #"noprojector_control_v2",
-    #"noprojector_control_v4",
-    "noprojector_control_IT",
+    "noprojector_control_v4",
+    #"noprojector_control_IT",
     
     # random linear no projector
     #"noprojector_linear_v1", 
     #"noprojector_linear_v2",
-    #"noprojector_linear_v4", 
-    "noprojector_linear_IT", 
+    "noprojector_linear_v4", 
+    #"noprojector_linear_IT", 
     
     # random convolution no projector 
     #"noprojector_conv_v1", 
     #"noprojector_conv_v2",
-    #"noprojector_conv_v4", 
-    "noprojector_conv_IT", 
+    "noprojector_conv_v4", 
+    #"noprojector_conv_IT", 
     
     # random injection models  
     #"injection_v1",
     #"injection_v2", 
-    #"injection_v4",
-    "injection_IT",
+    "injection_v4",
+    #"injection_IT",
     
     # convolution injection models 
     #"injection_conv_v1", 
     #"injection_conv_v2", 
-    #"injection_conv_v4", 
-    "injection_conv_IT", 
+    "injection_conv_v4", 
+    #"injection_conv_IT", 
     
     # unfreeze convolution injection models 
     #"unfreeze_injection_v1", 
@@ -261,8 +261,8 @@ model_names = [
     # control models 
     #"v1_no_injection", 
     #"v2_no_injection", 
-    #"v4_no_injection", 
-    "IT_no_injection", 
+    "v4_no_injection", 
+    #"IT_no_injection", 
 
     "resnet50_untrained", 
     "barlow_twins_50epochs", 
@@ -300,8 +300,8 @@ for model_name in model_names:
 plt.axvline(x = 3, color = 'grey',  ls = 'dotted')
 plt.axvline(x = 6, color = 'grey', ls = 'dotted')
 plt.axvline(x = 10, color = 'grey', ls = 'dotted')
-plt.axvline(x = 16, color = 'grey',  ls = 'dotted')
-plt.axvline(x = 19, color = 'red', ls = 'dotted', linewidth=4)
+plt.axvline(x = 16, color = 'red',  ls = 'dotted',  linewidth=4)
+plt.axvline(x = 19, color = 'grey', ls = 'dotted')
 plt.axvline(x = 20, color = 'grey' , ls = 'dotted')
 
 #axes[key,i].set_title(dict_metric_names[metric_type], fontsize=18)#, fontsize =60)
@@ -323,10 +323,10 @@ plt.tick_params(axis='y', labelsize=14)
 #fig.tight_layout()
 plt.xlabel('layers', fontsize=14)
 plt.ylabel('average decoding score', fontsize=14)
-plt.title('Injection and evaluation at IT', fontsize=20)
+plt.title('Injection and evaluation at V4', fontsize=20)
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/new-it-avg-decode.png')
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/new-it-avg-decode.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/new-v4-avg-decode.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/new-v4-avg-decode.png')
 
 
 
