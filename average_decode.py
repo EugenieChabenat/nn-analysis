@@ -202,7 +202,7 @@ dict_model_names = {
     "barlow_twins_50epochs": "Vanilla Barlow Twins", 
 }
 model_names = [
-    "inj_v1_evaluate_IT", 
+    #"inj_v1_evaluate_IT", 
     
     # control no projector
     #"noprojector_control_v1", 
@@ -298,10 +298,10 @@ for model_name in model_names:
   #plt.plot(layers, average_identity_scores, label='identity', color = 'black')
 
 plt.axvline(x = 3, color = 'grey',  ls = 'dotted')
-plt.axvline(x = 6, color = 'red', ls = 'dotted', linewidth=4)
+plt.axvline(x = 6, color = 'grey', ls = 'dotted')
 plt.axvline(x = 10, color = 'grey', ls = 'dotted')
 plt.axvline(x = 16, color = 'grey',  ls = 'dotted')
-plt.axvline(x = 19, color = 'grey', ls = 'dotted')
+plt.axvline(x = 19, color = 'red', ls = 'dotted', linewidth=4)
 plt.axvline(x = 20, color = 'grey' , ls = 'dotted')
 
 #axes[key,i].set_title(dict_metric_names[metric_type], fontsize=18)#, fontsize =60)
@@ -323,10 +323,10 @@ plt.tick_params(axis='y', labelsize=14)
 #fig.tight_layout()
 plt.xlabel('layers', fontsize=14)
 plt.ylabel('average decoding score', fontsize=14)
-plt.title('Average Decoding score', fontsize=20)
+plt.title('Injection and evaluation at IT', fontsize=20)
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/v1-it-avg-decode.png')
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v1-it-avg-decode.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/new-it-avg-decode.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/new-it-avg-decode.png')
 
 
 
