@@ -280,7 +280,7 @@ nb_metrics = len(metric_types)
 #fig, axes = pt.core.subplots(2, 2, size=(10, 10), sharex=True)
 plt.figure(figsize=(15,15))
 
-
+layers = [6]
 
 for model_name in model_names: 
   average_scores = []
