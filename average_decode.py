@@ -124,7 +124,7 @@ layers = np.arange(2)
 layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]#, 21, 22, 23, 24, 25, 26, 27]
 one_layer = 0
 metric = ["decode", 0]
-metric = ["fact", 0]
+#metric = ["fact", 0]
 
 dict_metric_names = {
     'obj_class': "Object Class" , 
@@ -293,6 +293,9 @@ for model_name in model_names:
       average_scores = scores
         
   average_scores = [x/nb_metrics for x in average_scores]
+  print(model_name)
+  print(average_scores[-1])
+    
     
   plt.plot(layers, average_scores, label=dict_model_names[model_name], color = dict_color[model_name][0], ls = dict_color[model_name][1])
   #plt.plot(layers, average_identity_scores, label='identity', color = 'black')
@@ -325,8 +328,8 @@ plt.xlabel('layers', fontsize=14)
 plt.ylabel('average factorization score', fontsize=14)
 plt.title('Injection and evaluation at IT', fontsize=20)
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/new-it-avg-fact.png')
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/new1-it-avg-fact.png')
+#plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/new-it-avg-fact.png')
+#plt.savefig('/home/ec3731/issa_analysis/nn-analysis/new1-it-avg-fact.png')
 
 
 
