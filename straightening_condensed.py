@@ -36,7 +36,7 @@ metric_dict = {
 dict_color = {
     # new architectures
     "inj_v1_evaluate_IT": ["magenta", '-'], 
-    "inj_v2_evaluate_IT": ["magenta", '--'], 
+    "inj_v2_evaluate_IT": ["forestgreen", '-'], 
     
     # no projector control
     "noprojector_control_v1":  ["black", '-'], 
