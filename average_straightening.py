@@ -37,7 +37,8 @@ metric_dict = {'obj_class': 'Object Class',
 
 dict_color = {
     # new architectures
-    "inj_v1_evaluate_IT":  ["magenta", '-'], 
+    "inj_v1_evaluate_IT":  ["magenta", '-'],
+    "inj_v2_evaluate_IT":  ["forestgreen", '-'],
 
     # no projector controls 
     "noprojector_control_v1":  ["black", '-'], 
@@ -159,6 +160,7 @@ dict_metric_names = {
 
 dict_model_names = {
     "inj_v1_evaluate_IT": "Random linear injection at V1, Evaluation at IT after projector",
+    "inj_v2_evaluate_IT": "Random linear injection at V2, Evaluation at IT after projector",
     
     "injection_v1_af": "Random linear injection at V1",
     "injection_separate_v1": "Trained linear injection at V1" , 
@@ -211,6 +213,7 @@ dict_model_names = {
 model_names = [
     # new architectures 
     "inj_v1_evaluate_IT", 
+    "inj_v2_evaluate_IT", 
     
     # control no projector
     "noprojector_control_v1", 
@@ -278,7 +281,7 @@ model_names = [
 ]
 metric_types = ["x_cam_trans", "y_cam_trans", "z_cam_trans", "x_cam_rot", "y_cam_rot", 'x_cam_pan', 'yz_cam_pan']
 
-layers =[6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+#layers =[6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 
 nb_metrics = len(metric_types)
 
@@ -308,8 +311,8 @@ for model_name in model_names:
         
   average_scores = [x/nb_metrics for x in average_scores]
   scores = [i * 180 for i in average_scores]
-  print(model_name)
-  print(np.mean(scores))
+  #print(model_name)
+  #print(np.mean(scores))
   
     
   plt.plot(layers, average_scores, label=dict_model_names[model_name], color = dict_color[model_name][0], ls = dict_color[model_name][1])
@@ -317,9 +320,9 @@ for model_name in model_names:
 
 plt.axvline(x = 3, color = 'grey',  ls = 'dotted')
 plt.axvline(x = 6, color = 'grey', ls = 'dotted')
-plt.axvline(x = 10, color = 'grey', ls = 'dotted')
+plt.axvline(x = 10, color = 'grey', ls = 'dotted')#, linewidth=4)
 plt.axvline(x = 16, color = 'grey',  ls = 'dotted')
-plt.axvline(x = 19, color = 'red', ls = 'dotted', linewidth=4)
+plt.axvline(x = 19, color = 'grey', ls = 'dotted')
 plt.axvline(x = 20, color = 'grey' , ls = 'dotted')
 
 #axes[key,i].set_title(dict_metric_names[metric_type], fontsize=18)#, fontsize =60)
@@ -344,8 +347,8 @@ plt.ylabel('average curvature score', fontsize=14)
 #plt.title('Injection and evaluation at V1', fontsize=20)
 plt.title('Injection and Evaluation at IT', fontsize=20)
 plt.show()
-#plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/new-it-avg-curve.png')
-#plt.savefig('/home/ec3731/issa_analysis/nn-analysis/new-it-avg-curve.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/v2it-avg-curve.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v2it-avg-curve.png')
 
 
     
