@@ -8,6 +8,10 @@
     "identity_pc": {
         "arch": "identity"
     },
+    "multiplicative_model_v1": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/multiplicative_model_v1"
+    },
     "multiplicative_model_v2": {
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/multiplicative_model_v2_v1"
