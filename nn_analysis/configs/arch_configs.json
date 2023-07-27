@@ -4,7 +4,7 @@
             "pixels"
         ]
     },
-    "barlowtwins_": {
+    "barlowtwins": {
         "layer_names": [
             "backbone.conv1",
             "backbone.bn1",
@@ -29,7 +29,7 @@
             "backbone.avgpool"
             ]
     },
-    "barlowtwins": {
+    "barlowtwins_": {
         "layer_names": [
             "backbone.conv1",
             "backbone.bn1",
