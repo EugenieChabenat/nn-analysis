@@ -20,6 +20,10 @@
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/multiplicative_model_v4_v1"
     },
+    "multiplicative_model_IT": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/multiplicative_model_IT_v1"
+    },
     "inj_v1_evaluate_IT": {
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/inj_v1_evaluate_IT_v1"
