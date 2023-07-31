@@ -267,26 +267,26 @@ model_names = [
     #"noprojector_conv_IT", 
 
     # multiplicative models, 
-    "multiplicative_model_v1", 
-    #"multiplicative_model_v2", 
+    #"multiplicative_model_v1", 
+    "multiplicative_model_v2", 
     #"multiplicative_model_v4", 
     #"multiplicative_model_IT", 
 
     # injection into avgpool
-    "injection_avgpool_v1", 
-    #"injection_avgpool_v2", 
+    #"injection_avgpool_v1", 
+    "injection_avgpool_v2", 
     #"injection_avgpool_v4", 
     #"injection_avgpool_IT", 
     
     # random injection models  
-    "injection_v1",
-    #"injection_v2", 
+    #"injection_v1",
+    "injection_v2", 
     #"injection_v4",
     #"injection_IT",
     
     # convolution injection models 
-    "injection_conv_v1", 
-    #"injection_conv_v2", 
+    #"injection_conv_v1", 
+    "injection_conv_v2", 
     #"injection_conv_v4", 
     #"injection_conv_IT", 
     
@@ -315,8 +315,8 @@ model_names = [
     #"injection_separate_IT",
     
     # control models 
-    "v1_no_injection", 
-    #"v2_no_injection", 
+    #"v1_no_injection", 
+    "v2_no_injection", 
     #"v4_no_injection", 
     #"IT_no_injection", 
 
@@ -370,8 +370,8 @@ fig.supxlabel('layers')#, fontsize=60)
 fig.supylabel('decode')#, fontsize=60)
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v1-avg-decode{}.png'.format(key))
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/mul-decode-{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v2-avg-decode{}.png'.format(key))
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/v2-avg-decode-{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_decode_{}.png'.format(key))
     
    
