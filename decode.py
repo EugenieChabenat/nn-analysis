@@ -59,10 +59,17 @@ dict_color = {
     "noprojector_conv_IT": ["gold", '-'], 
 
     # multiplicative injection 
-    "multiplicative_model_v1" : ["red", '-'], # '-'],
-    "multiplicative_model_v2": ["orange", '-'], # '-'],
-    "multiplicative_model_v4": ["blue",  '-'], # '-'],
-    "multiplicative_model_IT": ["green",  '-'], # '-'],
+    "multiplicative_model_v1" : ["darkblue", '-'], # '-'],
+    "multiplicative_model_v2": ["darkblue", '-'], # '-'],
+    "multiplicative_model_v4": ["darkblue",  '-'], # '-'],
+    "multiplicative_model_IT": ["darkblue",  '-'], # '-'],
+
+    # multiplicative injection 
+    "injection_avgpool_v1" : ["forestgreen", '-'], # '-'],
+    "injection_avgpool_v2": ["forestgreen", '-'], # '-'],
+    "injection_avgpool_v4": ["forestgreen",  '-'], # '-'],
+    "injection_avgpool_IT": ["forestgreen",  '-'], # '-'],
+    
     
     # random injection 
     "injection_v1" : ["orange", ':'], # '-'],
@@ -187,8 +194,7 @@ dict_model_names = {
     "noprojector_conv_v1": "Random convolutional injection of subset at V1 - no projector" ,
     "noprojector_control_v1": "Evaluation at V1, no injection - no projector", 
     "multiplicative_model_v1" : "Random multiplicative injection at V1",
-    
-    
+    "injection_avgpool_v1": "Random convolutional injection at V1 after avgpool" ,
     
 
     "injection_v2": "Random linear injection at V2",
@@ -201,6 +207,7 @@ dict_model_names = {
     "noprojector_conv_v2": "Random convolutional injection at V2 - no projector" ,
     "noprojector_control_v2": "Evaluation at V2, no injection - no projector", 
     "multiplicative_model_v2": "Random multiplicative injection at V2",
+    "injection_avgpool_v2": "Random convolutional injection at V2 after avgpool" ,
     
 
     "injection_v4": "Random linear injection at V4",
@@ -213,7 +220,7 @@ dict_model_names = {
     "noprojector_conv_v4": "Random convolutional injection at V4 - no projector",
     "noprojector_control_v4": "Evaluation at V4, no injection - no projector", 
     "multiplicative_model_v4": "Random multiplicative injection at V4",
-    
+    "injection_avgpool_v4": "Random convolutional injection at V4 after avgpool" ,
 
     "injection_IT": "Random linear injection at IT",
     "injection_separate_IT": "Trained linear injection at IT" , 
@@ -225,6 +232,7 @@ dict_model_names = {
     "noprojector_conv_IT": "Random convolutional injection at IT - no projector", 
     "noprojector_control_IT": "Evaluation at V2, no injection - no projector", 
     "multiplicative_model_IT": "Random multiplicative injection at IT",
+    "injection_avgpool_IT": "Random convolutional injection at IT after avgpool" ,
     
     "v1_no_injection": "Evaluation at V1, no injection", 
     "v2_no_injection": "Evaluation at V2, no injection", 
@@ -260,18 +268,24 @@ model_names = [
 
     # multiplicative models, 
     "multiplicative_model_v1", 
-    "multiplicative_model_v2", 
-    "multiplicative_model_v4", 
-    "multiplicative_model_IT", 
+    #"multiplicative_model_v2", 
+    #"multiplicative_model_v4", 
+    #"multiplicative_model_IT", 
+
+    # injection into avgpool
+    "injection_avgpool_v1", 
+    #"injection_avgpool_v2", 
+    #"injection_avgpool_v4", 
+    #"injection_avgpool_IT", 
     
     # random injection models  
-    #"injection_v1",
+    "injection_v1",
     #"injection_v2", 
     #"injection_v4",
     #"injection_IT",
     
     # convolution injection models 
-    #"injection_conv_v1", 
+    "injection_conv_v1", 
     #"injection_conv_v2", 
     #"injection_conv_v4", 
     #"injection_conv_IT", 
@@ -301,10 +315,10 @@ model_names = [
     #"injection_separate_IT",
     
     # control models 
-    #"v1_no_injection", 
+    "v1_no_injection", 
     #"v2_no_injection", 
     #"v4_no_injection", 
-    "IT_no_injection", 
+    #"IT_no_injection", 
 
     "resnet50_untrained", 
     "barlow_twins_50epochs", 
@@ -356,7 +370,7 @@ fig.supxlabel('layers')#, fontsize=60)
 fig.supylabel('decode')#, fontsize=60)
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/mul-decode{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v1-avg-decode{}.png'.format(key))
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/mul-decode-{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_decode_{}.png'.format(key))
     
