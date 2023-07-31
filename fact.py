@@ -53,10 +53,16 @@ dict_color = {
     "noprojector_conv_IT": ["gold", '-'], 
 
     # multiplicative injection 
-    "multiplicative_model_v1" : ["red", '-'], # '-'],
-    "multiplicative_model_v2": ["orange", '-'], # '-'],
-    "multiplicative_model_v4": ["blue",  '-'], # '-'],
-    "multiplicative_model_IT": ["green",  '-'], # '-'],
+    "multiplicative_model_v1" : ["darkblue", '-'], # '-'],
+    "multiplicative_model_v2": ["darkblue", '-'], # '-'],
+    "multiplicative_model_v4": ["darkblue",  '-'], # '-'],
+    "multiplicative_model_IT": ["darkblue",  '-'], # '-'],
+
+    # multiplicative injection 
+    "injection_avgpool_v1" : ["forestgreen", '-'], # '-'],
+    "injection_avgpool_v2": ["forestgreen", '-'], # '-'],
+    "injection_avgpool_v4": ["forestgreen",  '-'], # '-'],
+    "injection_avgpool_IT": ["forestgreen",  '-'], # '-'],
     
     # random injection 
     "injection_v1" : ["orange", ':'], #'-'],
@@ -235,6 +241,11 @@ model_names = [
     #"multiplicative_model_v2", 
     #"multiplicative_model_v4", 
     #"multiplicative_model_IT", 
+        
+    "injection_avgpool_v1",
+    #"injection_avgpool_v2",
+    #"injection_avgpool_v4",
+    #"injection_avgpool_IT",
     
     
     # random injection models  
