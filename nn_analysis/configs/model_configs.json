@@ -12,6 +12,10 @@
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/injection_avgpool_v1"
     },
+    "injection_avgpool_v2": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/injection_avgpool_v2_v1"
+    },
     "multiplicative_model_v1": {
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/multiplicative_model_v1"
