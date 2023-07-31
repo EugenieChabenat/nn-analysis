@@ -232,19 +232,19 @@ model_names = [
     
     # multiplicative models, 
     "multiplicative_model_v1", 
-    "multiplicative_model_v2", 
-    "multiplicative_model_v4", 
-    "multiplicative_model_IT", 
+    #"multiplicative_model_v2", 
+    #"multiplicative_model_v4", 
+    #"multiplicative_model_IT", 
     
     
     # random injection models  
-    #"injection_v1",
+    "injection_v1",
     #"injection_v2", 
     #"injection_v4",
     #"injection_IT",
     
     # convolution injection models 
-    #"injection_conv_v1", 
+    "injection_conv_v1", 
     #"injection_conv_v2", 
     #"injection_conv_v4", 
     #"injection_conv_IT", 
@@ -273,10 +273,10 @@ model_names = [
     #"injection_separate_v4", 
     #"injection_separate_IT",
     
-    #"v1_no_injection", 
+    "v1_no_injection", 
     #"v2_no_injection", 
     #"v4_no_injection", 
-    "IT_no_injection", 
+    #"IT_no_injection", 
 
     "resnet50_untrained", 
     "barlow_twins_50epochs", 
@@ -287,8 +287,8 @@ model_names = [
 # ------------------------------------------------------------------------------------
 # LAYERS PLOT 
 # ------------------------------------------------------------------------------------
-#fig, axes = pt.core.subplots(2,2, size=(20, 10), sharex=True)
-fig, axes = pt.core.subplots(2,2, size=(10, 8), sharex=True)
+fig, axes = pt.core.subplots(2,2, size=(20, 10), sharex=True)
+#fig, axes = pt.core.subplots(2,2, size=(10, 8), sharex=True)
 for key, metric_types in list_metrics.items(): 
     #fig, axes = pt.core.subplots(1, len(metric_types), size=(10, 8), sharex=True)
     for i, metric_type in enumerate(metric_types):
@@ -319,13 +319,13 @@ for key, metric_types in list_metrics.items():
         axes[key,i].set_ylim(0.0, 1.0)
         axes[key,i].tick_params(axis='y', labelsize=14)
         
-        #axes[key,i].legend(loc='center left',bbox_to_anchor=(1.6, 0.5), fontsize=20)
+        axes[key,i].legend(loc='center left',bbox_to_anchor=(1.6, 0.5), fontsize=20)
 fig.supxlabel('layers')
 fig.supylabel('factorization')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/multi-fact_{}.png'.format(key))
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/multi-fact_{}.png'.format(key))
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/legend-avg-v1_{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/legend-avg-v1_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_fact_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/legend-all_{}.png'.format(key))
 
