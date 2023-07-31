@@ -59,10 +59,10 @@ dict_color = {
     "noprojector_conv_IT": ["gold", '-'], 
 
     # multiplicative injection 
-    "multiplicative_model_v1" : ["red", ':'], # '-'],
-    "multiplicative_model_v2": ["orange", ':'], # '-'],
-    "multiplicative_model_v4": ["blue",  ':'], # '-'],
-    "multiplicative_model_IT": ["green",  ':'], # '-'],
+    "multiplicative_model_v1" : ["red", '-'], # '-'],
+    "multiplicative_model_v2": ["orange", '-'], # '-'],
+    "multiplicative_model_v4": ["blue",  '-'], # '-'],
+    "multiplicative_model_IT": ["green",  '-'], # '-'],
     
     # random injection 
     "injection_v1" : ["orange", ':'], # '-'],
@@ -356,8 +356,8 @@ fig.supxlabel('layers')#, fontsize=60)
 fig.supylabel('decode')#, fontsize=60)
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/multi-decode{}.png'.format(key))
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/multi-decode-{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/mul-decode{}.png'.format(key))
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/mul-decode-{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_decode_{}.png'.format(key))
     
    
