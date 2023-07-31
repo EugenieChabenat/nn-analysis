@@ -171,6 +171,7 @@ dict_model_names = {
     "noprojector_conv_v1": "Random convolutional injection at V1 - no projector", 
     "noprojector_control_v1": "Evaluation at V1, no injection - no projector", 
     "multiplicative_model_v1" : "Random multiplicative injection at V1",
+    "injection_avgpool_v1": "Random convolutional injection at V1 after avgpool" ,
     
     "injection_v2": "Random linear injection at V2",
     "injection_separate_v2": "Trained linear injection at V2" , 
@@ -182,6 +183,7 @@ dict_model_names = {
     "noprojector_conv_v2":  "Random convolutional injection at V2 - no projector",
     "noprojector_control_v2": "Evaluation at V2, no injection - no projector", 
     "multiplicative_model_v2" : "Random multiplicative injection at V2",
+    "injection_avgpool_v2": "Random convolutional injection at V2 after avgpool" ,
 
     "injection_v4": "Random linear injection at V4",
     "injection_separate_v4": "Trained linear injection at V4" , 
@@ -193,6 +195,7 @@ dict_model_names = {
     "noprojector_conv_v4":  "Random convolutional injection at V4 - no projector",
     "noprojector_control_v4": "Evaluation at V4, no injection - no projector", 
     "multiplicative_model_v4" : "Random multiplicative injection at V4",
+    "injection_avgpool_v4": "Random convolutional injection at V4 after avgpool" ,
 
     "injection_IT": "Random linear injection at IT",
     "injection_separate_IT": "Trained linear injection at IT" , 
@@ -204,6 +207,7 @@ dict_model_names = {
     "noprojector_conv_IT": "Random convolutional injection at IT - no projector", 
     "noprojector_control_IT": "Evaluation at injection at IT, no injection - no projector",
     "multiplicative_model_IT" : "Random multiplicative injection at IT",
+    "injection_avgpool_IT": "Random convolutional injection at IT after avgpool" ,
     
     "v1_no_injection": "Evaluation at V1, no injection", 
     "v2_no_injection": "Evaluation at V2, no injection", 
