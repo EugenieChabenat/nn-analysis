@@ -157,8 +157,8 @@ dict_metric_names = {
 }"""
 
 list_metrics = {
-    0 : ["x_cam_trans", "y_cam_trans", "z_cam_trans"], 
-    #0 : ["x_cam_rot", "y_cam_rot"], 
+    #0 : ["x_cam_trans", "y_cam_trans", "z_cam_trans"], 
+    0 : ["x_cam_rot", "y_cam_rot"], 
     #0 : ['x_cam_pan', 'yz_cam_pan']
 }
 
@@ -311,7 +311,7 @@ model_names = [
 # ------------------------------------------------------------------------------------
 # LAYERS PLOT 
 # ------------------------------------------------------------------------------------
-fig, axes = pt.core.subplots(1, 3, size=(10, 8), sharex=True)
+fig, axes = pt.core.subplots(1, 2, size=(10, 8), sharex=True)
 for key, metric_types in list_metrics.items(): 
 
     #fig, axes = pt.core.subplots(1, len(metric_types), size=(10,8), sharex=True)
@@ -346,8 +346,8 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/avg-v4-camtrans-{}.png'.format(key))
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/avg-v4-camtrans_{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/avg-v4-camrot-{}.png'.format(key))
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/avg-v4-camrot_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_straightening_{}.png'.format(key))
     
 
