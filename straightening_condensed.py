@@ -60,10 +60,16 @@ dict_color = {
     "noprojector_conv_IT": ["gold", '-'], 
     
     # multiplicative injection 
-    "multiplicative_model_v1" : ["red", '-'], # '-'],
-    "multiplicative_model_v2": ["orange", '-'], # '-'],
-    "multiplicative_model_v4": ["blue",  '-'], # '-'],
-    "multiplicative_model_IT": ["green",  '-'], # '-'],
+    "multiplicative_model_v1" : ["darkblue", '-'], # '-'],
+    "multiplicative_model_v2": ["darkblue", '-'], # '-'],
+    "multiplicative_model_v4": ["darkblue",  '-'], # '-'],
+    "multiplicative_model_IT": ["darkblue",  '-'], # '-'],
+
+    # multiplicative injection 
+    "injection_avgpool_v1" : ["forestgreen", '-'], # '-'],
+    "injection_avgpool_v2": ["forestgreen", '-'], # '-'],
+    "injection_avgpool_v4": ["forestgreen",  '-'], # '-'],
+    "injection_avgpool_IT": ["forestgreen",  '-'], # '-'],
 
     # random injection 
     "injection_v1_af" : ["orange", ':'],  #'-'],
@@ -172,6 +178,7 @@ dict_model_names = {
     "noprojector_conv_v1": "Random convolutional injection at V1 - no projector" , 
     "noprojector_control_v1": "Evaluation at V1, no injection - no projector", 
     "multiplicative_model_v1" : "Random multiplicative injection at V1",
+    "injection_avgpool_v1": "Random convolutional injection at V1 after avgpool" ,
 
     "injection_v2_af": "Random linear injection at V2",
     "injection_separate_v2": "Trained linear injection at V2" , 
@@ -183,6 +190,7 @@ dict_model_names = {
     "noprojector_conv_v2": "Random convolutional injection at V2 - no projector" ,
     "noprojector_control_v2": "Evaluation at V2, no injection - no projector",
     "multiplicative_model_v2" : "Random multiplicative injection at V2",
+    "injection_avgpool_v2": "Random convolutional injection at V2 after avgpool" ,
     
     "injection_v4_af": "Random linear injection at V4",
     "injection_separate_v4": "Trained linear injection at V4" , 
@@ -194,6 +202,7 @@ dict_model_names = {
     "noprojector_conv_v4": "Random convolutional injection at V4 - no projector",
     "noprojector_control_v4": "Evaluation at V4, no injection - no projector", 
     "multiplicative_model_v4" : "Random multiplicative injection at V4",
+    "injection_avgpool_v4": "Random convolutional injection at V4 after avgpool" ,
 
     "injection_IT_af": "Random linear injection at IT",
     "injection_separate_IT": "Trained linear injection at IT" , 
@@ -205,6 +214,7 @@ dict_model_names = {
     "noprojector_conv_IT": "Random convolutional injection at IT - no projector", 
     "noprojector_control_IT": "Evaluation at IT, no injection - no projector", 
     "multiplicative_model_IT" : "Random multiplicative injection at IT",
+    "injection_avgpool_IT": "Random convolutional injection at IT after avgpool" ,
     
     "v1_no_injection": "Evaluation at V1, no injection", 
     "v2_no_injection": "Evaluation at V2, no injection", 
@@ -223,13 +233,13 @@ model_names = [
     #"inj_v2_evaluate_IT", 
 
     # no projector control 
-    "noprojector_control_v1",
+    #"noprojector_control_v1",
     #"noprojector_control_v2",
     #"noprojector_control_v4",
     #"noprojector_control_IT",
     
     # no projector linear 
-    "noprojector_linear_v1",
+    #"noprojector_linear_v1",
     #"noprojector_linear_v2", 
     #"noprojector_linear_v4", 
     #"noprojector_linear_IT", 
@@ -242,9 +252,16 @@ model_names = [
 
     # multiplicative models, 
     "multiplicative_model_v1", 
-    "multiplicative_model_v2", 
-    "multiplicative_model_v4", 
-    "multiplicative_model_IT", 
+    #"multiplicative_model_v2", 
+    #"multiplicative_model_v4", 
+    #"multiplicative_model_IT", 
+
+    # injection into avgpool
+    "injection_avgpool_v1", 
+    #"injection_avgpool_v2", 
+    #"injection_avgpool_v4", 
+    #"injection_avgpool_IT", 
+    
     
     # random injection models  
     "injection_v1_af",
@@ -253,7 +270,7 @@ model_names = [
     #"injection_IT_af",
     
     # convolution injection models 
-    #"injection_conv_v1_af", 
+    "injection_conv_v1_af", 
     #"injection_conv_v2_af", 
     #"injection_conv_v4_af", 
     #"injection_conv_IT_af", 
@@ -329,8 +346,8 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/multi-np-camtrans-{}.png'.format(key))
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/multi-np-camtrans_{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/avg-v1-camtrans-{}.png'.format(key))
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/avg-v1-camtrans_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_straightening_{}.png'.format(key))
     
 
