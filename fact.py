@@ -302,8 +302,8 @@ model_names = [
 # ------------------------------------------------------------------------------------
 # LAYERS PLOT 
 # ------------------------------------------------------------------------------------
-#fig, axes = pt.core.subplots(2,2, size=(20, 10), sharex=True)
-fig, axes = pt.core.subplots(2,2, size=(10, 8), sharex=True)
+fig, axes = pt.core.subplots(2,2, size=(20, 10), sharex=True)
+#fig, axes = pt.core.subplots(2,2, size=(10, 8), sharex=True)
 for key, metric_types in list_metrics.items(): 
     #fig, axes = pt.core.subplots(1, len(metric_types), size=(10, 8), sharex=True)
     for i, metric_type in enumerate(metric_types):
@@ -334,7 +334,7 @@ for key, metric_types in list_metrics.items():
         axes[key,i].set_ylim(0.0, 1.0)
         axes[key,i].tick_params(axis='y', labelsize=14)
         
-        #axes[key,i].legend(loc='center left',bbox_to_anchor=(1.6, 0.5), fontsize=20)
+        axes[key,i].legend(loc='center left',bbox_to_anchor=(1.6, 0.5), fontsize=20)
 fig.supxlabel('layers')
 fig.supylabel('factorization')
 fig.tight_layout()
