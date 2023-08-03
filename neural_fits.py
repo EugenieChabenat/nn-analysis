@@ -108,7 +108,7 @@ dict_color = {
 epoch = 29
 layers = np.arange(2)
 #layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
-layers =[ 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+layers =[3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 metric = ["neural_fits", 0]
 metric_types = ['hvm-V4', 'hvm-IT', 'rust-V4', 'rust-IT']
 
@@ -210,11 +210,11 @@ for i, metric_type in enumerate(metric_types):
     axes[0,i].axvline(x = 19, color = 'grey', ls = 'dotted')#, linewidth=4)
     axes[0,i].axvline(x = 20, color = 'grey' , ls = 'dotted')
 
-    axes[0,i].text(8, 0.15, "Block V1", ha="center", va="center", size=14)#, size=60)
-    axes[0,i].text(13, 0.15, "Block V2", ha="center", va="center", size=14)#, size=60)
-    axes[0,i].text(17.5, 0.15, "Block V4", ha="center", va="center", size=14)#, size=60)
-    axes[0,i].text(19.5, 0.15, "IT", ha="center", va="center", size=14)#, size=60)
-        
+    axes[0,i].text(4.5, 0.95, "Block V1", ha="center", va="center", size=14)#, size=60)
+    axes[0,i].text(8, 0.95, "Block V2", ha="center", va="center", size=14)#, size=60)
+    axes[0,i].text(13, 0.95, "Block V4", ha="center", va="center", size=14)#, size=60)
+    axes[0,i].text(17.5, 0.95, "Block IT", ha="center", va="center", size=14)#, size=60)
+    
     axes[0,i].set_title(metric_type, fontsize = 20)
     axes[0,i].set_xticks([6, 10, 16, 19, 20])
     axes[0,i].set_xticklabels(['v1 injection', 'v2 injection', 'v4 injection', 'IT injection', 'avgpool'], rotation=45, ha='right', fontsize=16)#, fontsize=60)
@@ -224,7 +224,7 @@ fig.supxlabel('layers')
 fig.supylabel('neural fits')
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/neuralfits_all_layers_it9.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/neuralfits_all_layers_it.png')
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/neural_fits/plot1.png')
 
 # -- 
