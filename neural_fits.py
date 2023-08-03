@@ -216,6 +216,7 @@ for i, metric_type in enumerate(metric_types):
     axes[0,i].text(17.5, 0.95, "Block IT", ha="center", va="center", size=14)#, size=60)
     
     axes[0,i].set_title(metric_type, fontsize = 20)
+    axes[0,i].set_ylim(0.0, 1.)
     axes[0,i].set_xticks([6, 10, 16, 19, 20])
     axes[0,i].set_xticklabels(['v1 injection', 'v2 injection', 'v4 injection', 'IT injection', 'avgpool'], rotation=45, ha='right', fontsize=16)#, fontsize=60)
         
