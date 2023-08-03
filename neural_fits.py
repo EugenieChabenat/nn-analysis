@@ -210,9 +210,9 @@ for i, metric_type in enumerate(metric_types):
     axes[0,i].axvline(x = 19, color = 'grey', ls = 'dotted')#, linewidth=4)
     axes[0,i].axvline(x = 20, color = 'grey' , ls = 'dotted')
 
-    axes[0,i].text(6.5, 0.15, "Block V1", ha="center", va="center", size=14)#, size=60)
-    axes[0,i].text(10, 0.15, "Block V2", ha="center", va="center", size=14)#, size=60)
-    axes[0,i].text(15, 0.15, "Block V4", ha="center", va="center", size=14)#, size=60)
+    axes[0,i].text(8.5, 0.15, "Block V1", ha="center", va="center", size=14)#, size=60)
+    axes[0,i].text(12, 0.15, "Block V2", ha="center", va="center", size=14)#, size=60)
+    axes[0,i].text(17, 0.15, "Block V4", ha="center", va="center", size=14)#, size=60)
     axes[0,i].text(19.5, 0.15, "IT", ha="center", va="center", size=14)#, size=60)
         
     axes[0,i].set_title(metric_type, fontsize = 20)
@@ -224,7 +224,7 @@ fig.supxlabel('layers')
 fig.supylabel('neural fits')
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/neuralfits_all_layers_it6.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/neuralfits_all_layers_it7.png')
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/neural_fits/plot1.png')
 
 # -- 
