@@ -96,7 +96,7 @@ model_names = [
     #"v4_no_injection", 
     "IT_no_injection", 
 
-    "resnet50_untrained", 
+    #"resnet50_untrained", 
     "barlow_twins_50epochs", 
     #"barlow_fact_no_injection"
 ]
