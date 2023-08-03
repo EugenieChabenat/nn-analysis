@@ -196,14 +196,20 @@ model_names = [
 ]
 
 
-fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
+fig, axes = pt.core.subplots(1, len(metric_types), size=(10, 10), sharex=True)
 for i, metric_type in enumerate(metric_types):
     for model_name in model_names:
         
         scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
         axes[0,i].plot(layers, scores, label=model_name, color = dict_color[model_name][0])
     #scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
-    #axes[0,i].plot(layers, scores, label='identity')
+
+    axes[0,i].axvline(x = 6, color = 'grey', ls = 'dotted')
+    axes[0,i].axvline(x = 10, color = 'grey', ls = 'dotted')
+    axes[0,i].axvline(x = 16, color = 'grey',  ls = 'dotted')
+    axes[0,i].axvline(x = 19, color = 'grey', ls = 'dotted')#, linewidth=4)
+    axes[0,i].axvline(x = 20, color = 'grey' , ls = 'dotted')
+        
     axes[0,i].set_title(metric_type)
     axes[0,i].set_xticks([6, 10, 16, 19, 20])
     axes[0,i].set_xticklabels(['v1 injection', 'v2 injection', 'v4 injection', 'IT injection', 'avgpool'], rotation=45, ha='right', fontsize=16)#, fontsize=60)
@@ -213,7 +219,7 @@ fig.supxlabel('layers')
 fig.supylabel('neural fits')
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/neuralfits_all_layers_it.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/neuralfits_all_layers_it2.png')
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/neural_fits/plot1.png')
 
 # -- 
