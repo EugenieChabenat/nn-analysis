@@ -17,13 +17,90 @@ layers = np.arange(2)
 layers =[0, 1, 2, 3, 4, 5, 16]
 metric = ["neural_fits", 0]
 metric_types = ['hvm-V4', 'hvm-IT', 'rust-V4', 'rust-IT']
-# metric_types = ["x_cam_rot", "x_focus_pan", "x_cam_pan"]
+
 model_names = [
-    #"barlow_v1_inj",
-    #"identity", 
-    "barlow_v2_inj", 
-    "barlow_control"
+    # new architectures 
+    #"inj_v1_evaluate_IT", 
+    #"inj_v2_evaluate_IT", 
+    
+    
+    # no projector - control 
+    #"noprojector_control_v1", 
+    #"noprojector_control_v2", 
+    #"noprojector_control_v4", 
+    #"noprojector_control_IT", 
+    
+    # random linear no projector
+    #"noprojector_linear_v1", 
+    #"noprojector_linear_v2",
+    #"noprojector_linear_v4", 
+    #"noprojector_linear_IT", 
+    
+    # random convolution no projector 
+    #"noprojector_conv_v1", 
+    #"noprojector_conv_v2",
+    #"noprojector_conv_v4", 
+    #"noprojector_conv_IT", 
+
+    # multiplicative models, 
+    #"multiplicative_model_v1", 
+    #"multiplicative_model_v2", 
+    #"multiplicative_model_v4", 
+    "multiplicative_model_IT", 
+
+    # injection into avgpool
+    #"injection_avgpool_v1", 
+    #"injection_avgpool_v2", 
+    #"injection_avgpool_v4", 
+    "injection_avgpool_IT", 
+    
+    # random injection models  
+    #"injection_v1",
+    #"injection_v2", 
+    #"injection_v4",
+    "injection_IT",
+    
+    # convolution injection models 
+    #"injection_conv_v1", 
+    #"injection_conv_v2", 
+    #"injection_conv_v4", 
+    "injection_conv_IT", 
+    
+    # unfreeze convolution injection models 
+    #"unfreeze_injection_v1", 
+    #"unfreeze_injection_v2", 
+    #"unfreeze_injection_v4", 
+    #"unfreeze_injection_IT", 
+
+    # subset 
+    #"subset_injection_v1", 
+    #"subset_injection_v2", 
+    #"subset_injection_v4", 
+    #"subset_injection_IT",
+
+    # conv subset injection 
+    #"injection_conv_subset_v1", 
+    #"injection_conv_subset_v2", 
+    #"injection_conv_subset_v4", 
+    #"injection_conv_subset_IT",
+
+    # separate learning of weights 
+    #"injection_separate_v1", 
+    #"injection_separate_v2", 
+    #"injection_separate_v4", 
+    #"injection_separate_IT",
+    
+    # control models 
+    #"v1_no_injection", 
+    #"v2_no_injection", 
+    #"v4_no_injection", 
+    "IT_no_injection", 
+
+    "resnet50_untrained", 
+    "barlow_twins_50epochs", 
+    #"barlow_fact_no_injection"
 ]
+
 
 fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
 for i, metric_type in enumerate(metric_types):
@@ -43,7 +120,8 @@ fig.supxlabel('layers')
 fig.supylabel('neural fits')
 fig.tight_layout()
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/neural_fits/plot1.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/neuralfits_test.png')
+#plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/neural_fits/plot1.png')
 
 # -- 
 epoch = 29
@@ -77,6 +155,7 @@ fig.supxlabel('layers')
 fig.supylabel('neural fits')
 fig.tight_layout()
 plt.show()
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/neuralfits_test2.png')
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/neural_fits/plot2.png')
 
 
