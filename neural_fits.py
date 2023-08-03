@@ -129,13 +129,7 @@ layers = np.arange(2)
 layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 16]
 metric = ["neural_fits", 0]
 metric_types = ['hvm-V4', 'hvm-IT', 'rust-V4', 'rust-IT']
-# metric_types = ["x_cam_rot", "x_focus_pan", "x_cam_pan"]
-model_names = [
-    #"barlow_v1_inj",
-    #"identity", 
-    "barlow_v3_equi", 
-    "barlow_control"
-]
+
 
 fig, axes = pt.core.subplots(1, len(metric_types), size=(5,4), sharex=True)
 for i, metric_type in enumerate(metric_types):
