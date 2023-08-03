@@ -108,7 +108,8 @@ dict_color = {
 epoch = 29
 layers = np.arange(2)
 #layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
-layers =[3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+#layers =[3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+layers =[3, 6,  10, 16, 19, 20]
 metric = ["neural_fits", 0]
 metric_types = ['hvm-V4', 'hvm-IT', 'rust-V4', 'rust-IT']
 
@@ -225,7 +226,7 @@ fig.supxlabel('layers')
 fig.supylabel('neural fits')
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/neuralfits_all_layers_it.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/neuralfits_blocks_it.png')
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/neural_fits/plot1.png')
 
 # -- 
