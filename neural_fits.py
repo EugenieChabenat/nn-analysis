@@ -210,7 +210,7 @@ for i, metric_type in enumerate(metric_types):
     axes[0,i].axvline(x = 19, color = 'grey', ls = 'dotted')#, linewidth=4)
     axes[0,i].axvline(x = 20, color = 'grey' , ls = 'dotted')
         
-    axes[0,i].set_title(metric_type, fontsize = 16 )
+    axes[0,i].set_title(metric_type, fontsize = 20)
     axes[0,i].set_xticks([6, 10, 16, 19, 20])
     axes[0,i].set_xticklabels(['v1 injection', 'v2 injection', 'v4 injection', 'IT injection', 'avgpool'], rotation=45, ha='right', fontsize=16)#, fontsize=60)
         
@@ -219,7 +219,7 @@ fig.supxlabel('layers')
 fig.supylabel('neural fits')
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/neuralfits_all_layers_it3.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/neuralfits_all_layers_it4.png')
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/neural_fits/plot1.png')
 
 # -- 
