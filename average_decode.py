@@ -228,14 +228,14 @@ model_names = [
     # random injection models  
     #"injection_v1",
     #"injection_v2", 
-    #"injection_v4",
-    "injection_IT",
+    "injection_v4",
+    #"injection_IT",
     
     # convolution injection models 
     #"injection_conv_v1", 
     #"injection_conv_v2", 
-    #"injection_conv_v4", 
-    "injection_conv_IT", 
+    "injection_conv_v4", 
+    #"injection_conv_IT", 
     
     # unfreeze convolution injection models 
     #"unfreeze_injection_v1", 
@@ -264,8 +264,8 @@ model_names = [
     # control models 
     #"v1_no_injection", 
     #"v2_no_injection", 
-    #"v4_no_injection", 
-    "IT_no_injection", 
+    "v4_no_injection", 
+    #"IT_no_injection", 
 
     "resnet50_untrained", 
     "barlow_twins_50epochs", 
@@ -306,8 +306,8 @@ for model_name in model_names:
 plt.axvline(x = 3, color = 'grey',  ls = 'dotted')
 plt.axvline(x = 6, color = 'grey', ls = 'dotted')
 plt.axvline(x = 10, color = 'grey', ls = 'dotted')
-plt.axvline(x = 16, color = 'grey',  ls = 'dotted')
-plt.axvline(x = 19, color = 'red', ls = 'dotted',  linewidth=4)
+plt.axvline(x = 16, color = 'red',  ls = 'dotted',  linewidth=4)
+plt.axvline(x = 19, color = 'grey', ls = 'dotted')
 plt.axvline(x = 20, color = 'grey' , ls = 'dotted')
 
 #axes[key,i].set_title(dict_metric_names[metric_type], fontsize=18)#, fontsize =60)
@@ -330,10 +330,10 @@ plt.tick_params(axis='y', labelsize=14)
 plt.xlabel('layers', fontsize=14)
 plt.ylabel('average decoding score', fontsize=14)
 #plt.title('Injection and evaluation at IT', fontsize=20)
-plt.title('Injection at IT', fontsize=20)
+plt.title('Injection at V4', fontsize=20)
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/avg-decode-it_pres.png')
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/1-avg-decode-it_pres.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/avg-decode-v4_pres.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/1-avg-decode-v4_pres.png')
 
 
 
