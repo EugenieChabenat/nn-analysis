@@ -167,9 +167,9 @@ dict_model_names = {
     "unfreeze_injection_v1": "Trained convolutional injection at V1" , 
     "subset_injection_v1": "Random linear injection of spatial information at V1", 
     "injection_conv_subset_v1": "Random convolutional injection of spatial information at V1" ,
-    "noprojector_linear_v1": "Random linear injection at V1 - no projector", 
-    "noprojector_conv_v1": "Random convolutional injection at V1 - no projector", 
-    "noprojector_control_v1": "Evaluation at V1, no injection - no projector", 
+    "noprojector_linear_v1": "Random linear injection - no projector", 
+    "noprojector_conv_v1": "Random convolutional injection - no projector", 
+    "noprojector_control_v1": "Evaluation at injection site, vanilla Barlow Twins loss - no projector", 
     "multiplicative_model_v1" : "Random multiplicative injection at V1",
     "injection_avgpool_v1": "Random convolutional injection at V1 after avgpool" ,
     
@@ -223,19 +223,19 @@ model_names = [
     #"inj_v2_evaluate_IT", 
     
     # no projector control 
-    #"noprojector_control_v1", 
+    "noprojector_control_v1", 
     #"noprojector_control_v2", 
     #"noprojector_control_v4", 
     #"noprojector_control_IT", 
     
     # trained without projector 
-    #"noprojector_linear_v1", 
+    "noprojector_linear_v1", 
     #"noprojector_linear_v2", 
     #"noprojector_linear_v4", 
     #"noprojector_linear_IT", 
     
     # random con - noprojector 
-    #"noprojector_conv_v1", 
+    "noprojector_conv_v1", 
     #"noprojector_conv_v2", 
     #"noprojector_conv_v4", 
     #"noprojector_conv_IT", 
@@ -253,13 +253,13 @@ model_names = [
     
     
     # random injection models  
-    "injection_v1",
+    #"injection_v1",
     #"injection_v2", 
     #"injection_v4",
     #"injection_IT",
     
     # convolution injection models 
-    "injection_conv_v1", 
+    #"injection_conv_v1", 
     #"injection_conv_v2", 
     #"injection_conv_v4", 
     #"injection_conv_IT", 
@@ -288,7 +288,7 @@ model_names = [
     #"injection_separate_v4", 
     #"injection_separate_IT",
     
-    "v1_no_injection", 
+    #"v1_no_injection", 
     #"v2_no_injection", 
     #"v4_no_injection", 
     #"IT_no_injection", 
@@ -340,7 +340,7 @@ fig.supylabel('invariance')
 fig.tight_layout()
 plt.show()
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/invariance-it_{}.png'.format(key))
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/legend-decode_pres_{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/legend-straightening_pres_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_fact_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/legend-all_{}.png'.format(key))
 
