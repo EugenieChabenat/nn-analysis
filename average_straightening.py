@@ -212,14 +212,14 @@ dict_model_names = {
 }
 model_names = [
     # new architectures 
-    #"inj_v1_evaluate_IT", 
-    #"inj_v2_evaluate_IT", 
+    "inj_v1_evaluate_IT", 
+    "inj_v2_evaluate_IT", 
     
     # control no projector
     #"noprojector_control_v1", 
     #"noprojector_control_v2",
     #"noprojector_control_v4",
-    "noprojector_control_IT",
+    #"noprojector_control_IT",
     
     # random linear no projector
     #"noprojector_linear_v1", 
@@ -231,7 +231,7 @@ model_names = [
     #"noprojector_conv_v1", 
     #"noprojector_conv_v2",
     #"noprojector_conv_v4", 
-    "noprojector_conv_IT", 
+    #"noprojector_conv_IT", 
     
     # random injection models  
     #"injection_v1_af",
@@ -322,7 +322,7 @@ plt.axvline(x = 3, color = 'grey',  ls = 'dotted')
 plt.axvline(x = 6, color = 'grey', ls = 'dotted')
 plt.axvline(x = 10, color = 'grey', ls = 'dotted')
 plt.axvline(x = 16, color = 'grey',  ls = 'dotted')
-plt.axvline(x = 19, color = 'red', ls = 'dotted', linewidth=4)
+plt.axvline(x = 19, color = 'grey', ls = 'dotted')#, linewidth=4)
 plt.axvline(x = 20, color = 'grey' , ls = 'dotted')
 
 #axes[key,i].set_title(dict_metric_names[metric_type], fontsize=18)#, fontsize =60)
@@ -347,8 +347,8 @@ plt.ylabel('average curvature score', fontsize=14)
 plt.title('Injection and Evaluation at IT', fontsize=20)
 #plt.title('Average Curvature score', fontsize=20)
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/avg-curve-it_pres.png')
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/1-avg-curve-it_pres.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/avg-curve-v12_pres.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/avg-curve-v12_pres.png')
 
 
     
