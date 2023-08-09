@@ -223,9 +223,9 @@ model_names = [
     
     # random linear no projector
     #"noprojector_linear_v1", 
-    #"noprojector_linear_v2",
+    "noprojector_linear_v2",
     #"noprojector_linear_v4", 
-    "noprojector_linear_IT", 
+    #"noprojector_linear_IT", 
     
     # random convolution no projector 
     #"noprojector_conv_v1", 
@@ -344,11 +344,11 @@ plt.tick_params(axis='y', labelsize=14)
 #fig.tight_layout()
 plt.xlabel('layers', fontsize=14)
 plt.ylabel('average curvature score', fontsize=14)
-plt.title('Injection and Evaluation at IT', fontsize=20)
-#plt.title('Average Curvature score', fontsize=20)
+#plt.title('Injection and Evaluation at IT', fontsize=20)
+plt.title('Average Curvature score', fontsize=20)
 plt.show()
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/avg-curve-v12_pres.png')
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/avg-curve-v12_pres.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/1-avg-curve-v12_pres.png')
 
 
     
