@@ -234,13 +234,13 @@ model_names = [
     #"noprojector_conv_IT", 
     
     # random injection models  
-    "injection_v1_af",
+    #"injection_v1_af",
     #"injection_v2_af", 
     #"injection_v4_af",
     #"injection_IT_af",
     
     # convolution injection models 
-    "injection_conv_v1_af", 
+    #"injection_conv_v1_af", 
     #"injection_conv_v2_af", 
     #"injection_conv_v4_af", 
     #"injection_conv_IT_af", 
@@ -270,7 +270,7 @@ model_names = [
     #"injection_separate_IT",
     
     # control models 
-    "v1_no_injection", 
+    #"v1_no_injection", 
     #"v2_no_injection", 
     #"v4_no_injection", 
     #"IT_no_injection", 
@@ -344,11 +344,11 @@ plt.tick_params(axis='y', labelsize=14)
 #fig.tight_layout()
 plt.xlabel('layers', fontsize=14)
 plt.ylabel('average curvature score', fontsize=14)
-#plt.title('Injection and evaluation at V1', fontsize=20)
-plt.title('Average Curvature score', fontsize=20)
+plt.title('Injection and Evaluation at V1', fontsize=20)
+#plt.title('Average Curvature score', fontsize=20)
 plt.show()
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/avg-curve-v1_pres.png')
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/avg-curve-v1_pres.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/1-avg-curve-v1_pres.png')
 
 
     
