@@ -62,16 +62,16 @@ dict_color = {
     "noprojector_conv_IT": ["gold", '-'], 
     
     # random injection 
-    "injection_v1" : ["orange", ':'],
-    "injection_v2": ["orange", ':'], 
-    "injection_v4": ["orange", ':'],
-    "injection_IT": ["orange", ':'],
+    "injection_v1" : ["orange", '-'],
+    "injection_v2": ["orange", '-'], 
+    "injection_v4": ["orange", '-'],
+    "injection_IT": ["orange", '-'],
 
     # convolution injection
-    "injection_conv_v1": ["lightblue", ':'], 
-    "injection_conv_v2": ["lightblue", ':'], 
-    "injection_conv_v4": ["lightblue", ':'], 
-    "injection_conv_IT": ["lightblue", ':'], 
+    "injection_conv_v1": ["lightblue", '-'], 
+    "injection_conv_v2": ["lightblue", '-'], 
+    "injection_conv_v4": ["lightblue", '-'], 
+    "injection_conv_IT": ["lightblue", '-'], 
     
     #"injection_conv_v1": ["red", '-'], 
     #"injection_conv_v2": ["blue", '-'], 
@@ -125,7 +125,7 @@ layers = np.arange(2)
 layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]#, 21, 22, 23, 24, 25, 26, 27]
 one_layer = 0
 metric = ["decode", 0]
-metric = ["fact", 0]
+#metric = ["fact", 0]
 
 dict_metric_names = {
     'obj_class': "Object Class" , 
@@ -204,38 +204,38 @@ dict_model_names = {
     "barlow_twins_50epochs": "Vanilla Barlow Twins", 
 }
 model_names = [
-    "inj_v1_evaluate_IT", 
-    "inj_v2_evaluate_IT", 
+    #"inj_v1_evaluate_IT", 
+    #"inj_v2_evaluate_IT", 
     
     # control no projector
     #"noprojector_control_v1", 
     #"noprojector_control_v2",
     #"noprojector_control_v4",
-    "noprojector_control_IT",
+    #"noprojector_control_IT",
 
     # random linear no projector
     #"noprojector_linear_v1", 
     #"noprojector_linear_v2",
     #"noprojector_linear_v4", 
-    "noprojector_linear_IT", 
+    #"noprojector_linear_IT", 
     
     # random convolution no projector 
     #"noprojector_conv_v1", 
     #"noprojector_conv_v2",
     #"noprojector_conv_v4", 
-    "noprojector_conv_IT", 
+    #"noprojector_conv_IT", 
     
     # random injection models  
-    #"injection_v1",
+    "injection_v1",
     #"injection_v2", 
     #"injection_v4",
-    "injection_IT",
+    #"injection_IT",
     
     # convolution injection models 
-    #"injection_conv_v1", 
+    "injection_conv_v1", 
     #"injection_conv_v2", 
     #"injection_conv_v4", 
-    "injection_conv_IT", 
+    #"injection_conv_IT", 
     
     # unfreeze convolution injection models 
     #"unfreeze_injection_v1", 
@@ -262,10 +262,10 @@ model_names = [
     #"injection_separate_IT",
     
     # control models 
-    #"v1_no_injection", 
+    "v1_no_injection", 
     #"v2_no_injection", 
     #"v4_no_injection", 
-    "IT_no_injection", 
+    #"IT_no_injection", 
 
     "resnet50_untrained", 
     "barlow_twins_50epochs", 
@@ -274,7 +274,7 @@ model_names = [
 
 metric_types = ['obj_scale', 'obj_class', 'obj_pos', 'obj_pose', 'cam_pos_x', 'cam_pos_y', 'cam_scale', 'lighting', 'color']
 
-metric_types = ['fact-background', 'fact-obj_motion', 'fact-crop', 'fact-color']
+#metric_types = ['fact-background', 'fact-obj_motion', 'fact-crop', 'fact-color']
 
 nb_metrics = len(metric_types)
 
@@ -304,7 +304,7 @@ for model_name in model_names:
   #plt.plot(layers, average_identity_scores, label='identity', color = 'black')
 
 plt.axvline(x = 3, color = 'grey',  ls = 'dotted')
-plt.axvline(x = 6, color = 'grey', ls = 'dotted')
+plt.axvline(x = 6, color = 'red', ls = 'dotted', linewidth=4)
 plt.axvline(x = 10, color = 'grey', ls = 'dotted')
 plt.axvline(x = 16, color = 'grey',  ls = 'dotted')
 plt.axvline(x = 19, color = 'grey', ls = 'dotted')#,  linewidth=4)
@@ -328,12 +328,12 @@ plt.tick_params(axis='y', labelsize=14)
 #fig.supylabel('decode')#, fontsize=60)
 #fig.tight_layout()
 plt.xlabel('layers', fontsize=14)
-plt.ylabel('average factorization score', fontsize=14)
+plt.ylabel('average decoding score', fontsize=14)
 #plt.title('Injection and evaluation at IT', fontsize=20)
-plt.title('Average Factorization score', fontsize=20)
+plt.title('Injection at V1', fontsize=20)
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/v2it-avg-fact.png')
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/1-v2it-avg-fact.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/avg-decode-v1_pres.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/avg-decode-v1_pres.png')
 
 
 
