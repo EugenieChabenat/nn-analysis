@@ -230,7 +230,7 @@ model_names = [
     
     # trained without projector 
     #"noprojector_linear_v1", 
-    "noprojector_linear_v2", 
+    #"noprojector_linear_v2", 
     #"noprojector_linear_v4", 
     #"noprojector_linear_IT", 
     
@@ -256,13 +256,13 @@ model_names = [
     #"injection_v1",
     #"injection_v2", 
     #"injection_v4",
-    #"injection_IT",
+    "injection_IT",
     
     # convolution injection models 
     #"injection_conv_v1", 
     #"injection_conv_v2", 
     #"injection_conv_v4", 
-    #"injection_conv_IT", 
+    "injection_conv_IT", 
     
     # unfreeze convolution injection models 
     #"unfreeze_injection_v1", 
@@ -291,7 +291,7 @@ model_names = [
     #"v1_no_injection", 
     #"v2_no_injection", 
     #"v4_no_injection", 
-    #"IT_no_injection", 
+    "IT_no_injection", 
 
     "resnet50_untrained", 
     "barlow_twins_50epochs", 
@@ -340,7 +340,7 @@ fig.supylabel('invariance')
 fig.tight_layout()
 plt.show()
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/invariance-it_{}.png'.format(key))
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/legend-curve-v12_pres_{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/legend-decode-v12_pres_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_fact_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/legend-all_{}.png'.format(key))
 
