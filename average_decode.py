@@ -330,10 +330,10 @@ plt.tick_params(axis='y', labelsize=14)
 plt.xlabel('layers', fontsize=14)
 plt.ylabel('average decoding score', fontsize=14)
 #plt.title('Injection and evaluation at IT', fontsize=20)
-plt.title('Injection at V1', fontsize=20)
+plt.title('Injection at IT', fontsize=20)
 plt.show()
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/avg-decode-it_pres.png')
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/avg-decode-it_pres.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/1-avg-decode-it_pres.png')
 
 
 
