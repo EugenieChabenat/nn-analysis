@@ -212,7 +212,7 @@ dict_model_names = {
     "v1_no_injection": "Evaluation at injection site, vanilla Barlow Twins loss", 
     "v2_no_injection": "Evaluation at V2, no injection", 
     "v4_no_injection": "Evaluation at V4, no injection", 
-    "IT_no_injection": "Evaluation at injection site, no injection", 
+    "IT_no_injection": "Evaluation at IT, no injection", 
 
     "resnet50_untrained": "ResNet50 untrained", 
     "barlow_twins_50epochs": "Vanilla Barlow Twins", 
@@ -340,7 +340,7 @@ fig.supylabel('invariance')
 fig.tight_layout()
 plt.show()
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/invariance-it_{}.png'.format(key))
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/legend-decode-v12_pres_{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/1_legend-decode-v12_pres_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_fact_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/legend-all_{}.png'.format(key))
 
