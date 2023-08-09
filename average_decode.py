@@ -227,14 +227,14 @@ model_names = [
     
     # random injection models  
     #"injection_v1",
-    "injection_v2", 
-    #"injection_v4",
+    #"injection_v2", 
+    "injection_v4",
     #"injection_IT",
     
     # convolution injection models 
     #"injection_conv_v1", 
-    "injection_conv_v2", 
-    #"injection_conv_v4", 
+    #"injection_conv_v2", 
+    "injection_conv_v4", 
     #"injection_conv_IT", 
     
     # unfreeze convolution injection models 
@@ -263,8 +263,8 @@ model_names = [
     
     # control models 
     #"v1_no_injection", 
-    "v2_no_injection", 
-    #"v4_no_injection", 
+    #"v2_no_injection", 
+    "v4_no_injection", 
     #"IT_no_injection", 
 
     "resnet50_untrained", 
@@ -305,8 +305,8 @@ for model_name in model_names:
 
 plt.axvline(x = 3, color = 'grey',  ls = 'dotted')
 plt.axvline(x = 6, color = 'grey', ls = 'dotted')
-plt.axvline(x = 10, color = 'red', ls = 'dotted', linewidth=4)
-plt.axvline(x = 16, color = 'grey',  ls = 'dotted')
+plt.axvline(x = 10, color = 'grey', ls = 'dotted')
+plt.axvline(x = 16, color = 'red',  ls = 'dotted', linewidth=4)
 plt.axvline(x = 19, color = 'grey', ls = 'dotted')#,  linewidth=4)
 plt.axvline(x = 20, color = 'grey' , ls = 'dotted')
 
@@ -332,8 +332,8 @@ plt.ylabel('average decoding score', fontsize=14)
 #plt.title('Injection and evaluation at IT', fontsize=20)
 plt.title('Injection at V1', fontsize=20)
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/avg-decode-v2_pres.png')
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/avg-decode-v2_pres.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/avg-decode-v4_pres.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/avg-decode-v4_pres.png')
 
 
 
