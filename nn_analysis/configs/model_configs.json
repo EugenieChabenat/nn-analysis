@@ -11,7 +11,7 @@
     "multiplicative_separate_v2": {
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/multiplicative_separate_v2_v1"
-    }
+    },
     "injection_avgpool_v1": {
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/injection_avgpool_v1"
