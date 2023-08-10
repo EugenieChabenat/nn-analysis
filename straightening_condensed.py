@@ -65,6 +65,8 @@ dict_color = {
     "multiplicative_model_v4": ["darkblue",  '-'], # '-'],
     "multiplicative_model_IT": ["darkblue",  '-'], # '-'],
 
+    "multiplicative_separate_v2": ["purple", '-'], # '-'],
+
     # multiplicative injection 
     "injection_avgpool_v1" : ["forestgreen", '-'], # '-'],
     "injection_avgpool_v2": ["forestgreen", '-'], # '-'],
@@ -191,6 +193,7 @@ dict_model_names = {
     "noprojector_control_v2": "Evaluation at V2, no injection - no projector",
     "multiplicative_model_v2" : "Random multiplicative injection at V2",
     "injection_avgpool_v2": "Random convolutional injection at V2 after avgpool" ,
+    "multiplicative_separate_v2": "Trained multiplicative injection at V2",
     
     "injection_v4_af": "Random linear injection at V4",
     "injection_separate_v4": "Trained linear injection at V4" , 
@@ -240,7 +243,7 @@ model_names = [
     
     # no projector linear 
     #"noprojector_linear_v1",
-    #"noprojector_linear_v2", 
+    "noprojector_linear_v2", 
     #"noprojector_linear_v4", 
     #"noprojector_linear_IT", 
     
@@ -252,28 +255,30 @@ model_names = [
 
     # multiplicative models, 
     #"multiplicative_model_v1", 
-    #"multiplicative_model_v2", 
+    "multiplicative_model_v2", 
     #"multiplicative_model_v4", 
-    "multiplicative_model_IT", 
+    #"multiplicative_model_IT", 
+
+    "multiplicative_separate_v2", 
 
     # injection into avgpool
     #"injection_avgpool_v1", 
     #"injection_avgpool_v2", 
     #"injection_avgpool_v4", 
-    "injection_avgpool_IT", 
+    #"injection_avgpool_IT", 
     
     
     # random injection models  
     #"injection_v1_af",
     #"injection_v2_af", 
     #"injection_v4_af",
-    "injection_IT_af",
+    #"injection_IT_af",
     
     # convolution injection models 
     #"injection_conv_v1_af", 
-    #"injection_conv_v2_af", 
+    "injection_conv_v2_af", 
     #"injection_conv_v4_af", 
-    "injection_conv_IT_af", 
+    #"injection_conv_IT_af", 
     
     # unfreeze convolution injection models 
     #"unfreeze_injection_v1_af", 
@@ -300,9 +305,9 @@ model_names = [
     #"injection_separate_IT", 
 
     #"v1_no_injection", 
-    #"v2_no_injection", 
+    "v2_no_injection", 
     #"v4_no_injection", 
-    "IT_no_injection",
+    #"IT_no_injection",
     
     "resnet50_allfeatures", 
     "bt_allfeatures", 
@@ -325,7 +330,7 @@ for key, metric_types in list_metrics.items():
         
         axes[key,i].axvline(x = 3, color = 'grey',  ls = 'dotted')
         axes[key,i].axvline(x = 6, color = 'grey', ls = 'dotted')
-        axes[key,i].axvline(x = 10, color = 'grey', ls = 'dotted')
+        axes[key,i].axvline(x = 10, color = 'red', ls = 'dotted', linewidth=4)
         axes[key,i].axvline(x = 16, color = 'grey',  ls = 'dotted')
         axes[key,i].axvline(x = 19, color = 'grey', ls = 'dotted')#, linewidth=4)
         axes[key,i].axvline(x = 20, color = 'grey' , ls = 'dotted')
@@ -346,8 +351,8 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/avg-it-camtrans-{}.png'.format(key))
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/avg-it-camtrans_{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v2mul-camtrans-{}.png'.format(key))
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/v2mul-camtrans_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_straightening_{}.png'.format(key))
     
 
