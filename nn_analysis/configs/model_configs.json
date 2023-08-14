@@ -8,6 +8,10 @@
     "identity_pc": {
         "arch": "identity"
     },
+    "multiplicative_unfreeze_v2": {
+        "arch": "barlowtwins",
+        "path": "checkpoints/barlowtwins/multiplicative_unfreeze_v2_v1"
+    },
     "multiplicative_separate_v2": {
         "arch": "barlowtwins",
         "path": "checkpoints/barlowtwins/multiplicative_separate_v2_v1"
