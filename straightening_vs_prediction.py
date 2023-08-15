@@ -33,9 +33,9 @@ model_names = [
     # random convolution no projector 
     "no_projector_conv_v1", "no_projector_conv_v2", "no_projector_conv_v4", "no_projector_conv_IT", 
     # random injection models  
-    "injection_v1", "injection_v2", "injection_v4", "injection_IT",
+    "new_injection_v1", "new_injection_v2", "new_injection_v4", "new_injection_IT",
     # convolution injection models 
-    "injection_conv_v1", "injection_conv_v2", "injection_conv_v4", "injection_conv_IT", 
+    "new_injection_conv_v1", "new_injection_conv_v2", "new_injection_conv_v4", "new_injection_conv_IT", 
     # unfreeze convolution injection models 
     "unfreeze_injection_v1", "unfreeze_injection_v2", "unfreeze_injection_v4", "unfreeze_injection_IT", 
 
