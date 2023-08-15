@@ -267,9 +267,8 @@ model_names = [
     #"multiplicative_model_IT", 
 
     "multiplicative_separate_v2", 
-
     "multiplicative_linear_v2",
-    "multiplicative_unfreeze_v2",
+    #"multiplicative_unfreeze_v2",
     "multiplicative_afterproj", 
 
     # injection into avgpool
