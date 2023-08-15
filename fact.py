@@ -259,7 +259,7 @@ model_names = [
     "multiplicative_linear_v2",
     #"multiplicative_unfreeze_v2",
     "multiplicative_afterproj", 
-    "multiplicative_separate_v2"
+    "multiplicative_separate_v2", 
         
     #"injection_avgpool_v1",
     #"injection_avgpool_v2",
