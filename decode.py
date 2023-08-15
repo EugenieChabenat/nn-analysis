@@ -66,7 +66,7 @@ dict_color = {
 
     "multiplicative_linear_v2": ["lightblue", '-'], # '-'],
     "multiplicative_unfreeze_v2": ["purple", '-'], # '-'],
-    "multiplicative_afterproj_IT": ["yellow", '-'], # '-'],
+    "multiplicative_afterproj": ["yellow", '-'], # '-'],
 
     # multiplicative injection 
     "injection_avgpool_v1" : ["forestgreen", '-'], # '-'],
@@ -216,7 +216,7 @@ dict_model_names = {
     
     "multiplicative_linear_v2": "Trained linear multiplicative injection at V2",
     "multiplicative_unfreeze_v2": "Trained convolution multiplicative injection at V2",
-    "multiplicative_afterproj_IT": "Trained linear multiplicative injection at IT after the projector",
+    "multiplicative_afterproj": "Trained linear multiplicative injection at IT after the projector",
     
 
     "injection_v4": "Random linear injection at V4",
@@ -283,7 +283,7 @@ model_names = [
 
     "multiplicative_linear_v2",
     "multiplicative_unfreeze_v2",
-    "multiplicative_afterproj_IT", 
+    "multiplicative_afterproj", 
 
     # injection into avgpool
     #"injection_avgpool_v1", 
