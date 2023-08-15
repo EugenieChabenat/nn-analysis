@@ -29,7 +29,7 @@ model_names = [
     # control no projector
     "no_projector_linear_control_v1",  "no_projector_linear_control_v2", "no_projector_linear_control_v4", "no_projector_linear_control_IT",
     # random linear no projector
-    "no_projector_linear_v1", "no_projector_linear_v2", "no_projector_linear_v4", "no_projector_linear_IT", 
+    "no_projector_linear_v1", "no_projector_linear_v2", "no_projector_linear_v4", #"no_projector_linear_IT", 
     # random convolution no projector 
     "no_projector_conv_v1", "no_projector_conv_v2", "no_projector_conv_v4", "no_projector_conv_IT", 
     # random injection models  
