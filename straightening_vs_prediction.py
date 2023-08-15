@@ -28,7 +28,7 @@ model_names = [
     "inj_v1_evaluate_IT", "inj_v2_evaluate_IT", 
     
     # control no projector
-    "noprojector_control_v1",  "noprojector_control_v2", "noprojector_control_v4", "noprojector_control_IT",
+    #"noprojector_control_v1",  "noprojector_control_v2", "noprojector_control_v4", "noprojector_control_IT",
      
     # random linear no projector
     "noprojector_linear_v1", "noprojector_linear_v2", "noprojector_linear_v4", "noprojector_linear_IT", 
