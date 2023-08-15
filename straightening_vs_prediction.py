@@ -67,6 +67,7 @@ all_losses = []
 path = '/mnt/smb/locker/issa-locker/users/Eugénie/models/checkpoints/barlowtwins/'
 
 for model_name in model_names: 
+    print(model_name)
     list_lines = []
     if model_name[-1] == '1': 
         complete_path = path+model_name+'/stats.txt'
