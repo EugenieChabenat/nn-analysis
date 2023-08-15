@@ -10,7 +10,7 @@
     },
      "multiplicative_linear_v2": {
         "arch": "barlowtwins",
-        "path": "checkpoints/barlowtwins/multiplicative_linear_v1"
+        "path": "checkpoints/barlowtwins/multiplicative_linear_v2_v1"
     },
     "multiplicative_afterproj": {
         "arch": "barlowtwins",
