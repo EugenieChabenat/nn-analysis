@@ -85,7 +85,9 @@ for model_name in model_names:
       if line[0] == "{": 
         list_lines.append(json.loads(line))
 
-    epochs, steps, losses = []
+    epochs = []
+    steps = []
+    losses = []
     inds = [0]
     current_e = 0 
     ind = 0 
