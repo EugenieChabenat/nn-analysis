@@ -63,9 +63,10 @@ dict_color = {
     "multiplicative_model_v2": ["darkblue", '-'], # '-'],
     "multiplicative_model_v4": ["darkblue",  '-'], # '-'],
     "multiplicative_model_IT": ["darkblue",  '-'], # '-'],
-
+    
+    "multiplicative_separate_v2": ["purple", '-'], # '-'],
     "multiplicative_linear_v2": ["lightblue", '-'], # '-'],
-    "multiplicative_unfreeze_v2": ["purple", '-'], # '-'],
+    #"multiplicative_unfreeze_v2": ["purple", '-'], # '-'],
     "multiplicative_afterproj": ["yellow", '-'], # '-'],
 
     # multiplicative injection 
@@ -281,6 +282,7 @@ model_names = [
     #"multiplicative_model_v4", 
     #"multiplicative_model_IT", 
 
+    "multiplicative_separate_v2", 
     "multiplicative_linear_v2",
     "multiplicative_unfreeze_v2",
     "multiplicative_afterproj", 
