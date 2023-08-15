@@ -41,6 +41,11 @@ dict_color = {
     "multiplicative_model_v4": ["darkblue",  '-'], # '-'],
     "multiplicative_model_IT": ["darkblue",  '-'], # '-'],
 
+    "multiplicative_separate_v2": ["purple", '-'], # '-'],
+    "multiplicative_linear_v2": ["lightblue", '-'], # '-'],
+    "multiplicative_unfreeze_v2": ["purple", '-'], # '-'],
+    "multiplicative_afterproj": ["yellow", '-'], # '-'],
+
     # multiplicative injection 
     "injection_avgpool_v1" : ["forestgreen", '-'], # '-'],
     "injection_avgpool_v2": ["forestgreen", '-'], # '-'],
@@ -115,8 +120,8 @@ metric_types = ['hvm-V4', 'hvm-IT', 'rust-V4', 'rust-IT']
 
 model_names = [
     # new architectures 
-    "inj_v1_evaluate_IT", 
-    "inj_v2_evaluate_IT", 
+    #"inj_v1_evaluate_IT", 
+    #"inj_v2_evaluate_IT", 
     
     
     # no projector - control 
@@ -139,9 +144,14 @@ model_names = [
 
     # multiplicative models, 
     #"multiplicative_model_v1", 
-    #"multiplicative_model_v2", 
+    "multiplicative_model_v2", 
     #"multiplicative_model_v4", 
     #"multiplicative_model_IT", 
+
+    "multiplicative_separate_v2",
+    "multiplicative_linear_v2",
+    "multiplicative_unfreeze_v2",
+    "multiplicative_afterproj",
 
     # injection into avgpool
     #"injection_avgpool_v1", 
@@ -206,7 +216,7 @@ for i, metric_type in enumerate(metric_types):
     #scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
 
     axes[0,i].axvline(x = 6, color = 'grey', ls = 'dotted')#, linewidth=4)
-    axes[0,i].axvline(x = 10, color = 'grey', ls = 'dotted')
+    axes[0,i].axvline(x = 10, color = 'red', ls = 'dotted', linewidth=4)
     axes[0,i].axvline(x = 16, color = 'grey',  ls = 'dotted')
     axes[0,i].axvline(x = 19, color = 'grey', ls = 'dotted')#, linewidth=4)
     axes[0,i].axvline(x = 20, color = 'grey' , ls = 'dotted')
@@ -226,7 +236,7 @@ fig.supxlabel('layers')
 fig.supylabel('neural fits')
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/neuralfits_blocks_vit.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/neuralfits_blocks_v2-mul.png')
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/neural_fits/plot1.png')
 
 # -- 
