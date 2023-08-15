@@ -134,8 +134,8 @@ model_names = [
     # control models 
     "v1_no_injection", "v2_no_injection", "v4_no_injection", "IT_no_injection", 
 
-    "resnet50_untrained", 
-    "barlow_twins_50epochs", 
+    #"resnet50_untrained", 
+    #"barlow_twins_50epochs", 
 ]
 average_identity_scores = []
 all_scores = []
