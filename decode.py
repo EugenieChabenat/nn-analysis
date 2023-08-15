@@ -284,7 +284,7 @@ model_names = [
 
     "multiplicative_separate_v2", 
     "multiplicative_linear_v2",
-    "multiplicative_unfreeze_v2",
+    #"multiplicative_unfreeze_v2",
     "multiplicative_afterproj", 
 
     # injection into avgpool
@@ -385,8 +385,8 @@ fig.supxlabel('layers')#, fontsize=60)
 fig.supylabel('decode')#, fontsize=60)
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v2-mul-decode{}.png'.format(key))
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/v2-mul-decode-{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v2-mul-decode2{}.png'.format(key))
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/v2-mul-decode2{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_decode_{}.png'.format(key))
     
    
