@@ -66,6 +66,9 @@ dict_color = {
     "multiplicative_model_IT": ["darkblue",  '-'], # '-'],
 
     "multiplicative_separate_v2": ["purple", '-'], # '-'],
+    "multiplicative_linear_v2": ["lightblue", '-'], # '-'],
+    #"multiplicative_unfreeze_v2": ["purple", '-'], # '-'],
+    "multiplicative_afterproj": ["yellow", '-'], # '-'],
 
     # multiplicative injection 
     "injection_avgpool_v1" : ["forestgreen", '-'], # '-'],
@@ -194,6 +197,10 @@ dict_model_names = {
     "multiplicative_model_v2" : "Random multiplicative injection at V2",
     "injection_avgpool_v2": "Random convolutional injection at V2 after avgpool" ,
     "multiplicative_separate_v2": "Trained multiplicative injection at V2",
+
+    "multiplicative_linear_v2": "Trained linear multiplicative injection at V2",
+    "multiplicative_unfreeze_v2": "Trained convolution multiplicative injection at V2",
+    "multiplicative_afterproj": "Trained linear multiplicative injection at IT after the projector",
     
     "injection_v4_af": "Random linear injection at V4",
     "injection_separate_v4": "Trained linear injection at V4" , 
@@ -243,7 +250,7 @@ model_names = [
     
     # no projector linear 
     #"noprojector_linear_v1",
-    "noprojector_linear_v2", 
+    #"noprojector_linear_v2", 
     #"noprojector_linear_v4", 
     #"noprojector_linear_IT", 
     
@@ -261,6 +268,10 @@ model_names = [
 
     "multiplicative_separate_v2", 
 
+    "multiplicative_linear_v2",
+    "multiplicative_unfreeze_v2",
+    "multiplicative_afterproj", 
+
     # injection into avgpool
     #"injection_avgpool_v1", 
     #"injection_avgpool_v2", 
@@ -276,7 +287,7 @@ model_names = [
     
     # convolution injection models 
     #"injection_conv_v1_af", 
-    "injection_conv_v2_af", 
+    #"injection_conv_v2_af", 
     #"injection_conv_v4_af", 
     #"injection_conv_IT_af", 
     
@@ -351,8 +362,8 @@ fig.supxlabel('layers')
 fig.supylabel('curvature')
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v2mul-camtrans-{}.png'.format(key))
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/v2mul-camtrans_{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v2-mul-camtrans-{}.png'.format(key))
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/straightening/v2-mul-camtrans_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_straightening_{}.png'.format(key))
     
 
