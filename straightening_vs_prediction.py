@@ -5,6 +5,9 @@ from nn_analysis import metrics as me
 from nn_analysis import utils
 from nn_analysis import plot as pt
 
+import json
+import pickle
+
 import os
 
 def load_data(metric, model_name, epoch, layers):
