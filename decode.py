@@ -64,9 +64,9 @@ dict_color = {
     "multiplicative_model_v4": ["darkblue",  '-'], # '-'],
     "multiplicative_model_IT": ["darkblue",  '-'], # '-'],
 
-    "multiplicative_linear_v2": ["darkblue", '-'], # '-'],
-    "multiplicative_unfreeze_v2": ["darkblue", '-'], # '-'],
-    "multiplicative_afterproj_IT": ["darkblue", '-'], # '-'],
+    "multiplicative_linear_v2": ["lightblue", '-'], # '-'],
+    "multiplicative_unfreeze_v2": ["purple", '-'], # '-'],
+    "multiplicative_afterproj_IT": ["yellow", '-'], # '-'],
 
     # multiplicative injection 
     "injection_avgpool_v1" : ["forestgreen", '-'], # '-'],
@@ -277,9 +277,9 @@ model_names = [
 
     # multiplicative models, 
     #"multiplicative_model_v1", 
-    #"multiplicative_model_v2", 
+    "multiplicative_model_v2", 
     #"multiplicative_model_v4", 
-    "multiplicative_model_IT", 
+    #"multiplicative_model_IT", 
 
     "multiplicative_linear_v2",
     "multiplicative_unfreeze_v2",
@@ -289,19 +289,19 @@ model_names = [
     #"injection_avgpool_v1", 
     #"injection_avgpool_v2", 
     #"injection_avgpool_v4", 
-    "injection_avgpool_IT", 
+    #"injection_avgpool_IT", 
     
     # random injection models  
     #"injection_v1",
     #"injection_v2", 
     #"injection_v4",
-    "injection_IT",
+    #"injection_IT",
     
     # convolution injection models 
     #"injection_conv_v1", 
     #"injection_conv_v2", 
     #"injection_conv_v4", 
-    "injection_conv_IT", 
+    #"injection_conv_IT", 
     
     # unfreeze convolution injection models 
     #"unfreeze_injection_v1", 
@@ -329,9 +329,9 @@ model_names = [
     
     # control models 
     #"v1_no_injection", 
-    #"v2_no_injection", 
+    "v2_no_injection", 
     #"v4_no_injection", 
-    "IT_no_injection", 
+    #"IT_no_injection", 
 
     "resnet50_untrained", 
     "barlow_twins_50epochs", 
@@ -360,7 +360,7 @@ for key, metric_types in list_metrics.items():
         # blocks 
         axes[key,i].axvline(x = 3, color = 'grey',  ls = 'dotted')
         axes[key,i].axvline(x = 6, color = 'grey', ls = 'dotted')
-        axes[key,i].axvline(x = 10, color = 'grey', ls = 'dotted')
+        axes[key,i].axvline(x = 10, color = 'red', ls = 'dotted', linewidth=4)
         axes[key,i].axvline(x = 16, color = 'grey',  ls = 'dotted')
         axes[key,i].axvline(x = 19, color = 'grey', ls = 'dotted')#, linewidth=4)
         axes[key,i].axvline(x = 20, color = 'grey' , ls = 'dotted')
@@ -383,8 +383,8 @@ fig.supxlabel('layers')#, fontsize=60)
 fig.supylabel('decode')#, fontsize=60)
 fig.tight_layout()
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/it-avg-decode{}.png'.format(key))
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/it-avg-decode-{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v2-mul-decode{}.png'.format(key))
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/v2-mul-decode-{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_decode_{}.png'.format(key))
     
    
