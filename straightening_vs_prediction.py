@@ -158,6 +158,63 @@ metric_types = ["x_cam_trans", "y_cam_trans", "z_cam_trans", "x_cam_rot", "y_cam
 
 nb_metrics = len(metric_types)
 
+
+# ----- 
+# computing prediction loss
+# ----- 
+
+path = '/mnt/smb/locker/issa-locker/users/Eugénie/models/checkpoints/barlowtwins/multiplicative_separate_v2_v1/stats.txt'
+list_lines = []
+with open(path, 'r') as f:
+  lines = f.readlines()
+
+list_lines = []
+
+for line in lines: 
+  if line[0] == "{": 
+    list_lines.append(json.loads(line))
+
+epochs = []
+steps = []
+losses = []
+inds = [0]
+current_e = 0 
+ind = 0 
+for line in list_lines: 
+  #print(line)
+  if line["epoch"] <= 29:
+    epochs.append(line["epoch"])
+    steps.append(line["step"])
+    losses.append(line["loss"])
+
+  #while line["epoch"] <= 29: 
+    if line["epoch"] == current_e: 
+      ind +=1 
+    else: 
+      if inds: 
+        inds.append(ind+inds[-1])
+      else : 
+        inds.append(ind)
+      ind = 0 
+      current_e =line["epoch"]
+print(current_e) 
+labels = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
+#labels = np.arange(0, 29, step=1)
+new_labels = []
+new_inds= []  
+i = 0
+for element in labels:   
+  if element == 0 or element %5 ==0 or element ==29: 
+    new_labels.append(element)
+    new_inds.append(inds[i])
+  i +=1
+    
+print('last loss: ', losses[-1])
+print('loss: ', losses)
+
+ # ------
+
+
 #fig, axes = pt.core.subplots(2, 2, size=(10, 10), sharex=True)
 plt.figure(figsize=(15,15))
 average_identity_scores = []
