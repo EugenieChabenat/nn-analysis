@@ -108,7 +108,7 @@ model_names = [
     # control no projector
     "noprojector_control_v1",  "noprojector_control_v2", "noprojector_control_v4", "noprojector_control_IT",
     # random linear no projector
-    "noprojector_linear_v1", "noprojector_linear_v2", "noprojector_linear_v4", "noprojector_linear_IT", 
+    "noprojector_linear_v1", "noprojector_linear_v2", "noprojector_linear_v4", #"noprojector_linear_IT", 
     
     # random convolution no projector 
     "noprojector_conv_v1", "noprojector_conv_v2", "noprojector_conv_v4", "noprojector_conv_IT", 
@@ -117,7 +117,7 @@ model_names = [
     "injection_v1_af", "injection_v2_af", "injection_v4_af", "injection_IT_af",
     
     # convolution injection models 
-    "injection_conv_v1_af", "injection_conv_v2_af", "injection_conv_v4_af", "injection_conv_IT_af", 
+    "injection_conv_v1_af", "injection_conv_v2_af", "injection_conv_v4_af", #"injection_conv_IT_af", 
     
     # unfreeze convolution injection models 
     "unfreeze_injection_v1_af", "unfreeze_injection_v2_af", "unfreeze_injection_v4_af", "unfreeze_injection_IT_af", 
@@ -137,7 +137,6 @@ model_names = [
     "resnet50_untrained", 
     "barlow_twins_50epochs", 
 ]
-plt.figure(figsize=(15,15))
 average_identity_scores = []
 all_scores = []
 for model_name in model_names: 
@@ -153,4 +152,8 @@ for model_name in model_names:
   scores = [i * 180 for i in average_scores]
   all_scores.append(np.mean(scores))
 
-
+plt.figure(figsize=(15,15))
+plt.scatter(all_losses, all_scores)
+plt.show()
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/scatter_loss_curve.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/scatter_loss_curve.png')
