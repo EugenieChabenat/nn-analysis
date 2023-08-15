@@ -108,16 +108,7 @@ for model_name in model_names:
  # ------
 plt.figure(figsize=(15,15))
 average_identity_scores = []
- 
-for i, metric_type in enumerate(metric_types): 
-  scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
-  if average_identity_scores: 
-      average_identity_scores = [sum(x) for x in zip(scores, average_identity_scores)]
-  else: 
-      average_identity_scores = scores
-average_identity_scores= [x/nb_metrics for x in average_identity_scores]
-scores_id = [i * 180 for i in average_identity_scores]
-
+all_scores = []
 for model_name in model_names: 
   average_scores = []
   for i, metric_type in enumerate(metric_types): 
@@ -129,5 +120,6 @@ for model_name in model_names:
         
   average_scores = [x/nb_metrics for x in average_scores]
   scores = [i * 180 for i in average_scores]
+  all_scores.append(np.mean(scores))
 
 
