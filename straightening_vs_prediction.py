@@ -38,9 +38,8 @@ model_names = [
     "new_injection_conv_v1", "new_injection_conv_v2", "new_injection_conv_v4", #"new_injection_conv_IT", 
     # unfreeze convolution injection models 
     "unfreeze_injection_conv_v1", "unfreeze_injection_conv_v2", "unfreeze_injection_conv_v4", "unfreeze_injection_conv_IT", 
-
     # subset 
-    "subset_injection_v1", "subset_injection_v2", "subset_injection_v4", "subset_injection_IT",
+    "injection_subset_v1", "injection_subset_v2", "injection_subset_v4", "injection_subset_IT",
 
     # conv subset injection 
     "injection_conv_subset_v1", "injection_conv_subset_v2", "injection_conv_subset_v4", "injection_conv_subset_IT",
