@@ -58,6 +58,7 @@ dict_color = {
     "multiplicative_model_v4": ["darkblue",  '-'], # '-'],
     "multiplicative_model_IT": ["darkblue",  '-'], # '-'],
 
+    "multiplicative_separate_v2": ["purple", '-'], # '-'],
     "multiplicative_linear_v2": ["lightblue", '-'], # '-'],
     "multiplicative_unfreeze_v2": ["purple", '-'], # '-'],
     "multiplicative_afterproj": ["yellow", '-'], # '-'],
@@ -189,6 +190,7 @@ dict_model_names = {
     "multiplicative_model_v2" : "Random multiplicative injection at V2",
     "injection_avgpool_v2": "Random convolutional injection at V2 after avgpool" ,
 
+    "multiplicative_separate_v2": "Trained linear multiplicative injection at V2",
     "multiplicative_linear_v2": "Trained linear multiplicative injection at V2",
     "multiplicative_unfreeze_v2": "Trained convolution multiplicative injection at V2",
     "multiplicative_afterproj": "Trained linear multiplicative injection at IT after the projector",
@@ -255,8 +257,9 @@ model_names = [
     #"multiplicative_model_IT", 
 
     "multiplicative_linear_v2",
-    "multiplicative_unfreeze_v2",
+    #"multiplicative_unfreeze_v2",
     "multiplicative_afterproj", 
+    "multiplicative_separate_v2"
         
     #"injection_avgpool_v1",
     #"injection_avgpool_v2",
