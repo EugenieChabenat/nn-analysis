@@ -154,6 +154,8 @@ for model_name in model_names:
 
 plt.figure(figsize=(15,15))
 plt.scatter(all_losses, all_scores)
+plt.xlabel('prediction loss')
+plt.ylabel('average straightening score')
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/scatter_loss_curve.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/scatter_loss_curve2.png')
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/scatter_loss_curve.png')
