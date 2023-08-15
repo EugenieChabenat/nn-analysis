@@ -214,8 +214,8 @@ dict_model_names = {
     "multiplicative_model_v2": "Random multiplicative injection at V2",
     "injection_avgpool_v2": "Random convolutional injection at V2 after avgpool" ,
 
-    
-    "multiplicative_linear_v2": "Trained linear multiplicative injection at V2",
+    "multiplicative_separate_v2": "Trained convolution multiplicative injection at V2",
+    "multiplicative_linear_v2": "Random linear multiplicative injection at V2",
     "multiplicative_unfreeze_v2": "Trained convolution multiplicative injection at V2",
     "multiplicative_afterproj": "Trained linear multiplicative injection at IT after the projector",
     
