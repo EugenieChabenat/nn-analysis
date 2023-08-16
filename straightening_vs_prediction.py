@@ -25,7 +25,7 @@ metric = ["curve", 1]
 
 model_names = [
     # new architectures 
-    "inj_v1_evaluate_IT", "inj_v2_evaluate_IT", 
+    #"inj_v1_evaluate_IT", "inj_v2_evaluate_IT", 
     # control no projector
     "no_projector_linear_control_v1",  "no_projector_linear_control_v2", "no_projector_linear_control_v4", "no_projector_linear_control_IT",
     # random linear no projector
@@ -104,7 +104,7 @@ for model_name in model_names:
  # ------
 model_names = [
     # new architectures 
-    "inj_v1_evaluate_IT", "inj_v2_evaluate_IT",
+    #"inj_v1_evaluate_IT", "inj_v2_evaluate_IT",
     # control no projector
     "noprojector_control_v1",  "noprojector_control_v2", "noprojector_control_v4", "noprojector_control_IT",
     # random linear no projector
@@ -152,10 +152,15 @@ for model_name in model_names:
   scores = [i * 180 for i in average_scores]
   all_scores.append(np.mean(scores))
 
+
+colors = ['red', 'blue', 'green', 'black']
+for i in range(10): 
+    colors.append(colors)
+    
 plt.figure(figsize=(15,15))
-plt.scatter(all_losses, all_scores)
+plt.scatter(all_losses, all_scores, c=colors )
 plt.xlabel('prediction loss')
 plt.ylabel('average straightening score')
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/scatter_loss_curve2.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/scatter_loss_curve3.png')
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/scatter_loss_curve.png')
