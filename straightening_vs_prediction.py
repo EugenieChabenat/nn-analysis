@@ -23,7 +23,10 @@ def load_data(metric, model_name, epoch, layers):
 
 colors = ['red', 'blue', 'green', 'black']
 for i in range(10): 
-    colors.append(colors)
+    colors.append('red')
+    colors.append('blue')
+    colors.append('green')
+    colors.append('black')
 
 print(colors)
 
