@@ -176,11 +176,22 @@ colors = ['red', 'blue', 'green', 'black',
  'red', 'blue', 'green', 'black', 
  'red', 'blue', 'green', 'black', 
  'red', 'blue', 'green', 'black']
+
+markers = ['*', '*', '*', '*', 
+ 'o', 'o', 'o', #'black', 
+ 'o', 'o', 'o', 'o',
+ 'o', 'o', 'o', 'o', 
+ 'o', 'o', 'o', #'black', 
+ 'o', 'o', 'o', 'o',
+ 'o', 'o', 'o', 'o',
+ 'o', 'o', 'o', 'o',
+ 'o', 'o', 'o', 'o',
+ '*', '*', '*', '*']
     
 plt.figure(figsize=(15,15))
-plt.scatter(all_losses, all_scores, c=colors )
+plt.scatter(all_losses, all_scores, c=colors, marker=markers )
 plt.xlabel('prediction loss')
 plt.ylabel('average straightening score')
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/scatter_loss_curve3.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/scatter_loss_curve4.png')
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/scatter_loss_curve.png')
