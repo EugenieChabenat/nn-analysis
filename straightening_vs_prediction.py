@@ -157,14 +157,25 @@ for model_name in model_names:
 
 
 
-colors = ['red', 'blue', 'green', 'black']
+"""colors = ['red', 'blue', 'green', 'black']
 for i in range(10): 
     colors.append('red')
     colors.append('blue')
     colors.append('green')
     colors.append('black')
 
-print(colors)
+print(colors)"""
+
+colors = ['red', 'blue', 'green', 'black', 
+ 'red', 'blue', 'green', #'black', 
+ 'red', 'blue', 'green', 'black',
+ 'red', 'blue', 'green', 'black', 
+ 'red', 'blue', 'green', #'black', 
+ 'red', 'blue', 'green', 'black', 
+ 'red', 'blue', 'green', 'black', 
+ 'red', 'blue', 'green', 'black', 
+ 'red', 'blue', 'green', 'black', 
+ 'red', 'blue', 'green', 'black']
     
 plt.figure(figsize=(15,15))
 plt.scatter(all_losses, all_scores, c=colors )
