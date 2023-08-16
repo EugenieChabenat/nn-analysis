@@ -21,14 +21,6 @@ def load_data(metric, model_name, epoch, layers):
 # --- 
 
 
-colors = ['red', 'blue', 'green', 'black']
-for i in range(10): 
-    colors.append('red')
-    colors.append('blue')
-    colors.append('green')
-    colors.append('black')
-
-print(colors)
 
 epoch = 29
 layers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
@@ -164,9 +156,15 @@ for model_name in model_names:
   all_scores.append(np.mean(scores))
 
 
+
 colors = ['red', 'blue', 'green', 'black']
 for i in range(10): 
-    colors.append(colors)
+    colors.append('red')
+    colors.append('blue')
+    colors.append('green')
+    colors.append('black')
+
+print(colors)
     
 plt.figure(figsize=(15,15))
 plt.scatter(all_losses, all_scores, c=colors )
