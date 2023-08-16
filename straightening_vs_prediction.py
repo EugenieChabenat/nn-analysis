@@ -189,7 +189,9 @@ markers = ['*', '*', '*', '*',
  '*', '*', '*', '*']
     
 plt.figure(figsize=(15,15))
-plt.scatter(all_losses, all_scores, c=colors, marker=markers )
+plt.scatter(all_losses[:4], all_scores[:4], c=colors[:4], marker='*' )
+plt.scatter(all_losses[4:-4], all_scores[4:-4], c=colors[4:-4], marker='o' )
+plt.scatter(all_losses[:-4], all_scores[:-4], c=colors[:-4], marker='*' )
 plt.xlabel('prediction loss')
 plt.ylabel('average straightening score')
 plt.show()
