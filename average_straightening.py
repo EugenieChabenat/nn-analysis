@@ -216,20 +216,20 @@ model_names = [
     #"inj_v2_evaluate_IT", 
     
     # control no projector
-    "noprojector_control_v1", 
-    #"noprojector_control_v2",
+    #"noprojector_control_v1", 
+    "noprojector_control_v2",
     #"noprojector_control_v4",
     #"noprojector_control_IT",
     
     # random linear no projector
-    "noprojector_linear_v1", 
-    #"noprojector_linear_v2",
+    #"noprojector_linear_v1", 
+    "noprojector_linear_v2",
     #"noprojector_linear_v4", 
     #"noprojector_linear_IT", 
     
     # random convolution no projector 
-    "noprojector_conv_v1", 
-    #"noprojector_conv_v2",
+    #"noprojector_conv_v1", 
+    "noprojector_conv_v2",
     #"noprojector_conv_v4", 
     #"noprojector_conv_IT", 
     
@@ -319,8 +319,8 @@ for model_name in model_names:
   plt.plot(layers, average_identity_scores, label='identity', color = 'grey')
 
 plt.axvline(x = 3, color = 'grey',  ls = 'dotted')
-plt.axvline(x = 6, color = 'red', ls = 'dotted', linewidth=4)
-plt.axvline(x = 10, color = 'grey', ls = 'dotted')
+plt.axvline(x = 6, color = 'grey', ls = 'dotted')
+plt.axvline(x = 10, color = 'red', ls = 'dotted', linewidth=4)
 plt.axvline(x = 16, color = 'grey',  ls = 'dotted')
 plt.axvline(x = 19, color = 'grey', ls = 'dotted')#, linewidth=4)
 plt.axvline(x = 20, color = 'grey' , ls = 'dotted')
@@ -345,10 +345,10 @@ plt.tick_params(axis='y', labelsize=14)
 plt.xlabel('layers', fontsize=14)
 plt.ylabel('average curvature score', fontsize=18)
 #plt.title('Injection and Evaluation at IT', fontsize=20)
-plt.title('Injection and Evaluation at V1', fontsize=30)
+plt.title('Injection and Evaluation at V2', fontsize=30)
 plt.show()
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/avg-curve-v12_pres.png')
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/pres-curve-v1.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/pres-curve-v2.png')
 
 
     
