@@ -126,7 +126,7 @@ dict_color = {
 # --- 
 epoch = 29
 layers = np.arange(2)
-layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27]
+layers =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]#, 21, 22, 23, 24, 25, 26, 27]
 
 #layers =[ 18, 19, 20]#, 21, 22, 23, 24, 25, 26, 27]
 #layers = [ 21, 22, 23, 24, 25, 26, 27]
@@ -348,7 +348,7 @@ plt.ylabel('average curvature score', fontsize=18)
 plt.title('Average Curvature Score', fontsize=30)
 plt.show()
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/avg-curve-v12_pres.png')
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/pres-curve-proj_all2.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/pres-curve_all2.png')
 
 
     
