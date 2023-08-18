@@ -226,7 +226,7 @@ model_names = [
     #"noprojector_conv_IT", 
     
     # random injection models  
-    "injection_v1",
+    #"injection_v1",
     #"injection_v2", 
     #"injection_v4",
     #"injection_IT",
