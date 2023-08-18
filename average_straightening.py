@@ -276,7 +276,7 @@ model_names = [
     #"IT_no_injection", 
 
     #"resnet50_untrained", 
-    "barlow_twins_50epochs", 
+    #"barlow_twins_50epochs", 
     #"barlow_fact_no_injection"
 ]
 metric_types = ["x_cam_trans", "y_cam_trans", "z_cam_trans", "x_cam_rot", "y_cam_rot", 'x_cam_pan', 'yz_cam_pan']
