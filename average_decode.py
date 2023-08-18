@@ -226,8 +226,8 @@ model_names = [
     #"noprojector_conv_IT", 
     
     # random injection models  
-    "injection_v1",
-    #"injection_v2", 
+    #"injection_v1",
+    "injection_v2", 
     #"injection_v4",
     #"injection_IT",
     
@@ -304,8 +304,8 @@ for model_name in model_names:
   #plt.plot(layers, average_identity_scores, label='identity', color = 'black')
 
 plt.axvline(x = 3, color = 'grey',  ls = 'dotted')
-plt.axvline(x = 6, color = 'red', ls = 'dotted',  linewidth=4)
-plt.axvline(x = 10, color = 'grey', ls = 'dotted')
+plt.axvline(x = 6, color = 'grey', ls = 'dotted')
+plt.axvline(x = 10, color = 'red', ls = 'dotted',  linewidth=4)
 plt.axvline(x = 16, color = 'grey',  ls = 'dotted')
 plt.axvline(x = 19, color = 'grey', ls = 'dotted')#,  linewidth=4)
 plt.axvline(x = 20, color = 'grey' , ls = 'dotted')
@@ -333,7 +333,7 @@ plt.ylabel('average decoding score', fontsize=18)
 #plt.title('Average Decoding Score', fontsize=30)
 plt.show()
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/avg-decode-1_pres.png')
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/pres-decode-boost1.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/pres-decode-boost2.png')
 
 
 
