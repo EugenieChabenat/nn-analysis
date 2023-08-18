@@ -168,7 +168,7 @@ dict_model_names = {
     
     "injection_v1": "Random linear injection",
     "injection_separate_v1": "Trained linear injection at V1" , 
-    "injection_conv_v1": "Random convolutional injection" ,
+    "injection_conv_v1": "Random convolutional injection at V1" ,
     "unfreeze_injection_v1": "Trained convolutional injection at V1" , 
     "subset_injection_v1": "Random linear injection of spatial information at V1", 
     "injection_conv_subset_v1": "Random convolutional injection of spatial information at V1" ,
@@ -355,7 +355,7 @@ fig.supylabel('invariance')
 fig.tight_layout()
 plt.show()
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/v2-mul-fact{}.png'.format(key))
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/pres_legend_curve_all{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/pres_legendcurve_all{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_fact_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/legend-all_{}.png'.format(key))
 
