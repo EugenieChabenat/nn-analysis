@@ -68,15 +68,15 @@ dict_color = {
     "injection_IT_af": ["orange", ':'], #, '-'],
     
     # convolution injection
-    "injection_conv_v1_af": ["lightblue", ':'], #, '-'],
-    "injection_conv_v2_af": ["lightblue", ':'], #, '-'],
-    "injection_conv_v4_af": ["lightblue", ':'], #, '-'],
-    "injection_conv_IT_af": ["lightblue", ':'], #, '-'],
+    #"injection_conv_v1_af": ["lightblue", ':'], #, '-'],
+    #"injection_conv_v2_af": ["lightblue", ':'], #, '-'],
+    #"injection_conv_v4_af": ["lightblue", ':'], #, '-'],
+    #"injection_conv_IT_af": ["lightblue", ':'], #, '-'],
     
-    #"injection_conv_v1_af": ["red", '-'], 
-    #"injection_conv_v2_af": ["blue", '-'], 
-    #"injection_conv_v4_af": ["orange", '-'], 
-    #"injection_conv_IT_af": ["green", '-'], 
+    "injection_conv_v1_af": ["red", '-'], 
+    "injection_conv_v2_af": ["blue", '-'], 
+    "injection_conv_v4_af": ["orange", '-'], 
+    "injection_conv_IT_af": ["green", '-'], 
        
     # unfreeze convolution injection 
     "unfreeze_injection_v1_af": ["green", '-'], 
@@ -212,8 +212,8 @@ dict_model_names = {
 }
 model_names = [
     # new architectures 
-    "inj_v1_evaluate_IT", 
-    "inj_v2_evaluate_IT", 
+    #"inj_v1_evaluate_IT", 
+    #"inj_v2_evaluate_IT", 
     
     # control no projector
     #"noprojector_control_v1", 
@@ -240,10 +240,10 @@ model_names = [
     #"injection_IT_af",
     
     # convolution injection models 
-    #"injection_conv_v1_af", 
-    #"injection_conv_v2_af", 
-    #"injection_conv_v4_af", 
-    #"injection_conv_IT_af", 
+    "injection_conv_v1_af", 
+    "injection_conv_v2_af", 
+    "injection_conv_v4_af", 
+    "injection_conv_IT_af", 
     
     # unfreeze convolution injection models 
     #"unfreeze_injection_v1_af", 
@@ -348,7 +348,7 @@ plt.ylabel('average curvature score', fontsize=18)
 plt.title('Average Curvature Score', fontsize=30)
 plt.show()
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/avg-curve-v12_pres.png')
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/pres-curve-v12.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/pres-curve-all.png')
 
 
     
