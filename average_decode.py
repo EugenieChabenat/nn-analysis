@@ -204,8 +204,8 @@ dict_model_names = {
     "barlow_twins_50epochs": "Vanilla Barlow Twins", 
 }
 model_names = [
-    #"inj_v1_evaluate_IT", 
-    #"inj_v2_evaluate_IT", 
+    "inj_v1_evaluate_IT", 
+    "inj_v2_evaluate_IT", 
     
     # control no projector
     #"noprojector_control_v1", 
@@ -235,7 +235,7 @@ model_names = [
     #"injection_conv_v1", 
     #"injection_conv_v2", 
     #"injection_conv_v4", 
-    "injection_conv_IT", 
+    #"injection_conv_IT", 
     
     # unfreeze convolution injection models 
     #"unfreeze_injection_v1", 
@@ -307,7 +307,7 @@ plt.axvline(x = 3, color = 'grey',  ls = 'dotted')
 plt.axvline(x = 6, color = 'grey', ls = 'dotted')
 plt.axvline(x = 10, color = 'grey', ls = 'dotted')
 plt.axvline(x = 16, color = 'grey',  ls = 'dotted')
-plt.axvline(x = 19, color = 'red', ls = 'dotted',  linewidth=4)
+plt.axvline(x = 19, color = 'grey', ls = 'dotted')#,  linewidth=4)
 plt.axvline(x = 20, color = 'grey' , ls = 'dotted')
 
 #axes[key,i].set_title(dict_metric_names[metric_type], fontsize=18)#, fontsize =60)
@@ -333,7 +333,7 @@ plt.ylabel('average decoding score', fontsize=18)
 plt.title('Injection at IT', fontsize=30)
 plt.show()
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/avg-decode-1_pres.png')
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/pres-decode-it.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/pres-decode-v12.png')
 
 
 
