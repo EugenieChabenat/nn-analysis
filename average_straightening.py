@@ -333,7 +333,7 @@ plt.text(4.5, 0.95, "Block V1", ha="center", va="center", size=14)#, size=60)
 plt.text(8, 0.95, "Block V2", ha="center", va="center", size=14)#, size=60)
 plt.text(13, 0.95, "Block V4", ha="center", va="center", size=14)#, size=60)
 plt.text(17.5, 0.95, "Block IT", ha="center", va="center", size=14)#, size=60)
-#axes[0,i].text(23.5, 0.95, "Projector", ha="center", va="center", size=12)#, size=10)
+plt.text(23.5, 0.95, "Projector", ha="center", va="center", size=12)#, size=10)
 plt.ylim(0.0, 1.)
 plt.tick_params(axis='y', labelsize=14)
 #axes[0,i].legend()#loc='center left')
@@ -348,7 +348,7 @@ plt.ylabel('average curvature score', fontsize=18)
 plt.title('Average Curvature Score', fontsize=30)
 plt.show()
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/avg-curve-v12_pres.png')
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/pres-curve-proj_all.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/pres-curve-proj_all2.png')
 
 
     
