@@ -212,23 +212,23 @@ dict_model_names = {
 }
 model_names = [
     # new architectures 
-    "inj_v1_evaluate_IT", 
-    "inj_v2_evaluate_IT", 
+    #"inj_v1_evaluate_IT", 
+    #"inj_v2_evaluate_IT", 
     
     # control no projector
-    #"noprojector_control_v1", 
+    "noprojector_control_v1", 
     #"noprojector_control_v2",
     #"noprojector_control_v4",
     #"noprojector_control_IT",
     
     # random linear no projector
-    #"noprojector_linear_v1", 
-    "noprojector_linear_v2",
+    "noprojector_linear_v1", 
+    #"noprojector_linear_v2",
     #"noprojector_linear_v4", 
     #"noprojector_linear_IT", 
     
     # random convolution no projector 
-    #"noprojector_conv_v1", 
+    "noprojector_conv_v1", 
     #"noprojector_conv_v2",
     #"noprojector_conv_v4", 
     #"noprojector_conv_IT", 
@@ -275,7 +275,7 @@ model_names = [
     #"v4_no_injection", 
     #"IT_no_injection", 
 
-    "resnet50_untrained", 
+    #"resnet50_untrained", 
     "barlow_twins_50epochs", 
     #"barlow_fact_no_injection"
 ]
@@ -315,18 +315,18 @@ for model_name in model_names:
   #print(np.mean(scores))
   
     
-  plt.plot(layers, average_scores, label=dict_model_names[model_name], color = dict_color[model_name][0], ls = dict_color[model_name][1])
+  plt.plot(layers, average_scores, label=dict_model_names[model_name], color = dict_color[model_name][0], ls = dict_color[model_name][1], linewidth=4)
   plt.plot(layers, average_identity_scores, label='identity', color = 'grey')
 
 plt.axvline(x = 3, color = 'grey',  ls = 'dotted')
-plt.axvline(x = 6, color = 'grey', ls = 'dotted')
+plt.axvline(x = 6, color = 'red', ls = 'dotted', linewidth=4)
 plt.axvline(x = 10, color = 'grey', ls = 'dotted')
 plt.axvline(x = 16, color = 'grey',  ls = 'dotted')
 plt.axvline(x = 19, color = 'grey', ls = 'dotted')#, linewidth=4)
 plt.axvline(x = 20, color = 'grey' , ls = 'dotted')
 
 #axes[key,i].set_title(dict_metric_names[metric_type], fontsize=18)#, fontsize =60)
-plt.xticks([0, 3, 6, 10, 16, 19, 20], labels=['1st convolution', 'maxpool', 'v1 injection', 'v2 injection', 'v4 injection', 'IT injection', 'avgpool'], rotation=45, fontsize=14)
+plt.xticks([0, 3, 6, 10, 16, 19, 20], labels=['1st convolution', 'maxpool', 'v1 injection', 'v2 injection', 'v4 injection', 'IT injection', 'avgpool'], rotation=45, fontsize=18)
 #plt.xticklabels(['1st convolution', 'maxpool', 'v1 injection', 'v2 injection', 'v4 injection', 'IT injection', 'avgpool'], rotation=45, ha='right', fontsize=16)#, fontsize=60)
 
 plt.text(4.5, 0.95, "Block V1", ha="center", va="center", size=14)#, size=60)
@@ -343,12 +343,12 @@ plt.tick_params(axis='y', labelsize=14)
 #fig.supylabel('decode')#, fontsize=60)
 #fig.tight_layout()
 plt.xlabel('layers', fontsize=14)
-plt.ylabel('average curvature score', fontsize=14)
+plt.ylabel('average curvature score', fontsize=18)
 #plt.title('Injection and Evaluation at IT', fontsize=20)
-plt.title('Average Curvature score', fontsize=20)
+plt.title('Injection and Evaluation at V1', fontsize=30)
 plt.show()
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/avg-curve-v12_pres.png')
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/1-avg-curve-v12_pres.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/pres-curve-v1.png')
 
 
     
