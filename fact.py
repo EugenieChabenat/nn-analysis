@@ -229,23 +229,23 @@ dict_model_names = {
 }
 model_names = [
     # new architectures
-    #"inj_v1_evaluate_IT", 
-    #"inj_v2_evaluate_IT", 
+    "inj_v1_evaluate_IT", 
+    "inj_v2_evaluate_IT", 
     
     # no projector control 
-    "noprojector_control_v1", 
+    #"noprojector_control_v1", 
     #"noprojector_control_v2", 
     #"noprojector_control_v4", 
     #"noprojector_control_IT", 
     
     # trained without projector 
-    "noprojector_linear_v1", 
+    #"noprojector_linear_v1", 
     #"noprojector_linear_v2", 
     #"noprojector_linear_v4", 
     #"noprojector_linear_IT", 
     
     # random con - noprojector 
-    "noprojector_conv_v1", 
+    #"noprojector_conv_v1", 
     #"noprojector_conv_v2", 
     #"noprojector_conv_v4", 
     #"noprojector_conv_IT", 
@@ -268,7 +268,7 @@ model_names = [
     
     
     # random injection models  
-    #"injection_v1",
+    "injection_v1",
     #"injection_v2", 
     #"injection_v4",
     #"injection_IT",
@@ -303,7 +303,7 @@ model_names = [
     #"injection_separate_v4", 
     #"injection_separate_IT",
     
-    #"v1_no_injection", 
+    "v1_no_injection", 
     #"v2_no_injection", 
     #"v4_no_injection", 
     #"IT_no_injection", 
@@ -355,7 +355,7 @@ fig.supylabel('invariance')
 fig.tight_layout()
 plt.show()
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/v2-mul-fact{}.png'.format(key))
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/pres_legend_curve{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/pres_legend_dv12{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_fact_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/legend-all_{}.png'.format(key))
 
