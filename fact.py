@@ -268,7 +268,7 @@ model_names = [
     
     
     # random injection models  
-    "injection_v1",
+    #"injection_v1",
     #"injection_v2", 
     #"injection_v4",
     #"injection_IT",
@@ -303,7 +303,7 @@ model_names = [
     #"injection_separate_v4", 
     #"injection_separate_IT",
     
-    "v1_no_injection", 
+    #"v1_no_injection", 
     #"v2_no_injection", 
     #"v4_no_injection", 
     #"IT_no_injection", 
