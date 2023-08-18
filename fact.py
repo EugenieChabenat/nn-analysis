@@ -252,14 +252,14 @@ model_names = [
     
     # multiplicative models, 
     #"multiplicative_model_v1", 
-    "multiplicative_model_v2", 
+    #"multiplicative_model_v2", 
     #"multiplicative_model_v4", 
     #"multiplicative_model_IT", 
 
-    "multiplicative_linear_v2",
+    #"multiplicative_linear_v2",
     #"multiplicative_unfreeze_v2",
-    "multiplicative_afterproj", 
-    "multiplicative_separate_v2", 
+    #"multiplicative_afterproj", 
+    #"multiplicative_separate_v2", 
         
     #"injection_avgpool_v1",
     #"injection_avgpool_v2",
@@ -268,13 +268,13 @@ model_names = [
     
     
     # random injection models  
-    #"injection_v1",
+    "injection_v1",
     #"injection_v2", 
     #"injection_v4",
     #"injection_IT",
     
     # convolution injection models 
-    #"injection_conv_v1", 
+    "injection_conv_v1", 
     #"injection_conv_v2", 
     #"injection_conv_v4", 
     #"injection_conv_IT", 
@@ -303,12 +303,12 @@ model_names = [
     #"injection_separate_v4", 
     #"injection_separate_IT",
     
-    #"v1_no_injection", 
-    "v2_no_injection", 
+    "v1_no_injection", 
+    #"v2_no_injection", 
     #"v4_no_injection", 
     #"IT_no_injection", 
 
-    "resnet50_untrained", 
+    #"resnet50_untrained", 
     "barlow_twins_50epochs", 
     #"barlow_fact_no_injection"
 ]
@@ -317,8 +317,8 @@ model_names = [
 # ------------------------------------------------------------------------------------
 # LAYERS PLOT 
 # ------------------------------------------------------------------------------------
-#fig, axes = pt.core.subplots(2,2, size=(20, 10), sharex=True)
-fig, axes = pt.core.subplots(2,2, size=(10, 8), sharex=True)
+fig, axes = pt.core.subplots(2,2, size=(20, 10), sharex=True)
+#fig, axes = pt.core.subplots(2,2, size=(10, 8), sharex=True)
 for key, metric_types in list_metrics.items(): 
     #fig, axes = pt.core.subplots(1, len(metric_types), size=(10, 8), sharex=True)
     for i, metric_type in enumerate(metric_types):
@@ -327,7 +327,7 @@ for key, metric_types in list_metrics.items():
 
             scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
             #axes[0,i].plot(layers, scores, label=model_name)
-            axes[key,i].plot(layers, scores, label=dict_model_names[model_name], color = dict_color[model_name][0], ls = dict_color[model_name][1])
+            axes[key,i].plot(layers, scores, label=dict_model_names[model_name], color = dict_color[model_name][0], ls = dict_color[model_name][1], linewidth=4)
         #scores = [load_data(metric, 'identity', None, 0)[metric_type] for layer in layers]
         #axes[0,i].plot(layers, scores, label='identity')
         
@@ -349,13 +349,13 @@ for key, metric_types in list_metrics.items():
         axes[key,i].set_ylim(0.0, 1.0)
         axes[key,i].tick_params(axis='y', labelsize=14)
         
-        #axes[key,i].legend(loc='center left',bbox_to_anchor=(1.6, 0.5), fontsize=20)
+        axes[key,i].legend(loc='center left',bbox_to_anchor=(1.6, 0.5), fontsize=20)
 fig.supxlabel('layers')
 fig.supylabel('invariance')
 fig.tight_layout()
 plt.show()
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/v2-mul-fact{}.png'.format(key))
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/v2-mul-fact{}.png'.format(key))
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/pres_legend_dv1{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/thesis_plots/nolegends_title/V1_fact_{}.png'.format(key))
 #plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/fact/legend-all_{}.png'.format(key))
 
