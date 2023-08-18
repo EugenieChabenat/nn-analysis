@@ -267,7 +267,7 @@ model_names = [
     #"v4_no_injection", 
     #"IT_no_injection", 
 
-    "resnet50_untrained", 
+    #"resnet50_untrained", 
     "barlow_twins_50epochs", 
     #"barlow_fact_no_injection"
 ]
@@ -333,7 +333,7 @@ plt.ylabel('average decoding score', fontsize=18)
 plt.title('Injection at V1', fontsize=30)
 plt.show()
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/avg-decode-1_pres.png')
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/1-avg-decode-v12_pres.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/pres-decode-v1.png')
 
 
 
