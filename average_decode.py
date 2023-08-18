@@ -204,8 +204,8 @@ dict_model_names = {
     "barlow_twins_50epochs": "Vanilla Barlow Twins", 
 }
 model_names = [
-    "inj_v1_evaluate_IT", 
-    "inj_v2_evaluate_IT", 
+    #"inj_v1_evaluate_IT", 
+    #"inj_v2_evaluate_IT", 
     
     # control no projector
     #"noprojector_control_v1", 
@@ -226,16 +226,16 @@ model_names = [
     #"noprojector_conv_IT", 
     
     # random injection models  
-    #"injection_v1",
+    "injection_v1",
     #"injection_v2", 
     #"injection_v4",
-    "injection_IT",
+    #"injection_IT",
     
     # convolution injection models 
-    #"injection_conv_v1", 
+    "injection_conv_v1", 
     #"injection_conv_v2", 
     #"injection_conv_v4", 
-    "injection_conv_IT", 
+    #"injection_conv_IT", 
     
     # unfreeze convolution injection models 
     #"unfreeze_injection_v1", 
@@ -262,10 +262,10 @@ model_names = [
     #"injection_separate_IT",
     
     # control models 
-    #"v1_no_injection", 
+    "v1_no_injection", 
     #"v2_no_injection", 
     #"v4_no_injection", 
-    "IT_no_injection", 
+    #"IT_no_injection", 
 
     "resnet50_untrained", 
     "barlow_twins_50epochs", 
@@ -300,18 +300,18 @@ for model_name in model_names:
   #print(np.mean(average_scores))
     
     
-  plt.plot(layers, average_scores, label=dict_model_names[model_name], color = dict_color[model_name][0], ls = dict_color[model_name][1])
+  plt.plot(layers, average_scores, label=dict_model_names[model_name], color = dict_color[model_name][0], ls = dict_color[model_name][1], linewidth=4)
   #plt.plot(layers, average_identity_scores, label='identity', color = 'black')
 
 plt.axvline(x = 3, color = 'grey',  ls = 'dotted')
-plt.axvline(x = 6, color = 'grey', ls = 'dotted')
+plt.axvline(x = 6, color = 'red', ls = 'dotted',  linewidth=4)
 plt.axvline(x = 10, color = 'grey', ls = 'dotted')#,  linewidth=4)
 plt.axvline(x = 16, color = 'grey',  ls = 'dotted')
 plt.axvline(x = 19, color = 'grey', ls = 'dotted')
 plt.axvline(x = 20, color = 'grey' , ls = 'dotted')
 
 #axes[key,i].set_title(dict_metric_names[metric_type], fontsize=18)#, fontsize =60)
-plt.xticks([0, 3, 6, 10, 16, 19, 20], labels=['1st convolution', 'maxpool', 'v1 injection', 'v2 injection', 'v4 injection', 'IT injection', 'avgpool'], rotation=45, fontsize=14)
+plt.xticks([0, 3, 6, 10, 16, 19, 20], labels=['1st convolution', 'maxpool', 'v1 injection', 'v2 injection', 'v4 injection', 'IT injection', 'avgpool'], rotation=45, fontsize=18)
 #plt.xticklabels(['1st convolution', 'maxpool', 'v1 injection', 'v2 injection', 'v4 injection', 'IT injection', 'avgpool'], rotation=45, ha='right', fontsize=16)#, fontsize=60)
 
 plt.text(4.5, 0.95, "Block V1", ha="center", va="center", size=14)#, size=60)
@@ -320,7 +320,7 @@ plt.text(13, 0.95, "Block V4", ha="center", va="center", size=14)#, size=60)
 plt.text(17.5, 0.95, "Block IT", ha="center", va="center", size=14)#, size=60)
 #axes[0,i].text(23.5, 0.95, "Projector", ha="center", va="center", size=12)#, size=10)
 plt.ylim(0.0, 1.)
-plt.tick_params(axis='y', labelsize=14)
+plt.tick_params(axis='y', labelsize=20)
 #axes[0,i].legend()#loc='center left')
 
 #plt.legend(loc='lower center', bbox_to_anchor=(1.25, 0.5), fontsize=18)#, fontsize=60)
@@ -328,11 +328,11 @@ plt.tick_params(axis='y', labelsize=14)
 #fig.supylabel('decode')#, fontsize=60)
 #fig.tight_layout()
 plt.xlabel('layers', fontsize=14)
-plt.ylabel('average decoding score', fontsize=14)
+plt.ylabel('average decoding score', fontsize=18)
 #plt.title('Injection and evaluation at IT', fontsize=20)
-plt.title('Average Decoding Score', fontsize=20)
+plt.title('Injection at V1', fontsize=30)
 plt.show()
-plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/avg-decode-v12_pres.png')
+plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/decode/avg-decode-1_pres.png')
 plt.savefig('/home/ec3731/issa_analysis/nn-analysis/1-avg-decode-v12_pres.png')
 
 
