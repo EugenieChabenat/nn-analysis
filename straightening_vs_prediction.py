@@ -152,23 +152,27 @@ for model_name in model_names:
       average_scores = scores
         
   average_scores = [x/nb_metrics for x in average_scores]
-  scores = [i * 180 for i in average_scores]
+  #scores = [i * 180 for i in average_scores]
+  scores = average_scores
   all_scores.append(np.mean(scores))
 
 
 
-"""colors = ['red', 'blue', 'green', 'black']
-for i in range(10): 
-    colors.append('red')
-    colors.append('blue')
-    colors.append('green')
-    colors.append('black')
-
-print(colors)"""
-
 colors = ['red', 'blue', 'green', 'black', 
  'red', 'blue', 'green', #'black', 
  'red', 'blue', 'green', 'black',
+ 'red', 'blue', 'green', 'black', 
+ 'red', 'blue', 'green', #'black', 
+ 'red', 'blue', 'green', 'black', 
+ 'red', 'blue', 'green', 'black', 
+ 'red', 'blue', 'green', 'black', 
+ 'red', 'blue', 'green', 'black', 
+ 'red', 'blue', 'green', 'black']
+
+
+colors = ['purple', 'purple', 'purple', 'purple', 
+ 'purple', 'purple', 'purple', #'black', 
+ 'purple', 'purple', 'purple', 'purple',
  'red', 'blue', 'green', 'black', 
  'red', 'blue', 'green', #'black', 
  'red', 'blue', 'green', 'black', 
@@ -195,5 +199,5 @@ plt.scatter(all_losses[:-4], all_scores[:-4], c=colors[:-4], marker='*' , alpha 
 plt.xlabel('prediction loss')
 plt.ylabel('average straightening score')
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/scatter_loss_curve6.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/scatter_loss_curve7.png')
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/scatter_loss_curve.png')
