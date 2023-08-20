@@ -231,9 +231,9 @@ markers = ['o', '*']
 
 i = 0 
 for color in ['red', 'blue', 'green', 'black']:
-    n = 3
+    n = 1
     x, y = np.random.rand(2, n)
-    scale = 2.0 * np.random.rand(n)
+    scale = 1.0 * np.random.rand(n)
     ax.scatter(x, y, c=color, label=labels[i],
                marker='o', edgecolors='none')
 
@@ -242,7 +242,7 @@ for color in ['red', 'blue', 'green', 'black']:
 
     i+= 2
 
-ax.legend(bbox_to_anchor=(1.6, 0.5))
+ax.legend()
 #ax.grid(True)
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/scatter_legend2.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/scatter_legend3.png')
 plt.show()
