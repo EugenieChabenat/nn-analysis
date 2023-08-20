@@ -186,9 +186,9 @@ colors = ['red', 'blue', 'green', 'black',
  'red', 'blue', 'green', 'black', 
  'red', 'red']"""
 
-markers = ['*', '*', '*', '*', 
- '*', '*', '*', #'black', 
- '*', '*', '*', '*', 
+markers = ['^', '^', '^', '^', 
+ '^', '^', '^', #'black', 
+ '^', '^', '^', '^', 
  'o', 'o', 'o', 'o', 
  'o', 'o', 'o', #'black', 
  'o', 'o', 'o', 'o',
@@ -205,7 +205,7 @@ plt.scatter(all_losses[11:], all_scores[11:], c=colors[11:], marker='o')
 plt.xlabel('prediction loss')
 plt.ylabel('average straightening score')
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/scatter_loss_curve9.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/scatter_loss_curve10.png')
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/scatter_loss_curve.png')
 
 import numpy as np
@@ -238,11 +238,11 @@ for color in ['red', 'blue', 'green', 'black']:
                marker='o', edgecolors='none')
 
     ax.scatter(x, y, c=color, label=labels[i+1],
-               marker='*', edgecolors='none')
+               marker='^', edgecolors='none')
 
     i+= 2
 
 ax.legend()
 #ax.grid(True)
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/scatter_legend3.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/scatter_legend4.png')
 plt.show()
