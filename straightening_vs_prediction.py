@@ -214,7 +214,7 @@ import matplotlib.pyplot as plt
 np.random.seed(19680801)
 
 
-fig, ax = plt.subplots(size=(20, 10))
+fig, ax = plt.subplots(figsize=(20, 10))
 labels = ['Injection at V1 - with projector',
            'Injection at V1 - no projector', 
           
