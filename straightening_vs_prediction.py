@@ -202,10 +202,10 @@ plt.figure(figsize=(15,15))
 plt.scatter(all_losses[:11], all_scores[:11], c=colors[:11], marker='^', s=100)
 plt.scatter(all_losses[11:], all_scores[11:], c=colors[11:], marker='o', s=100)
 #plt.scatter(all_losses[:-4], all_scores[:-4], c=colors[:-4], marker='*' , alpha = 0.5, s=16)
-plt.xlabel('prediction loss')
-plt.ylabel('average straightening score')
+plt.xlabel('Prediction Loss', fontsize=20)
+plt.ylabel('Average Curvature Score', fontsize=20)
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/scatter_loss_curve.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/scatter_loss_curve1.png')
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/scatter_loss_curve.png')
 
 import numpy as np
