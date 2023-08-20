@@ -214,7 +214,7 @@ import matplotlib.pyplot as plt
 np.random.seed(19680801)
 
 
-fig, ax = plt.subplots()
+fig, ax = plt.subplots(size=(20, 10))
 labels = ['Injection at V1 - with projector',
            'Injection at V1 - no projector', 
           
@@ -238,11 +238,11 @@ for color in ['red', 'blue', 'green', 'black']:
                marker='o', edgecolors='none')
 
     ax.scatter(x, y, c=color, label=labels[i+1],
-               marker='x', edgecolors='none')
+               marker='*', edgecolors='none')
 
     i+= 2
 
 ax.legend(bbox_to_anchor=(1.6, 0.5))
 #ax.grid(True)
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/scatter_legend1.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/scatter_legend2.png')
 plt.show()
