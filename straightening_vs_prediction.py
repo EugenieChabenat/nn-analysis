@@ -207,3 +207,42 @@ plt.ylabel('average straightening score')
 plt.show()
 plt.savefig('/home/ec3731/issa_analysis/nn-analysis/scatter_loss_curve9.png')
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/scatter_loss_curve.png')
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+np.random.seed(19680801)
+
+
+fig, ax = plt.subplots()
+labels = ['Injection at V1 - with projector',
+           'Injection at V1 - no projector', 
+          
+          'Injection at V2 - with projector', 
+          'Injection at V2 - no projector', 
+          
+          'Injection at V4 - with projector',
+          'Injection at V4 - no projector',
+          
+          'Injection at IT - with projector',
+          'Injection at IT - no projector']
+
+markers = ['o', '*']
+
+i = 0 
+for color in ['red', 'blue', 'green', 'black']:
+    n = 3
+    x, y = np.random.rand(2, n)
+    scale = 2.0 * np.random.rand(n)
+    ax.scatter(x, y, c=color, label=labels[i],
+               marker='o', edgecolors='none')
+
+    ax.scatter(x, y, c=color, label=labels[i+1],
+               marker='o', edgecolors='none')
+
+    i+= 2
+
+ax.legend()
+#ax.grid(True)
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/scatter_legend.png')
+plt.show()
