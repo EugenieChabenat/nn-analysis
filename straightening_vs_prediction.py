@@ -51,7 +51,9 @@ model_names = [
     "injection_separate_v1", "injection_separate_v2", "injection_separate_v4", "injection_separate_IT",
     
     # control models 
-    "v1_no_injection", "v2_no_injection", "v4_no_injection", "IT_no_injection", 
+    "v1_no_injection", "v2_no_injection", "v4_no_injection", "IT_no_injection",
+
+    "inj_v1_evaluate_IT", "inj_v2_evaluate_IT"
 
     #"resnet50_untrained", 
     #"barlow_twins_50epochs", 
@@ -136,6 +138,7 @@ model_names = [
     
     # control models 
     "v1_no_injection", "v2_no_injection", "v4_no_injection", "IT_no_injection", 
+    "inj_v1_evaluate_IT", "inj_v2_evaluate_IT"
 
     #"resnet50_untrained", 
     #"barlow_twins_50epochs", 
@@ -167,10 +170,11 @@ colors = ['red', 'blue', 'green', 'black',
  'red', 'blue', 'green', 'black', 
  'red', 'blue', 'green', 'black', 
  'red', 'blue', 'green', 'black', 
- 'red', 'blue', 'green', 'black']
+ 'red', 'blue', 'green', 'black', 
+         'red', 'blue']
 
 
-colors = ['purple', 'purple', 'purple', 'purple', 
+"""colors = ['purple', 'purple', 'purple', 'purple', 
  'purple', 'purple', 'purple', #'black', 
  'purple', 'purple', 'purple', 'purple',
  'red', 'blue', 'green', 'black', 
@@ -179,25 +183,27 @@ colors = ['purple', 'purple', 'purple', 'purple',
  'red', 'blue', 'green', 'black', 
  'red', 'blue', 'green', 'black', 
  'red', 'blue', 'green', 'black', 
- 'red', 'blue', 'green', 'black']
+ 'red', 'blue', 'green', 'black', 
+ 'red', 'red']"""
 
 markers = ['*', '*', '*', '*', 
- 'o', 'o', 'o', #'black', 
- 'o', 'o', 'o', 'o',
+ '*', '*', '*', #'black', 
+ '*', '*', '*', '*', 
  'o', 'o', 'o', 'o', 
  'o', 'o', 'o', #'black', 
  'o', 'o', 'o', 'o',
  'o', 'o', 'o', 'o',
  'o', 'o', 'o', 'o',
  'o', 'o', 'o', 'o',
- '*', '*', '*', '*']
+ 'o', 'o', 'o', 'o',
+ 'o', 'o']
     
 plt.figure(figsize=(15,15))
-plt.scatter(all_losses[:4], all_scores[:4], c=colors[:4], marker='*', alpha = 0.5, s=16 )
-plt.scatter(all_losses[4:-4], all_scores[4:-4], c=colors[4:-4], marker='o' )
-plt.scatter(all_losses[:-4], all_scores[:-4], c=colors[:-4], marker='*' , alpha = 0.5, s=16)
+plt.scatter(all_losses[:4], all_scores[:4], c=colors[:4], marker='*', s=30 )
+plt.scatter(all_losses[4:], all_scores[4:, c=colors[4:], marker='o' )
+#plt.scatter(all_losses[:-4], all_scores[:-4], c=colors[:-4], marker='*' , alpha = 0.5, s=16)
 plt.xlabel('prediction loss')
 plt.ylabel('average straightening score')
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/scatter_loss_curve7.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/scatter_loss_curve8.png')
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/scatter_loss_curve.png')
