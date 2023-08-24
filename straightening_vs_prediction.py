@@ -152,9 +152,17 @@ model_names = [
 average_identity_scores = []
 all_scores = []
 for model_name in model_names: 
+  if model_name[-1] == '1': 
+      beg = 6
+  elif model_name[-1] == '2': 
+      beg = 10 
+  elif model_name[-1] == '4': 
+      beg = 16 
+  else: 
+      beg = 19 
   average_scores = []
   for i, metric_type in enumerate(metric_types): 
-    scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers]
+    scores = [load_data(metric, model_name, epoch, layer)[metric_type] for layer in layers[beg:]]
     if average_scores: 
       average_scores = [sum(x) for x in zip(scores, average_scores)]
     else: 
@@ -217,7 +225,7 @@ plt.tick_params(axis='y', labelsize=20)
 plt.xlabel('Prediction Loss', fontsize=20)
 plt.ylabel('Average Curvature Score', fontsize=20)
 plt.show()
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/scatter_loss_curve_mul.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/scatter_loss_curve_avg.png')
 plt.savefig('/mnt/smb/locker/issa-locker/users/Eugénie/nn-analysis/scatter_loss_curve.png')
 
 import numpy as np
