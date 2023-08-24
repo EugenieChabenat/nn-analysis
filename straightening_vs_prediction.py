@@ -264,9 +264,12 @@ for color in ['red', 'blue', 'green', 'black']:
     ax.scatter(x, y, c=color, label=labels[i+1],
                marker='^', edgecolors='none')
 
-    i+= 2
+    ax.scatter(x, y, c=color, label=labels[i+2],
+               marker='x', edgecolors='none')
+
+    i+= 3
 
 ax.legend()
 #ax.grid(True)
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/scatter_legend.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/scatter_legend_complete.png')
 plt.show()
