@@ -53,7 +53,10 @@ model_names = [
     # control models 
     "v1_no_injection", "v2_no_injection", "v4_no_injection", "IT_no_injection",
 
-    "inj_v1_evaluate_IT", "inj_v2_evaluate_IT"
+    "inj_v1_evaluate_IT", "inj_v2_evaluate_IT, 
+    
+    "multiplicative_model_v1", "multiplicative_model_v2", "multiplicative_model_v4", "multiplicative_model_IT"
+
 
     #"resnet50_untrained", 
     #"barlow_twins_50epochs", 
@@ -138,7 +141,10 @@ model_names = [
     
     # control models 
     "v1_no_injection", "v2_no_injection", "v4_no_injection", "IT_no_injection", 
-    "inj_v1_evaluate_IT", "inj_v2_evaluate_IT"
+    "inj_v1_evaluate_IT", "inj_v2_evaluate_IT", 
+
+    # multiplicative models 
+    "multiplicative_model_v1", "multiplicative_model_v2", "multiplicative_model_v4", "multiplicative_model_IT"
 
     #"resnet50_untrained", 
     #"barlow_twins_50epochs", 
@@ -171,8 +177,10 @@ colors = ['red', 'blue', 'green', 'black',
  'red', 'blue', 'green', 'black', 
  'red', 'blue', 'green', 'black', 
  'red', 'blue', 'green', 'black', 
-         'red', 'blue']
+         'red', 'blue', 
+'red', 'blue', 'green', 'black', ]
 
+print(len(colors))
 
 """colors = ['purple', 'purple', 'purple', 'purple', 
  'purple', 'purple', 'purple', #'black', 
@@ -201,6 +209,8 @@ markers = ['^', '^', '^', '^',
 plt.figure(figsize=(15,15))
 plt.scatter(all_losses[:11], all_scores[:11], c=colors[:11], marker='^', s=100)
 plt.scatter(all_losses[11:], all_scores[11:], c=colors[11:], marker='o', s=100)
+plt.scatter(all_losses[11:], all_scores[11:], c=colors[11:], marker='o', s=100)
+
 #plt.scatter(all_losses[:-4], all_scores[:-4], c=colors[:-4], marker='*' , alpha = 0.5, s=16)
 plt.tick_params(axis='x', labelsize=20)
 plt.tick_params(axis='y', labelsize=20)
