@@ -237,17 +237,21 @@ np.random.seed(19680801)
 fig, ax = plt.subplots(figsize=(20, 10))
 labels = ['Injection at V1 - with projector',
            'Injection at V1 - no projector', 
+          'Multiplicative model at V1', 
           
           'Injection at V2 - with projector', 
           'Injection at V2 - no projector', 
+          'Multiplicative model at V2', 
           
           'Injection at V4 - with projector',
           'Injection at V4 - no projector',
+          'Multiplicative model at V4', 
           
           'Injection at IT - with projector',
-          'Injection at IT - no projector']
+          'Injection at IT - no projector', 
+         'Multiplicative model at IT', ]
 
-markers = ['o', '*']
+markers = ['o', '*', 'x']
 
 i = 0 
 for color in ['red', 'blue', 'green', 'black']:
@@ -264,5 +268,5 @@ for color in ['red', 'blue', 'green', 'black']:
 
 ax.legend()
 #ax.grid(True)
-plt.savefig('/home/ec3731/issa_analysis/nn-analysis/scatter_legend4.png')
+plt.savefig('/home/ec3731/issa_analysis/nn-analysis/scatter_legend.png')
 plt.show()
