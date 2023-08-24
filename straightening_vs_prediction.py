@@ -53,7 +53,7 @@ model_names = [
     # control models 
     "v1_no_injection", "v2_no_injection", "v4_no_injection", "IT_no_injection",
 
-    "inj_v1_evaluate_IT", "inj_v2_evaluate_IT, 
+    "inj_v1_evaluate_IT", "inj_v2_evaluate_IT", 
     
     "multiplicative_model_v1", "multiplicative_model_v2", "multiplicative_model_v4", "multiplicative_model_IT"
 
